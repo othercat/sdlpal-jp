@@ -49,6 +49,30 @@ TOURNAMENT_DIALOGUES = {
         u"俺の見立てじゃ、百手も", u"交えぬうちに必ず負けるぞ。")),
 }
 
+# The same Win acquisition message is shared by chests and gathering events.
+# Use the existing, method-neutral Saturn wording in every occurrence.
+# Win script: (Win key, Saturn script, Saturn message, original Saturn body)
+ACQUISITION_SOURCES = {
+    37511: ((12352, 12352), 40409, 15746, u"霊山の仙芝を獲得\n"),
+    38193: ((12352, 12352), 41095, 15861, u"霊山の仙芝を摘む\n"),
+    37607: ((12368, 12368), 40505, 15762, u"銀杏の種を獲得\n"),
+    38123: ((12368, 12368), 41025, 15851, u"銀杏の種を摘む\n"),
+}
+ACQUISITION_MESSAGES = {
+    (12352, 12352): u"霊山の仙芝を獲得\n",
+    (12368, 12368): u"銀杏の種を獲得\n",
+}
+
+
+def check_message_body(seen, key, script, body):
+    """Identical reuse is valid; never let output order choose a translation."""
+    previous = seen.get(key)
+    if previous is not None and previous[1] != body:
+        raise ValueError("Conflicting MESSAGE %d-%d at Win scripts %d/%d; no output was written."
+                         % (key[0], key[1], previous[0], script))
+    seen[key] = (script, body)
+
+
 if sys.version_info[0] >= 3:
     # Python 3 环境
     def to_str(b, enc='utf-8'): return b.decode(enc, 'replace') if isinstance(b, bytes) else b
@@ -77,6 +101,8 @@ def main():
                        help='Reproduce the uncorrected v2026.08 output (audit only).')
     audit.add_argument("--before-tournament-fix", action='store_true',
                        help='Reproduce post-Issue #3 output before Issue #4 corrections (audit only).')
+    audit.add_argument("--before-duplicate-fix", action='store_true',
+                       help='Reproduce post-Issue #4 output before Issue #8 corrections (audit only).')
     options = parser.parse_args()
 
     options.encoding = "shift_jis"
@@ -475,6 +501,8 @@ def main():
     recovered_sections = () if options.upstream_baseline else RECOVERED_SECTIONS
     correct_tournament = not (options.upstream_baseline or options.before_tournament_fix)
     corrected_tournament = set()
+    correct_duplicates = correct_tournament and not options.before_duplicate_fix
+    checked_acquisitions, seen_messages = set(), {}
     for s in range(0, 32 + len(recovered_sections)):
 	  #27 sections.
       if s == 0:
@@ -675,6 +703,7 @@ def main():
                     last_jp_index = jw1
                     if jis_msg_group == 0:
                         jis_msg_group = 1
+                        first_jp_index, first_jp_script = jw1, jpn_script_num
                         #temp = ""
 
                     msg_count += 1
@@ -727,6 +756,17 @@ def main():
                     jmessage = u"\n".join(replacement[1]) + u"\n"
                     corrected_tournament.add(key)
 
+                if correct_duplicates:
+                    key = (first_index, last_index)
+                    if key in ACQUISITION_MESSAGES:
+                        source = (key, first_jp_script, first_jp_index, jmessage)
+                        if (ACQUISITION_SOURCES.get(first_script) != source or
+                            first_jp_index != last_jp_index or first_script in checked_acquisitions):
+                            raise ValueError("Issue #8 acquisition source differs; no output was written.")
+                        jmessage = ACQUISITION_MESSAGES[key]
+                        checked_acquisitions.add(first_script)
+                    check_message_body(seen_messages, key, first_script, jmessage)
+
                 output += comment
                 output += message
                 output += jmessage
@@ -737,6 +777,11 @@ def main():
         raise ValueError("Issue #3 span end differs; no output was written.")
     if correct_tournament and corrected_tournament != set(TOURNAMENT_DIALOGUES):
         raise ValueError("Incomplete Issue #4 correction set; no output was written.")
+    if correct_duplicates and checked_acquisitions != set(ACQUISITION_SOURCES):
+        raise ValueError("Incomplete Issue #8 acquisition source set; no output was written.")
+    if correct_duplicates:
+        print("Issue #8: checked %d unique keys; acquisition text is independent of output order."
+              % len(seen_messages))
     try:
         import io
         with io.open(options.outputfile, "w", encoding="utf-8", errors="ignore") as f:

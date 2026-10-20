@@ -186,5 +186,35 @@ class ConversionTools(unittest.TestCase):
             baseline.check_inputs(known, {"m.msg": "missing"}, "Win")
 
 
+class DuplicateMessageTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        spec = importlib.util.spec_from_file_location("message_converter", TOOLS / "makemessage_j.py")
+        cls.converter = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.converter)
+
+    def test_identical_reuse_and_different_spans(self):
+        seen = {}
+        for script in (100, 200, 300):
+            self.converter.check_message_body(seen, (1, 1), script, "same\n")
+        self.converter.check_message_body(seen, (1, 2), 400, "different span\n")
+        self.assertEqual(len(seen), 2)
+
+    def test_conflicting_reuse_is_rejected_in_both_orders(self):
+        for bodies in (("取得\n", "採集\n"), ("採集\n", "取得\n")):
+            with self.subTest(bodies=bodies):
+                seen = {}
+                self.converter.check_message_body(seen, (1, 1), 100, bodies[0])
+                with self.assertRaisesRegex(ValueError, "MESSAGE 1-1 at Win scripts 100/200"):
+                    self.converter.check_message_body(seen, (1, 1), 200, bodies[1])
+                self.assertEqual(seen[(1, 1)], (100, bodies[0]))
+
+    def test_control_marker_difference_is_not_ignored(self):
+        seen = {}
+        self.converter.check_message_body(seen, (1, 2), 100, "first\n[CLEAR MESSAGE]\nsecond\n")
+        with self.assertRaisesRegex(ValueError, "Conflicting MESSAGE"):
+            self.converter.check_message_body(seen, (1, 2), 200, "first\nsecond\n")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -4,6 +4,8 @@
 
 **10 组 / 28 个 Win 消息 ID 已解除错配。** 本轮采用依据 Win 原文校读的新补译，没有把未确认的土星段落冒充直接对应。原正确的五组 NPC 台词、#3 恢复的 119 组及其他输出内容保持不变；全部 Issue 实现后由用户统一实机验收。
 
+后续 [#8 重复键修正](japanese-duplicate-message-keys.md)保留本单十组文本；下方历史命令用 `--before-duplicate-fix` 重现 #4 完成时的输出。当前默认转换及分阶段核对步骤见[工具用法](../tools/japanese/README.md)。
+
 ## 原版、土星与事件核对
 
 旧转换器的 section=1、section=5 都从土星脚本 8253 连取五组，把书生、刘楚香、拳师、护院、小僧重复套给家仆和观众。原始 Win `SSS.MKF` 证明这些正文直接挂在 scene33 / map31 的 17 个事件上，属于比武进行中的评论；场景入场脚本为 9038。静态事件引用与剧情语义不能代替存档状态验收。
@@ -102,7 +104,7 @@ PC、SAT 采用 [upstream.json](../tools/japanese/upstream.json) 的固定输入
 ```powershell
 $jpPython = Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe'
 & $jpPython -B -X utf8 tools\japanese\makemessage_j.py 'PC' 'SAT' 'OUT\before.slf' gbk --before-tournament-fix
-& $jpPython -B -X utf8 tools\japanese\makemessage_j.py 'PC' 'SAT' 'OUT\after.slf' gbk
+& $jpPython -B -X utf8 tools\japanese\makemessage_j.py 'PC' 'SAT' 'OUT\after.slf' gbk --before-duplicate-fix
 & $jpPython -B -X utf8 tools\japanese\verify_tournament_dialogues.py 'PC' 'SAT' 'OUT\before.slf' 'OUT\after.slf' 'OUT\verify'
 & $jpPython -B -X utf8 tests\test_japanese_conversion_tools.py -v
 & $jpPython -B -X utf8 tools\adapt_red_silkworm_description.py 'OUT\after.slf' 'OUT\after-adapted.slf'

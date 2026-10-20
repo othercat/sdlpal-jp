@@ -1,0 +1,2420 @@
+{
+  "issue": 8,
+  "revision": "R1",
+  "date": "2026-10-20",
+  "base_commit": "7bf7fcb54233fe6d3207b1f5110a9b64dc3d997c",
+  "branch": "richardli/fix/8-resolve-conflicting-message-keys",
+  "artifact_directory": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020",
+  "mapping": {
+    "scope": "Two acquisition bodies normalized to existing Saturn text; no gameplay acceptance.",
+    "inputs": {
+      "pc": {
+        "sss.mkf": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+          "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+          "bytes": 575270
+        },
+        "m.msg": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+          "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+          "bytes": 224983
+        },
+        "word.dat": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\WORD.DAT",
+          "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+          "bytes": 5650
+        }
+      },
+      "saturn": {
+        "JM.MSG": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+          "sha256": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+          "bytes": 309248
+        },
+        "JM.NOR": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+          "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+          "bytes": 65296
+        },
+        "JM.SEC": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+          "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+          "bytes": 308120
+        },
+        "PROG.BIN": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\PROG.BIN",
+          "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c",
+          "bytes": 411244
+        }
+      }
+    },
+    "inputs_unchanged": true,
+    "review_sha256": "cc39c3f9ba55b6a4f3f9a61703373b12c73de00248e17d67ce7050a829318e15",
+    "before": {
+      "bytes": 1256198,
+      "sha256": "d15d7ad24eb16f33e56a4c993d8b5f995a4eb98438ee9bd98f2b498513ac2229",
+      "lf_sha256": "c2fb3ad19f91da5306074f66fde09c62aa049fb7a9bc0589575fde1dad520849",
+      "blocks": 4773,
+      "unique_keys": 4766
+    },
+    "after": {
+      "bytes": 1256198,
+      "sha256": "b8657971f4962b25e8a8f9a15c4b9d26ddf52e1d18408ab259b2f932b59f2f87",
+      "lf_sha256": "a1012dbd24be730118274c56b87d1ad2fd3b0ed689c8090f69badfaa55ec58b0",
+      "blocks": 4773,
+      "unique_keys": 4766
+    },
+    "changed_bodies": [
+      [
+        12368,
+        12368
+      ],
+      [
+        12352,
+        12352
+      ]
+    ],
+    "unchanged_blocks": 4771,
+    "unchanged_effective_keys": 4764,
+    "all_other_bytes_unchanged": true,
+    "issue3_and_issue4_text_unchanged": true,
+    "duplicates_before": [
+      {
+        "key": [
+          4931,
+          4931
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          4932,
+          4933
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          4934,
+          4935
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          5107,
+          5108
+        ],
+        "count": 3,
+        "conflict": false
+      },
+      {
+        "key": [
+          12352,
+          12352
+        ],
+        "count": 2,
+        "conflict": true
+      },
+      {
+        "key": [
+          12368,
+          12368
+        ],
+        "count": 2,
+        "conflict": true
+      }
+    ],
+    "duplicates_after": [
+      {
+        "key": [
+          4931,
+          4931
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          4932,
+          4933
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          4934,
+          4935
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          5107,
+          5108
+        ],
+        "count": 3,
+        "conflict": false
+      },
+      {
+        "key": [
+          12352,
+          12352
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          12368,
+          12368
+        ],
+        "count": 2,
+        "conflict": false
+      }
+    ],
+    "raw_use_groups": 13,
+    "raw_FFFF_references": 20,
+    "direct_pickup_events": [
+      1872,
+      2365,
+      2456,
+      2734,
+      2766,
+      2925,
+      2926,
+      2927,
+      3148,
+      3158,
+      3160,
+      3314,
+      3316,
+      3318,
+      4418,
+      5044
+    ],
+    "dynamic_guard_events": [
+      1584,
+      1585,
+      1600,
+      1601,
+      1602
+    ],
+    "checked_event_records": [
+      1584,
+      1585,
+      1600,
+      1601,
+      1602,
+      1693,
+      1872,
+      2365,
+      2456,
+      2734,
+      2766,
+      2925,
+      2926,
+      2927,
+      3148,
+      3158,
+      3160,
+      3314,
+      3316,
+      3318,
+      4418,
+      5044
+    ],
+    "checked_script_anchors": [
+      [
+        "Saturn",
+        15811
+      ],
+      [
+        "Saturn",
+        15812
+      ],
+      [
+        "Saturn",
+        15813
+      ],
+      [
+        "Saturn",
+        15814
+      ],
+      [
+        "Saturn",
+        15815
+      ],
+      [
+        "Saturn",
+        15816
+      ],
+      [
+        "Saturn",
+        15817
+      ],
+      [
+        "Saturn",
+        15818
+      ],
+      [
+        "Saturn",
+        15819
+      ],
+      [
+        "Saturn",
+        15820
+      ],
+      [
+        "Saturn",
+        15821
+      ],
+      [
+        "Saturn",
+        15822
+      ],
+      [
+        "Saturn",
+        15823
+      ],
+      [
+        "Saturn",
+        15824
+      ],
+      [
+        "Saturn",
+        16262
+      ],
+      [
+        "Saturn",
+        16263
+      ],
+      [
+        "Saturn",
+        16264
+      ],
+      [
+        "Saturn",
+        16265
+      ],
+      [
+        "Saturn",
+        16266
+      ],
+      [
+        "Saturn",
+        16267
+      ],
+      [
+        "Saturn",
+        16268
+      ],
+      [
+        "Saturn",
+        40407
+      ],
+      [
+        "Saturn",
+        40408
+      ],
+      [
+        "Saturn",
+        40409
+      ],
+      [
+        "Saturn",
+        40410
+      ],
+      [
+        "Saturn",
+        40411
+      ],
+      [
+        "Saturn",
+        40503
+      ],
+      [
+        "Saturn",
+        40504
+      ],
+      [
+        "Saturn",
+        40505
+      ],
+      [
+        "Saturn",
+        40506
+      ],
+      [
+        "Saturn",
+        40507
+      ],
+      [
+        "Saturn",
+        41023
+      ],
+      [
+        "Saturn",
+        41024
+      ],
+      [
+        "Saturn",
+        41025
+      ],
+      [
+        "Saturn",
+        41026
+      ],
+      [
+        "Saturn",
+        41027
+      ],
+      [
+        "Saturn",
+        41093
+      ],
+      [
+        "Saturn",
+        41094
+      ],
+      [
+        "Saturn",
+        41095
+      ],
+      [
+        "Saturn",
+        41096
+      ],
+      [
+        "Saturn",
+        41097
+      ],
+      [
+        "Win",
+        14541
+      ],
+      [
+        "Win",
+        14542
+      ],
+      [
+        "Win",
+        14578
+      ],
+      [
+        "Win",
+        14579
+      ],
+      [
+        "Win",
+        14580
+      ],
+      [
+        "Win",
+        14581
+      ],
+      [
+        "Win",
+        14582
+      ],
+      [
+        "Win",
+        14583
+      ],
+      [
+        "Win",
+        14584
+      ],
+      [
+        "Win",
+        14585
+      ],
+      [
+        "Win",
+        14586
+      ],
+      [
+        "Win",
+        14587
+      ],
+      [
+        "Win",
+        14588
+      ],
+      [
+        "Win",
+        14589
+      ],
+      [
+        "Win",
+        14590
+      ],
+      [
+        "Win",
+        14591
+      ],
+      [
+        "Win",
+        14592
+      ],
+      [
+        "Win",
+        14697
+      ],
+      [
+        "Win",
+        14698
+      ],
+      [
+        "Win",
+        14971
+      ],
+      [
+        "Win",
+        14972
+      ],
+      [
+        "Win",
+        14973
+      ],
+      [
+        "Win",
+        14990
+      ],
+      [
+        "Win",
+        14991
+      ],
+      [
+        "Win",
+        14992
+      ],
+      [
+        "Win",
+        14993
+      ],
+      [
+        "Win",
+        14994
+      ],
+      [
+        "Win",
+        14995
+      ],
+      [
+        "Win",
+        14996
+      ],
+      [
+        "Win",
+        14997
+      ],
+      [
+        "Win",
+        14998
+      ],
+      [
+        "Win",
+        14999
+      ],
+      [
+        "Win",
+        36505
+      ],
+      [
+        "Win",
+        36506
+      ],
+      [
+        "Win",
+        36507
+      ],
+      [
+        "Win",
+        36508
+      ],
+      [
+        "Win",
+        36509
+      ],
+      [
+        "Win",
+        36510
+      ],
+      [
+        "Win",
+        36511
+      ],
+      [
+        "Win",
+        37509
+      ],
+      [
+        "Win",
+        37510
+      ],
+      [
+        "Win",
+        37511
+      ],
+      [
+        "Win",
+        37512
+      ],
+      [
+        "Win",
+        37513
+      ],
+      [
+        "Win",
+        37514
+      ],
+      [
+        "Win",
+        37605
+      ],
+      [
+        "Win",
+        37606
+      ],
+      [
+        "Win",
+        37607
+      ],
+      [
+        "Win",
+        37608
+      ],
+      [
+        "Win",
+        37609
+      ],
+      [
+        "Win",
+        37610
+      ],
+      [
+        "Win",
+        38119
+      ],
+      [
+        "Win",
+        38120
+      ],
+      [
+        "Win",
+        38121
+      ],
+      [
+        "Win",
+        38122
+      ],
+      [
+        "Win",
+        38123
+      ],
+      [
+        "Win",
+        38124
+      ],
+      [
+        "Win",
+        38125
+      ],
+      [
+        "Win",
+        38126
+      ],
+      [
+        "Win",
+        38189
+      ],
+      [
+        "Win",
+        38190
+      ],
+      [
+        "Win",
+        38191
+      ],
+      [
+        "Win",
+        38192
+      ],
+      [
+        "Win",
+        38193
+      ],
+      [
+        "Win",
+        38194
+      ],
+      [
+        "Win",
+        38195
+      ],
+      [
+        "Win",
+        38196
+      ],
+      [
+        "Win",
+        43514
+      ],
+      [
+        "Win",
+        43515
+      ],
+      [
+        "Win",
+        43516
+      ],
+      [
+        "Win",
+        43517
+      ],
+      [
+        "Win",
+        43518
+      ],
+      [
+        "Win",
+        43519
+      ],
+      [
+        "Win",
+        43520
+      ],
+      [
+        "Win",
+        43521
+      ],
+      [
+        "Win",
+        43522
+      ],
+      [
+        "Win",
+        43523
+      ],
+      [
+        "Win",
+        43524
+      ],
+      [
+        "Win",
+        43525
+      ],
+      [
+        "Win",
+        43526
+      ],
+      [
+        "Win",
+        43527
+      ],
+      [
+        "Win",
+        43528
+      ],
+      [
+        "Win",
+        43529
+      ],
+      [
+        "Win",
+        43530
+      ],
+      [
+        "Win",
+        43531
+      ],
+      [
+        "Win",
+        43532
+      ],
+      [
+        "Win",
+        43533
+      ],
+      [
+        "Win",
+        43541
+      ],
+      [
+        "Win",
+        43542
+      ],
+      [
+        "Win",
+        43543
+      ],
+      [
+        "Win",
+        43544
+      ],
+      [
+        "Win",
+        43545
+      ],
+      [
+        "Win",
+        43546
+      ],
+      [
+        "Win",
+        43547
+      ],
+      [
+        "Win",
+        43548
+      ],
+      [
+        "Win",
+        43549
+      ],
+      [
+        "Win",
+        43550
+      ],
+      [
+        "Win",
+        43551
+      ],
+      [
+        "Win",
+        43552
+      ],
+      [
+        "Win",
+        43553
+      ],
+      [
+        "Win",
+        43554
+      ],
+      [
+        "Win",
+        43555
+      ],
+      [
+        "Win",
+        43556
+      ]
+    ],
+    "canonical": [
+      {
+        "key": [
+          12352,
+          12352
+        ],
+        "jp_message": 15746,
+        "text": [
+          "霊山の仙芝を獲得"
+        ]
+      },
+      {
+        "key": [
+          12368,
+          12368
+        ],
+        "jp_message": 15762,
+        "text": [
+          "銀杏の種を獲得"
+        ]
+      }
+    ],
+    "engine_fixture_keys": 4766,
+    "prepared_render_groups": 6
+  },
+  "conversion": {
+    "runs": [
+      {
+        "name": "upstream",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_baseline.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\upstream"
+        ],
+        "exit_code": 0,
+        "output": "PASS: 4654 message blocks, 4647 unique keys; inputs unchanged\n"
+      },
+      {
+        "name": "post3-audit",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\post3.slf",
+          "gbk",
+          "--before-tournament-fix"
+        ],
+        "exit_code": 0,
+        "output": "MakeMessage Utility by SDLPal Team ver. 2026.08\nPython 3 adaption by PalAlexx, OPL3ChipFan and Palxex\nNow Processing, Please wait...\nNow Processing the MESSAGE Sections. Please wait...\nOK!\nOriginal Dialog script count: 30715\n"
+      },
+      {
+        "name": "post4-audit",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\post4.slf",
+          "gbk",
+          "--before-duplicate-fix"
+        ],
+        "exit_code": 0,
+        "output": "MakeMessage Utility by SDLPal Team ver. 2026.08\nPython 3 adaption by PalAlexx, OPL3ChipFan and Palxex\nNow Processing, Please wait...\nNow Processing the MESSAGE Sections. Please wait...\nOK!\nOriginal Dialog script count: 30715\n"
+      },
+      {
+        "name": "default-cli",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\cli.slf",
+          "gbk"
+        ],
+        "exit_code": 0,
+        "output": "MakeMessage Utility by SDLPal Team ver. 2026.08\nPython 3 adaption by PalAlexx, OPL3ChipFan and Palxex\nNow Processing, Please wait...\nNow Processing the MESSAGE Sections. Please wait...\nIssue #8: checked 4766 unique keys; acquisition text is independent of output order.\nOK!\nOriginal Dialog script count: 30715\n"
+      },
+      {
+        "name": "issue3-regression",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_restored_dialogues.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\upstream\\paljpn-win.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\post3.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\verification-issue3"
+        ],
+        "exit_code": 0,
+        "output": "PASS: 119 groups restored; 119 -> 0 missing; original blocks/conflicts unchanged\n"
+      },
+      {
+        "name": "issue4-regression",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_tournament_dialogues.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\post3.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\post4.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\verification-issue4"
+        ],
+        "exit_code": 0,
+        "output": "PASS: 10 corrected groups; 4763 other blocks and all other bytes unchanged\n"
+      },
+      {
+        "name": "adapter",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\adapt_red_silkworm_description.py",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\after.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\after-adapted.slf"
+        ],
+        "exit_code": 0,
+        "output": "{\n  \"message_range\": [\n    12920,\n    12921\n  ],\n  \"changed\": true,\n  \"input_sha256\": \"b8657971f4962b25e8a8f9a15c4b9d26ddf52e1d18408ab259b2f932b59f2f87\",\n  \"output_sha256\": \"9fa24bc68726539a59e25d117178cb791c2e55c7242b2881bd663553b7971cc5\"\n}\n"
+      },
+      {
+        "name": "tool-tests",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tests\\test_japanese_conversion_tools.py",
+          "-v"
+        ],
+        "exit_code": 0,
+        "output": "test_baseline_rejects_wrong_encoding_or_existing_output_without_writes (__main__.ConversionTools.test_baseline_rejects_wrong_encoding_or_existing_output_without_writes) ... ok\ntest_cli_help_and_invalid_encoding_or_mode (__main__.ConversionTools.test_cli_help_and_invalid_encoding_or_mode) ... ok\ntest_gui_missing_fields_do_not_launch_child (__main__.ConversionTools.test_gui_missing_fields_do_not_launch_child) ... ok\ntest_gui_prepares_resources_from_unrelated_working_directory (__main__.ConversionTools.test_gui_prepares_resources_from_unrelated_working_directory) ... ok\ntest_gui_stops_after_word_conversion_failure (__main__.ConversionTools.test_gui_stops_after_word_conversion_failure) ... ok\ntest_gui_stops_generation_when_resource_preparation_fails (__main__.ConversionTools.test_gui_stops_generation_when_resource_preparation_fails) ... ok\ntest_input_guard_rejects_dos_changed_and_missing_inputs (__main__.ConversionTools.test_input_guard_rejects_dos_changed_and_missing_inputs) ... ok\ntest_steam_all_modes_and_encodings (__main__.ConversionTools.test_steam_all_modes_and_encodings) ... ok\ntest_steam_rejects_message_and_word_overflow_without_output (__main__.ConversionTools.test_steam_rejects_message_and_word_overflow_without_output) ... ok\ntest_conflicting_reuse_is_rejected_in_both_orders (__main__.DuplicateMessageTests.test_conflicting_reuse_is_rejected_in_both_orders) ... ok\ntest_control_marker_difference_is_not_ignored (__main__.DuplicateMessageTests.test_control_marker_difference_is_not_ignored) ... ok\ntest_identical_reuse_and_different_spans (__main__.DuplicateMessageTests.test_identical_reuse_and_different_spans) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 1.974s\n\nOK\n"
+      },
+      {
+        "name": "exclusive-audit-0",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\invalid-audit-0.slf",
+          "gbk",
+          "--before-duplicate-fix",
+          "--before-tournament-fix"
+        ],
+        "exit_code": 2,
+        "output": "usage: makemessage_j.py [-h] [-d]\n                        [--upstream-baseline | --before-tournament-fix | --before-duplicate-fix]\n                        gamepath saturnpath outputfile {gbk,big5}\nmakemessage_j.py: error: argument --before-tournament-fix: not allowed with argument --before-duplicate-fix\n"
+      },
+      {
+        "name": "exclusive-audit-1",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\invalid-audit-1.slf",
+          "gbk",
+          "--before-duplicate-fix",
+          "--upstream-baseline"
+        ],
+        "exit_code": 2,
+        "output": "usage: makemessage_j.py [-h] [-d]\n                        [--upstream-baseline | --before-tournament-fix | --before-duplicate-fix]\n                        gamepath saturnpath outputfile {gbk,big5}\nmakemessage_j.py: error: argument --upstream-baseline: not allowed with argument --before-duplicate-fix\n"
+      },
+      {
+        "name": "negative-conflict-restored",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_duplicate_messages.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\conflict-restored.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\conflict-restored-output"
+        ],
+        "exit_code": 1,
+        "output": "ERROR: Output differs outside the two acquisition bodies\n"
+      },
+      {
+        "name": "negative-lost-reused-block",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_duplicate_messages.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\lost-reused-block.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\lost-reused-block-output"
+        ],
+        "exit_code": 1,
+        "output": "ERROR: Output differs outside the two acquisition bodies\n"
+      },
+      {
+        "name": "negative-guard-changed",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_duplicate_messages.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\guard-changed.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\guard-changed-output"
+        ],
+        "exit_code": 1,
+        "output": "ERROR: Output differs outside the two acquisition bodies\n"
+      },
+      {
+        "name": "negative-issue3-changed",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_duplicate_messages.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\issue3-changed.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\issue3-changed-output"
+        ],
+        "exit_code": 1,
+        "output": "ERROR: Output differs outside the two acquisition bodies\n"
+      },
+      {
+        "name": "negative-issue4-changed",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_duplicate_messages.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\issue4-changed.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\issue4-changed-output"
+        ],
+        "exit_code": 1,
+        "output": "ERROR: Output differs outside the two acquisition bodies\n"
+      },
+      {
+        "name": "negative-extra-description",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_duplicate_messages.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\extra-description.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\extra-description-output"
+        ],
+        "exit_code": 1,
+        "output": "ERROR: Output differs outside the two acquisition bodies\n"
+      },
+      {
+        "name": "negative-canonical-anchor",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\canonical-anchor",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\canonical-anchor\\saturn",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\canonical-anchor.slf",
+          "gbk"
+        ],
+        "exit_code": 1,
+        "output": "MakeMessage Utility by SDLPal Team ver. 2026.08\nPython 3 adaption by PalAlexx, OPL3ChipFan and Palxex\nNow Processing, Please wait...\nNow Processing the MESSAGE Sections. Please wait...\nTraceback (most recent call last):\n  File \"D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py\", line 804, in <module>\n    main()\n  File \"D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py\", line 765, in main\n    raise ValueError(\"Issue #8 acquisition source differs; no output was written.\")\nValueError: Issue #8 acquisition source differs; no output was written.\n"
+      },
+      {
+        "name": "negative-unexpected-conflict",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\unexpected-conflict",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative\\unexpected-conflict.slf",
+          "gbk"
+        ],
+        "exit_code": 1,
+        "output": "MakeMessage Utility by SDLPal Team ver. 2026.08\nPython 3 adaption by PalAlexx, OPL3ChipFan and Palxex\nNow Processing, Please wait...\nNow Processing the MESSAGE Sections. Please wait...\nTraceback (most recent call last):\n  File \"D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py\", line 804, in <module>\n    main()\n  File \"D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py\", line 768, in main\n    check_message_body(seen_messages, key, first_script, jmessage)\n  File \"D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py\", line 71, in check_message_body\n    raise ValueError(\"Conflicting MESSAGE %d-%d at Win scripts %d/%d; no output was written.\"\nValueError: Conflicting MESSAGE 12353-12353 at Win scripts 37517/37523; no output was written.\n"
+      }
+    ],
+    "gui_commands": [
+      [
+        "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\GUI 日本語",
+        "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\gui.slf",
+        "gbk"
+      ]
+    ],
+    "gui_messages": [
+      "Checking resources...\n\n",
+      "PC Encoding: GBK\n\n",
+      "Found M.MSG\n",
+      "Found WORD.DAT\n",
+      "\nStarting generator...\n\n",
+      "MakeMessage Utility by SDLPal Team ver. 2026.08\n",
+      "Python 3 adaption by PalAlexx, OPL3ChipFan and Palxex\n",
+      "Now Processing, Please wait...\n",
+      "Now Processing the MESSAGE Sections. Please wait...\n",
+      "Issue #8: checked 4766 unique keys; acquisition text is independent of output order.\n",
+      "OK!\n",
+      "Original Dialog script count: 30715\n",
+      "\nFinished successfully.\n"
+    ],
+    "gui_callback_bytes_equal_cli": true,
+    "tk_window_opened": false,
+    "inputs_unchanged": {
+      "pc": {
+        "sss.mkf": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+          "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+          "bytes": 575270
+        },
+        "m.msg": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+          "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+          "bytes": 224983
+        },
+        "word.dat": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\WORD.DAT",
+          "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+          "bytes": 5650
+        }
+      },
+      "saturn": {
+        "JM.MSG": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+          "sha256": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+          "bytes": 309248
+        },
+        "JM.NOR": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+          "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+          "bytes": 65296
+        },
+        "JM.SEC": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+          "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+          "bytes": 308120
+        },
+        "PROG.BIN": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\PROG.BIN",
+          "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c",
+          "bytes": 411244
+        }
+      }
+    },
+    "before": {
+      "bytes": 1256198,
+      "sha256": "d15d7ad24eb16f33e56a4c993d8b5f995a4eb98438ee9bd98f2b498513ac2229",
+      "lf_sha256": "c2fb3ad19f91da5306074f66fde09c62aa049fb7a9bc0589575fde1dad520849",
+      "blocks": 4773,
+      "unique_keys": 4766
+    },
+    "after": {
+      "bytes": 1256198,
+      "sha256": "b8657971f4962b25e8a8f9a15c4b9d26ddf52e1d18408ab259b2f932b59f2f87",
+      "lf_sha256": "a1012dbd24be730118274c56b87d1ad2fd3b0ed689c8090f69badfaa55ec58b0",
+      "blocks": 4773,
+      "unique_keys": 4766
+    },
+    "adapted": {
+      "bytes": 1256198,
+      "sha256": "9fa24bc68726539a59e25d117178cb791c2e55c7242b2881bd663553b7971cc5",
+      "lf_sha256": "a47316c2d7780cb297da01538620cdd00f8eff394471e5b86c6b1dfb311b6189",
+      "blocks": 4773,
+      "unique_keys": 4766
+    },
+    "tool_test_count": 12,
+    "corrupted_slf_rejections": 6,
+    "converter_source_rejections": 2,
+    "new_audit_flag_exclusion_rejections": 2,
+    "source_hashes": {
+      "tools\\japanese\\makemessage_j.py": "d6257758809e206a2ecab267ce18c7538a9d70ad2a52c9f15a9e9cc50311f9dc",
+      "tools\\japanese\\verify_duplicate_messages.py": "c924e7248c8ff0f575820bef395b4b0524080705ed51ea42bd2b3f542571e91f",
+      "tests\\test_japanese_conversion_tools.py": "7f050dd0c0050b3dc98be29b4c53010daa8497d8b7d18b3e624a5dc7c5941ebc"
+    }
+  },
+  "render": {
+    "scope": "Source renderer/loader evidence; neutral background; no gameplay acceptance.",
+    "runtime_matches_original": [
+      {
+        "name": "ABC.mkf",
+        "sha256": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b"
+      },
+      {
+        "name": "BALL.MKF",
+        "sha256": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0"
+      },
+      {
+        "name": "DATA.MKF",
+        "sha256": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b"
+      },
+      {
+        "name": "F.MKF",
+        "sha256": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7"
+      },
+      {
+        "name": "FBP.MKF",
+        "sha256": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84"
+      },
+      {
+        "name": "FIRE.MKF",
+        "sha256": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf"
+      },
+      {
+        "name": "GOP.MKF",
+        "sha256": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b"
+      },
+      {
+        "name": "M.MSG",
+        "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c"
+      },
+      {
+        "name": "MAP.MKF",
+        "sha256": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575"
+      },
+      {
+        "name": "MGO.mkf",
+        "sha256": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0"
+      },
+      {
+        "name": "MUS.MKF",
+        "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+      },
+      {
+        "name": "PAT.MKF",
+        "sha256": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997"
+      },
+      {
+        "name": "RGM.MKF",
+        "sha256": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132"
+      },
+      {
+        "name": "RNG.MKF",
+        "sha256": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd"
+      },
+      {
+        "name": "SOUNDS.MKF",
+        "sha256": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01"
+      },
+      {
+        "name": "SSS.MKF",
+        "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c"
+      },
+      {
+        "name": "WORD.DAT",
+        "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+      }
+    ],
+    "runs": [
+      {
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\render-before",
+          "jp-duplicates-before"
+        ],
+        "exit_code": 0,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4766 mapped, 0 absent; 0 page waits; neutral source renders\nCaptured 2 acquisition windows during real timed waits\n",
+        "effective_text": {
+          "keys": 4766,
+          "entries": 17725,
+          "all_text_matches_last_file_occurrence": true,
+          "dump_sha256": "95fa7d55bdcaebe2a44e7bb72f387b7b486ddc02c30e4028c2d8fb0db6c50877"
+        },
+        "stage": "before",
+        "mapped": 4766,
+        "absent": 0,
+        "drawn": 6,
+        "pages": 6,
+        "bmp_count": 24,
+        "page_waits": 0,
+        "center_windows_captured_during_wait": 2
+      },
+      {
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\after.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\render-after",
+          "jp-duplicates"
+        ],
+        "exit_code": 0,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4766 mapped, 0 absent; 0 page waits; neutral source renders\nCaptured 2 acquisition windows during real timed waits\n",
+        "effective_text": {
+          "keys": 4766,
+          "entries": 17725,
+          "all_text_matches_last_file_occurrence": true,
+          "dump_sha256": "dfe2e028db065822dc7cd559a9a36a935c94be37dd67ff41f21486907cd5863f"
+        },
+        "stage": "after",
+        "mapped": 4766,
+        "absent": 0,
+        "drawn": 6,
+        "pages": 6,
+        "bmp_count": 24,
+        "page_waits": 0,
+        "center_windows_captured_during_wait": 2
+      }
+    ],
+    "glyph_checks": [
+      {
+        "stage": "before",
+        "key": [
+          4931,
+          4931
+        ],
+        "file": "dialogue-4931-page-1.bmp",
+        "lines": [
+          {
+            "text": "金がないなら話にならん！",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 569,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "key": [
+          4932,
+          4933
+        ],
+        "file": "dialogue-4932-page-1.bmp",
+        "lines": [
+          {
+            "text": "門衛：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 174,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          },
+          {
+            "text": "面会か？",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 108,
+            "characters": 4,
+            "ink": 238,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          },
+          {
+            "text": "１００文銭払う規則だ。",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 576,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "key": [
+          4934,
+          4935
+        ],
+        "file": "dialogue-4934-page-1.bmp",
+        "lines": [
+          {
+            "text": "門衛：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 174,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          },
+          {
+            "text": "どうぞ！",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 108,
+            "characters": 4,
+            "ink": 151,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "key": [
+          5107,
+          5108
+        ],
+        "file": "dialogue-5107-page-1.bmp",
+        "lines": [
+          {
+            "text": "巡査：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 183,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          },
+          {
+            "text": "長官の命令で、お二方は",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 586,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          },
+          {
+            "text": "城から出る事ができます。",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 652,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "key": [
+          12352,
+          12352
+        ],
+        "file": "dialogue-12352-page-1.bmp",
+        "lines": [
+          {
+            "text": "霊山の仙芝を摘む",
+            "left": 104,
+            "top": 50,
+            "right_exclusive": 232,
+            "characters": 8,
+            "ink": 533,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": true
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "key": [
+          12368,
+          12368
+        ],
+        "file": "dialogue-12368-page-1.bmp",
+        "lines": [
+          {
+            "text": "銀杏の種を摘む",
+            "left": 112,
+            "top": 50,
+            "right_exclusive": 224,
+            "characters": 7,
+            "ink": 538,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": true
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "key": [
+          4931,
+          4931
+        ],
+        "file": "dialogue-4931-page-1.bmp",
+        "lines": [
+          {
+            "text": "金がないなら話にならん！",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 569,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "key": [
+          4932,
+          4933
+        ],
+        "file": "dialogue-4932-page-1.bmp",
+        "lines": [
+          {
+            "text": "門衛：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 174,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          },
+          {
+            "text": "面会か？",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 108,
+            "characters": 4,
+            "ink": 238,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          },
+          {
+            "text": "１００文銭払う規則だ。",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 576,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "key": [
+          4934,
+          4935
+        ],
+        "file": "dialogue-4934-page-1.bmp",
+        "lines": [
+          {
+            "text": "門衛：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 174,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          },
+          {
+            "text": "どうぞ！",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 108,
+            "characters": 4,
+            "ink": 151,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "key": [
+          5107,
+          5108
+        ],
+        "file": "dialogue-5107-page-1.bmp",
+        "lines": [
+          {
+            "text": "巡査：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 183,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          },
+          {
+            "text": "長官の命令で、お二方は",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 586,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          },
+          {
+            "text": "城から出る事ができます。",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 652,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": false
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "key": [
+          12352,
+          12352
+        ],
+        "file": "dialogue-12352-page-1.bmp",
+        "lines": [
+          {
+            "text": "霊山の仙芝を獲得",
+            "left": 104,
+            "top": 50,
+            "right_exclusive": 232,
+            "characters": 8,
+            "ink": 593,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": true
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "key": [
+          12368,
+          12368
+        ],
+        "file": "dialogue-12368-page-1.bmp",
+        "lines": [
+          {
+            "text": "銀杏の種を獲得",
+            "left": 112,
+            "top": 50,
+            "right_exclusive": 224,
+            "characters": 7,
+            "ink": 598,
+            "missing_or_clipped_ink": 0,
+            "center_exact_black_mask_checked": true
+          }
+        ]
+      }
+    ],
+    "scales": [
+      {
+        "stage": "before",
+        "file": "dialogue-4931-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-4931-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-4931-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-4932-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-4932-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-4932-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-4934-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-4934-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-4934-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-5107-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-5107-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-5107-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-12352-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-12352-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-12352-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-12368-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-12368-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-12368-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-4931-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-4931-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-4931-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-4932-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-4932-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-4932-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-4934-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-4934-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-4934-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-5107-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-5107-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-5107-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-12352-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-12352-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-12352-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-12368-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-12368-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-12368-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      }
+    ],
+    "published_images": [
+      {
+        "file": "before-dialogue-4931-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "747b2ff43d14d41042de38a9493bd0703001cbf2221c834702f6df7c302e6439",
+        "sha256": "5e0ea46b42490c1833cb8adcd5e4a2aa386d8333e0f58b8575ba0deddd14fcca",
+        "bytes": 1437
+      },
+      {
+        "file": "before-dialogue-4932-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "248931953b35196b51811850f7026058a707051602d5f924d169c7b86ae02f65",
+        "sha256": "d4533270931f700886d95201f831800a5dda910aa411a5a63178fedcfe8041b7",
+        "bytes": 1901
+      },
+      {
+        "file": "before-dialogue-4934-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "7d17345f1ceeecd5a715e2b3702d2a076f8b240c66d5987ae8857b39d7e48eaf",
+        "sha256": "12e0b3620b3ec7a3c50af2375775b88dbbc912bffddd60180e8fc43dc3beaf3c",
+        "bytes": 1279
+      },
+      {
+        "file": "before-dialogue-5107-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "c29722485281a2f901d398c0c62f8423085b736a47b0aafa30a8ea3ed2f558bb",
+        "sha256": "1add7500d9c965bb00772361e13070487547f3d9cc7c172abd08c24b6d9c1b14",
+        "bytes": 2256
+      },
+      {
+        "file": "before-dialogue-12352-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "25f101dd8b9e38293c37675e2efd6adef88f1b007eccede6cfd0a7a64caabe95",
+        "sha256": "0801c938ec89b3634a2fc6138902aec9cf0dc9cd56d6be26026d80175af1085d",
+        "bytes": 2163
+      },
+      {
+        "file": "before-dialogue-12368-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "1bd2ca93b6badee2288e587cd7a29c6b5afbc225bdd4926a908d4c0ffc39256f",
+        "sha256": "04578350d88601738c6163a4f84ceb8f3d284736094429602654862fe1f9b078",
+        "bytes": 2180
+      },
+      {
+        "file": "after-dialogue-4931-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "747b2ff43d14d41042de38a9493bd0703001cbf2221c834702f6df7c302e6439",
+        "sha256": "5e0ea46b42490c1833cb8adcd5e4a2aa386d8333e0f58b8575ba0deddd14fcca",
+        "bytes": 1437
+      },
+      {
+        "file": "after-dialogue-4932-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "248931953b35196b51811850f7026058a707051602d5f924d169c7b86ae02f65",
+        "sha256": "d4533270931f700886d95201f831800a5dda910aa411a5a63178fedcfe8041b7",
+        "bytes": 1901
+      },
+      {
+        "file": "after-dialogue-4934-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "7d17345f1ceeecd5a715e2b3702d2a076f8b240c66d5987ae8857b39d7e48eaf",
+        "sha256": "12e0b3620b3ec7a3c50af2375775b88dbbc912bffddd60180e8fc43dc3beaf3c",
+        "bytes": 1279
+      },
+      {
+        "file": "after-dialogue-5107-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "c29722485281a2f901d398c0c62f8423085b736a47b0aafa30a8ea3ed2f558bb",
+        "sha256": "1add7500d9c965bb00772361e13070487547f3d9cc7c172abd08c24b6d9c1b14",
+        "bytes": 2256
+      },
+      {
+        "file": "after-dialogue-12352-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "9643c7edef19bb1b5d6f4a99be0823e3e6526cb3ce8faacb11f24e663625cc0d",
+        "sha256": "fc6872a9f27e59a426e5eab86896edb125c6ba1eac2ebb5cebbf44ac901527ae",
+        "bytes": 2198
+      },
+      {
+        "file": "after-dialogue-12368-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "ab4d12be5804fa64de2b9db6a8c4921576be6023580306a40bb61d6b1c0e39cd",
+        "sha256": "495ac4a4d0bd7b1c993e01b02cc46f8cffae29f675d96baf24c0d71343870d8e",
+        "bytes": 2205
+      }
+    ],
+    "pixel_changes": [
+      {
+        "key": [
+          4931,
+          4931
+        ],
+        "changed_bbox": null
+      },
+      {
+        "key": [
+          4932,
+          4933
+        ],
+        "changed_bbox": null
+      },
+      {
+        "key": [
+          4934,
+          4935
+        ],
+        "changed_bbox": null
+      },
+      {
+        "key": [
+          5107,
+          5108
+        ],
+        "changed_bbox": null
+      },
+      {
+        "key": [
+          12352,
+          12352
+        ],
+        "changed_bbox": [
+          200,
+          50,
+          232,
+          66
+        ]
+      },
+      {
+        "key": [
+          12368,
+          12368
+        ],
+        "changed_bbox": [
+          192,
+          50,
+          224,
+          66
+        ]
+      }
+    ],
+    "order_reversal_runs": [
+      {
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\before-reversed.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\render-before-reversed",
+          "jp-duplicates-before"
+        ],
+        "exit_code": 0,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4766 mapped, 0 absent; 0 page waits; neutral source renders\nCaptured 2 acquisition windows during real timed waits\n",
+        "effective_text": {
+          "keys": 4766,
+          "entries": 17725,
+          "all_text_matches_last_file_occurrence": true,
+          "dump_sha256": "dfe2e028db065822dc7cd559a9a36a935c94be37dd67ff41f21486907cd5863f"
+        },
+        "stage": "before",
+        "changed_effective_keys": [
+          [
+            12352,
+            12352
+          ],
+          [
+            12368,
+            12368
+          ]
+        ],
+        "after_all_text_and_selected_pixels_order_independent": false
+      },
+      {
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\after-reversed.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\render-after-reversed",
+          "jp-duplicates"
+        ],
+        "exit_code": 0,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4766 mapped, 0 absent; 0 page waits; neutral source renders\nCaptured 2 acquisition windows during real timed waits\n",
+        "effective_text": {
+          "keys": 4766,
+          "entries": 17725,
+          "all_text_matches_last_file_occurrence": true,
+          "dump_sha256": "dfe2e028db065822dc7cd559a9a36a935c94be37dd67ff41f21486907cd5863f"
+        },
+        "stage": "after",
+        "changed_effective_keys": [],
+        "after_all_text_and_selected_pixels_order_independent": true
+      }
+    ],
+    "issue4_render_regression": {
+      "command": [
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\build\\sdlpal.exe",
+        "--render-evidence",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\before.slf",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\regression-issue4",
+        "jp-npc"
+      ],
+      "exit_code": 0,
+      "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4766 mapped, 0 absent; 0 page waits; neutral source renders\n",
+      "bmp_count": 40,
+      "rgb_identical": true,
+      "csv_identical": true
+    },
+    "negative_render_runs": [
+      {
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\after.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative-render-truncated",
+          "jp-duplicates"
+        ],
+        "exit_code": 1,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nRender evidence failed: Incomplete recovery fixture coverage ()\n"
+      },
+      {
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\after.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\negative-render-duplicate",
+          "jp-duplicates"
+        ],
+        "exit_code": 1,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nRender evidence failed: Duplicate recovery fixture key ()\n"
+      }
+    ],
+    "binary_sha256": "26c72f31780ed7561dfd57837cce0ec8929827a908757fb3c443be7a044128ec",
+    "source_sha256": "a4cb877e42048ae70a630dfe41c51368413b9c1e4595502aa449a6f78970bfb5"
+  },
+  "build": {
+    "configuration": "Test/x64",
+    "toolchain": "VS2026 Community / v145 / Windows SDK10.0",
+    "exit_code": 0,
+    "existing_warnings": "Retained in build.log; no build errors.",
+    "log_sha256": "7c4111308283e49c5caf5a12bdf9c6edc5851d22fb6cda89ebd8e88f112671d1"
+  },
+  "source_hashes_local_bytes": {
+    "tools/japanese/makemessage_j.py": "d6257758809e206a2ecab267ce18c7538a9d70ad2a52c9f15a9e9cc50311f9dc",
+    "tools/japanese/verify_duplicate_messages.py": "c924e7248c8ff0f575820bef395b4b0524080705ed51ea42bd2b3f542571e91f",
+    "tests/render_evidence.cpp": "a4cb877e42048ae70a630dfe41c51368413b9c1e4595502aa449a6f78970bfb5",
+    "tests/test_japanese_conversion_tools.py": "7f050dd0c0050b3dc98be29b4c53010daa8497d8b7d18b3e624a5dc7c5941ebc",
+    "docs/evidence/issue-8-source-review.json": "cc39c3f9ba55b6a4f3f9a61703373b12c73de00248e17d67ce7050a829318e15",
+    "text.c": "b1c94c455d31b6183c861c0ebb342fc8fdd1d104117f20ac758ad506ff7534b6",
+    "script.c": "7aa9e238faa4f70cd8d0adc8f3a8d661bad4874e494ebdf5cb5fbd005a9f6b87"
+  },
+  "review": {
+    "independent_read_only_agent": "No blocking findings; source investigation plus static review, did not rerun tests.",
+    "main_agent": "Reviewed source-loader order, complete-byte delta, actual effective text and source-rendered images.",
+    "boundary": "Neutral scene background. Acquisition capture occurs during real timed wait, ended by test input; not a full 1.4-second timeout or gameplay acceptance.",
+    "gameplay_acceptance": "Pending unified user acceptance after all issues are implemented."
+  }
+}
