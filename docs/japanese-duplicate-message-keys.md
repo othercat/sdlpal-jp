@@ -95,7 +95,7 @@ PC、SAT 使用 [upstream.json](../tools/japanese/upstream.json) 的固定输入
 ```powershell
 $jpPython = Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe'
 & $jpPython -B -X utf8 tools\japanese\makemessage_j.py 'PC' 'SAT' 'OUT\before.slf' gbk --before-duplicate-fix
-& $jpPython -B -X utf8 tools\japanese\makemessage_j.py 'PC' 'SAT' 'OUT\after.slf' gbk
+& $jpPython -B -X utf8 tools\japanese\makemessage_j.py 'PC' 'SAT' 'OUT\after.slf' gbk --before-translation-fix
 & $jpPython -B -X utf8 tools\japanese\verify_duplicate_messages.py 'PC' 'SAT' 'OUT\before.slf' 'OUT\after.slf' 'OUT\verify'
 & $jpPython -B -X utf8 tests\test_japanese_conversion_tools.py -v
 & $jpPython -B -X utf8 tools\adapt_red_silkworm_description.py 'OUT\after.slf' 'OUT\after-adapted.slf'

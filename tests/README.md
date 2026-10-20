@@ -141,3 +141,18 @@ during the real timed wait, before the engine removes them. The other four use
 the reviewed upper/no-portrait default. Reversing all MESSAGE blocks in temporary
 inputs demonstrates the old last-occurrence behavior and the corrected
 order-independent text. See [source review, commands and comparisons](../docs/japanese-duplicate-message-keys.md).
+
+### Reviewed Japanese translations
+
+`verify_translations.py` checks 18 reviewed Win/Saturn groups, battle script
+anchors and source fingerprints. It reconstructs the complete expected file,
+preserving all non-target bytes, controls and the 4,766-key mapping.
+`--before-translation-fix` reproduces the post-#8 baseline for historical checks.
+
+Copy both generated CSV fixtures to the output directory and use
+`jp-translation-before` / `jp-translation`. The Test entry dumps all effective
+texts and renders five dialogue groups and nineteen real item/magic menus.
+The opening dream's `~40` already resets the line counter; its subsequent CLEAR
+does not require an extra key wait. Old modes retain their own fixture checks.
+The red-silkworm adapter accepts the reviewed, already fitting text unchanged.
+See [source decisions, comparisons and verification](../docs/japanese-translation-review.md).
