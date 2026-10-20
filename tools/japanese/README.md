@@ -8,7 +8,7 @@
 
 上游仓库与本仓采用 [GPL v3](../../LICENSE)，`rungui.py` 内保留 SDLPal Community contributors 的 GNU GPL 声明，`makemessage_j.py` 保留 SDLPal Team、PalAlexx、OPL3ChipFan、Palxex 的署名。两个 CLI 附件未单独声明更具体的许可证版本；本次不改写其声明，也不重新许可。游戏资源仍由用户本地提供。
 
-Agent 使用官方 CPython 3.11 的 `~/CodexTools/python`；三个脚本只依赖标准库，GUI 另外要求 Python 安装中包含 Tcl/Tk。当前映射表对应 Win 版，不能把生成文件当成 DOS 映射。
+Agent 使用官方 CPython 3.11 的 `~/CodexTools/python`；转换脚本只依赖标准库，GUI 另外要求 Python 安装中包含 Tcl/Tk，源码图校验／导出需要 Pillow。`makemessage_j.py` 的映射表对应 Win 版，DOS 使用独立的 `makemessage_dos.py`，两者不能混用。
 
 ## 审计：复现固定 Win 上游输出
 
@@ -24,7 +24,7 @@ Win 输入为 `SSS.MKF`、`M.MSG`、`WORD.DAT`，当前固定版本是 GBK 的 `
 
 ## 当前 CLI 与 GUI
 
-下面的直接 CLI 默认恢复 119 组遗漏，并将 #4 的 10 组错套对白替换为经过校读的 Win 原文补译（没有确认对应的土星原段）。它不包含 `verify_baseline.py` 的完整输入指纹和覆盖保护，输出路径需选择新的文件。恢复段首尾或 NPC 消息区间/脚本锚点不匹配时会中止。GUI 同样采用当前默认映射：
+下面的直接 CLI 默认恢复 119 组遗漏，并将 #4 的 10 组错套对白替换为经过校读的 Win 原文补译（没有确认对应的土星原段）。自 #7 起，CLI 也先检查固定 Win／土星输入指纹和 GBK 编码；DOS 和未审资源会停止。输出路径仍需选择新的文件，CLI 不提供完整的覆盖保护。恢复段首尾或 NPC 消息区间/脚本锚点不匹配时会中止。GUI 同样采用当前默认映射：
 
 ```powershell
 & (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\japanese\makemessage_j.py 'PC资源目录' '土星提取目录' '新的输出.slf' gbk
@@ -37,7 +37,17 @@ Win 输入为 `SSS.MKF`、`M.MSG`、`WORD.DAT`，当前固定版本是 GBK 的 `
 
 默认 CLI/GUI 也包含 [#6 的 18 组日译修订](../../docs/japanese-translation-review.md)：五组对白、三组物品、十组法术。逐组核对 Win/土星脚本、土星消息首尾和完整原文后替换；不匹配、重复目标或缺少目标均停止写入。源资源、人名、控制码与映射键不改。它是明确抽查条目的修正，不是全剧本审校。
 
-GUI 选择 PC 目录、土星目录、输出文件和 GBK/BIG5。工具路径已相对脚本自身解析，不要求特定工作目录；子进程统一 UTF-8 输出。资源准备失败会停止，不会继续启动生成器。GUI 准备阶段会在所选 PC 目录创建缺失的 `M.MSG`/`WORD.DAT`，应选择工作副本。它没有原子事务：词表失败时，消息文件可能已经生成。
+GUI 选择 PC 目录、土星目录、输出文件和编码；当前已审 Win 映射要求 GBK，选择 BIG5 会收到明确错误。工具路径已相对脚本自身解析，不要求特定工作目录；子进程统一 UTF-8 输出。资源准备失败会停止，不会继续启动生成器。GUI 准备阶段会在所选 PC 目录创建缺失的 `M.MSG`/`WORD.DAT`，应选择工作副本。它没有原子事务：词表失败时，消息文件可能已经生成。
+
+## PAL_DOS 独立入口
+
+DOS 按固定 CP950 资源生成，另需已审 Win 和土星资源复现共享译文。输出目录必须尚不存在且位于全部输入目录之外：
+
+```powershell
+& (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\japanese\makemessage_dos.py 'DOS资源目录' 'Win资源目录' '土星提取目录' '新的生成目录'
+```
+
+使用输出 `paljpn-dos.slf`；其中 4,476 键独立映射、5 条源标记显式保留，296 条描述使用十六进制对象 ID。新 Win/DOS 产物分别包含 `ResourceVersion=WIN95`／`DOS`，加载错版会被引擎拒绝；旧的无标签文件继续兼容，没有此保护。`audit-wrong-win.slf` 仅供错误映射的源码对照。完整说明、来源表和验证命令见 [#7 文档](../../docs/japanese-dos-mapping.md)。
 
 ## Steam 文本入口
 
@@ -72,7 +82,7 @@ $jpPython = Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe'
 
 三个校验器的 `recovery-fixtures.csv` 均检查全部 4,766 个引擎键；#3 使用 `jp-recovery-before` / `jp-recovery`，#4 使用 `jp-npc-before` / `jp-npc`，#8 使用 `jp-duplicates-before` / `jp-duplicates`。夹具、历史 SLF 与模式须对应。详情见 [#3 恢复记录](../../docs/japanese-missing-dialogues.md)、[#4 NPC 记录](../../docs/japanese-tournament-npc-dialogues.md)及 [#8 重复键记录](../../docs/japanese-duplicate-message-keys.md)。
 
-第四个校验器保护 #6 修订以外的全部字节，并核对源码、原资源、控制码及战斗说明证据。它生成全键 `recovery-fixtures.csv` 和 `translation-objects.csv`；两者放入出图目录，使用 `jp-translation-before` / `jp-translation`，输出五组对白、十九个菜单及全部有效正文。
+第四个校验器保护 #6 修订以外的全部字节，仅允许 #7 在 SETTING 起点新增唯一的 Win 版本标签；它不会统一换行后忽略其他字节变化。还会核对源码、原资源、控制码及战斗说明证据，并生成全键 `recovery-fixtures.csv` 和 `translation-objects.csv`；两者放入出图目录，使用 `jp-translation-before` / `jp-translation`，输出五组对白、十九个菜单及全部有效正文。
 
 当前 #6 赤血蚕新译已排成完整两行，可直接加载生成 SLF。旧历史输出仍可使用 #5 的换行适配器；适配器对受保护的新译原样通过，拒绝未审阅正文。下面的步骤对两种版本都适用：
 

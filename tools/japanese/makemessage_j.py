@@ -177,6 +177,11 @@ def main():
                        help='Reproduce post-Issue #8 output before Issue #6 corrections (audit only).')
     options = parser.parse_args()
 
+    # The mapping anchors are version-specific. Validate before opening output;
+    # DOS uses its independent table and CP950 input, never the Win index space.
+    from resource_version import checked_win_inputs, TAG
+    checked_win_inputs(options.gamepath, options.saturnpath, options.pcencoding)
+
     options.encoding = "shift_jis"
     options.wordwidth = 16
     options.comment = True
@@ -866,6 +871,8 @@ def main():
     if correct_duplicates:
         print("Issue #8: checked %d unique keys; acquisition text is independent of output order."
               % len(seen_messages))
+    if correct_translations:
+        output = output.replace("[BEGIN SETTING]\n", "[BEGIN SETTING]\n" + TAG, 1)
     try:
         import io
         with io.open(options.outputfile, "w", encoding="utf-8", errors="ignore") as f:

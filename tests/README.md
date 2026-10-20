@@ -95,6 +95,19 @@ definitions with substituted Tk controls; no GUI window is created.
 See the [resource-backed baseline and source-load evidence](../docs/japanese-conversion-baseline.md)
 for the separate full Win conversion and deferred unified acceptance.
 
+### DOS Japanese mapping
+
+`tests/test_dos_mapping.py` checks independent DOS identities, explicit source
+markers, raw script/text drift, and failure without overwriting an existing
+file. The C++ `DescriptionLayout` tests also check both incompatible resource
+directions before loading and hexadecimal DOS object-description keys.
+
+`tools/japanese/verify_dos_rendering.py` runs the Test-only `dos-before`, `dos`,
+and `dos-layout-before` modes plus both wrong-version rejection cases. It
+compares all 4,476 actual engine lookups and 296 descriptions, probes overflow,
+checks real menu ink, and exports opaque RGB PNGs. See the
+[resource inputs, commands and acceptance boundary](../docs/japanese-dos-mapping.md).
+
 ### Restored Japanese dialogue mappings
 
 `tools/japanese/verify_restored_dialogues.py` reads the pinned raw Win/Saturn

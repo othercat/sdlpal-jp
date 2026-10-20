@@ -1,0 +1,1361 @@
+{
+  "issue": 7,
+  "date": "2026-10-21",
+  "feature_baseline": "a0c33f7d80be2f02947ec5b747e6799beaa2b194",
+  "artifact_directory": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020",
+  "generation": {
+    "inputs": {
+      "dos": {
+        "SSS.MKF": {
+          "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+          "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c",
+          "bytes": 569640
+        },
+        "M.MSG": {
+          "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+          "sha256": "f6480a5095e8cc358ecb3e8329ca80996c6068c34327f2f86ec03375ad40b654",
+          "bytes": 212668
+        },
+        "WORD.DAT": {
+          "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\WORD.DAT",
+          "sha256": "856fd6649a3e5bf143af30281eb33b2c67b1f6776290ce9650b065b1f78f49bb",
+          "bytes": 5650
+        },
+        "DATA.MKF": {
+          "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\DATA.MKF",
+          "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a",
+          "bytes": 66418
+        }
+      },
+      "win": {
+        "sss.mkf": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+          "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+          "bytes": 575270
+        },
+        "m.msg": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+          "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+          "bytes": 224983
+        },
+        "word.dat": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\WORD.DAT",
+          "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+          "bytes": 5650
+        },
+        "DATA.MKF": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\DATA.MKF",
+          "sha256": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+          "bytes": 63978
+        }
+      },
+      "saturn": {
+        "JM.MSG": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+          "sha256": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+          "bytes": 309248
+        },
+        "JM.NOR": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+          "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+          "bytes": 65296
+        },
+        "JM.SEC": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+          "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+          "bytes": 308120
+        },
+        "PROG.BIN": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\PROG.BIN",
+          "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c",
+          "bytes": 411244
+        }
+      }
+    },
+    "inputs_unchanged": true,
+    "manifest_sha256": "9783e95ce632898674e27498b1e16de0127efe71543b37ce961331b4fbacf162",
+    "target": "DOS",
+    "dos_source_encoding": "CP950",
+    "decisions": {
+      "normalized-source-match": 3419,
+      "preserve-source-marker": 5,
+      "reviewed-source-variant": 252,
+      "orthographic-source-match": 799,
+      "dos-speaker": 1
+    },
+    "output": {
+      "bytes": 911683,
+      "sha256": "6bf198b3027bdf84f2668e2659ac6feefeb7b9c755963a84b0d596770b89da5d",
+      "lf_sha256": "6bf198b3027bdf84f2668e2659ac6feefeb7b9c755963a84b0d596770b89da5d",
+      "blocks": 4476,
+      "unique_keys": 4476
+    },
+    "win_bridge": {
+      "bytes": 1256264,
+      "sha256": "6b9ee550403befc9f16171dacbdc6b2ab616460df8268626c2edf0ce648f8791",
+      "lf_sha256": "5672bfbfdbc913900b50e54af667c07dc11c1bb116216030b87359358c6e3b92",
+      "blocks": 4773,
+      "unique_keys": 4766
+    },
+    "win_body_lf_sha256": "0b034c2f16c77caa7b6bf9cc0958b4b846b103a13c8937c91270b8d317709f7c",
+    "win_text_unchanged": true,
+    "description_count": 296,
+    "dos_description_overrides": [
+      307,
+      308
+    ],
+    "word_identity_slots": 565,
+    "runtime_group_count": 4476,
+    "dialogue_render_groups": 8,
+    "wrong_win_keys_present": 331,
+    "gameplay_acceptance": "Pending unified user acceptance; source rendering is separate."
+  },
+  "rendering": {
+    "scope": "Source engine lookup/rendering only; no game route or interactive acceptance.",
+    "executable_sha256": "9ec63d25e64b3aa97c6614816285ccb8e76f357b83165192c277f445c777c5b3",
+    "generation_sha256": "c764d3234d2ad7a19724fdd95c5b9e1b95b192fb99faea8c30fa6a8e84e9dec5",
+    "resource_sha256": {
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\0.RPG": "d89aa4225aab9b4b81651597934c0325a8159e63310caaaa4787651ecc529653",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\ABC.MKF": "ef2920716b87b5bd0ecb184cbbcf8585512184bc0cbe4dfff07f8a4617f2af0b",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\BALL.MKF": "be8e7218ee21baf64eaa90ec9f27967544a1b0136ce490604ac5f6dedb22830b",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\DATA.MKF": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\F.MKF": "6fc9a9978dd06bee8e381c80e68683b6f3033c2aa40f61eb0e1a2194fc570f65",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\FBP.MKF": "f38d0243a4f635886f27324c2a44016e7ff46db2146c853ab8edda12b8d5652c",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\FIRE.MKF": "eab713c53b4236f4aeefd30239675d62e887f10bb576ce1950a5be5b0d7458dd",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\GOP.MKF": "dbb17aeb8fcef6e24232b05abb58d5e9acf06a868b73bc0dc6c9a9e955fffb9c",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG": "f6480a5095e8cc358ecb3e8329ca80996c6068c34327f2f86ec03375ad40b654",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\MAP.MKF": "a40f22319d70a97a8871dfc85494c2d28e793c1e10d752734ab8f61704355066",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\MGO.MKF": "a9f9fc0ceeccb354906a96eaf6003f9c7ece8db6789856144201d926f5ff76b1",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\MIDI.MKF": "70587d762bdcea0a6e07f0f13808993045a6f382c713f0ad81793a7f6991f913",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\MUS.MKF": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\PAT.MKF": "78b08ef4c4630b703c714da25ab6482d4524a577c56c9554a369bbf30cc67eab",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\RGM.MKF": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\RNG.MKF": "226a7932b94548071ecfb6274ac069f890ea347aef99c79c72b69655457310a3",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SETUP.DAT": "b68ac0a6a1bdc8909811cdd0d1a7ee4d0666e1eb3a26e74bae37b88f8174ed5d",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\VOC.MKF": "c6e14eaaff50979df269b7d6d5f7401cb354be38e3ad737e4ca3ec473c1c5ab3",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\WOR16.ASC": "d28985aee96b96981be1542172f6f32509541dec325163e857cd677f56dad8f9",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\wor16.FON": "2631bfa2b70333ad85d6e32edf7dedb5e888a3d34ee31f0f2da3f7d8599cd5e3",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\WORD.DAT": "856fd6649a3e5bf143af30281eb33b2c67b1f6776290ce9650b065b1f78f49bb",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\1.rpg": "9d19a620534b7108fdb77b641456fdf362c3764f9f6ae7cf8b816243c4ae4318",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\ABC.mkf": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\BALL.MKF": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\DATA.MKF": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\F.MKF": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\FBP.MKF": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\FIRE.MKF": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\GOP.MKF": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\M.MSG": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\MAP.MKF": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\MGO.mkf": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\MUS.MKF": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\PAT.MKF": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\RGM.MKF": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\RNG.MKF": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\SOUNDS.MKF": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\SSS.MKF": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\WORD.DAT": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+    },
+    "resources_unchanged": true,
+    "runs": [
+      {
+        "name": "wrong-win",
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS/",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\generated-final\\audit-wrong-win.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\render\\wrong-win",
+          "dos-before"
+        ],
+        "exit_code": 0,
+        "log": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 331 mapped, 4145 absent; 0 page waits; neutral source renders\n"
+      },
+      {
+        "name": "dos",
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS/",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\generated-final\\paljpn-dos.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\render\\dos",
+          "dos"
+        ],
+        "exit_code": 0,
+        "log": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4476 mapped, 0 absent; 2 page waits; neutral source renders\nDOS descriptions: 296 lookups/probes, 10 source-rendered menus\n"
+      },
+      {
+        "name": "old-layout",
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS/",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\generated-final\\paljpn-dos.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\render\\old-layout",
+          "dos-layout-before"
+        ],
+        "exit_code": 0,
+        "log": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nDOS descriptions: 296 lookups/probes, 10 source-rendered menus\n"
+      },
+      {
+        "name": "reject-win-on-dos",
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS/",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\generated-final\\paljpn-win.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\render\\reject-win-on-dos",
+          "dos"
+        ],
+        "exit_code": 1,
+        "log": "Render evidence failed: Cannot load game text ()\n"
+      },
+      {
+        "name": "reject-dos-on-win",
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime/",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\generated-final\\paljpn-dos.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\render\\reject-dos-on-win",
+          "jp-translation"
+        ],
+        "exit_code": 1,
+        "log": "Render evidence failed: Cannot load game text ()\n"
+      }
+    ],
+    "dos_keys": 4476,
+    "dos_entries": 16932,
+    "all_effective_text_matches": true,
+    "wrong_win_present": 331,
+    "wrong_win_missing": 4145,
+    "descriptions": {
+      "dos": {
+        "objects": 296,
+        "drawn": 10,
+        "overflow_ink": 0,
+        "clipped_objects": [],
+        "production_menu_ink_assertions": "passed for all 10 rendered menus"
+      },
+      "old-layout": {
+        "objects": 296,
+        "drawn": 10,
+        "overflow_ink": 163,
+        "clipped_objects": [
+          306,
+          370,
+          374,
+          377,
+          394
+        ],
+        "production_menu_ink_assertions": "passed for all 10 rendered menus"
+      }
+    },
+    "images": [
+      {
+        "file": "png/wrong-win-dialogue-0-page-1.png",
+        "sha256": "ca91716dfeadd4f97f009ec611430da6bf1cd348f1202a8891aae0c9576d37cd",
+        "bytes": 1534,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 2,
+        "repository_path": "docs/images/dos-mapping/wrong-win-dialogue-0-page-1.png"
+      },
+      {
+        "file": "png/wrong-win-dialogue-1741-page-1.png",
+        "sha256": "e3a73e60a838c1fd29e586e0d54dba6794247dc44cee0d64838ce78e583bbae9",
+        "bytes": 7401,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 75,
+        "repository_path": "docs/images/dos-mapping/wrong-win-dialogue-1741-page-1.png"
+      },
+      {
+        "file": "png/wrong-win-dialogue-3296-page-1.png",
+        "sha256": "59e37ddc8fadf6a782a1d9cdaaba1dc4ebe50e61afb82f89195bb12585f94691",
+        "bytes": 1282,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 3,
+        "repository_path": "docs/images/dos-mapping/wrong-win-dialogue-3296-page-1.png"
+      },
+      {
+        "file": "png/wrong-win-dialogue-434-page-1.png",
+        "sha256": "7fb046e75bcd4161c13288e4f21cb65b614562ff317d2f89341726b8f043442f",
+        "bytes": 9514,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 112,
+        "repository_path": "docs/images/dos-mapping/wrong-win-dialogue-434-page-1.png"
+      },
+      {
+        "file": "png/wrong-win-dialogue-585-page-1.png",
+        "sha256": "eccad29bf3e3c27e4f959dfdb498c46c0418a316dee1f6b9b8daad1d67d4ba04",
+        "bytes": 824,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 1,
+        "repository_path": "docs/images/dos-mapping/wrong-win-dialogue-585-page-1.png"
+      },
+      {
+        "file": "png/wrong-win-dialogue-5966-page-1.png",
+        "sha256": "eccad29bf3e3c27e4f959dfdb498c46c0418a316dee1f6b9b8daad1d67d4ba04",
+        "bytes": 824,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 1,
+        "repository_path": "docs/images/dos-mapping/wrong-win-dialogue-5966-page-1.png"
+      },
+      {
+        "file": "png/wrong-win-dialogue-9449-page-1.png",
+        "sha256": "1ab251f4d8ec901c96bf27d28e3ab68396f5c58e10114aeb4f05e5df7dd6fc25",
+        "bytes": 7053,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 84,
+        "repository_path": "docs/images/dos-mapping/wrong-win-dialogue-9449-page-1.png"
+      },
+      {
+        "file": "png/wrong-win-dialogue-9789-page-1.png",
+        "sha256": "3a60d46203d3a275b8d9dba12f6816c4702fb721573a270f8f9a0819b93dd1a0",
+        "bytes": 10175,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 75,
+        "repository_path": "docs/images/dos-mapping/wrong-win-dialogue-9789-page-1.png"
+      },
+      {
+        "file": "png/dos-dialogue-0-page-1.png",
+        "sha256": "f2b003a21fcd6b3b278e0cdffd8ccb464c1933e9bc35bec5da424372d878d75b",
+        "bytes": 1313,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 2,
+        "repository_path": "docs/images/dos-mapping/dos-dialogue-0-page-1.png"
+      },
+      {
+        "file": "png/dos-dialogue-1741-page-1.png",
+        "sha256": "bb89a9f6c0ac342b82a17f8331e268cf4c74088a2bc1f1b5ac06c9747eab213c",
+        "bytes": 7989,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 77,
+        "repository_path": "docs/images/dos-mapping/dos-dialogue-1741-page-1.png"
+      },
+      {
+        "file": "png/dos-dialogue-3296-page-1.png",
+        "sha256": "722a35832d8992920549e51e9a344b9aabbd496bb281d5b048a881974f23f5a3",
+        "bytes": 1780,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 3,
+        "repository_path": "docs/images/dos-mapping/dos-dialogue-3296-page-1.png"
+      },
+      {
+        "file": "png/dos-dialogue-434-page-1.png",
+        "sha256": "9ab96101e1abec7bf31dd4bb44c410a4d780b2dec6108e81618324007e1cc25d",
+        "bytes": 9985,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 113,
+        "repository_path": "docs/images/dos-mapping/dos-dialogue-434-page-1.png"
+      },
+      {
+        "file": "png/dos-dialogue-585-page-1.png",
+        "sha256": "b9f3e32ae1efc6938b0e335317d2a4f88b75c6e5ac2b31812961ea2f42330d08",
+        "bytes": 1035,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 2,
+        "repository_path": "docs/images/dos-mapping/dos-dialogue-585-page-1.png"
+      },
+      {
+        "file": "png/dos-dialogue-5966-page-1.png",
+        "sha256": "466bc24c71add1b8fb99eb14bc9383394111b241b9c2511d11f24848bc7428bb",
+        "bytes": 1545,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 2,
+        "repository_path": "docs/images/dos-mapping/dos-dialogue-5966-page-1.png"
+      },
+      {
+        "file": "png/dos-dialogue-9449-page-1.png",
+        "sha256": "b4863241955f39baf39bb4929a60cb336145b6440e49a6efbd4b2fb23dff42c7",
+        "bytes": 9620,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 85,
+        "repository_path": "docs/images/dos-mapping/dos-dialogue-9449-page-1.png"
+      },
+      {
+        "file": "png/dos-dialogue-9449-page-2.png",
+        "sha256": "22764e15dd731fa1daa8ddc6a08cfa9c36f6ef64e2b4a37003bdc21b59c9530c",
+        "bytes": 9207,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 85,
+        "repository_path": "docs/images/dos-mapping/dos-dialogue-9449-page-2.png"
+      },
+      {
+        "file": "png/dos-dialogue-9449-page-3.png",
+        "sha256": "64522946fac8998340049fceea3971a517665f8d1df40d896244ffae0980bfd9",
+        "bytes": 8495,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 85,
+        "repository_path": "docs/images/dos-mapping/dos-dialogue-9449-page-3.png"
+      },
+      {
+        "file": "png/dos-dialogue-9789-page-1.png",
+        "sha256": "fa4a2fe89fd062b677440cb8a11e4b850e6bda035837ee2f97f8476bd2dbab7a",
+        "bytes": 11306,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 76,
+        "repository_path": "docs/images/dos-mapping/dos-dialogue-9789-page-1.png"
+      },
+      {
+        "file": "png/dos-item-149.png",
+        "sha256": "2af4d012d613455790821d64215492ce9316910ca2c9d7bc827029b78fc3b3c2",
+        "bytes": 19716,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 54,
+        "repository_path": "docs/images/dos-mapping/dos-item-149.png"
+      },
+      {
+        "file": "png/dos-item-270.png",
+        "sha256": "a0215a5eb5ba24f4d3c5fad901e06c51b831f36b606ac686f57ee71eca7bd0aa",
+        "bytes": 20302,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 62,
+        "repository_path": "docs/images/dos-mapping/dos-item-270.png"
+      },
+      {
+        "file": "png/dos-magic-306.png",
+        "sha256": "05a9566954ac222dcb81c84d880408c804358a39d5da7f3660132aa65f671101",
+        "bytes": 15896,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/dos-magic-306.png"
+      },
+      {
+        "file": "png/dos-magic-307.png",
+        "sha256": "ca35b1cf6d5d04be0606a936c295535e742ffbf804fb579942cb4d51b1f1ff6c",
+        "bytes": 15779,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/dos-magic-307.png"
+      },
+      {
+        "file": "png/dos-magic-308.png",
+        "sha256": "a1a191fd14b725550b91ccd1ecb800901e79e23cd44ad7d0a6ac6715b270f6be",
+        "bytes": 16416,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/dos-magic-308.png"
+      },
+      {
+        "file": "png/dos-magic-370.png",
+        "sha256": "689eb546e45076544ce10fb2b7bb088f39763d9605ed4ea07afb8de842d2a1df",
+        "bytes": 16124,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/dos-magic-370.png"
+      },
+      {
+        "file": "png/dos-magic-374.png",
+        "sha256": "4fbd37f158ed54e57bdd9c7e1f25fcf3d56fa6ff27d38e14629dd370b97f5c5d",
+        "bytes": 16709,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/dos-magic-374.png"
+      },
+      {
+        "file": "png/dos-magic-377.png",
+        "sha256": "80bfadf9179591357b3310f5ea12a09fde78b8a80538f15162d9b386ced11252",
+        "bytes": 16643,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/dos-magic-377.png"
+      },
+      {
+        "file": "png/dos-magic-384.png",
+        "sha256": "c3762e2dfb5330ee63238dca3ef0b0496602a8b946af8f1e95c0245edb57e516",
+        "bytes": 17621,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/dos-magic-384.png"
+      },
+      {
+        "file": "png/dos-magic-394.png",
+        "sha256": "afe5b369ff6f1af3de55468313dcb3d3105989d4e3e6a1a4e66bb1edcbfeae1a",
+        "bytes": 16986,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/dos-magic-394.png"
+      },
+      {
+        "file": "png/old-layout-item-149.png",
+        "sha256": "2af4d012d613455790821d64215492ce9316910ca2c9d7bc827029b78fc3b3c2",
+        "bytes": 19716,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 54,
+        "repository_path": "docs/images/dos-mapping/old-layout-item-149.png"
+      },
+      {
+        "file": "png/old-layout-item-270.png",
+        "sha256": "a0215a5eb5ba24f4d3c5fad901e06c51b831f36b606ac686f57ee71eca7bd0aa",
+        "bytes": 20302,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 62,
+        "repository_path": "docs/images/dos-mapping/old-layout-item-270.png"
+      },
+      {
+        "file": "png/old-layout-magic-306.png",
+        "sha256": "ecf1021476334a47a25e45c3729961fa0c9b2a7d2bafafe32637d95685ea14ca",
+        "bytes": 15868,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/old-layout-magic-306.png"
+      },
+      {
+        "file": "png/old-layout-magic-307.png",
+        "sha256": "7123dd8a9eecf840d7001bee35bba2d97568c4a2b62e8ca3e6c67746602c0c3c",
+        "bytes": 15787,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/old-layout-magic-307.png"
+      },
+      {
+        "file": "png/old-layout-magic-308.png",
+        "sha256": "348882e501ea3c4e512825167a801b115f63b68a396c43d5faf29e112961b9cc",
+        "bytes": 16435,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/old-layout-magic-308.png"
+      },
+      {
+        "file": "png/old-layout-magic-370.png",
+        "sha256": "428889cc6b83fb359082f0ab126788173c5862033efaf6ffa7e1bb216954d7f8",
+        "bytes": 16078,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/old-layout-magic-370.png"
+      },
+      {
+        "file": "png/old-layout-magic-374.png",
+        "sha256": "bf6f18b9e12796f219e479a0f33d1ea7e72023f847acd65095122fcf7c1fe16f",
+        "bytes": 16705,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/old-layout-magic-374.png"
+      },
+      {
+        "file": "png/old-layout-magic-377.png",
+        "sha256": "2a0f3e3cf8037731b63ca53f922a6cc10b0fc9d099a501b2e8ebfcb1cab7e2ca",
+        "bytes": 16604,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/old-layout-magic-377.png"
+      },
+      {
+        "file": "png/old-layout-magic-384.png",
+        "sha256": "8188cc3dec9d3d9c48f9f24f49af1bedd759cfcda7b3ab93c72dd45d8ac09356",
+        "bytes": 17619,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/old-layout-magic-384.png"
+      },
+      {
+        "file": "png/old-layout-magic-394.png",
+        "sha256": "7e653e0eec4bdf654b2f96811e5a90661e934f1a2d0d633297ee7f5f33ad6a4c",
+        "bytes": 16960,
+        "mode": "RGB",
+        "size": [
+          640,
+          400
+        ],
+        "unique_colors": 43,
+        "repository_path": "docs/images/dos-mapping/old-layout-magic-394.png"
+      }
+    ],
+    "scales": [
+      {
+        "stage": "wrong-win",
+        "stem": "dialogue-0-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "wrong-win",
+        "stem": "dialogue-1741-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "wrong-win",
+        "stem": "dialogue-3296-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "wrong-win",
+        "stem": "dialogue-434-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "wrong-win",
+        "stem": "dialogue-585-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "wrong-win",
+        "stem": "dialogue-5966-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "wrong-win",
+        "stem": "dialogue-9449-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "wrong-win",
+        "stem": "dialogue-9789-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "dialogue-0-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "dialogue-1741-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "dialogue-3296-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "dialogue-434-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "dialogue-585-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "dialogue-5966-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "dialogue-9449-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "dialogue-9449-page-2",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "dialogue-9449-page-3",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "dialogue-9789-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "item-149",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "item-270",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "magic-306",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "magic-307",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "magic-308",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "magic-370",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "magic-374",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "magic-377",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "magic-384",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "dos",
+        "stem": "magic-394",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "old-layout",
+        "stem": "item-149",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "old-layout",
+        "stem": "item-270",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "old-layout",
+        "stem": "magic-306",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "old-layout",
+        "stem": "magic-307",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "old-layout",
+        "stem": "magic-308",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "old-layout",
+        "stem": "magic-370",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "old-layout",
+        "stem": "magic-374",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "old-layout",
+        "stem": "magic-377",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "old-layout",
+        "stem": "magic-384",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      },
+      {
+        "stage": "old-layout",
+        "stem": "magic-394",
+        "2x_3x_exact": true,
+        "2_5x_dimensions": [
+          800,
+          500
+        ]
+      }
+    ]
+  },
+  "win_regression": {
+    "checks": [
+      {
+        "name": "upstream-baseline",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\final-checks\\upstream-baseline.slf",
+          "gbk",
+          "--upstream-baseline"
+        ],
+        "exit_code": 0
+      },
+      {
+        "name": "before-tournament-fix",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\final-checks\\before-tournament-fix.slf",
+          "gbk",
+          "--before-tournament-fix"
+        ],
+        "exit_code": 0
+      },
+      {
+        "name": "before-duplicate-fix",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\final-checks\\before-duplicate-fix.slf",
+          "gbk",
+          "--before-duplicate-fix"
+        ],
+        "exit_code": 0
+      },
+      {
+        "name": "before-translation-fix",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\final-checks\\before-translation-fix.slf",
+          "gbk",
+          "--before-translation-fix"
+        ],
+        "exit_code": 0
+      },
+      {
+        "name": "wrong-encoding",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\final-checks\\wrong-encoding.slf",
+          "big5"
+        ],
+        "exit_code": 1
+      },
+      {
+        "name": "dos-in-win",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\final-checks\\dos-in-win.slf",
+          "gbk"
+        ],
+        "exit_code": 1
+      },
+      {
+        "name": "win-in-dos",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_dos.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\final-checks\\win-in-dos"
+        ],
+        "exit_code": 1
+      },
+      {
+        "name": "dos-in-win-bridge",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_dos.py",
+          "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS",
+          "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\final-checks\\dos-in-win-bridge"
+        ],
+        "exit_code": 1
+      },
+      {
+        "name": "reject-unrelated-newline-mutation",
+        "result": "Output differs outside reviewed MESSAGE bodies"
+      },
+      {
+        "name": "real-gui-callback",
+        "commands": [
+          [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+            "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+            "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\final-checks\\gui-win.slf",
+            "gbk"
+          ]
+        ],
+        "same_bytes_as_cli_bridge": true,
+        "inputs_unchanged": true
+      },
+      {
+        "name": "win-render",
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime/",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\generated-final\\paljpn-win.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\final-checks\\win-render",
+          "jp-translation"
+        ],
+        "exit_code": 0
+      }
+    ],
+    "historical_slf_outputs_byte_equal": 4,
+    "win_engine_keys": 4766,
+    "win_engine_text_matches": true,
+    "win_render_images_pixel_equal_to_issue_6": [
+      "dialogue-1-page-1-640.bmp",
+      "dialogue-1-page-1-800.bmp",
+      "dialogue-1-page-1-960.bmp",
+      "dialogue-1-page-1.bmp",
+      "dialogue-1-page-2-640.bmp",
+      "dialogue-1-page-2-800.bmp",
+      "dialogue-1-page-2-960.bmp",
+      "dialogue-1-page-2.bmp",
+      "dialogue-12053-page-1-640.bmp",
+      "dialogue-12053-page-1-800.bmp",
+      "dialogue-12053-page-1-960.bmp",
+      "dialogue-12053-page-1.bmp",
+      "dialogue-9207-page-1-640.bmp",
+      "dialogue-9207-page-1-800.bmp",
+      "dialogue-9207-page-1-960.bmp",
+      "dialogue-9207-page-1.bmp",
+      "dialogue-9211-page-1-640.bmp",
+      "dialogue-9211-page-1-800.bmp",
+      "dialogue-9211-page-1-960.bmp",
+      "dialogue-9211-page-1.bmp",
+      "dialogue-9324-page-1-640.bmp",
+      "dialogue-9324-page-1-800.bmp",
+      "dialogue-9324-page-1-960.bmp",
+      "dialogue-9324-page-1.bmp",
+      "item-132-640.bmp",
+      "item-132-800.bmp",
+      "item-132-960.bmp",
+      "item-132.bmp",
+      "item-149-640.bmp",
+      "item-149-800.bmp",
+      "item-149-960.bmp",
+      "item-149.bmp",
+      "item-234-640.bmp",
+      "item-234-800.bmp",
+      "item-234-960.bmp",
+      "item-234.bmp",
+      "item-63-640.bmp",
+      "item-63-800.bmp",
+      "item-63-960.bmp",
+      "item-63.bmp",
+      "magic-303-640.bmp",
+      "magic-303-800.bmp",
+      "magic-303-960.bmp",
+      "magic-303.bmp",
+      "magic-305-640.bmp",
+      "magic-305-800.bmp",
+      "magic-305-960.bmp",
+      "magic-305.bmp",
+      "magic-306-640.bmp",
+      "magic-306-800.bmp",
+      "magic-306-960.bmp",
+      "magic-306.bmp",
+      "magic-307-640.bmp",
+      "magic-307-800.bmp",
+      "magic-307-960.bmp",
+      "magic-307.bmp",
+      "magic-308-640.bmp",
+      "magic-308-800.bmp",
+      "magic-308-960.bmp",
+      "magic-308.bmp",
+      "magic-309-640.bmp",
+      "magic-309-800.bmp",
+      "magic-309-960.bmp",
+      "magic-309.bmp",
+      "magic-310-640.bmp",
+      "magic-310-800.bmp",
+      "magic-310-960.bmp",
+      "magic-310.bmp",
+      "magic-311-640.bmp",
+      "magic-311-800.bmp",
+      "magic-311-960.bmp",
+      "magic-311.bmp",
+      "magic-370-640.bmp",
+      "magic-370-800.bmp",
+      "magic-370-960.bmp",
+      "magic-370.bmp",
+      "magic-374-640.bmp",
+      "magic-374-800.bmp",
+      "magic-374-960.bmp",
+      "magic-374.bmp",
+      "magic-377-640.bmp",
+      "magic-377-800.bmp",
+      "magic-377-960.bmp",
+      "magic-377.bmp",
+      "magic-384-640.bmp",
+      "magic-384-800.bmp",
+      "magic-384-960.bmp",
+      "magic-384.bmp",
+      "magic-390-640.bmp",
+      "magic-390-800.bmp",
+      "magic-390-960.bmp",
+      "magic-390.bmp",
+      "magic-393-640.bmp",
+      "magic-393-800.bmp",
+      "magic-393-960.bmp",
+      "magic-393.bmp",
+      "magic-394-640.bmp",
+      "magic-394-800.bmp",
+      "magic-394-960.bmp",
+      "magic-394.bmp"
+    ],
+    "negative_checks": 5,
+    "real_gui_matches_cli": true,
+    "python_unit_tests": {
+      "new": 4,
+      "existing": 13,
+      "passed": true
+    },
+    "cpp_tests_xml": "cpp-tests.xml",
+    "cpp_tests_passed": 5
+  },
+  "source_lf_sha256": {
+    "text.c": "3c1471e2202d6b1ea755ba4556fd6947086a372b507bced86c7eab63c5808241",
+    "magicmenu.c": "25c8ae0fe34b64be92b5342306159a6290405b62d192c4ef7104f5f7b89f1e8d",
+    "tests/render_evidence.cpp": "57d30033e6a1b2cde2731b8bf9401ef1e4f9ee1fab775fba597024c89c1696b0",
+    "tests/test_description_layout.cpp": "efc1d2ef132b6eb53cb971f1680dbac611d48159cccacf06c8677b5f34f7aab8",
+    "tests/test_dos_mapping.py": "49e0bfc889375cf74fb61ddbd188a3a61ca1d07d9fa848db1e0641545f951ac2",
+    "tools/japanese/makemessage_j.py": "5627a8b545f1e0cfb8d15e42b53f559c198321ebc4ee459eb17ea58fc2318c03",
+    "tools/japanese/makemessage_dos.py": "0782e0cf1cbeb3f5ceebf0b09bedbf6366b34542971ffcf4bcce3ab48bef87e6",
+    "tools/japanese/resource_version.py": "e72dae1d1dd710f18425f86a729ca104a32d14d603c97c92f0c3148c2d0c8027",
+    "tools/japanese/verify_translations.py": "090b6713472ba86c6762e196cdaf284f30bb061167dd5d2328ecb0778b52fe0c",
+    "tools/japanese/verify_dos_rendering.py": "a31db03e92c4f04c1d0be5bec452b6c49b52b3f0b28fa7bc331c680c26df3577",
+    "tools/japanese/dos-map.json": "810adfdc7b19e2021c690cd51e9f1026a8b967db241d7692fee2a93949033340",
+    "docs/evidence/issue-7-source-review.json": "df4a5d45ba690be1a833cc1aad69a63c0e8ce1f3bc71997222a99006690ca949",
+    "docs/evidence/issue-7-description-review.json": "f647a3d6d43d9dd864ec50c10bdb730cadf8e29eed44c7c13f0a6cf74be2b01d"
+  },
+  "cpp_tests": {
+    "command": "sdlpal.exe --gtest_output=xml:cpp-tests-final.xml",
+    "tests": 5,
+    "failures": 0,
+    "xml_sha256": "c55a4f23aecc82759f2bbe05e1e4edcdbdd68f9647d4588386b180105d1e58a5"
+  },
+  "independent_review": {
+    "scope": "Read-only descriptions/identity investigation and final source review",
+    "finding": "Resource-tag exception normalized unrelated line-ending changes",
+    "resolution": "Strictly remove only the tag bytes; negative first-comment newline mutation now rejected",
+    "unresolved_blocking_findings": []
+  },
+  "gameplay_acceptance": "Not run. Deferred to unified user acceptance after implementation; Issue remains open.",
+  "rollback": "Revert the recorded ordinary merge with -m 1, regenerate the corresponding SLF; source resources unchanged."
+}
