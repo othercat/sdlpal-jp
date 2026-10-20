@@ -4,6 +4,8 @@
 
 **119 组全部核对并补回，覆盖 290 个 Win 消息 ID，采用土星原文 362 条和 11 个 CLEAR 标记。** 原有 4,654 个块连同注释逐字节保留。全部子 Issue 实现与专项验证完成后，再由用户统一实机验收；本次没有进行游戏流程验收。
 
+后续 [#4 NPC 错配修正](japanese-tournament-npc-dialogues.md)只替换原有 10 组正文，完整保留本单恢复。下方历史复现命令使用 `--before-tournament-fix` 隔离 #4；当前默认输出及校验步骤见[工具用法](../tools/japanese/README.md)。
+
 ## R2：修正预览图完全透明（2026-10-20）
 
 R1 的 18 张 PNG 虽有正确的颜色像素，却全部带有值为 0 的 alpha 通道，因此在聊天和 Markdown 中显示为空白。此前只比对 RGB 和文件指纹，遗漏了透明度检查；问题来自导出程序。R1 的图片指纹保留在历史验证 JSON 中，不代表本页当前图片。
@@ -106,7 +108,7 @@ Win 全部消息缓冲区原本含 12 个 GBK 解码替代字符，核对工具�
 ```powershell
 $jpPython = Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe'
 & $jpPython -B -X utf8 tools\japanese\verify_baseline.py 'PC' 'SAT' 'OUT\before'
-& $jpPython -B -X utf8 tools\japanese\makemessage_j.py 'PC' 'SAT' 'OUT\after.slf' gbk
+& $jpPython -B -X utf8 tools\japanese\makemessage_j.py 'PC' 'SAT' 'OUT\after.slf' gbk --before-tournament-fix
 & $jpPython -B -X utf8 tools\japanese\verify_restored_dialogues.py 'PC' 'SAT' 'OUT\before\paljpn-win.slf' 'OUT\after.slf' 'OUT\verify'
 & $jpPython -B -X utf8 tests\test_japanese_conversion_tools.py -v
 ```

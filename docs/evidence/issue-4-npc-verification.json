@@ -1,0 +1,2651 @@
+{
+  "issue": 4,
+  "revision": "R1",
+  "date": "2026-10-20",
+  "base_commit": "74ba817f610e68bd6adff669404d4601e31b2442",
+  "branch": "richardli/fix/4-correct-tournament-npc-mappings",
+  "artifact_directory": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020",
+  "mapping": {
+    "scope": "Ten reviewed Win-based translations; source/engine checks, not gameplay acceptance.",
+    "inputs": {
+      "pc": {
+        "sss.mkf": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+          "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+          "bytes": 575270
+        },
+        "m.msg": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+          "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+          "bytes": 224983
+        },
+        "word.dat": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\WORD.DAT",
+          "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+          "bytes": 5650
+        }
+      },
+      "saturn": {
+        "JM.MSG": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+          "sha256": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+          "bytes": 309248
+        },
+        "JM.NOR": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+          "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+          "bytes": 65296
+        },
+        "JM.SEC": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+          "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+          "bytes": 308120
+        },
+        "PROG.BIN": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\PROG.BIN",
+          "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c",
+          "bytes": 411244
+        }
+      }
+    },
+    "inputs_unchanged": true,
+    "review_sha256": "328c4785dcbaf7d25a998aa7cd7cbe4133a56d12c0677551f510cdd54469ffa0",
+    "before": {
+      "bytes": 1256537,
+      "sha256": "01e0dbba260e6a13c02963d9542bb63171213a6979b475f6515c7c1cab524331",
+      "lf_sha256": "210f9e5772062c19b6af7e1f589288f2809c8d997dc9ed9d47780afad8c25027",
+      "blocks": 4773,
+      "unique_keys": 4766
+    },
+    "after": {
+      "bytes": 1256198,
+      "sha256": "d15d7ad24eb16f33e56a4c993d8b5f995a4eb98438ee9bd98f2b498513ac2229",
+      "lf_sha256": "c2fb3ad19f91da5306074f66fde09c62aa049fb7a9bc0589575fde1dad520849",
+      "blocks": 4773,
+      "unique_keys": 4766
+    },
+    "changed_keys": [
+      [
+        2714,
+        2715
+      ],
+      [
+        2716,
+        2717
+      ],
+      [
+        2718,
+        2719
+      ],
+      [
+        2720,
+        2722
+      ],
+      [
+        2723,
+        2726
+      ],
+      [
+        2860,
+        2861
+      ],
+      [
+        2862,
+        2863
+      ],
+      [
+        2864,
+        2867
+      ],
+      [
+        2868,
+        2871
+      ],
+      [
+        2872,
+        2874
+      ]
+    ],
+    "changed_win_ids": 28,
+    "unchanged_blocks": 4763,
+    "unchanged_unique_keys": 4756,
+    "all_other_bytes_unchanged": true,
+    "recovered_119_groups_unchanged": true,
+    "correct_original_npc_keys_unchanged": [
+      [
+        2555,
+        2558
+      ],
+      [
+        2559,
+        2563
+      ],
+      [
+        2564,
+        2566
+      ],
+      [
+        2567,
+        2570
+      ],
+      [
+        2571,
+        2574
+      ]
+    ],
+    "duplicates_unchanged": [
+      {
+        "key": [
+          4931,
+          4931
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          4932,
+          4933
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          4934,
+          4935
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          5107,
+          5108
+        ],
+        "count": 3,
+        "conflict": false
+      },
+      {
+        "key": [
+          12352,
+          12352
+        ],
+        "count": 2,
+        "conflict": true
+      },
+      {
+        "key": [
+          12368,
+          12368
+        ],
+        "count": 2,
+        "conflict": true
+      }
+    ],
+    "engine_fixture_keys": 4766,
+    "rendered_groups": 10
+  },
+  "conversion": {
+    "runs": [
+      {
+        "name": "upstream",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_baseline.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\upstream"
+        ],
+        "exit_code": 0,
+        "output": "PASS: 4654 message blocks, 4647 unique keys; inputs unchanged\n"
+      },
+      {
+        "name": "before-reproduced",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\before-reproduced.slf",
+          "gbk",
+          "--before-tournament-fix"
+        ],
+        "exit_code": 0,
+        "output": "MakeMessage Utility by SDLPal Team ver. 2026.08\nPython 3 adaption by PalAlexx, OPL3ChipFan and Palxex\nNow Processing, Please wait...\nNow Processing the MESSAGE Sections. Please wait...\nOK!\nOriginal Dialog script count: 30715\n"
+      },
+      {
+        "name": "after",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\after.slf",
+          "gbk"
+        ],
+        "exit_code": 0,
+        "output": "MakeMessage Utility by SDLPal Team ver. 2026.08\nPython 3 adaption by PalAlexx, OPL3ChipFan and Palxex\nNow Processing, Please wait...\nNow Processing the MESSAGE Sections. Please wait...\nOK!\nOriginal Dialog script count: 30715\n"
+      },
+      {
+        "name": "issue3-regression",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_restored_dialogues.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\upstream\\paljpn-win.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\before-reproduced.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\verification-issue3"
+        ],
+        "exit_code": 0,
+        "output": "PASS: 119 groups restored; 119 -> 0 missing; original blocks/conflicts unchanged\n"
+      },
+      {
+        "name": "issue4-verification",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_tournament_dialogues.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\after.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\verification"
+        ],
+        "exit_code": 0,
+        "output": "PASS: 10 corrected groups; 4763 other blocks and all other bytes unchanged\n"
+      },
+      {
+        "name": "adapter",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\adapt_red_silkworm_description.py",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\after.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\after-adapted.slf"
+        ],
+        "exit_code": 0,
+        "output": "{\n  \"message_range\": [\n    12920,\n    12921\n  ],\n  \"changed\": true,\n  \"input_sha256\": \"d15d7ad24eb16f33e56a4c993d8b5f995a4eb98438ee9bd98f2b498513ac2229\",\n  \"output_sha256\": \"d6abc90ed3c32b6d289f65ef1b35a90873187f9f6498ad7b03e2de7a167aeae8\"\n}\n"
+      },
+      {
+        "name": "tool-tests",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tests\\test_japanese_conversion_tools.py",
+          "-v"
+        ],
+        "exit_code": 0,
+        "output": "test_baseline_rejects_wrong_encoding_or_existing_output_without_writes (__main__.ConversionTools.test_baseline_rejects_wrong_encoding_or_existing_output_without_writes) ... ok\ntest_cli_help_and_invalid_encoding_or_mode (__main__.ConversionTools.test_cli_help_and_invalid_encoding_or_mode) ... ok\ntest_gui_missing_fields_do_not_launch_child (__main__.ConversionTools.test_gui_missing_fields_do_not_launch_child) ... ok\ntest_gui_prepares_resources_from_unrelated_working_directory (__main__.ConversionTools.test_gui_prepares_resources_from_unrelated_working_directory) ... ok\ntest_gui_stops_after_word_conversion_failure (__main__.ConversionTools.test_gui_stops_after_word_conversion_failure) ... ok\ntest_gui_stops_generation_when_resource_preparation_fails (__main__.ConversionTools.test_gui_stops_generation_when_resource_preparation_fails) ... ok\ntest_input_guard_rejects_dos_changed_and_missing_inputs (__main__.ConversionTools.test_input_guard_rejects_dos_changed_and_missing_inputs) ... ok\ntest_steam_all_modes_and_encodings (__main__.ConversionTools.test_steam_all_modes_and_encodings) ... ok\ntest_steam_rejects_message_and_word_overflow_without_output (__main__.ConversionTools.test_steam_rejects_message_and_word_overflow_without_output) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 1.948s\n\nOK\n"
+      },
+      {
+        "name": "exclusive-audit-flags",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\bad-flags.slf",
+          "gbk",
+          "--before-tournament-fix",
+          "--upstream-baseline"
+        ],
+        "exit_code": 2,
+        "output": "usage: makemessage_j.py [-h] [-d]\n                        [--upstream-baseline | --before-tournament-fix]\n                        gamepath saturnpath outputfile {gbk,big5}\nmakemessage_j.py: error: argument --upstream-baseline: not allowed with argument --before-tournament-fix\n"
+      },
+      {
+        "name": "negative-wrong-npc-text",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_tournament_dialogues.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\wrong-npc-text.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\wrong-npc-text-output"
+        ],
+        "exit_code": 1,
+        "output": "ERROR: Replacement differs: (2714, 2715)\n"
+      },
+      {
+        "name": "negative-missing-npc",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_tournament_dialogues.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\missing-npc.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\missing-npc-output"
+        ],
+        "exit_code": 1,
+        "output": "ERROR: Replacement differs: (2714, 2715)\n"
+      },
+      {
+        "name": "negative-correct-npc-changed",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_tournament_dialogues.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\correct-npc-changed.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\correct-npc-changed-output"
+        ],
+        "exit_code": 1,
+        "output": "ERROR: Correct original NPC changed: (2555, 2558)\n"
+      },
+      {
+        "name": "negative-issue3-changed",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_tournament_dialogues.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\issue3-changed.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\issue3-changed-output"
+        ],
+        "exit_code": 1,
+        "output": "ERROR: Output differs outside the ten reviewed MESSAGE body replacements\n"
+      },
+      {
+        "name": "negative-extra-descriptions",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_tournament_dialogues.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\extra-descriptions.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\extra-descriptions-output"
+        ],
+        "exit_code": 1,
+        "output": "ERROR: Output differs outside the ten reviewed MESSAGE body replacements\n"
+      },
+      {
+        "name": "negative-duplicate-npc",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_tournament_dialogues.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\duplicate-npc.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\duplicate-npc-output"
+        ],
+        "exit_code": 1,
+        "output": "ERROR: Output differs outside the ten reviewed MESSAGE body replacements\n"
+      },
+      {
+        "name": "negative-source-anchor",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\anchor-pc",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative\\bad-anchor.slf",
+          "gbk"
+        ],
+        "exit_code": 1,
+        "output": "MakeMessage Utility by SDLPal Team ver. 2026.08\nPython 3 adaption by PalAlexx, OPL3ChipFan and Palxex\nNow Processing, Please wait...\nNow Processing the MESSAGE Sections. Please wait...\nTraceback (most recent call last):\n  File \"D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py\", line 759, in <module>\n    main()\n  File \"D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py\", line 726, in main\n    raise ValueError(\"Issue #4 script anchors differ; no output was written.\")\nValueError: Issue #4 script anchors differ; no output was written.\n"
+      }
+    ],
+    "before_reproduction_byte_identical": true,
+    "gui_actual_callback_matches_cli": true,
+    "gui_commands": [
+      [
+        "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\GUI 日本語",
+        "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\gui.slf",
+        "gbk"
+      ]
+    ],
+    "gui_window_executed": false,
+    "negative_slf_cases": [
+      "wrong-npc-text",
+      "missing-npc",
+      "correct-npc-changed",
+      "issue3-changed",
+      "extra-descriptions",
+      "duplicate-npc"
+    ],
+    "corrupt_source_anchor_rejected_without_output": true,
+    "inputs_unchanged": true,
+    "after_sha256": "d15d7ad24eb16f33e56a4c993d8b5f995a4eb98438ee9bd98f2b498513ac2229",
+    "adapted_sha256": "d6abc90ed3c32b6d289f65ef1b35a90873187f9f6498ad7b03e2de7a167aeae8"
+  },
+  "render": {
+    "scope": "All ten NPC groups, source-rendered neutral background. No actual route or game acceptance.",
+    "runtime_matches_original": [
+      {
+        "name": "ABC.mkf",
+        "sha256": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b"
+      },
+      {
+        "name": "BALL.MKF",
+        "sha256": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0"
+      },
+      {
+        "name": "DATA.MKF",
+        "sha256": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b"
+      },
+      {
+        "name": "F.MKF",
+        "sha256": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7"
+      },
+      {
+        "name": "FBP.MKF",
+        "sha256": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84"
+      },
+      {
+        "name": "FIRE.MKF",
+        "sha256": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf"
+      },
+      {
+        "name": "GOP.MKF",
+        "sha256": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b"
+      },
+      {
+        "name": "M.MSG",
+        "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c"
+      },
+      {
+        "name": "MAP.MKF",
+        "sha256": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575"
+      },
+      {
+        "name": "MGO.mkf",
+        "sha256": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0"
+      },
+      {
+        "name": "MUS.MKF",
+        "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+      },
+      {
+        "name": "PAT.MKF",
+        "sha256": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997"
+      },
+      {
+        "name": "RGM.MKF",
+        "sha256": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132"
+      },
+      {
+        "name": "RNG.MKF",
+        "sha256": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd"
+      },
+      {
+        "name": "SOUNDS.MKF",
+        "sha256": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01"
+      },
+      {
+        "name": "SSS.MKF",
+        "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c"
+      },
+      {
+        "name": "WORD.DAT",
+        "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+      }
+    ],
+    "runs": [
+      {
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\before.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\render-before",
+          "jp-npc-before"
+        ],
+        "exit_code": 0,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4766 mapped, 0 absent; 2 page waits; neutral source renders\n",
+        "stage": "before",
+        "rows": 4766,
+        "mapped": 4766,
+        "absent": 0,
+        "drawn": 10,
+        "pages": 12,
+        "bmp_count": 48,
+        "page_waits": 2
+      },
+      {
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\after.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\render-after",
+          "jp-npc"
+        ],
+        "exit_code": 0,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4766 mapped, 0 absent; 0 page waits; neutral source renders\n",
+        "stage": "after",
+        "rows": 4766,
+        "mapped": 4766,
+        "absent": 0,
+        "drawn": 10,
+        "pages": 10,
+        "bmp_count": 40,
+        "page_waits": 0
+      }
+    ],
+    "glyph_checks": [
+      {
+        "stage": "before",
+        "file": "dialogue-2714-page-1.bmp",
+        "lines": [
+          {
+            "text": "書生：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 184,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "僕たった一人、",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 156,
+            "characters": 7,
+            "ink": 252,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "書生だから武術も知らない。",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 252,
+            "characters": 13,
+            "ink": 706,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "林家のお嬢様など、僕に",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 694,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "とってはたかねの花だ。",
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 469,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2716-page-1.bmp",
+        "lines": [
+          {
+            "text": "劉楚香（リュウソコウ）：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 204,
+            "characters": 12,
+            "ink": 516,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "俺の専門は「瞬間万化」。",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 720,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "天下一の軽業で、相手に",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 587,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "負けそうになった時に",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 204,
+            "characters": 10,
+            "ink": 463,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "逃げられる！",
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 140,
+            "characters": 6,
+            "ink": 295,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2716-page-2.bmp",
+        "lines": [
+          {
+            "text": "劉楚香（リュウソコウ）：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 204,
+            "characters": 12,
+            "ink": 516,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "真の男ならどんな状況に",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 625,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "でも対応できるのだ！",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 204,
+            "characters": 10,
+            "ink": 488,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2718-page-1.bmp",
+        "lines": [
+          {
+            "text": "拳師：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 193,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "何を見ておる？ばか者！",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 576,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "この手で斬り殺してやる！",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 569,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2720-page-1.bmp",
+        "lines": [
+          {
+            "text": "護院：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 203,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "お前、そんなに細くて風に",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 604,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "飛ばされそうじゃないか。",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 529,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "そんなんじゃ俺の相手には",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 623,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "ならん。",
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 108,
+            "characters": 4,
+            "ink": 136,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2723-page-1.bmp",
+        "lines": [
+          {
+            "text": "小僧：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 150,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "お客様、誤解しないで下さい。",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 268,
+            "characters": 14,
+            "ink": 700,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "僕はただ部屋の掃除をする",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 810,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "小僧です。",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 124,
+            "characters": 5,
+            "ink": 238,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2860-page-1.bmp",
+        "lines": [
+          {
+            "text": "書生：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 184,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "僕たった一人、",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 156,
+            "characters": 7,
+            "ink": 252,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "書生だから武術も知らない。",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 252,
+            "characters": 13,
+            "ink": 706,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "林家のお嬢様など、僕に",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 694,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "とってはたかねの花だ。",
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 469,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2862-page-1.bmp",
+        "lines": [
+          {
+            "text": "劉楚香（リュウソコウ）：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 204,
+            "characters": 12,
+            "ink": 516,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "俺の専門は「瞬間万化」。",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 720,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "天下一の軽業で、相手に",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 587,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "負けそうになった時に",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 204,
+            "characters": 10,
+            "ink": 463,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "逃げられる！",
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 140,
+            "characters": 6,
+            "ink": 295,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2862-page-2.bmp",
+        "lines": [
+          {
+            "text": "劉楚香（リュウソコウ）：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 204,
+            "characters": 12,
+            "ink": 516,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "真の男ならどんな状況に",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 625,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "でも対応できるのだ！",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 204,
+            "characters": 10,
+            "ink": 488,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2864-page-1.bmp",
+        "lines": [
+          {
+            "text": "拳師：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 193,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "何を見ておる？ばか者！",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 576,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "この手で斬り殺してやる！",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 569,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2868-page-1.bmp",
+        "lines": [
+          {
+            "text": "護院：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 203,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "お前、そんなに細くて風に",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 604,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "飛ばされそうじゃないか。",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 529,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "そんなんじゃ俺の相手には",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 623,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "ならん。",
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 108,
+            "characters": 4,
+            "ink": 136,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2872-page-1.bmp",
+        "lines": [
+          {
+            "text": "小僧：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 150,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "お客様、誤解しないで下さい。",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 268,
+            "characters": 14,
+            "ink": 700,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "僕はただ部屋の掃除をする",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 810,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "小僧です。",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 124,
+            "characters": 5,
+            "ink": 238,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2714-page-1.bmp",
+        "lines": [
+          {
+            "text": "林家の使用人：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 124,
+            "characters": 7,
+            "ink": 415,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "お嬢様、すごい！",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 172,
+            "characters": 8,
+            "ink": 390,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2716-page-1.bmp",
+        "lines": [
+          {
+            "text": "林家の使用人：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 124,
+            "characters": 7,
+            "ink": 415,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "あの男、ひどい腕前だな！",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 617,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2718-page-1.bmp",
+        "lines": [
+          {
+            "text": "林家の使用人：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 124,
+            "characters": 7,
+            "ink": 415,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "旦那様直伝の剣法は、",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 204,
+            "characters": 10,
+            "ink": 689,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "やはり見事だ！",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 156,
+            "characters": 7,
+            "ink": 365,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2720-page-1.bmp",
+        "lines": [
+          {
+            "text": "林家の使用人：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 124,
+            "characters": 7,
+            "ink": 415,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "あんなに張り切った若者たち、",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 268,
+            "characters": 14,
+            "ink": 687,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "気の毒になあ。",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 156,
+            "characters": 7,
+            "ink": 395,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "うちのお嬢様の相手には",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 681,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "まるでならないんだから。",
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 500,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2723-page-1.bmp",
+        "lines": [
+          {
+            "text": "林家の使用人：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 124,
+            "characters": 7,
+            "ink": 415,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "お嬢様、頑張れ！",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 172,
+            "characters": 8,
+            "ink": 518,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "あっ・・・いや、違うな。",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 370,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "毎回お嬢様が勝っていたら、",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 252,
+            "characters": 13,
+            "ink": 737,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "婿取り武術会はいつ決着がつくんだ？",
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 316,
+            "characters": 17,
+            "ink": 956,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2860-page-1.bmp",
+        "lines": [
+          {
+            "text": "観客：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 203,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "押すなよ！",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 124,
+            "characters": 5,
+            "ink": 234,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2862-page-1.bmp",
+        "lines": [
+          {
+            "text": "観客：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 203,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "林って女、えらく強いな！",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 493,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2864-page-1.bmp",
+        "lines": [
+          {
+            "text": "観客：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 203,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "林家のお嬢様は",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 156,
+            "characters": 7,
+            "ink": 523,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "じゃじゃ馬だとばかり聞いていたが、",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 316,
+            "characters": 17,
+            "ink": 727,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "今日見ると、武術の腕も",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 632,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "なかなかのものだな。",
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 204,
+            "characters": 10,
+            "ink": 448,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2868-page-1.bmp",
+        "lines": [
+          {
+            "text": "観客：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 203,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "林家の主、林天南の家伝の剣法は",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 284,
+            "characters": 15,
+            "ink": 964,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "さすが評判通りだな。",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 204,
+            "characters": 10,
+            "ink": 523,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "お嬢様もその技の七割を",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 735,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "すでに身につけているな。",
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 491,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2872-page-1.bmp",
+        "lines": [
+          {
+            "text": "観客：",
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60,
+            "characters": 3,
+            "ink": 203,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "台の上のあの男、",
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 172,
+            "characters": 8,
+            "ink": 420,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "足元がぐらついているな。",
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236,
+            "characters": 12,
+            "ink": 489,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "俺の見立てじゃ、百手も",
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 220,
+            "characters": 11,
+            "ink": 556,
+            "missing_or_clipped_ink": 0
+          },
+          {
+            "text": "交えぬうちに必ず負けるぞ。",
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 252,
+            "characters": 13,
+            "ink": 666,
+            "missing_or_clipped_ink": 0
+          }
+        ]
+      }
+    ],
+    "scales": [
+      {
+        "stage": "before",
+        "file": "dialogue-2714-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2714-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2714-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2716-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2716-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2716-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2716-page-2-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2716-page-2-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2716-page-2-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2718-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2718-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2718-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2720-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2720-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2720-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2723-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2723-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2723-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2860-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2860-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2860-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2862-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2862-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2862-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2862-page-2-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2862-page-2-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2862-page-2-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2864-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2864-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2864-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2868-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2868-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2868-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2872-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2872-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "before",
+        "file": "dialogue-2872-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2714-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2714-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2714-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2716-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2716-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2716-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2718-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2718-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2718-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2720-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2720-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2720-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2723-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2723-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2723-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2860-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2860-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2860-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2862-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2862-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2862-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2864-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2864-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2864-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2868-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2868-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2868-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2872-page-1-640.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2872-page-1-960.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      },
+      {
+        "stage": "after",
+        "file": "dialogue-2872-page-1-800.bmp",
+        "preserved_pixels": 64000,
+        "new_colors": 0,
+        "effective_alpha": [
+          255,
+          255
+        ]
+      }
+    ],
+    "published_images": [
+      {
+        "file": "before-dialogue-2714-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "1d5da92ce9bf3b4a0f72266a587fa95a9b483c2112317b0132a3df6c4be9f21a",
+        "sha256": "0ad4d5783fb6b1fadc01d89e3e0cf37866129f8efdceaba3efe2031c5e969336",
+        "bytes": 3260
+      },
+      {
+        "file": "before-dialogue-2716-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "7eafd938d68ad58436441addfb96e3420e75ad8c92c5b417992dcca5b61de059",
+        "sha256": "5ae6bfeb13b3ca6ec1a98969772f514c8846cf80fb9715eaa1781f9bb3f41506",
+        "bytes": 3331
+      },
+      {
+        "file": "before-dialogue-2716-page-2-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "26b3cb98a0060d849273105f9691409a231bbcfb76208c55c7e6cbc883ca5a48",
+        "sha256": "fa53b7a51a5d4301561cb30fbe59fb0c79ecef4c422500150c2aa0fa81817060",
+        "bytes": 2499
+      },
+      {
+        "file": "before-dialogue-2718-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "d46dcd074fb9fd3a5f9afc622d32a4f4e51ae99f14e07788d68da20dc5ef34ec",
+        "sha256": "04ee91b38edcfa793543263e4425520b401c5013a3a32b67d280bdfd8815b5c6",
+        "bytes": 2283
+      },
+      {
+        "file": "before-dialogue-2720-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "cfc3f55271e95cf90202e9d27019bac461fa8459e18bfe761ed6ad0cce50a6eb",
+        "sha256": "6c8e0e4a7e70f415342ded6a55cb1d7fd8c9188a6a82343ff94bee20de06345c",
+        "bytes": 3168
+      },
+      {
+        "file": "before-dialogue-2723-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "e88e571cbe413fc8368b01b797ecbf27684206b535963cfa7b0fc33011b7642b",
+        "sha256": "73822b26933895ee236f3ba16389c23390a0d04d7990f06cb59d269c393133e9",
+        "bytes": 2818
+      },
+      {
+        "file": "before-dialogue-2860-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "1d5da92ce9bf3b4a0f72266a587fa95a9b483c2112317b0132a3df6c4be9f21a",
+        "sha256": "0ad4d5783fb6b1fadc01d89e3e0cf37866129f8efdceaba3efe2031c5e969336",
+        "bytes": 3260
+      },
+      {
+        "file": "before-dialogue-2862-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "7eafd938d68ad58436441addfb96e3420e75ad8c92c5b417992dcca5b61de059",
+        "sha256": "5ae6bfeb13b3ca6ec1a98969772f514c8846cf80fb9715eaa1781f9bb3f41506",
+        "bytes": 3331
+      },
+      {
+        "file": "before-dialogue-2862-page-2-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "26b3cb98a0060d849273105f9691409a231bbcfb76208c55c7e6cbc883ca5a48",
+        "sha256": "fa53b7a51a5d4301561cb30fbe59fb0c79ecef4c422500150c2aa0fa81817060",
+        "bytes": 2499
+      },
+      {
+        "file": "before-dialogue-2864-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "d46dcd074fb9fd3a5f9afc622d32a4f4e51ae99f14e07788d68da20dc5ef34ec",
+        "sha256": "04ee91b38edcfa793543263e4425520b401c5013a3a32b67d280bdfd8815b5c6",
+        "bytes": 2283
+      },
+      {
+        "file": "before-dialogue-2868-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "cfc3f55271e95cf90202e9d27019bac461fa8459e18bfe761ed6ad0cce50a6eb",
+        "sha256": "6c8e0e4a7e70f415342ded6a55cb1d7fd8c9188a6a82343ff94bee20de06345c",
+        "bytes": 3168
+      },
+      {
+        "file": "before-dialogue-2872-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "e88e571cbe413fc8368b01b797ecbf27684206b535963cfa7b0fc33011b7642b",
+        "sha256": "73822b26933895ee236f3ba16389c23390a0d04d7990f06cb59d269c393133e9",
+        "bytes": 2818
+      },
+      {
+        "file": "after-dialogue-2714-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "e57c11d417e920d1917da561ef481ec453e4e83ac1c7fc6899d5974cde25533c",
+        "sha256": "0b92f3b991b9ca0c0fb82f8341ece28227ae600b550579b8dc71b16220b19800",
+        "bytes": 1781
+      },
+      {
+        "file": "after-dialogue-2716-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "2f4f25b630872006ddf9483454bff15e5288cc93076b5416dafc23385e44fc38",
+        "sha256": "135144a11a15d80d61bd632da26516d60e11399d1f3837ae535c8e53c8639e55",
+        "bytes": 1951
+      },
+      {
+        "file": "after-dialogue-2718-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "aa5a9788f935057765783eac5855f1b1cb2cb6a821e1014289586463ff9945a5",
+        "sha256": "b79da6e887b4fe3d89062d4675ba5d4a1a41b0770b41f5a584e9ccc26f7bf401",
+        "bytes": 2267
+      },
+      {
+        "file": "after-dialogue-2720-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "0986c35c0d25b977a685e61a9822a9dd4b92d04658e9f8faf7b83ac01c47bfa4",
+        "sha256": "c5743c6c977464d12a162aa1499679fd94b97b2739b266d1fc625d0e3f3e677b",
+        "bytes": 3579
+      },
+      {
+        "file": "after-dialogue-2723-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "8da52fa5d3977166d58642cf0751721b0e9b8f0903ae1899d1f9bd7b6c77102d",
+        "sha256": "ea0ea75799c9f5094bf8f9a16f1efc510e90cfaa693677bf22c551bc6c9f5fe2",
+        "bytes": 3927
+      },
+      {
+        "file": "after-dialogue-2860-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "6c7c87d4739997ad84bed5a4c855f76237022e5cf944d778bc03a7a88efe9b29",
+        "sha256": "fbbaab6eb693e95d9d0dc0b4ad4f7913264bcb0c65f687a9e4a5f69f7841935a",
+        "bytes": 1356
+      },
+      {
+        "file": "after-dialogue-2862-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "ff0a583179245e6a0961d99605c2267d7d8b0eec85531f0cdeb45f2201e26777",
+        "sha256": "49cbbbaf2320a14d6c68cc4afc146d2dfd66b06a89e574140256b20eea02a1ac",
+        "bytes": 1677
+      },
+      {
+        "file": "after-dialogue-2864-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "d34e9c039f90122a8e979c2cdacdd338deeca37c63b13c41fe27ec0d5ac034fa",
+        "sha256": "0122f3986a9cd35a4f473d7e65555720395120f741140101498373879a4edf1b",
+        "bytes": 3409
+      },
+      {
+        "file": "after-dialogue-2868-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "d2dfb36aee8b42ba50efd195d4088115c829a2add36181541a02f7ab78cf4dae",
+        "sha256": "364c2a4d6f5f15c94e0cd36a551f702849525c3241f17c3aa1a107399c5ef3dc",
+        "bytes": 3662
+      },
+      {
+        "file": "after-dialogue-2872-page-1-640.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "5aa3f18c41dfc0d48f0aba8abfc4c2dcc4c0350da908e215d947823cf976bbdd",
+        "sha256": "ccdfeea8e88cfce336744d74c2c14d1ef2f3705de2c4295dbc44650e50ef0b5d",
+        "bytes": 3223
+      }
+    ],
+    "pixel_changes": [
+      {
+        "first": 2714,
+        "page1_changed_bbox": [
+          12,
+          8,
+          240,
+          96
+        ]
+      },
+      {
+        "first": 2716,
+        "page1_changed_bbox": [
+          12,
+          8,
+          229,
+          96
+        ]
+      },
+      {
+        "first": 2718,
+        "page1_changed_bbox": [
+          12,
+          8,
+          229,
+          60
+        ]
+      },
+      {
+        "first": 2720,
+        "page1_changed_bbox": [
+          12,
+          8,
+          256,
+          96
+        ]
+      },
+      {
+        "first": 2723,
+        "page1_changed_bbox": [
+          12,
+          8,
+          313,
+          96
+        ]
+      },
+      {
+        "first": 2860,
+        "page1_changed_bbox": [
+          12,
+          8,
+          240,
+          96
+        ]
+      },
+      {
+        "first": 2862,
+        "page1_changed_bbox": [
+          12,
+          8,
+          229,
+          96
+        ]
+      },
+      {
+        "first": 2864,
+        "page1_changed_bbox": [
+          12,
+          8,
+          304,
+          96
+        ]
+      },
+      {
+        "first": 2868,
+        "page1_changed_bbox": [
+          12,
+          8,
+          283,
+          96
+        ]
+      },
+      {
+        "first": 2872,
+        "page1_changed_bbox": [
+          12,
+          8,
+          256,
+          96
+        ]
+      }
+    ],
+    "other_4756_engine_rows_unchanged": true,
+    "issue3_renderer_regression": {
+      "command": [
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\build\\sdlpal.exe",
+        "--render-evidence",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\after.slf",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\regression-issue3",
+        "jp-recovery"
+      ],
+      "exit_code": 0,
+      "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4766 mapped, 0 absent; 2 page waits; neutral source renders\n",
+      "bmp_count": 40,
+      "rgb_identical_to_issue3_r2": true,
+      "csv_byte_identical": true
+    },
+    "negative_render_runs": [
+      {
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\after.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative-render-truncated",
+          "jp-npc"
+        ],
+        "exit_code": 1,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nRender evidence failed: Incomplete recovery fixture coverage ()\n",
+        "case": "truncated"
+      },
+      {
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\after.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative-render-duplicate",
+          "jp-npc"
+        ],
+        "exit_code": 1,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nRender evidence failed: Duplicate recovery fixture key ()\n",
+        "case": "duplicate"
+      },
+      {
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\after.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\negative-render-no-drawn",
+          "jp-npc"
+        ],
+        "exit_code": 1,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nRender evidence failed: Incomplete recovery fixture coverage ()\n",
+        "case": "no-drawn"
+      }
+    ],
+    "binary_sha256": "3c9f37461d9b97f6653ebc9518ef54d7d1f28ca57851705675c175d7f87bdadc",
+    "source_sha256": "e820808173a1d96db54e07b917c440d4137c53a8fb1f0b0fef22ff92dfd34767"
+  },
+  "build": {
+    "configuration": "Test/x64",
+    "toolchain": "VS 2026 Community / v145 / Windows SDK10.0",
+    "exit_code": 0,
+    "existing_warnings": "Recorded in build.log; no build errors.",
+    "log_sha256": "3bc2b1733226bfdfc2b5bda6f701108bc364acc7b550a944ba238ef0c74d266a"
+  },
+  "source_hashes": {
+    "tools/japanese/makemessage_j.py": "3ae88b22b6f8d40c43c64498d8f9efcf62d11d95af3167d914813038abd82a55",
+    "tools/japanese/verify_tournament_dialogues.py": "ec2cbb1db32ce471649fd7a2103a11aaf3902dee24ea2f073aeef60163f86e95",
+    "tests/render_evidence.cpp": "e820808173a1d96db54e07b917c440d4137c53a8fb1f0b0fef22ff92dfd34767",
+    "docs/evidence/issue-4-dialogue-review.json": "328c4785dcbaf7d25a998aa7cd7cbe4133a56d12c0677551f510cdd54469ffa0"
+  },
+  "review": {
+    "read_only_second_agent": "No blocking findings after source/record/log review; did not rerun builds or pixel checks.",
+    "boundary": "mapping.rendered_groups counts prepared fixtures; actual successful drawing is recorded separately in render.runs.",
+    "gameplay_acceptance": "Deferred until all issues are implemented; user-owned. No actual route or native-speaker human signoff claimed."
+  }
+}

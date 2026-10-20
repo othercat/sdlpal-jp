@@ -1,0 +1,1101 @@
+{
+  "issue": 4,
+  "date": "2026-10-20",
+  "baseline": {
+    "commit": "74ba817f610e68bd6adff669404d4601e31b2442",
+    "command": [
+      "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\before-makemessage_j.py",
+      "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+      "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-4\\npc-mappings-r1-20261020\\before.slf",
+      "gbk"
+    ],
+    "source_sha256": "1dcda16b35c5222147cb2151aed16e2519b294219200b3be1b13c264d7850871",
+    "output_sha256": "01e0dbba260e6a13c02963d9542bb63171213a6979b475f6515c7c1cab524331"
+  },
+  "input_fingerprints": {
+    "pc": {
+      "sss.mkf": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+        "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+        "bytes": 575270
+      },
+      "m.msg": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+        "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+        "bytes": 224983
+      },
+      "word.dat": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\WORD.DAT",
+        "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+        "bytes": 5650
+      }
+    },
+    "saturn": {
+      "JM.MSG": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+        "sha256": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+        "bytes": 309248
+      },
+      "JM.NOR": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+        "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+        "bytes": 65296
+      },
+      "JM.SEC": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+        "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+        "bytes": 308120
+      },
+      "PROG.BIN": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\PROG.BIN",
+        "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c",
+        "bytes": 411244
+      }
+    }
+  },
+  "scope": "Ten Win NPC ranges (28 message IDs), scene33/map31, 17 event objects. New translations from Win; no confirmed equivalent Saturn event groups.",
+  "saturn_search": {
+    "message_count": 17171,
+    "read_group_count_suzhou": 185,
+    "read_message_range_additional": [
+      2954,
+      3201
+    ],
+    "method": "逐组阅读10组Win、5组错套日文、给定苏州段185组，补读报名街谈段；全文关键词及相邻行拼接检索，数字归一化后查七/7+分/割、百/100+手/招/合/撃。",
+    "conclusion": "没有找到可确认属于这10个事件的土星原段；不声称穷尽证明不存在。",
+    "near_matches_rejected": [
+      {
+        "ids": [
+          2954,
+          2955
+        ],
+        "text": [
+          "申込者（甲）：",
+          "ああ、押さないで！"
+        ],
+        "reason": "报名排队的申込者，不是场景33的观众。"
+      },
+      {
+        "ids": [
+          4598,
+          4599
+        ],
+        "text": [
+          "村人：",
+          "お、こいつ。押すなよ！"
+        ],
+        "reason": "村人对白，邻近尸变剧情，不是擂台观众。"
+      },
+      {
+        "ids": [
+          3519,
+          3520,
+          3521,
+          3522,
+          3523
+        ],
+        "text": [
+          "住民：",
+          "でもなあ、林の旦那の娘は",
+          "強いって有名だよ。",
+          "若いのに武術も達者で、",
+          "ちっとも女らしくない。"
+        ],
+        "reason": "住民介绍林家女儿武艺，不是这些比赛中评论。"
+      },
+      {
+        "ids": [
+          4067,
+          4068,
+          4069,
+          4070
+        ],
+        "text": [
+          "使用人：",
+          "婿殿のように",
+          "腕の立つお方でないと、",
+          "お嬢様には合いません。"
+        ],
+        "reason": "仆人称婿殿才配小姐，与当前原文阶段和语义不同。"
+      },
+      {
+        "ids": [
+          2999,
+          3000,
+          3001,
+          3002,
+          3003,
+          3004,
+          3005,
+          3006,
+          3007,
+          3008,
+          3009,
+          3010,
+          3011,
+          3012,
+          3013,
+          3014,
+          3015,
+          3016,
+          3017,
+          3018
+        ],
+        "text": [
+          "通行人（甲）：",
+          "おい、知ってるか？",
+          "今度の婿取り試合はきっと",
+          "勝負がつかないよ。",
+          "李逍遥：",
+          "どうして？",
+          "通行人（甲）：",
+          "というのはよ！",
+          "あの林家のお嬢様、",
+          "まだ小さい頃から代々伝わる",
+          "指剣法を習っていてよ、",
+          "１３歳の頃から全蘇州城の",
+          "中で彼女に勝った男は",
+          "誰もいないって事よ。",
+          "それに、林お嬢様はお目が",
+          "高いから、縁談を持ち出し",
+          "た男は何十人も",
+          "いたけどよ・・・",
+          "どいつもこいつも追い出さ",
+          "れてばかり。"
+        ],
+        "reason": "谈招亲难有结果及家传剑法，问答结构/说话者/正文不符。"
+      },
+      {
+        "ids": [
+          8648
+        ],
+        "text": [
+          "林家七剣法の秘伝を受けろ！"
+        ],
+        "reason": "林家七剣法是招式名称，不是七分真传。"
+      },
+      {
+        "ids": [
+          17053
+        ],
+        "text": [
+          "蘇州林家の家伝武芸。"
+        ],
+        "reason": "法术说明，不能作为七分真传对应台词。"
+      }
+    ]
+  },
+  "terminology_anchors": [
+    {
+      "id": 3604,
+      "text": "婿取り武術会が始まったよ。"
+    },
+    {
+      "id": 3961,
+      "text": "はい・・・旦那様！"
+    },
+    {
+      "id": 4076,
+      "text": "旦那様が客間でお待ちです。"
+    },
+    {
+      "id": 3184,
+      "text": "林家の旦那、林天南の"
+    }
+  ],
+  "render_basis": "text.c PAL_EndDialog defaults: upper dialogue, no portrait, title (12,8), body (44,26), row pitch18, four body lines/page; Japanese16px, UseISOFont=0.",
+  "pairs": [
+    {
+      "win": {
+        "script_start": 7685,
+        "script_end": 7686,
+        "ids": [
+          2714,
+          2715
+        ],
+        "text": [
+          "林家家仆：",
+          "小姐好厉害喔！"
+        ],
+        "sid": 2714,
+        "eid": 2715
+      },
+      "incorrect_saturn_source": {
+        "script_start": 8253,
+        "script_end": 8257,
+        "ids": [
+          3443,
+          3444,
+          3445,
+          3446,
+          3447
+        ],
+        "text": [
+          "書生：",
+          "僕たった一人、",
+          "書生だから武術も知らない。",
+          "林家のお嬢様など、僕に",
+          "とってはたかねの花だ。"
+        ],
+        "sid": 3443,
+        "eid": 3447
+      },
+      "valid_win_uses_of_same_saturn_text": [
+        [
+          2555,
+          2558
+        ]
+      ],
+      "event_context": [
+        {
+          "event": 553,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 848,
+          "y": 600,
+          "layer": 0,
+          "trigger": 7685,
+          "auto": 35639,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 125
+        }
+      ],
+      "render_command": {
+        "script": null,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Event trigger enters FFFF directly; PAL_EndDialog defaults to upper/no portrait. No unrelated preceding dialogue command is inherited."
+      },
+      "translation_source": "new_translation_from_win",
+      "replacement": [
+        "林家の使用人：",
+        "お嬢様、すごい！"
+      ],
+      "semantic_review": "保留对小姐的直接赞叹，不额外增加胜负结论。",
+      "plot_phase": "场景33/地图31的比武进行中评论；静态事件入口及原文依据，不是存档实测。",
+      "language_review": "主 agent 与独立只读 agent 完成语义、日语表达、土星术语和分行校读；未声称真人日语审校或实机通过。"
+    },
+    {
+      "win": {
+        "script_start": 7688,
+        "script_end": 7689,
+        "ids": [
+          2716,
+          2717
+        ],
+        "text": [
+          "林家家仆：",
+          "这男的功夫好菜！"
+        ],
+        "sid": 2716,
+        "eid": 2717
+      },
+      "incorrect_saturn_source": {
+        "script_start": 8259,
+        "script_end": 8265,
+        "ids": [
+          3448,
+          3449,
+          3450,
+          3451,
+          3452,
+          3453,
+          3454
+        ],
+        "text": [
+          "劉楚香（リュウソコウ）：",
+          "俺の専門は「瞬間万化」。",
+          "天下一の軽業で、相手に",
+          "負けそうになった時に",
+          "逃げられる！",
+          "真の男ならどんな状況に",
+          "でも対応できるのだ！"
+        ],
+        "sid": 3448,
+        "eid": 3454
+      },
+      "valid_win_uses_of_same_saturn_text": [
+        [
+          2559,
+          2563
+        ]
+      ],
+      "event_context": [
+        {
+          "event": 554,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 832,
+          "y": 608,
+          "layer": 0,
+          "trigger": 7688,
+          "auto": 35639,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 142
+        }
+      ],
+      "render_command": {
+        "script": null,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Event trigger enters FFFF directly; PAL_EndDialog defaults to upper/no portrait. No unrelated preceding dialogue command is inherited."
+      },
+      "translation_source": "new_translation_from_win",
+      "replacement": [
+        "林家の使用人：",
+        "あの男、ひどい腕前だな！"
+      ],
+      "semantic_review": "ひどい腕前保留功夫好菜的嘲讽，不能换成月如评价所有挑战者的台词。",
+      "plot_phase": "场景33/地图31的比武进行中评论；静态事件入口及原文依据，不是存档实测。",
+      "language_review": "主 agent 与独立只读 agent 完成语义、日语表达、土星术语和分行校读；未声称真人日语审校或实机通过。"
+    },
+    {
+      "win": {
+        "script_start": 7691,
+        "script_end": 7692,
+        "ids": [
+          2718,
+          2719
+        ],
+        "text": [
+          "林家家仆：",
+          "我们堡主亲传的剑法果然厉害"
+        ],
+        "sid": 2718,
+        "eid": 2719
+      },
+      "incorrect_saturn_source": {
+        "script_start": 8267,
+        "script_end": 8269,
+        "ids": [
+          3455,
+          3456,
+          3457
+        ],
+        "text": [
+          "拳師：",
+          "何を見ておる？ばか者！",
+          "この手で斬り殺してやる！"
+        ],
+        "sid": 3455,
+        "eid": 3457
+      },
+      "valid_win_uses_of_same_saturn_text": [
+        [
+          2564,
+          2566
+        ]
+      ],
+      "event_context": [
+        {
+          "event": 555,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 864,
+          "y": 592,
+          "layer": 0,
+          "trigger": 7691,
+          "auto": 35639,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 140
+        }
+      ],
+      "render_command": {
+        "script": null,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Event trigger enters FFFF directly; PAL_EndDialog defaults to upper/no portrait. No unrelated preceding dialogue command is inherited."
+      },
+      "translation_source": "new_translation_from_win",
+      "replacement": [
+        "林家の使用人：",
+        "旦那様直伝の剣法は、",
+        "やはり見事だ！"
+      ],
+      "semantic_review": "沿用仆人称呼旦那様；直伝保留堡主亲自传授，不泛化为普通剑法。",
+      "plot_phase": "场景33/地图31的比武进行中评论；静态事件入口及原文依据，不是存档实测。",
+      "language_review": "主 agent 与独立只读 agent 完成语义、日语表达、土星术语和分行校读；未声称真人日语审校或实机通过。"
+    },
+    {
+      "win": {
+        "script_start": 7694,
+        "script_end": 7696,
+        "ids": [
+          2720,
+          2721,
+          2722
+        ],
+        "text": [
+          "林家家仆：",
+          "这些兴致勃勃的年轻人真可怜",
+          "根本不是我们家小姐的对手。"
+        ],
+        "sid": 2720,
+        "eid": 2722
+      },
+      "incorrect_saturn_source": {
+        "script_start": 8271,
+        "script_end": 8275,
+        "ids": [
+          3458,
+          3459,
+          3460,
+          3461,
+          3462
+        ],
+        "text": [
+          "護院：",
+          "お前、そんなに細くて風に",
+          "飛ばされそうじゃないか。",
+          "そんなんじゃ俺の相手には",
+          "ならん。"
+        ],
+        "sid": 3458,
+        "eid": 3462
+      },
+      "valid_win_uses_of_same_saturn_text": [
+        [
+          2567,
+          2570
+        ]
+      ],
+      "event_context": [
+        {
+          "event": 556,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 800,
+          "y": 624,
+          "layer": 0,
+          "trigger": 7694,
+          "auto": 35639,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 142
+        }
+      ],
+      "render_command": {
+        "script": null,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Event trigger enters FFFF directly; PAL_EndDialog defaults to upper/no portrait. No unrelated preceding dialogue command is inherited."
+      },
+      "translation_source": "new_translation_from_win",
+      "replacement": [
+        "林家の使用人：",
+        "あんなに張り切った若者たち、",
+        "気の毒になあ。",
+        "うちのお嬢様の相手には",
+        "まるでならないんだから。"
+      ],
+      "semantic_review": "保留兴致勃勃、怜悯及根本不是对手的语气。",
+      "plot_phase": "场景33/地图31的比武进行中评论；静态事件入口及原文依据，不是存档实测。",
+      "language_review": "主 agent 与独立只读 agent 完成语义、日语表达、土星术语和分行校读；未声称真人日语审校或实机通过。"
+    },
+    {
+      "win": {
+        "script_start": 7698,
+        "script_end": 7701,
+        "ids": [
+          2723,
+          2724,
+          2725,
+          2726
+        ],
+        "text": [
+          "林家家仆：",
+          "小姐加油！　啊．．不对",
+          "每次小姐都赢，这比武招亲",
+          "何时才会有个结果出来？"
+        ],
+        "sid": 2723,
+        "eid": 2726
+      },
+      "incorrect_saturn_source": {
+        "script_start": 8277,
+        "script_end": 8280,
+        "ids": [
+          3463,
+          3464,
+          3465,
+          3466
+        ],
+        "text": [
+          "小僧：",
+          "お客様、誤解しないで下さい。",
+          "僕はただ部屋の掃除をする",
+          "小僧です。"
+        ],
+        "sid": 3463,
+        "eid": 3466
+      },
+      "valid_win_uses_of_same_saturn_text": [
+        [
+          2571,
+          2574
+        ]
+      ],
+      "event_context": [
+        {
+          "event": 557,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 896,
+          "y": 576,
+          "layer": 0,
+          "trigger": 7698,
+          "auto": 35639,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 140
+        }
+      ],
+      "render_command": {
+        "script": null,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Event trigger enters FFFF directly; PAL_EndDialog defaults to upper/no portrait. No unrelated preceding dialogue command is inherited."
+      },
+      "translation_source": "new_translation_from_win",
+      "replacement": [
+        "林家の使用人：",
+        "お嬢様、頑張れ！",
+        "あっ・・・いや、違うな。",
+        "毎回お嬢様が勝っていたら、",
+        "婿取り武術会はいつ決着がつくんだ？"
+      ],
+      "semantic_review": "保留加油后立即纠正，以及招亲一直没有结果的笑点；采用原译术语婿取り武術会。",
+      "plot_phase": "场景33/地图31的比武进行中评论；静态事件入口及原文依据，不是存档实测。",
+      "language_review": "主 agent 与独立只读 agent 完成语义、日语表达、土星术语和分行校读；未声称真人日语审校或实机通过。"
+    },
+    {
+      "win": {
+        "script_start": 8128,
+        "script_end": 8129,
+        "ids": [
+          2860,
+          2861
+        ],
+        "text": [
+          "观众：",
+          "别挤啊！"
+        ],
+        "sid": 2860,
+        "eid": 2861
+      },
+      "incorrect_saturn_source": {
+        "script_start": 8253,
+        "script_end": 8257,
+        "ids": [
+          3443,
+          3444,
+          3445,
+          3446,
+          3447
+        ],
+        "text": [
+          "書生：",
+          "僕たった一人、",
+          "書生だから武術も知らない。",
+          "林家のお嬢様など、僕に",
+          "とってはたかねの花だ。"
+        ],
+        "sid": 3443,
+        "eid": 3447
+      },
+      "valid_win_uses_of_same_saturn_text": [
+        [
+          2555,
+          2558
+        ]
+      ],
+      "event_context": [
+        {
+          "event": 558,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 1248,
+          "y": 720,
+          "layer": 0,
+          "trigger": 8128,
+          "auto": 35636,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 90
+        },
+        {
+          "event": 560,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 1216,
+          "y": 752,
+          "layer": 0,
+          "trigger": 8128,
+          "auto": 0,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 51
+        },
+        {
+          "event": 565,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 1072,
+          "y": 824,
+          "layer": 0,
+          "trigger": 8128,
+          "auto": 35636,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 51
+        },
+        {
+          "event": 566,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 1120,
+          "y": 800,
+          "layer": 0,
+          "trigger": 8128,
+          "auto": 35636,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 142
+        },
+        {
+          "event": 567,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 1232,
+          "y": 760,
+          "layer": 0,
+          "trigger": 8128,
+          "auto": 0,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 342
+        }
+      ],
+      "render_command": {
+        "script": null,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Event trigger enters FFFF directly; PAL_EndDialog defaults to upper/no portrait. No unrelated preceding dialogue command is inherited."
+      },
+      "translation_source": "new_translation_from_win",
+      "replacement": [
+        "観客：",
+        "押すなよ！"
+      ],
+      "semantic_review": "直接表达别挤，不添加これ以上；常用表达不等于发现本事件土星原段。",
+      "plot_phase": "场景33/地图31的比武进行中评论；静态事件入口及原文依据，不是存档实测。",
+      "language_review": "主 agent 与独立只读 agent 完成语义、日语表达、土星术语和分行校读；未声称真人日语审校或实机通过。"
+    },
+    {
+      "win": {
+        "script_start": 8131,
+        "script_end": 8132,
+        "ids": [
+          2862,
+          2863
+        ],
+        "text": [
+          "观众：",
+          "姓林的这娘们好厉害！"
+        ],
+        "sid": 2862,
+        "eid": 2863
+      },
+      "incorrect_saturn_source": {
+        "script_start": 8259,
+        "script_end": 8265,
+        "ids": [
+          3448,
+          3449,
+          3450,
+          3451,
+          3452,
+          3453,
+          3454
+        ],
+        "text": [
+          "劉楚香（リュウソコウ）：",
+          "俺の専門は「瞬間万化」。",
+          "天下一の軽業で、相手に",
+          "負けそうになった時に",
+          "逃げられる！",
+          "真の男ならどんな状況に",
+          "でも対応できるのだ！"
+        ],
+        "sid": 3448,
+        "eid": 3454
+      },
+      "valid_win_uses_of_same_saturn_text": [
+        [
+          2559,
+          2563
+        ]
+      ],
+      "event_context": [
+        {
+          "event": 559,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 1216,
+          "y": 736,
+          "layer": 0,
+          "trigger": 8131,
+          "auto": 35636,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 102
+        },
+        {
+          "event": 562,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 1136,
+          "y": 792,
+          "layer": 0,
+          "trigger": 8131,
+          "auto": 35636,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 342
+        }
+      ],
+      "render_command": {
+        "script": null,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Event trigger enters FFFF directly; PAL_EndDialog defaults to upper/no portrait. No unrelated preceding dialogue command is inherited."
+      },
+      "translation_source": "new_translation_from_win",
+      "replacement": [
+        "観客：",
+        "林って女、えらく強いな！"
+      ],
+      "semantic_review": "保留姓林的这娘们的粗鲁口吻与惊叹，不改成敬称。",
+      "plot_phase": "场景33/地图31的比武进行中评论；静态事件入口及原文依据，不是存档实测。",
+      "language_review": "主 agent 与独立只读 agent 完成语义、日语表达、土星术语和分行校读；未声称真人日语审校或实机通过。"
+    },
+    {
+      "win": {
+        "script_start": 8134,
+        "script_end": 8137,
+        "ids": [
+          2864,
+          2865,
+          2866,
+          2867
+        ],
+        "text": [
+          "观众：",
+          "只听得林家千金多么泼辣",
+          "今日一看，手上的功夫倒",
+          "也不弱。"
+        ],
+        "sid": 2864,
+        "eid": 2867
+      },
+      "incorrect_saturn_source": {
+        "script_start": 8267,
+        "script_end": 8269,
+        "ids": [
+          3455,
+          3456,
+          3457
+        ],
+        "text": [
+          "拳師：",
+          "何を見ておる？ばか者！",
+          "この手で斬り殺してやる！"
+        ],
+        "sid": 3455,
+        "eid": 3457
+      },
+      "valid_win_uses_of_same_saturn_text": [
+        [
+          2564,
+          2566
+        ]
+      ],
+      "event_context": [
+        {
+          "event": 561,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 1136,
+          "y": 776,
+          "layer": 0,
+          "trigger": 8134,
+          "auto": 35636,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 125
+        },
+        {
+          "event": 564,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 1088,
+          "y": 800,
+          "layer": 0,
+          "trigger": 8134,
+          "auto": 35636,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 104
+        }
+      ],
+      "render_command": {
+        "script": null,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Event trigger enters FFFF directly; PAL_EndDialog defaults to upper/no portrait. No unrelated preceding dialogue command is inherited."
+      },
+      "translation_source": "new_translation_from_win",
+      "replacement": [
+        "観客：",
+        "林家のお嬢様は",
+        "じゃじゃ馬だとばかり聞いていたが、",
+        "今日見ると、武術の腕も",
+        "なかなかのものだな。"
+      ],
+      "semantic_review": "じゃじゃ馬对应泼辣，保留先闻性情、今日认可武艺的转折。",
+      "plot_phase": "场景33/地图31的比武进行中评论；静态事件入口及原文依据，不是存档实测。",
+      "language_review": "主 agent 与独立只读 agent 完成语义、日语表达、土星术语和分行校读；未声称真人日语审校或实机通过。"
+    },
+    {
+      "win": {
+        "script_start": 8139,
+        "script_end": 8142,
+        "ids": [
+          2868,
+          2869,
+          2870,
+          2871
+        ],
+        "text": [
+          "观众：",
+          "林家堡堡主林天南的家传剑法",
+          "果然名不虚传，林家小姐已得",
+          "七分真传了。"
+        ],
+        "sid": 2868,
+        "eid": 2871
+      },
+      "incorrect_saturn_source": {
+        "script_start": 8271,
+        "script_end": 8275,
+        "ids": [
+          3458,
+          3459,
+          3460,
+          3461,
+          3462
+        ],
+        "text": [
+          "護院：",
+          "お前、そんなに細くて風に",
+          "飛ばされそうじゃないか。",
+          "そんなんじゃ俺の相手には",
+          "ならん。"
+        ],
+        "sid": 3458,
+        "eid": 3462
+      },
+      "valid_win_uses_of_same_saturn_text": [
+        [
+          2567,
+          2570
+        ]
+      ],
+      "event_context": [
+        {
+          "event": 563,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 1104,
+          "y": 792,
+          "layer": 0,
+          "trigger": 8139,
+          "auto": 35636,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 113
+        },
+        {
+          "event": 569,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 1280,
+          "y": 752,
+          "layer": 0,
+          "trigger": 8139,
+          "auto": 35636,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 140
+        }
+      ],
+      "render_command": {
+        "script": null,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Event trigger enters FFFF directly; PAL_EndDialog defaults to upper/no portrait. No unrelated preceding dialogue command is inherited."
+      },
+      "translation_source": "new_translation_from_win",
+      "replacement": [
+        "観客：",
+        "林家の主、林天南の家伝の剣法は",
+        "さすが評判通りだな。",
+        "お嬢様もその技の七割を",
+        "すでに身につけているな。"
+      ],
+      "semantic_review": "保留林天南、家传剑法、名不虚传与已得七分；七割不是七招，也不增加以上。",
+      "plot_phase": "场景33/地图31的比武进行中评论；静态事件入口及原文依据，不是存档实测。",
+      "language_review": "主 agent 与独立只读 agent 完成语义、日语表达、土星术语和分行校读；未声称真人日语审校或实机通过。"
+    },
+    {
+      "win": {
+        "script_start": 8144,
+        "script_end": 8146,
+        "ids": [
+          2872,
+          2873,
+          2874
+        ],
+        "text": [
+          "观众：",
+          "场上这男的下盘不稳，我看",
+          "不出百招，一定败下阵来。"
+        ],
+        "sid": 2872,
+        "eid": 2874
+      },
+      "incorrect_saturn_source": {
+        "script_start": 8277,
+        "script_end": 8280,
+        "ids": [
+          3463,
+          3464,
+          3465,
+          3466
+        ],
+        "text": [
+          "小僧：",
+          "お客様、誤解しないで下さい。",
+          "僕はただ部屋の掃除をする",
+          "小僧です。"
+        ],
+        "sid": 3463,
+        "eid": 3466
+      },
+      "valid_win_uses_of_same_saturn_text": [
+        [
+          2571,
+          2574
+        ]
+      ],
+      "event_context": [
+        {
+          "event": 568,
+          "scene": 33,
+          "map": 31,
+          "scene_entry": 9038,
+          "x": 1152,
+          "y": 800,
+          "layer": 0,
+          "trigger": 8144,
+          "auto": 35636,
+          "state": 2,
+          "trigger_mode": 2,
+          "sprite": 102
+        }
+      ],
+      "render_command": {
+        "script": null,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Event trigger enters FFFF directly; PAL_EndDialog defaults to upper/no portrait. No unrelated preceding dialogue command is inherited."
+      },
+      "translation_source": "new_translation_from_win",
+      "replacement": [
+        "観客：",
+        "台の上のあの男、",
+        "足元がぐらついているな。",
+        "俺の見立てじゃ、百手も",
+        "交えぬうちに必ず負けるぞ。"
+      ],
+      "semantic_review": "保留下盘不稳、观众判断及不出百招必败，不变成从现在起再打一百招。",
+      "plot_phase": "场景33/地图31的比武进行中评论；静态事件入口及原文依据，不是存档实测。",
+      "language_review": "主 agent 与独立只读 agent 完成语义、日语表达、土星术语和分行校读；未声称真人日语审校或实机通过。"
+    }
+  ],
+  "acceptance": "源码/工具专项；全部Issue实现后由用户统一实机验收。"
+}

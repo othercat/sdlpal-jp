@@ -23,6 +23,32 @@ RECOVERED_SECTIONS = (
     (5, 35006, 35380, 12053, 12069, 14853, 14871),
 )
 
+# Win-based translations without confirmed Saturn matches, not recovered text.
+# Reviewed sources and event anchors: docs/japanese-tournament-npc-dialogues.md.
+# (first/last Win ID): (Win script anchor, Japanese lines)
+TOURNAMENT_DIALOGUES = {
+    (2714, 2715): (7685, (u"林家の使用人：", u"お嬢様、すごい！")),
+    (2716, 2717): (7688, (u"林家の使用人：", u"あの男、ひどい腕前だな！")),
+    (2718, 2719): (7691, (u"林家の使用人：", u"旦那様直伝の剣法は、", u"やはり見事だ！")),
+    (2720, 2722): (7694, (
+        u"林家の使用人：", u"あんなに張り切った若者たち、", u"気の毒になあ。",
+        u"うちのお嬢様の相手には", u"まるでならないんだから。")),
+    (2723, 2726): (7698, (
+        u"林家の使用人：", u"お嬢様、頑張れ！", u"あっ・・・いや、違うな。",
+        u"毎回お嬢様が勝っていたら、", u"婿取り武術会はいつ決着がつくんだ？")),
+    (2860, 2861): (8128, (u"観客：", u"押すなよ！")),
+    (2862, 2863): (8131, (u"観客：", u"林って女、えらく強いな！")),
+    (2864, 2867): (8134, (
+        u"観客：", u"林家のお嬢様は", u"じゃじゃ馬だとばかり聞いていたが、",
+        u"今日見ると、武術の腕も", u"なかなかのものだな。")),
+    (2868, 2871): (8139, (
+        u"観客：", u"林家の主、林天南の家伝の剣法は", u"さすが評判通りだな。",
+        u"お嬢様もその技の七割を", u"すでに身につけているな。")),
+    (2872, 2874): (8144, (
+        u"観客：", u"台の上のあの男、", u"足元がぐらついているな。",
+        u"俺の見立てじゃ、百手も", u"交えぬうちに必ず負けるぞ。")),
+}
+
 if sys.version_info[0] >= 3:
     # Python 3 环境
     def to_str(b, enc='utf-8'): return b.decode(enc, 'replace') if isinstance(b, bytes) else b
@@ -46,8 +72,11 @@ def main():
     # parser.add_argument('-w', '--width', dest = 'wordwidth', default = 16, type = int, help = 'Word width in bytes, default is 16')
     # parser.add_argument("-c", "--comment", action = 'store_false', help = 'Automatically generate comments')
     parser.add_argument("-d", "--debug", action = 'store_true', help = 'Debug mode')
-    parser.add_argument("--upstream-baseline", action='store_true',
-                        help='Reproduce the v2026.08 output without Issue #3 recovery (audit only).')
+    audit = parser.add_mutually_exclusive_group()
+    audit.add_argument("--upstream-baseline", action='store_true',
+                       help='Reproduce the uncorrected v2026.08 output (audit only).')
+    audit.add_argument("--before-tournament-fix", action='store_true',
+                       help='Reproduce post-Issue #3 output before Issue #4 corrections (audit only).')
     options = parser.parse_args()
 
     options.encoding = "shift_jis"
@@ -444,6 +473,8 @@ def main():
     print ("Now Processing the MESSAGE Sections. Please wait...")
     
     recovered_sections = () if options.upstream_baseline else RECOVERED_SECTIONS
+    correct_tournament = not (options.upstream_baseline or options.before_tournament_fix)
+    corrected_tournament = set()
     for s in range(0, 32 + len(recovered_sections)):
 	  #27 sections.
       if s == 0:
@@ -629,6 +660,7 @@ def main():
           if op == 0xFFFF:
             if is_msg_group == 0:
                 is_msg_group = 1
+                first_index, first_script = w1, win_script_num
                 message = "%s %d\n" % ('[BEGIN MESSAGE]', w1)
                 if options.comment: comment = "# Original message: %d\n" % w1
             last_index = w1
@@ -687,6 +719,13 @@ def main():
                 is_msg_group = 0
                 temp = "%s %d\n\n" % ('[END MESSAGE]', last_index)
 
+                if correct_tournament and s in (1, 5):
+                    key = (first_index, last_index)
+                    replacement = TOURNAMENT_DIALOGUES.get(key)
+                    if not replacement or replacement[0] != first_script or key in corrected_tournament:
+                        raise ValueError("Issue #4 script anchors differ; no output was written.")
+                    jmessage = u"\n".join(replacement[1]) + u"\n"
+                    corrected_tournament.add(key)
 
                 output += comment
                 output += message
@@ -696,6 +735,8 @@ def main():
           win_script_num += 1
       if s >= 32 and (last_index != final_win or last_jp_index != final_jp):
         raise ValueError("Issue #3 span end differs; no output was written.")
+    if correct_tournament and corrected_tournament != set(TOURNAMENT_DIALOGUES):
+        raise ValueError("Incomplete Issue #4 correction set; no output was written.")
     try:
         import io
         with io.open(options.outputfile, "w", encoding="utf-8", errors="ignore") as f:
