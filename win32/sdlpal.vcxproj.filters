@@ -327,6 +327,9 @@
     <ClCompile Include="..\tests\test_description_layout.cpp">
       <Filter>Test Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\tests\render_evidence.cpp">
+      <Filter>Test Files</Filter>
+    </ClCompile>
     <ClCompile Include="native_midi.cpp">
       <Filter>native_midi</Filter>
     </ClCompile>

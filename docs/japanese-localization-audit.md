@@ -15,6 +15,9 @@
 | [#7](https://github.com/othercat/sdlpal-jp/issues/7) | [DOS 映射](#issue-7) | DOS / Win 编号兼容性 |
 | [#8](https://github.com/othercat/sdlpal-jp/issues/8) | [重复键冲突](#issue-8) | 6 个重复键中的 2 个语义冲突 |
 | [#9](https://github.com/othercat/sdlpal-jp/issues/9) | [头像与调色板](#issue-9) | 土星头像资源与独立调色板线索，待调查 |
+| [#10](https://github.com/othercat/sdlpal-jp/issues/10) | [字体与跨引擎对照](pal98-font-rendering-comparison.md) | PAL98 实机基线、SDLPAL 源码出图及布局前后证据 |
+
+2026-10-20 后续：[83–87 实现复核](japanese-description-layout-verification.md) 已将正文裁切从基线 12 行减少为赤血蚕 1 行；[#10 源码渲染](pal98-font-rendering-comparison.md) 用真实绘制函数再次核实，并提供同资源中文/日文图。下文仍保留原审计基线，避免把历史数量当作修复后结果。
 
 ## Audit baseline
 
