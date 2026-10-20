@@ -183,6 +183,7 @@ PAL_RNGBlitToSurface(
    // Draw the frame to the surface.
    // FIXME: Dirty and ineffective code, needs to be cleaned up
    //
+   VIDEO_ClearPortraits(lpDstSurface);
    while (ptr < length)
    {
       uint8_t data = rng[ptr++];

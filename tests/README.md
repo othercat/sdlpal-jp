@@ -208,3 +208,18 @@ pixel changes within their old/new glyph-and-shadow masks. PNGs must be opaque.
 `test_translation_followup.py` covers source-anchor/body drift and rejects
 unrelated SLF bytes, newline changes, duplicate or missing targets.
 See [R2 provenance, commands and before/after images](../docs/japanese-translation-followup.md).
+
+### Portrait night colors (Issue #9 R2)
+
+`verify_portrait_colors.py` binds the unchanged R1 portrait packs, source resource
+hashes, full indexed frames and fixtures, then checks independent RGB composition.
+`jp-portraits-rgb` / `dos-portraits-rgb` archive both indexed and RGB frames.
+`jp-translation-rgb` / `dos-rgb` and their `-night-rgb` variants check real
+message lookup, page restoration and menu drawing; the indexed BMP remains
+available beside the `-rgb.bmp` view and SDL scale outputs.
+
+The comparison excludes neither backgrounds nor transparent pixels. Exact
+source RGB is the target for normal palettes; black fades are checked separately,
+and unknown color effects intentionally retain indexed output. The C++ tests
+also cover same-index overwrite, opaque black, clipped fill and saved coverage.
+See [source evidence, reproduction and remaining acceptance](../docs/japanese-portrait-night-colors.md).

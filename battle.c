@@ -237,6 +237,8 @@ PAL_BattleFadeScene(
    BYTE              a, b;
    const int         rgIndex[6] = {0, 3, 1, 5, 2, 4};
    
+   // This transition blends palette indices, not independent RGB pixels.
+   VIDEO_ClearPortraits(gpScreenBak);
    time = SDL_GetTicks();
 
    for (i = 0; i < 12; i++)

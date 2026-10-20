@@ -18,8 +18,30 @@ extern SDL_Texture *gpTexture;
 
 #if SDL_VERSION_ATLEAST(2, 0, 0)
 namespace {
+bool portraitRGB = false;
+
 void Require(bool ok, const char *what) {
     if (!ok) throw std::runtime_error(what);
+}
+
+std::vector<BYTE> ComposedRGB() {
+    SDL_Color base[256];
+    Require(PAL_ReadPalette(gpGlobals->wNumPalette, gpGlobals->fNightPalette, base),
+        "Cannot read base palette");
+    SDL_Surface *output = SDL_CreateRGBSurface(0, gpScreen->w, gpScreen->h, 32,
+        0x00ff0000, 0x0000ff00, 0x000000ff, 0);
+    Require(output && VIDEO_ComposeSurface(gpScreen, output, base) == 0,
+        "Cannot compose source RGB");
+    std::vector<BYTE> rgb;
+    for (int y = 0; y < output->h; ++y)
+        for (int x = 0; x < output->w; ++x) {
+            Uint32 color = ((Uint32 *)((BYTE *)output->pixels + y * output->pitch))[x];
+            rgb.push_back((color >> 16) & 255);
+            rgb.push_back((color >> 8) & 255);
+            rgb.push_back(color & 255);
+        }
+    SDL_FreeSurface(output);
+    return rgb;
 }
 
 void Save(const std::string& directory, const std::string& name) {
@@ -69,20 +91,20 @@ int CountClippedInk(WORD object, bool item) {
     SDL_Surface *screen = gpScreen;
     gpScreen = SDL_CreateRGBSurface(0, 384, 200, 8, 0, 0, 0, 0);
     Require(gpScreen != nullptr, "Cannot allocate overflow probe");
-    SDL_FillRect(gpScreen, nullptr, 0xfe); // distinguish black shadows from background
+    VIDEO_FillRect(gpScreen, nullptr, 0xfe); // distinguish black shadows from background
     DrawDescription(object, item);
     int count = 0;
     for (int y = 0; y < gpScreen->h; ++y) {
         const BYTE *row = (BYTE *)gpScreen->pixels + y * gpScreen->pitch;
         for (int x = 320; x < gpScreen->w; ++x) count += row[x] == DESCTEXT_COLOR;
     }
-    SDL_FreeSurface(gpScreen);
+    VIDEO_FreeSurface(gpScreen);
     gpScreen = screen;
     return count;
 }
 
 void PrepareInn() {
-    SDL_FillRect(gpScreen, nullptr, 0);
+    VIDEO_FillRect(gpScreen, nullptr, 0);
     // Reconstruct this scene from startup scripts 5-7 and scene-2 entry 3547.
     // No route, animation, input loop, sound, or save file is replayed.
     gpGlobals->wNumScene = 2;
@@ -123,7 +145,10 @@ void DrawPortraitEvidence(const std::string& directory) {
     FILE *fixtures = fopen((directory + "/portrait-fixtures.csv").c_str(), "r");
     FILE *report = fopen((directory + "/portraits.csv").c_str(), "w");
     FILE *frames = fopen((directory + "/portrait-frames.bin").c_str(), "wb");
+    FILE *rgbFrames = portraitRGB ?
+        fopen((directory + "/portrait-rgb.bin").c_str(), "wb") : nullptr;
     Require(fixtures && report && frames, "Cannot open portrait fixtures/output");
+    Require(!portraitRGB || rgbFrames, "Cannot open RGB output");
     char header[256], name[64];
     Require(fgets(header, sizeof(header), fixtures) != nullptr,
         "Missing portrait fixture header");
@@ -153,6 +178,7 @@ void DrawPortraitEvidence(const std::string& directory) {
         }
         // Pattern contains every palette index. It exposes accidental global
         // palette changes and preserves visible pixels through RLE transparency.
+        VIDEO_ClearPortraits(gpScreen);
         for (int y = 0; y < 200; ++y)
             for (int x = 0; x < 320; ++x)
                 ((BYTE *)gpScreen->pixels)[y * gpScreen->pitch + x] = (x / 4 + y / 3) & 255;
@@ -191,20 +217,50 @@ void DrawPortraitEvidence(const std::string& directory) {
                 Require(fwrite(rgb, 1, 3, frames) == 3, "Cannot save portrait palette");
             }
             offset += 320 * 200 + 256 * 3;
+            if (portraitRGB) {
+                const auto rgb = ComposedRGB();
+                Require(fwrite(rgb.data(), 1, rgb.size(), rgbFrames) == rgb.size(),
+                    "Cannot save composed RGB frame");
+            }
             if (publish && stage == 0) SaveScales(directory, name);
         }
         // The existing backup/restore path must retain the indexed portrait.
         std::vector<BYTE> original((BYTE *)gpScreen->pixels,
             (BYTE *)gpScreen->pixels + gpScreen->pitch * gpScreen->h);
         VIDEO_BackupScreen(gpScreen);
-        SDL_FillRect(gpScreen, nullptr, 0);
+        VIDEO_FillRect(gpScreen, nullptr, 0);
         VIDEO_RestoreScreen(gpScreen);
         Require(memcmp(original.data(), gpScreen->pixels, original.size()) == 0,
                 "Portrait backup/restore changed pixels");
+        if (portraitRGB) {
+            PAL_SetPalette(palette, night);
+            const auto rgb = ComposedRGB();
+            VIDEO_BackupScreen(gpScreen);
+            VIDEO_FillRect(gpScreen, nullptr, 0);
+            VIDEO_RestoreScreen(gpScreen);
+            Require(rgb == ComposedRGB(), "Portrait RGB backup/restore changed");
+            if (count == 0) {
+                SDL_Color expected[256];
+                Require(PAL_ReadPalette(5, FALSE, expected), "Missing palette 5");
+                // Run the actual timed palette effect with an explicit target
+                // different from globals. Composition must not overwrite its
+                // shared PAL_GetPalette buffer.
+                g_bRenderPaused = FALSE;
+                PAL_FadeIn(5, FALSE, 1);
+                for (int i = 0; i < 256; ++i) {
+                    const SDL_Color actual = VIDEO_GetPalette()[i];
+                    Require(actual.r == expected[i].r && actual.g == expected[i].g &&
+                        actual.b == expected[i].b, "Renderer corrupted explicit-target fade");
+                }
+                g_bRenderPaused = TRUE;
+                PAL_SetPalette(palette, night);
+            }
+        }
         ++count;
     }
     Require(fields == EOF && count > 0, "Invalid or empty portrait fixture list");
     fclose(fixtures); fclose(report); fclose(frames);
+    if (rgbFrames) fclose(rgbFrames);
     printf("Portrait fixtures: %d; frame bytes: %ld; backup/restore passed\n", count, offset);
 }
 
@@ -222,6 +278,14 @@ int AdvancePage(const SDL_Event *event, volatile PALINPUTSTATE *state) {
 
 void SaveScales(const std::string& directory, const std::string& name) {
     Save(directory, name);
+    if (portraitRGB) {
+        const auto rgb = ComposedRGB();
+        SDL_Surface *output = SDL_CreateRGBSurfaceFrom((void *)rgb.data(), 320, 200, 24,
+            320 * 3, 0xff, 0xff00, 0xff0000, 0);
+        Require(output && SDL_SaveBMP(output, (directory + "/" + name + "-rgb.bmp").c_str()) == 0,
+            "Cannot save composed RGB view");
+        SDL_FreeSurface(output);
+    }
     SDL_Texture *previousTexture = gpTexture;
     SDL_Texture *previousTarget = SDL_GetRenderTarget(gpRenderer);
     const int widths[] = {640, 960, 800};
@@ -508,7 +572,7 @@ void DrawRecoveredDialogues(const std::string& directory, bool before, bool tour
         const bool center = op == 0x003e;
         if (draw) {
             PAL_EndDialog();
-            SDL_FillRect(gpScreen, nullptr, 0);
+            VIDEO_FillRect(gpScreen, nullptr, 0);
             const BYTE position = op == 0x003b ? kDialogCenter :
                 (center ? kDialogCenterWindow : (op == 0x003d ? kDialogLower : kDialogUpper));
             Require(op >= 0x003b && op <= 0x003e && !c && (!center || (duplicates && count == 1)),
@@ -624,7 +688,7 @@ void DrawTranslationDescriptions(const std::string& directory) {
     fprintf(report, "object_id,item,clipped_ink\n");
     for (const auto& entry : objects) {
         PAL_EndDialog();
-        SDL_FillRect(gpScreen, nullptr, 0);
+        VIDEO_FillRect(gpScreen, nullptr, 0);
         PAL_ClearKeyState();
         if (entry.second) {
             memset(gpGlobals->rgInventory, 0, sizeof(gpGlobals->rgInventory));
@@ -665,7 +729,7 @@ void DrawDOSDescriptions(const std::string& directory) {
         SDL_Surface *screen = gpScreen;
         gpScreen = SDL_CreateRGBSurface(0, 384, 256, 8, 0, 0, 0, 0);
         Require(gpScreen != nullptr, "Cannot allocate DOS overflow probe");
-        SDL_FillRect(gpScreen, nullptr, 0xfe);
+        VIDEO_FillRect(gpScreen, nullptr, 0xfe);
         DrawDescription((WORD)object, item != 0);
         int overflow = 0;
         std::vector<std::pair<int, int>> expectedInk;
@@ -677,7 +741,7 @@ void DrawDOSDescriptions(const std::string& directory) {
                     expectedInk.push_back(std::make_pair(x, y));
             }
         }
-        SDL_FreeSurface(gpScreen);
+        VIDEO_FreeSurface(gpScreen);
         gpScreen = screen;
         fprintf(report, "%d,%d,%d,%d,", object, item, draw, overflow);
         for (const WCHAR *ch = description; *ch; ++ch) fprintf(report, "%04x ", (unsigned)*ch);
@@ -685,7 +749,7 @@ void DrawDOSDescriptions(const std::string& directory) {
         if (!draw) continue;
         ++drawn;
         PAL_EndDialog();
-        SDL_FillRect(gpScreen, nullptr, 0);
+        VIDEO_FillRect(gpScreen, nullptr, 0);
         PAL_ClearKeyState();
         if (item) {
             memset(gpGlobals->rgInventory, 0, sizeof(gpGlobals->rgInventory));
@@ -714,7 +778,7 @@ void DrawDOSDescriptions(const std::string& directory) {
 int RenderEvidence(int argc, char **argv) {
     if (argc != 6 && argc != 7) {
         fprintf(stderr, "Usage: --render-evidence RESOURCE_DIR SLF_OR_DASH OUTPUT_DIR MODE [PORTRAIT_FILE]\nModes: "
-                        "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages|jp-long-names|jp-cursor-grid|jp-recovery-before|jp-recovery|jp-npc-before|jp-npc|jp-duplicates-before|jp-duplicates|jp-translation-before|jp-translation|dos-before|dos|dos-layout-before|jp-portraits|dos-portraits\n");
+                        "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages|jp-long-names|jp-cursor-grid|jp-recovery-before|jp-recovery|jp-npc-before|jp-npc|jp-duplicates-before|jp-duplicates|jp-translation-before|jp-translation|dos-before|dos|dos-layout-before|jp-portraits|dos-portraits|jp-portraits-rgb|dos-portraits-rgb|jp-translation-rgb|dos-rgb|jp-translation-night-rgb|dos-night-rgb\n");
         return 2;
     }
     const std::string mode(argv[5]), directory(argv[4]);
@@ -722,9 +786,16 @@ int RenderEvidence(int argc, char **argv) {
     const bool longNames = mode == "jp-long-names" || mode == "jp-cursor-grid";
     const bool tournament = mode == "jp-npc-before" || mode == "jp-npc";
     const bool duplicates = mode == "jp-duplicates-before" || mode == "jp-duplicates";
-    const bool translations = mode == "jp-translation-before" || mode == "jp-translation";
-    const bool portraits = mode == "jp-portraits" || mode == "dos-portraits";
-    const bool dos = mode == "dos" || mode == "dos-before" || mode == "dos-layout-before" || mode == "dos-portraits";
+    const bool translations = mode == "jp-translation-before" || mode == "jp-translation" ||
+        mode == "jp-translation-rgb" || mode == "jp-translation-night-rgb";
+    portraitRGB = mode == "jp-portraits-rgb" || mode == "dos-portraits-rgb" ||
+        mode == "jp-translation-rgb" || mode == "dos-rgb" ||
+        mode == "jp-translation-night-rgb" || mode == "dos-night-rgb";
+    const bool portraits = mode == "jp-portraits" || mode == "dos-portraits" ||
+        mode == "jp-portraits-rgb" || mode == "dos-portraits-rgb";
+    const bool dos = mode == "dos" || mode == "dos-before" || mode == "dos-layout-before" ||
+        mode == "dos-portraits" || mode == "dos-portraits-rgb" || mode == "dos-rgb" ||
+        mode == "dos-night-rgb";
     const bool recovery = mode == "jp-recovery-before" || mode == "jp-recovery" ||
         tournament || duplicates || translations || (dos && !portraits);
     const bool scaled = pages || longNames || recovery || portraits;
@@ -770,7 +841,8 @@ int RenderEvidence(int argc, char **argv) {
             printf("Renderer: %s; flags=%u; ScaleQuality=0; UseISOFont=0\n",
                 rendererInfo.name, rendererInfo.flags);
             g_bRenderPaused = TRUE;
-            PAL_SetPalette(0, FALSE);
+            gpGlobals->fNightPalette = mode.find("-night-") != std::string::npos;
+            PAL_SetPalette(0, gpGlobals->fNightPalette);
             if (portraits) DrawPortraitEvidence(directory);
             else if (longNames) DrawLongNames(directory, mode == "jp-cursor-grid");
             else if (recovery) {
@@ -827,7 +899,7 @@ int RenderEvidence(int argc, char **argv) {
         Require(report != nullptr, "Cannot create clipping report");
         fprintf(report, "object_id,clipped_ink\n");
         for (WORD object : magics) {
-            SDL_FillRect(gpScreen, nullptr, 0);
+            VIDEO_FillRect(gpScreen, nullptr, 0);
             PAL_ClearKeyState();
             // Match PAL98's outside-battle menu for the same-font comparison.
             // The original modes retain their battle-menu fixture.
@@ -843,7 +915,7 @@ int RenderEvidence(int argc, char **argv) {
         gpGlobals->rgInventory[1].wItem = 150;
         gpGlobals->rgInventory[1].nAmount = 2;
         gpGlobals->iCurInvMenuItem = 0;
-        SDL_FillRect(gpScreen, nullptr, 0);
+        VIDEO_FillRect(gpScreen, nullptr, 0);
         PAL_ClearKeyState();
         PAL_ItemSelectMenuInit(0); // show without adding equipped usable items
         Require(PAL_ItemSelectMenuUpdate() == 0xffff, "Unexpected item menu action");
@@ -859,8 +931,8 @@ int RenderEvidence(int argc, char **argv) {
         PAL_FreeText();
         PAL_FreeFont();
         PAL_FreeGlobals();
-        SDL_FreeSurface(gpScreen);
-        SDL_FreeSurface(gpScreenBak);
+        VIDEO_FreeSurface(gpScreen);
+        VIDEO_FreeSurface(gpScreenBak);
         SDL_FreeSurface(gpScreenReal);
         gpScreen = gpScreenBak = gpScreenReal = nullptr;
         SDL_Quit();

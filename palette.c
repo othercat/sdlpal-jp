@@ -22,10 +22,11 @@
 
 #include "main.h"
 
-SDL_Color *
-PAL_GetPalette(
+BOOL
+PAL_ReadPalette(
    INT         iPaletteNum,
-   BOOL        fNight
+   BOOL        fNight,
+   SDL_Color   palette[256]
 )
 /*++
   Purpose:
@@ -40,11 +41,10 @@ PAL_GetPalette(
 
   Return value:
 
-    Pointer to the palette. NULL if failed.
+    TRUE on success; FALSE if the chunk could not be read.
 
 --*/
 {
-   static SDL_Color      palette[256];
    PAL_LARGE BYTE        buf[1536];
    INT                   i;
    FILE                 *fp;
@@ -63,7 +63,7 @@ PAL_GetPalette(
       //
       // Read failed
       //
-      return NULL;
+      return FALSE;
    }
    else if (i <= 256 * 3)
    {
@@ -85,7 +85,14 @@ PAL_GetPalette(
 #endif
    }
 
-   return palette;
+   return TRUE;
+}
+
+SDL_Color *
+PAL_GetPalette(INT iPaletteNum, BOOL fNight)
+{
+   static SDL_Color palette[256];
+   return PAL_ReadPalette(iPaletteNum, fNight, palette) ? palette : NULL;
 }
 
 VOID

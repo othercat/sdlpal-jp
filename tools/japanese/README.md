@@ -108,4 +108,4 @@ R2 使用 `verify_translation_followup.py`，同时比较 Win／DOS 修前修后
 
 DOS 使用 `--target dos` 及其独立资源。转换器固定输入指纹，只替换已审 86 个 ID，按原 PC 头像范围等比缩小／透明填充，保留原文件。加载相应 `paljpn-win.por`／`paljpn-dos.por` 时设置 `PortraitFileName`；默认不设置，保留 PC 头像。
 
-运行时按场景基准调色板重新配色，排除对白色轮；夜景仍有 8 位色域误差，不等于土星独立 RGB 无损合成。来源、江少云回退、配置、可复现源码验证及对比图见 [#9 头像调色板](../../docs/japanese-portrait-palettes.md)。当前 GUI 不自动生成或启用头像包。
+SDL2 正常日夜输出独立合成源 RGB，并同步黑场亮度和覆盖信息；特殊索引色效果与 SDL1 保留原来的近似映射。来源、江少云回退和包配置见 [R1 头像审计](../../docs/japanese-portrait-palettes.md)，当前实现、兼容边界、源码验证与前后图见 [R2 夜景头像颜色](../../docs/japanese-portrait-night-colors.md)。当前 GUI 不自动生成或启用头像包。

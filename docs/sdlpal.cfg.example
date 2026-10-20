@@ -8,8 +8,8 @@
 #GamePath=.
 
 # Optional Saturn-derived portrait pack made by tools/japanese/convert_portraits.py.
-# Omit to retain PC portraits. Use the matching Win/DOS pack; 8-bit scene colors
-# are approximations of the source RGB palette, not independent RGB composition.
+# Omit to retain PC portraits. SDL2 keeps source RGB in normal day/night output.
+# SDL1 and special indexed effects retain approximate scene-palette colors.
 #PortraitFileName=paljpn-win.por
 
 # SavePath: Indicate the path where the game should save. 

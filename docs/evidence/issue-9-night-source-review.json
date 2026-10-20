@@ -1,0 +1,1042 @@
+{
+  "issue": 9,
+  "round": "R2 night",
+  "date": "2026-10-21",
+  "scope": "Static original Saturn PROG.BIN/palette follow-up, reusing pinned R1 disc extraction. No game/emulator/SDL execution, no renewed full portrait slot or PC identity audit, no repository mutation.",
+  "input_files": [
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r1-20261021\\source-review\\PROG.BIN",
+      "bytes": 411244,
+      "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r1-20261021\\source-review\\ALLDAT.NEW",
+      "bytes": 32084,
+      "sha256": "86c8b9728c7b80447cc41babf99951d60b134362a11eeee5e0dd854db4e0ca5c"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r1-20261021\\source-review\\source-review.json",
+      "bytes": 15719,
+      "sha256": "c06b9a73ab5251423fb1309541f8dee324d5817012481b9462986483d47fed65"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+      "bytes": 308120,
+      "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+      "bytes": 65296,
+      "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac"
+    }
+  ],
+  "address_convention": "PROG.BIN file offset + 0x06020000 = SH-2 runtime address.",
+  "script_convention": "Zero-based script indices in BE16 four-WORD JM.SEC concatenated with JM.NOR. PC operation names are comparison labels; Saturn behaviour is read from its own dispatch table/handlers, not assumed to equal PC.",
+  "summary_zh": [
+    "已证实头像普通绘制重新选择 NBG1 bank3；该 bank 的256色来自固定 ALLDAT.NEW[0x600:0x800]。",
+    "已证实土星0053/0054/008B/008C全部为空函数。PC夜景/PAT切换不构成土星头像应按PC夜色重配色的依据。",
+    "0080保留32次更新/等待循环而不含直接调色板更改；没有穷尽其所有间接调用和运行时事件路径。",
+    "已核对的CRAM写入候选中，覆盖bank3的两处只重载固定ALLDAT；动态图/影片调色板写bank0/4/6，没有在这组路径中发现bank3夜景重写。",
+    "CLOFEN/色偏寄存器默认0；本次全文件直接地址/GBR写指令候选搜索未找到其动态写入，但无法排除计算地址、间接代码、其他可执行模块。",
+    "全屏fade/清屏有独立生命周期；保持头像源RGB不意味着淡出/切景时必须继续显示。",
+    "NBG1颜色计算默认比率0且有重置路径；Sega文档对应31:1，因此源RGB保持与逐像素复刻土星最终硬件合成是不同验收目标。"
+  ],
+  "portrait_palette": {
+    "bank": 3,
+    "source": "ALLDAT.NEW",
+    "offset": "0x600",
+    "bytes": 512,
+    "sha256": "50d47e5f888d08d10de34b1ea55222dfc83a64c69e8d36343a14e7fd8a407867",
+    "format": "BE16 CCBBBBBGGGGGRRRRR; RGB8=RGB5<<3 (R1 verified).",
+    "entrypoint": "003C/003D handlers 0x9E94/0x9F48 pass r7=3; 0x10DF0..0x10DFC calls 0x2574(1,3), which selects NBG1 via 0x25EE and bank writer0x3D7E0. This is a layer palette, not one palette per portrait."
+  },
+  "script_operations": [
+    {
+      "opcode": "0x0050",
+      "comparison_label": "PC screen fade-out operation",
+      "table_file_offset": "0x56F04",
+      "handler_address": "0x0602B13C",
+      "handler_file_offset": "0xB13C",
+      "saturn_uses": [
+        {
+          "script_index": 27,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 31,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 35,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 39,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 47,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 51,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 55,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 59,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "saturn_uses_complete": false,
+      "saturn_use_count": 931
+    },
+    {
+      "opcode": "0x0051",
+      "comparison_label": "PC screen fade-in operation",
+      "table_file_offset": "0x56F08",
+      "handler_address": "0x0602B180",
+      "handler_file_offset": "0xB180",
+      "saturn_uses": [
+        {
+          "script_index": 3411,
+          "words": [
+            81,
+            65535,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 5358,
+          "words": [
+            81,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 37357,
+          "words": [
+            81,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "saturn_uses_complete": true,
+      "saturn_use_count": 3
+    },
+    {
+      "opcode": "0x0053",
+      "comparison_label": "PC use-day-palette operation",
+      "table_file_offset": "0x56F10",
+      "handler_address": "0x0602B254",
+      "handler_file_offset": "0xB254",
+      "saturn_uses": [
+        {
+          "script_index": 2541,
+          "words": [
+            83,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 3414,
+          "words": [
+            83,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 5357,
+          "words": [
+            83,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 7709,
+          "words": [
+            83,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 9172,
+          "words": [
+            83,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 9202,
+          "words": [
+            83,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 9775,
+          "words": [
+            83,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 11642,
+          "words": [
+            83,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 39093,
+          "words": [
+            83,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "saturn_uses_complete": true,
+      "saturn_use_count": 9,
+      "handler_bytes": "2fe66ef36fe36ef6000b0009",
+      "finding": "Entire handler only pushes/restores r14 and returns; no call, palette/colour-register access or persistent state write."
+    },
+    {
+      "opcode": "0x0054",
+      "comparison_label": "PC use-night-palette operation",
+      "table_file_offset": "0x56F14",
+      "handler_address": "0x0602B260",
+      "handler_file_offset": "0xB260",
+      "saturn_uses": [
+        {
+          "script_index": 1976,
+          "words": [
+            84,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 3271,
+          "words": [
+            84,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 7686,
+          "words": [
+            84,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 10219,
+          "words": [
+            84,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 14865,
+          "words": [
+            84,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 30729,
+          "words": [
+            84,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 39095,
+          "words": [
+            84,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "saturn_uses_complete": true,
+      "saturn_use_count": 7,
+      "handler_bytes": "2fe66ef36fe36ef6000b0009",
+      "finding": "Entire handler only pushes/restores r14 and returns; no call, palette/colour-register access or persistent state write."
+    },
+    {
+      "opcode": "0x0080",
+      "comparison_label": "PC toggle-day/night operation",
+      "table_file_offset": "0x56FC4",
+      "handler_address": "0x0602D40C",
+      "handler_file_offset": "0xD40C",
+      "saturn_uses": [
+        {
+          "script_index": 5341,
+          "words": [
+            128,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 9613,
+          "words": [
+            128,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 15008,
+          "words": [
+            128,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 30733,
+          "words": [
+            128,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "saturn_uses_complete": true,
+      "saturn_use_count": 4
+    },
+    {
+      "opcode": "0x008B",
+      "comparison_label": "PC change-current-palette operation",
+      "table_file_offset": "0x56FF0",
+      "handler_address": "0x0602DA98",
+      "handler_file_offset": "0xDA98",
+      "saturn_uses": [
+        {
+          "script_index": 24013,
+          "words": [
+            139,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 24021,
+          "words": [
+            139,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 24174,
+          "words": [
+            139,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 24180,
+          "words": [
+            139,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 24288,
+          "words": [
+            139,
+            5,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 24341,
+          "words": [
+            139,
+            5,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 26280,
+          "words": [
+            139,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 27117,
+          "words": [
+            139,
+            5,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 30872,
+          "words": [
+            139,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 32644,
+          "words": [
+            139,
+            5,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 32700,
+          "words": [
+            139,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 37513,
+          "words": [
+            139,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "saturn_uses_complete": true,
+      "saturn_use_count": 12,
+      "handler_bytes": "2fe66ef36fe36ef6000b0009",
+      "finding": "Entire handler only pushes/restores r14 and returns; no call, palette/colour-register access or persistent state write."
+    },
+    {
+      "opcode": "0x008C",
+      "comparison_label": "PC fade-from/to-colour operation",
+      "table_file_offset": "0x56FF4",
+      "handler_address": "0x0602DAA4",
+      "handler_file_offset": "0xDAA4",
+      "saturn_uses": [
+        {
+          "script_index": 18226,
+          "words": [
+            140,
+            26,
+            2,
+            0
+          ]
+        },
+        {
+          "script_index": 18454,
+          "words": [
+            140,
+            26,
+            4,
+            65535
+          ]
+        },
+        {
+          "script_index": 33835,
+          "words": [
+            140,
+            79,
+            2,
+            0
+          ]
+        },
+        {
+          "script_index": 33838,
+          "words": [
+            140,
+            79,
+            2,
+            65535
+          ]
+        },
+        {
+          "script_index": 34029,
+          "words": [
+            140,
+            127,
+            4,
+            0
+          ]
+        },
+        {
+          "script_index": 34038,
+          "words": [
+            140,
+            127,
+            0,
+            65535
+          ]
+        }
+      ],
+      "saturn_uses_complete": true,
+      "saturn_use_count": 6,
+      "handler_bytes": "2fe66ef36fe36ef6000b0009",
+      "finding": "Entire handler only pushes/restores r14 and returns; no call, palette/colour-register access or persistent state write."
+    },
+    {
+      "opcode": "0x0093",
+      "comparison_label": "PC scene-fade operation",
+      "table_file_offset": "0x57010",
+      "handler_address": "0x0602DD40",
+      "handler_file_offset": "0xDD40",
+      "saturn_uses": [
+        {
+          "script_index": 3409,
+          "words": [
+            147,
+            65534,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 5224,
+          "words": [
+            147,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 11667,
+          "words": [
+            147,
+            65532,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 18248,
+          "words": [
+            147,
+            65532,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 27249,
+          "words": [
+            147,
+            65532,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 27311,
+          "words": [
+            147,
+            8,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 27313,
+          "words": [
+            147,
+            65534,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 30490,
+          "words": [
+            147,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 30731,
+          "words": [
+            147,
+            4,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 32718,
+          "words": [
+            147,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 35293,
+          "words": [
+            147,
+            65535,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 35684,
+          "words": [
+            147,
+            65535,
+            0,
+            0
+          ]
+        }
+      ],
+      "saturn_uses_complete": true,
+      "saturn_use_count": 12
+    }
+  ],
+  "toggle_0080": {
+    "range": "0xD40C..0xD482",
+    "behaviour": "Copies operand0, loops counter1..32. Nonpositive operand calls 06035530(0) and060233C0(0); positive operand calls060220F4(operand0). Then writes zero to06076BB0. No direct night flag, CRAM or colour-register access.",
+    "boundary": "This is not called a pure no-op: update/wait calls can process state. No complete transitive execution/reachability proof was attempted."
+  },
+  "cram_write_paths": [
+    {
+      "instructions": "0xE54..0xE76",
+      "destination": "25F00000",
+      "length": "0xC00",
+      "source": "ALLDAT.NEW, buffer00200000",
+      "bank3_effect": "Replaces it with the same fixed source bank3, not a night variant."
+    },
+    {
+      "instructions": "0xF136..0xF158",
+      "destination": "25F00000",
+      "length": "0x1000",
+      "source": "ALLDAT.NEW, buffer00200000",
+      "bank3_effect": "Initial/reloaded fixed bank3, as R1 established."
+    },
+    {
+      "instructions": "0x1590..0x15A0 and0x15E2..0x15F2",
+      "destination": "25F00000",
+      "length": "0x200",
+      "source": "LOG1.PX/LOG2.PX bytes at loaded buffer0020FA00",
+      "bank3_effect": "None: bank0 only."
+    },
+    {
+      "instructions": "0xEFFE..0xF00E",
+      "destination": "25F00C00",
+      "length": "0x200",
+      "source": "MAPIC.JOE selected record, buffer00220000",
+      "bank3_effect": "None: bank6 only."
+    },
+    {
+      "instructions": "0x11262..0x11290",
+      "destination": "25F00800",
+      "length": "0x200",
+      "source": "FIREN.AV related loaded buffer00290000",
+      "bank3_effect": "None: bank4 only; active layer bank may change for this media path."
+    },
+    {
+      "instructions": "0x112E0..0x113AE",
+      "destination": "25F00C00",
+      "length": "0x200",
+      "source": "RNG.PAL buffer00200000 + argument*512",
+      "bank3_effect": "None: bank6 only."
+    }
+  ],
+  "palette_queue_worker": "0x61B8..0x61DC: if WORD06076DBE==1, copy exactly0x200 bytes from *06076DE0 to *06076DE4 via0605D75C. The reviewed writers choose banks4/6. 0x6236..0x623A clears pending flag.",
+  "colour_offset": {
+    "default_register_source": "PROG0x3F620 copied to shadow060FFCC0 thenVDP2 by0x3F2D8..0x3F312.",
+    "default_registers": {
+      "CRAOFA": {
+        "file_offset": "0x3F704",
+        "value": "0x0000"
+      },
+      "CRAOFB": {
+        "file_offset": "0x3F706",
+        "value": "0x0000"
+      },
+      "CCCTL": {
+        "file_offset": "0x3F70C",
+        "value": "0x0000"
+      },
+      "CCRSA": {
+        "file_offset": "0x3F720",
+        "value": "0x0000"
+      },
+      "CCRNA": {
+        "file_offset": "0x3F728",
+        "value": "0x0000"
+      },
+      "CLOFEN": {
+        "file_offset": "0x3F730",
+        "value": "0x0000"
+      },
+      "CLOFSL": {
+        "file_offset": "0x3F732",
+        "value": "0x0000"
+      },
+      "COAR": {
+        "file_offset": "0x3F734",
+        "value": "0x0000"
+      },
+      "COAG": {
+        "file_offset": "0x3F736",
+        "value": "0x0000"
+      },
+      "COAB": {
+        "file_offset": "0x3F738",
+        "value": "0x0000"
+      },
+      "COBR": {
+        "file_offset": "0x3F73A",
+        "value": "0x0000"
+      },
+      "COBG": {
+        "file_offset": "0x3F73C",
+        "value": "0x0000"
+      },
+      "COBB": {
+        "file_offset": "0x3F73E",
+        "value": "0x0000"
+      }
+    },
+    "pc_relative_direct_address_candidates": [],
+    "gbr_write_encoding_candidates": [
+      {
+        "file_offset": "0x58F56",
+        "word": "0xC1EA",
+        "inside_known_message_offset_table": true
+      },
+      {
+        "file_offset": "0x5AD4A",
+        "word": "0xC1EE",
+        "inside_known_message_offset_table": true
+      },
+      {
+        "file_offset": "0x5AD5A",
+        "word": "0xC276",
+        "inside_known_message_offset_table": true
+      }
+    ],
+    "interpretation": "Default CLOFEN/CLOFSL/COA/COB are all zero. No direct literal loads of colour-offset shadow/hardware addresses were found. The three GBR word/long store bit-pattern matches lie inside the known message offset table, not reviewed executable code. This is bounded evidence, not proof of no computed/indirect writes at runtime."
+  },
+  "colour_calculation_and_transitions": {
+    "ccctl": "Init0x64AE..0x64B2 passes0x43 to0605DDFC. At0x3DDFC..0x3DE06 it preserves high nibble and writes that value to shadow060FFDAC (VDP2 CCCTL), enabling NBG0/NBG1/sprite colour calculation.",
+    "nbg1_ratio": "Default CCRNA=0. At0x9E30..0x9E3C,0x2C5A4..0x2C5B0,0x2C6F2..0x2C6FE, callers pass table[0]=0,r4=0 to0605DCF0; it writes byte060FFDC8, the NBG1 ratio byte ofCCRNA. Sega's ratio table gives31:1 for ratio0. It is not a night/PAT rewrite, but prevents a claim that final hardware output must equal sourceRGB exactly.",
+    "fade_ratio": "0050→06023A30,0051→06023D80,0093→06023F2C use0605DCF0 withr4=-7, producingbyte060FFDC1 (sprite0 CCRSA ratio). These reviewed fade calls do not write bank3 or NBG1 ratio.",
+    "display_and_clear": "0605D7FE clearsTVMD.DISP bit15 and writesVDP2 TVMD directly. 0050 path0x3CB6..0x3CC6 blanks then zeros0x40000 bytes starting25E00000, includingNBG1. 0093 path0x3F42..0x3F4C zeros0x20000 bytes atNBG1 base25E20000 before fade handling. Clear helper060226C0 writeszero at0x270A..0x270C.",
+    "boundary": "No physical/emulated frame was captured. Exact layer visibility, secondary pixel, special-colour conditions, hardware rounding and transition timing remain unmeasured."
+  },
+  "candidate_scan": {
+    "scope": "All even offsets of pinnedPROG.BIN,0..0x6466C; recognizeSH-2 MOV.L @(disp,PC) with in-file literal and selectedGBR-store encodings.",
+    "cram_literals": [
+      {
+        "file_offset": "0xE68",
+        "literal_file_offset": "0x1010",
+        "value": "0x25F00000"
+      },
+      {
+        "file_offset": "0x1592",
+        "literal_file_offset": "0x1670",
+        "value": "0x25F00000"
+      },
+      {
+        "file_offset": "0x15E4",
+        "literal_file_offset": "0x1670",
+        "value": "0x25F00000"
+      },
+      {
+        "file_offset": "0xF000",
+        "literal_file_offset": "0xF108",
+        "value": "0x25F00C00"
+      },
+      {
+        "file_offset": "0xF14A",
+        "literal_file_offset": "0xF1F4",
+        "value": "0x25F00000"
+      },
+      {
+        "file_offset": "0x11270",
+        "literal_file_offset": "0x112D4",
+        "value": "0x25F00800"
+      },
+      {
+        "file_offset": "0x1131C",
+        "literal_file_offset": "0x113CC",
+        "value": "0x25F00C00"
+      }
+    ],
+    "limitation": "Instruction-pattern search includes data and is not a complete binary control-flow or data-flow proof. Indirect/computed addresses and other executable modules are outside the no-match conclusion."
+  },
+  "repair_constraints_zh": [
+    "常态夜景修复应把固定bank3源色与PC场景PAT选择分开；不能因为PC进入夜景就重新把头像压入夜色索引。",
+    "允许将保持源RGB作为本仓明确的适配目标；应称源调色板颜色保持，不称土星实际画面逐像素还原。",
+    "淡出、黑屏、清对话和场景切换必须按宿主既有生命周期隐藏/清除头像；独立颜色不应使头像残留。",
+    "保留R1已核实的ID白名单、PC矩形适配和缺失头像回退；本次未重做这些审计。",
+    "需要真正对照土星实机/模拟器的动态颜色与合成时，只能留待用户统一验收，不能标记本次完成。"
+  ],
+  "manuals": [
+    {
+      "url": "https://www.infochunk.com/saturn/segahtml_en/hard/vdp2/hon/p13_10.htm",
+      "supports": "Colour-offset enable/select and RGB offset registers; capability alone does not prove game use."
+    },
+    {
+      "url": "https://www.infochunk.com/saturn/segahtml_en/hard/vdp2/hon/p12_14.htm",
+      "supports": "CCRNA NBG1 bits12..8; ratio0 means31:1."
+    },
+    {
+      "url": "https://www.infochunk.com/saturn/segahtml_en/hard/vdp2/hon/p09_21.htm",
+      "supports": "CCRSA sprite0 bits4..0 atVDP2 offset0x100."
+    },
+    {
+      "url": "https://www.infochunk.com/saturn/segahtml_en/hard/vdp2/hon/p15_30.htm",
+      "supports": "TVMD.DISP bit15 disablesdisplay."
+    }
+  ],
+  "snippets": [
+    {
+      "name": "noop_day_night",
+      "file_offset_start": "0xB254",
+      "file_offset_end_exclusive": "0xB26C",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-noop_day_night.sh2.txt",
+      "bytes": 340,
+      "sha256": "edd85ac9ef709a8d6ff2bfb348953ca702b883c0c4ff0048690df9bc61d0ade2"
+    },
+    {
+      "name": "noop_palette_colour",
+      "file_offset_start": "0xDA98",
+      "file_offset_end_exclusive": "0xDAB0",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-noop_palette_colour.sh2.txt",
+      "bytes": 340,
+      "sha256": "c23b0356f2f0396db8dfc0324f1744cbe97b2c973aec4e0d20dc5545c17066ab"
+    },
+    {
+      "name": "toggle_handler",
+      "file_offset_start": "0xD40C",
+      "file_offset_end_exclusive": "0xD498",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-toggle_handler.sh2.txt",
+      "bytes": 2136,
+      "sha256": "54d13740529356f0f620ad4aad2e730f4cc8d380bcc460674d9d29cb22ff4119"
+    },
+    {
+      "name": "palette_worker",
+      "file_offset_start": "0x61B0",
+      "file_offset_end_exclusive": "0x61DE",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-palette_worker.sh2.txt",
+      "bytes": 813,
+      "sha256": "299009ff9f46e19e8de015eb4a991d65d58f85aa6f439d37074abb90e571ff9d"
+    },
+    {
+      "name": "portrait_bank_select",
+      "file_offset_start": "0x10DE4",
+      "file_offset_end_exclusive": "0x10E08",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-portrait_bank_select.sh2.txt",
+      "bytes": 581,
+      "sha256": "f204d37e5f2bfa8a430937d05a11d61e36d24b8ceca89accbd3aa33249f2b4c2"
+    },
+    {
+      "name": "fade_register_writer",
+      "file_offset_start": "0x3DCF0",
+      "file_offset_end_exclusive": "0x3DCFC",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-fade_register_writer.sh2.txt",
+      "bytes": 183,
+      "sha256": "91628d17ded0a0aebdde3f6d29895d55b633afe20ef4eabf6b1c5a9aa7d02118"
+    },
+    {
+      "name": "nbg1_ratio_reset",
+      "file_offset_start": "0x9E28",
+      "file_offset_end_exclusive": "0x9E94",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-nbg1_ratio_reset.sh2.txt",
+      "bytes": 1835,
+      "sha256": "1890fa0bbb0ec91d2a25b69437757782f0b69085307dd874a8dc02c7d97d3537"
+    },
+    {
+      "name": "nbg1_ratio_reset_other_a",
+      "file_offset_start": "0x2C598",
+      "file_offset_end_exclusive": "0x2C5B4",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-nbg1_ratio_reset_other_a.sh2.txt",
+      "bytes": 458,
+      "sha256": "e0669184b1dec1311ba16e2a365c71891224d4b1a031147875d3cb9e888636a8"
+    },
+    {
+      "name": "nbg1_ratio_reset_other_b",
+      "file_offset_start": "0x2C6E6",
+      "file_offset_end_exclusive": "0x2C702",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-nbg1_ratio_reset_other_b.sh2.txt",
+      "bytes": 465,
+      "sha256": "62660fb9d3be3b161330e7aef7bf526b4b7c6cd2fbf831733f4e24adb1dd3cc5"
+    },
+    {
+      "name": "display_blank",
+      "file_offset_start": "0x3D7F4",
+      "file_offset_end_exclusive": "0x3D814",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-display_blank.sh2.txt",
+      "bytes": 546,
+      "sha256": "5c40d0b3f3363592cc77da7a9b312c653a36068f88e627e2d2f952d3f61063b6"
+    },
+    {
+      "name": "fade_out_clear",
+      "file_offset_start": "0x3CB6",
+      "file_offset_end_exclusive": "0x3CCA",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-fade_out_clear.sh2.txt",
+      "bytes": 378,
+      "sha256": "7285cbe1c93e1a2f0dd4cfa13a1ea1aa1aac37b7c916d6dd011de70b1f71652d"
+    },
+    {
+      "name": "scene_fade_clear",
+      "file_offset_start": "0x3F2C",
+      "file_offset_end_exclusive": "0x3F50",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-scene_fade_clear.sh2.txt",
+      "bytes": 629,
+      "sha256": "286b48a8660f3b9f1c96707583d1728f3fd4593509029fd90e93239c32cc3231"
+    },
+    {
+      "name": "bitmap_clear_loop",
+      "file_offset_start": "0x26C0",
+      "file_offset_end_exclusive": "0x275C",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-bitmap_clear_loop.sh2.txt",
+      "bytes": 2363,
+      "sha256": "167838da5405bffe556581438f6b4a58c9f0319f2843a8a0eef9a462a2c9418f"
+    },
+    {
+      "name": "initial_ccctl",
+      "file_offset_start": "0x64A6",
+      "file_offset_end_exclusive": "0x64BE",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-initial_ccctl.sh2.txt",
+      "bytes": 402,
+      "sha256": "a7ff731493eb34ea7aa070c0cae24bd8e39ddce37644d35fb62b2f8f7c397c05"
+    },
+    {
+      "name": "ccctl_writer",
+      "file_offset_start": "0x3DDF0",
+      "file_offset_end_exclusive": "0x3DE0C",
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\confirmed-ccctl_writer.sh2.txt",
+      "bytes": 432,
+      "sha256": "830363e35048fd02917303b608a69a9d976fc16ac7c163d88cd64bf12806bb62"
+    }
+  ],
+  "reproduction": {
+    "python": "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+    "version": "3.11.9",
+    "helper": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\build_report.py",
+    "command": "& (Join-Path $env:USERPROFILE 'CodexTools\\python\\Scripts\\python.exe') -B -X utf8 'D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\build_report.py'",
+    "writes": "Onlythissource-reviewdirectory.",
+    "checks_executed": [
+      "Pinned input SHA assertions",
+      "Four complete12-byte no-op handler assertions",
+      "Original JM.SEC/JM.NOR operation-usage extraction",
+      "Full-file directCRAM/colour-offset literal and selectedGBRstore candidate scans",
+      "Exact original bytes and independentSH-2 instruction decoding"
+    ],
+    "not_executed": [
+      "Game",
+      "Emulator",
+      "SDLbuild",
+      "SDLrender",
+      "Realdeviceacceptance"
+    ]
+  }
+}
