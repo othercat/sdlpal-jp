@@ -59,3 +59,10 @@ The resource-independent input/file-preservation checks run separately:
 
 The [red silkworm verification record](../docs/japanese-red-silkworm-layout.md)
 also documents the resource-backed before/after engine rendering checks.
+
+### Dialogue rendering evidence
+
+The Test-only `--render-evidence` modes `cn-pages` and `jp-pages` exercise real
+dialogue page waits, SLF CLEAR boundaries, colors and escaped controls, then read
+back 2x, 3x and 2.5x output from the production SDL renderer.
+See the [commands, pixel checks and scope](../docs/pal98-dialogue-pagination-scaling.md).
