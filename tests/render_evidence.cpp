@@ -139,7 +139,7 @@ void SaveScales(const std::string& directory, const std::string& name) {
     gpTexture = previousTexture;
 }
 
-void DrawLongNames(const std::string& directory) {
+void DrawLongNames(const std::string& directory, bool grid) {
     Require(g_TextLib.iFontFlavor == kFontFlavorJapanese && !g_TextLib.fUseISOFont &&
         PAL_FontHeight() == 16 && gConfig.dwWordLength == 16,
         "Expected Japanese 16px font and two-column word layout");
@@ -199,8 +199,41 @@ void DrawLongNames(const std::string& directory) {
         }
     }
     fclose(report);
+    if (grid) {
+        // Deliberately repeated objects stress every full-width cell, including
+        // the selected cell's left neighbour and the rows above/below it.
+        // This is an in-memory boundary fixture, not a naturally acquired list.
+        for (bool item : {true, false}) {
+            PAL_MakeScene();
+            PAL_ClearKeyState();
+            if (item) {
+                memset(gpGlobals->rgInventory, 0, sizeof(gpGlobals->rgInventory));
+                for (int i = 0; i < 10; ++i) {
+                    gpGlobals->rgInventory[i].wItem = 270;
+                    gpGlobals->rgInventory[i].nAmount = 99;
+                }
+                gpGlobals->iCurInvMenuItem = 5;
+                PAL_ItemSelectMenuInit(kItemFlagUsable);
+                Require(PAL_ItemSelectMenuUpdate() == 0xffff, "Unexpected grid item action");
+            } else {
+                memset(gpGlobals->g.PlayerRoles.rgwMagic, 0, sizeof(gpGlobals->g.PlayerRoles.rgwMagic));
+                for (int i = 0; i < 8; ++i) gpGlobals->g.PlayerRoles.rgwMagic[i][0] = 384;
+                PAL_PlayerInfoBox(PAL_XY(45, 165), 0, 100, TIMEMETER_COLOR_DEFAULT, TRUE);
+                PAL_MagicSelectionMenuInit(0, FALSE, 384);
+                // Move to the third row/right column through the real menu
+                // input path, without depending on its private selection index.
+                for (int i = 0; i < 5; ++i) {
+                    g_InputState.dwKeyPress = kKeyRight;
+                    Require(PAL_MagicSelectionMenuUpdate() == 0xffff, "Unexpected grid magic action");
+                }
+                PAL_ClearKeyState();
+            }
+            SaveScales(directory, item ? "item-270-grid" : "magic-384-grid");
+        }
+    }
     PAL_FreeResources();
-    printf("Rendered eight long-name menu states and 24 scaled outputs; no right-clipped description ink\n");
+    printf("Rendered eight long-name menu states%s; no right-clipped description ink\n",
+        grid ? " plus two dense grids, each at four sizes" : ", each at four sizes");
 }
 
 void DrawPages(const std::string& directory, bool translated) {
@@ -316,12 +349,12 @@ void DrawPages(const std::string& directory, bool translated) {
 int RenderEvidence(int argc, char **argv) {
     if (argc != 6) {
         fprintf(stderr, "Usage: --render-evidence RESOURCE_DIR SLF_OR_DASH OUTPUT_DIR "
-                        "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages|jp-long-names\n");
+                        "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages|jp-long-names|jp-cursor-grid\n");
         return 2;
     }
     const std::string mode(argv[5]), directory(argv[4]);
     const bool pages = mode == "cn-pages" || mode == "jp-pages";
-    const bool longNames = mode == "jp-long-names";
+    const bool longNames = mode == "jp-long-names" || mode == "jp-cursor-grid";
     const bool scaled = pages || longNames;
     const bool translated = mode == "jp" || mode == "jp-legacy" || mode == "jp-pages" || longNames;
     const bool fieldMenu = mode == "cn-jp-font-field";
@@ -365,7 +398,7 @@ int RenderEvidence(int argc, char **argv) {
                 rendererInfo.name, rendererInfo.flags);
             g_bRenderPaused = TRUE;
             PAL_SetPalette(0, FALSE);
-            if (longNames) DrawLongNames(directory);
+            if (longNames) DrawLongNames(directory, mode == "jp-cursor-grid");
             else DrawPages(directory, translated);
             PAL_FreeUI(); PAL_FreeText(); PAL_FreeFont();
             VIDEO_Shutdown(); PAL_FreeGlobals(); SDL_Quit();

@@ -72,3 +72,12 @@ selected and unselected, through the production menu and scaling paths.
 The [evidence record](../docs/japanese-long-name-rendering.md) includes commands,
 glyph/shadow/cursor and quantity/MP checks, and the explicit user-owned interactive
 acceptance boundary.
+
+The `jp-cursor-grid` mode adds two full-page, repeated-object boundary fixtures
+to those eight views. It selects the third row/right column to check the cursor
+against the previous column's name/quantity and adjacent rows. These lists are
+prepared in memory and are not naturally acquired game inventories.
+Run `tools/verify_long_name_rendering.py` with `--dense-grid` to require zero
+cursor/name/shadow overlap. `--legacy-cursor` verifies archived pre-fix renders
+with the original column spacing and explicitly counted 7/4 covered ink pixels.
+See the [cursor fix and before/after evidence](../docs/japanese-menu-cursor-layout.md).

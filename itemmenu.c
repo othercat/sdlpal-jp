@@ -51,9 +51,10 @@ PAL_ItemSelectMenuUpdate(
    static BYTE        bufImage[2048];
    static WORD        wPrevImageIndex = 0xFFFF;
    const int          iItemsPerLine = 32 / gConfig.dwWordLength;
-   const int          iItemTextWidth = 8 * gConfig.dwWordLength + 20;
+   // Two columns need a 9px cursor plus 1px gap after the previous quantity.
+   const int          iItemTextWidth = 8 * gConfig.dwWordLength + 20 + (iItemsPerLine == 2 ? 3 : 0);
    const int          iLinesPerPage = 7 - gConfig.ScreenLayout.ExtraItemDescLines;
-   const int          iCursorXOffset = gConfig.dwWordLength * 5 / 2;
+   const int          iCursorXOffset = (iItemsPerLine == 2) ? -10 : gConfig.dwWordLength * 5 / 2;
    const int          iAmountXOffset = gConfig.dwWordLength * 8 + 1;
    const int          iPageLineOffset = (iLinesPerPage + 1) / 2;
    const int          iPictureYOffset = (gConfig.ScreenLayout.ExtraItemDescLines > 1) ? (gConfig.ScreenLayout.ExtraItemDescLines - 1) * 16 : 0;

@@ -2,6 +2,8 @@
 
 2026-10-20，关联 [#5](https://github.com/othercat/sdlpal-jp/issues/5)、[字体对照 #10](https://github.com/othercat/sdlpal-jp/issues/10)、[总管 #1](https://github.com/othercat/sdlpal-jp/issues/1)。
 
+> 本页保留 R6 历史图与当时的游标覆盖结果。后续 [R7 游标修复与前后对比](japanese-menu-cursor-layout.md)已将选中名称覆盖的 7／4 个正文墨点降为 0。当前校验器验证本页旧图时须加 `--legacy-cursor`。
+
 **两个 8 全角名称在左右两列均完整容纳，物品数量与名称不重叠，法术 MP 与说明完整。** 本轮直接调用游戏源码绘制，新增 Test 出图模式；没有修改产品布局、字形、说明文本或原始资源。
 
 用户已明确：“我自己验收就行，你只要游戏渲染图即可，不需要实机。”后续实际操作验收由用户完成。本轮交付源码游戏渲染图及检查结果，#5/#10 保持开放，等待用户验收反馈；不再要求用户配合窗口操作或采集。
@@ -78,7 +80,7 @@ $out='D:\Workspace\PALWork\artifacts\sdlpal-jp-issue-5\long-names-r6-20261020'
 $resources='D:\Workspace\PALWork\artifacts\sdlpal-jp-issue-5\gameplay-r3-20261020\runtime\'
 $slf=Join-Path $resources 'paljpn-win-adapted.slf'
 & $exe --render-evidence $resources $slf "$out\source" jp-long-names
-& (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\verify_long_name_rendering.py $resources "$out\source" "$out\verification.json"
+& (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\verify_long_name_rendering.py $resources "$out\source" "$out\verification.json" --legacy-cursor
 & $exe "--gtest_output=xml:$out\tests.xml"
 ```
 
