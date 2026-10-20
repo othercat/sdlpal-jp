@@ -1,0 +1,383 @@
+{
+  "date": "2026-10-20",
+  "operators": {
+    "user": "Loaded slot 1, selected item149, checked ten spells, left selected spell377",
+    "codex": "Release build, resource/save/config verification, window-path selection, two screenshots"
+  },
+  "user_confirmation": "10 项均完整，已停在飛龍手探りの術",
+  "tested_product_baseline": "a5e77e3b8aea26399c1b2de1b777479eace7fd9a",
+  "documentation_branch_base": "bb7006fdd0c22cdc015fde0442b00d0abbf347c5",
+  "release_title": "v2026.08-12-ga5e77e3-dirty",
+  "dirty_scope": "Only uncommitted Test renderer change at Release build; excluded in non-Test configuration",
+  "os": "Windows 11 Pro 10.0.26200",
+  "dpi": 144,
+  "config": "GamePath=D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\\nSavePath=D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\\nMessageFileName=D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\paljpn-win-adapted.slf\nLaunchSetting=0\nWindowWidth=640\nWindowHeight=400\nTextureWidth=320\nTextureHeight=200\nFullScreen=0\nKeepAspectRatio=1\nScaleQuality=0\nEnableGLSL=0\nEnableAviPlay=0\nUseTouchOverlay=0\nMusicVolume=0\nSoundVolume=0\nLogLevel=0\nLogFileName=D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\sdlpal.log\n",
+  "slf_layout": {
+    "81": [
+      2,
+      0
+    ],
+    "82": [
+      1,
+      0
+    ],
+    "83": [
+      3,
+      0
+    ],
+    "84": [
+      30,
+      14
+    ],
+    "85": [
+      5,
+      14
+    ],
+    "86": [
+      31,
+      14
+    ],
+    "87": [
+      70,
+      0
+    ]
+  },
+  "font": {
+    "FontFlavor": "Japanese",
+    "UseISOFont": 0,
+    "FontFile": null,
+    "height": 16
+  },
+  "resources_sha256": {
+    "ABC.mkf": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b",
+    "BALL.MKF": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0",
+    "DATA.MKF": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+    "F.MKF": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7",
+    "FBP.MKF": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84",
+    "FIRE.MKF": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf",
+    "GOP.MKF": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b",
+    "M.MSG": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+    "MAP.MKF": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575",
+    "MGO.mkf": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0",
+    "MUS.MKF": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21",
+    "PAT.MKF": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997",
+    "RGM.MKF": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132",
+    "RNG.MKF": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd",
+    "SOUNDS.MKF": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01",
+    "SSS.MKF": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+    "WORD.DAT": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+  },
+  "unused_original_backup_not_copied": [
+    "ABC-ori.MKF"
+  ],
+  "save_object_check": [
+    {
+      "object": 149,
+      "save": [
+        126,
+        0,
+        39526,
+        0,
+        0,
+        40481,
+        9
+      ],
+      "root": [
+        126,
+        0,
+        39526,
+        0,
+        0,
+        40481,
+        9
+      ],
+      "equal": true
+    },
+    {
+      "object": 306,
+      "save": [
+        38,
+        0,
+        39345,
+        0,
+        0,
+        43301,
+        2
+      ],
+      "root": [
+        38,
+        0,
+        39345,
+        0,
+        0,
+        43301,
+        2
+      ],
+      "equal": true
+    },
+    {
+      "object": 307,
+      "save": [
+        31,
+        0,
+        39349,
+        0,
+        0,
+        43298,
+        2
+      ],
+      "root": [
+        31,
+        0,
+        39349,
+        0,
+        0,
+        43298,
+        2
+      ],
+      "equal": true
+    },
+    {
+      "object": 308,
+      "save": [
+        52,
+        0,
+        43082,
+        0,
+        0,
+        43364,
+        2
+      ],
+      "root": [
+        52,
+        0,
+        43082,
+        0,
+        0,
+        43364,
+        2
+      ],
+      "equal": true
+    },
+    {
+      "object": 311,
+      "save": [
+        41,
+        0,
+        43034,
+        0,
+        0,
+        43316,
+        2
+      ],
+      "root": [
+        41,
+        0,
+        43034,
+        0,
+        0,
+        43316,
+        2
+      ],
+      "equal": true
+    },
+    {
+      "object": 370,
+      "save": [
+        75,
+        0,
+        43126,
+        43075,
+        0,
+        43331,
+        26
+      ],
+      "root": [
+        75,
+        0,
+        43126,
+        43075,
+        0,
+        43331,
+        26
+      ],
+      "equal": true
+    },
+    {
+      "object": 374,
+      "save": [
+        65,
+        0,
+        0,
+        0,
+        0,
+        40845,
+        10
+      ],
+      "root": [
+        65,
+        0,
+        0,
+        0,
+        0,
+        40845,
+        10
+      ],
+      "equal": true
+    },
+    {
+      "object": 377,
+      "save": [
+        98,
+        0,
+        43144,
+        0,
+        0,
+        43346,
+        10
+      ],
+      "root": [
+        98,
+        0,
+        43144,
+        0,
+        0,
+        43346,
+        10
+      ],
+      "equal": true
+    },
+    {
+      "object": 390,
+      "save": [
+        95,
+        0,
+        43138,
+        0,
+        0,
+        43339,
+        2
+      ],
+      "root": [
+        95,
+        0,
+        43138,
+        0,
+        0,
+        43339,
+        2
+      ],
+      "equal": true
+    },
+    {
+      "object": 393,
+      "save": [
+        97,
+        0,
+        43140,
+        0,
+        0,
+        43343,
+        2
+      ],
+      "root": [
+        97,
+        0,
+        43140,
+        0,
+        0,
+        43343,
+        2
+      ],
+      "equal": true
+    },
+    {
+      "object": 394,
+      "save": [
+        100,
+        0,
+        0,
+        43068,
+        0,
+        43360,
+        26
+      ],
+      "root": [
+        100,
+        0,
+        0,
+        43068,
+        0,
+        43360,
+        26
+      ],
+      "equal": true
+    }
+  ],
+  "files_sha256": {
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\sdlpal.exe": "a3aebcc48ff0b688ecded5f7ffd47956c1818633c0ad0098775f681dc74806ea",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\sdlpal.cfg": "b619676432ede216caa85759e26c341cff6539af3b8782e07e173b21490d62b9",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\1.rpg": "9d19a620534b7108fdb77b641456fdf362c3764f9f6ae7cf8b816243c4ae4318",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\paljpn-win-adapted.slf": "f4ffb5753a1a168a23a27426aa6163cd35c35a85d3fd5a8d5f69c0ef2e7f595e",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime-log-snapshot.txt": "2f2f091a6f29d3d43f3f034ac1dd6c674c47781603ca9261cac6a3f3d16b425d",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\build.log": "f6045e4ea2312ac37554edb597b206bc1c580b7434c652998ed1de967cd52536",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\save-object-check.json": "907c6544953d7589697d832d4d9efbda2bcb7bb5a4a07e138b4460ecce5043c5"
+  },
+  "screenshots": {
+    "sdlpal-item-149.jpg": {
+      "sha256": "19bd014fa92e8ec08efdb3f86f80deb1250bb7ea75eaa0928d290f1f4f500e3f",
+      "size": [
+        962,
+        648
+      ],
+      "bytes": 111888,
+      "raw_window_capture": true
+    },
+    "sdlpal-magic-377.jpg": {
+      "sha256": "42369e4df877790c8e7e6b1f2c2763d854ef04945ff22ebfc50e30fe81c108c0",
+      "size": [
+        962,
+        648
+      ],
+      "bytes": 122619,
+      "raw_window_capture": true
+    }
+  },
+  "build": {
+    "configuration": "Release x64",
+    "toolset": "VS2026 v145",
+    "errors": 0,
+    "warnings": 26
+  },
+  "results": {
+    "item149": "Codex observed complete two lines and two-column menu; user operated",
+    "spell377": "Codex observed full sentence and MP 9/999; user operated",
+    "ten_spells": {
+      "ids": [
+        306,
+        307,
+        308,
+        311,
+        370,
+        374,
+        377,
+        390,
+        393,
+        394
+      ],
+      "status": "user confirmed all complete",
+      "individual_codex_screenshots": false
+    },
+    "save_unchanged": true,
+    "resources_unchanged": true
+  },
+  "not_executed": [
+    "8-fullwidth-character names item270 and spell384 in actual menus",
+    "Full game route and battle spell use",
+    "Custom FontFile, other font flavors, DOS and native Saturn",
+    "SDLPAL OS window resize/DPI acceptance",
+    "Rerun all 296 objects/793 lines this round (prior static R4 result retained)"
+  ],
+  "log_timestamp_note": "util.c formats zero-based tm_mon without +1; month in log is one low. Evidence date uses client 2026-10-20.",
+  "issue_state": "open"
+}

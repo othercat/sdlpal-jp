@@ -2,6 +2,8 @@
 
 日期：2026-10-20；关联 [#5](https://github.com/othercat/sdlpal-jp/issues/5)、[总管 #1](https://github.com/othercat/sdlpal-jp/issues/1)。此前 [83–87 布局修复](japanese-description-layout-verification.md) 消除了 11 行法术裁切，本轮处理剩余的赤血蚕。
 
+后续实机记录：[赤血蚕与 10 个法术的实际游戏验收](japanese-description-runtime-verification.md)，保留两张代表性截图、用户逐项确认与未覆盖边界。
+
 **土星原文确实分为 16 全角 + 11 全角两条消息。** 本次仅在生成的 Win 日文 SLF 中，把首行末字「者」移至第二行，适配 SDLPAL 的 249px 物品说明区。全部文字、两行数量、消息区间和界面坐标不变。加载适配后 SLF 时，源码渲染的剩余正文越界由 **31→0 像素**；296 对象 / 793 行静态复核无正文或阴影越界。
 
 这是移植文本的布局适配，不将土星换行认定为翻译错误。源资源不改动，其他译文问题仍由 #6 跟踪。
