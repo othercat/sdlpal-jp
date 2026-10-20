@@ -2,6 +2,8 @@
 
 2026-10-20，执行者 Codex。关联 [#10](https://github.com/othercat/sdlpal-jp/issues/10)、[总管 #1](https://github.com/othercat/sdlpal-jp/issues/1)。[R1 历史基线](pal98-font-rendering-comparison.md)保留。
 
+后续：[R3 对白分页、控制符与三档缩放验证](pal98-dialogue-pagination-scaling.md)，含 PAL98 + PALDLL 实机和 SDLPAL 源码图。
+
 **PALDLL_DX9 已通过现有字体配置使用 SDLPAL Japanese 字形和 16px 字号。** 同一套 PAL98 根资源下，完成李大娘对白、赤血蚕和 10 个法术说明的原版实机截图，以及对应的 SDLPAL 源码出图，共 24 张。测试样例两端均完整可读；没有修改 PALDLL Hook、原版 EXE 或游戏资源。
 
 主对照使用两端相同的**中文文本 + Japanese 字形**，分离语言、字形和布局的影响。Japanese 指 `fontglyph_jp.h` 的 JIS 点阵，未覆盖字符使用引擎原有 Unifont 后备；并不表示原版 PAL.EXE 已能读取日文 SLF。日文专用两列布局和赤血蚕适配见 [#5 的证据](japanese-red-silkworm-layout.md)，不与本轮中文三列布局混算。

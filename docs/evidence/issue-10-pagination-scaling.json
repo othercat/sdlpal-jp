@@ -1,0 +1,825 @@
+{
+  "date": "2026-10-20",
+  "operator": "Codex",
+  "base_commit": "a5e77e3b8aea26399c1b2de1b777479eace7fd9a",
+  "os": "Windows 11 Pro 10.0.26200",
+  "applied_dpi": 144,
+  "methods": {
+    "native": "PAL.EXE + user's PALDLL_DX9 v1.72; raw JPEG window capture",
+    "source": "Test cn-pages/jp-pages; production Direct3D target texture readback; hidden OS window",
+    "limits": "Not a full game route or SDLPAL OS window resize/DPI/input acceptance"
+  },
+  "native_sizes": [
+    {
+      "requested": [
+        960,
+        600
+      ],
+      "capture": [
+        643,
+        426
+      ],
+      "game_area": [
+        640,
+        400
+      ]
+    },
+    {
+      "requested": [
+        1440,
+        900
+      ],
+      "capture": [
+        963,
+        626
+      ],
+      "game_area": [
+        960,
+        600
+      ]
+    },
+    {
+      "requested": [
+        1200,
+        750
+      ],
+      "capture": [
+        803,
+        526
+      ],
+      "game_area": [
+        800,
+        500
+      ]
+    }
+  ],
+  "resources_sha256": {
+    "ABC-ori.MKF": "f9685ba8d22e851a4be492c6b74fbc671d89112d64394e7af86ec7a23751529c",
+    "ABC.mkf": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b",
+    "BALL.MKF": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0",
+    "DATA.MKF": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+    "F.MKF": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7",
+    "FBP.MKF": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84",
+    "FIRE.MKF": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf",
+    "GOP.MKF": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b",
+    "M.MSG": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+    "MAP.MKF": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575",
+    "MGO.mkf": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0",
+    "MUS.MKF": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21",
+    "PAT.MKF": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997",
+    "RGM.MKF": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132",
+    "RNG.MKF": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd",
+    "SOUNDS.MKF": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01",
+    "SSS.MKF": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+    "WORD.DAT": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+  },
+  "font_sha256": "9a7996e3860981ce3b19aa58b3d2ce9edccf1332340b21e90fb3bdf293cb5f76",
+  "slf_sha256": "f4ffb5753a1a168a23a27426aa6163cd35c35a85d3fd5a8d5f69c0ef2e7f595e",
+  "source_verification": {
+    "cn": {
+      "directory": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\source-cn-final",
+      "glyph_characters": 69,
+      "expected_ink_pixels": 3885,
+      "missing_clipped_or_wrong_color_ink": 0,
+      "scope": "Expected glyph ink only; does not reject extra pixels/background.",
+      "scales": [
+        {
+          "file": "aunt-dialogue-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "7c1898b5664759cb3521ec17b06f832b4503c56815ed31f25048b7665def69d2"
+        },
+        {
+          "file": "aunt-dialogue-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "597ac373a4aa662d9b09ad3b93f6b28a4b8618188aaf72399e62b4eecfb2e114"
+        },
+        {
+          "file": "aunt-dialogue-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "be116d01a41716e30f720190082f51eab34dce19121b60d5e03448f6dbbcc97c"
+        },
+        {
+          "file": "controls-page-1-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "6714c4309876b8895da2130d2438ff40a7e51b96f418619519bca1000a42b614"
+        },
+        {
+          "file": "controls-page-1-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "7dea198ded2ab7ad45dd375f37c528d48d3dee304f23e99b23d10b3a63230ed3"
+        },
+        {
+          "file": "controls-page-1-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "dd7c0963fec0c27c3237eb62e7999375e05133c2063e34b43e1466081346108f"
+        },
+        {
+          "file": "controls-page-2-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "eb0264218b638c5c4db48d72a26984e1a22ad9fec0e6a4615943c2f2ca495730"
+        },
+        {
+          "file": "controls-page-2-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "987afea7ca2ff6d484654d8f137869eba2e16a6accfeab3b08c04a6a823a4a27"
+        },
+        {
+          "file": "controls-page-2-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "693872c385f99896525d509ff2bbd1838c1f245a4645de5f5e76432af938c7da"
+        },
+        {
+          "file": "controls-page-3-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "e09ce575d74dd476d19895657bfff41c92302fbe1ecdc6269f795e3db4462517"
+        },
+        {
+          "file": "controls-page-3-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "1509d969f75920f72080052423fbcb354947768c2363ac1c47ee5cb9f0ad45ce"
+        },
+        {
+          "file": "controls-page-3-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "aa83e759e8c14bfd508aeebc244055dc3408fef06f01c254c20fd4def9691fb6"
+        },
+        {
+          "file": "dialogue-1326-page-1-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "4edf737d5c89b23536cf9efeee75626b70dbe5fa7da3f94d747e40fa3d326d5e"
+        },
+        {
+          "file": "dialogue-1326-page-1-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "3fd00938b450380c338a45cbb80f8bf66ca237c9113fd5caf3ae29e1020eadd1"
+        },
+        {
+          "file": "dialogue-1326-page-1-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "6392f3b782e5f70fb9b94850a0c063c66e8b924db9a77f3d10af65d05152730b"
+        },
+        {
+          "file": "dialogue-1326-page-2-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "a164cafdfc2dab3920050f5d26584a0087e46c0a60532bc031e680bfc7e7b967"
+        },
+        {
+          "file": "dialogue-1326-page-2-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "b3c4e809b5ac901b593ac77363d6cf957c53fa8ee34ac1c0978f869abd2908b2"
+        },
+        {
+          "file": "dialogue-1326-page-2-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "93e23fd57a21c7ded94ac3c701893e08781c49bb6896322cea2798ce9e5051f0"
+        },
+        {
+          "file": "dialogue-1333-page-1-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "907d07ab3a03ff7e5c236ab92f72337ad4b87a1a33c923c6dc3712d5341e4434"
+        },
+        {
+          "file": "dialogue-1333-page-1-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "3ae13ab489cac85c3e849bc757fe5a3a5eda952c2d9693fd9ed8bf4b34bd325f"
+        },
+        {
+          "file": "dialogue-1333-page-1-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "cec352786a238b7701f2cb264b97f5d41c702977d6033d4f4a98b6139858661b"
+        },
+        {
+          "file": "dialogue-1333-page-2-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "20acdc4d4a2033d8e3fe93b1961c2e8f6fcf871a96220ce9bf00d52a602540c8"
+        },
+        {
+          "file": "dialogue-1333-page-2-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "ba063640c69af9fdee402be54c8066b757bec959abc4b1a6b180770bc94a9106"
+        },
+        {
+          "file": "dialogue-1333-page-2-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "e52d6bd26dea220a61161dde3c867a962c46d40ab22d5aa41aa608b2ad7f9a36"
+        }
+      ],
+      "pagination_csv": "group,order,message,page,line,color,icon_x,icon_y,waits\n1326,0,1326,1,0,79,0,0,0\n1326,1,1327,1,1,79,160,26,0\n1326,2,1328,1,2,79,288,44,0\n1326,3,1329,1,3,79,288,62,0\n1326,4,1330,1,4,79,176,80,0\n1326,5,1331,2,1,79,304,26,1\n1326,6,1332,2,2,79,304,44,1\n1333,0,1333,1,0,79,0,0,1\n1333,1,1334,1,1,79,228,126,1\n1333,2,1335,1,2,79,228,144,1\n1333,3,1336,1,3,79,228,162,1\n1333,4,1337,1,4,79,52,180,1\n1333,5,1338,2,1,79,228,126,2\n1333,6,1339,2,2,79,228,144,2\n1333,7,1340,2,3,79,228,162,2\ncontrols,0,-1,1,1,45,320,26,2\ncontrols,1,-1,1,2,45,208,44,2\ncontrols,2,-1,1,3,45,208,62,2\ncontrols,3,-1,1,4,45,208,80,2\ncontrols,4,-1,2,1,79,224,26,3\ncontrols,5,-1,2,2,79,152,44,3\ncontrols,6,-1,2,3,79,224,62,3\ncontrols,7,-1,2,4,79,160,80,3\ncontrols,8,-1,3,1,79,208,26,4\n",
+      "renderer_log": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nPagination and color assertions passed; 4 real page waits\n"
+    },
+    "jp": {
+      "directory": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\source-jp-final",
+      "glyph_characters": 69,
+      "expected_ink_pixels": 3885,
+      "missing_clipped_or_wrong_color_ink": 0,
+      "scope": "Expected glyph ink only; does not reject extra pixels/background.",
+      "scales": [
+        {
+          "file": "aunt-dialogue-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "d791486c9d24d3e8b2fbc71de72cc32d7afff5af765467a5349ec8e1c91abae8"
+        },
+        {
+          "file": "aunt-dialogue-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "955fdce448e13df74dbb7299e0ff93957c8d1f8bd02254ae61335ce18837f908"
+        },
+        {
+          "file": "aunt-dialogue-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "d503159c38e496a9eb564b6685edb99040eae61fdb76b878d684783c2d2a75b9"
+        },
+        {
+          "file": "controls-page-1-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "6714c4309876b8895da2130d2438ff40a7e51b96f418619519bca1000a42b614"
+        },
+        {
+          "file": "controls-page-1-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "7dea198ded2ab7ad45dd375f37c528d48d3dee304f23e99b23d10b3a63230ed3"
+        },
+        {
+          "file": "controls-page-1-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "dd7c0963fec0c27c3237eb62e7999375e05133c2063e34b43e1466081346108f"
+        },
+        {
+          "file": "controls-page-2-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "eb0264218b638c5c4db48d72a26984e1a22ad9fec0e6a4615943c2f2ca495730"
+        },
+        {
+          "file": "controls-page-2-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "987afea7ca2ff6d484654d8f137869eba2e16a6accfeab3b08c04a6a823a4a27"
+        },
+        {
+          "file": "controls-page-2-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "693872c385f99896525d509ff2bbd1838c1f245a4645de5f5e76432af938c7da"
+        },
+        {
+          "file": "controls-page-3-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "e09ce575d74dd476d19895657bfff41c92302fbe1ecdc6269f795e3db4462517"
+        },
+        {
+          "file": "controls-page-3-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "1509d969f75920f72080052423fbcb354947768c2363ac1c47ee5cb9f0ad45ce"
+        },
+        {
+          "file": "controls-page-3-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "aa83e759e8c14bfd508aeebc244055dc3408fef06f01c254c20fd4def9691fb6"
+        },
+        {
+          "file": "dialogue-1326-page-1-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "5ddc7a34b2f073ff87b04437ec945e2f0b99a7bebf5b781f6c66be1b34800f38"
+        },
+        {
+          "file": "dialogue-1326-page-1-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "04e689522fc564841c140490f6e673a1f4209db2815a769369992129278eee73"
+        },
+        {
+          "file": "dialogue-1326-page-1-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "9973c2e4fe662d0870d478cb052fef3a79e05705b0851b9a08c89c2adfd15411"
+        },
+        {
+          "file": "dialogue-1326-page-2-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "7cff93030b89e5cef2e0c74244b3ac7dd29e187ee947fdd2543be7a857d03c5b"
+        },
+        {
+          "file": "dialogue-1326-page-2-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "b505f418196c92166186bf3f1f0d49e0a890aa8a8dfc0f7d7365c650fd3e8265"
+        },
+        {
+          "file": "dialogue-1326-page-2-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "2020cc084cf089b16255b0b6b8871eb136cc3bc4eed73edaa882bec96523c074"
+        },
+        {
+          "file": "dialogue-1333-page-1-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "6ab2e29834e3cd0eda2dd5be704f30711aaf6a876994d7bd806e2b19c43fd6b9"
+        },
+        {
+          "file": "dialogue-1333-page-1-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "f4cd51f096587f5ffbde2dc2807e793409d65efc101819b841e4219261c1f13a"
+        },
+        {
+          "file": "dialogue-1333-page-1-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "b5892e279be12f674b4cfc41476e4e4ab3217983987c0a2fd255235b42bf1232"
+        },
+        {
+          "file": "dialogue-1333-page-2-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "871ad9a6aa76a24e8e147df1a3e0ddc3cd68c8a5db685ea01bfcd1cd6cb5bb5b"
+        },
+        {
+          "file": "dialogue-1333-page-2-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "1e34d75e9d1ad73f8c3bdef051700ea275832b8a78035c8af7a0de0c35f2df4d"
+        },
+        {
+          "file": "dialogue-1333-page-2-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "70f4806020574aca3f04a5b645766cf40857c2dd15a5f7baa506feaaa045b80f"
+        },
+        {
+          "file": "dialogue-1333-page-3-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "acc4a19671d32a511d99a168254e7793b1c2475e348ad89f04d1fc113b5eec1c"
+        },
+        {
+          "file": "dialogue-1333-page-3-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "cfc395ae5b86ed152a0da8671df966c44710efd532c4bb71edf857cc24132c50"
+        },
+        {
+          "file": "dialogue-1333-page-3-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "25f07df21131478e555a02828f7bdf8afcd4d3e26cd6b29f1533e29180802873"
+        },
+        {
+          "file": "dialogue-1333-page-4-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "227982c70b96f6a308e5632b7dfe0608c76cb603e3c791ed69e7b29d113862ca"
+        },
+        {
+          "file": "dialogue-1333-page-4-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "eec65ba6a9c7d739a3ce81396ab1f123fd1572c23981082d576a7ffcdeff95b6"
+        },
+        {
+          "file": "dialogue-1333-page-4-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "f481fd3001c82976bd5656a58a705acb0e3bce2df7274c539137b2d21bd0c815"
+        },
+        {
+          "file": "dialogue-1333-page-5-640.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "10005f784e68056af988781fbdad1337cc11906ce1fc38ec77c19fa4e289daf3"
+        },
+        {
+          "file": "dialogue-1333-page-5-960.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": true,
+          "sha256": "4ab4267b6837cd9f0274470e0cb5c8a7fa3be849bb681c7e5f1fccd4d5571ddb"
+        },
+        {
+          "file": "dialogue-1333-page-5-800.bmp",
+          "pixels_preserved": 64000,
+          "new_colors": 0,
+          "exact_integer_nearest": null,
+          "sha256": "3a9dcb866b8990e4b08340d288ac0bcb3f47045cf03612b7bfe2a19319b017b9"
+        }
+      ],
+      "pagination_csv": "group,order,message,page,line,color,icon_x,icon_y,waits\n1326,0,1773,1,0,79,0,0,0\n1326,1,1774,1,1,79,288,26,0\n1326,2,1775,1,2,79,272,44,0\n1326,3,1776,1,3,79,224,62,0\n1326,4,1777,1,4,79,272,80,0\n1326,5,1778,2,1,79,304,26,1\n1326,6,1779,2,2,79,256,44,1\n1326,7,1780,2,3,79,192,62,1\n1333,0,1781,1,0,79,0,0,1\n1333,1,1782,1,1,79,132,126,1\n1333,2,1783,1,2,79,132,144,1\n1333,3,1784,1,3,79,132,162,1\n1333,5,1785,2,1,79,212,126,2\n1333,6,1786,2,2,79,196,144,2\n1333,7,1787,2,3,79,180,162,2\n1333,9,1788,3,1,79,212,126,3\n1333,10,1789,3,2,79,148,144,3\n1333,12,1790,4,1,79,212,126,4\n1333,13,1791,4,2,79,212,144,4\n1333,14,1792,4,3,79,68,162,4\n1333,16,1793,5,1,79,212,126,5\n1333,17,1794,5,2,79,196,144,5\n1333,18,1795,5,3,79,228,162,5\ncontrols,0,-1,1,1,45,320,26,5\ncontrols,1,-1,1,2,45,208,44,5\ncontrols,2,-1,1,3,45,208,62,5\ncontrols,3,-1,1,4,45,208,80,5\ncontrols,4,-1,2,1,79,224,26,6\ncontrols,5,-1,2,2,79,152,44,6\ncontrols,6,-1,2,3,79,224,62,6\ncontrols,7,-1,2,4,79,160,80,6\ncontrols,8,-1,3,1,79,208,26,7\n",
+      "renderer_log": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nPagination and color assertions passed; 7 real page waits\n"
+    }
+  },
+  "legacy_regression": [
+    {
+      "Name": "aunt-dialogue.bmp",
+      "Same": true
+    },
+    {
+      "Name": "item-149.bmp",
+      "Same": true
+    },
+    {
+      "Name": "magic-306.bmp",
+      "Same": true
+    },
+    {
+      "Name": "magic-307.bmp",
+      "Same": true
+    },
+    {
+      "Name": "magic-308.bmp",
+      "Same": true
+    },
+    {
+      "Name": "magic-311.bmp",
+      "Same": true
+    },
+    {
+      "Name": "magic-370.bmp",
+      "Same": true
+    },
+    {
+      "Name": "magic-374.bmp",
+      "Same": true
+    },
+    {
+      "Name": "magic-377.bmp",
+      "Same": true
+    },
+    {
+      "Name": "magic-390.bmp",
+      "Same": true
+    },
+    {
+      "Name": "magic-393.bmp",
+      "Same": true
+    },
+    {
+      "Name": "magic-394.bmp",
+      "Same": true
+    }
+  ],
+  "gtest": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<testsuites tests=\"4\" failures=\"0\" disabled=\"0\" errors=\"0\" timestamp=\"2026-10-20T16:03:02\" time=\"0.002\" name=\"AllTests\">\n  <testsuite name=\"DescriptionLayout\" tests=\"1\" failures=\"0\" disabled=\"0\" errors=\"0\" time=\"0.001\">\n    <testcase name=\"LegacyDefaultsAndJapaneseSLFRenderWithoutItemRegression\" status=\"run\" time=\"0.001\" classname=\"DescriptionLayout\" />\n  </testsuite>\n  <testsuite name=\"sdlpal\" tests=\"3\" failures=\"0\" disabled=\"0\" errors=\"0\" time=\"0.001\">\n    <testcase name=\"PALswprintf\" status=\"run\" time=\"0.001\" classname=\"sdlpal\" />\n    <testcase name=\"PALswprintf2\" status=\"run\" time=\"0\" classname=\"sdlpal\" />\n    <testcase name=\"PALswprintf3\" status=\"run\" time=\"0\" classname=\"sdlpal\" />\n  </testsuite>\n</testsuites>\n",
+  "config_snapshots": {
+    "dxwrapper-requested-1200x750.ini": {
+      "sha256": "0cf7ddf9bf6b994427084eeb0d83e5e9aff36135e0301059842f4a3fdfa6924b",
+      "text": ";; Config file for DirectX DLL Wrapper\n;;\n;; For details, see: https://github.com/elishacloud/dxwrapper/wiki/Configuration\n;;\n[General]\nRealDllPath                = AUTO\nWrapperMode                = \nLoadCustomDllPath          = \nExcludeProcess             = \nIncludeProcess             = \nRunProcess                 = \nWaitForProcess             = 0\nDisableLogging             = 0\n\n[Plugins]\nLoadPlugins                = 0\nLoadFromScriptsOnly        = 0\n\n[Compatibility]\nDd7to9=1\nD3d8to9                    = 1\nD3d9to9Ex=1\nDDrawCompat                = 0\nDinputto8                  = 0\nDisableHighDPIScaling \t   = 1\nDisableGameUX              = 0\nEnableDdrawWrapper         = 0\nEnableD3d9Wrapper          = 0\nEnableDinput8Wrapper       = 0\nEnableDsoundWrapper        = 0\nEnableOpenDialogHook       = 0\nWinVersionLie              = off\nWinVersionLieSP            = 0\nFixPerfCounterUptime       = 0\nHandleExceptions           = 0\nSingleProcAffinity         = 0\n\n[DDrawCompat]\nDDrawCompat20              = 0\nDDrawCompat21              = 0\nDDrawCompat32              = 0\nDDrawCompatDisableGDIHook  = 0\nDDrawCompatNoProcAffinity  = 0\n\n[ddraw]\nDdrawOverrideBitMode       = 0\nDdrawUseDirect3D9Caps      = 0\n\n[Dd7to9]\nDdrawAutoFrameSkip         = 1\nDdrawEmulateSurface        = 0\nDdrawEmulateLock           = 0\nDdrawExtraEmulationSize    = 0\nDdrawKeepAllInterfaceCache = 0\nDdrawForceMipMapAutoGen    = 0\nDdrawClampVertexZDepth     = 0\nDdrawFixByteAlignment      = 0\nDdrawEnableByteAlignment   = 0\nDdrawIntroVideoFix         = 1\nDdrawRemoveScanlines       = 0\nDdrawRemoveInterlacing     = 0\nDdrawReadFromGDI           = 0\nDdrawWriteToGDI            = 0\nDdrawLimitTextureFormats   = 0\nDdrawLimitDisplayModeCount = 145\nDdrawCustomWidth           = 0\nDdrawCustomHeight          = 0\nDdrawUseNativeResolution   = 0\nDdrawOverrideWidth=1200\nDdrawOverrideHeight=750\nDdrawIntegerScalingClamp   = 0\nDdrawMaintainAspectRatio   = 0\nDdrawDisableDirect3DCaps   = 0\n\n[d3d9]\nAnisotropicFiltering       = 0\nAntiAliasing               = 0\nEnvironmentCubeMapFix      = 0\nEnableVSync                = 0\nForceVsyncMode             = 0\nShowFPSCounter             = 0\nOverrideRefreshRate        = 0\nLimitDisplayModeCount      = 0\nCustomDisplayWidth         = 0\nCustomDisplayHeight        = 0\nLimitPerFrameFPS           = 0\nEnableWindowMode           = 1\nWindowModeBorder           = 1\nSetInitialWindowPosition=0\nInitialWindowPositionLeft=0\nInitialWindowPositionTop=0\nFullscreenWindowMode       = 0\nForceExclusiveFullscreen   = 0\nForceMixedVertexProcessing = 0\nForceSystemMemVertexCache  = 0\nSetSwapEffectShim          = 0\nDisableMaxWindowedMode     = 1\nForceDirect3D9On12         = 0\nGraphicsHybridAdapter      = 0\n\n[FullScreen]\nFullScreen                 = 0\nForceWindowResize          = 0\nWaitForWindowChanges       = 0\n\n[dinput8]\nDeviceLookupCacheTime      = 0\nFilterNonActiveInput       = 0\nFixHighFrequencyMouse      = 0\nMouseMovementFactor        = 0\nMouseMovementPadding       = 0\n\n[dsound]\nNum2DBuffers               = 0\nNum3DBuffers               = 0\nForceCertification         = 0\nForceExclusiveMode         = 0\nForceSoftwareMixing        = 0\nForceHardwareMixing        = 0\nForceHQ3DSoftMixing        = 0\nForceNonStaticBuffers      = 0\nForceVoiceManagement       = 0\nForcePrimaryBufferFormat   = 0\nPrimaryBufferBits          = 16\nPrimaryBufferSamples       = 44100\nPrimaryBufferChannels      = 2\nAudioClipDetection         = 0\n\n[time]\nMIN_INTERVAL=0\n"
+    },
+    "dxwrapper-requested-1440x900.ini": {
+      "sha256": "a08a93ecf6fd67f5cb3621b50f7f4b257a1423727b9c50878d83ce7e5c400ed0",
+      "text": ";; Config file for DirectX DLL Wrapper\n;;\n;; For details, see: https://github.com/elishacloud/dxwrapper/wiki/Configuration\n;;\n[General]\nRealDllPath                = AUTO\nWrapperMode                = \nLoadCustomDllPath          = \nExcludeProcess             = \nIncludeProcess             = \nRunProcess                 = \nWaitForProcess             = 0\nDisableLogging             = 0\n\n[Plugins]\nLoadPlugins                = 0\nLoadFromScriptsOnly        = 0\n\n[Compatibility]\nDd7to9=1\nD3d8to9                    = 1\nD3d9to9Ex=1\nDDrawCompat                = 0\nDinputto8                  = 0\nDisableHighDPIScaling \t   = 1\nDisableGameUX              = 0\nEnableDdrawWrapper         = 0\nEnableD3d9Wrapper          = 0\nEnableDinput8Wrapper       = 0\nEnableDsoundWrapper        = 0\nEnableOpenDialogHook       = 0\nWinVersionLie              = off\nWinVersionLieSP            = 0\nFixPerfCounterUptime       = 0\nHandleExceptions           = 0\nSingleProcAffinity         = 0\n\n[DDrawCompat]\nDDrawCompat20              = 0\nDDrawCompat21              = 0\nDDrawCompat32              = 0\nDDrawCompatDisableGDIHook  = 0\nDDrawCompatNoProcAffinity  = 0\n\n[ddraw]\nDdrawOverrideBitMode       = 0\nDdrawUseDirect3D9Caps      = 0\n\n[Dd7to9]\nDdrawAutoFrameSkip         = 1\nDdrawEmulateSurface        = 0\nDdrawEmulateLock           = 0\nDdrawExtraEmulationSize    = 0\nDdrawKeepAllInterfaceCache = 0\nDdrawForceMipMapAutoGen    = 0\nDdrawClampVertexZDepth     = 0\nDdrawFixByteAlignment      = 0\nDdrawEnableByteAlignment   = 0\nDdrawIntroVideoFix         = 1\nDdrawRemoveScanlines       = 0\nDdrawRemoveInterlacing     = 0\nDdrawReadFromGDI           = 0\nDdrawWriteToGDI            = 0\nDdrawLimitTextureFormats   = 0\nDdrawLimitDisplayModeCount = 145\nDdrawCustomWidth           = 0\nDdrawCustomHeight          = 0\nDdrawUseNativeResolution   = 0\nDdrawOverrideWidth=1440\nDdrawOverrideHeight=900\nDdrawIntegerScalingClamp   = 0\nDdrawMaintainAspectRatio   = 0\nDdrawDisableDirect3DCaps   = 0\n\n[d3d9]\nAnisotropicFiltering       = 0\nAntiAliasing               = 0\nEnvironmentCubeMapFix      = 0\nEnableVSync                = 0\nForceVsyncMode             = 0\nShowFPSCounter             = 0\nOverrideRefreshRate        = 0\nLimitDisplayModeCount      = 0\nCustomDisplayWidth         = 0\nCustomDisplayHeight        = 0\nLimitPerFrameFPS           = 0\nEnableWindowMode           = 1\nWindowModeBorder           = 1\nSetInitialWindowPosition=0\nInitialWindowPositionLeft=0\nInitialWindowPositionTop=0\nFullscreenWindowMode       = 0\nForceExclusiveFullscreen   = 0\nForceMixedVertexProcessing = 0\nForceSystemMemVertexCache  = 0\nSetSwapEffectShim          = 0\nDisableMaxWindowedMode     = 1\nForceDirect3D9On12         = 0\nGraphicsHybridAdapter      = 0\n\n[FullScreen]\nFullScreen                 = 0\nForceWindowResize          = 0\nWaitForWindowChanges       = 0\n\n[dinput8]\nDeviceLookupCacheTime      = 0\nFilterNonActiveInput       = 0\nFixHighFrequencyMouse      = 0\nMouseMovementFactor        = 0\nMouseMovementPadding       = 0\n\n[dsound]\nNum2DBuffers               = 0\nNum3DBuffers               = 0\nForceCertification         = 0\nForceExclusiveMode         = 0\nForceSoftwareMixing        = 0\nForceHardwareMixing        = 0\nForceHQ3DSoftMixing        = 0\nForceNonStaticBuffers      = 0\nForceVoiceManagement       = 0\nForcePrimaryBufferFormat   = 0\nPrimaryBufferBits          = 16\nPrimaryBufferSamples       = 44100\nPrimaryBufferChannels      = 2\nAudioClipDetection         = 0\n\n[time]\nMIN_INTERVAL=0\n"
+    },
+    "dxwrapper-requested-800x500.ini": {
+      "sha256": "3275c1d5749c976f5db3efabb8c1007a75513eb68b3ddba50ff3ca4687bae1f6",
+      "text": ";; Config file for DirectX DLL Wrapper\n;;\n;; For details, see: https://github.com/elishacloud/dxwrapper/wiki/Configuration\n;;\n[General]\nRealDllPath                = AUTO\nWrapperMode                = \nLoadCustomDllPath          = \nExcludeProcess             = \nIncludeProcess             = \nRunProcess                 = \nWaitForProcess             = 0\nDisableLogging             = 0\n\n[Plugins]\nLoadPlugins                = 0\nLoadFromScriptsOnly        = 0\n\n[Compatibility]\nDd7to9=1\nD3d8to9                    = 1\nD3d9to9Ex=1\nDDrawCompat                = 0\nDinputto8                  = 0\nDisableHighDPIScaling \t   = 1\nDisableGameUX              = 0\nEnableDdrawWrapper         = 0\nEnableD3d9Wrapper          = 0\nEnableDinput8Wrapper       = 0\nEnableDsoundWrapper        = 0\nEnableOpenDialogHook       = 0\nWinVersionLie              = off\nWinVersionLieSP            = 0\nFixPerfCounterUptime       = 0\nHandleExceptions           = 0\nSingleProcAffinity         = 0\n\n[DDrawCompat]\nDDrawCompat20              = 0\nDDrawCompat21              = 0\nDDrawCompat32              = 0\nDDrawCompatDisableGDIHook  = 0\nDDrawCompatNoProcAffinity  = 0\n\n[ddraw]\nDdrawOverrideBitMode       = 0\nDdrawUseDirect3D9Caps      = 0\n\n[Dd7to9]\nDdrawAutoFrameSkip         = 1\nDdrawEmulateSurface        = 0\nDdrawEmulateLock           = 0\nDdrawExtraEmulationSize    = 0\nDdrawKeepAllInterfaceCache = 0\nDdrawForceMipMapAutoGen    = 0\nDdrawClampVertexZDepth     = 0\nDdrawFixByteAlignment      = 0\nDdrawEnableByteAlignment   = 0\nDdrawIntroVideoFix         = 1\nDdrawRemoveScanlines       = 0\nDdrawRemoveInterlacing     = 0\nDdrawReadFromGDI           = 0\nDdrawWriteToGDI            = 0\nDdrawLimitTextureFormats   = 0\nDdrawLimitDisplayModeCount = 145\nDdrawCustomWidth           = 0\nDdrawCustomHeight          = 0\nDdrawUseNativeResolution   = 0\nDdrawOverrideWidth=800\nDdrawOverrideHeight=500\nDdrawIntegerScalingClamp   = 0\nDdrawMaintainAspectRatio   = 0\nDdrawDisableDirect3DCaps   = 0\n\n[d3d9]\nAnisotropicFiltering       = 0\nAntiAliasing               = 0\nEnvironmentCubeMapFix      = 0\nEnableVSync                = 0\nForceVsyncMode             = 0\nShowFPSCounter             = 0\nOverrideRefreshRate        = 0\nLimitDisplayModeCount      = 0\nCustomDisplayWidth         = 0\nCustomDisplayHeight        = 0\nLimitPerFrameFPS           = 0\nEnableWindowMode           = 1\nWindowModeBorder           = 1\nSetInitialWindowPosition=0\nInitialWindowPositionLeft=0\nInitialWindowPositionTop=0\nFullscreenWindowMode       = 0\nForceExclusiveFullscreen   = 0\nForceMixedVertexProcessing = 0\nForceSystemMemVertexCache  = 0\nSetSwapEffectShim          = 0\nDisableMaxWindowedMode     = 1\nForceDirect3D9On12         = 0\nGraphicsHybridAdapter      = 0\n\n[FullScreen]\nFullScreen                 = 0\nForceWindowResize          = 0\nWaitForWindowChanges       = 0\n\n[dinput8]\nDeviceLookupCacheTime      = 0\nFilterNonActiveInput       = 0\nFixHighFrequencyMouse      = 0\nMouseMovementFactor        = 0\nMouseMovementPadding       = 0\n\n[dsound]\nNum2DBuffers               = 0\nNum3DBuffers               = 0\nForceCertification         = 0\nForceExclusiveMode         = 0\nForceSoftwareMixing        = 0\nForceHardwareMixing        = 0\nForceHQ3DSoftMixing        = 0\nForceNonStaticBuffers      = 0\nForceVoiceManagement       = 0\nForcePrimaryBufferFormat   = 0\nPrimaryBufferBits          = 16\nPrimaryBufferSamples       = 44100\nPrimaryBufferChannels      = 2\nAudioClipDetection         = 0\n\n[time]\nMIN_INTERVAL=0\n"
+    },
+    "dxwrapper-requested-960x600.ini": {
+      "sha256": "5f4e46c3e9cb81c2490956b42674b9a9b56d62d5780ef31cb6477708a629cdd9",
+      "text": ";; Config file for DirectX DLL Wrapper\n;;\n;; For details, see: https://github.com/elishacloud/dxwrapper/wiki/Configuration\n;;\n[General]\nRealDllPath                = AUTO\nWrapperMode                = \nLoadCustomDllPath          = \nExcludeProcess             = \nIncludeProcess             = \nRunProcess                 = \nWaitForProcess             = 0\nDisableLogging             = 0\n\n[Plugins]\nLoadPlugins                = 0\nLoadFromScriptsOnly        = 0\n\n[Compatibility]\nDd7to9=1\nD3d8to9                    = 1\nD3d9to9Ex=1\nDDrawCompat                = 0\nDinputto8                  = 0\nDisableHighDPIScaling \t   = 1\nDisableGameUX              = 0\nEnableDdrawWrapper         = 0\nEnableD3d9Wrapper          = 0\nEnableDinput8Wrapper       = 0\nEnableDsoundWrapper        = 0\nEnableOpenDialogHook       = 0\nWinVersionLie              = off\nWinVersionLieSP            = 0\nFixPerfCounterUptime       = 0\nHandleExceptions           = 0\nSingleProcAffinity         = 0\n\n[DDrawCompat]\nDDrawCompat20              = 0\nDDrawCompat21              = 0\nDDrawCompat32              = 0\nDDrawCompatDisableGDIHook  = 0\nDDrawCompatNoProcAffinity  = 0\n\n[ddraw]\nDdrawOverrideBitMode       = 0\nDdrawUseDirect3D9Caps      = 0\n\n[Dd7to9]\nDdrawAutoFrameSkip         = 1\nDdrawEmulateSurface        = 0\nDdrawEmulateLock           = 0\nDdrawExtraEmulationSize    = 0\nDdrawKeepAllInterfaceCache = 0\nDdrawForceMipMapAutoGen    = 0\nDdrawClampVertexZDepth     = 0\nDdrawFixByteAlignment      = 0\nDdrawEnableByteAlignment   = 0\nDdrawIntroVideoFix         = 1\nDdrawRemoveScanlines       = 0\nDdrawRemoveInterlacing     = 0\nDdrawReadFromGDI           = 0\nDdrawWriteToGDI            = 0\nDdrawLimitTextureFormats   = 0\nDdrawLimitDisplayModeCount = 145\nDdrawCustomWidth           = 0\nDdrawCustomHeight          = 0\nDdrawUseNativeResolution   = 0\nDdrawOverrideWidth=960\nDdrawOverrideHeight=600\nDdrawIntegerScalingClamp   = 0\nDdrawMaintainAspectRatio   = 0\nDdrawDisableDirect3DCaps   = 0\n\n[d3d9]\nAnisotropicFiltering       = 0\nAntiAliasing               = 0\nEnvironmentCubeMapFix      = 0\nEnableVSync                = 0\nForceVsyncMode             = 0\nShowFPSCounter             = 0\nOverrideRefreshRate        = 0\nLimitDisplayModeCount      = 0\nCustomDisplayWidth         = 0\nCustomDisplayHeight        = 0\nLimitPerFrameFPS           = 0\nEnableWindowMode           = 1\nWindowModeBorder           = 1\nSetInitialWindowPosition=0\nInitialWindowPositionLeft=0\nInitialWindowPositionTop=0\nFullscreenWindowMode       = 0\nForceExclusiveFullscreen   = 0\nForceMixedVertexProcessing = 0\nForceSystemMemVertexCache  = 0\nSetSwapEffectShim          = 0\nDisableMaxWindowedMode     = 1\nForceDirect3D9On12         = 0\nGraphicsHybridAdapter      = 0\n\n[FullScreen]\nFullScreen                 = 0\nForceWindowResize          = 0\nWaitForWindowChanges       = 0\n\n[dinput8]\nDeviceLookupCacheTime      = 0\nFilterNonActiveInput       = 0\nFixHighFrequencyMouse      = 0\nMouseMovementFactor        = 0\nMouseMovementPadding       = 0\n\n[dsound]\nNum2DBuffers               = 0\nNum3DBuffers               = 0\nForceCertification         = 0\nForceExclusiveMode         = 0\nForceSoftwareMixing        = 0\nForceHardwareMixing        = 0\nForceHQ3DSoftMixing        = 0\nForceNonStaticBuffers      = 0\nForceVoiceManagement       = 0\nForcePrimaryBufferFormat   = 0\nPrimaryBufferBits          = 16\nPrimaryBufferSamples       = 44100\nPrimaryBufferChannels      = 2\nAudioClipDetection         = 0\n\n[time]\nMIN_INTERVAL=0\n"
+    }
+  },
+  "font_config": "[FontReplacement]\nRuleCount=1\n[FontRule0]\nOriginalFont=*\nReplacementFont=SDLPAL JP 16px\nFontSize=16\nFontWeight=400\nCharSet=134\nQuality=3\nEnabled=1\nMatchAllCharset=1",
+  "font_statistics": "字体替换统计报告\n生成时间: 2026-10-20 15:34:38\n\n=== 字体替换规则 ===\n[0] * -> Microsoft YaHei UI Light (大小:21, 字符集:0x01, 启用:0, 匹配所有字符集:1)\n[1] * -> SDLPAL JP 16px (大小:16, 字符集:0x86, 启用:1, 匹配所有字符集:1)\n\n=== 字体替换统计 ===\nMicrosoft YaHei UI -> SDLPAL JP 16px: 9 次 (首次: 63秒前, 最后: 0秒前)\nSystem -> SDLPAL JP 16px: 8 次 (首次: 423秒前, 最后: 0秒前)\nMicrosoft Sans Serif -> SDLPAL JP 16px: 7 次 (首次: 423秒前, 最后: 63秒前)\nSimSun -> SDLPAL JP 16px: 2 次 (首次: 423秒前, 最后: 63秒前)\nMingLiU -> SDLPAL JP 16px: 2 次 (首次: 423秒前, 最后: 63秒前)\nMingLiU_HKSCS -> SDLPAL JP 16px: 2 次 (首次: 423秒前, 最后: 63秒前)\nPMingLiU -> SDLPAL JP 16px: 2 次 (首次: 423秒前, 最后: 63秒前)\nSimsun -> SDLPAL JP 16px: 1 次 (首次: 425秒前, 最后: 425秒前)\nMingLiU-ExtB -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nPMingLiU-ExtB -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMingLiU_HKSCS-ExtB -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMicrosoft JhengHei -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMicrosoft JhengHei Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMicrosoft JhengHei UI -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMicrosoft JhengHei UI Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMicrosoft JhengHei UI Light -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nYu Gothic UI -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nYu Gothic UI Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nYu Gothic UI Light -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nYu Gothic UI Semilight -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nYu Gothic UI Semibold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMeiryo -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMeiryo Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMeiryo UI -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMeiryo UI Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMS Gothic -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMS PGothic -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMS UI Gothic -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMS Mincho -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMS PMincho -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nBatang -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nBatangChe -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nDotum -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nDotumChe -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nGulim -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nGulimChe -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nGungsuh -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nGungsuhChe -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMalgun Gothic -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMalgun Gothic Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMalgun Gothic Semilight -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nLucida Sans Unicode -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nTahoma -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Light -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Semilight -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Semibold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Small -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Small Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Small Light -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Small Semilig -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Small Semibol -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Text -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Text Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Text Light -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Text Semiligh -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Text Semibold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Display -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Display Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Display Light -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Display Semil -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSegoe UI Variable Display Semib -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nEbrima -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nEbrima Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nGadugi -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nGadugi Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nKhmer UI -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nKhmer UI Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nLao UI -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nLao UI Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nLeelawadee -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nLeelawadee Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nLeelawadee UI -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nLeelawadee UI Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nNirmala UI -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nNirmala UI Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nNirmala UI Semilight -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSimSun-ExtB -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nSimSun-ExtG -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nNSimSun -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMicrosoft YaHei -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMicrosoft YaHei Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMS Sans Serif -> SDLPAL JP 16px: 1 次 (首次: 425秒前, 最后: 425秒前)\nMicrosoft YaHei UI Bold -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\nMicrosoft YaHei UI Light -> SDLPAL JP 16px: 1 次 (首次: 63秒前, 最后: 63秒前)\n\n=== 字体缓存统计 ===\n缓存字体数量: 3\n  SDLPAL JP 16px (大小:-17, 粗细:400, 字符集:0x86)\n  SDLPAL JP 16px (大小:-18, 粗细:400, 字符集:0x86)\n  SDLPAL JP 16px (大小:16, 粗细:400, 字符集:0x86)\n",
+  "font_unload": {
+    "action": "unload",
+    "font": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\same-font-r2-20261020\\sdlpal-jp-16px.ttf",
+    "flags": 0,
+    "result": 1,
+    "sha256": "9a7996e3860981ce3b19aa58b3d2ce9edccf1332340b21e90fb3bdf293cb5f76"
+  },
+  "files_sha256": {
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\build-final\\sdlpal.exe": "ae29f759817b09e80f326aaa6ce095a0e5d1bdc8fa82fcac0f37ca00b9e6f155",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\build-final.log": "d2df0f75be0dd48bc917251f68b5f2334d884a7288e0ababc42b84a264538fb0",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\tests-final.xml": "70706351eb77e3696d452c916dc98da2a194d491fb173981d39b3c063dcf8ba7",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\legacy-regression.json": "6f86de225b0d0a779af89c1533ced92dbddf576283596ff91a080fe0d53c1555",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\font-stats-pagination.txt": "60566cb2979d3a6ed462fdc8104e228718097aa33edefeaed90adced8c4548a4",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\font-stats-final.txt": "08cc31aef75b1477b41aa24e571ce180806eb61076c8dd4211a0a57c64d5e19d",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\font-unload.json": "62c8a75e79c6cb7a5447b7243de559566b17eb3567cf694d7c041796e985705b",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\native\\PAL.EXE": "75d612b9cbd9c1f0884f18c9a6d2ee522b227f2f6b3da92495bae8f73161c450",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\native\\PAL.dll": "2ce7c6817456bf1b5ad6dc5114bcbffb38cc1f9bc16ecd8e70140be65f371c1a",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\native\\PALOLD.dll": "c6a34e511ed1c7bb2ecddfaaba00992d53006db3ed4b5ab3da61943b417227e8",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\native\\ddraw.dll": "8f942204e0c0ed772bbcb118328b5ebb5eb0e1f1f9d1cbed73f0ecd3d2db2e7c",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\native\\dxwrapper.dll": "ca76bc2989fe07f1bfe65ecb8fc057766de5fa99563039171cd3c0cd1e1410f3",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\native\\config.ini": "933e66da91ab3b503ad17bbf62af5f8cab3f12cd418e4a8601358df767245146",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\native\\fontconfig.ini": "960f847a2344526c96239721e0609b6d24972436d681bf3374959aca8b677e8b",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\native\\1.rpg": "9d19a620534b7108fdb77b641456fdf362c3764f9f6ae7cf8b816243c4ae4318",
+    "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tests\\render_evidence.cpp": "f54d3b437790c94d4e3b6fad4a62359a54f280deec3de5fde560daf0884fbc6e",
+    "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\export_japanese_font.py": "eab14fc3ce585c1d743ef271c90530d08259aeaf95f06e89a019b4087742b01e",
+    "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\verify_dialogue_rendering.py": "f18592c54fcda7026e4763126bd3c9d7a317b3f936fa0f970037b57c0538adaa"
+  },
+  "raw_evidence_sha256": {
+    "source-cn-final\\aunt-dialogue-640.bmp": "7c1898b5664759cb3521ec17b06f832b4503c56815ed31f25048b7665def69d2",
+    "source-cn-final\\aunt-dialogue-800.bmp": "be116d01a41716e30f720190082f51eab34dce19121b60d5e03448f6dbbcc97c",
+    "source-cn-final\\aunt-dialogue-960.bmp": "597ac373a4aa662d9b09ad3b93f6b28a4b8618188aaf72399e62b4eecfb2e114",
+    "source-cn-final\\aunt-dialogue.bmp": "6506847b3840e0bb8f18d2ff9a7e2d4e2bc43bfcf6e8ab3a579c5ff37c83ea36",
+    "source-cn-final\\controls-page-1-640.bmp": "6714c4309876b8895da2130d2438ff40a7e51b96f418619519bca1000a42b614",
+    "source-cn-final\\controls-page-1-800.bmp": "dd7c0963fec0c27c3237eb62e7999375e05133c2063e34b43e1466081346108f",
+    "source-cn-final\\controls-page-1-960.bmp": "7dea198ded2ab7ad45dd375f37c528d48d3dee304f23e99b23d10b3a63230ed3",
+    "source-cn-final\\controls-page-1.bmp": "59969e48b8d35008413696a41ab7b003c4655a893c04116d4d835ac4a36e948b",
+    "source-cn-final\\controls-page-2-640.bmp": "eb0264218b638c5c4db48d72a26984e1a22ad9fec0e6a4615943c2f2ca495730",
+    "source-cn-final\\controls-page-2-800.bmp": "693872c385f99896525d509ff2bbd1838c1f245a4645de5f5e76432af938c7da",
+    "source-cn-final\\controls-page-2-960.bmp": "987afea7ca2ff6d484654d8f137869eba2e16a6accfeab3b08c04a6a823a4a27",
+    "source-cn-final\\controls-page-2.bmp": "3c3a8397a0b8bb9539d90f9ede377cac6630a99be39d3296d96d78d8013a91db",
+    "source-cn-final\\controls-page-3-640.bmp": "e09ce575d74dd476d19895657bfff41c92302fbe1ecdc6269f795e3db4462517",
+    "source-cn-final\\controls-page-3-800.bmp": "aa83e759e8c14bfd508aeebc244055dc3408fef06f01c254c20fd4def9691fb6",
+    "source-cn-final\\controls-page-3-960.bmp": "1509d969f75920f72080052423fbcb354947768c2363ac1c47ee5cb9f0ad45ce",
+    "source-cn-final\\controls-page-3.bmp": "07972651bcb7d35895134efb4b920341deb58c8cc7645a508bbe564a9e28e7be",
+    "source-cn-final\\dialogue-1326-page-1-640.bmp": "4edf737d5c89b23536cf9efeee75626b70dbe5fa7da3f94d747e40fa3d326d5e",
+    "source-cn-final\\dialogue-1326-page-1-800.bmp": "6392f3b782e5f70fb9b94850a0c063c66e8b924db9a77f3d10af65d05152730b",
+    "source-cn-final\\dialogue-1326-page-1-960.bmp": "3fd00938b450380c338a45cbb80f8bf66ca237c9113fd5caf3ae29e1020eadd1",
+    "source-cn-final\\dialogue-1326-page-1.bmp": "5d8f6bbbfe11abcabe44c8617e9dae52b7cf7aa0fbff2397db96a255ac008c16",
+    "source-cn-final\\dialogue-1326-page-2-640.bmp": "a164cafdfc2dab3920050f5d26584a0087e46c0a60532bc031e680bfc7e7b967",
+    "source-cn-final\\dialogue-1326-page-2-800.bmp": "93e23fd57a21c7ded94ac3c701893e08781c49bb6896322cea2798ce9e5051f0",
+    "source-cn-final\\dialogue-1326-page-2-960.bmp": "b3c4e809b5ac901b593ac77363d6cf957c53fa8ee34ac1c0978f869abd2908b2",
+    "source-cn-final\\dialogue-1326-page-2.bmp": "4a84ebf26a0263d0530854e1bf655e357b71f75154f6c670bc568f51d3161427",
+    "source-cn-final\\dialogue-1333-page-1-640.bmp": "907d07ab3a03ff7e5c236ab92f72337ad4b87a1a33c923c6dc3712d5341e4434",
+    "source-cn-final\\dialogue-1333-page-1-800.bmp": "cec352786a238b7701f2cb264b97f5d41c702977d6033d4f4a98b6139858661b",
+    "source-cn-final\\dialogue-1333-page-1-960.bmp": "3ae13ab489cac85c3e849bc757fe5a3a5eda952c2d9693fd9ed8bf4b34bd325f",
+    "source-cn-final\\dialogue-1333-page-1.bmp": "68a7d0d44a3a962ec10ad5a520fc9e87ed74f6dd71088f0af15286af7a22047d",
+    "source-cn-final\\dialogue-1333-page-2-640.bmp": "20acdc4d4a2033d8e3fe93b1961c2e8f6fcf871a96220ce9bf00d52a602540c8",
+    "source-cn-final\\dialogue-1333-page-2-800.bmp": "e52d6bd26dea220a61161dde3c867a962c46d40ab22d5aa41aa608b2ad7f9a36",
+    "source-cn-final\\dialogue-1333-page-2-960.bmp": "ba063640c69af9fdee402be54c8066b757bec959abc4b1a6b180770bc94a9106",
+    "source-cn-final\\dialogue-1333-page-2.bmp": "2d47c9b448be0644e9d2fa525f7b19784aee1887d066d0b60db3ea42caefca5c",
+    "source-cn-final\\pagination.csv": "4c5492801dba09c99af92c3864d58856a3709c3de655849b9e08b469124ad5cf",
+    "source-jp-final\\aunt-dialogue-640.bmp": "d791486c9d24d3e8b2fbc71de72cc32d7afff5af765467a5349ec8e1c91abae8",
+    "source-jp-final\\aunt-dialogue-800.bmp": "d503159c38e496a9eb564b6685edb99040eae61fdb76b878d684783c2d2a75b9",
+    "source-jp-final\\aunt-dialogue-960.bmp": "955fdce448e13df74dbb7299e0ff93957c8d1f8bd02254ae61335ce18837f908",
+    "source-jp-final\\aunt-dialogue.bmp": "a1a88405378bc1a9b51f80b20c012e43f4893db1f899321adbc473290af02eb6",
+    "source-jp-final\\controls-page-1-640.bmp": "6714c4309876b8895da2130d2438ff40a7e51b96f418619519bca1000a42b614",
+    "source-jp-final\\controls-page-1-800.bmp": "dd7c0963fec0c27c3237eb62e7999375e05133c2063e34b43e1466081346108f",
+    "source-jp-final\\controls-page-1-960.bmp": "7dea198ded2ab7ad45dd375f37c528d48d3dee304f23e99b23d10b3a63230ed3",
+    "source-jp-final\\controls-page-1.bmp": "59969e48b8d35008413696a41ab7b003c4655a893c04116d4d835ac4a36e948b",
+    "source-jp-final\\controls-page-2-640.bmp": "eb0264218b638c5c4db48d72a26984e1a22ad9fec0e6a4615943c2f2ca495730",
+    "source-jp-final\\controls-page-2-800.bmp": "693872c385f99896525d509ff2bbd1838c1f245a4645de5f5e76432af938c7da",
+    "source-jp-final\\controls-page-2-960.bmp": "987afea7ca2ff6d484654d8f137869eba2e16a6accfeab3b08c04a6a823a4a27",
+    "source-jp-final\\controls-page-2.bmp": "3c3a8397a0b8bb9539d90f9ede377cac6630a99be39d3296d96d78d8013a91db",
+    "source-jp-final\\controls-page-3-640.bmp": "e09ce575d74dd476d19895657bfff41c92302fbe1ecdc6269f795e3db4462517",
+    "source-jp-final\\controls-page-3-800.bmp": "aa83e759e8c14bfd508aeebc244055dc3408fef06f01c254c20fd4def9691fb6",
+    "source-jp-final\\controls-page-3-960.bmp": "1509d969f75920f72080052423fbcb354947768c2363ac1c47ee5cb9f0ad45ce",
+    "source-jp-final\\controls-page-3.bmp": "07972651bcb7d35895134efb4b920341deb58c8cc7645a508bbe564a9e28e7be",
+    "source-jp-final\\dialogue-1326-page-1-640.bmp": "5ddc7a34b2f073ff87b04437ec945e2f0b99a7bebf5b781f6c66be1b34800f38",
+    "source-jp-final\\dialogue-1326-page-1-800.bmp": "9973c2e4fe662d0870d478cb052fef3a79e05705b0851b9a08c89c2adfd15411",
+    "source-jp-final\\dialogue-1326-page-1-960.bmp": "04e689522fc564841c140490f6e673a1f4209db2815a769369992129278eee73",
+    "source-jp-final\\dialogue-1326-page-1.bmp": "948cca1655701a5ede8eab13c1c5025a517d04ddaeb3a125dde666bf98cd4429",
+    "source-jp-final\\dialogue-1326-page-2-640.bmp": "7cff93030b89e5cef2e0c74244b3ac7dd29e187ee947fdd2543be7a857d03c5b",
+    "source-jp-final\\dialogue-1326-page-2-800.bmp": "2020cc084cf089b16255b0b6b8871eb136cc3bc4eed73edaa882bec96523c074",
+    "source-jp-final\\dialogue-1326-page-2-960.bmp": "b505f418196c92166186bf3f1f0d49e0a890aa8a8dfc0f7d7365c650fd3e8265",
+    "source-jp-final\\dialogue-1326-page-2.bmp": "5817e2c2ee478237ca97d4652e54544bea4552a26abe1598bcfcc82657bb7514",
+    "source-jp-final\\dialogue-1333-page-1-640.bmp": "6ab2e29834e3cd0eda2dd5be704f30711aaf6a876994d7bd806e2b19c43fd6b9",
+    "source-jp-final\\dialogue-1333-page-1-800.bmp": "b5892e279be12f674b4cfc41476e4e4ab3217983987c0a2fd255235b42bf1232",
+    "source-jp-final\\dialogue-1333-page-1-960.bmp": "f4cd51f096587f5ffbde2dc2807e793409d65efc101819b841e4219261c1f13a",
+    "source-jp-final\\dialogue-1333-page-1.bmp": "89a1d35f9c537dd6f823efc84da3a18600075dd0b2cec9476e8d102db5e590ed",
+    "source-jp-final\\dialogue-1333-page-2-640.bmp": "871ad9a6aa76a24e8e147df1a3e0ddc3cd68c8a5db685ea01bfcd1cd6cb5bb5b",
+    "source-jp-final\\dialogue-1333-page-2-800.bmp": "70f4806020574aca3f04a5b645766cf40857c2dd15a5f7baa506feaaa045b80f",
+    "source-jp-final\\dialogue-1333-page-2-960.bmp": "1e34d75e9d1ad73f8c3bdef051700ea275832b8a78035c8af7a0de0c35f2df4d",
+    "source-jp-final\\dialogue-1333-page-2.bmp": "500ad2bd170e6e396f28d4dc9be72674aafa90bbf113e73c586d695e413b3237",
+    "source-jp-final\\dialogue-1333-page-3-640.bmp": "acc4a19671d32a511d99a168254e7793b1c2475e348ad89f04d1fc113b5eec1c",
+    "source-jp-final\\dialogue-1333-page-3-800.bmp": "25f07df21131478e555a02828f7bdf8afcd4d3e26cd6b29f1533e29180802873",
+    "source-jp-final\\dialogue-1333-page-3-960.bmp": "cfc395ae5b86ed152a0da8671df966c44710efd532c4bb71edf857cc24132c50",
+    "source-jp-final\\dialogue-1333-page-3.bmp": "b68633740a3ac19cacb0d66c79fb36c8e90b5e4c52c874c3a6aa882e89bd260d",
+    "source-jp-final\\dialogue-1333-page-4-640.bmp": "227982c70b96f6a308e5632b7dfe0608c76cb603e3c791ed69e7b29d113862ca",
+    "source-jp-final\\dialogue-1333-page-4-800.bmp": "f481fd3001c82976bd5656a58a705acb0e3bce2df7274c539137b2d21bd0c815",
+    "source-jp-final\\dialogue-1333-page-4-960.bmp": "eec65ba6a9c7d739a3ce81396ab1f123fd1572c23981082d576a7ffcdeff95b6",
+    "source-jp-final\\dialogue-1333-page-4.bmp": "fbb43cdaaba20dbd36818343fc6ca0ed369856d9584ecb5e7f0d770692fbafeb",
+    "source-jp-final\\dialogue-1333-page-5-640.bmp": "10005f784e68056af988781fbdad1337cc11906ce1fc38ec77c19fa4e289daf3",
+    "source-jp-final\\dialogue-1333-page-5-800.bmp": "3a9dcb866b8990e4b08340d288ac0bcb3f47045cf03612b7bfe2a19319b017b9",
+    "source-jp-final\\dialogue-1333-page-5-960.bmp": "4ab4267b6837cd9f0274470e0cb5c8a7fa3be849bb681c7e5f1fccd4d5571ddb",
+    "source-jp-final\\dialogue-1333-page-5.bmp": "3a7168653a303629a5329106bdb9a24003fceca63c006ead85830c719da32c36",
+    "source-jp-final\\pagination.csv": "b7145ab842f5ef717352ff6df775010b046a7c3ba1cc0919be36539209b846ff",
+    "screenshots\\pal98-1326-page-1.jpg": "56d5dff58b1629b539911f2ad06d8581b9d63bbb6ca30858720d3260a82660d0",
+    "screenshots\\pal98-1326-page-2.jpg": "bec45f03e22f6d776b97b06523cc70672194298a118b7b84ac80aff1512069d3",
+    "screenshots\\pal98-1333-page-1.jpg": "3404405dc9197f112d3d367f37820dc4c550dfdbe9af5f921bdd245f20d1b2fd",
+    "screenshots\\pal98-1333-page-2.jpg": "9ac41cfec12c073d1416299891337e3e88edc51fa94fbd53dcb116d4e552875a",
+    "screenshots\\pal98-aunt-800.jpg": "8580a96561b0d525460e5119aa4cff10991f29e672501d4e0a54f545f2756d02",
+    "screenshots\\pal98-aunt-960.jpg": "5d7782f0bfbe7524c089cb8b97ee998bb8e72b59890279455ffd20c1122e075a",
+    "screenshots\\pal98-request-800x500-aunt.jpg": "b32942bccb8fddfbf0e45c9a1ec2b2dbb409bd19b741757458dfa21faa444e93",
+    "screenshots\\pal98-size-disabled.jpg": "9143f113dfcba9331671a1b3be8fb5a79a574b007619e0552e567e59d79d5f19"
+  },
+  "published_images": {
+    "cn-aunt-800.png": {
+      "sha256": "8e60f9d4c9695e7daee15f3fa8c716ae9c2f2fd1e356777f4679e16e183d5c54",
+      "size": [
+        800,
+        500
+      ],
+      "bytes": 45200
+    },
+    "cn-aunt-960.png": {
+      "sha256": "ba7377d76b8a8b27ac0337ee6066c826b8c1bb67e3538a4599c8426db3990830",
+      "size": [
+        960,
+        600
+      ],
+      "bytes": 48017
+    },
+    "cn-dialogue-1326-page-1.png": {
+      "sha256": "ffea9cf8ad81e25976361cc7bb80ca510aa79e3939212cf09c2387967247cab0",
+      "size": [
+        640,
+        400
+      ],
+      "bytes": 35472
+    },
+    "cn-dialogue-1326-page-2.png": {
+      "sha256": "2f775429d8bb7e72fc261396c6f0020ef7e6d52667b7c4c0083580981225c8c2",
+      "size": [
+        640,
+        400
+      ],
+      "bytes": 34989
+    },
+    "cn-dialogue-1333-page-1.png": {
+      "sha256": "2cab29830223277ff607145955868869d3584addfabb9e589b562e4021e24f89",
+      "size": [
+        640,
+        400
+      ],
+      "bytes": 37124
+    },
+    "cn-dialogue-1333-page-2.png": {
+      "sha256": "237bce829927502f4e0d0586e4fa9a343d42f51ae468f1305864b3dd45463fcc",
+      "size": [
+        640,
+        400
+      ],
+      "bytes": 37010
+    },
+    "controls-page-1.png": {
+      "sha256": "cb311c1ba653dfe9ac5eee1d237491bd0c04a668e709115ff2ff225f58a1145d",
+      "size": [
+        640,
+        400
+      ],
+      "bytes": 34174
+    },
+    "controls-page-2.png": {
+      "sha256": "4bf80758cb8bc6484ef4f22acc7286a91c216345d49576974a1a97f46cdd1d6c",
+      "size": [
+        640,
+        400
+      ],
+      "bytes": 34404
+    },
+    "controls-page-3.png": {
+      "sha256": "ac5335b3d067db63792fbef5c1d153d49dfc7e1a4a69770e0149ffedc894b3b5",
+      "size": [
+        640,
+        400
+      ],
+      "bytes": 32104
+    },
+    "jp-dialogue-1326-page-2.png": {
+      "sha256": "2df583cc33f93de7a25f9b79ca9e6dfaf9096de26aa2bd9a123ea0b3b1dd6842",
+      "size": [
+        640,
+        400
+      ],
+      "bytes": 35185
+    },
+    "jp-dialogue-1333-page-5.png": {
+      "sha256": "19ab32caef7cb36f8c1b68b013d4ca72f136b9f64dda7462bde7cd556bcc0cd2",
+      "size": [
+        640,
+        400
+      ],
+      "bytes": 36185
+    },
+    "pal98-1326-page-1.jpg": {
+      "sha256": "56d5dff58b1629b539911f2ad06d8581b9d63bbb6ca30858720d3260a82660d0",
+      "size": [
+        643,
+        426
+      ],
+      "bytes": 58682
+    },
+    "pal98-1326-page-2.jpg": {
+      "sha256": "bec45f03e22f6d776b97b06523cc70672194298a118b7b84ac80aff1512069d3",
+      "size": [
+        643,
+        426
+      ],
+      "bytes": 58288
+    },
+    "pal98-1333-page-1.jpg": {
+      "sha256": "3404405dc9197f112d3d367f37820dc4c550dfdbe9af5f921bdd245f20d1b2fd",
+      "size": [
+        643,
+        426
+      ],
+      "bytes": 63123
+    },
+    "pal98-1333-page-2.jpg": {
+      "sha256": "9ac41cfec12c073d1416299891337e3e88edc51fa94fbd53dcb116d4e552875a",
+      "size": [
+        643,
+        426
+      ],
+      "bytes": 62415
+    },
+    "pal98-aunt-800.jpg": {
+      "sha256": "8580a96561b0d525460e5119aa4cff10991f29e672501d4e0a54f545f2756d02",
+      "size": [
+        803,
+        526
+      ],
+      "bytes": 78357
+    },
+    "pal98-aunt-960.jpg": {
+      "sha256": "5d7782f0bfbe7524c089cb8b97ee998bb8e72b59890279455ffd20c1122e075a",
+      "size": [
+        963,
+        626
+      ],
+      "bytes": 103459
+    }
+  }
+}

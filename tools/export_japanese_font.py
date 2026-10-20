@@ -55,7 +55,7 @@ def resource_characters(repo, resources):
     return {cp for cp in characters if cp >= 32}
 
 
-def load_glyphs(repo, resources):
+def load_glyphs(repo, resources, extra_characters=()):
     source = (repo / "fontglyph.h").read_text("utf-8")
     body = re.search(r"unicode_font\[\]\[32\]\s*=\s*\{(.*?)\};", source, re.S)[1]
     bitmaps = [bytes(map(int, re.findall(r"\d+", s)))
@@ -67,6 +67,7 @@ def load_glyphs(repo, resources):
                                         (repo / "fontglyph_jp.h").read_text("utf-8"))}
     characters = set(range(32, 127)) | set(japanese)
     characters.update(resource_characters(repo, resources))
+    characters.update(extra_characters)
     result = {}
     for cp in sorted(characters):
         if 0xD800 <= cp < 0xF900 or cp >= 0xFFFE:
