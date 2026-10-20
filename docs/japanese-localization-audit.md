@@ -17,7 +17,7 @@
 | [#9](https://github.com/othercat/sdlpal-jp/issues/9) | [头像与调色板](#issue-9) | 土星头像资源与独立调色板线索，待调查 |
 | [#10](https://github.com/othercat/sdlpal-jp/issues/10) | [字体与跨引擎对照](pal98-font-rendering-comparison.md) | PAL98 实机基线、SDLPAL 源码出图及布局前后证据 |
 
-2026-10-20 后续：[83–87 实现复核](japanese-description-layout-verification.md) 已将正文裁切从基线 12 行减少为赤血蚕 1 行；[#10 源码渲染](pal98-font-rendering-comparison.md) 用真实绘制函数再次核实，并提供同资源中文/日文图。下文仍保留原审计基线，避免把历史数量当作修复后结果。
+2026-10-20 后续：[83–87 实现复核](japanese-description-layout-verification.md) 将正文裁切从基线 12 行减少为赤血蚕 1 行；[#10 源码渲染](pal98-font-rendering-comparison.md) 提供实际绘制证据。随后[赤血蚕换行适配](japanese-red-silkworm-layout.md)核对土星原始消息，仅在生成的 Win SLF 移动一个换行；加载适配后 SLF 时，剩余正文与阴影越界均为 0。完整游戏验收待完成。下文保留原审计基线。
 
 ## Audit baseline
 
