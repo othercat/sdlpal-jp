@@ -1,0 +1,5404 @@
+{
+  "scope": "Independent read-only raw-source/text/call-chain review for Issue #8; no engine duplicate-overwrite analysis, no gameplay acceptance.",
+  "requested_feature_baseline": "7bf7fcb54233fe6d3207b1f5110a9b64dc3d997c (provided by parent; Git not inspected)",
+  "numbering": "Script/message/item IDs are zero-based raw indices; event and scene IDs are one-based. Coordinates are raw event positions.",
+  "inputs": {
+    "pc": {
+      "sss.mkf": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+        "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+        "bytes": 575270
+      },
+      "m.msg": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+        "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+        "bytes": 224983
+      },
+      "word.dat": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\WORD.DAT",
+        "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+        "bytes": 5650
+      }
+    },
+    "saturn": {
+      "JM.MSG": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+        "sha256": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+        "bytes": 309248
+      },
+      "JM.NOR": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+        "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+        "bytes": 65296
+      },
+      "JM.SEC": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+        "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+        "bytes": 308120
+      },
+      "PROG.BIN": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\PROG.BIN",
+        "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c",
+        "bytes": 411244
+      }
+    }
+  },
+  "before_slf": {
+    "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\before.slf",
+    "sha256": "d15d7ad24eb16f33e56a4c993d8b5f995a4eb98438ee9bd98f2b498513ac2229"
+  },
+  "coverage": {
+    "win_script_records_scanned": 43557,
+    "event_records_scanned": 5077,
+    "scene_records": 295,
+    "target_keys": 6,
+    "target_message_groups": 13,
+    "target_FFFF_records": 20,
+    "direct_pickup_events": 16,
+    "dynamic_guard_events": [
+      1584,
+      1585,
+      1600,
+      1601,
+      1602
+    ]
+  },
+  "keys": [
+    {
+      "key": [
+        4931,
+        4931
+      ],
+      "win_messages": [
+        {
+          "id": 4931,
+          "start": 82559,
+          "end_exclusive": 82581,
+          "bytes_hex": "d3d0c7aebac3b0eccac2a3aec3bbc7aec3e2ccb8a3a1",
+          "text": "有钱好办事．没钱免谈！",
+          "stream": "M.MSG"
+        }
+      ],
+      "win_uses": [
+        {
+          "group": {
+            "script_start": 14579,
+            "script_end": 14579,
+            "ids": [
+              4931
+            ],
+            "text": [
+              "有钱好办事．没钱免谈！"
+            ],
+            "sid": 4931,
+            "eid": 4931
+          },
+          "call_chain": {
+            "kind": "dynamic_event_trigger",
+            "event": {
+              "event": 1584,
+              "scene": 85,
+              "map": 80,
+              "scene_on_enter": 0,
+              "scene_on_teleport": 0,
+              "position": [
+                1392,
+                952
+              ],
+              "initial_trigger": 15273,
+              "initial_auto": 35633,
+              "state": 2,
+              "trigger_mode": 2,
+              "sprite": 97,
+              "raw": [
+                0,
+                1392,
+                952,
+                0,
+                15273,
+                35633,
+                2,
+                2,
+                97,
+                3,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "assignment": {
+              "script": 14541,
+              "raw": [
+                37,
+                1584,
+                14581,
+                0
+              ],
+              "hex": [
+                "0025",
+                "0630",
+                "38f5",
+                "0000"
+              ]
+            },
+            "trigger_entry": 14581,
+            "branch_to_refusal": [
+              {
+                "script": 14583,
+                "raw": [
+                  10,
+                  14578,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "000a",
+                  "38f2",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14584,
+                "raw": [
+                  30,
+                  65436,
+                  14578,
+                  0
+                ],
+                "hex": [
+                  "001e",
+                  "ff9c",
+                  "38f2",
+                  "0000"
+                ]
+              }
+            ],
+            "refusal_returns_next_interaction_to_fee_question": {
+              "script": 14580,
+              "raw": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "0001",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            },
+            "source_context": [
+              {
+                "script": 14578,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14579,
+                "raw": [
+                  65535,
+                  4931,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1343",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14580,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14581,
+                "raw": [
+                  65535,
+                  4932,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1344",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14582,
+                "raw": [
+                  65535,
+                  4933,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1345",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14583,
+                "raw": [
+                  10,
+                  14578,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "000a",
+                  "38f2",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14584,
+                "raw": [
+                  30,
+                  65436,
+                  14578,
+                  0
+                ],
+                "hex": [
+                  "001e",
+                  "ff9c",
+                  "38f2",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14585,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14586,
+                "raw": [
+                  65535,
+                  4934,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1346",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14587,
+                "raw": [
+                  65535,
+                  4935,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1347",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14588,
+                "raw": [
+                  36,
+                  1584,
+                  14596,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0630",
+                  "3904",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14589,
+                "raw": [
+                  36,
+                  1585,
+                  14600,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0631",
+                  "3908",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14590,
+                "raw": [
+                  37,
+                  1585,
+                  14593,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0631",
+                  "3901",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14591,
+                "raw": [
+                  37,
+                  1585,
+                  14593,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0631",
+                  "3901",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14592,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ]
+          },
+          "render_command": {
+            "script": null,
+            "instruction": [
+              60,
+              0,
+              0,
+              0
+            ],
+            "synthetic_default": true,
+            "basis": "No 003b/003c/003d/003e occurs in this event entry-to-message path (including fee refusal branch). Use normal upper/no-portrait default; this 003c is a fixture representation, not a raw preceding script instruction.",
+            "source_text": [
+              "有钱好办事．没钱免谈！"
+            ]
+          }
+        },
+        {
+          "group": {
+            "script_start": 43542,
+            "script_end": 43542,
+            "ids": [
+              4931
+            ],
+            "text": [
+              "有钱好办事．没钱免谈！"
+            ],
+            "sid": 4931,
+            "eid": 4931
+          },
+          "call_chain": {
+            "kind": "dynamic_event_trigger",
+            "event": {
+              "event": 1585,
+              "scene": 85,
+              "map": 80,
+              "scene_on_enter": 0,
+              "scene_on_teleport": 0,
+              "position": [
+                1376,
+                960
+              ],
+              "initial_trigger": 15276,
+              "initial_auto": 0,
+              "state": 2,
+              "trigger_mode": 2,
+              "sprite": 137,
+              "raw": [
+                0,
+                1376,
+                960,
+                0,
+                15276,
+                0,
+                2,
+                2,
+                137,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "assignment": {
+              "script": 14542,
+              "raw": [
+                37,
+                1585,
+                43544,
+                0
+              ],
+              "hex": [
+                "0025",
+                "0631",
+                "aa18",
+                "0000"
+              ]
+            },
+            "trigger_entry": 43544,
+            "branch_to_refusal": [
+              {
+                "script": 43546,
+                "raw": [
+                  10,
+                  43541,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "000a",
+                  "aa15",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43547,
+                "raw": [
+                  30,
+                  65436,
+                  43541,
+                  0
+                ],
+                "hex": [
+                  "001e",
+                  "ff9c",
+                  "aa15",
+                  "0000"
+                ]
+              }
+            ],
+            "refusal_returns_next_interaction_to_fee_question": {
+              "script": 43543,
+              "raw": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "0001",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            },
+            "source_context": [
+              {
+                "script": 43541,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43542,
+                "raw": [
+                  65535,
+                  4931,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1343",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43543,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43544,
+                "raw": [
+                  65535,
+                  4932,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1344",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43545,
+                "raw": [
+                  65535,
+                  4933,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1345",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43546,
+                "raw": [
+                  10,
+                  43541,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "000a",
+                  "aa15",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43547,
+                "raw": [
+                  30,
+                  65436,
+                  43541,
+                  0
+                ],
+                "hex": [
+                  "001e",
+                  "ff9c",
+                  "aa15",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43548,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43549,
+                "raw": [
+                  65535,
+                  4934,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1346",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43550,
+                "raw": [
+                  65535,
+                  4935,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1347",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43551,
+                "raw": [
+                  36,
+                  1584,
+                  14596,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0630",
+                  "3904",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43552,
+                "raw": [
+                  36,
+                  1585,
+                  14600,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0631",
+                  "3908",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43553,
+                "raw": [
+                  37,
+                  1584,
+                  14593,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0630",
+                  "3901",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43554,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43555,
+                "raw": [
+                  3,
+                  14593,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0003",
+                  "3901",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43556,
+                "raw": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0000",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ]
+          },
+          "render_command": {
+            "script": null,
+            "instruction": [
+              60,
+              0,
+              0,
+              0
+            ],
+            "synthetic_default": true,
+            "basis": "No 003b/003c/003d/003e occurs in this event entry-to-message path (including fee refusal branch). Use normal upper/no-portrait default; this 003c is a fixture representation, not a raw preceding script instruction.",
+            "source_text": [
+              "有钱好办事．没钱免谈！"
+            ]
+          }
+        }
+      ],
+      "before_slf_blocks": [
+        {
+          "zero_based_block_index": 1686,
+          "text": [
+            "金がないなら話にならん！"
+          ]
+        },
+        {
+          "zero_based_block_index": 4651,
+          "text": [
+            "金がないなら話にならん！"
+          ]
+        }
+      ],
+      "saturn_sources": [
+        {
+          "group": {
+            "script_start": 15813,
+            "script_end": 15813,
+            "ids": [
+              6455
+            ],
+            "text": [
+              "金がないなら話にならん！"
+            ],
+            "sid": 6455,
+            "eid": 6455
+          },
+          "messages": [
+            {
+              "id": 6455,
+              "start": 113068,
+              "end_exclusive": 113092,
+              "bytes_hex": "8be082aa82c882a282c882e7986282c982c882e782f18149",
+              "text": "金がないなら話にならん！",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            }
+          ],
+          "context": [
+            {
+              "script": 15811,
+              "raw": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "0000",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15812,
+              "raw": [
+                5,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "0005",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15813,
+              "raw": [
+                65535,
+                6455,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "1937",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15814,
+              "raw": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "0001",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15815,
+              "raw": [
+                65535,
+                6456,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "1938",
+                "0000",
+                "0000"
+              ]
+            }
+          ]
+        }
+      ],
+      "recommendation": "Keep every block and existing identical text unchanged."
+    },
+    {
+      "key": [
+        4932,
+        4933
+      ],
+      "win_messages": [
+        {
+          "id": 4932,
+          "start": 82581,
+          "end_exclusive": 82587,
+          "bytes_hex": "d1c3d2dba3ba",
+          "text": "衙役：",
+          "stream": "M.MSG"
+        },
+        {
+          "id": 4933,
+          "start": 82587,
+          "end_exclusive": 82611,
+          "bytes_hex": "d2aaccbdbce0c2f0a3bfcfc8bdc9a3b1a3b0a3b0cec4c7ae",
+          "text": "要探监吗？先缴１００文钱",
+          "stream": "M.MSG"
+        }
+      ],
+      "win_uses": [
+        {
+          "group": {
+            "script_start": 14581,
+            "script_end": 14582,
+            "ids": [
+              4932,
+              4933
+            ],
+            "text": [
+              "衙役：",
+              "要探监吗？先缴１００文钱"
+            ],
+            "sid": 4932,
+            "eid": 4933
+          },
+          "call_chain": {
+            "kind": "dynamic_event_trigger",
+            "event": {
+              "event": 1584,
+              "scene": 85,
+              "map": 80,
+              "scene_on_enter": 0,
+              "scene_on_teleport": 0,
+              "position": [
+                1392,
+                952
+              ],
+              "initial_trigger": 15273,
+              "initial_auto": 35633,
+              "state": 2,
+              "trigger_mode": 2,
+              "sprite": 97,
+              "raw": [
+                0,
+                1392,
+                952,
+                0,
+                15273,
+                35633,
+                2,
+                2,
+                97,
+                3,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "assignment": {
+              "script": 14541,
+              "raw": [
+                37,
+                1584,
+                14581,
+                0
+              ],
+              "hex": [
+                "0025",
+                "0630",
+                "38f5",
+                "0000"
+              ]
+            },
+            "trigger_entry": 14581,
+            "source_context": [
+              {
+                "script": 14578,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14579,
+                "raw": [
+                  65535,
+                  4931,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1343",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14580,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14581,
+                "raw": [
+                  65535,
+                  4932,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1344",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14582,
+                "raw": [
+                  65535,
+                  4933,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1345",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14583,
+                "raw": [
+                  10,
+                  14578,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "000a",
+                  "38f2",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14584,
+                "raw": [
+                  30,
+                  65436,
+                  14578,
+                  0
+                ],
+                "hex": [
+                  "001e",
+                  "ff9c",
+                  "38f2",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14585,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14586,
+                "raw": [
+                  65535,
+                  4934,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1346",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14587,
+                "raw": [
+                  65535,
+                  4935,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1347",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14588,
+                "raw": [
+                  36,
+                  1584,
+                  14596,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0630",
+                  "3904",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14589,
+                "raw": [
+                  36,
+                  1585,
+                  14600,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0631",
+                  "3908",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14590,
+                "raw": [
+                  37,
+                  1585,
+                  14593,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0631",
+                  "3901",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14591,
+                "raw": [
+                  37,
+                  1585,
+                  14593,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0631",
+                  "3901",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14592,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ]
+          },
+          "render_command": {
+            "script": null,
+            "instruction": [
+              60,
+              0,
+              0,
+              0
+            ],
+            "synthetic_default": true,
+            "basis": "No 003b/003c/003d/003e occurs in this event entry-to-message path (including fee refusal branch). Use normal upper/no-portrait default; this 003c is a fixture representation, not a raw preceding script instruction.",
+            "source_text": [
+              "衙役：",
+              "要探监吗？先缴１００文钱"
+            ]
+          }
+        },
+        {
+          "group": {
+            "script_start": 43544,
+            "script_end": 43545,
+            "ids": [
+              4932,
+              4933
+            ],
+            "text": [
+              "衙役：",
+              "要探监吗？先缴１００文钱"
+            ],
+            "sid": 4932,
+            "eid": 4933
+          },
+          "call_chain": {
+            "kind": "dynamic_event_trigger",
+            "event": {
+              "event": 1585,
+              "scene": 85,
+              "map": 80,
+              "scene_on_enter": 0,
+              "scene_on_teleport": 0,
+              "position": [
+                1376,
+                960
+              ],
+              "initial_trigger": 15276,
+              "initial_auto": 0,
+              "state": 2,
+              "trigger_mode": 2,
+              "sprite": 137,
+              "raw": [
+                0,
+                1376,
+                960,
+                0,
+                15276,
+                0,
+                2,
+                2,
+                137,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "assignment": {
+              "script": 14542,
+              "raw": [
+                37,
+                1585,
+                43544,
+                0
+              ],
+              "hex": [
+                "0025",
+                "0631",
+                "aa18",
+                "0000"
+              ]
+            },
+            "trigger_entry": 43544,
+            "source_context": [
+              {
+                "script": 43541,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43542,
+                "raw": [
+                  65535,
+                  4931,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1343",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43543,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43544,
+                "raw": [
+                  65535,
+                  4932,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1344",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43545,
+                "raw": [
+                  65535,
+                  4933,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1345",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43546,
+                "raw": [
+                  10,
+                  43541,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "000a",
+                  "aa15",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43547,
+                "raw": [
+                  30,
+                  65436,
+                  43541,
+                  0
+                ],
+                "hex": [
+                  "001e",
+                  "ff9c",
+                  "aa15",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43548,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43549,
+                "raw": [
+                  65535,
+                  4934,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1346",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43550,
+                "raw": [
+                  65535,
+                  4935,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1347",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43551,
+                "raw": [
+                  36,
+                  1584,
+                  14596,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0630",
+                  "3904",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43552,
+                "raw": [
+                  36,
+                  1585,
+                  14600,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0631",
+                  "3908",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43553,
+                "raw": [
+                  37,
+                  1584,
+                  14593,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0630",
+                  "3901",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43554,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43555,
+                "raw": [
+                  3,
+                  14593,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0003",
+                  "3901",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43556,
+                "raw": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0000",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ]
+          },
+          "render_command": {
+            "script": null,
+            "instruction": [
+              60,
+              0,
+              0,
+              0
+            ],
+            "synthetic_default": true,
+            "basis": "No 003b/003c/003d/003e occurs in this event entry-to-message path (including fee refusal branch). Use normal upper/no-portrait default; this 003c is a fixture representation, not a raw preceding script instruction.",
+            "source_text": [
+              "衙役：",
+              "要探监吗？先缴１００文钱"
+            ]
+          }
+        }
+      ],
+      "before_slf_blocks": [
+        {
+          "zero_based_block_index": 1687,
+          "text": [
+            "門衛：",
+            "面会か？",
+            "１００文銭払う規則だ。"
+          ]
+        },
+        {
+          "zero_based_block_index": 4652,
+          "text": [
+            "門衛：",
+            "面会か？",
+            "１００文銭払う規則だ。"
+          ]
+        }
+      ],
+      "saturn_sources": [
+        {
+          "group": {
+            "script_start": 15815,
+            "script_end": 15817,
+            "ids": [
+              6456,
+              6457,
+              6458
+            ],
+            "text": [
+              "門衛：",
+              "面会か？",
+              "１００文銭払う規則だ。"
+            ],
+            "sid": 6456,
+            "eid": 6458
+          },
+          "messages": [
+            {
+              "id": 6456,
+              "start": 113092,
+              "end_exclusive": 113098,
+              "bytes_hex": "96e589718146",
+              "text": "門衛：",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            },
+            {
+              "id": 6457,
+              "start": 113098,
+              "end_exclusive": 113106,
+              "bytes_hex": "96ca89ef82a98148",
+              "text": "面会か？",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            },
+            {
+              "id": 6458,
+              "start": 113106,
+              "end_exclusive": 113128,
+              "bytes_hex": "8250824f824f95b6914b95a582a48b4b91a582be8142",
+              "text": "１００文銭払う規則だ。",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            }
+          ],
+          "context": [
+            {
+              "script": 15813,
+              "raw": [
+                65535,
+                6455,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "1937",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15814,
+              "raw": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "0001",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15815,
+              "raw": [
+                65535,
+                6456,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "1938",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15816,
+              "raw": [
+                65535,
+                6457,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "1939",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15817,
+              "raw": [
+                65535,
+                6458,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "193a",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15818,
+              "raw": [
+                10,
+                15812,
+                0,
+                0
+              ],
+              "hex": [
+                "000a",
+                "3dc4",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15819,
+              "raw": [
+                30,
+                65436,
+                15812,
+                0
+              ],
+              "hex": [
+                "001e",
+                "ff9c",
+                "3dc4",
+                "0000"
+              ]
+            }
+          ]
+        }
+      ],
+      "recommendation": "Keep every block and existing identical text unchanged."
+    },
+    {
+      "key": [
+        4934,
+        4935
+      ],
+      "win_messages": [
+        {
+          "id": 4934,
+          "start": 82611,
+          "end_exclusive": 82617,
+          "bytes_hex": "d1c3d2dba3ba",
+          "text": "衙役：",
+          "stream": "M.MSG"
+        },
+        {
+          "id": 4935,
+          "start": 82617,
+          "end_exclusive": 82623,
+          "bytes_hex": "c7ebb0c9a3a1",
+          "text": "请吧！",
+          "stream": "M.MSG"
+        }
+      ],
+      "win_uses": [
+        {
+          "group": {
+            "script_start": 14586,
+            "script_end": 14587,
+            "ids": [
+              4934,
+              4935
+            ],
+            "text": [
+              "衙役：",
+              "请吧！"
+            ],
+            "sid": 4934,
+            "eid": 4935
+          },
+          "call_chain": {
+            "kind": "dynamic_event_trigger",
+            "event": {
+              "event": 1584,
+              "scene": 85,
+              "map": 80,
+              "scene_on_enter": 0,
+              "scene_on_teleport": 0,
+              "position": [
+                1392,
+                952
+              ],
+              "initial_trigger": 15273,
+              "initial_auto": 35633,
+              "state": 2,
+              "trigger_mode": 2,
+              "sprite": 97,
+              "raw": [
+                0,
+                1392,
+                952,
+                0,
+                15273,
+                35633,
+                2,
+                2,
+                97,
+                3,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "assignment": {
+              "script": 14541,
+              "raw": [
+                37,
+                1584,
+                14581,
+                0
+              ],
+              "hex": [
+                "0025",
+                "0630",
+                "38f5",
+                "0000"
+              ]
+            },
+            "trigger_entry": 14581,
+            "source_context": [
+              {
+                "script": 14578,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14579,
+                "raw": [
+                  65535,
+                  4931,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1343",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14580,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14581,
+                "raw": [
+                  65535,
+                  4932,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1344",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14582,
+                "raw": [
+                  65535,
+                  4933,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1345",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14583,
+                "raw": [
+                  10,
+                  14578,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "000a",
+                  "38f2",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14584,
+                "raw": [
+                  30,
+                  65436,
+                  14578,
+                  0
+                ],
+                "hex": [
+                  "001e",
+                  "ff9c",
+                  "38f2",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14585,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14586,
+                "raw": [
+                  65535,
+                  4934,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1346",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14587,
+                "raw": [
+                  65535,
+                  4935,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1347",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14588,
+                "raw": [
+                  36,
+                  1584,
+                  14596,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0630",
+                  "3904",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14589,
+                "raw": [
+                  36,
+                  1585,
+                  14600,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0631",
+                  "3908",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14590,
+                "raw": [
+                  37,
+                  1585,
+                  14593,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0631",
+                  "3901",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14591,
+                "raw": [
+                  37,
+                  1585,
+                  14593,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0631",
+                  "3901",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14592,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ]
+          },
+          "render_command": {
+            "script": null,
+            "instruction": [
+              60,
+              0,
+              0,
+              0
+            ],
+            "synthetic_default": true,
+            "basis": "No 003b/003c/003d/003e occurs in this event entry-to-message path (including fee refusal branch). Use normal upper/no-portrait default; this 003c is a fixture representation, not a raw preceding script instruction.",
+            "source_text": [
+              "衙役：",
+              "请吧！"
+            ]
+          }
+        },
+        {
+          "group": {
+            "script_start": 43549,
+            "script_end": 43550,
+            "ids": [
+              4934,
+              4935
+            ],
+            "text": [
+              "衙役：",
+              "请吧！"
+            ],
+            "sid": 4934,
+            "eid": 4935
+          },
+          "call_chain": {
+            "kind": "dynamic_event_trigger",
+            "event": {
+              "event": 1585,
+              "scene": 85,
+              "map": 80,
+              "scene_on_enter": 0,
+              "scene_on_teleport": 0,
+              "position": [
+                1376,
+                960
+              ],
+              "initial_trigger": 15276,
+              "initial_auto": 0,
+              "state": 2,
+              "trigger_mode": 2,
+              "sprite": 137,
+              "raw": [
+                0,
+                1376,
+                960,
+                0,
+                15276,
+                0,
+                2,
+                2,
+                137,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "assignment": {
+              "script": 14542,
+              "raw": [
+                37,
+                1585,
+                43544,
+                0
+              ],
+              "hex": [
+                "0025",
+                "0631",
+                "aa18",
+                "0000"
+              ]
+            },
+            "trigger_entry": 43544,
+            "source_context": [
+              {
+                "script": 43541,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43542,
+                "raw": [
+                  65535,
+                  4931,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1343",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43543,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43544,
+                "raw": [
+                  65535,
+                  4932,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1344",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43545,
+                "raw": [
+                  65535,
+                  4933,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1345",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43546,
+                "raw": [
+                  10,
+                  43541,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "000a",
+                  "aa15",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43547,
+                "raw": [
+                  30,
+                  65436,
+                  43541,
+                  0
+                ],
+                "hex": [
+                  "001e",
+                  "ff9c",
+                  "aa15",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43548,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43549,
+                "raw": [
+                  65535,
+                  4934,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1346",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43550,
+                "raw": [
+                  65535,
+                  4935,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "1347",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43551,
+                "raw": [
+                  36,
+                  1584,
+                  14596,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0630",
+                  "3904",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43552,
+                "raw": [
+                  36,
+                  1585,
+                  14600,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0631",
+                  "3908",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43553,
+                "raw": [
+                  37,
+                  1584,
+                  14593,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0630",
+                  "3901",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43554,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43555,
+                "raw": [
+                  3,
+                  14593,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0003",
+                  "3901",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43556,
+                "raw": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0000",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ]
+          },
+          "render_command": {
+            "script": null,
+            "instruction": [
+              60,
+              0,
+              0,
+              0
+            ],
+            "synthetic_default": true,
+            "basis": "No 003b/003c/003d/003e occurs in this event entry-to-message path (including fee refusal branch). Use normal upper/no-portrait default; this 003c is a fixture representation, not a raw preceding script instruction.",
+            "source_text": [
+              "衙役：",
+              "请吧！"
+            ]
+          }
+        }
+      ],
+      "before_slf_blocks": [
+        {
+          "zero_based_block_index": 1688,
+          "text": [
+            "門衛：",
+            "どうぞ！"
+          ]
+        },
+        {
+          "zero_based_block_index": 4653,
+          "text": [
+            "門衛：",
+            "どうぞ！"
+          ]
+        }
+      ],
+      "saturn_sources": [
+        {
+          "group": {
+            "script_start": 15821,
+            "script_end": 15822,
+            "ids": [
+              6459,
+              6460
+            ],
+            "text": [
+              "門衛：",
+              "どうぞ！"
+            ],
+            "sid": 6459,
+            "eid": 6460
+          },
+          "messages": [
+            {
+              "id": 6459,
+              "start": 113128,
+              "end_exclusive": 113134,
+              "bytes_hex": "96e589718146",
+              "text": "門衛：",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            },
+            {
+              "id": 6460,
+              "start": 113134,
+              "end_exclusive": 113142,
+              "bytes_hex": "82c782a482bc8149",
+              "text": "どうぞ！",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            }
+          ],
+          "context": [
+            {
+              "script": 15819,
+              "raw": [
+                30,
+                65436,
+                15812,
+                0
+              ],
+              "hex": [
+                "001e",
+                "ff9c",
+                "3dc4",
+                "0000"
+              ]
+            },
+            {
+              "script": 15820,
+              "raw": [
+                5,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "0005",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15821,
+              "raw": [
+                65535,
+                6459,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "193b",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15822,
+              "raw": [
+                65535,
+                6460,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "193c",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 15823,
+              "raw": [
+                36,
+                1541,
+                15831,
+                0
+              ],
+              "hex": [
+                "0024",
+                "0605",
+                "3dd7",
+                "0000"
+              ]
+            },
+            {
+              "script": 15824,
+              "raw": [
+                36,
+                1542,
+                15835,
+                0
+              ],
+              "hex": [
+                "0024",
+                "0606",
+                "3ddb",
+                "0000"
+              ]
+            }
+          ]
+        }
+      ],
+      "recommendation": "Keep every block and existing identical text unchanged."
+    },
+    {
+      "key": [
+        5107,
+        5108
+      ],
+      "win_messages": [
+        {
+          "id": 5107,
+          "start": 85361,
+          "end_exclusive": 85367,
+          "bytes_hex": "d1b2b2b6a3ba",
+          "text": "巡捕：",
+          "stream": "M.MSG"
+        },
+        {
+          "id": 5108,
+          "start": 85367,
+          "end_exclusive": 85393,
+          "bytes_hex": "b7eeccabcad8d6aec3fca3acbfc9c8c3c1bdcebbb3f6b3c7a1a3",
+          "text": "奉太守之命，可让两位出城。",
+          "stream": "M.MSG"
+        }
+      ],
+      "win_uses": [
+        {
+          "group": {
+            "script_start": 14990,
+            "script_end": 14991,
+            "ids": [
+              5107,
+              5108
+            ],
+            "text": [
+              "巡捕：",
+              "奉太守之命，可让两位出城。"
+            ],
+            "sid": 5107,
+            "eid": 5108
+          },
+          "call_chain": {
+            "kind": "dynamic_event_trigger",
+            "event": {
+              "event": 1600,
+              "scene": 85,
+              "map": 80,
+              "scene_on_enter": 0,
+              "scene_on_teleport": 0,
+              "position": [
+                1296,
+                648
+              ],
+              "initial_trigger": 15261,
+              "initial_auto": 35633,
+              "state": 2,
+              "trigger_mode": 2,
+              "sprite": 97,
+              "raw": [
+                0,
+                1296,
+                648,
+                0,
+                15261,
+                35633,
+                2,
+                2,
+                97,
+                3,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "assignment": {
+              "script": 14971,
+              "raw": [
+                37,
+                1600,
+                14990,
+                0
+              ],
+              "hex": [
+                "0025",
+                "0640",
+                "3a8e",
+                "0000"
+              ]
+            },
+            "trigger_entry": 14990,
+            "source_context": [
+              {
+                "script": 14990,
+                "raw": [
+                  65535,
+                  5107,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "13f3",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14991,
+                "raw": [
+                  65535,
+                  5108,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "13f4",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14992,
+                "raw": [
+                  125,
+                  1600,
+                  65504,
+                  0
+                ],
+                "hex": [
+                  "007d",
+                  "0640",
+                  "ffe0",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14993,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14994,
+                "raw": [
+                  36,
+                  1600,
+                  35639,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0640",
+                  "8b37",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14995,
+                "raw": [
+                  37,
+                  1601,
+                  14999,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0641",
+                  "3a97",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14996,
+                "raw": [
+                  37,
+                  1601,
+                  14999,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0641",
+                  "3a97",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14997,
+                "raw": [
+                  37,
+                  1602,
+                  14999,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0642",
+                  "3a97",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14998,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 14999,
+                "raw": [
+                  65535,
+                  5109,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "13f5",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ]
+          },
+          "render_command": {
+            "script": null,
+            "instruction": [
+              60,
+              0,
+              0,
+              0
+            ],
+            "synthetic_default": true,
+            "basis": "No 003b/003c/003d/003e occurs in this event entry-to-message path (including fee refusal branch). Use normal upper/no-portrait default; this 003c is a fixture representation, not a raw preceding script instruction.",
+            "source_text": [
+              "巡捕：",
+              "奉太守之命，可让两位出城。"
+            ]
+          }
+        },
+        {
+          "group": {
+            "script_start": 43514,
+            "script_end": 43515,
+            "ids": [
+              5107,
+              5108
+            ],
+            "text": [
+              "巡捕：",
+              "奉太守之命，可让两位出城。"
+            ],
+            "sid": 5107,
+            "eid": 5108
+          },
+          "call_chain": {
+            "kind": "dynamic_event_trigger",
+            "event": {
+              "event": 1601,
+              "scene": 85,
+              "map": 80,
+              "scene_on_enter": 0,
+              "scene_on_teleport": 0,
+              "position": [
+                1280,
+                640
+              ],
+              "initial_trigger": 15266,
+              "initial_auto": 35639,
+              "state": 2,
+              "trigger_mode": 2,
+              "sprite": 137,
+              "raw": [
+                0,
+                1280,
+                640,
+                0,
+                15266,
+                35639,
+                2,
+                2,
+                137,
+                1,
+                3,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "assignment": {
+              "script": 14972,
+              "raw": [
+                37,
+                1601,
+                43514,
+                0
+              ],
+              "hex": [
+                "0025",
+                "0641",
+                "a9fa",
+                "0000"
+              ]
+            },
+            "trigger_entry": 43514,
+            "source_context": [
+              {
+                "script": 43514,
+                "raw": [
+                  65535,
+                  5107,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "13f3",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43515,
+                "raw": [
+                  65535,
+                  5108,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "13f4",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43516,
+                "raw": [
+                  125,
+                  1600,
+                  65504,
+                  0
+                ],
+                "hex": [
+                  "007d",
+                  "0640",
+                  "ffe0",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43517,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43518,
+                "raw": [
+                  36,
+                  1600,
+                  35639,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0640",
+                  "8b37",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43519,
+                "raw": [
+                  37,
+                  1600,
+                  14999,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0640",
+                  "3a97",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43520,
+                "raw": [
+                  37,
+                  1602,
+                  14999,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0642",
+                  "3a97",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43521,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43522,
+                "raw": [
+                  3,
+                  14999,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0003",
+                  "3a97",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43523,
+                "raw": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0000",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ]
+          },
+          "render_command": {
+            "script": null,
+            "instruction": [
+              60,
+              0,
+              0,
+              0
+            ],
+            "synthetic_default": true,
+            "basis": "No 003b/003c/003d/003e occurs in this event entry-to-message path (including fee refusal branch). Use normal upper/no-portrait default; this 003c is a fixture representation, not a raw preceding script instruction.",
+            "source_text": [
+              "巡捕：",
+              "奉太守之命，可让两位出城。"
+            ]
+          }
+        },
+        {
+          "group": {
+            "script_start": 43524,
+            "script_end": 43525,
+            "ids": [
+              5107,
+              5108
+            ],
+            "text": [
+              "巡捕：",
+              "奉太守之命，可让两位出城。"
+            ],
+            "sid": 5107,
+            "eid": 5108
+          },
+          "call_chain": {
+            "kind": "dynamic_event_trigger",
+            "event": {
+              "event": 1602,
+              "scene": 85,
+              "map": 80,
+              "scene_on_enter": 0,
+              "scene_on_teleport": 0,
+              "position": [
+                1312,
+                656
+              ],
+              "initial_trigger": 15270,
+              "initial_auto": 35636,
+              "state": 2,
+              "trigger_mode": 2,
+              "sprite": 137,
+              "raw": [
+                0,
+                1312,
+                656,
+                0,
+                15270,
+                35636,
+                2,
+                2,
+                137,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "assignment": {
+              "script": 14973,
+              "raw": [
+                37,
+                1602,
+                43524,
+                0
+              ],
+              "hex": [
+                "0025",
+                "0642",
+                "aa04",
+                "0000"
+              ]
+            },
+            "trigger_entry": 43524,
+            "source_context": [
+              {
+                "script": 43524,
+                "raw": [
+                  65535,
+                  5107,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "13f3",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43525,
+                "raw": [
+                  65535,
+                  5108,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "13f4",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43526,
+                "raw": [
+                  125,
+                  1600,
+                  65504,
+                  0
+                ],
+                "hex": [
+                  "007d",
+                  "0640",
+                  "ffe0",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43527,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43528,
+                "raw": [
+                  36,
+                  1600,
+                  35639,
+                  0
+                ],
+                "hex": [
+                  "0024",
+                  "0640",
+                  "8b37",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43529,
+                "raw": [
+                  37,
+                  1600,
+                  14999,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0640",
+                  "3a97",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43530,
+                "raw": [
+                  37,
+                  1601,
+                  14999,
+                  0
+                ],
+                "hex": [
+                  "0025",
+                  "0641",
+                  "3a97",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43531,
+                "raw": [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0001",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43532,
+                "raw": [
+                  3,
+                  14999,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0003",
+                  "3a97",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 43533,
+                "raw": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0000",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ]
+          },
+          "render_command": {
+            "script": null,
+            "instruction": [
+              60,
+              0,
+              0,
+              0
+            ],
+            "synthetic_default": true,
+            "basis": "No 003b/003c/003d/003e occurs in this event entry-to-message path (including fee refusal branch). Use normal upper/no-portrait default; this 003c is a fixture representation, not a raw preceding script instruction.",
+            "source_text": [
+              "巡捕：",
+              "奉太守之命，可让两位出城。"
+            ]
+          }
+        }
+      ],
+      "before_slf_blocks": [
+        {
+          "zero_based_block_index": 1742,
+          "text": [
+            "巡査：",
+            "長官の命令で、お二方は",
+            "城から出る事ができます。"
+          ]
+        },
+        {
+          "zero_based_block_index": 4649,
+          "text": [
+            "巡査：",
+            "長官の命令で、お二方は",
+            "城から出る事ができます。"
+          ]
+        },
+        {
+          "zero_based_block_index": 4650,
+          "text": [
+            "巡査：",
+            "長官の命令で、お二方は",
+            "城から出る事ができます。"
+          ]
+        }
+      ],
+      "saturn_sources": [
+        {
+          "group": {
+            "script_start": 16264,
+            "script_end": 16266,
+            "ids": [
+              6666,
+              6667,
+              6668
+            ],
+            "text": [
+              "巡査：",
+              "長官の命令で、お二方は",
+              "城から出る事ができます。"
+            ],
+            "sid": 6666,
+            "eid": 6668
+          },
+          "messages": [
+            {
+              "id": 6666,
+              "start": 116420,
+              "end_exclusive": 116426,
+              "bytes_hex": "8f848db88146",
+              "text": "巡査：",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            },
+            {
+              "id": 6667,
+              "start": 116426,
+              "end_exclusive": 116448,
+              "bytes_hex": "92b78aaf82cc96bd97df82c5814182a893f195fb82cd",
+              "text": "長官の命令で、お二方は",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            },
+            {
+              "id": 6668,
+              "start": 116448,
+              "end_exclusive": 116472,
+              "bytes_hex": "8fe982a982e78f6f82e98e9682aa82c582ab82dc82b78142",
+              "text": "城から出る事ができます。",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            }
+          ],
+          "context": [
+            {
+              "script": 16262,
+              "raw": [
+                16,
+                48,
+                63,
+                1
+              ],
+              "hex": [
+                "0010",
+                "0030",
+                "003f",
+                "0001"
+              ]
+            },
+            {
+              "script": 16263,
+              "raw": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "0000",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 16264,
+              "raw": [
+                65535,
+                6666,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "1a0a",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 16265,
+              "raw": [
+                65535,
+                6667,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "1a0b",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 16266,
+              "raw": [
+                65535,
+                6668,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "1a0c",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 16267,
+              "raw": [
+                125,
+                1557,
+                65504,
+                0
+              ],
+              "hex": [
+                "007d",
+                "0615",
+                "ffe0",
+                "0000"
+              ]
+            },
+            {
+              "script": 16268,
+              "raw": [
+                5,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "0005",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            }
+          ]
+        }
+      ],
+      "recommendation": "Keep every block and existing identical text unchanged."
+    },
+    {
+      "key": [
+        12352,
+        12352
+      ],
+      "win_messages": [
+        {
+          "id": 12352,
+          "start": 204420,
+          "end_exclusive": 204432,
+          "bytes_hex": "bbf1b5c3c1e9c9bdcfc9d6a5",
+          "text": "获得灵山仙芝",
+          "stream": "M.MSG"
+        }
+      ],
+      "win_uses": [
+        {
+          "group": {
+            "script_start": 37511,
+            "script_end": 37511,
+            "ids": [
+              12352
+            ],
+            "text": [
+              "获得灵山仙芝"
+            ],
+            "sid": 12352,
+            "eid": 12352
+          },
+          "call_chain": {
+            "kind": "initial_event_trigger",
+            "trigger_entry": 37509,
+            "events": [
+              {
+                "event": 2365,
+                "scene": 140,
+                "map": 129,
+                "scene_on_enter": 21647,
+                "scene_on_teleport": 20898,
+                "position": [
+                  848,
+                  824
+                ],
+                "initial_trigger": 37509,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 10,
+                "raw": [
+                  0,
+                  848,
+                  824,
+                  0,
+                  37509,
+                  0,
+                  2,
+                  1,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "event": 2456,
+                "scene": 149,
+                "map": 146,
+                "scene_on_enter": 22385,
+                "scene_on_teleport": 0,
+                "position": [
+                  656,
+                  680
+                ],
+                "initial_trigger": 37509,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 10,
+                "raw": [
+                  0,
+                  656,
+                  680,
+                  0,
+                  37509,
+                  0,
+                  2,
+                  1,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "event": 5044,
+                "scene": 293,
+                "map": 191,
+                "scene_on_enter": 0,
+                "scene_on_teleport": 0,
+                "position": [
+                  864,
+                  1648
+                ],
+                "initial_trigger": 37509,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 10,
+                "raw": [
+                  0,
+                  864,
+                  1648,
+                  0,
+                  37509,
+                  0,
+                  2,
+                  1,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ],
+            "source_context": [
+              {
+                "script": 37509,
+                "raw": [
+                  4,
+                  36505,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0004",
+                  "8e99",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 37510,
+                "raw": [
+                  62,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "003e",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 37511,
+                "raw": [
+                  65535,
+                  12352,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "3040",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 37512,
+                "raw": [
+                  31,
+                  107,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "001f",
+                  "006b",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 37513,
+                "raw": [
+                  2,
+                  36509,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0002",
+                  "8e9d",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 37514,
+                "raw": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0000",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ],
+            "all_non_message_script_operand_references_to_entry_interval": []
+          },
+          "render_command": {
+            "script": 37510,
+            "instruction": [
+              62,
+              0,
+              0,
+              0
+            ],
+            "basis": "Actual immediately preceding raw instruction; center-window acquisition notice, no portrait.",
+            "source_text": [
+              "获得灵山仙芝"
+            ]
+          }
+        },
+        {
+          "group": {
+            "script_start": 38193,
+            "script_end": 38193,
+            "ids": [
+              12352
+            ],
+            "text": [
+              "获得灵山仙芝"
+            ],
+            "sid": 12352,
+            "eid": 12352
+          },
+          "call_chain": {
+            "kind": "initial_event_trigger",
+            "trigger_entry": 38189,
+            "events": [
+              {
+                "event": 2925,
+                "scene": 177,
+                "map": 201,
+                "scene_on_enter": 28622,
+                "scene_on_teleport": 0,
+                "position": [
+                  1040,
+                  584
+                ],
+                "initial_trigger": 38189,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 70,
+                "raw": [
+                  0,
+                  1040,
+                  584,
+                  0,
+                  38189,
+                  0,
+                  2,
+                  1,
+                  70,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "event": 2926,
+                "scene": 177,
+                "map": 201,
+                "scene_on_enter": 28622,
+                "scene_on_teleport": 0,
+                "position": [
+                  928,
+                  592
+                ],
+                "initial_trigger": 38189,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 70,
+                "raw": [
+                  0,
+                  928,
+                  592,
+                  0,
+                  38189,
+                  0,
+                  2,
+                  1,
+                  70,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "event": 2927,
+                "scene": 177,
+                "map": 201,
+                "scene_on_enter": 28622,
+                "scene_on_teleport": 0,
+                "position": [
+                  1072,
+                  616
+                ],
+                "initial_trigger": 38189,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 70,
+                "raw": [
+                  0,
+                  1072,
+                  616,
+                  0,
+                  38189,
+                  0,
+                  2,
+                  1,
+                  70,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "event": 3148,
+                "scene": 187,
+                "map": 150,
+                "scene_on_enter": 27679,
+                "scene_on_teleport": 27709,
+                "position": [
+                  1040,
+                  1336
+                ],
+                "initial_trigger": 38189,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 70,
+                "raw": [
+                  0,
+                  1040,
+                  1336,
+                  0,
+                  38189,
+                  0,
+                  2,
+                  1,
+                  70,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "event": 3158,
+                "scene": 189,
+                "map": 153,
+                "scene_on_enter": 26368,
+                "scene_on_teleport": 0,
+                "position": [
+                  1776,
+                  1080
+                ],
+                "initial_trigger": 38189,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 70,
+                "raw": [
+                  0,
+                  1776,
+                  1080,
+                  0,
+                  38189,
+                  0,
+                  2,
+                  1,
+                  70,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "event": 3160,
+                "scene": 189,
+                "map": 153,
+                "scene_on_enter": 26368,
+                "scene_on_teleport": 0,
+                "position": [
+                  912,
+                  1144
+                ],
+                "initial_trigger": 38189,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 70,
+                "raw": [
+                  0,
+                  912,
+                  1144,
+                  0,
+                  38189,
+                  0,
+                  2,
+                  1,
+                  70,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "event": 3314,
+                "scene": 193,
+                "map": 151,
+                "scene_on_enter": 27683,
+                "scene_on_teleport": 0,
+                "position": [
+                  256,
+                  1520
+                ],
+                "initial_trigger": 38189,
+                "initial_auto": 0,
+                "state": 1,
+                "trigger_mode": 1,
+                "sprite": 70,
+                "raw": [
+                  0,
+                  256,
+                  1520,
+                  0,
+                  38189,
+                  0,
+                  1,
+                  1,
+                  70,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "event": 3318,
+                "scene": 193,
+                "map": 151,
+                "scene_on_enter": 27683,
+                "scene_on_teleport": 0,
+                "position": [
+                  672,
+                  224
+                ],
+                "initial_trigger": 38189,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 70,
+                "raw": [
+                  0,
+                  672,
+                  224,
+                  0,
+                  38189,
+                  0,
+                  2,
+                  1,
+                  70,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ],
+            "source_context": [
+              {
+                "script": 38189,
+                "raw": [
+                  73,
+                  65535,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0049",
+                  "ffff",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38190,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38191,
+                "raw": [
+                  71,
+                  78,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0047",
+                  "004e",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38192,
+                "raw": [
+                  62,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "003e",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38193,
+                "raw": [
+                  65535,
+                  12352,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "3040",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38194,
+                "raw": [
+                  31,
+                  107,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "001f",
+                  "006b",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38195,
+                "raw": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0000",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38196,
+                "raw": [
+                  71,
+                  78,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0047",
+                  "004e",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ],
+            "all_non_message_script_operand_references_to_entry_interval": []
+          },
+          "render_command": {
+            "script": 38192,
+            "instruction": [
+              62,
+              0,
+              0,
+              0
+            ],
+            "basis": "Actual immediately preceding raw instruction; center-window acquisition notice, no portrait.",
+            "source_text": [
+              "获得灵山仙芝"
+            ]
+          }
+        }
+      ],
+      "before_slf_blocks": [
+        {
+          "zero_based_block_index": 4007,
+          "text": [
+            "霊山の仙芝を獲得"
+          ]
+        },
+        {
+          "zero_based_block_index": 4118,
+          "text": [
+            "霊山の仙芝を摘む"
+          ]
+        }
+      ],
+      "saturn_sources": [
+        {
+          "group": {
+            "script_start": 40409,
+            "script_end": 40409,
+            "ids": [
+              15746
+            ],
+            "text": [
+              "霊山の仙芝を獲得"
+            ],
+            "sid": 15746,
+            "eid": 15746
+          },
+          "messages": [
+            {
+              "id": 15746,
+              "start": 271565,
+              "end_exclusive": 271581,
+              "bytes_hex": "97ec8e5282cc90e58ec582f08a6c93be",
+              "text": "霊山の仙芝を獲得",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            }
+          ],
+          "context": [
+            {
+              "script": 40407,
+              "raw": [
+                4,
+                39397,
+                0,
+                0
+              ],
+              "hex": [
+                "0004",
+                "99e5",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 40408,
+              "raw": [
+                62,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "003e",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 40409,
+              "raw": [
+                65535,
+                15746,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "3d82",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 40410,
+              "raw": [
+                31,
+                107,
+                0,
+                0
+              ],
+              "hex": [
+                "001f",
+                "006b",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 40411,
+              "raw": [
+                2,
+                39401,
+                0,
+                0
+              ],
+              "hex": [
+                "0002",
+                "99e9",
+                "0000",
+                "0000"
+              ]
+            }
+          ]
+        },
+        {
+          "group": {
+            "script_start": 41095,
+            "script_end": 41095,
+            "ids": [
+              15861
+            ],
+            "text": [
+              "霊山の仙芝を摘む"
+            ],
+            "sid": 15861,
+            "eid": 15861
+          },
+          "messages": [
+            {
+              "id": 15861,
+              "start": 273229,
+              "end_exclusive": 273245,
+              "bytes_hex": "97ec8e5282cc90e58ec582f0934582de",
+              "text": "霊山の仙芝を摘む",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            }
+          ],
+          "context": [
+            {
+              "script": 41093,
+              "raw": [
+                71,
+                78,
+                0,
+                0
+              ],
+              "hex": [
+                "0047",
+                "004e",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 41094,
+              "raw": [
+                62,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "003e",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 41095,
+              "raw": [
+                65535,
+                15861,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "3df5",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 41096,
+              "raw": [
+                31,
+                107,
+                0,
+                0
+              ],
+              "hex": [
+                "001f",
+                "006b",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 41097,
+              "raw": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "0000",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            }
+          ]
+        }
+      ],
+      "recommendation": "Keep every block and source comments; replace only the later 摘む body with the existing first 獲得 body, with explicit canonical source anchors and fail on any other differing duplicate."
+    },
+    {
+      "key": [
+        12368,
+        12368
+      ],
+      "win_messages": [
+        {
+          "id": 12368,
+          "start": 204582,
+          "end_exclusive": 204592,
+          "bytes_hex": "bbf1b5c3d2f8d0d3d7d3",
+          "text": "获得银杏子",
+          "stream": "M.MSG"
+        }
+      ],
+      "win_uses": [
+        {
+          "group": {
+            "script_start": 37607,
+            "script_end": 37607,
+            "ids": [
+              12368
+            ],
+            "text": [
+              "获得银杏子"
+            ],
+            "sid": 12368,
+            "eid": 12368
+          },
+          "call_chain": {
+            "kind": "initial_event_trigger",
+            "trigger_entry": 37605,
+            "events": [
+              {
+                "event": 2734,
+                "scene": 166,
+                "map": 142,
+                "scene_on_enter": 0,
+                "scene_on_teleport": 0,
+                "position": [
+                  1120,
+                  1856
+                ],
+                "initial_trigger": 37605,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 10,
+                "raw": [
+                  0,
+                  1120,
+                  1856,
+                  0,
+                  37605,
+                  0,
+                  2,
+                  1,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "event": 2766,
+                "scene": 167,
+                "map": 143,
+                "scene_on_enter": 0,
+                "scene_on_teleport": 0,
+                "position": [
+                  400,
+                  648
+                ],
+                "initial_trigger": 37605,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 10,
+                "raw": [
+                  0,
+                  400,
+                  648,
+                  0,
+                  37605,
+                  0,
+                  2,
+                  1,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "event": 4418,
+                "scene": 251,
+                "map": 188,
+                "scene_on_enter": 33559,
+                "scene_on_teleport": 0,
+                "position": [
+                  304,
+                  1592
+                ],
+                "initial_trigger": 37605,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 10,
+                "raw": [
+                  0,
+                  304,
+                  1592,
+                  0,
+                  37605,
+                  0,
+                  2,
+                  1,
+                  10,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ],
+            "source_context": [
+              {
+                "script": 37605,
+                "raw": [
+                  4,
+                  36505,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0004",
+                  "8e99",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 37606,
+                "raw": [
+                  62,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "003e",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 37607,
+                "raw": [
+                  65535,
+                  12368,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "3050",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 37608,
+                "raw": [
+                  31,
+                  74,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "001f",
+                  "004a",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 37609,
+                "raw": [
+                  2,
+                  36509,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0002",
+                  "8e9d",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 37610,
+                "raw": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0000",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ],
+            "all_non_message_script_operand_references_to_entry_interval": []
+          },
+          "render_command": {
+            "script": 37606,
+            "instruction": [
+              62,
+              0,
+              0,
+              0
+            ],
+            "basis": "Actual immediately preceding raw instruction; center-window acquisition notice, no portrait.",
+            "source_text": [
+              "获得银杏子"
+            ]
+          }
+        },
+        {
+          "group": {
+            "script_start": 38123,
+            "script_end": 38123,
+            "ids": [
+              12368
+            ],
+            "text": [
+              "获得银杏子"
+            ],
+            "sid": 12368,
+            "eid": 12368
+          },
+          "call_chain": {
+            "kind": "initial_event_trigger",
+            "trigger_entry": 38119,
+            "events": [
+              {
+                "event": 1872,
+                "scene": 102,
+                "map": 98,
+                "scene_on_enter": 21512,
+                "scene_on_teleport": 0,
+                "position": [
+                  1392,
+                  1096
+                ],
+                "initial_trigger": 38119,
+                "initial_auto": 0,
+                "state": 2,
+                "trigger_mode": 1,
+                "sprite": 68,
+                "raw": [
+                  0,
+                  1392,
+                  1096,
+                  0,
+                  38119,
+                  0,
+                  2,
+                  1,
+                  68,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "event": 3316,
+                "scene": 193,
+                "map": 151,
+                "scene_on_enter": 27683,
+                "scene_on_teleport": 0,
+                "position": [
+                  1344,
+                  1088
+                ],
+                "initial_trigger": 38119,
+                "initial_auto": 0,
+                "state": 1,
+                "trigger_mode": 1,
+                "sprite": 69,
+                "raw": [
+                  0,
+                  1344,
+                  1088,
+                  0,
+                  38119,
+                  0,
+                  1,
+                  1,
+                  69,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ],
+            "source_context": [
+              {
+                "script": 38119,
+                "raw": [
+                  73,
+                  65535,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0049",
+                  "ffff",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38120,
+                "raw": [
+                  5,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0005",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38121,
+                "raw": [
+                  71,
+                  78,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0047",
+                  "004e",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38122,
+                "raw": [
+                  62,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "003e",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38123,
+                "raw": [
+                  65535,
+                  12368,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "ffff",
+                  "3050",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38124,
+                "raw": [
+                  31,
+                  74,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "001f",
+                  "004a",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38125,
+                "raw": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0000",
+                  "0000",
+                  "0000",
+                  "0000"
+                ]
+              },
+              {
+                "script": 38126,
+                "raw": [
+                  73,
+                  65535,
+                  0,
+                  0
+                ],
+                "hex": [
+                  "0049",
+                  "ffff",
+                  "0000",
+                  "0000"
+                ]
+              }
+            ],
+            "all_non_message_script_operand_references_to_entry_interval": []
+          },
+          "render_command": {
+            "script": 38122,
+            "instruction": [
+              62,
+              0,
+              0,
+              0
+            ],
+            "basis": "Actual immediately preceding raw instruction; center-window acquisition notice, no portrait.",
+            "source_text": [
+              "获得银杏子"
+            ]
+          }
+        }
+      ],
+      "before_slf_blocks": [
+        {
+          "zero_based_block_index": 4023,
+          "text": [
+            "銀杏の種を獲得"
+          ]
+        },
+        {
+          "zero_based_block_index": 4108,
+          "text": [
+            "銀杏の種を摘む"
+          ]
+        }
+      ],
+      "saturn_sources": [
+        {
+          "group": {
+            "script_start": 40505,
+            "script_end": 40505,
+            "ids": [
+              15762
+            ],
+            "text": [
+              "銀杏の種を獲得"
+            ],
+            "sid": 15762,
+            "eid": 15762
+          },
+          "messages": [
+            {
+              "id": 15762,
+              "start": 271809,
+              "end_exclusive": 271823,
+              "bytes_hex": "8be288c782cc8eed82f08a6c93be",
+              "text": "銀杏の種を獲得",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            }
+          ],
+          "context": [
+            {
+              "script": 40503,
+              "raw": [
+                4,
+                39397,
+                0,
+                0
+              ],
+              "hex": [
+                "0004",
+                "99e5",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 40504,
+              "raw": [
+                62,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "003e",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 40505,
+              "raw": [
+                65535,
+                15762,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "3d92",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 40506,
+              "raw": [
+                31,
+                74,
+                0,
+                0
+              ],
+              "hex": [
+                "001f",
+                "004a",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 40507,
+              "raw": [
+                2,
+                39401,
+                0,
+                0
+              ],
+              "hex": [
+                "0002",
+                "99e9",
+                "0000",
+                "0000"
+              ]
+            }
+          ]
+        },
+        {
+          "group": {
+            "script_start": 41025,
+            "script_end": 41025,
+            "ids": [
+              15851
+            ],
+            "text": [
+              "銀杏の種を摘む"
+            ],
+            "sid": 15851,
+            "eid": 15851
+          },
+          "messages": [
+            {
+              "id": 15851,
+              "start": 273101,
+              "end_exclusive": 273115,
+              "bytes_hex": "8be288c782cc8eed82f0934582de",
+              "text": "銀杏の種を摘む",
+              "stream": "JM.MSG after removing NUL bytes (same transformation as converter)"
+            }
+          ],
+          "context": [
+            {
+              "script": 41023,
+              "raw": [
+                71,
+                78,
+                0,
+                0
+              ],
+              "hex": [
+                "0047",
+                "004e",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 41024,
+              "raw": [
+                62,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "003e",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 41025,
+              "raw": [
+                65535,
+                15851,
+                0,
+                0
+              ],
+              "hex": [
+                "ffff",
+                "3deb",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 41026,
+              "raw": [
+                31,
+                74,
+                0,
+                0
+              ],
+              "hex": [
+                "001f",
+                "004a",
+                "0000",
+                "0000"
+              ]
+            },
+            {
+              "script": 41027,
+              "raw": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "hex": [
+                "0000",
+                "0000",
+                "0000",
+                "0000"
+              ]
+            }
+          ]
+        }
+      ],
+      "recommendation": "Keep every block and source comments; replace only the later 摘む body with the existing first 獲得 body, with explicit canonical source anchors and fail on any other differing duplicate."
+    }
+  ],
+  "dispatch_context": {
+    "fee_guards": {
+      "scene": 82,
+      "map": 84,
+      "initial_on_enter": 14343,
+      "assignment_scripts": [
+        {
+          "script": 14541,
+          "raw": [
+            37,
+            1584,
+            14581,
+            0
+          ],
+          "hex": [
+            "0025",
+            "0630",
+            "38f5",
+            "0000"
+          ]
+        },
+        {
+          "script": 14542,
+          "raw": [
+            37,
+            1585,
+            43544,
+            0
+          ],
+          "hex": [
+            "0025",
+            "0631",
+            "aa18",
+            "0000"
+          ]
+        }
+      ],
+      "effect": "Later talks to events1584/1585 in scene85/map80 use fee/refusal/permission scripts. Static path; phase conditions not played."
+    },
+    "exit_guards": {
+      "setup_event": {
+        "event": 1693,
+        "scene": 93,
+        "map": 85,
+        "scene_on_enter": 15363,
+        "scene_on_teleport": 0,
+        "position": [
+          544,
+          304
+        ],
+        "initial_trigger": 14669,
+        "initial_auto": 0,
+        "state": 0,
+        "trigger_mode": 7,
+        "sprite": 349,
+        "raw": [
+          0,
+          544,
+          304,
+          0,
+          14669,
+          0,
+          0,
+          7,
+          349,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "scene82_enter_assignment": {
+        "script": 14697,
+        "raw": [
+          109,
+          82,
+          14707,
+          0
+        ],
+        "hex": [
+          "006d",
+          "0052",
+          "3973",
+          "0000"
+        ]
+      },
+      "scene_switch": {
+        "script": 14698,
+        "raw": [
+          89,
+          82,
+          0,
+          0
+        ],
+        "hex": [
+          "0059",
+          "0052",
+          "0000",
+          "0000"
+        ]
+      },
+      "later_enter": 14707,
+      "assignment_scripts": [
+        {
+          "script": 14971,
+          "raw": [
+            37,
+            1600,
+            14990,
+            0
+          ],
+          "hex": [
+            "0025",
+            "0640",
+            "3a8e",
+            "0000"
+          ]
+        },
+        {
+          "script": 14972,
+          "raw": [
+            37,
+            1601,
+            43514,
+            0
+          ],
+          "hex": [
+            "0025",
+            "0641",
+            "a9fa",
+            "0000"
+          ]
+        },
+        {
+          "script": 14973,
+          "raw": [
+            37,
+            1602,
+            43524,
+            0
+          ],
+          "hex": [
+            "0025",
+            "0642",
+            "aa04",
+            "0000"
+          ]
+        }
+      ],
+      "effect": "Event1693 scene93/map85 runs14669; after its battle/success path, sets scene82 enter14707; that entry assigns exit permission scripts to events1600/1601/1602 in scene85/map80."
+    },
+    "chest_helper": {
+      "entry": 36505,
+      "scripts": [
+        {
+          "script": 36505,
+          "raw": [
+            20,
+            1,
+            0,
+            0
+          ],
+          "hex": [
+            "0014",
+            "0001",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 36506,
+          "raw": [
+            5,
+            0,
+            0,
+            0
+          ],
+          "hex": [
+            "0005",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 36507,
+          "raw": [
+            71,
+            78,
+            0,
+            0
+          ],
+          "hex": [
+            "0047",
+            "004e",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 36508,
+          "raw": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 36509,
+          "raw": [
+            59,
+            0,
+            0,
+            0
+          ],
+          "hex": [
+            "003b",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 36510,
+          "raw": [
+            65535,
+            12222,
+            0,
+            0
+          ],
+          "hex": [
+            "ffff",
+            "2fbe",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 36511,
+          "raw": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "empty_text": {
+        "id": 12222,
+        "start": 203022,
+        "end_exclusive": 203036,
+        "bytes_hex": "d2bbb8f6bfd5cfe4d7d3a3aea3ae",
+        "text": "一个空箱子．．",
+        "stream": "M.MSG"
+      },
+      "interpretation": "Set current object frame1, redraw and play sound78; pickup paths later set next trigger36509, which says 一个空箱子．．. This distinguishes chest acquisition from disappearing map pickup."
+    }
+  },
+  "translation_judgment": {
+    "12352": {
+      "canonical_JP_id": 15746,
+      "canonical_Saturn_script": 40409,
+      "text": "霊山の仙芝を獲得",
+      "characters": 8,
+      "later_JP_id": 15861,
+      "later_Saturn_script": 41095,
+      "later_text": "霊山の仙芝を摘む",
+      "Win_item_id": 107,
+      "Win_item_name": "灵山仙芝"
+    },
+    "12368": {
+      "canonical_JP_id": 15762,
+      "canonical_Saturn_script": 40505,
+      "text": "銀杏の種を獲得",
+      "characters": 7,
+      "later_JP_id": 15851,
+      "later_Saturn_script": 41025,
+      "later_text": "銀杏の種を摘む",
+      "Win_item_id": 74,
+      "Win_item_name": "银杏子"
+    },
+    "basis": "Both Win occurrences use exactly the same 获得 message. 獲得 states the common acquisition result without asserting a collection mechanism. It is faithful to all Win uses while 摘む is unnecessarily specific for a chest.",
+    "control_codes": "All six keys contain ordinary text only: no ASCII dialogue color/pause codes or CLEAR marker. Both conflicting acquisition variants are immediately preceded by003e(0,0,0) and followed by001f(item,0,0). Preserve these script controls unchanged.",
+    "scope_limit": "Keep established Japanese item/speaker names and all four already-identical duplicate bodies. No new translation or general editorial correction is needed.",
+    "item_name_cross_check": {
+      "74": "銀杏の種",
+      "107": "霊山の仙芝",
+      "basis": "Exact WORDS entries in pinned before.slf agree with acquisition messages."
+    }
+  },
+  "source_code_reference_lines": {
+    "global.h": [
+      96,
+      116,
+      157,
+      230
+    ],
+    "script.c": [
+      612,
+      712,
+      923,
+      941,
+      1099,
+      1109,
+      1663,
+      1670,
+      2024,
+      3165,
+      3172,
+      3180,
+      3200,
+      3219,
+      3334
+    ]
+  },
+  "limits": [
+    "Raw baseline physical FFFF uses and direct/dynamic event references were enumerated; no save-state reachability or playthrough claim.",
+    "Scene/map IDs are verified from raw tables; human place names are not inferred from map artwork.",
+    "Input fingerprints checked against upstream.json. Original resources and repository files were not modified."
+  ]
+}

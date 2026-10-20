@@ -126,3 +126,18 @@ The generated full-key fixture uses `jp-npc-before` / `jp-npc`, requiring 4,766
 mapped keys and ten drawn NPC groups in both runs. The existing Issue #3 modes
 retain their separate 8-group/119-omission assertions. See the
 [commands, all ten source-rendered comparisons and validation](../docs/japanese-tournament-npc-dialogues.md).
+
+### Reused message keys
+
+`verify_duplicate_messages.py` verifies all six reused keys against raw
+Win/Saturn groups and event records. Only two acquisition MESSAGE bodies may
+change; all 4,773 blocks and all other bytes remain intact. Identical reuse is
+valid; the converter rejects conflicting text before writing output.
+
+The `jp-duplicates-before` / `jp-duplicates` modes check all 4,766 effective
+keys, dump every loaded text entry as Unicode code points, and draw six groups.
+The two `003e` acquisition boxes are captured through the existing input filter
+during the real timed wait, before the engine removes them. The other four use
+the reviewed upper/no-portrait default. Reversing all MESSAGE blocks in temporary
+inputs demonstrates the old last-occurrence behavior and the corrected
+order-independent text. See [source review, commands and comparisons](../docs/japanese-duplicate-message-keys.md).
