@@ -1,0 +1,3768 @@
+{
+  "issue": 6,
+  "round": 2,
+  "date": "2026-10-21",
+  "feature_baseline": "9af0b588f81536e7b876889628e4a9ec3d885319",
+  "source_branch": "richardli/fix/6-japanese-translation-followup-r2",
+  "artifact_directory": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021",
+  "source_lf_sha256": {
+    "tools/japanese/makemessage_j.py": "f9f70a5b565ac02fe22b5d3e2668e41ffd50cd0a3646b48d47b49ba846a869fc",
+    "tools/japanese/dos-map.json": "eaa6ee9c1c1e6ba9d4154071e54d4fac54bd5508e267ac660026b925c351affe",
+    "tools/japanese/verify_translation_followup.py": "ecfbb3e6413ffcdf192873f2ecdc577a5ba704a7af97d1311455c6ee7d03e725",
+    "tools/japanese/verify_followup_rendering.py": "63cf3b708e4a41c64bf2964edc740ce38be94e0d1bafc5490cbebe61bdaf2c7b",
+    "tests/test_translation_followup.py": "866d4a0d73e228c4b5c8973f5711860c34a1a52dbe68ae0bac5b938c0855c806",
+    "docs/evidence/issue-6-followup-review.json": "e63ff804d8cad6fb6e663682bc23391796cf96f60fb48eca775d2d9f1ad3dfdf"
+  },
+  "static": {
+    "scope": "Four reviewed groups, no full-script or gameplay acceptance.",
+    "inputs": {
+      "win": {
+        "sss.mkf": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+          "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+          "bytes": 575270
+        },
+        "m.msg": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+          "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+          "bytes": 224983
+        },
+        "word.dat": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\WORD.DAT",
+          "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+          "bytes": 5650
+        },
+        "DATA.MKF": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\DATA.MKF",
+          "sha256": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+          "bytes": 63978
+        }
+      },
+      "dos": {
+        "SSS.MKF": {
+          "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+          "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c",
+          "bytes": 569640
+        },
+        "M.MSG": {
+          "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+          "sha256": "f6480a5095e8cc358ecb3e8329ca80996c6068c34327f2f86ec03375ad40b654",
+          "bytes": 212668
+        },
+        "WORD.DAT": {
+          "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\WORD.DAT",
+          "sha256": "856fd6649a3e5bf143af30281eb33b2c67b1f6776290ce9650b065b1f78f49bb",
+          "bytes": 5650
+        },
+        "DATA.MKF": {
+          "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\DATA.MKF",
+          "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a",
+          "bytes": 66418
+        }
+      },
+      "saturn": {
+        "JM.MSG": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+          "sha256": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+          "bytes": 309248
+        },
+        "JM.NOR": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+          "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+          "bytes": 65296
+        },
+        "JM.SEC": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+          "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+          "bytes": 308120
+        },
+        "PROG.BIN": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\PROG.BIN",
+          "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c",
+          "bytes": 411244
+        }
+      }
+    },
+    "inputs_unchanged": true,
+    "review_sha256": "ebfe6c6292637767ba3e6dcf992b442c82f2ee0b692c80f58c22b2af4c48539a",
+    "versions": {
+      "win": {
+        "before": {
+          "bytes": 1256264,
+          "sha256": "6b9ee550403befc9f16171dacbdc6b2ab616460df8268626c2edf0ce648f8791",
+          "lf_sha256": "5672bfbfdbc913900b50e54af667c07dc11c1bb116216030b87359358c6e3b92",
+          "blocks": 4773,
+          "unique_keys": 4766
+        },
+        "after": {
+          "bytes": 1256279,
+          "sha256": "6a282849492f6e3db06f384da59ad518eb2ca45df95683fa1fb179deee5f5ff0",
+          "lf_sha256": "78c2537db140992c58995b0e931ba54cef0b0f4877639d9f2a6e0590af42b72f",
+          "blocks": 4773,
+          "unique_keys": 4766
+        },
+        "changed_keys": [
+          [
+            2396,
+            2399
+          ],
+          [
+            3447,
+            3448
+          ],
+          [
+            7583,
+            7589
+          ],
+          [
+            12078,
+            12083
+          ]
+        ],
+        "unchanged_blocks": 4769,
+        "unchanged_unique_keys": 4762,
+        "all_other_bytes_unchanged": true,
+        "controls_and_line_counts_preserved": true,
+        "duplicates": [
+          {
+            "key": [
+              4931,
+              4931
+            ],
+            "count": 2,
+            "conflict": false
+          },
+          {
+            "key": [
+              4932,
+              4933
+            ],
+            "count": 2,
+            "conflict": false
+          },
+          {
+            "key": [
+              4934,
+              4935
+            ],
+            "count": 2,
+            "conflict": false
+          },
+          {
+            "key": [
+              5107,
+              5108
+            ],
+            "count": 3,
+            "conflict": false
+          },
+          {
+            "key": [
+              12352,
+              12352
+            ],
+            "count": 2,
+            "conflict": false
+          },
+          {
+            "key": [
+              12368,
+              12368
+            ],
+            "count": 2,
+            "conflict": false
+          }
+        ]
+      },
+      "dos": {
+        "before": {
+          "bytes": 911683,
+          "sha256": "6bf198b3027bdf84f2668e2659ac6feefeb7b9c755963a84b0d596770b89da5d",
+          "lf_sha256": "6bf198b3027bdf84f2668e2659ac6feefeb7b9c755963a84b0d596770b89da5d",
+          "blocks": 4476,
+          "unique_keys": 4476
+        },
+        "after": {
+          "bytes": 911698,
+          "sha256": "e7933eeea0375dceca099dba34a492f37d4070f05a9218e193b48a59fbd4ee92",
+          "lf_sha256": "e7933eeea0375dceca099dba34a492f37d4070f05a9218e193b48a59fbd4ee92",
+          "blocks": 4476,
+          "unique_keys": 4476
+        },
+        "changed_keys": [
+          [
+            442,
+            447
+          ],
+          [
+            2978,
+            2981
+          ],
+          [
+            4029,
+            4030
+          ],
+          [
+            8166,
+            8172
+          ]
+        ],
+        "unchanged_blocks": 4472,
+        "unchanged_unique_keys": 4472,
+        "all_other_bytes_unchanged": true,
+        "controls_and_line_counts_preserved": true,
+        "duplicates": []
+      }
+    },
+    "four_translations_equal_across_versions": true,
+    "description_text_unchanged": true,
+    "render_keys": {
+      "win": [
+        [
+          2396,
+          2399
+        ],
+        [
+          3447,
+          3448
+        ],
+        [
+          7583,
+          7589
+        ],
+        [
+          9207,
+          9208
+        ],
+        [
+          12078,
+          12083
+        ]
+      ],
+      "dos": [
+        [
+          0,
+          0
+        ],
+        [
+          442,
+          447
+        ],
+        [
+          1741,
+          1742
+        ],
+        [
+          2978,
+          2981
+        ],
+        [
+          3296,
+          3297
+        ],
+        [
+          4029,
+          4030
+        ],
+        [
+          8166,
+          8172
+        ],
+        [
+          9449,
+          9458
+        ]
+      ]
+    }
+  },
+  "rendering": {
+    "scope": "Existing Test engine source renders; no natural game-route acceptance.",
+    "binary_sha256": "9ec63d25e64b3aa97c6614816285ccb8e76f357b83165192c277f445c777c5b3",
+    "review_sha256": "ebfe6c6292637767ba3e6dcf992b442c82f2ee0b692c80f58c22b2af4c48539a",
+    "resources": {
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\1.rpg": "9d19a620534b7108fdb77b641456fdf362c3764f9f6ae7cf8b816243c4ae4318",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\ABC.mkf": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\BALL.MKF": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\DATA.MKF": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\F.MKF": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\FBP.MKF": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\FIRE.MKF": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\GOP.MKF": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\M.MSG": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\MAP.MKF": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\MGO.mkf": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\MUS.MKF": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\PAT.MKF": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\RGM.MKF": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\RNG.MKF": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\SOUNDS.MKF": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\SSS.MKF": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\WORD.DAT": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\0.RPG": "d89aa4225aab9b4b81651597934c0325a8159e63310caaaa4787651ecc529653",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\ABC.MKF": "ef2920716b87b5bd0ecb184cbbcf8585512184bc0cbe4dfff07f8a4617f2af0b",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\BALL.MKF": "be8e7218ee21baf64eaa90ec9f27967544a1b0136ce490604ac5f6dedb22830b",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\DATA.MKF": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\F.MKF": "6fc9a9978dd06bee8e381c80e68683b6f3033c2aa40f61eb0e1a2194fc570f65",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\FBP.MKF": "f38d0243a4f635886f27324c2a44016e7ff46db2146c853ab8edda12b8d5652c",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\FIRE.MKF": "eab713c53b4236f4aeefd30239675d62e887f10bb576ce1950a5be5b0d7458dd",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\GOP.MKF": "dbb17aeb8fcef6e24232b05abb58d5e9acf06a868b73bc0dc6c9a9e955fffb9c",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG": "f6480a5095e8cc358ecb3e8329ca80996c6068c34327f2f86ec03375ad40b654",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\MAP.MKF": "a40f22319d70a97a8871dfc85494c2d28e793c1e10d752734ab8f61704355066",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\MGO.MKF": "a9f9fc0ceeccb354906a96eaf6003f9c7ece8db6789856144201d926f5ff76b1",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\MIDI.MKF": "70587d762bdcea0a6e07f0f13808993045a6f382c713f0ad81793a7f6991f913",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\MUS.MKF": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\PAT.MKF": "78b08ef4c4630b703c714da25ab6482d4524a577c56c9554a369bbf30cc67eab",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\RGM.MKF": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\RNG.MKF": "226a7932b94548071ecfb6274ac069f890ea347aef99c79c72b69655457310a3",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SETUP.DAT": "b68ac0a6a1bdc8909811cdd0d1a7ee4d0666e1eb3a26e74bae37b88f8174ed5d",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\VOC.MKF": "c6e14eaaff50979df269b7d6d5f7401cb354be38e3ad737e4ca3ec473c1c5ab3",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\WOR16.ASC": "d28985aee96b96981be1542172f6f32509541dec325163e857cd677f56dad8f9",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\wor16.FON": "2631bfa2b70333ad85d6e32edf7dedb5e888a3d34ee31f0f2da3f7d8599cd5e3",
+      "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\WORD.DAT": "856fd6649a3e5bf143af30281eb33b2c67b1f6776290ce9650b065b1f78f49bb"
+    },
+    "resources_unchanged": true,
+    "runs": [
+      {
+        "version": "win",
+        "stage": "before",
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime/",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\before\\paljpn-win.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\render\\win-before",
+          "jp-translation-before"
+        ],
+        "exit_code": 0,
+        "log": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4766 mapped, 0 absent; 3 page waits; neutral source renders\nSource description menus: 19 objects\n",
+        "keys": 4766,
+        "entries": 17727,
+        "description_probe_rows": 19,
+        "clipped_ink": 0
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime/",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\after\\paljpn-win.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\render\\win-after",
+          "jp-translation"
+        ],
+        "exit_code": 0,
+        "log": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4766 mapped, 0 absent; 3 page waits; neutral source renders\nSource description menus: 19 objects\n",
+        "keys": 4766,
+        "entries": 17727,
+        "description_probe_rows": 19,
+        "clipped_ink": 0
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS/",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\before\\paljpn-dos.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\render\\dos-before",
+          "dos"
+        ],
+        "exit_code": 0,
+        "log": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4476 mapped, 0 absent; 5 page waits; neutral source renders\nDOS descriptions: 296 lookups/probes, 10 source-rendered menus\n",
+        "keys": 4476,
+        "entries": 16932,
+        "description_probe_rows": 296,
+        "clipped_ink": 0
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS/",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\after\\paljpn-dos.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\render\\dos-after",
+          "dos"
+        ],
+        "exit_code": 0,
+        "log": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4476 mapped, 0 absent; 5 page waits; neutral source renders\nDOS descriptions: 296 lookups/probes, 10 source-rendered menus\n",
+        "keys": 4476,
+        "entries": 16932,
+        "description_probe_rows": 296,
+        "clipped_ink": 0
+      }
+    ],
+    "glyph_checks": [
+      {
+        "version": "win",
+        "stage": "before",
+        "file": "dialogue-12078-page-1.bmp",
+        "lines": [
+          {
+            "text": "巫王：",
+            "characters": 3,
+            "ink": 133,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 52
+          },
+          {
+            "text": "本当に・・・お前か？",
+            "characters": 10,
+            "ink": 380,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 180
+          },
+          {
+            "text": "霊児・・・。",
+            "characters": 6,
+            "ink": 192,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 116
+          },
+          {
+            "text": "ま・・・間違いない・・・。",
+            "characters": 13,
+            "ink": 385,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 228
+          },
+          {
+            "text": "若い頃の霊児とそっくりだ！",
+            "characters": 13,
+            "ink": 652,
+            "left": 20,
+            "top": 180,
+            "right_exclusive": 228
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "file": "dialogue-12078-page-2.bmp",
+        "lines": [
+          {
+            "text": "巫王：",
+            "characters": 3,
+            "ink": 133,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 52
+          },
+          {
+            "text": "は・・・早く・・・",
+            "characters": 9,
+            "ink": 172,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 164
+          },
+          {
+            "text": "父さんに・・・",
+            "characters": 7,
+            "ink": 200,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 132
+          },
+          {
+            "text": "見せておくれ。",
+            "characters": 7,
+            "ink": 302,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 132
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "file": "dialogue-2396-page-1.bmp",
+        "lines": [
+          {
+            "text": "賭博客：",
+            "characters": 4,
+            "ink": 285,
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 76
+          },
+          {
+            "text": "小僧！聞けよ。",
+            "characters": 7,
+            "ink": 356,
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 156
+          },
+          {
+            "text": "「十回勝って、九回負ける」",
+            "characters": 13,
+            "ink": 597,
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 252
+          },
+          {
+            "text": "って言葉があるだろ。",
+            "characters": 10,
+            "ink": 507,
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 204
+          },
+          {
+            "text": "バクチにははまるなよ！",
+            "characters": 11,
+            "ink": 485,
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 220
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "file": "dialogue-7583-page-1.bmp",
+        "lines": [
+          {
+            "text": "酒飲み剣士：",
+            "characters": 6,
+            "ink": 387,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 100
+          },
+          {
+            "text": "では、術法を始めるぞ！",
+            "characters": 11,
+            "ink": 592,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 196
+          },
+          {
+            "text": "わしが終わりと言うまでは、",
+            "characters": 13,
+            "ink": 603,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 228
+          },
+          {
+            "text": "二人ともわしから七歩以上",
+            "characters": 12,
+            "ink": 523,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 212
+          },
+          {
+            "text": "下がっておれ。",
+            "characters": 7,
+            "ink": 264,
+            "left": 20,
+            "top": 180,
+            "right_exclusive": 132
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "file": "dialogue-7583-page-2.bmp",
+        "lines": [
+          {
+            "text": "酒飲み剣士：",
+            "characters": 6,
+            "ink": 387,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 100
+          },
+          {
+            "text": "何が起こっても、",
+            "characters": 8,
+            "ink": 331,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 148
+          },
+          {
+            "text": "動揺してはならぬ。",
+            "characters": 9,
+            "ink": 482,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 164
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "file": "dialogue-7583-page-3.bmp",
+        "lines": [
+          {
+            "text": "酒飲み剣士：",
+            "characters": 6,
+            "ink": 387,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 100
+          },
+          {
+            "text": "でなければ、",
+            "characters": 6,
+            "ink": 245,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 116
+          },
+          {
+            "text": "良い結果が出なくとも",
+            "characters": 10,
+            "ink": 551,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 180
+          },
+          {
+            "text": "わしは責任を持たぬぞ。",
+            "characters": 11,
+            "ink": 596,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 196
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "file": "dialogue-3447-page-1.bmp",
+        "lines": [
+          {
+            "text": "子供：",
+            "characters": 3,
+            "ink": 128,
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60
+          },
+          {
+            "text": "母上は、あまり村の人と",
+            "characters": 11,
+            "ink": 523,
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 220
+          },
+          {
+            "text": "話をするなと言ってたよ。",
+            "characters": 12,
+            "ink": 552,
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "file": "dialogue-12078-page-1.bmp",
+        "lines": [
+          {
+            "text": "巫王：",
+            "characters": 3,
+            "ink": 133,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 52
+          },
+          {
+            "text": "本当に・・・お前か？",
+            "characters": 10,
+            "ink": 380,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 180
+          },
+          {
+            "text": "霊児・・・。",
+            "characters": 6,
+            "ink": 192,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 116
+          },
+          {
+            "text": "ま・・・間違いない・・・。",
+            "characters": 13,
+            "ink": 385,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 228
+          },
+          {
+            "text": "若い頃のお青とそっくりだ！",
+            "characters": 13,
+            "ink": 628,
+            "left": 20,
+            "top": 180,
+            "right_exclusive": 228
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "file": "dialogue-12078-page-2.bmp",
+        "lines": [
+          {
+            "text": "巫王：",
+            "characters": 3,
+            "ink": 133,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 52
+          },
+          {
+            "text": "は・・・早く・・・",
+            "characters": 9,
+            "ink": 172,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 164
+          },
+          {
+            "text": "父さんに・・・",
+            "characters": 7,
+            "ink": 200,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 132
+          },
+          {
+            "text": "見せておくれ。",
+            "characters": 7,
+            "ink": 302,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 132
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "file": "dialogue-2396-page-1.bmp",
+        "lines": [
+          {
+            "text": "賭博客：",
+            "characters": 4,
+            "ink": 285,
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 76
+          },
+          {
+            "text": "小僧！聞けよ。",
+            "characters": 7,
+            "ink": 356,
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 156
+          },
+          {
+            "text": "「十回賭けて、九回負ける」",
+            "characters": 13,
+            "ink": 618,
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 252
+          },
+          {
+            "text": "って言葉があるだろ。",
+            "characters": 10,
+            "ink": 507,
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 204
+          },
+          {
+            "text": "バクチにははまるなよ！",
+            "characters": 11,
+            "ink": 485,
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 220
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "file": "dialogue-7583-page-1.bmp",
+        "lines": [
+          {
+            "text": "酒飲み剣士：",
+            "characters": 6,
+            "ink": 387,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 100
+          },
+          {
+            "text": "では、術法を始めるぞ！",
+            "characters": 11,
+            "ink": 592,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 196
+          },
+          {
+            "text": "わしが終わりと言うまでは、",
+            "characters": 13,
+            "ink": 603,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 228
+          },
+          {
+            "text": "二人ともわしから七歩より",
+            "characters": 12,
+            "ink": 500,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 212
+          },
+          {
+            "text": "遠くへ離れてはならぬ。",
+            "characters": 11,
+            "ink": 579,
+            "left": 20,
+            "top": 180,
+            "right_exclusive": 196
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "file": "dialogue-7583-page-2.bmp",
+        "lines": [
+          {
+            "text": "酒飲み剣士：",
+            "characters": 6,
+            "ink": 387,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 100
+          },
+          {
+            "text": "何が起こっても、",
+            "characters": 8,
+            "ink": 331,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 148
+          },
+          {
+            "text": "軽はずみに動くでない。",
+            "characters": 11,
+            "ink": 559,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 196
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "file": "dialogue-7583-page-3.bmp",
+        "lines": [
+          {
+            "text": "酒飲み剣士：",
+            "characters": 6,
+            "ink": 387,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 100
+          },
+          {
+            "text": "でなければ、",
+            "characters": 6,
+            "ink": 245,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 116
+          },
+          {
+            "text": "良い結果が出なくとも",
+            "characters": 10,
+            "ink": 551,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 180
+          },
+          {
+            "text": "わしは責任を持たぬぞ。",
+            "characters": 11,
+            "ink": 596,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 196
+          }
+        ]
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "file": "dialogue-3447-page-1.bmp",
+        "lines": [
+          {
+            "text": "子供：",
+            "characters": 3,
+            "ink": 128,
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60
+          },
+          {
+            "text": "母上は、知らない人と",
+            "characters": 10,
+            "ink": 447,
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 204
+          },
+          {
+            "text": "話をするなと言ってたよ。",
+            "characters": 12,
+            "ink": 552,
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "file": "dialogue-442-page-1.bmp",
+        "lines": [
+          {
+            "text": "巫王：",
+            "characters": 3,
+            "ink": 133,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 52
+          },
+          {
+            "text": "本当に・・・お前か？",
+            "characters": 10,
+            "ink": 380,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 180
+          },
+          {
+            "text": "霊児・・・。",
+            "characters": 6,
+            "ink": 192,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 116
+          },
+          {
+            "text": "ま・・・間違いない・・・。",
+            "characters": 13,
+            "ink": 385,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 228
+          },
+          {
+            "text": "若い頃の霊児とそっくりだ！",
+            "characters": 13,
+            "ink": 652,
+            "left": 20,
+            "top": 180,
+            "right_exclusive": 228
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "file": "dialogue-442-page-2.bmp",
+        "lines": [
+          {
+            "text": "巫王：",
+            "characters": 3,
+            "ink": 133,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 52
+          },
+          {
+            "text": "は・・・早く・・・",
+            "characters": 9,
+            "ink": 172,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 164
+          },
+          {
+            "text": "父さんに・・・",
+            "characters": 7,
+            "ink": 200,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 132
+          },
+          {
+            "text": "見せておくれ。",
+            "characters": 7,
+            "ink": 302,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 132
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "file": "dialogue-2978-page-1.bmp",
+        "lines": [
+          {
+            "text": "賭博客：",
+            "characters": 4,
+            "ink": 285,
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 76
+          },
+          {
+            "text": "小僧！聞けよ。",
+            "characters": 7,
+            "ink": 356,
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 156
+          },
+          {
+            "text": "「十回勝って、九回負ける」",
+            "characters": 13,
+            "ink": 597,
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 252
+          },
+          {
+            "text": "って言葉があるだろ。",
+            "characters": 10,
+            "ink": 507,
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 204
+          },
+          {
+            "text": "バクチにははまるなよ！",
+            "characters": 11,
+            "ink": 485,
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 220
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "file": "dialogue-8166-page-1.bmp",
+        "lines": [
+          {
+            "text": "酒飲み剣士：",
+            "characters": 6,
+            "ink": 387,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 100
+          },
+          {
+            "text": "では、術法を始めるぞ！",
+            "characters": 11,
+            "ink": 592,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 196
+          },
+          {
+            "text": "わしが終わりと言うまでは、",
+            "characters": 13,
+            "ink": 603,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 228
+          },
+          {
+            "text": "二人ともわしから七歩以上",
+            "characters": 12,
+            "ink": 523,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 212
+          },
+          {
+            "text": "下がっておれ。",
+            "characters": 7,
+            "ink": 264,
+            "left": 20,
+            "top": 180,
+            "right_exclusive": 132
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "file": "dialogue-8166-page-2.bmp",
+        "lines": [
+          {
+            "text": "酒飲み剣士：",
+            "characters": 6,
+            "ink": 387,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 100
+          },
+          {
+            "text": "何が起こっても、",
+            "characters": 8,
+            "ink": 331,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 148
+          },
+          {
+            "text": "動揺してはならぬ。",
+            "characters": 9,
+            "ink": 482,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 164
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "file": "dialogue-8166-page-3.bmp",
+        "lines": [
+          {
+            "text": "酒飲み剣士：",
+            "characters": 6,
+            "ink": 387,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 100
+          },
+          {
+            "text": "でなければ、",
+            "characters": 6,
+            "ink": 245,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 116
+          },
+          {
+            "text": "良い結果が出なくとも",
+            "characters": 10,
+            "ink": 551,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 180
+          },
+          {
+            "text": "わしは責任を持たぬぞ。",
+            "characters": 11,
+            "ink": 596,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 196
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "file": "dialogue-4029-page-1.bmp",
+        "lines": [
+          {
+            "text": "子供：",
+            "characters": 3,
+            "ink": 128,
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60
+          },
+          {
+            "text": "母上は、あまり村の人と",
+            "characters": 11,
+            "ink": 523,
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 220
+          },
+          {
+            "text": "話をするなと言ってたよ。",
+            "characters": 12,
+            "ink": 552,
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "file": "dialogue-442-page-1.bmp",
+        "lines": [
+          {
+            "text": "巫王：",
+            "characters": 3,
+            "ink": 133,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 52
+          },
+          {
+            "text": "本当に・・・お前か？",
+            "characters": 10,
+            "ink": 380,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 180
+          },
+          {
+            "text": "霊児・・・。",
+            "characters": 6,
+            "ink": 192,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 116
+          },
+          {
+            "text": "ま・・・間違いない・・・。",
+            "characters": 13,
+            "ink": 385,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 228
+          },
+          {
+            "text": "若い頃のお青とそっくりだ！",
+            "characters": 13,
+            "ink": 628,
+            "left": 20,
+            "top": 180,
+            "right_exclusive": 228
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "file": "dialogue-442-page-2.bmp",
+        "lines": [
+          {
+            "text": "巫王：",
+            "characters": 3,
+            "ink": 133,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 52
+          },
+          {
+            "text": "は・・・早く・・・",
+            "characters": 9,
+            "ink": 172,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 164
+          },
+          {
+            "text": "父さんに・・・",
+            "characters": 7,
+            "ink": 200,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 132
+          },
+          {
+            "text": "見せておくれ。",
+            "characters": 7,
+            "ink": 302,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 132
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "file": "dialogue-2978-page-1.bmp",
+        "lines": [
+          {
+            "text": "賭博客：",
+            "characters": 4,
+            "ink": 285,
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 76
+          },
+          {
+            "text": "小僧！聞けよ。",
+            "characters": 7,
+            "ink": 356,
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 156
+          },
+          {
+            "text": "「十回賭けて、九回負ける」",
+            "characters": 13,
+            "ink": 618,
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 252
+          },
+          {
+            "text": "って言葉があるだろ。",
+            "characters": 10,
+            "ink": 507,
+            "left": 44,
+            "top": 62,
+            "right_exclusive": 204
+          },
+          {
+            "text": "バクチにははまるなよ！",
+            "characters": 11,
+            "ink": 485,
+            "left": 44,
+            "top": 80,
+            "right_exclusive": 220
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "file": "dialogue-8166-page-1.bmp",
+        "lines": [
+          {
+            "text": "酒飲み剣士：",
+            "characters": 6,
+            "ink": 387,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 100
+          },
+          {
+            "text": "では、術法を始めるぞ！",
+            "characters": 11,
+            "ink": 592,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 196
+          },
+          {
+            "text": "わしが終わりと言うまでは、",
+            "characters": 13,
+            "ink": 603,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 228
+          },
+          {
+            "text": "二人ともわしから七歩より",
+            "characters": 12,
+            "ink": 500,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 212
+          },
+          {
+            "text": "遠くへ離れてはならぬ。",
+            "characters": 11,
+            "ink": 579,
+            "left": 20,
+            "top": 180,
+            "right_exclusive": 196
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "file": "dialogue-8166-page-2.bmp",
+        "lines": [
+          {
+            "text": "酒飲み剣士：",
+            "characters": 6,
+            "ink": 387,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 100
+          },
+          {
+            "text": "何が起こっても、",
+            "characters": 8,
+            "ink": 331,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 148
+          },
+          {
+            "text": "軽はずみに動くでない。",
+            "characters": 11,
+            "ink": 559,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 196
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "file": "dialogue-8166-page-3.bmp",
+        "lines": [
+          {
+            "text": "酒飲み剣士：",
+            "characters": 6,
+            "ink": 387,
+            "left": 4,
+            "top": 108,
+            "right_exclusive": 100
+          },
+          {
+            "text": "でなければ、",
+            "characters": 6,
+            "ink": 245,
+            "left": 20,
+            "top": 126,
+            "right_exclusive": 116
+          },
+          {
+            "text": "良い結果が出なくとも",
+            "characters": 10,
+            "ink": 551,
+            "left": 20,
+            "top": 144,
+            "right_exclusive": 180
+          },
+          {
+            "text": "わしは責任を持たぬぞ。",
+            "characters": 11,
+            "ink": 596,
+            "left": 20,
+            "top": 162,
+            "right_exclusive": 196
+          }
+        ]
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "file": "dialogue-4029-page-1.bmp",
+        "lines": [
+          {
+            "text": "子供：",
+            "characters": 3,
+            "ink": 128,
+            "left": 12,
+            "top": 8,
+            "right_exclusive": 60
+          },
+          {
+            "text": "母上は、知らない人と",
+            "characters": 10,
+            "ink": 447,
+            "left": 44,
+            "top": 26,
+            "right_exclusive": 204
+          },
+          {
+            "text": "話をするなと言ってたよ。",
+            "characters": 12,
+            "ink": 552,
+            "left": 44,
+            "top": 44,
+            "right_exclusive": 236
+          }
+        ]
+      }
+    ],
+    "images": [
+      {
+        "file": "win-before-dialogue-12078-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "8c4540b393b7882289eab1f6d118e4ea101e7ea88e31f0242bd6307137bf3631",
+        "sha256": "30d95fc3952a25f658c787c600bb40a1640f940cfa8a609b9c78e62d4b2f883c",
+        "bytes": 6465,
+        "repository_path": "docs/images/translation-followup/win-before-dialogue-12078-page-1.png"
+      },
+      {
+        "file": "win-before-dialogue-12078-page-2.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "cc88b3497781388d787ab80b552cf120a1b92d47c846615885568af2b78d7784",
+        "sha256": "9196710dda638c6d8730bd38bfeebdcf7ade9e48958452d1d7bc0fdf1c79263a",
+        "bytes": 5551,
+        "repository_path": "docs/images/translation-followup/win-before-dialogue-12078-page-2.png"
+      },
+      {
+        "file": "win-before-dialogue-2396-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "4e4796d8f1d78936c08ca749574aa778168084063f5159eac8bb7c76d716c041",
+        "sha256": "e0ff29a63c8352f92f851bf63e9b567e0d57af4e1e96d87255d2745e527d8b41",
+        "bytes": 2971,
+        "repository_path": "docs/images/translation-followup/win-before-dialogue-2396-page-1.png"
+      },
+      {
+        "file": "win-before-dialogue-7583-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "d0d81117b72289e1f1e500b59a894b9e16305a79f47fd8d3b71356a9b78d66b3",
+        "sha256": "e591830c1e5952888655ce0436630f48e9580d7b6856616faa3ecd4bbe6cff96",
+        "bytes": 9206,
+        "repository_path": "docs/images/translation-followup/win-before-dialogue-7583-page-1.png"
+      },
+      {
+        "file": "win-before-dialogue-7583-page-2.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "64a25e0a9f3032898007b4569b71140885820288eeed5a9e386d47e9bd8bf106",
+        "sha256": "168cd704f589133ae113327a9c3102b26279c73883c2b9637ab9a86a6f526636",
+        "bytes": 7953,
+        "repository_path": "docs/images/translation-followup/win-before-dialogue-7583-page-2.png"
+      },
+      {
+        "file": "win-before-dialogue-7583-page-3.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "2b787d2e8414dfb6003c5fe3a90a8bc66d0aeb543c765494022432670f73e046",
+        "sha256": "68a63a06e076318e35afb80fd91eda784b0d0dadb7ae45d59c494b681bc7a33e",
+        "bytes": 8479,
+        "repository_path": "docs/images/translation-followup/win-before-dialogue-7583-page-3.png"
+      },
+      {
+        "file": "win-before-dialogue-3447-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "a6ea586592988903730cba5cf1ca9fff6b2ca47c500dac7f2b9e498a5b83284e",
+        "sha256": "b10ea4aa9e7441309468e2fe369f5b0ef3dcd532b9fbadc633945f4e3a6b9404",
+        "bytes": 2119,
+        "repository_path": "docs/images/translation-followup/win-before-dialogue-3447-page-1.png"
+      },
+      {
+        "file": "win-after-dialogue-12078-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "c45fec1babc534df6df332924ff8c4e313c6ff49a44a96b9911d006f19ff153e",
+        "sha256": "a3c5602eb4d76ce968558dd13d3932961ab4ba1e254e7a074704ca888a3a79ae",
+        "bytes": 6462,
+        "repository_path": "docs/images/translation-followup/win-after-dialogue-12078-page-1.png"
+      },
+      {
+        "file": "win-after-dialogue-12078-page-2.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "cc88b3497781388d787ab80b552cf120a1b92d47c846615885568af2b78d7784",
+        "sha256": "9196710dda638c6d8730bd38bfeebdcf7ade9e48958452d1d7bc0fdf1c79263a",
+        "bytes": 5551,
+        "repository_path": "docs/images/translation-followup/win-after-dialogue-12078-page-2.png"
+      },
+      {
+        "file": "win-after-dialogue-2396-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "21b3afe8605630c04cfadab8f11775d815405d2bd6ccc4001e11ade714823bf2",
+        "sha256": "f1a8d8df996e1b4aa63c91ee915ab2320a25e0af5d4f4a90d65dff9eb1683f40",
+        "bytes": 2972,
+        "repository_path": "docs/images/translation-followup/win-after-dialogue-2396-page-1.png"
+      },
+      {
+        "file": "win-after-dialogue-7583-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "4c38cc515f65572fcfaae6339294bb0065b0eabe22abec85ede7644f78524b88",
+        "sha256": "abb10e22b3aa2923e8680f5882592fdaa354af4ece9370bf410eb28e57fe1c2f",
+        "bytes": 9479,
+        "repository_path": "docs/images/translation-followup/win-after-dialogue-7583-page-1.png"
+      },
+      {
+        "file": "win-after-dialogue-7583-page-2.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "cef6f19fe3d5def5832ad21c702770fe42ca3793675391b427ad3f9c4b5560fa",
+        "sha256": "cc3173e15b59cce303b886bbebb2410fa9deffe9e0e521369bddaa4db9c03f0c",
+        "bytes": 8043,
+        "repository_path": "docs/images/translation-followup/win-after-dialogue-7583-page-2.png"
+      },
+      {
+        "file": "win-after-dialogue-7583-page-3.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "2b787d2e8414dfb6003c5fe3a90a8bc66d0aeb543c765494022432670f73e046",
+        "sha256": "68a63a06e076318e35afb80fd91eda784b0d0dadb7ae45d59c494b681bc7a33e",
+        "bytes": 8479,
+        "repository_path": "docs/images/translation-followup/win-after-dialogue-7583-page-3.png"
+      },
+      {
+        "file": "win-after-dialogue-3447-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "74b2327a2904781b37e73a7f82e3eac8074e0d5e053cec0374835b6ea9c6e381",
+        "sha256": "d76861713f1769e798a8aca342076b57562429dd3560232cf4ab4b0caaacbb85",
+        "bytes": 2063,
+        "repository_path": "docs/images/translation-followup/win-after-dialogue-3447-page-1.png"
+      },
+      {
+        "file": "dos-before-dialogue-442-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "45b06e217ba9c1f64de63f7fbe31f07acff9c3f8fb894f07b4b4d1dc6b048238",
+        "sha256": "d2322408a343ab999a4848eaf9c092a737f2c3cd6d981dc8776bcd2354f4afdd",
+        "bytes": 6468,
+        "repository_path": "docs/images/translation-followup/dos-before-dialogue-442-page-1.png"
+      },
+      {
+        "file": "dos-before-dialogue-442-page-2.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "c01e9589ac9bc89d01a53da3ba99115e13403e45b1fe9c31a3f6d94143f62fd8",
+        "sha256": "68edc046000d34f76772600bd0ab68d83af9b849aa287fb1ce007591b0ee4584",
+        "bytes": 5554,
+        "repository_path": "docs/images/translation-followup/dos-before-dialogue-442-page-2.png"
+      },
+      {
+        "file": "dos-before-dialogue-2978-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "0b7c2cf9e2ccea7dfa7539f90f73623b4249c2d5914db4c1a0b86c30a4e3db71",
+        "sha256": "9a6517851be92e03c3b6ccf4de464a6073c95cfe1d27da7fb4d26321f2598afa",
+        "bytes": 2970,
+        "repository_path": "docs/images/translation-followup/dos-before-dialogue-2978-page-1.png"
+      },
+      {
+        "file": "dos-before-dialogue-8166-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "77ec57b494e21868c8be9f372d4b163eb9ed1893f35b114a5073864b28dd06ae",
+        "sha256": "c0e442af081aa79ce6ed9dde93ab172bc7b2399d7edc5ccd44cb6fade0c89ee5",
+        "bytes": 9206,
+        "repository_path": "docs/images/translation-followup/dos-before-dialogue-8166-page-1.png"
+      },
+      {
+        "file": "dos-before-dialogue-8166-page-2.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "df9016015ad473fb9051d2e5232af77b2d67509f65864660784775b0e1e386cf",
+        "sha256": "28877d90883f335af60d740e34f59252f1156efbf4f13ea64d37de70cf80825f",
+        "bytes": 7954,
+        "repository_path": "docs/images/translation-followup/dos-before-dialogue-8166-page-2.png"
+      },
+      {
+        "file": "dos-before-dialogue-8166-page-3.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "1640b14911e024fe8a0061817927ea6f1eb85e0729de46d72024c15d4e3aa3b1",
+        "sha256": "43f1cdee74aac56cc6047c9103d4df1d52c70f873110bd87ff254147acd9fd91",
+        "bytes": 8479,
+        "repository_path": "docs/images/translation-followup/dos-before-dialogue-8166-page-3.png"
+      },
+      {
+        "file": "dos-before-dialogue-4029-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "6ec95902e8a10b8c9ab3d0a2a3a76274e94ce02d87c47cc5da06d7c40c9c5065",
+        "sha256": "3f903f51edf56ecff8e6f5e0bb67612e27ebdce4f8376a21b4aad239abc4cf7b",
+        "bytes": 2118,
+        "repository_path": "docs/images/translation-followup/dos-before-dialogue-4029-page-1.png"
+      },
+      {
+        "file": "dos-after-dialogue-442-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "7586f905431624501f0644a90888863ed0629b30edc6ac973f32706049db0812",
+        "sha256": "ee101d09cd08da2d110a86ec37360ad0a53e7f1423ae520b8eb89ab9d9256af6",
+        "bytes": 6465,
+        "repository_path": "docs/images/translation-followup/dos-after-dialogue-442-page-1.png"
+      },
+      {
+        "file": "dos-after-dialogue-442-page-2.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "c01e9589ac9bc89d01a53da3ba99115e13403e45b1fe9c31a3f6d94143f62fd8",
+        "sha256": "68edc046000d34f76772600bd0ab68d83af9b849aa287fb1ce007591b0ee4584",
+        "bytes": 5554,
+        "repository_path": "docs/images/translation-followup/dos-after-dialogue-442-page-2.png"
+      },
+      {
+        "file": "dos-after-dialogue-2978-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "3e38be3b5c42ae074836baad6f5930d31ee48ba3086cf707d68587351db38f25",
+        "sha256": "e83dea2102fd5a5c72c5ec99f85121c13b2feaa09d58463a5da5c6d4ef70f159",
+        "bytes": 2971,
+        "repository_path": "docs/images/translation-followup/dos-after-dialogue-2978-page-1.png"
+      },
+      {
+        "file": "dos-after-dialogue-8166-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "0295eedd927371bcdab968faa4a939009ea0a2938100278f4fe62b67305c52f6",
+        "sha256": "6ce051314dfc95bed500f3fa3cd0d92227bbf2ba3adf48b3f290a0ff1e61e95f",
+        "bytes": 9479,
+        "repository_path": "docs/images/translation-followup/dos-after-dialogue-8166-page-1.png"
+      },
+      {
+        "file": "dos-after-dialogue-8166-page-2.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "dccecccf17d4430a8f62003ebb0fb5bc2c3f18a6c199b404a843e2957ae7f081",
+        "sha256": "cbfb95792215af77310b567e50b647168a07cfa2ebd917bd89aef1b59076ed2f",
+        "bytes": 8043,
+        "repository_path": "docs/images/translation-followup/dos-after-dialogue-8166-page-2.png"
+      },
+      {
+        "file": "dos-after-dialogue-8166-page-3.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "1640b14911e024fe8a0061817927ea6f1eb85e0729de46d72024c15d4e3aa3b1",
+        "sha256": "43f1cdee74aac56cc6047c9103d4df1d52c70f873110bd87ff254147acd9fd91",
+        "bytes": 8479,
+        "repository_path": "docs/images/translation-followup/dos-after-dialogue-8166-page-3.png"
+      },
+      {
+        "file": "dos-after-dialogue-4029-page-1.png",
+        "mode": "RGB",
+        "effective_alpha": [
+          255,
+          255
+        ],
+        "size": [
+          640,
+          400
+        ],
+        "rgb_sha256": "152807a5f6eaf2fc6e5592663f7d5aa3c210291f0f4c7d9960e450ff8052a01d",
+        "sha256": "9a451a4b9ed826fc3602655a4fb7c68bb78415aa4624925541277961a732121c",
+        "bytes": 2062,
+        "repository_path": "docs/images/translation-followup/dos-after-dialogue-4029-page-1.png"
+      }
+    ],
+    "scales": [
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "dialogue-12078-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "dialogue-12078-page-2",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "dialogue-2396-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "dialogue-3447-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "dialogue-7583-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "dialogue-7583-page-2",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "dialogue-7583-page-3",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "dialogue-9207-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "item-132",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "item-149",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "item-234",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "item-63",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-303",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-305",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-306",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-307",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-308",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-309",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-310",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-311",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-370",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-374",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-377",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-384",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-390",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-393",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "before",
+        "view": "magic-394",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "dialogue-12078-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "dialogue-12078-page-2",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "dialogue-2396-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "dialogue-3447-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "dialogue-7583-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "dialogue-7583-page-2",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "dialogue-7583-page-3",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "dialogue-9207-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "item-132",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "item-149",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "item-234",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "item-63",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-303",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-305",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-306",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-307",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-308",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-309",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-310",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-311",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-370",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-374",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-377",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-384",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-390",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-393",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "win",
+        "stage": "after",
+        "view": "magic-394",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-0-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-1741-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-2978-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-3296-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-4029-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-442-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-442-page-2",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-8166-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-8166-page-2",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-8166-page-3",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-9449-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-9449-page-2",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "dialogue-9449-page-3",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "item-149",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "item-270",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "magic-306",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "magic-307",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "magic-308",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "magic-370",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "magic-374",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "magic-377",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "magic-384",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "before",
+        "view": "magic-394",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-0-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-1741-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-2978-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-3296-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-4029-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-442-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-442-page-2",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-8166-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-8166-page-2",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-8166-page-3",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-9449-page-1",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-9449-page-2",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "dialogue-9449-page-3",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "item-149",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "item-270",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "magic-306",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "magic-307",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "magic-308",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "magic-370",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "magic-374",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "magic-377",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "magic-384",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      },
+      {
+        "version": "dos",
+        "stage": "after",
+        "view": "magic-394",
+        "2x_3x_exact": true,
+        "2_5x_dimensions_only": true
+      }
+    ],
+    "pixel_changes": [
+      {
+        "version": "win",
+        "file": "dialogue-12078-page-1.bmp",
+        "changed_bounds": [
+          84,
+          180,
+          116,
+          196
+        ],
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "dialogue-12078-page-2.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "dialogue-2396-page-1.bmp",
+        "changed_bounds": [
+          92,
+          44,
+          124,
+          60
+        ],
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "dialogue-3447-page-1.bmp",
+        "changed_bounds": [
+          108,
+          26,
+          218,
+          42
+        ],
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "dialogue-7583-page-1.bmp",
+        "changed_bounds": [
+          20,
+          162,
+          212,
+          196
+        ],
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "dialogue-7583-page-2.bmp",
+        "changed_bounds": [
+          20,
+          144,
+          184,
+          160
+        ],
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "dialogue-7583-page-3.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "dialogue-9207-page-1.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "item-132.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "item-149.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "item-234.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "item-63.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-303.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-305.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-306.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-307.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-308.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-309.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-310.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-311.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-370.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-374.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-377.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-384.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-390.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-393.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "win",
+        "file": "magic-394.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-0-page-1.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-1741-page-1.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-2978-page-1.bmp",
+        "changed_bounds": [
+          92,
+          44,
+          124,
+          60
+        ],
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-3296-page-1.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-4029-page-1.bmp",
+        "changed_bounds": [
+          108,
+          26,
+          218,
+          42
+        ],
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-442-page-1.bmp",
+        "changed_bounds": [
+          84,
+          180,
+          116,
+          196
+        ],
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-442-page-2.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-8166-page-1.bmp",
+        "changed_bounds": [
+          20,
+          162,
+          212,
+          196
+        ],
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-8166-page-2.bmp",
+        "changed_bounds": [
+          20,
+          144,
+          184,
+          160
+        ],
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-8166-page-3.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-9449-page-1.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-9449-page-2.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "dialogue-9449-page-3.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "item-149.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "item-270.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "magic-306.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "magic-307.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "magic-308.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "magic-370.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "magic-374.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "magic-377.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "magic-384.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      },
+      {
+        "version": "dos",
+        "file": "magic-394.bmp",
+        "changed_bounds": null,
+        "only_corrected_glyphs_and_shadows_changed": true
+      }
+    ]
+  },
+  "conversion_and_protection": {
+    "historical_outputs_byte_equal": 5,
+    "r1_verification_passed": true,
+    "checks": [
+      {
+        "name": "upstream-baseline",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\checks\\upstream-baseline.slf",
+          "gbk",
+          "--upstream-baseline"
+        ],
+        "exit_code": 0
+      },
+      {
+        "name": "before-tournament-fix",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\checks\\before-tournament-fix.slf",
+          "gbk",
+          "--before-tournament-fix"
+        ],
+        "exit_code": 0
+      },
+      {
+        "name": "before-duplicate-fix",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\checks\\before-duplicate-fix.slf",
+          "gbk",
+          "--before-duplicate-fix"
+        ],
+        "exit_code": 0
+      },
+      {
+        "name": "before-translation-fix",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\checks\\before-translation-fix.slf",
+          "gbk",
+          "--before-translation-fix"
+        ],
+        "exit_code": 0
+      },
+      {
+        "name": "before-translation-followup",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\checks\\before-translation-followup.slf",
+          "gbk",
+          "--before-translation-followup"
+        ],
+        "exit_code": 0
+      },
+      {
+        "name": "wrong-win-translation",
+        "rejected": "Replacement/control sequence differs: (12078, 12083)",
+        "no_output": true
+      },
+      {
+        "name": "wrong-dos-translation",
+        "rejected": "Replacement/control sequence differs: (2978, 2981)",
+        "no_output": true
+      },
+      {
+        "name": "unrelated-win-newline",
+        "rejected": "Output differs outside the four reviewed MESSAGE bodies",
+        "no_output": true
+      },
+      {
+        "name": "dos-setting-change",
+        "rejected": "Output differs outside the four reviewed MESSAGE bodies",
+        "no_output": true
+      },
+      {
+        "name": "removed-dos-clear",
+        "rejected": "Replacement/control sequence differs: (8166, 8172)",
+        "no_output": true
+      },
+      {
+        "name": "stale-dos-bridge",
+        "rejected": "Reviewed Win translation changed; review the DOS bridge before regenerating",
+        "no_output": true
+      },
+      {
+        "name": "mutually-exclusive-audit",
+        "command": [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-B",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\checks\\invalid-options.slf",
+          "gbk",
+          "--before-translation-followup",
+          "--before-translation-fix"
+        ],
+        "exit_code": 2
+      },
+      {
+        "name": "real-gui-callback",
+        "commands": [
+          [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+            "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+            "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-6\\translation-r2-20261021\\checks\\gui.slf",
+            "gbk"
+          ]
+        ],
+        "equals_cli_bytes": true,
+        "resource_inputs_unchanged": true
+      }
+    ],
+    "negative_cases_rejected": 7,
+    "gui_cli_byte_equal": true,
+    "python_unit_tests": {
+      "conversion": 13,
+      "dos": 4,
+      "followup": 3,
+      "total": 20
+    },
+    "engine_binary_reused": "Issue #7 Test x64, unchanged engine/render sources; no C++ rebuild or unit rerun claimed",
+    "gameplay_acceptance": "pending unified user acceptance"
+  },
+  "dos_bridge_update": {
+    "win": {
+      "keys": 4766,
+      "changed_keys": [
+        [
+          2396,
+          2399
+        ],
+        [
+          3447,
+          3448
+        ],
+        [
+          7583,
+          7589
+        ],
+        [
+          12078,
+          12083
+        ]
+      ]
+    },
+    "dos": {
+      "keys": 4476,
+      "changed_keys": [
+        [
+          442,
+          447
+        ],
+        [
+          2978,
+          2981
+        ],
+        [
+          4029,
+          4030
+        ],
+        [
+          8166,
+          8172
+        ]
+      ]
+    },
+    "manifest_change": "Only whole bridge hash and four translation provenance labels; no source anchor changes",
+    "bridge_lf_sha256": "f940767ccc3812dabc09bb82d71fd4ab16fb2633bce7e38f96bc890ca7b16caf"
+  },
+  "generation": {
+    "inputs": {
+      "dos": {
+        "SSS.MKF": {
+          "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+          "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c",
+          "bytes": 569640
+        },
+        "M.MSG": {
+          "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+          "sha256": "f6480a5095e8cc358ecb3e8329ca80996c6068c34327f2f86ec03375ad40b654",
+          "bytes": 212668
+        },
+        "WORD.DAT": {
+          "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\WORD.DAT",
+          "sha256": "856fd6649a3e5bf143af30281eb33b2c67b1f6776290ce9650b065b1f78f49bb",
+          "bytes": 5650
+        },
+        "DATA.MKF": {
+          "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\DATA.MKF",
+          "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a",
+          "bytes": 66418
+        }
+      },
+      "win": {
+        "sss.mkf": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+          "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+          "bytes": 575270
+        },
+        "m.msg": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+          "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+          "bytes": 224983
+        },
+        "word.dat": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\WORD.DAT",
+          "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+          "bytes": 5650
+        },
+        "DATA.MKF": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\DATA.MKF",
+          "sha256": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+          "bytes": 63978
+        }
+      },
+      "saturn": {
+        "JM.MSG": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+          "sha256": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+          "bytes": 309248
+        },
+        "JM.NOR": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+          "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+          "bytes": 65296
+        },
+        "JM.SEC": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+          "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+          "bytes": 308120
+        },
+        "PROG.BIN": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\PROG.BIN",
+          "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c",
+          "bytes": 411244
+        }
+      }
+    },
+    "inputs_unchanged": true,
+    "manifest_sha256": "eaa6ee9c1c1e6ba9d4154071e54d4fac54bd5508e267ac660026b925c351affe",
+    "target": "DOS",
+    "dos_source_encoding": "CP950",
+    "decisions": {
+      "normalized-source-match": 3419,
+      "preserve-source-marker": 5,
+      "reviewed-source-variant": 252,
+      "orthographic-source-match": 799,
+      "dos-speaker": 1
+    },
+    "output": {
+      "bytes": 911698,
+      "sha256": "e7933eeea0375dceca099dba34a492f37d4070f05a9218e193b48a59fbd4ee92",
+      "lf_sha256": "e7933eeea0375dceca099dba34a492f37d4070f05a9218e193b48a59fbd4ee92",
+      "blocks": 4476,
+      "unique_keys": 4476
+    },
+    "win_bridge": {
+      "bytes": 1256279,
+      "sha256": "6a282849492f6e3db06f384da59ad518eb2ca45df95683fa1fb179deee5f5ff0",
+      "lf_sha256": "78c2537db140992c58995b0e931ba54cef0b0f4877639d9f2a6e0590af42b72f",
+      "blocks": 4773,
+      "unique_keys": 4766
+    },
+    "win_body_lf_sha256": "f940767ccc3812dabc09bb82d71fd4ab16fb2633bce7e38f96bc890ca7b16caf",
+    "win_text_unchanged": true,
+    "description_count": 296,
+    "dos_description_overrides": [
+      307,
+      308
+    ],
+    "word_identity_slots": 565,
+    "runtime_group_count": 4476,
+    "dialogue_render_groups": 8,
+    "wrong_win_keys_present": 331,
+    "gameplay_acceptance": "Pending unified user acceptance; source rendering is separate."
+  },
+  "independent_review": {
+    "issue": 6,
+    "round": 2,
+    "date": "2026-10-21",
+    "result": "no blocking findings in reviewed current files",
+    "reviewed_file_sha256": {
+      "tools/japanese/makemessage_j.py": "f9f70a5b565ac02fe22b5d3e2668e41ffd50cd0a3646b48d47b49ba846a869fc",
+      "tools/japanese/dos-map.json": "eaa6ee9c1c1e6ba9d4154071e54d4fac54bd5508e267ac660026b925c351affe",
+      "tools/japanese/verify_translation_followup.py": "ecfbb3e6413ffcdf192873f2ecdc577a5ba704a7af97d1311455c6ee7d03e725",
+      "docs/evidence/issue-6-followup-review.json": "ebfe6c6292637767ba3e6dcf992b442c82f2ee0b692c80f58c22b2af4c48539a",
+      "tests/render_evidence.cpp": "1689df13a0ccd4260874fa33430c630da59588a25acd9fc3719a2977553bb581",
+      "tools/japanese/verify_followup_rendering.py": "63cf3b708e4a41c64bf2964edc740ce38be94e0d1bafc5490cbebe61bdaf2c7b"
+    },
+    "resolved_findings": [
+      {
+        "file": "tools/japanese/verify_translation_followup.py",
+        "line": 75,
+        "issue": "Initial decision==correct check did not match full existing independent-review decision value.",
+        "resolution": "Current code accepts exact preserved decision value; independent report unchanged.",
+        "confirmed_by": "Read current code and JSON; parent-produced verification report now present."
+      }
+    ],
+    "checks_performed": [
+      "Read full new verifier and relevant converter/audit/render fixture code.",
+      "Compared repository review groups against independent source report: raw group records, old/new Japanese and render commands identical.",
+      "Used AST literal parsing to compare all four converter source anchors and old/new bodies with independently reviewed evidence.",
+      "Compared full old/current DOS manifest: exactly five semantic/content-line changes, one bridge SHA and four translation-source labels.",
+      "Read and independently compared every physical line of both before/after SLFs: exactly six agreed line changes in four groups per version; all other bytes and newline bytes identical.",
+      "Inspected generated fixture CSVs: Win4766/DOS4476 unique keys, five/eight drawn groups, correct target entry counts and commands.",
+      "Read parent-produced verification report; did not invoke the verifier entry point."
+    ],
+    "manifest_changes": [
+      {
+        "line": 34,
+        "before": "  \"bridge_lf_sha256\": \"0b034c2f16c77caa7b6bf9cc0958b4b846b103a13c8937c91270b8d317709f7c\",",
+        "after": "  \"bridge_lf_sha256\": \"f940767ccc3812dabc09bb82d71fd4ab16fb2633bce7e38f96bc890ca7b16caf\","
+      },
+      {
+        "line": 12156,
+        "before": "    {\"dos\": [4004, 4011, 442, 447], \"dos_text_sha256\": \"8e0da10d4c5715b4eb06cfcdd0acb1320ce622d7ee03f826f954f69093f9a0d3\", \"win\": [35237, 35244, 12078, 12083], \"win_text_sha256\": \"881399f499fe69fe288bd7b97f62716922531d2f3150f49361f6fd70ae41855c\", \"saturn\": [38149, 38156, 15442, 15449], \"saturn_text_sha256\": \"5e5b7d16c42994e561f0e678a2794662d42f44815d698d356064b5cc132ad9aa\", \"decision\": \"reviewed-source-variant\", \"correspondence\": \"same-neighbor-offset-reviewed\", \"translation\": \"saturn\"},",
+        "after": "    {\"dos\": [4004, 4011, 442, 447], \"dos_text_sha256\": \"8e0da10d4c5715b4eb06cfcdd0acb1320ce622d7ee03f826f954f69093f9a0d3\", \"win\": [35237, 35244, 12078, 12083], \"win_text_sha256\": \"881399f499fe69fe288bd7b97f62716922531d2f3150f49361f6fd70ae41855c\", \"saturn\": [38149, 38156, 15442, 15449], \"saturn_text_sha256\": \"5e5b7d16c42994e561f0e678a2794662d42f44815d698d356064b5cc132ad9aa\", \"decision\": \"reviewed-source-variant\", \"correspondence\": \"same-neighbor-offset-reviewed\", \"translation\": \"issue-6-r2-win-translation\"},"
+      },
+      {
+        "line": 13052,
+        "before": "    {\"dos\": [10957, 10960, 2978, 2981], \"dos_text_sha256\": \"96f41b0b6924cf52929ab148302da6e76b605e2d32ab27fcde4bbe49ed435119\", \"win\": [6548, 6551, 2396, 2399], \"win_text_sha256\": \"8aea911c547f42ee831dada77b57e46f40ac8da933ed1487890407bf15eb68f9\", \"saturn\": [7391, 7395, 3233, 3237], \"saturn_text_sha256\": \"f38723756c0ed36150b902a4b7fbc4bfcb300a43a7cb59f4a4de3f5665d1d576\", \"decision\": \"reviewed-source-variant\", \"correspondence\": \"same-neighbor-offset-reviewed\", \"translation\": \"saturn\"},",
+        "after": "    {\"dos\": [10957, 10960, 2978, 2981], \"dos_text_sha256\": \"96f41b0b6924cf52929ab148302da6e76b605e2d32ab27fcde4bbe49ed435119\", \"win\": [6548, 6551, 2396, 2399], \"win_text_sha256\": \"8aea911c547f42ee831dada77b57e46f40ac8da933ed1487890407bf15eb68f9\", \"saturn\": [7391, 7395, 3233, 3237], \"saturn_text_sha256\": \"f38723756c0ed36150b902a4b7fbc4bfcb300a43a7cb59f4a4de3f5665d1d576\", \"decision\": \"reviewed-source-variant\", \"correspondence\": \"same-neighbor-offset-reviewed\", \"translation\": \"issue-6-r2-win-translation\"},"
+      },
+      {
+        "line": 13404,
+        "before": "    {\"dos\": [14219, 14220, 4029, 4030], \"dos_text_sha256\": \"3b2f3e4e792891f77c52c7045bd7cf867aa2ea2b99cd57fbea91a2d203900ade\", \"win\": [9812, 9813, 3447, 3448], \"win_text_sha256\": \"2890dea212aa325ab9da6694046119440a67897bb1b05e95fd69106fe1085e59\", \"saturn\": [10641, 10643, 4507, 4509], \"saturn_text_sha256\": \"ad8ab724564191bf3651d2c163a60c34cf1394f4ef984ce0e00a99ec9632d4af\", \"decision\": \"reviewed-source-variant\", \"correspondence\": \"same-neighbor-offset-reviewed\", \"translation\": \"saturn\"},",
+        "after": "    {\"dos\": [14219, 14220, 4029, 4030], \"dos_text_sha256\": \"3b2f3e4e792891f77c52c7045bd7cf867aa2ea2b99cd57fbea91a2d203900ade\", \"win\": [9812, 9813, 3447, 3448], \"win_text_sha256\": \"2890dea212aa325ab9da6694046119440a67897bb1b05e95fd69106fe1085e59\", \"saturn\": [10641, 10643, 4507, 4509], \"saturn_text_sha256\": \"ad8ab724564191bf3651d2c163a60c34cf1394f4ef984ce0e00a99ec9632d4af\", \"decision\": \"reviewed-source-variant\", \"correspondence\": \"same-neighbor-offset-reviewed\", \"translation\": \"issue-6-r2-win-translation\"},"
+      },
+      {
+        "line": 14721,
+        "before": "    {\"dos\": [25011, 25018, 8166, 8172], \"dos_text_sha256\": \"897daf3974199448cd8942c8ac881a519d9dffcf97b8bb741f3567b56b190352\", \"win\": [20604, 20611, 7583, 7589], \"win_text_sha256\": \"f9441d661e70a6ba057c267e0762a294ca0f750b66f87c79c94f19cc2526feca\", \"saturn\": [22475, 22485, 9746, 9755], \"saturn_text_sha256\": \"07f93700caecde1abf83fcff92c56288970c3dc1a05c93b749e2695c051844fe\", \"decision\": \"reviewed-source-variant\", \"correspondence\": \"same-neighbor-offset-reviewed\", \"translation\": \"saturn\"},",
+        "after": "    {\"dos\": [25011, 25018, 8166, 8172], \"dos_text_sha256\": \"897daf3974199448cd8942c8ac881a519d9dffcf97b8bb741f3567b56b190352\", \"win\": [20604, 20611, 7583, 7589], \"win_text_sha256\": \"f9441d661e70a6ba057c267e0762a294ca0f750b66f87c79c94f19cc2526feca\", \"saturn\": [22475, 22485, 9746, 9755], \"saturn_text_sha256\": \"07f93700caecde1abf83fcff92c56288970c3dc1a05c93b749e2695c051844fe\", \"decision\": \"reviewed-source-variant\", \"correspondence\": \"same-neighbor-offset-reviewed\", \"translation\": \"issue-6-r2-win-translation\"},"
+      }
+    ],
+    "manifest_working_file_newlines": {
+      "before_crlf": 16268,
+      "after_crlf": 0,
+      "before_lf": 16268,
+      "after_lf": 16268,
+      "note": "External before copy uses CRLF; current working file uses LF. Five-change claim is semantic/content-line scope, not raw-byte identity. Git normalization was not inspected because Git operations were excluded."
+    },
+    "slf_comparisons": {
+      "win": {
+        "before_sha256": "6b9ee550403befc9f16171dacbdc6b2ab616460df8268626c2edf0ce648f8791",
+        "after_sha256": "6a282849492f6e3db06f384da59ad518eb2ca45df95683fa1fb179deee5f5ff0",
+        "physical_lines": 52031,
+        "changed_lines": [
+          {
+            "line": 10549,
+            "sid": 2396,
+            "before": "「十回勝って、九回負ける」",
+            "after": "「十回賭けて、九回負ける」"
+          },
+          {
+            "line": 14253,
+            "sid": 3447,
+            "before": "母上は、あまり村の人と",
+            "after": "母上は、知らない人と"
+          },
+          {
+            "line": 29211,
+            "sid": 7583,
+            "before": "二人ともわしから七歩以上",
+            "after": "二人ともわしから七歩より"
+          },
+          {
+            "line": 29212,
+            "sid": 7583,
+            "before": "下がっておれ。",
+            "after": "遠くへ離れてはならぬ。"
+          },
+          {
+            "line": 29214,
+            "sid": 7583,
+            "before": "動揺してはならぬ。",
+            "after": "軽はずみに動くでない。"
+          },
+          {
+            "line": 44413,
+            "sid": 12078,
+            "before": "若い頃の霊児とそっくりだ！",
+            "after": "若い頃のお青とそっくりだ！"
+          }
+        ],
+        "all_other_bytes_and_newlines_identical": true
+      },
+      "dos": {
+        "before_sha256": "6bf198b3027bdf84f2668e2659ac6feefeb7b9c755963a84b0d596770b89da5d",
+        "after_sha256": "e7933eeea0375dceca099dba34a492f37d4070f05a9218e193b48a59fbd4ee92",
+        "physical_lines": 36451,
+        "changed_lines": [
+          {
+            "line": 3577,
+            "sid": 442,
+            "before": "若い頃の霊児とそっくりだ！",
+            "after": "若い頃のお青とそっくりだ！"
+          },
+          {
+            "line": 10666,
+            "sid": 2978,
+            "before": "「十回勝って、九回負ける」",
+            "after": "「十回賭けて、九回負ける」"
+          },
+          {
+            "line": 13418,
+            "sid": 4029,
+            "before": "母上は、あまり村の人と",
+            "after": "母上は、知らない人と"
+          },
+          {
+            "line": 24107,
+            "sid": 8166,
+            "before": "二人ともわしから七歩以上",
+            "after": "二人ともわしから七歩より"
+          },
+          {
+            "line": 24108,
+            "sid": 8166,
+            "before": "下がっておれ。",
+            "after": "遠くへ離れてはならぬ。"
+          },
+          {
+            "line": 24110,
+            "sid": 8166,
+            "before": "動揺してはならぬ。",
+            "after": "軽はずみに動くでない。"
+          }
+        ],
+        "all_other_bytes_and_newlines_identical": true
+      }
+    },
+    "fixtures": {
+      "win": {
+        "sha256": "91578d7d8582a3e963cc54a0fdbd0a08ca384f9ea4937a7b0e7eca2b452f51a3",
+        "unique_keys": 4766,
+        "drawn": 5,
+        "target_rows": [
+          [
+            2396,
+            2399,
+            5,
+            5,
+            1,
+            60,
+            0,
+            0,
+            0
+          ],
+          [
+            3447,
+            3448,
+            3,
+            3,
+            1,
+            60,
+            0,
+            0,
+            0
+          ],
+          [
+            7583,
+            7589,
+            11,
+            11,
+            1,
+            61,
+            37,
+            0,
+            0
+          ],
+          [
+            12078,
+            12083,
+            8,
+            8,
+            1,
+            61,
+            70,
+            0,
+            0
+          ]
+        ]
+      },
+      "dos": {
+        "sha256": "ce5cf6ecc963d9e4d878b5a30cddf2f368a184d9c63974f3df004efbe847a76c",
+        "unique_keys": 4476,
+        "drawn": 8,
+        "target_rows": [
+          [
+            442,
+            447,
+            8,
+            8,
+            1,
+            61,
+            70,
+            0,
+            0
+          ],
+          [
+            2978,
+            2981,
+            5,
+            5,
+            1,
+            60,
+            0,
+            0,
+            0
+          ],
+          [
+            4029,
+            4030,
+            3,
+            3,
+            1,
+            60,
+            0,
+            0,
+            0
+          ],
+          [
+            8166,
+            8172,
+            11,
+            11,
+            1,
+            61,
+            37,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "accepted_guards": [
+      {
+        "file": "tools/japanese/verify_translation_followup.py",
+        "line": 43,
+        "reason": "Pinned resource fingerprints before source decoding."
+      },
+      {
+        "file": "tools/japanese/verify_translation_followup.py",
+        "line": 69,
+        "reason": "Full actual Win/DOS/Saturn group spans, message IDs and text compared."
+      },
+      {
+        "file": "tools/japanese/verify_translation_followup.py",
+        "line": 21,
+        "reason": "Only target body replacement; complete raw byte comparison protects all remaining sections, comments, order and newline bytes."
+      },
+      {
+        "file": "tools/japanese/verify_translation_followup.py",
+        "line": 104,
+        "reason": "Corresponding Win/DOS corrected Japanese must be identical."
+      },
+      {
+        "file": "tools/japanese/verify_translation_followup.py",
+        "line": 84,
+        "reason": "Explicit commands checked against raw script; defaults restricted to two known direct-entry NPC groups."
+      },
+      {
+        "file": "tools/japanese/makemessage_j.py",
+        "line": 200,
+        "reason": "New audit flag remains mutually exclusive."
+      },
+      {
+        "file": "tools/japanese/makemessage_j.py",
+        "line": 616,
+        "reason": "Followup flag excludes only new four entries; earlier audit stages still disable correction pass, with source/full-body guards retained."
+      }
+    ],
+    "boundaries": [
+      "Only final-review.json written; no repository/resource/Git/GitHub mutation.",
+      "No converter/verifier entry point, build, renderer, game or UI executed in final review.",
+      "Default NPC fixture commands are not claimed to exist as raw 003C instructions.",
+      "Actual glyph pixels, GPU scaling, device behavior and gameplay are outside this review.",
+      "Source-render verifier was subsequently statically reviewed and its existing report inspected; no render or pixel tests were rerun."
+    ],
+    "independent_review_sha256": "ebfe6c6292637767ba3e6dcf992b442c82f2ee0b692c80f58c22b2af4c48539a",
+    "parent_verification_sha256": "95c9db0d29bf9951820b1b32ee6bf05d28b22b24c1cce08779b103632935b25e",
+    "render_verifier_review": {
+      "result": "no blocking finding for the four reviewed groups and existing Test renderer",
+      "code": "tools/japanese/verify_followup_rendering.py",
+      "existing_report_sha256": "c0bc19973c4293225a761971d8dd0475e6d8152675d6e4678b8026d16e166563",
+      "existing_report_counts": {
+        "pngs": 28,
+        "views_checked_for_2x_3x": 100,
+        "glyph_instances": 998,
+        "ink_checks": 45900
+      },
+      "binary": {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-7\\dos-mapping-r1-20261020\\build\\sdlpal.exe",
+        "sha256": "9ec63d25e64b3aa97c6614816285ccb8e76f357b83165192c277f445c777c5b3",
+        "current_binary_hash_matches_existing_report": true,
+        "source": "Existing Issue #7 Test executable; no build invoked in this review"
+      },
+      "evidence_boundaries": [
+        "Complete 4766/4476 effective-text dump compared to statically verified SLFs for each run.",
+        "Four target groups use tailored known page/control model; this is not a general validator of arbitrary dialogue controls.",
+        "Glyph assertion checks expected visible ink at expected palette index; difference mask includes every glyph in each modified line plus its old/new shadow positions.",
+        "Describe pixel difference result as confined to revised-line old/new glyph-and-shadow masks, not exact isolation to only individually replaced characters.",
+        "998 is glyph instances summed across versions/stages/pages, not distinct Unicode characters;45900 is total expected ink-point checks across those instances.",
+        "Integral 2x/3x scales are pixel compared;2.5x checks dimensions only.",
+        "Report explicitly states source rendering rather than natural game-route acceptance; no current-commit rebuild or interactive acceptance should be inferred."
+      ]
+    }
+  },
+  "reused_engine": {
+    "provenance": "Issue #7 Test x64 build, reused unchanged. No new C++ build/unit run claimed.",
+    "executable_sha256": "9ec63d25e64b3aa97c6614816285ccb8e76f357b83165192c277f445c777c5b3",
+    "source_lf_sha256_matches_issue_7": {
+      "text.c": "3c1471e2202d6b1ea755ba4556fd6947086a372b507bced86c7eab63c5808241",
+      "magicmenu.c": "25c8ae0fe34b64be92b5342306159a6290405b62d192c4ef7104f5f7b89f1e8d",
+      "tests/render_evidence.cpp": "57d30033e6a1b2cde2731b8bf9401ef1e4f9ee1fab775fba597024c89c1696b0",
+      "tests/test_description_layout.cpp": "efc1d2ef132b6eb53cb971f1680dbac611d48159cccacf06c8677b5f34f7aab8"
+    },
+    "no_c_h_cpp_diff_from_baseline": true,
+    "win_runtime_matches_requested_package": [
+      {
+        "name": "ABC.mkf",
+        "sha256": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b"
+      },
+      {
+        "name": "BALL.MKF",
+        "sha256": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0"
+      },
+      {
+        "name": "DATA.MKF",
+        "sha256": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b"
+      },
+      {
+        "name": "F.MKF",
+        "sha256": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7"
+      },
+      {
+        "name": "FBP.MKF",
+        "sha256": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84"
+      },
+      {
+        "name": "FIRE.MKF",
+        "sha256": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf"
+      },
+      {
+        "name": "GOP.MKF",
+        "sha256": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b"
+      },
+      {
+        "name": "M.MSG",
+        "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c"
+      },
+      {
+        "name": "MAP.MKF",
+        "sha256": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575"
+      },
+      {
+        "name": "MGO.mkf",
+        "sha256": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0"
+      },
+      {
+        "name": "MUS.MKF",
+        "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+      },
+      {
+        "name": "PAT.MKF",
+        "sha256": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997"
+      },
+      {
+        "name": "RGM.MKF",
+        "sha256": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132"
+      },
+      {
+        "name": "RNG.MKF",
+        "sha256": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd"
+      },
+      {
+        "name": "SOUNDS.MKF",
+        "sha256": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01"
+      },
+      {
+        "name": "SSS.MKF",
+        "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c"
+      },
+      {
+        "name": "WORD.DAT",
+        "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+      }
+    ]
+  },
+  "totals": {
+    "groups_changed_per_version": 4,
+    "lines_changed_per_version": 6,
+    "glyph_instances_checked": 998,
+    "ink_points_checked": 45900,
+    "png_count": 28,
+    "png_bytes": 171595,
+    "base_view_pairs": 50,
+    "changed_view_pairs": 10,
+    "difference_bound": "Only inside old/new glyph-and-shadow masks of the six modified lines."
+  },
+  "environment": "Windows 11 Pro 10.0.26200; official CPython 3.11.9; Japanese16px, UseISOFont=0; hidden SDL Direct3D target",
+  "gameplay_acceptance": "Not run; deferred to unified user acceptance after all implementation.",
+  "rollback": "Revert the recorded ordinary merge with -m 1 and regenerate SLFs. Original game resources unchanged."
+}

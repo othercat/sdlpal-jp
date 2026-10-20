@@ -1,0 +1,4910 @@
+{
+  "issue": 6,
+  "round": 2,
+  "date": "2026-10-21",
+  "base_feature_provided_by_parent": "9af0b588f81536e7b876889628e4a9ec3d885319",
+  "scope": "Independent read-only review of four inherited Japanese translation errors; exact resources decoded and checked against pinned fingerprints. No conversion/build/game/UI or Git/GitHub operation. Only this report written.",
+  "inputs": {
+    "win": {
+      "sss.mkf": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+        "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+        "bytes": 575270
+      },
+      "m.msg": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+        "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+        "bytes": 224983
+      },
+      "word.dat": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\WORD.DAT",
+        "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+        "bytes": 5650
+      },
+      "DATA.MKF": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\DATA.MKF",
+        "sha256": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+        "bytes": 63978
+      }
+    },
+    "dos": {
+      "SSS.MKF": {
+        "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+        "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c",
+        "bytes": 569640
+      },
+      "M.MSG": {
+        "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+        "sha256": "f6480a5095e8cc358ecb3e8329ca80996c6068c34327f2f86ec03375ad40b654",
+        "bytes": 212668
+      },
+      "WORD.DAT": {
+        "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\WORD.DAT",
+        "sha256": "856fd6649a3e5bf143af30281eb33b2c67b1f6776290ce9650b065b1f78f49bb",
+        "bytes": 5650
+      },
+      "DATA.MKF": {
+        "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\DATA.MKF",
+        "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a",
+        "bytes": 66418
+      }
+    },
+    "saturn": {
+      "JM.MSG": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+        "sha256": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+        "bytes": 309248
+      },
+      "JM.NOR": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+        "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+        "bytes": 65296
+      },
+      "JM.SEC": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+        "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+        "bytes": 308120
+      },
+      "PROG.BIN": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\PROG.BIN",
+        "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c",
+        "bytes": 411244
+      }
+    }
+  },
+  "inputs_unchanged": true,
+  "review_json": {
+    "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\docs\\evidence\\issue-7-source-review.json",
+    "sha256": "6cb6ea1039007ea35877d92bc9f13bedb7bccc587e6d5def5264b77488a54aa0"
+  },
+  "dos_mapping_manifest": {
+    "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\dos-map.json",
+    "sha256": "eaa6ee9c1c1e6ba9d4154071e54d4fac54bd5508e267ac660026b925c351affe"
+  },
+  "groups": [
+    {
+      "win_key": [
+        12078,
+        12083
+      ],
+      "decision": "correct inherited Saturn translation in Win output and derived DOS bridge",
+      "confidence": "confirmed by both raw Chinese source versions",
+      "finding": "Win 和 DOS 均说灵儿像当年的阿青；土星把比较对象误写为年轻时的灵儿。",
+      "rationale": "采用土星同场及巫后语境已使用的お青，仅更换人名。",
+      "sources": {
+        "win": {
+          "script_start": 35237,
+          "script_end": 35244,
+          "sid": 12078,
+          "eid": 12083,
+          "ids": [
+            12078,
+            12079,
+            12080,
+            12081,
+            12082,
+            12083
+          ],
+          "text": [
+            "巫王：",
+            "真的是你．．吗？　灵儿．．",
+            "[CLEAR MESSAGE]",
+            "没．．没错．．　就和当年",
+            "的阿青一模一样！",
+            "[CLEAR MESSAGE]",
+            "快．．快过来．．",
+            "让父王．．看看你．．"
+          ],
+          "instructions": [
+            {
+              "index": 35237,
+              "words": [
+                65535,
+                12078,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2F2E",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 508710
+            },
+            {
+              "index": 35238,
+              "words": [
+                65535,
+                12079,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2F2F",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 508718
+            },
+            {
+              "index": 35239,
+              "words": [
+                142,
+                0,
+                0,
+                0
+              ],
+              "hex_words": [
+                "008E",
+                "0000",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 508726
+            },
+            {
+              "index": 35240,
+              "words": [
+                65535,
+                12080,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2F30",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 508734
+            },
+            {
+              "index": 35241,
+              "words": [
+                65535,
+                12081,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2F31",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 508742
+            },
+            {
+              "index": 35242,
+              "words": [
+                142,
+                0,
+                0,
+                0
+              ],
+              "hex_words": [
+                "008E",
+                "0000",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 508750
+            },
+            {
+              "index": 35243,
+              "words": [
+                65535,
+                12082,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2F32",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 508758
+            },
+            {
+              "index": 35244,
+              "words": [
+                65535,
+                12083,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2F33",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 508766
+            }
+          ],
+          "messages": [
+            {
+              "id": 12078,
+              "text": "巫王：",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "ced7cdf5a3ba",
+              "raw_byte_range": [
+                200512,
+                200518
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 12079,
+              "text": "真的是你．．吗？　灵儿．．",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "d5e6b5c4cac7c4e3a3aea3aec2f0a3bfa1a1c1e9b6f9a3aea3ae",
+              "raw_byte_range": [
+                200518,
+                200544
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 12080,
+              "text": "没．．没错．．　就和当年",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "c3bba3aea3aec3bbb4eda3aea3aea1a1becdbacdb5b1c4ea",
+              "raw_byte_range": [
+                200544,
+                200568
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 12081,
+              "text": "的阿青一模一样！",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "b5c4b0a2c7e0d2bbc4a3d2bbd1f9a3a1",
+              "raw_byte_range": [
+                200568,
+                200584
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 12082,
+              "text": "快．．快过来．．",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "bfeca3aea3aebfecb9fdc0b4a3aea3ae",
+              "raw_byte_range": [
+                200584,
+                200600
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 12083,
+              "text": "让父王．．看看你．．",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "c8c3b8b8cdf5a3aea3aebfb4bfb4c4e3a3aea3ae",
+              "raw_byte_range": [
+                200600,
+                200620
+              ],
+              "strict_decode_error": null
+            }
+          ]
+        },
+        "dos": {
+          "script_start": 4004,
+          "script_end": 4011,
+          "sid": 442,
+          "eid": 447,
+          "ids": [
+            442,
+            443,
+            444,
+            445,
+            446,
+            447
+          ],
+          "text": [
+            "巫王：",
+            "真的是妳．．嗎？　靈兒．．",
+            "[CLEAR MESSAGE]",
+            "沒．．沒錯．．妳就和當年",
+            "的阿青一模一樣！",
+            "[CLEAR MESSAGE]",
+            "快．．快過來．．",
+            "讓父王．．看看妳．．"
+          ],
+          "instructions": [
+            {
+              "index": 4004,
+              "words": [
+                65535,
+                442,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "01BA",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 263336
+            },
+            {
+              "index": 4005,
+              "words": [
+                65535,
+                443,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "01BB",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 263344
+            },
+            {
+              "index": 4006,
+              "words": [
+                142,
+                0,
+                0,
+                0
+              ],
+              "hex_words": [
+                "008E",
+                "0000",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 263352
+            },
+            {
+              "index": 4007,
+              "words": [
+                65535,
+                444,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "01BC",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 263360
+            },
+            {
+              "index": 4008,
+              "words": [
+                65535,
+                445,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "01BD",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 263368
+            },
+            {
+              "index": 4009,
+              "words": [
+                142,
+                0,
+                0,
+                0
+              ],
+              "hex_words": [
+                "008E",
+                "0000",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 263376
+            },
+            {
+              "index": 4010,
+              "words": [
+                65535,
+                446,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "01BE",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 263384
+            },
+            {
+              "index": 4011,
+              "words": [
+                65535,
+                447,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "01BF",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 263392
+            }
+          ],
+          "messages": [
+            {
+              "id": 442,
+              "text": "巫王：",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "a7c5a4fda147",
+              "raw_byte_range": [
+                5264,
+                5270
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 443,
+              "text": "真的是妳．．嗎？　靈兒．．",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "af75aabaac4fa970a144a144b6dca148a140c646a8e0a144a144",
+              "raw_byte_range": [
+                5270,
+                5296
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 444,
+              "text": "沒．．沒錯．．妳就和當年",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "a853a144a144a853bff9a144a144a970b44ea94db7eda67e",
+              "raw_byte_range": [
+                5296,
+                5320
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 445,
+              "text": "的阿青一模一樣！",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "aabaaafcab43a440bcd2a440bccba149",
+              "raw_byte_range": [
+                5320,
+                5336
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 446,
+              "text": "快．．快過來．．",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "a7d6a144a144a7d6b94ca8d3a144a144",
+              "raw_byte_range": [
+                5336,
+                5352
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 447,
+              "text": "讓父王．．看看妳．．",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "c5fda4f7a4fda144a144acddacdda970a144a144",
+              "raw_byte_range": [
+                5352,
+                5372
+              ],
+              "strict_decode_error": null
+            }
+          ]
+        },
+        "saturn": {
+          "script_start": 38149,
+          "script_end": 38156,
+          "sid": 15442,
+          "eid": 15449,
+          "ids": [
+            15442,
+            15443,
+            15444,
+            15445,
+            15446,
+            15447,
+            15448,
+            15449
+          ],
+          "text": [
+            "巫王：",
+            "本当に・・・お前か？",
+            "霊児・・・。",
+            "ま・・・間違いない・・・。",
+            "若い頃の霊児とそっくりだ！",
+            "は・・・早く・・・",
+            "父さんに・・・",
+            "見せておくれ。"
+          ],
+          "instructions": [
+            {
+              "index": 38149,
+              "words": [
+                65535,
+                15442,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "3C52",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 305192
+            },
+            {
+              "index": 38150,
+              "words": [
+                65535,
+                15443,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "3C53",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 305200
+            },
+            {
+              "index": 38151,
+              "words": [
+                65535,
+                15444,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "3C54",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 305208
+            },
+            {
+              "index": 38152,
+              "words": [
+                65535,
+                15445,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "3C55",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 305216
+            },
+            {
+              "index": 38153,
+              "words": [
+                65535,
+                15446,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "3C56",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 305224
+            },
+            {
+              "index": 38154,
+              "words": [
+                65535,
+                15447,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "3C57",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 305232
+            },
+            {
+              "index": 38155,
+              "words": [
+                65535,
+                15448,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "3C58",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 305240
+            },
+            {
+              "index": 38156,
+              "words": [
+                65535,
+                15449,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "3C59",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 305248
+            }
+          ],
+          "messages": [
+            {
+              "id": 15442,
+              "text": "巫王：",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "9bde89a48146",
+              "normalized_nonzero_byte_range": [
+                266523,
+                266529
+              ],
+              "raw_physical_byte_range": [
+                276600,
+                276606
+              ],
+              "raw_physical_hex": "9bde89a48146",
+              "strict_decode_error": null
+            },
+            {
+              "id": 15443,
+              "text": "本当に・・・お前か？",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "967b939682c981458145814582a8914f82a98148",
+              "normalized_nonzero_byte_range": [
+                266529,
+                266549
+              ],
+              "raw_physical_byte_range": [
+                276606,
+                276626
+              ],
+              "raw_physical_hex": "967b939682c981458145814582a8914f82a98148",
+              "strict_decode_error": null
+            },
+            {
+              "id": 15444,
+              "text": "霊児・・・。",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "97ec8e998145814581458142",
+              "normalized_nonzero_byte_range": [
+                266549,
+                266561
+              ],
+              "raw_physical_byte_range": [
+                276626,
+                276638
+              ],
+              "raw_physical_hex": "97ec8e998145814581458142",
+              "strict_decode_error": null
+            },
+            {
+              "id": 15445,
+              "text": "ま・・・間違いない・・・。",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "82dc8145814581458ad488e182a282c882a28145814581458142",
+              "normalized_nonzero_byte_range": [
+                266561,
+                266587
+              ],
+              "raw_physical_byte_range": [
+                276638,
+                276664
+              ],
+              "raw_physical_hex": "82dc8145814581458ad488e182a282c882a28145814581458142",
+              "strict_decode_error": null
+            },
+            {
+              "id": 15446,
+              "text": "若い頃の霊児とそっくりだ！",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "8ee182a28da082cc97ec8e9982c682bb82c182ad82e882be8149",
+              "normalized_nonzero_byte_range": [
+                266587,
+                266613
+              ],
+              "raw_physical_byte_range": [
+                276664,
+                276690
+              ],
+              "raw_physical_hex": "8ee182a28da082cc97ec8e9982c682bb82c182ad82e882be8149",
+              "strict_decode_error": null
+            },
+            {
+              "id": 15447,
+              "text": "は・・・早く・・・",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "82cd814581458145918182ad814581458145",
+              "normalized_nonzero_byte_range": [
+                266613,
+                266631
+              ],
+              "raw_physical_byte_range": [
+                276690,
+                276708
+              ],
+              "raw_physical_hex": "82cd814581458145918182ad814581458145",
+              "strict_decode_error": null
+            },
+            {
+              "id": 15448,
+              "text": "父さんに・・・",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "958382b382f182c9814581458145",
+              "normalized_nonzero_byte_range": [
+                266631,
+                266645
+              ],
+              "raw_physical_byte_range": [
+                276708,
+                276722
+              ],
+              "raw_physical_hex": "958382b382f182c9814581458145",
+              "strict_decode_error": null
+            },
+            {
+              "id": 15449,
+              "text": "見せておくれ。",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "8ca982b982c482a882ad82ea8142",
+              "normalized_nonzero_byte_range": [
+                266645,
+                266659
+              ],
+              "raw_physical_byte_range": [
+                276722,
+                276736
+              ],
+              "raw_physical_hex": "8ca982b982c482a882ad82ea8142",
+              "strict_decode_error": null
+            }
+          ]
+        }
+      },
+      "before_japanese": [
+        "巫王：",
+        "本当に・・・お前か？",
+        "霊児・・・。",
+        "ま・・・間違いない・・・。",
+        "若い頃の霊児とそっくりだ！",
+        "は・・・早く・・・",
+        "父さんに・・・",
+        "見せておくれ。"
+      ],
+      "recommended_japanese": [
+        "巫王：",
+        "本当に・・・お前か？",
+        "霊児・・・。",
+        "ま・・・間違いない・・・。",
+        "若い頃のお青とそっくりだ！",
+        "は・・・早く・・・",
+        "父さんに・・・",
+        "見せておくれ。"
+      ],
+      "changes": [
+        {
+          "line_index_zero_based": 4,
+          "saturn_message_id": 15446,
+          "before": "若い頃の霊児とそっくりだ！",
+          "after": "若い頃のお青とそっくりだ！",
+          "unicode_character_count": 13,
+          "nominal_fullwidth_pixels": 208
+        }
+      ],
+      "controls": {
+        "before": [],
+        "after": [],
+        "clear_indexes": [],
+        "line_count_unchanged": true,
+        "note": "Preserve existing Japanese control sequence. Win/DOS original CLEAR counts need not equal Saturn; this proposal does not re-page the localization."
+      },
+      "render_commands": {
+        "win": {
+          "script": 35236,
+          "words": [
+            61,
+            70,
+            0,
+            0
+          ],
+          "provenance": "immediately preceding raw dialog command",
+          "location": "lower",
+          "face": 70,
+          "font_color_operand": 0,
+          "playing_rng": false,
+          "instruction": {
+            "index": 35236,
+            "words": [
+              61,
+              70,
+              0,
+              0
+            ],
+            "hex_words": [
+              "003D",
+              "0046",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+            "byte_offset": 508702
+          },
+          "text_origin": [
+            20,
+            126
+          ],
+          "title_origin": [
+            4,
+            108
+          ]
+        },
+        "dos": {
+          "script": 4003,
+          "words": [
+            61,
+            70,
+            0,
+            0
+          ],
+          "provenance": "immediately preceding raw dialog command",
+          "location": "lower",
+          "face": 70,
+          "font_color_operand": 0,
+          "playing_rng": false,
+          "instruction": {
+            "index": 4003,
+            "words": [
+              61,
+              70,
+              0,
+              0
+            ],
+            "hex_words": [
+              "003D",
+              "0046",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+            "byte_offset": 263328
+          },
+          "text_origin": [
+            20,
+            126
+          ],
+          "title_origin": [
+            4,
+            108
+          ]
+        }
+      },
+      "line_length": {
+        "max_characters_including_speaker": 13,
+        "changed_line_characters": [
+          13
+        ],
+        "assumption": "All proposed visible characters use nominal 16px fullwidth Japanese glyph advances; no independent pixel-render claim."
+      }
+    },
+    {
+      "win_key": [
+        2396,
+        2399
+      ],
+      "decision": "correct inherited Saturn translation in Win output and derived DOS bridge",
+      "confidence": "confirmed by both raw Chinese source versions",
+      "finding": "十赌九输被译成十次胜、九次败。",
+      "rationale": "仅将勝って改为賭けて，保留十与九及警诫赌博的原语气。",
+      "sources": {
+        "win": {
+          "script_start": 6548,
+          "script_end": 6551,
+          "sid": 2396,
+          "eid": 2399,
+          "ids": [
+            2396,
+            2397,
+            2398,
+            2399
+          ],
+          "text": [
+            "赌客：",
+            "小兄弟啊！我劝告你",
+            "俗语说：「十赌九输」",
+            "千万别沉迷赌博喔！"
+          ],
+          "instructions": [
+            {
+              "index": 6548,
+              "words": [
+                65535,
+                2396,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "095C",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 279198
+            },
+            {
+              "index": 6549,
+              "words": [
+                65535,
+                2397,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "095D",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 279206
+            },
+            {
+              "index": 6550,
+              "words": [
+                65535,
+                2398,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "095E",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 279214
+            },
+            {
+              "index": 6551,
+              "words": [
+                65535,
+                2399,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "095F",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 279222
+            }
+          ],
+          "messages": [
+            {
+              "id": 2396,
+              "text": "赌客：",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "b6c4bfcda3ba",
+              "raw_byte_range": [
+                41183,
+                41189
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 2397,
+              "text": "小兄弟啊！我劝告你",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "d0a1d0d6b5dcb0a1a3a1ced2c8b0b8e6c4e3",
+              "raw_byte_range": [
+                41189,
+                41207
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 2398,
+              "text": "俗语说：「十赌九输」",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "cbd7d3efcbb5a3baa1b8caaeb6c4bec5cae4a1b9",
+              "raw_byte_range": [
+                41207,
+                41227
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 2399,
+              "text": "千万别沉迷赌博喔！",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "c7a7cdf2b1f0b3c1c3d4b6c4b2a9e0b8a3a1",
+              "raw_byte_range": [
+                41227,
+                41245
+              ],
+              "strict_decode_error": null
+            }
+          ]
+        },
+        "dos": {
+          "script_start": 10957,
+          "script_end": 10960,
+          "sid": 2978,
+          "eid": 2981,
+          "ids": [
+            2978,
+            2979,
+            2980,
+            2981
+          ],
+          "text": [
+            "賭客：",
+            "小兄弟啊！我勸告你",
+            "俗語說：「十賭九輸」",
+            "千萬別沈迷賭博喔！"
+          ],
+          "instructions": [
+            {
+              "index": 10957,
+              "words": [
+                65535,
+                2978,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0BA2",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 318960
+            },
+            {
+              "index": 10958,
+              "words": [
+                65535,
+                2979,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0BA3",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 318968
+            },
+            {
+              "index": 10959,
+              "words": [
+                65535,
+                2980,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0BA4",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 318976
+            },
+            {
+              "index": 10960,
+              "words": [
+                65535,
+                2981,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0BA5",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 318984
+            }
+          ],
+          "messages": [
+            {
+              "id": 2978,
+              "text": "賭客：",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "bde4abc8a147",
+              "raw_byte_range": [
+                48815,
+                48821
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 2979,
+              "text": "小兄弟啊！我勸告你",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "a470a553a7ccb0daa149a7dac455a769a741",
+              "raw_byte_range": [
+                48821,
+                48839
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 2980,
+              "text": "俗語說：「十賭九輸」",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "ab55bb79bba1a147a175a451bde4a445bfe9a176",
+              "raw_byte_range": [
+                48839,
+                48859
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 2981,
+              "text": "千萬別沈迷賭博喔！",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "a464b855a74fa848b067bde4b3d5b3e1a149",
+              "raw_byte_range": [
+                48859,
+                48877
+              ],
+              "strict_decode_error": null
+            }
+          ]
+        },
+        "saturn": {
+          "script_start": 7391,
+          "script_end": 7395,
+          "sid": 3233,
+          "eid": 3237,
+          "ids": [
+            3233,
+            3234,
+            3235,
+            3236,
+            3237
+          ],
+          "text": [
+            "賭博客：",
+            "小僧！聞けよ。",
+            "「十回勝って、九回負ける」",
+            "って言葉があるだろ。",
+            "バクチにははまるなよ！"
+          ],
+          "instructions": [
+            {
+              "index": 7391,
+              "words": [
+                65535,
+                3233,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0CA1",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 59128
+            },
+            {
+              "index": 7392,
+              "words": [
+                65535,
+                3234,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0CA2",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 59136
+            },
+            {
+              "index": 7393,
+              "words": [
+                65535,
+                3235,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0CA3",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 59144
+            },
+            {
+              "index": 7394,
+              "words": [
+                65535,
+                3236,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0CA4",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 59152
+            },
+            {
+              "index": 7395,
+              "words": [
+                65535,
+                3237,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0CA5",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 59160
+            }
+          ],
+          "messages": [
+            {
+              "id": 3233,
+              "text": "賭博客：",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "9371948e8b718146",
+              "normalized_nonzero_byte_range": [
+                57846,
+                57854
+              ],
+              "raw_physical_byte_range": [
+                58540,
+                58548
+              ],
+              "raw_physical_hex": "9371948e8b718146",
+              "strict_decode_error": null
+            },
+            {
+              "id": 3234,
+              "text": "小僧！聞けよ。",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "8fac916d814995b782af82e68142",
+              "normalized_nonzero_byte_range": [
+                57854,
+                57868
+              ],
+              "raw_physical_byte_range": [
+                58548,
+                58562
+              ],
+              "raw_physical_hex": "8fac916d814995b782af82e68142",
+              "strict_decode_error": null
+            },
+            {
+              "id": 3235,
+              "text": "「十回勝って、九回負ける」",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "81758f5c89f18f9f82c182c481418be389f1958982af82e98176",
+              "normalized_nonzero_byte_range": [
+                57868,
+                57894
+              ],
+              "raw_physical_byte_range": [
+                58562,
+                58588
+              ],
+              "raw_physical_hex": "81758f5c89f18f9f82c182c481418be389f1958982af82e98176",
+              "strict_decode_error": null
+            },
+            {
+              "id": 3236,
+              "text": "って言葉があるだろ。",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "82c182c48cbe977482aa82a082e982be82eb8142",
+              "normalized_nonzero_byte_range": [
+                57894,
+                57914
+              ],
+              "raw_physical_byte_range": [
+                58588,
+                58608
+              ],
+              "raw_physical_hex": "82c182c48cbe977482aa82a082e982be82eb8142",
+              "strict_decode_error": null
+            },
+            {
+              "id": 3237,
+              "text": "バクチにははまるなよ！",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "836f834e836082c982cd82cd82dc82e982c882e68149",
+              "normalized_nonzero_byte_range": [
+                57914,
+                57936
+              ],
+              "raw_physical_byte_range": [
+                58608,
+                58630
+              ],
+              "raw_physical_hex": "836f834e836082c982cd82cd82dc82e982c882e68149",
+              "strict_decode_error": null
+            }
+          ]
+        }
+      },
+      "before_japanese": [
+        "賭博客：",
+        "小僧！聞けよ。",
+        "「十回勝って、九回負ける」",
+        "って言葉があるだろ。",
+        "バクチにははまるなよ！"
+      ],
+      "recommended_japanese": [
+        "賭博客：",
+        "小僧！聞けよ。",
+        "「十回賭けて、九回負ける」",
+        "って言葉があるだろ。",
+        "バクチにははまるなよ！"
+      ],
+      "changes": [
+        {
+          "line_index_zero_based": 2,
+          "saturn_message_id": 3235,
+          "before": "「十回勝って、九回負ける」",
+          "after": "「十回賭けて、九回負ける」",
+          "unicode_character_count": 13,
+          "nominal_fullwidth_pixels": 208
+        }
+      ],
+      "controls": {
+        "before": [],
+        "after": [],
+        "clear_indexes": [],
+        "line_count_unchanged": true,
+        "note": "Preserve existing Japanese control sequence. Win/DOS original CLEAR counts need not equal Saturn; this proposal does not re-page the localization."
+      },
+      "render_commands": {
+        "win": {
+          "script": null,
+          "words": [
+            60,
+            0,
+            0,
+            0
+          ],
+          "provenance": "synthetic upper/no-face fixture matching default dialog state; no raw 003B-003E at direct event entry",
+          "location": "upper",
+          "face": 0,
+          "playing_rng": false,
+          "event_id": 527,
+          "event_words": [
+            0,
+            656,
+            728,
+            0,
+            6548,
+            0,
+            2,
+            2,
+            106,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "scene_ownership": [
+            {
+              "scene_id": 29,
+              "words": [
+                27,
+                0,
+                0,
+                523
+              ],
+              "map_id": 27
+            }
+          ],
+          "direct_entry_is_first_message": true,
+          "text_origin": [
+            44,
+            26
+          ],
+          "title_origin": [
+            12,
+            8
+          ],
+          "boundary": "Direct event entry is confirmed. This is not a claim that a 003C instruction exists in resources or that all dynamically reassigned entry paths were exhaustively traced."
+        },
+        "dos": {
+          "script": null,
+          "words": [
+            60,
+            0,
+            0,
+            0
+          ],
+          "provenance": "synthetic upper/no-face fixture matching default dialog state; no raw 003B-003E at direct event entry",
+          "location": "upper",
+          "face": 0,
+          "playing_rng": false,
+          "event_id": 527,
+          "event_words": [
+            0,
+            656,
+            728,
+            0,
+            10957,
+            0,
+            2,
+            2,
+            106,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "scene_ownership": [
+            {
+              "scene_id": 28,
+              "words": [
+                27,
+                0,
+                0,
+                523
+              ],
+              "map_id": 27
+            }
+          ],
+          "direct_entry_is_first_message": true,
+          "text_origin": [
+            44,
+            26
+          ],
+          "title_origin": [
+            12,
+            8
+          ],
+          "boundary": "Direct event entry is confirmed. This is not a claim that a 003C instruction exists in resources or that all dynamically reassigned entry paths were exhaustively traced."
+        }
+      },
+      "line_length": {
+        "max_characters_including_speaker": 13,
+        "changed_line_characters": [
+          13
+        ],
+        "assumption": "All proposed visible characters use nominal 16px fullwidth Japanese glyph advances; no independent pixel-render claim."
+      }
+    },
+    {
+      "win_key": [
+        7583,
+        7589
+      ],
+      "decision": "correct inherited Saturn translation in Win output and derived DOS bridge",
+      "confidence": "confirmed by both raw Chinese source versions",
+      "finding": "不得离开七步以外被反译为退到七步以上；不可轻举妄动被译成不得动摇。",
+      "rationale": "七歩より遠く表达超过七步，不把边界改成禁止恰好七步；恢复行动禁令，保留老人语气、其余行及 CLEAR 位置。",
+      "sources": {
+        "win": {
+          "script_start": 20604,
+          "script_end": 20611,
+          "sid": 7583,
+          "eid": 7589,
+          "ids": [
+            7583,
+            7584,
+            7585,
+            7586,
+            7587,
+            7588,
+            7589
+          ],
+          "text": [
+            "酒剑仙：",
+            "我要开始施法啰！",
+            "我在还没完成以前，你们二人",
+            "千万不要离开我七步以外",
+            "[CLEAR MESSAGE]",
+            "无论发生了什么事，切记不可",
+            "轻举妄动。要不然有什么不良",
+            "后果，我可不负责喔！"
+          ],
+          "instructions": [
+            {
+              "index": 20604,
+              "words": [
+                65535,
+                7583,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1D9F",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 391646
+            },
+            {
+              "index": 20605,
+              "words": [
+                65535,
+                7584,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1DA0",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 391654
+            },
+            {
+              "index": 20606,
+              "words": [
+                65535,
+                7585,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1DA1",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 391662
+            },
+            {
+              "index": 20607,
+              "words": [
+                65535,
+                7586,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1DA2",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 391670
+            },
+            {
+              "index": 20608,
+              "words": [
+                142,
+                0,
+                0,
+                0
+              ],
+              "hex_words": [
+                "008E",
+                "0000",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 391678
+            },
+            {
+              "index": 20609,
+              "words": [
+                65535,
+                7587,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1DA3",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 391686
+            },
+            {
+              "index": 20610,
+              "words": [
+                65535,
+                7588,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1DA4",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 391694
+            },
+            {
+              "index": 20611,
+              "words": [
+                65535,
+                7589,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1DA5",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 391702
+            }
+          ],
+          "messages": [
+            {
+              "id": 7583,
+              "text": "酒剑仙：",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "bec6bda3cfc9a3ba",
+              "raw_byte_range": [
+                126106,
+                126114
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 7584,
+              "text": "我要开始施法啰！",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "ced2d2aabfaacabccaa9b7a886aaa3a1",
+              "raw_byte_range": [
+                126114,
+                126130
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 7585,
+              "text": "我在还没完成以前，你们二人",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "ced2d4dabbb9c3bbcdeab3c9d2d4c7b0a3acc4e3c3c7b6fec8cb",
+              "raw_byte_range": [
+                126130,
+                126156
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 7586,
+              "text": "千万不要离开我七步以外",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "c7a7cdf2b2bbd2aac0ebbfaaced2c6dfb2bdd2d4cde2",
+              "raw_byte_range": [
+                126156,
+                126178
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 7587,
+              "text": "无论发生了什么事，切记不可",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "cedec2dbb7a2c9fac1cbcab2c3b4cac2a3acc7d0bcc7b2bbbfc9",
+              "raw_byte_range": [
+                126178,
+                126204
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 7588,
+              "text": "轻举妄动。要不然有什么不良",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "c7e1bed9cdfdb6afa1a3d2aab2bbc8bbd3d0cab2c3b4b2bbc1bc",
+              "raw_byte_range": [
+                126204,
+                126230
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 7589,
+              "text": "后果，我可不负责喔！",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "baf3b9fba3acced2bfc9b2bbb8bad4f0e0b8a3a1",
+              "raw_byte_range": [
+                126230,
+                126250
+              ],
+              "strict_decode_error": null
+            }
+          ]
+        },
+        "dos": {
+          "script_start": 25011,
+          "script_end": 25018,
+          "sid": 8166,
+          "eid": 8172,
+          "ids": [
+            8166,
+            8167,
+            8168,
+            8169,
+            8170,
+            8171,
+            8172
+          ],
+          "text": [
+            "酒劍仙：",
+            "我要開始施法囉！",
+            "我在還沒完成以前，你們二人",
+            "千萬不要離開我七步以外",
+            "[CLEAR MESSAGE]",
+            "無論發生了什麼事，切記不可",
+            "輕舉妄動。要不然有什麼不良",
+            "後果，我可不負責喔！"
+          ],
+          "instructions": [
+            {
+              "index": 25011,
+              "words": [
+                65535,
+                8166,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1FE6",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 431392
+            },
+            {
+              "index": 25012,
+              "words": [
+                65535,
+                8167,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1FE7",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 431400
+            },
+            {
+              "index": 25013,
+              "words": [
+                65535,
+                8168,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1FE8",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 431408
+            },
+            {
+              "index": 25014,
+              "words": [
+                65535,
+                8169,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1FE9",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 431416
+            },
+            {
+              "index": 25015,
+              "words": [
+                142,
+                0,
+                0,
+                0
+              ],
+              "hex_words": [
+                "008E",
+                "0000",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 431424
+            },
+            {
+              "index": 25016,
+              "words": [
+                65535,
+                8170,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1FEA",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 431432
+            },
+            {
+              "index": 25017,
+              "words": [
+                65535,
+                8171,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1FEB",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 431440
+            },
+            {
+              "index": 25018,
+              "words": [
+                65535,
+                8172,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "1FEC",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 431448
+            }
+          ],
+          "messages": [
+            {
+              "id": 8166,
+              "text": "酒劍仙：",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "b073bc43a550a147",
+              "raw_byte_range": [
+                133789,
+                133797
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 8167,
+              "text": "我要開始施法囉！",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "a7daad6eb67da96cac49aa6bc56fa149",
+              "raw_byte_range": [
+                133797,
+                133813
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 8168,
+              "text": "我在還沒完成以前，你們二人",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "a7daa662c1d9a853a7b9a6a8a548ab65a141a741adcca447a448",
+              "raw_byte_range": [
+                133813,
+                133839
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 8169,
+              "text": "千萬不要離開我七步以外",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "a464b855a4a3ad6ec2f7b67da7daa443a842a548a57e",
+              "raw_byte_range": [
+                133839,
+                133861
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 8170,
+              "text": "無論發生了什麼事，切記不可",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "b54cbdd7b56fa5cda446a4b0bbf2a8c6a141a4c1b04fa4a3a569",
+              "raw_byte_range": [
+                133861,
+                133887
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 8171,
+              "text": "輕舉妄動。要不然有什麼不良",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "bbb4c17ca66bb0caa143ad6ea4a3b54da6b3a4b0bbf2a4a3a87d",
+              "raw_byte_range": [
+                133887,
+                133913
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 8172,
+              "text": "後果，我可不負責喔！",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "abe1aa47a141a7daa569a4a3ad74b364b3e1a149",
+              "raw_byte_range": [
+                133913,
+                133933
+              ],
+              "strict_decode_error": null
+            }
+          ]
+        },
+        "saturn": {
+          "script_start": 22475,
+          "script_end": 22485,
+          "sid": 9746,
+          "eid": 9755,
+          "ids": [
+            9746,
+            9747,
+            9748,
+            9749,
+            9750,
+            9751,
+            9752,
+            9753,
+            9754,
+            9755
+          ],
+          "text": [
+            "酒飲み剣士：",
+            "では、術法を始めるぞ！",
+            "わしが終わりと言うまでは、",
+            "二人ともわしから七歩以上",
+            "下がっておれ。",
+            "何が起こっても、",
+            "動揺してはならぬ。",
+            "[CLEAR MESSAGE]",
+            "でなければ、",
+            "良い結果が出なくとも",
+            "わしは責任を持たぬぞ。"
+          ],
+          "instructions": [
+            {
+              "index": 22475,
+              "words": [
+                65535,
+                9746,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2612",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 179800
+            },
+            {
+              "index": 22476,
+              "words": [
+                65535,
+                9747,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2613",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 179808
+            },
+            {
+              "index": 22477,
+              "words": [
+                65535,
+                9748,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2614",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 179816
+            },
+            {
+              "index": 22478,
+              "words": [
+                65535,
+                9749,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2615",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 179824
+            },
+            {
+              "index": 22479,
+              "words": [
+                65535,
+                9750,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2616",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 179832
+            },
+            {
+              "index": 22480,
+              "words": [
+                65535,
+                9751,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2617",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 179840
+            },
+            {
+              "index": 22481,
+              "words": [
+                65535,
+                9752,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2618",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 179848
+            },
+            {
+              "index": 22482,
+              "words": [
+                142,
+                0,
+                0,
+                0
+              ],
+              "hex_words": [
+                "008E",
+                "0000",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 179856
+            },
+            {
+              "index": 22483,
+              "words": [
+                65535,
+                9753,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "2619",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 179864
+            },
+            {
+              "index": 22484,
+              "words": [
+                65535,
+                9754,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "261A",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 179872
+            },
+            {
+              "index": 22485,
+              "words": [
+                65535,
+                9755,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "261B",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 179880
+            }
+          ],
+          "messages": [
+            {
+              "id": 9746,
+              "text": "酒飲み剣士：",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "8ef088f982dd8c958e6d8146",
+              "normalized_nonzero_byte_range": [
+                169083,
+                169095
+              ],
+              "raw_physical_byte_range": [
+                172195,
+                172207
+              ],
+              "raw_physical_hex": "8ef088f982dd8c958e6d8146",
+              "strict_decode_error": null
+            },
+            {
+              "id": 9747,
+              "text": "では、術法を始めるぞ！",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "82c582cd81418f70964082f08e6e82df82e982bc8149",
+              "normalized_nonzero_byte_range": [
+                169095,
+                169117
+              ],
+              "raw_physical_byte_range": [
+                172207,
+                172229
+              ],
+              "raw_physical_hex": "82c582cd81418f70964082f08e6e82df82e982bc8149",
+              "strict_decode_error": null
+            },
+            {
+              "id": 9748,
+              "text": "わしが終わりと言うまでは、",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "82ed82b582aa8f4982ed82e882c68cbe82a482dc82c582cd8141",
+              "normalized_nonzero_byte_range": [
+                169117,
+                169143
+              ],
+              "raw_physical_byte_range": [
+                172229,
+                172255
+              ],
+              "raw_physical_hex": "82ed82b582aa8f4982ed82e882c68cbe82a482dc82c582cd8141",
+              "strict_decode_error": null
+            },
+            {
+              "id": 9749,
+              "text": "二人ともわしから七歩以上",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "93f1906c82c682e082ed82b582a982e78eb595e088c88fe3",
+              "normalized_nonzero_byte_range": [
+                169143,
+                169167
+              ],
+              "raw_physical_byte_range": [
+                172255,
+                172279
+              ],
+              "raw_physical_hex": "93f1906c82c682e082ed82b582a982e78eb595e088c88fe3",
+              "strict_decode_error": null
+            },
+            {
+              "id": 9750,
+              "text": "下がっておれ。",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "89ba82aa82c182c482a882ea8142",
+              "normalized_nonzero_byte_range": [
+                169167,
+                169181
+              ],
+              "raw_physical_byte_range": [
+                172279,
+                172293
+              ],
+              "raw_physical_hex": "89ba82aa82c182c482a882ea8142",
+              "strict_decode_error": null
+            },
+            {
+              "id": 9751,
+              "text": "何が起こっても、",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "89bd82aa8b4e82b182c182c482e08141",
+              "normalized_nonzero_byte_range": [
+                169181,
+                169197
+              ],
+              "raw_physical_byte_range": [
+                172293,
+                172309
+              ],
+              "raw_physical_hex": "89bd82aa8b4e82b182c182c482e08141",
+              "strict_decode_error": null
+            },
+            {
+              "id": 9752,
+              "text": "動揺してはならぬ。",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "93ae976882b582c482cd82c882e782ca8142",
+              "normalized_nonzero_byte_range": [
+                169197,
+                169215
+              ],
+              "raw_physical_byte_range": [
+                172309,
+                172327
+              ],
+              "raw_physical_hex": "93ae976882b582c482cd82c882e782ca8142",
+              "strict_decode_error": null
+            },
+            {
+              "id": 9753,
+              "text": "でなければ、",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "82c582c882af82ea82ce8141",
+              "normalized_nonzero_byte_range": [
+                169215,
+                169227
+              ],
+              "raw_physical_byte_range": [
+                172327,
+                172339
+              ],
+              "raw_physical_hex": "82c582c882af82ea82ce8141",
+              "strict_decode_error": null
+            },
+            {
+              "id": 9754,
+              "text": "良い結果が出なくとも",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "97c782a28c8b89ca82aa8f6f82c882ad82c682e0",
+              "normalized_nonzero_byte_range": [
+                169227,
+                169247
+              ],
+              "raw_physical_byte_range": [
+                172339,
+                172359
+              ],
+              "raw_physical_hex": "97c782a28c8b89ca82aa8f6f82c882ad82c682e0",
+              "strict_decode_error": null
+            },
+            {
+              "id": 9755,
+              "text": "わしは責任を持たぬぞ。",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "82ed82b582cd90d3944382f08e9d82bd82ca82bc8142",
+              "normalized_nonzero_byte_range": [
+                169247,
+                169269
+              ],
+              "raw_physical_byte_range": [
+                172359,
+                172381
+              ],
+              "raw_physical_hex": "82ed82b582cd90d3944382f08e9d82bd82ca82bc8142",
+              "strict_decode_error": null
+            }
+          ]
+        }
+      },
+      "before_japanese": [
+        "酒飲み剣士：",
+        "では、術法を始めるぞ！",
+        "わしが終わりと言うまでは、",
+        "二人ともわしから七歩以上",
+        "下がっておれ。",
+        "何が起こっても、",
+        "動揺してはならぬ。",
+        "[CLEAR MESSAGE]",
+        "でなければ、",
+        "良い結果が出なくとも",
+        "わしは責任を持たぬぞ。"
+      ],
+      "recommended_japanese": [
+        "酒飲み剣士：",
+        "では、術法を始めるぞ！",
+        "わしが終わりと言うまでは、",
+        "二人ともわしから七歩より",
+        "遠くへ離れてはならぬ。",
+        "何が起こっても、",
+        "軽はずみに動くでない。",
+        "[CLEAR MESSAGE]",
+        "でなければ、",
+        "良い結果が出なくとも",
+        "わしは責任を持たぬぞ。"
+      ],
+      "changes": [
+        {
+          "line_index_zero_based": 3,
+          "saturn_message_id": 9749,
+          "before": "二人ともわしから七歩以上",
+          "after": "二人ともわしから七歩より",
+          "unicode_character_count": 12,
+          "nominal_fullwidth_pixels": 192
+        },
+        {
+          "line_index_zero_based": 4,
+          "saturn_message_id": 9750,
+          "before": "下がっておれ。",
+          "after": "遠くへ離れてはならぬ。",
+          "unicode_character_count": 11,
+          "nominal_fullwidth_pixels": 176
+        },
+        {
+          "line_index_zero_based": 6,
+          "saturn_message_id": 9752,
+          "before": "動揺してはならぬ。",
+          "after": "軽はずみに動くでない。",
+          "unicode_character_count": 11,
+          "nominal_fullwidth_pixels": 176
+        }
+      ],
+      "controls": {
+        "before": [
+          [
+            7,
+            [
+              "[CLEAR MESSAGE]"
+            ]
+          ]
+        ],
+        "after": [
+          [
+            7,
+            [
+              "[CLEAR MESSAGE]"
+            ]
+          ]
+        ],
+        "clear_indexes": [
+          7
+        ],
+        "line_count_unchanged": true,
+        "note": "Preserve existing Japanese control sequence. Win/DOS original CLEAR counts need not equal Saturn; this proposal does not re-page the localization."
+      },
+      "render_commands": {
+        "win": {
+          "script": 20603,
+          "words": [
+            61,
+            37,
+            0,
+            0
+          ],
+          "provenance": "immediately preceding raw dialog command",
+          "location": "lower",
+          "face": 37,
+          "font_color_operand": 0,
+          "playing_rng": false,
+          "instruction": {
+            "index": 20603,
+            "words": [
+              61,
+              37,
+              0,
+              0
+            ],
+            "hex_words": [
+              "003D",
+              "0025",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+            "byte_offset": 391638
+          },
+          "text_origin": [
+            20,
+            126
+          ],
+          "title_origin": [
+            4,
+            108
+          ]
+        },
+        "dos": {
+          "script": 25010,
+          "words": [
+            61,
+            37,
+            0,
+            0
+          ],
+          "provenance": "immediately preceding raw dialog command",
+          "location": "lower",
+          "face": 37,
+          "font_color_operand": 0,
+          "playing_rng": false,
+          "instruction": {
+            "index": 25010,
+            "words": [
+              61,
+              37,
+              0,
+              0
+            ],
+            "hex_words": [
+              "003D",
+              "0025",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+            "byte_offset": 431384
+          },
+          "text_origin": [
+            20,
+            126
+          ],
+          "title_origin": [
+            4,
+            108
+          ]
+        }
+      },
+      "line_length": {
+        "max_characters_including_speaker": 13,
+        "changed_line_characters": [
+          12,
+          11,
+          11
+        ],
+        "assumption": "All proposed visible characters use nominal 16px fullwidth Japanese glyph advances; no independent pixel-render claim."
+      }
+    },
+    {
+      "win_key": [
+        3447,
+        3448
+      ],
+      "decision": "correct inherited Saturn translation in Win output and derived DOS bridge",
+      "confidence": "confirmed by both raw Chinese source versions",
+      "finding": "陌生人被译为村里人，并多出あまり缓和禁止程度。",
+      "rationale": "保留母上和后续話をするなと言ってたよ，仅将あまり村の人替换为知らない人。DOS 严格 CP950 原文完整支撑语义；Win 末尾两个坏字节单独记录，不据其杜撰标点。",
+      "sources": {
+        "win": {
+          "script_start": 9812,
+          "script_end": 9813,
+          "sid": 3447,
+          "eid": 3448,
+          "ids": [
+            3447,
+            3448
+          ],
+          "text": [
+            "小孩：",
+            "妈妈说不可以跟陌生人讲话��"
+          ],
+          "instructions": [
+            {
+              "index": 9812,
+              "words": [
+                65535,
+                3447,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0D77",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 305310
+            },
+            {
+              "index": 9813,
+              "words": [
+                65535,
+                3448,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0D78",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+              "byte_offset": 305318
+            }
+          ],
+          "messages": [
+            {
+              "id": 3447,
+              "text": "小孩：",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "d0a1baa2a3ba",
+              "raw_byte_range": [
+                58186,
+                58192
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 3448,
+              "text": "妈妈说不可以跟陌生人讲话��",
+              "source_file": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+              "encoding": "gbk",
+              "raw_text_hex": "c2e8c2e8cbb5b2bbbfc9d2d4b8fac4b0c9fac8cbbdb2bbb0a6dc",
+              "raw_byte_range": [
+                58192,
+                58218
+              ],
+              "strict_decode_error": {
+                "start": 24,
+                "end": 25,
+                "reason": "illegal multibyte sequence"
+              },
+              "replacement_characters": 2
+            }
+          ]
+        },
+        "dos": {
+          "script_start": 14219,
+          "script_end": 14220,
+          "sid": 4029,
+          "eid": 4030,
+          "ids": [
+            4029,
+            4030
+          ],
+          "text": [
+            "小孩：",
+            "媽媽說不可以跟陌生人講話"
+          ],
+          "instructions": [
+            {
+              "index": 14219,
+              "words": [
+                65535,
+                4029,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0FBD",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 345056
+            },
+            {
+              "index": 14220,
+              "words": [
+                65535,
+                4030,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "0FBE",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\SSS.MKF",
+              "byte_offset": 345064
+            }
+          ],
+          "messages": [
+            {
+              "id": 4029,
+              "text": "小孩：",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "a470abc4a147",
+              "raw_byte_range": [
+                65825,
+                65831
+              ],
+              "strict_decode_error": null
+            },
+            {
+              "id": 4030,
+              "text": "媽媽說不可以跟陌生人講話",
+              "source_file": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\M.MSG",
+              "encoding": "cp950",
+              "raw_text_hex": "b6fdb6fdbba1a4a3a569a548b8f2adafa5cda448c1bfb8dc",
+              "raw_byte_range": [
+                65831,
+                65855
+              ],
+              "strict_decode_error": null
+            }
+          ]
+        },
+        "saturn": {
+          "script_start": 10641,
+          "script_end": 10643,
+          "sid": 4507,
+          "eid": 4509,
+          "ids": [
+            4507,
+            4508,
+            4509
+          ],
+          "text": [
+            "子供：",
+            "母上は、あまり村の人と",
+            "話をするなと言ってたよ。"
+          ],
+          "instructions": [
+            {
+              "index": 10641,
+              "words": [
+                65535,
+                4507,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "119B",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 85128
+            },
+            {
+              "index": 10642,
+              "words": [
+                65535,
+                4508,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "119C",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 85136
+            },
+            {
+              "index": 10643,
+              "words": [
+                65535,
+                4509,
+                0,
+                0
+              ],
+              "hex_words": [
+                "FFFF",
+                "119D",
+                "0000",
+                "0000"
+              ],
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+              "byte_offset": 85144
+            }
+          ],
+          "messages": [
+            {
+              "id": 4507,
+              "text": "子供：",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "8e718b9f8146",
+              "normalized_nonzero_byte_range": [
+                78929,
+                78935
+              ],
+              "raw_physical_byte_range": [
+                79970,
+                79976
+              ],
+              "raw_physical_hex": "8e718b9f8146",
+              "strict_decode_error": null
+            },
+            {
+              "id": 4508,
+              "text": "母上は、あまり村の人と",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "95ea8fe382cd814182a082dc82e891ba82cc906c82c6",
+              "normalized_nonzero_byte_range": [
+                78935,
+                78957
+              ],
+              "raw_physical_byte_range": [
+                79976,
+                79998
+              ],
+              "raw_physical_hex": "95ea8fe382cd814182a082dc82e891ba82cc906c82c6",
+              "strict_decode_error": null
+            },
+            {
+              "id": 4509,
+              "text": "話をするなと言ってたよ。",
+              "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+              "encoding": "shift_jis",
+              "raw_text_hex": "986282f082b782e982c882c68cbe82c182c482bd82e68142",
+              "normalized_nonzero_byte_range": [
+                78957,
+                78981
+              ],
+              "raw_physical_byte_range": [
+                79998,
+                80022
+              ],
+              "raw_physical_hex": "986282f082b782e982c882c68cbe82c182c482bd82e68142",
+              "strict_decode_error": null
+            }
+          ]
+        }
+      },
+      "before_japanese": [
+        "子供：",
+        "母上は、あまり村の人と",
+        "話をするなと言ってたよ。"
+      ],
+      "recommended_japanese": [
+        "子供：",
+        "母上は、知らない人と",
+        "話をするなと言ってたよ。"
+      ],
+      "changes": [
+        {
+          "line_index_zero_based": 1,
+          "saturn_message_id": 4508,
+          "before": "母上は、あまり村の人と",
+          "after": "母上は、知らない人と",
+          "unicode_character_count": 10,
+          "nominal_fullwidth_pixels": 160
+        }
+      ],
+      "controls": {
+        "before": [],
+        "after": [],
+        "clear_indexes": [],
+        "line_count_unchanged": true,
+        "note": "Preserve existing Japanese control sequence. Win/DOS original CLEAR counts need not equal Saturn; this proposal does not re-page the localization."
+      },
+      "render_commands": {
+        "win": {
+          "script": null,
+          "words": [
+            60,
+            0,
+            0,
+            0
+          ],
+          "provenance": "synthetic upper/no-face fixture matching default dialog state; no raw 003B-003E at direct event entry",
+          "location": "upper",
+          "face": 0,
+          "playing_rng": false,
+          "event_id": 811,
+          "event_words": [
+            0,
+            816,
+            1464,
+            0,
+            9812,
+            0,
+            2,
+            2,
+            151,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "scene_ownership": [
+            {
+              "scene_id": 50,
+              "words": [
+                46,
+                11112,
+                0,
+                800
+              ],
+              "map_id": 46
+            }
+          ],
+          "direct_entry_is_first_message": true,
+          "text_origin": [
+            44,
+            26
+          ],
+          "title_origin": [
+            12,
+            8
+          ],
+          "boundary": "Direct event entry is confirmed. This is not a claim that a 003C instruction exists in resources or that all dynamically reassigned entry paths were exhaustively traced."
+        },
+        "dos": {
+          "script": null,
+          "words": [
+            60,
+            0,
+            0,
+            0
+          ],
+          "provenance": "synthetic upper/no-face fixture matching default dialog state; no raw 003B-003E at direct event entry",
+          "location": "upper",
+          "face": 0,
+          "playing_rng": false,
+          "event_id": 811,
+          "event_words": [
+            0,
+            816,
+            1464,
+            0,
+            14219,
+            0,
+            2,
+            2,
+            151,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "scene_ownership": [
+            {
+              "scene_id": 49,
+              "words": [
+                46,
+                15519,
+                0,
+                800
+              ],
+              "map_id": 46
+            }
+          ],
+          "direct_entry_is_first_message": true,
+          "text_origin": [
+            44,
+            26
+          ],
+          "title_origin": [
+            12,
+            8
+          ],
+          "boundary": "Direct event entry is confirmed. This is not a claim that a 003C instruction exists in resources or that all dynamically reassigned entry paths were exhaustively traced."
+        }
+      },
+      "line_length": {
+        "max_characters_including_speaker": 12,
+        "changed_line_characters": [
+          10
+        ],
+        "assumption": "All proposed visible characters use nominal 16px fullwidth Japanese glyph advances; no independent pixel-render claim."
+      }
+    }
+  ],
+  "qing_name_evidence": {
+    "decision": "Use お青 for the queen in Win 12078-12083",
+    "search": "Exact scans of decoded Win 阿青/青儿 and Saturn 青 plus local context; not a manual reading of every script line.",
+    "relevant_confirmation": "JP15436 immediately preceding the target and JP14291 explicitly address the queen as お青. JP10896/10899 concern a different alchemist and are recorded only to avoid conflating identities.",
+    "contexts": [
+      {
+        "topic": "same_scene_wu_king",
+        "saturn_messages": [
+          {
+            "id": 15433,
+            "text": "趙霊児：",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "e6e297ec8e998146",
+            "normalized_nonzero_byte_range": [
+              266403,
+              266411
+            ],
+            "raw_physical_byte_range": [
+              276480,
+              276488
+            ],
+            "raw_physical_hex": "e6e297ec8e998146",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15434,
+            "text": "父上・・・。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "95838fe38145814581458142",
+            "normalized_nonzero_byte_range": [
+              266411,
+              266423
+            ],
+            "raw_physical_byte_range": [
+              276488,
+              276500
+            ],
+            "raw_physical_hex": "95838fe38145814581458142",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15435,
+            "text": "巫王：",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "9bde89a48146",
+            "normalized_nonzero_byte_range": [
+              266423,
+              266429
+            ],
+            "raw_physical_byte_range": [
+              276500,
+              276506
+            ],
+            "raw_physical_hex": "9bde89a48146",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15436,
+            "text": "青・・・お青・・・",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "90c281458145814582a890c2814581458145",
+            "normalized_nonzero_byte_range": [
+              266429,
+              266447
+            ],
+            "raw_physical_byte_range": [
+              276506,
+              276524
+            ],
+            "raw_physical_hex": "90c281458145814582a890c2814581458145",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15437,
+            "text": "お前・・・",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82a8914f814581458145",
+            "normalized_nonzero_byte_range": [
+              266447,
+              266457
+            ],
+            "raw_physical_byte_range": [
+              276524,
+              276534
+            ],
+            "raw_physical_hex": "82a8914f814581458145",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15438,
+            "text": "戻ってきたのか・・・！",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "96df82c182c482ab82bd82cc82a98145814581458149",
+            "normalized_nonzero_byte_range": [
+              266457,
+              266479
+            ],
+            "raw_physical_byte_range": [
+              276534,
+              276556
+            ],
+            "raw_physical_hex": "96df82c182c482ab82bd82cc82a98145814581458149",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15439,
+            "text": "趙霊児：",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "e6e297ec8e998146",
+            "normalized_nonzero_byte_range": [
+              266479,
+              266487
+            ],
+            "raw_physical_byte_range": [
+              276556,
+              276564
+            ],
+            "raw_physical_hex": "e6e297ec8e998146",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15440,
+            "text": "父上、私は霊児です。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "95838fe381418e8482cd97ec8e9982c582b78142",
+            "normalized_nonzero_byte_range": [
+              266487,
+              266507
+            ],
+            "raw_physical_byte_range": [
+              276564,
+              276584
+            ],
+            "raw_physical_hex": "95838fe381418e8482cd97ec8e9982c582b78142",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15441,
+            "text": "あなたの娘です！",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82a082c882bd82cc96ba82c582b78149",
+            "normalized_nonzero_byte_range": [
+              266507,
+              266523
+            ],
+            "raw_physical_byte_range": [
+              276584,
+              276600
+            ],
+            "raw_physical_hex": "82a082c882bd82cc96ba82c582b78149",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15442,
+            "text": "巫王：",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "9bde89a48146",
+            "normalized_nonzero_byte_range": [
+              266523,
+              266529
+            ],
+            "raw_physical_byte_range": [
+              276600,
+              276606
+            ],
+            "raw_physical_hex": "9bde89a48146",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15443,
+            "text": "本当に・・・お前か？",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "967b939682c981458145814582a8914f82a98148",
+            "normalized_nonzero_byte_range": [
+              266529,
+              266549
+            ],
+            "raw_physical_byte_range": [
+              276606,
+              276626
+            ],
+            "raw_physical_hex": "967b939682c981458145814582a8914f82a98148",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15444,
+            "text": "霊児・・・。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "97ec8e998145814581458142",
+            "normalized_nonzero_byte_range": [
+              266549,
+              266561
+            ],
+            "raw_physical_byte_range": [
+              276626,
+              276638
+            ],
+            "raw_physical_hex": "97ec8e998145814581458142",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15445,
+            "text": "ま・・・間違いない・・・。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82dc8145814581458ad488e182a282c882a28145814581458142",
+            "normalized_nonzero_byte_range": [
+              266561,
+              266587
+            ],
+            "raw_physical_byte_range": [
+              276638,
+              276664
+            ],
+            "raw_physical_hex": "82dc8145814581458ad488e182a282c882a28145814581458142",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15446,
+            "text": "若い頃の霊児とそっくりだ！",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "8ee182a28da082cc97ec8e9982c682bb82c182ad82e882be8149",
+            "normalized_nonzero_byte_range": [
+              266587,
+              266613
+            ],
+            "raw_physical_byte_range": [
+              276664,
+              276690
+            ],
+            "raw_physical_hex": "8ee182a28da082cc97ec8e9982c682bb82c182ad82e882be8149",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15447,
+            "text": "は・・・早く・・・",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82cd814581458145918182ad814581458145",
+            "normalized_nonzero_byte_range": [
+              266613,
+              266631
+            ],
+            "raw_physical_byte_range": [
+              276690,
+              276708
+            ],
+            "raw_physical_hex": "82cd814581458145918182ad814581458145",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15448,
+            "text": "父さんに・・・",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "958382b382f182c9814581458145",
+            "normalized_nonzero_byte_range": [
+              266631,
+              266645
+            ],
+            "raw_physical_byte_range": [
+              276708,
+              276722
+            ],
+            "raw_physical_hex": "958382b382f182c9814581458145",
+            "strict_decode_error": null
+          },
+          {
+            "id": 15449,
+            "text": "見せておくれ。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "8ca982b982c482a882ad82ea8142",
+            "normalized_nonzero_byte_range": [
+              266645,
+              266659
+            ],
+            "raw_physical_byte_range": [
+              276722,
+              276736
+            ],
+            "raw_physical_hex": "8ca982b982c482a882ad82ea8142",
+            "strict_decode_error": null
+          }
+        ],
+        "saturn_script_references": [
+          {
+            "index": 38131,
+            "words": [
+              65535,
+              15433,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C49",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305048
+          },
+          {
+            "index": 38132,
+            "words": [
+              65535,
+              15434,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C4A",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305056
+          },
+          {
+            "index": 38136,
+            "words": [
+              65535,
+              15435,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C4B",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305088
+          },
+          {
+            "index": 38137,
+            "words": [
+              65535,
+              15436,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C4C",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305096
+          },
+          {
+            "index": 38138,
+            "words": [
+              65535,
+              15437,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C4D",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305104
+          },
+          {
+            "index": 38139,
+            "words": [
+              65535,
+              15438,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C4E",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305112
+          },
+          {
+            "index": 38142,
+            "words": [
+              65535,
+              15439,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C4F",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305136
+          },
+          {
+            "index": 38143,
+            "words": [
+              65535,
+              15440,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C50",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305144
+          },
+          {
+            "index": 38144,
+            "words": [
+              65535,
+              15441,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C51",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305152
+          },
+          {
+            "index": 38149,
+            "words": [
+              65535,
+              15442,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C52",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305192
+          },
+          {
+            "index": 38150,
+            "words": [
+              65535,
+              15443,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C53",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305200
+          },
+          {
+            "index": 38151,
+            "words": [
+              65535,
+              15444,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C54",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305208
+          },
+          {
+            "index": 38152,
+            "words": [
+              65535,
+              15445,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C55",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305216
+          },
+          {
+            "index": 38153,
+            "words": [
+              65535,
+              15446,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C56",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305224
+          },
+          {
+            "index": 38154,
+            "words": [
+              65535,
+              15447,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C57",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305232
+          },
+          {
+            "index": 38155,
+            "words": [
+              65535,
+              15448,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C58",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305240
+          },
+          {
+            "index": 38156,
+            "words": [
+              65535,
+              15449,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3C59",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 305248
+          }
+        ]
+      },
+      {
+        "topic": "wu_queen_lotus_password",
+        "saturn_messages": [
+          {
+            "id": 14238,
+            "text": "巫后：",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "9bde8d408146",
+            "normalized_nonzero_byte_range": [
+              246415,
+              246421
+            ],
+            "raw_physical_byte_range": [
+              252125,
+              252131
+            ],
+            "raw_physical_hex": "9bde8d408146",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14239,
+            "text": "地下の宮殿を守っているの",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "926e89ba82cc8b7b936182f08ee782c182c482a282e982cc",
+            "normalized_nonzero_byte_range": [
+              246421,
+              246445
+            ],
+            "raw_physical_byte_range": [
+              252131,
+              252155
+            ],
+            "raw_physical_hex": "926e89ba82cc8b7b936182f08ee782c182c482a282e982cc",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14240,
+            "text": "は石長老よ。彼に会ったら、",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82cd90ce92b7985682e6814294de82c989ef82c182bd82e78141",
+            "normalized_nonzero_byte_range": [
+              246445,
+              246471
+            ],
+            "raw_physical_byte_range": [
+              252155,
+              252181
+            ],
+            "raw_physical_hex": "82cd90ce92b7985682e6814294de82c989ef82c182bd82e78141",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14241,
+            "text": "お青は蓮の花を探しに来た",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82a890c282cd984082cc89d482f0925482b582c9978882bd",
+            "normalized_nonzero_byte_range": [
+              246471,
+              246495
+            ],
+            "raw_physical_byte_range": [
+              252181,
+              252205
+            ],
+            "raw_physical_hex": "82a890c282cd984082cc89d482f0925482b582c9978882bd",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14242,
+            "text": "と言いなさい。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82c68cbe82a282c882b382a28142",
+            "normalized_nonzero_byte_range": [
+              246495,
+              246509
+            ],
+            "raw_physical_byte_range": [
+              252205,
+              252219
+            ],
+            "raw_physical_hex": "82c68cbe82a282c882b382a28142",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14243,
+            "text": "李逍遥：",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "979be79697798146",
+            "normalized_nonzero_byte_range": [
+              246509,
+              246517
+            ],
+            "raw_physical_byte_range": [
+              252219,
+              252227
+            ],
+            "raw_physical_hex": "979be79697798146",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14244,
+            "text": "お青・・・蓮の花・・・？",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82a890c2814581458145984082cc89d48145814581458148",
+            "normalized_nonzero_byte_range": [
+              246517,
+              246541
+            ],
+            "raw_physical_byte_range": [
+              252227,
+              252251
+            ],
+            "raw_physical_hex": "82a890c2814581458145984082cc89d48145814581458148",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14245,
+            "text": "巫后：",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "9bde8d408146",
+            "normalized_nonzero_byte_range": [
+              246541,
+              246547
+            ],
+            "raw_physical_byte_range": [
+              252251,
+              252257
+            ],
+            "raw_physical_hex": "9bde8d408146",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14246,
+            "text": "そう言えば石長老は",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82bb82a48cbe82a682ce90ce92b7985682cd",
+            "normalized_nonzero_byte_range": [
+              246547,
+              246565
+            ],
+            "raw_physical_byte_range": [
+              252257,
+              252275
+            ],
+            "raw_physical_hex": "82bb82a48cbe82a682ce90ce92b7985682cd",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14247,
+            "text": "通してくれるわ。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "92ca82b582c482ad82ea82e982ed8142",
+            "normalized_nonzero_byte_range": [
+              246565,
+              246581
+            ],
+            "raw_physical_byte_range": [
+              252275,
+              252291
+            ],
+            "raw_physical_hex": "92ca82b582c482ad82ea82e982ed8142",
+            "strict_decode_error": null
+          }
+        ],
+        "saturn_script_references": [
+          {
+            "index": 33651,
+            "words": [
+              65535,
+              14238,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "379E",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 269208
+          },
+          {
+            "index": 33652,
+            "words": [
+              65535,
+              14239,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "379F",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 269216
+          },
+          {
+            "index": 33653,
+            "words": [
+              65535,
+              14240,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37A0",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 269224
+          },
+          {
+            "index": 33654,
+            "words": [
+              65535,
+              14241,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37A1",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 269232
+          },
+          {
+            "index": 33655,
+            "words": [
+              65535,
+              14242,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37A2",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 269240
+          },
+          {
+            "index": 33658,
+            "words": [
+              65535,
+              14243,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37A3",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 269264
+          },
+          {
+            "index": 33659,
+            "words": [
+              65535,
+              14244,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37A4",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 269272
+          },
+          {
+            "index": 33662,
+            "words": [
+              65535,
+              14245,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37A5",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 269296
+          },
+          {
+            "index": 33663,
+            "words": [
+              65535,
+              14246,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37A6",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 269304
+          },
+          {
+            "index": 33664,
+            "words": [
+              65535,
+              14247,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37A7",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 269312
+          }
+        ]
+      },
+      {
+        "topic": "wu_king_addresses_queen",
+        "saturn_messages": [
+          {
+            "id": 14288,
+            "text": "巫后：",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "9bde8d408146",
+            "normalized_nonzero_byte_range": [
+              247193,
+              247199
+            ],
+            "raw_physical_byte_range": [
+              252903,
+              252909
+            ],
+            "raw_physical_hex": "9bde8d408146",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14289,
+            "text": "大王・・・。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "91e589a48145814581458142",
+            "normalized_nonzero_byte_range": [
+              247199,
+              247211
+            ],
+            "raw_physical_byte_range": [
+              252909,
+              252921
+            ],
+            "raw_physical_hex": "91e589a48145814581458142",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14290,
+            "text": "巫王：",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "9bde89a48146",
+            "normalized_nonzero_byte_range": [
+              247211,
+              247217
+            ],
+            "raw_physical_byte_range": [
+              252921,
+              252927
+            ],
+            "raw_physical_hex": "9bde89a48146",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14291,
+            "text": "お青・・・本当に",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82a890c2814581458145967b939682c9",
+            "normalized_nonzero_byte_range": [
+              247217,
+              247233
+            ],
+            "raw_physical_byte_range": [
+              252927,
+              252943
+            ],
+            "raw_physical_hex": "82a890c2814581458145967b939682c9",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14292,
+            "text": "わしを裏切る気か？",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82ed82b582f097a090d882e98b4382a98148",
+            "normalized_nonzero_byte_range": [
+              247233,
+              247251
+            ],
+            "raw_physical_byte_range": [
+              252943,
+              252961
+            ],
+            "raw_physical_hex": "82ed82b582f097a090d882e98b4382a98148",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14293,
+            "text": "巫后：",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "9bde8d408146",
+            "normalized_nonzero_byte_range": [
+              247251,
+              247257
+            ],
+            "raw_physical_byte_range": [
+              252961,
+              252967
+            ],
+            "raw_physical_hex": "9bde8d408146",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14294,
+            "text": "大王・・・。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "91e589a48145814581458142",
+            "normalized_nonzero_byte_range": [
+              247257,
+              247269
+            ],
+            "raw_physical_byte_range": [
+              252967,
+              252979
+            ],
+            "raw_physical_hex": "91e589a48145814581458142",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14295,
+            "text": "あなたはわたくしを",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82a082c882bd82cd82ed82bd82ad82b582f0",
+            "normalized_nonzero_byte_range": [
+              247269,
+              247287
+            ],
+            "raw_physical_byte_range": [
+              252979,
+              252997
+            ],
+            "raw_physical_hex": "82a082c882bd82cd82ed82bd82ad82b582f0",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14296,
+            "text": "誤解しています。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "8ceb89f082b582c482a282dc82b78142",
+            "normalized_nonzero_byte_range": [
+              247287,
+              247303
+            ],
+            "raw_physical_byte_range": [
+              252997,
+              253013
+            ],
+            "raw_physical_hex": "8ceb89f082b582c482a282dc82b78142",
+            "strict_decode_error": null
+          }
+        ],
+        "saturn_script_references": [
+          {
+            "index": 33767,
+            "words": [
+              65535,
+              14288,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37D0",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 270136
+          },
+          {
+            "index": 33768,
+            "words": [
+              65535,
+              14289,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37D1",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 270144
+          },
+          {
+            "index": 33771,
+            "words": [
+              65535,
+              14290,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37D2",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 270168
+          },
+          {
+            "index": 33772,
+            "words": [
+              65535,
+              14291,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37D3",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 270176
+          },
+          {
+            "index": 33773,
+            "words": [
+              65535,
+              14292,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37D4",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 270184
+          },
+          {
+            "index": 33776,
+            "words": [
+              65535,
+              14293,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37D5",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 270208
+          },
+          {
+            "index": 33777,
+            "words": [
+              65535,
+              14294,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37D6",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 270216
+          },
+          {
+            "index": 33778,
+            "words": [
+              65535,
+              14295,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37D7",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 270224
+          },
+          {
+            "index": 33779,
+            "words": [
+              65535,
+              14296,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "37D8",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 270232
+          }
+        ]
+      },
+      {
+        "topic": "queen_daughter_reference",
+        "saturn_messages": [
+          {
+            "id": 14602,
+            "text": "老婦人：",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "98569577906c8146",
+            "normalized_nonzero_byte_range": [
+              252278,
+              252286
+            ],
+            "raw_physical_byte_range": [
+              258887,
+              258895
+            ],
+            "raw_physical_hex": "98569577906c8146",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14603,
+            "text": "このハンカチを持って港",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82b182cc836e8393834a836082f08e9d82c182c48d60",
+            "normalized_nonzero_byte_range": [
+              252286,
+              252308
+            ],
+            "raw_physical_byte_range": [
+              258895,
+              258917
+            ],
+            "raw_physical_hex": "82b182cc836e8393834a836082f08e9d82c182c48d60",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14604,
+            "text": "まで行ってくれんか。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82dc82c58d7382c182c482ad82ea82f182a98142",
+            "normalized_nonzero_byte_range": [
+              252308,
+              252328
+            ],
+            "raw_physical_byte_range": [
+              258917,
+              258937
+            ],
+            "raw_physical_hex": "82dc82c58d7382c182c482ad82ea82f182a98142",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14605,
+            "text": "ハンカチを知っている者に",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "836e8393834a836082f0926d82c182c482a282e98ed282c9",
+            "normalized_nonzero_byte_range": [
+              252328,
+              252352
+            ],
+            "raw_physical_byte_range": [
+              258937,
+              258961
+            ],
+            "raw_physical_hex": "836e8393834a836082f0926d82c182c482a282e98ed282c9",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14606,
+            "text": "会ったら、",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "89ef82c182bd82e78141",
+            "normalized_nonzero_byte_range": [
+              252352,
+              252362
+            ],
+            "raw_physical_byte_range": [
+              258961,
+              258971
+            ],
+            "raw_physical_hex": "89ef82c182bd82e78141",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14607,
+            "text": "「私はお青の娘を連れて",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "81758e8482cd82a890c282cc96ba82f0984182ea82c4",
+            "normalized_nonzero_byte_range": [
+              252362,
+              252384
+            ],
+            "raw_physical_byte_range": [
+              258971,
+              258993
+            ],
+            "raw_physical_hex": "81758e8482cd82a890c282cc96ba82f0984182ea82c4",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14608,
+            "text": "　霊月宮主に会いに行く　」",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "814097ec8c8e8b7b8ee582c989ef82a282c98d7382ad81408176",
+            "normalized_nonzero_byte_range": [
+              252384,
+              252410
+            ],
+            "raw_physical_byte_range": [
+              258993,
+              259019
+            ],
+            "raw_physical_hex": "814097ec8c8e8b7b8ee582c989ef82a282c98d7382ad81408176",
+            "strict_decode_error": null
+          },
+          {
+            "id": 14609,
+            "text": "とその人に伝えてくれ。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82c682bb82cc906c82c9936082a682c482ad82ea8142",
+            "normalized_nonzero_byte_range": [
+              252410,
+              252432
+            ],
+            "raw_physical_byte_range": [
+              259019,
+              259041
+            ],
+            "raw_physical_hex": "82c682bb82cc906c82c9936082a682c482ad82ea8142",
+            "strict_decode_error": null
+          }
+        ],
+        "saturn_script_references": [
+          {
+            "index": 34803,
+            "words": [
+              65535,
+              14602,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "390A",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 278424
+          },
+          {
+            "index": 34804,
+            "words": [
+              65535,
+              14603,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "390B",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 278432
+          },
+          {
+            "index": 34805,
+            "words": [
+              65535,
+              14604,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "390C",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 278440
+          },
+          {
+            "index": 34806,
+            "words": [
+              65535,
+              14605,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "390D",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 278448
+          },
+          {
+            "index": 34807,
+            "words": [
+              65535,
+              14606,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "390E",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 278456
+          },
+          {
+            "index": 34808,
+            "words": [
+              65535,
+              14607,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "390F",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 278464
+          },
+          {
+            "index": 34809,
+            "words": [
+              65535,
+              14608,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3910",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 278472
+          },
+          {
+            "index": 34810,
+            "words": [
+              65535,
+              14609,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "3911",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 278480
+          }
+        ]
+      },
+      {
+        "topic": "different_alchemist_same_name",
+        "saturn_messages": [
+          {
+            "id": 10896,
+            "text": "お青：",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82a890c28146",
+            "normalized_nonzero_byte_range": [
+              188587,
+              188593
+            ],
+            "raw_physical_byte_range": [
+              193692,
+              193698
+            ],
+            "raw_physical_hex": "82a890c28146",
+            "strict_decode_error": null
+          },
+          {
+            "id": 10897,
+            "text": "はじめまして、",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82cd82b682df82dc82b582c48141",
+            "normalized_nonzero_byte_range": [
+              188593,
+              188607
+            ],
+            "raw_physical_byte_range": [
+              193698,
+              193712
+            ],
+            "raw_physical_hex": "82cd82b682df82dc82b582c48141",
+            "strict_decode_error": null
+          },
+          {
+            "id": 10898,
+            "text": "丹を練らせていただいて",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "924f82f097fb82e782b982c482a282bd82be82a282c4",
+            "normalized_nonzero_byte_range": [
+              188607,
+              188629
+            ],
+            "raw_physical_byte_range": [
+              193712,
+              193734
+            ],
+            "raw_physical_hex": "924f82f097fb82e782b982c482a282bd82be82a282c4",
+            "strict_decode_error": null
+          },
+          {
+            "id": 10899,
+            "text": "おります、お青と申します。",
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+            "encoding": "shift_jis",
+            "raw_text_hex": "82a882e882dc82b7814182a890c282c6905c82b582dc82b78142",
+            "normalized_nonzero_byte_range": [
+              188629,
+              188655
+            ],
+            "raw_physical_byte_range": [
+              193734,
+              193760
+            ],
+            "raw_physical_hex": "82a882e882dc82b7814182a890c282c6905c82b582dc82b78142",
+            "strict_decode_error": null
+          }
+        ],
+        "saturn_script_references": [
+          {
+            "index": 25165,
+            "words": [
+              65535,
+              10896,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "2A90",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 201320
+          },
+          {
+            "index": 25166,
+            "words": [
+              65535,
+              10897,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "2A91",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 201328
+          },
+          {
+            "index": 25167,
+            "words": [
+              65535,
+              10898,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "2A92",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 201336
+          },
+          {
+            "index": 25168,
+            "words": [
+              65535,
+              10899,
+              0,
+              0
+            ],
+            "hex_words": [
+              "FFFF",
+              "2A93",
+              "0000",
+              "0000"
+            ],
+            "source_file": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+            "byte_offset": 201344
+          }
+        ]
+      }
+    ]
+  },
+  "portrait_metadata": {
+    "win": {
+      "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\RGM.MKF",
+      "sha256": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132",
+      "faces": [
+        {
+          "id": 37,
+          "width": 93,
+          "height": 100,
+          "chunk_start": 181570,
+          "chunk_end": 187662,
+          "chunk_sha256": "4640147c959e5625fef8f50b1d1a652348644c897460104726339e78ea1da802",
+          "lower_dialog_left_x": 224,
+          "lower_dialog_top_y": 94
+        },
+        {
+          "id": 70,
+          "width": 68,
+          "height": 69,
+          "chunk_start": 353652,
+          "chunk_end": 356506,
+          "chunk_sha256": "67988485fad43038243f51ec1b071292bf1ccdb6326f43d631a50d07ad704182",
+          "lower_dialog_left_x": 236,
+          "lower_dialog_top_y": 110
+        }
+      ]
+    },
+    "dos": {
+      "path": "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\RGM.MKF",
+      "sha256": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac",
+      "faces": [
+        {
+          "id": 37,
+          "width": 93,
+          "height": 100,
+          "chunk_start": 181534,
+          "chunk_end": 187626,
+          "chunk_sha256": "4640147c959e5625fef8f50b1d1a652348644c897460104726339e78ea1da802",
+          "lower_dialog_left_x": 224,
+          "lower_dialog_top_y": 94
+        },
+        {
+          "id": 70,
+          "width": 68,
+          "height": 69,
+          "chunk_start": 353616,
+          "chunk_end": 356470,
+          "chunk_sha256": "67988485fad43038243f51ec1b071292bf1ccdb6326f43d631a50d07ad704182",
+          "lower_dialog_left_x": 236,
+          "lower_dialog_top_y": 110
+        }
+      ]
+    }
+  },
+  "source_references": [
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+      "line": 3360,
+      "purpose": "003C -> upper; operands are face, font color, RNG flag"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+      "line": 3370,
+      "purpose": "003D -> lower; operands are face, font color, RNG flag"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+      "line": 3436,
+      "purpose": "Trigger-script return resets default dialogue through PAL_EndDialog"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\text.c",
+      "line": 1832,
+      "purpose": "Default for scripts without explicit dialogue command: upper, no face, title12/8, body44/26"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\text.c",
+      "line": 1364,
+      "purpose": "Lower with face: title4/108, body20/126"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\text.c",
+      "line": 1340,
+      "purpose": "Upper without face: title12/8, body44/26"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+      "line": 96,
+      "purpose": "16-WORD event record; trigger is WORD4, zero-based"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+      "line": 116,
+      "purpose": "Scene ownership by event-object index ranges"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\palcommon.c",
+      "line": 541,
+      "purpose": "RLE optional DWORD2 followed by width/height WORDs"
+    }
+  ],
+  "boundaries": [
+    "All four semantic corrections are confirmed; suggestions are new corrected Japanese, not unchanged Saturn source.",
+    "Do not add or remove CLEAR markers or copy Win pagination into the Japanese blocks for this minimal correction.",
+    "Win3448 contains malformed trailing bytes; the shared complete Chinese sentence is independently confirmed by strict CP950 DOS4030.",
+    "Gambler and child are direct event entries without an explicit 003B-003E; upper/no-face render commands are defaults, not raw instructions.",
+    "Modified lower-dialogue lines fit before portrait rectangle boundaries at nominal 16px advances. Unmodified lines and actual ink/shadow overlap still require the main agent source-render verification.",
+    "No gameplay or original Saturn screen acceptance is claimed."
+  ]
+}
