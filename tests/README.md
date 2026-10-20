@@ -1,6 +1,26 @@
 How to write unit tests
 =======================
 
+### Optional Saturn portrait palettes
+
+`tests/test_portrait_conversion.py` covers source RLE boundaries, valid large
+portraits, native-extent fitting, archive bounds and input/output preservation.
+The `PortraitPalettes` C++ tests reject malformed/wrong-target packs and check
+opt-in configuration Set/Get/Clear. Run the C++ tests from the repository root.
+
+`tools/japanese/verify_portrait_rendering.py` checks real `jp-portraits` /
+`dos-portraits` frames against separate palette and mask calculations, including
+all reviewed native IDs, upper/lower positions, scene palettes, native fallback,
+color rotations, half/black palette stages and drawing while already black.
+These stages are controlled source probes, not live fade/input acceptance.
+Existing dialogue/description modes accept an optional final portrait-file
+argument. Menu comparisons preserve the selected glyph mask while allowing its
+documented F9–FE timer-driven color phase.
+
+Commands, fixed resources, preview exports and remaining acceptance are in
+[#9 evidence](../docs/japanese-portrait-palettes.md). The Windows VS 2026 Test
+build used `CL=/utf-8 /DGTEST_HAS_TR1_TUPLE=0` with the bundled old Google Test.
+
 ***SDLPAL*** adopts the [Google C++ testing framework](https://github.com/google/googletest) for unit tests.
 
 Writing a unit test using Google C++ testing framework is easy as 1-2-3:

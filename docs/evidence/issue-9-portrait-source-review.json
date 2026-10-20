@@ -1,0 +1,466 @@
+{
+  "issue": 9,
+  "date": "2026-10-21",
+  "scope": "Original Saturn resource and SH-2 static analysis plus independent asset decoding. No game, emulator, or engine execution.",
+  "provenance": {
+    "track": "D:\\BaiduSyncdisk\\202610\\20261020\\Senken Kigyouden (Japan)\\Senken Kigyouden (Japan) (Track 01).bin",
+    "track_bytes": 311757600,
+    "sector_bytes": 2352,
+    "payload_offset": 16,
+    "payload_bytes": 2048,
+    "entries": {
+      "RGM.JOE": {
+        "lba": 11956,
+        "size": 1013760,
+        "sha256": "185ad075b447fd670316cf39b335f05868f547405f036d5ef88413a9181a5542"
+      },
+      "PROG.BIN": {
+        "lba": 51,
+        "size": 411244,
+        "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c"
+      },
+      "0": {
+        "lba": 25,
+        "size": 53068,
+        "sha256": "51617f1aaf2009def4a5db6b2a3ff915c8b35d7d395ffbbab2af96b37e14cfc5"
+      },
+      "JM.IDX": {
+        "lba": 318,
+        "size": 111012,
+        "sha256": "08df7aca2ee9864a3f734453b8d1b3c441f3c2a250a0408c365c9aaa3b343a99"
+      },
+      "ALLDAT.NEW": {
+        "lba": 48355,
+        "size": 32084,
+        "sha256": "86c8b9728c7b80447cc41babf99951d60b134362a11eeee5e0dd854db4e0ca5c"
+      }
+    }
+  },
+  "raw_input_hashes": {
+    "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\sss.mkf": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+    "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\m.msg": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+    "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\rgm.mkf": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132",
+    "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\sss.mkf": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c",
+    "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\m.msg": "f6480a5095e8cc358ecb3e8329ca80996c6068c34327f2f86ec03375ad40b654",
+    "D:\\SteamLibrary\\steamapps\\common\\PAL\\PAL_DOS\\rgm.mkf": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac",
+    "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+    "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+    "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\PROG.BIN": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c",
+    "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+    "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\comparison-corpus.json": "6eb12d388c6a5d821757f61f1ed2823e1e00d6c57af679b3f6f6bef54e9c4a13"
+  },
+  "format": {
+    "resource": "RGM.JOE",
+    "slot_bytes": 10240,
+    "slot_count": 99,
+    "empty_slots": [
+      0,
+      20,
+      38,
+      78,
+      79
+    ],
+    "nonempty_slots": 94,
+    "opaque_pixels_total": 587960,
+    "maximum_width": 133,
+    "maximum_height": 155,
+    "header": "BE16 width, BE16 height; no PC DWORD-2 prefix",
+    "rle": "Start at +4; per row while x<width: byte>127 skips byte-128 positions, otherwise copies byte literal indices. Next row advances 512 bytes in the original destination. Stop after height rows.",
+    "transparent": "Skipped positions leave destination unchanged. All 94 decoded slots have zero literal occurrences of index 0. Opacity exports are derived from literal versus skip commands, not from palette high bit.",
+    "tail": "32 slots have exactly one nonzero byte immediately after the final consumed RLE command; all later bytes are zero. The original height-bounded decoder does not read that byte. Do not treat it as palette data.",
+    "decoder_evidence": "PROG 0x2897E/0x28990 dimensions; 0x289E2 offset=4; 0x28A5A threshold127; 0x28A6E subtract128 via signed-byte+128; 0x28B10 destination; 0x28B58 stride512."
+  },
+  "palette": {
+    "scope": "One fixed 256-colour palette for the portrait/dialogue bitmap layer, independent of the scene bitmap palette; not a separate palette embedded in each portrait.",
+    "source": "ALLDAT.NEW",
+    "offset": 1536,
+    "length": 512,
+    "bank": 3,
+    "raw_sha256": "50d47e5f888d08d10de34b1ea55222dfc83a64c69e8d36343a14e7fd8a407867",
+    "rgb24_sha256": "cf41187d66351296925fe8b82a88553d5dc0e3d63ec97e45793f2d15d39b52e1",
+    "format": "Big-endian 16-bit CCBBBBBGGGGGRRRRR. RGB8 output is RGB5<<3, not bit-replication to 255; bit15 is colour-calculation control, not alpha.",
+    "all_bit15_set": true,
+    "load_chain": "PROG 0xF136..0xF146 loads ALLDAT.NEW; 0xF148..0xF158 copies its first0x1000 bytes to 0x25F00000.",
+    "bank_chain": "003C/003D table at0x56EB4/0x56EB8 calls0x9E94/0x9F48; both call0x10DA4 with r7=3. At0x10DF0..0x10DFC, low8(r7) goes to0x2574(1,3). 0x25EE selects r4=0 then0x3D7E0 writes low3 bits of byte060FFCEC. The shadow base060FFCC0 is copied to25F80000 by0x402D6..0x40300, so this is BMPNA high byte: NBG1 palette number3.",
+    "bitmap_binding": "0x63EA..0x63F4 configures NBG1 bitmap at25E20000, 8bpp; normal game setup0x6CD4..0x6CD8 sets destination pointer06076C84=25E20000. Decoder uses that pointer.",
+    "mode_and_offset": "Initial RAMCTL mode1 set at0x63CC..0x63D0 through0x3DD08 (RGB555,2048 entries). Default register block0x3F620 has CRAOFA/CRAOFB=0; no direct nonzero write found in reviewed normal initialisation/portrait selection path.",
+    "manuals": [
+      {
+        "url": "https://www.infochunk.com/saturn/segahtml_en/hard/vdp2/hon/p04_90.htm",
+        "section": "4.9 Bitmap",
+        "supports": "BMPNA NBG1 bits10..8 and 256-colour palette-index composition."
+      },
+      {
+        "url": "https://www.infochunk.com/saturn/segahtml_en/hard/vdp2/hon/p03_40.htm",
+        "section": "3.4 Color RAM Mode",
+        "supports": "Mode1 RGB555, R0..4/G5..9/B10..14, zero-filled lower3 output bits; bit15 is not alpha."
+      },
+      {
+        "url": "https://www.infochunk.com/saturn/segahtml_en/hard/vdp2/hon/p03_20.htm",
+        "section": "3.2 RAM control register",
+        "supports": "RAMCTL colour mode selection bits13..12."
+      }
+    ]
+  },
+  "placement": {
+    "top_bitmap_center": [
+      48,
+      62
+    ],
+    "bottom_bitmap_center": [
+      270,
+      144
+    ],
+    "algorithm": "x-left = center_x - floor(width/2); y-top = center_y - floor(height/2), destination stride512 with wrap modulo0x20000. Raw byte copies, no scaling in portrait decoder.",
+    "coordinate_boundary": "These are CPU bitmap coordinates. Initial NBG1 Y scroll is -12 (16.16 fixed point) via0x6418..0x6420/0x3DD7C. Final viewport/window/composite coordinates and hardware transitions were not measured."
+  },
+  "id_mapping": {
+    "policy_supported_by_sources": "Direct identity replacement is supported for the86 nonzero Win portrait IDs with paired raw-script anchors; retain PC resource for38 and any slot lacking an audited mapping.",
+    "identity_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91
+    ],
+    "anchor_count": 2227,
+    "dos_identity_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91
+    ],
+    "dos_anchor_count": 2226,
+    "same_whitelist_for_win_and_dos": true,
+    "dos_manifest_sha256": "96ffd046d587c1e2fcd9ea5484e8831cb823e67f35be7d2ad54c6bea44a6a904",
+    "dos_anchor_file": "portrait-dos-id-anchors.json",
+    "all_003c_003d_counts": {
+      "win": 2851,
+      "dos": 2850,
+      "saturn": 2853
+    },
+    "unmapped_win_used_ids": [
+      38
+    ],
+    "exceptions": [
+      {
+        "win_script": 10899,
+        "win_command": [
+          60,
+          38,
+          0,
+          0
+        ],
+        "win": {
+          "script_start": 10900,
+          "script_end": 10901,
+          "ids": [
+            3911,
+            3912
+          ],
+          "text": [
+            "江少云：",
+            "　　谢谢你们"
+          ]
+        },
+        "saturn_script": 11871,
+        "saturn_command": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "saturn": {
+          "script_start": 11872,
+          "script_end": 11873,
+          "ids": [
+            5161,
+            5162
+          ],
+          "text": [
+            "江少雲：",
+            "ありがとうございます。"
+          ]
+        },
+        "correspondence_source": "Pinned historical comparison-corpus.json group-start correspondence"
+      },
+      {
+        "win_script": 28689,
+        "win_command": [
+          61,
+          21,
+          0,
+          0
+        ],
+        "win": {
+          "script_start": 28690,
+          "script_end": 28691,
+          "ids": [
+            10175,
+            10176
+          ],
+          "text": [
+            "林月如：",
+            "$03　　说啊！？~70"
+          ]
+        },
+        "saturn_script": 30471,
+        "saturn_command": [
+          61,
+          0,
+          0,
+          0
+        ],
+        "saturn": {
+          "script_start": 30472,
+          "script_end": 30473,
+          "ids": [
+            12869,
+            12870
+          ],
+          "text": [
+            "林月如：",
+            "$03何！？~80"
+          ]
+        },
+        "correspondence_source": "Pinned historical comparison-corpus.json group-start correspondence"
+      }
+    ],
+    "pc_slot_counts": {
+      "win": 101,
+      "dos": 92
+    },
+    "extra_resource_boundary": "Saturn68 and92..98 have no003C/003D usage in these source scripts. Win99/100 have no Saturn slot. No global mapping is asserted for unused/extraneous slots.",
+    "raw_identity_chain": "Dispatcher0x767E..0x7688 puts operand0 at060A1A6A; top/bottom handlers read it unchanged into r6. 0x10E30..0x10E48 requests sector=portraitID*5,size=0x2800 fromRGM.JOE. Aligned dialogue anchors independently show the same requested ID on PC and Saturn.",
+    "anchor_file": "portrait-id-anchors.json"
+  },
+  "samples": [
+    {
+      "slot": 1,
+      "width": 91,
+      "height": 113,
+      "opaque_pixels": 6090,
+      "sample_png": "portrait-slot-01-bank3.png",
+      "sample_png_sha256": "d2a17a5a4cda6862d45d3677eedbb9b3204bc01ee8e1af65bd8d3c03d0f4ee38",
+      "rgba_sha256": "af1d1d112eaa54304a8fc65ea75bcb0bb4282fe08cdb8a0ad39ea49f0a796e59",
+      "pixels_sha256": "76940cb52fc203cdd5ba7fbd3c744ae0ab407cf02dea05003399acaf049c7788",
+      "mask_sha256": "07c990bd7ffc325c2310cb8dfc6cede82bac7dc6ec1c436dd319b9c8234a142e"
+    },
+    {
+      "slot": 13,
+      "width": 81,
+      "height": 124,
+      "opaque_pixels": 6335,
+      "sample_png": "portrait-slot-13-bank3.png",
+      "sample_png_sha256": "c05c695c1367ce2a75273b59cd55038ba5fb1aea51dcbf616a9cb7f6c9884315",
+      "rgba_sha256": "2481eac0111c490805b3bd909b15a58c5a40595d846d802fa59810c73e757515",
+      "pixels_sha256": "019645f721babb83aef836e58ce684e629d2003152fce275c2168296415246f8",
+      "mask_sha256": "b721f270b5d5b76e7fcb72515c3834b5cd29d1bfeabaf17798bc896d89bb4305"
+    },
+    {
+      "slot": 37,
+      "width": 81,
+      "height": 115,
+      "opaque_pixels": 5489,
+      "sample_png": "portrait-slot-37-bank3.png",
+      "sample_png_sha256": "111756f07e5e2b023a2029034cc82cc29f077704a754242fb7b5f2bd28c8dcbb",
+      "rgba_sha256": "909c75d19bd2d2fbe4d4909d259960aef0d5b21a81e69fdeaee9a1827d1158d0",
+      "pixels_sha256": "78f963dec6b0026b6246453ca52eeacef3caf9d33aa357d527c563bd30436ac3",
+      "mask_sha256": "e1e4d74e8bda8734942072a8b009a0a0c0e6d793331d7c2d7a1e364267a442e4"
+    },
+    {
+      "slot": 70,
+      "width": 89,
+      "height": 112,
+      "opaque_pixels": 6222,
+      "sample_png": "portrait-slot-70-bank3.png",
+      "sample_png_sha256": "32bc8818765db68520602e75b993e76095d93afb2a29acd3ab46633e05b0cac5",
+      "rgba_sha256": "7e48b372e84e39b44b8e2947ea61b3263b9ff3083962ae32c23b636670cff8d2",
+      "pixels_sha256": "abbf5ed6f163f821cd0801593faa84c65a5ee998727311087fb47b0895751508",
+      "mask_sha256": "dd9054faa7e3473e90df795b3f5ebcbfc14598de38a2f291d2dc79ba237de8e5"
+    }
+  ],
+  "validation": [
+    "ISO9660 root independently located and matched requested resource LBA/length.",
+    "Extracted PROG.BIN SHA matches pinned prior audit.",
+    "Every RGM slot parsed within its 10240-byte bound; every row exactly reaches width.",
+    "All opaque palette indices within0..255; zero literal-zero pixels.",
+    "All99 slot hashes, dimensions, palette indices and opacity hashes exported.",
+    "Four independent RGBA sample PNGs and a contact sheet generated from raw assets; these are extracted-asset previews, not screenshots.",
+    "All Win/DOS/Saturn003C/003D uses enumerated;2227 immediate paired script anchors cover86 identity IDs."
+  ],
+  "not_verified": [
+    "No actual Saturn hardware/emulator reference screenshot was acquired or used.",
+    "No real game dialogue transition, palette fade, night/day or OS/window acceptance.",
+    "No claim that all future script paths keep bitmap palette3 or colour RAM unchanged.",
+    "No proof of PC↔Saturn identity for unused slots68/92..98, or Win99/100.",
+    "No proposed rendering/recolouring policy is accepted solely from these source previews; parent evaluates target-palette error separately."
+  ],
+  "reproduction": [
+    "& (Join-Path $env:USERPROFILE 'CodexTools\\python\\Scripts\\python.exe') -B -X utf8 .\\inspect_source.py extract",
+    "& (Join-Path $env:USERPROFILE 'CodexTools\\python\\Scripts\\python.exe') -B -X utf8 .\\generate_review.py"
+  ]
+}

@@ -90,6 +90,7 @@ typedef enum tagPALCFG_ITEM
 	PALCFG_MIDICLIENT,
 	PALCFG_SCALEQUALITY,
 	PALCFG_SHADER,
+	PALCFG_PORTRAITFILE,
 	/* Strings */
 	PALCFG_STRING_MAX,
 
@@ -184,6 +185,7 @@ typedef struct tagCONFIGURATION
     char            *pszShaderPath;
 	char            *pszMsgFile;
 	char            *pszFontFile;
+	char            *pszPortraitFile;
 	char            *pszMIDIClient;
 	char            *pszLogFile;
 	char            *pszScaleQuality;

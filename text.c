@@ -63,6 +63,120 @@ LPWSTR g_rcCredits[12];
 
 TEXTLIB         g_TextLib;
 
+// Source colors stay separate from the game's palette. Optional portraits are
+// quantized at dialogue start, then use the existing indexed fade/restore path.
+typedef struct tagPALPORTRAIT
+{
+   WORD width, height;
+   BYTE *pixels;                    // index 0 is transparent
+} PALPORTRAIT;
+
+static PALPORTRAIT g_Portraits[128];
+static BYTE g_PortraitPalette[256 * 3];
+
+static VOID
+PAL_FreePortraits(VOID)
+{
+   int i;
+   for (i = 0; i < 128; ++i) free(g_Portraits[i].pixels);
+   memset(g_Portraits, 0, sizeof(g_Portraits));
+}
+
+static WORD
+PAL_PortraitWord(const BYTE *p)
+{
+   return (WORD)(p[0] | ((WORD)p[1] << 8));
+}
+
+BOOL
+PAL_ReadPortraitFile(FILE *fp, BOOL fIsWIN95)
+{
+   BYTE header[16], entry[8];
+   int count, i;
+   PAL_FreePortraits();
+   if (fp == NULL || fread(header, 1, sizeof(header), fp) != sizeof(header) ||
+       memcmp(header, "PALJPOR1", 8) != 0 || PAL_PortraitWord(header + 8) != 1 ||
+       PAL_PortraitWord(header + 10) != (fIsWIN95 ? 1 : 0) ||
+       (count = PAL_PortraitWord(header + 12)) < 1 || count > 127 ||
+       PAL_PortraitWord(header + 14) != 0 ||
+       fread(g_PortraitPalette, 1, sizeof(g_PortraitPalette), fp) != sizeof(g_PortraitPalette))
+      goto invalid;
+   for (i = 0; i < count; ++i)
+   {
+      WORD id, width, height;
+      size_t size;
+      if (fread(entry, 1, sizeof(entry), fp) != sizeof(entry)) goto invalid;
+      id = PAL_PortraitWord(entry);
+      width = PAL_PortraitWord(entry + 2);
+      height = PAL_PortraitWord(entry + 4);
+      if (id < 1 || id >= 128 || g_Portraits[id].pixels != NULL ||
+          width < 1 || width > 320 || height < 1 || height > 200 ||
+          PAL_PortraitWord(entry + 6) != 0)
+         goto invalid;
+      size = (size_t)width * height;
+      g_Portraits[id].width = width;
+      g_Portraits[id].height = height;
+      g_Portraits[id].pixels = (BYTE *)malloc(size);
+      if (g_Portraits[id].pixels == NULL ||
+          fread(g_Portraits[id].pixels, 1, size, fp) != size)
+         goto invalid;
+   }
+   if (fgetc(fp) != EOF || ferror(fp)) goto invalid;
+   return TRUE;
+invalid:
+   PAL_FreePortraits();
+   return FALSE;
+}
+
+static VOID
+PAL_BlitDialogPortrait(LPCBITMAPRLE native, WORD id, PAL_POS pos)
+{
+   const PALPORTRAIT *portrait = id < 128 ? &g_Portraits[id] : NULL;
+   SDL_Color *palette;
+   BYTE mapping[256];
+   int i, j, x, y;
+   if (portrait == NULL || portrait->pixels == NULL ||
+       portrait->width != PAL_RLEGetWidth(native) ||
+       portrait->height != PAL_RLEGetHeight(native))
+   {
+      PAL_RLEBlitToSurface(native, gpScreen, pos);
+      return;
+   }
+   // A faded palette would collapse colors to black. Match its base palette;
+   // the ordinary palette updates will apply the fade to the resulting indices.
+   palette = PAL_GetPalette(gpGlobals->wNumPalette, gpGlobals->fNightPalette);
+   if (palette == NULL)
+   {
+      PAL_RLEBlitToSurface(native, gpScreen, pos);
+      return;
+   }
+   for (i = 1; i < 256; ++i)
+   {
+      unsigned best = UINT32_MAX;
+      for (j = 0; j < 256; ++j)
+      {
+         int r, g, b;
+         unsigned distance;
+         // Dialogue wait rotates these colors. Do not map skin/hair to them.
+         // Ascending search gives deterministic ties.
+         if (j >= 0xF9 && j <= 0xFE) continue;
+         r = (int)g_PortraitPalette[i * 3] - palette[j].r;
+         g = (int)g_PortraitPalette[i * 3 + 1] - palette[j].g;
+         b = (int)g_PortraitPalette[i * 3 + 2] - palette[j].b;
+         distance = r * r + g * g + b * b;
+         if (distance < best) { best = distance; mapping[i] = (BYTE)j; }
+      }
+   }
+   for (y = 0; y < portrait->height; ++y)
+      for (x = 0; x < portrait->width; ++x)
+      {
+         BYTE pixel = portrait->pixels[y * portrait->width + x];
+         int dx = PAL_X(pos) + x, dy = PAL_Y(pos) + y;
+         if (pixel != 0 && dx >= 0 && dx < gpScreen->w && dy >= 0 && dy < gpScreen->h)
+            ((BYTE *)gpScreen->pixels)[dy * gpScreen->pitch + dx] = mapping[pixel];
+      }
+}
+
 PAL_FORCE_INLINE int
 PAL_ParseLine(
 	char     *line,
@@ -701,6 +815,19 @@ PAL_InitText(
 
 --*/
 {
+   PAL_FreePortraits();
+   if (gConfig.pszPortraitFile && *gConfig.pszPortraitFile)
+   {
+      FILE *fp = UTIL_OpenFile(gConfig.pszPortraitFile);
+      BOOL loaded = PAL_ReadPortraitFile(fp, gConfig.fIsWIN95);
+      if (fp) fclose(fp);
+      if (!loaded)
+      {
+         UTIL_LogOutput(LOGLEVEL_ERROR, "Cannot load portrait resource or target version differs: %s",
+            gConfig.pszPortraitFile);
+         return -1;
+      }
+   }
    g_TextLib.fUseISOFont = TRUE;
    g_TextLib.iFontFlavor = kFontFlavorUnifont;
 
@@ -956,6 +1083,7 @@ PAL_FreeText(
 {
    int i;
    int j;
+   PAL_FreePortraits();
    if (g_TextLib.lpMsgBuf != NULL)
    {
       if (gConfig.pszMsgFile)
@@ -1323,7 +1451,7 @@ PAL_StartDialogWithOffset(
                rect.y = 0;
             }
 
-            PAL_RLEBlitToSurface((LPCBITMAPRLE)buf, gpScreen, PAL_XY(rect.x, rect.y));
+            PAL_BlitDialogPortrait((LPCBITMAPRLE)buf, iNumCharFace, PAL_XY(rect.x, rect.y));
 
             if (rect.x < 0)
             {
@@ -1356,7 +1484,7 @@ PAL_StartDialogWithOffset(
             rect.x = 270 - PAL_RLEGetWidth((LPCBITMAPRLE)buf) / 2 + xOff;
             rect.y = 144 - PAL_RLEGetHeight((LPCBITMAPRLE)buf) / 2 + yOff;
 
-            PAL_RLEBlitToSurface((LPCBITMAPRLE)buf, gpScreen, PAL_XY(rect.x, rect.y));
+            PAL_BlitDialogPortrait((LPCBITMAPRLE)buf, iNumCharFace, PAL_XY(rect.x, rect.y));
 
             VIDEO_UpdateScreen(NULL);
          }
