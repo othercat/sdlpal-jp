@@ -2,6 +2,8 @@
 
 日期：2026-10-20。关联 [#10](https://github.com/othercat/sdlpal-jp/issues/10)、[布局修复 #5](https://github.com/othercat/sdlpal-jp/issues/5)、[总管 #1](https://github.com/othercat/sdlpal-jp/issues/1)。
 
+后续 [R2 同源 Japanese 16px 字体对照](pal98-same-source-font-comparison.md)已完成：PALDLL 实际替换记录、原版对白/赤血蚕/10法术截图及对应源码图共24张，7,846个GDI字形验证通过。下文本轮条件和未完成项保留为 R1 历史记录；当前剩余验收以 R2 和 Issue #10 为准。
+
 **SDLPAL 用实际引擎源码离屏出图，PAL98 + PALDLL_DX9 用实机截图。** 字体、字宽、换行位置、头像、地图、MP 框和菜单都有源码，不需要为了取得这些像素逐次操作 SDLPAL 窗口。窗口缩放、输入、动画及完整游戏流程仍需另行验收。
 
 本轮结果：两引擎的中文李大娘对白均完整可读；SDLPAL 的两列菜单和 83–87 布局保留了原先被裁掉的 11 行法术说明，赤血蚕仍有 1 行裁切。当前证据不能为两引擎的整体画质排名，也不是完全同字形的跨引擎实验。

@@ -1,0 +1,438 @@
+{
+  "date": "2026-10-20",
+  "operator": "Codex",
+  "os": "Windows 11 Pro 10.0.26200",
+  "base_commit": "32566ba733a98c88d8411edd44f983104fde63de",
+  "methods": {
+    "native": "PAL.EXE 1.00 + PAL.dll 1.7.2.2 + DxWrapper 1.4.7900.25; real window capture",
+    "sdlpal": "Test cn-jp-font-field; actual engine drawing functions; no window",
+    "text": "same PAL98 root Chinese text, Japanese font flavor on both; no native SLF claim"
+  },
+  "resources_sha256": {
+    "ABC-ori.MKF": "f9685ba8d22e851a4be492c6b74fbc671d89112d64394e7af86ec7a23751529c",
+    "ABC.mkf": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b",
+    "BALL.MKF": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0",
+    "DATA.MKF": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+    "F.MKF": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7",
+    "FBP.MKF": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84",
+    "FIRE.MKF": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf",
+    "GOP.MKF": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b",
+    "M.MSG": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+    "MAP.MKF": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575",
+    "MGO.mkf": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0",
+    "MUS.MKF": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21",
+    "PAT.MKF": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997",
+    "RGM.MKF": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132",
+    "RNG.MKF": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd",
+    "SOUNDS.MKF": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01",
+    "SSS.MKF": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+    "WORD.DAT": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+  },
+  "font_export": {
+    "family": "SDLPAL JP 16px",
+    "glyphs": 7846,
+    "em_pixels": 16,
+    "jis_glyphs": 6879,
+    "fallback_glyphs": 961,
+    "engine_skips": [
+      "U+E010",
+      "U+E16D",
+      "U+E47E",
+      "U+E4C7",
+      "U+E4C9",
+      "U+E790"
+    ],
+    "sha256": {
+      "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fontglyph.h": "03c14caeb15178fef4f87c23d466d8ce26b10332bc0a43295726c6b5ea4c6252",
+      "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fontglyph_jp.h": "ac0e164c4d835e3ae9db87dc8eda97603b6731db96e1b378afcd0bbcdba0d79e",
+      "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\codepage.h": "84a85c1e71666dab9b76604470123540e1a4fcfff51579c82b9a2705820910b1",
+      "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+      "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+      "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\WORD.DAT": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\same-font-r2-20261020\\sdlpal-jp-16px.ttf": "9a7996e3860981ce3b19aa58b3d2ce9edccf1332340b21e90fb3bdf293cb5f76"
+    }
+  },
+  "gdi_validation": {
+    "method": "GDI GetGlyphOutlineW GGO_BITMAP at 16px, memory DC; not a game screenshot",
+    "font_sha256": "9a7996e3860981ce3b19aa58b3d2ce9edccf1332340b21e90fb3bdf293cb5f76",
+    "requested_face": "SDLPAL JP 16px",
+    "resolved_face": "SDLPAL JP 16px",
+    "logfont": {
+      "height": 16,
+      "width": 0,
+      "weight": 400,
+      "charset": 134,
+      "quality": 3
+    },
+    "metrics": {
+      "height": 16,
+      "ascent": 16,
+      "descent": 0,
+      "internalLeading": 0,
+      "externalLeading": 0,
+      "averageWidth": 8,
+      "maxWidth": 16,
+      "weight": 400,
+      "charset": 134
+    },
+    "glyphs_checked": 7846,
+    "all_glyph_indices_present": true,
+    "differences": [],
+    "passed": true
+  },
+  "native_font_stats": {
+    "dialogue": "字体替换统计报告\n生成时间: 2026-10-20 14:50:10\n\n=== 字体替换规则 ===\n[0] * -> Microsoft YaHei UI Light (大小:21, 字符集:0x01, 启用:0, 匹配所有字符集:1)\n[1] * -> SDLPAL JP 16px (大小:16, 字符集:0x86, 启用:1, 匹配所有字符集:1)\n\n=== 字体替换统计 ===\nMicrosoft YaHei UI -> SDLPAL JP 16px: 8 次 (首次: 25秒前, 最后: 0秒前)\nSystem -> SDLPAL JP 16px: 7 次 (首次: 760秒前, 最后: 0秒前)\nMicrosoft Sans Serif -> SDLPAL JP 16px: 6 次 (首次: 760秒前, 最后: 760秒前)\nMS Sans Serif -> SDLPAL JP 16px: 1 次 (首次: 762秒前, 最后: 762秒前)\nSimsun -> SDLPAL JP 16px: 1 次 (首次: 762秒前, 最后: 762秒前)\nMingLiU -> SDLPAL JP 16px: 1 次 (首次: 760秒前, 最后: 760秒前)\nMingLiU_HKSCS -> SDLPAL JP 16px: 1 次 (首次: 760秒前, 最后: 760秒前)\nPMingLiU -> SDLPAL JP 16px: 1 次 (首次: 760秒前, 最后: 760秒前)\nSimSun -> SDLPAL JP 16px: 1 次 (首次: 760秒前, 最后: 760秒前)\n\n=== 字体缓存统计 ===\n缓存字体数量: 3\n  SDLPAL JP 16px (大小:-17, 粗细:400, 字符集:0x86)\n  SDLPAL JP 16px (大小:-18, 粗细:400, 字符集:0x86)\n  SDLPAL JP 16px (大小:16, 粗细:400, 字符集:0x86)\n",
+    "menus": "字体替换统计报告\n生成时间: 2026-10-20 15:00:23\n\n=== 字体替换规则 ===\n[0] * -> Microsoft YaHei UI Light (大小:21, 字符集:0x01, 启用:0, 匹配所有字符集:1)\n[1] * -> SDLPAL JP 16px (大小:16, 字符集:0x86, 启用:1, 匹配所有字符集:1)\n\n=== 字体替换统计 ===\nMicrosoft Sans Serif -> SDLPAL JP 16px: 18 次 (首次: 252秒前, 最后: 218秒前)\nMicrosoft YaHei UI -> SDLPAL JP 16px: 8 次 (首次: 11秒前, 最后: 0秒前)\nSystem -> SDLPAL JP 16px: 7 次 (首次: 252秒前, 最后: 0秒前)\nMS Sans Serif -> SDLPAL JP 16px: 1 次 (首次: 254秒前, 最后: 254秒前)\nSimsun -> SDLPAL JP 16px: 1 次 (首次: 254秒前, 最后: 254秒前)\nMingLiU -> SDLPAL JP 16px: 1 次 (首次: 252秒前, 最后: 252秒前)\nMingLiU_HKSCS -> SDLPAL JP 16px: 1 次 (首次: 252秒前, 最后: 252秒前)\nPMingLiU -> SDLPAL JP 16px: 1 次 (首次: 252秒前, 最后: 252秒前)\nSimSun -> SDLPAL JP 16px: 1 次 (首次: 252秒前, 最后: 252秒前)\n\n=== 字体缓存统计 ===\n缓存字体数量: 3\n  SDLPAL JP 16px (大小:-17, 粗细:400, 字符集:0x86)\n  SDLPAL JP 16px (大小:-18, 粗细:400, 字符集:0x86)\n  SDLPAL JP 16px (大小:16, 粗细:400, 字符集:0x86)\n"
+  },
+  "font_session_load": {
+    "action": "load",
+    "font": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\same-font-r2-20261020\\sdlpal-jp-16px.ttf",
+    "flags": 0,
+    "result": 2,
+    "sha256": "9a7996e3860981ce3b19aa58b3d2ce9edccf1332340b21e90fb3bdf293cb5f76"
+  },
+  "font_session_unload": {
+    "action": "unload",
+    "font": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\same-font-r2-20261020\\sdlpal-jp-16px.ttf",
+    "flags": 0,
+    "result": 1,
+    "sha256": "9a7996e3860981ce3b19aa58b3d2ce9edccf1332340b21e90fb3bdf293cb5f76"
+  },
+  "native_binary_and_configuration_sha256": {
+    "PAL.EXE": "75d612b9cbd9c1f0884f18c9a6d2ee522b227f2f6b3da92495bae8f73161c450",
+    "PAL.dll": "2ce7c6817456bf1b5ad6dc5114bcbffb38cc1f9bc16ecd8e70140be65f371c1a",
+    "PALOLD.dll": "c6a34e511ed1c7bb2ecddfaaba00992d53006db3ed4b5ab3da61943b417227e8",
+    "ddraw.dll": "8f942204e0c0ed772bbcb118328b5ebb5eb0e1f1f9d1cbed73f0ecd3d2db2e7c",
+    "dxwrapper.dll": "ca76bc2989fe07f1bfe65ecb8fc057766de5fa99563039171cd3c0cd1e1410f3",
+    "fontconfig.ini": "960f847a2344526c96239721e0609b6d24972436d681bf3374959aca8b677e8b",
+    "config.ini": "933e66da91ab3b503ad17bbf62af5f8cab3f12cd418e4a8601358df767245146",
+    "dxwrapper.ini": "5f4e46c3e9cb81c2490956b42674b9a9b56d62d5780ef31cb6477708a629cdd9",
+    "key.ini": "96fe0c01891759ccc3bdebdaba43c710ea627b88b5fe7c143e5a1ad1cebe4c44",
+    "log.ini": "2e3d8dc506630b258b38fdb79856e59eadc36b36f6d7351a36b978bfaa989b37"
+  },
+  "fontconfig_ini": "[FontReplacement]\nRuleCount=1\n[FontRule0]\nOriginalFont=*\nReplacementFont=SDLPAL JP 16px\nFontSize=16\nFontWeight=400\nCharSet=134\nQuality=3\nEnabled=1\nMatchAllCharset=1",
+  "configuration_notes": [
+    "Isolated copy only; DefaultPatch empty; no palmod profile; GameTextMode Simplified",
+    "DisableSystemKeys=0, DisableQuitOutside=0, EnableSnakeWomanPeonyFairyHarmony=0",
+    "Menu test enables existing EnableSyntheticCKeyMessageBridge and EnableSyntheticCKeyActionBridge",
+    "Sky KP_2/KP_4/KP_6 navigation; Escape/Return actions; normal arrow Down did not select",
+    "Runtime log.ini requested debug file output but runtime.log was not created; use actual exit font_stats.txt",
+    "Window capture is 643x426 including decorations; game image 640x400 at offset (1,24)",
+    "Full config copies/backups retained in the local artifact directory"
+  ],
+  "save_fixture": {
+    "purpose": "offline test state, not a naturally acquired inventory or magic list",
+    "source": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\PALDLL_DX9\\RPGS\\98速通存档\\白一钱档\\001端盘子.RPG",
+    "source_sha256": "f43d63d8974f374266a285054cffbef025d558b52a9629ab0485018a1844585b",
+    "output": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\same-font-r2-20261020\\native\\1.RPG",
+    "output_sha256": "9d19a620534b7108fdb77b641456fdf362c3764f9f6ae7cf8b816243c4ae4318",
+    "bytes": 176528,
+    "role": 0,
+    "mp": 999,
+    "max_mp": 999,
+    "magics": [
+      306,
+      307,
+      308,
+      311,
+      370,
+      374,
+      377,
+      390,
+      393,
+      394
+    ],
+    "inventory": [
+      {
+        "object": 149,
+        "amount": 2
+      },
+      {
+        "object": 150,
+        "amount": 2
+      }
+    ],
+    "changed_byte_offsets": [
+      604,
+      605,
+      628,
+      629,
+      892,
+      904,
+      905,
+      916,
+      917,
+      928,
+      929,
+      940,
+      941,
+      952,
+      953,
+      964,
+      965,
+      976,
+      977,
+      988,
+      989,
+      1000,
+      1001,
+      1728,
+      1730,
+      1734,
+      1736
+    ],
+    "outside_declared_fields_unchanged": true
+  },
+  "save_unchanged_after_game": true,
+  "source_executable_sha256": "2b6632fa0e920bba37ed3f8b28e8d8cd6d423dad0fb7caab402ea0ad5987fcef",
+  "source_sha256": {
+    "tests/render_evidence.cpp": "b724499f422d727d38926b37acd7963d00fd202bd1e27ed85d6ed9baf210c803",
+    "fontglyph.h": "03c14caeb15178fef4f87c23d466d8ce26b10332bc0a43295726c6b5ea4c6252",
+    "fontglyph_jp.h": "ac0e164c4d835e3ae9db87dc8eda97603b6731db96e1b378afcd0bbcdba0d79e",
+    "codepage.h": "84a85c1e71666dab9b76604470123540e1a4fcfff51579c82b9a2705820910b1",
+    "tools/export_japanese_font.py": "47e50adf071c38cae9d674d04c14940c970f7a8605f7abc587b9382a511ffead",
+    "tools/verify_japanese_font_gdi.py": "ddabce0c3e4e741db3439e12d30f7d3fa02df0ffa99631931656ae180e0bae2a",
+    "tools/session_font.py": "77efbe21143a1cf82b3466a0e818b100e7aa7ee64dfa6b66c7089c088ff9d072",
+    "tools/make_pal98_font_fixture.py": "ce656c5c14b86d1fc189094293d777300ad5f181b5372b3bfe2e4d3b53a4dc1c"
+  },
+  "source_mode": "Rendered cn-jp-font-field: 12 BMPs, 320x200, palette 0, font flavor 4, font height 16, word length 10, magic description X=102",
+  "source_clipped_ink_by_object": {
+    "306": 0,
+    "307": 0,
+    "308": 0,
+    "311": 0,
+    "370": 0,
+    "374": 0,
+    "377": 0,
+    "390": 0,
+    "393": 0,
+    "394": 0,
+    "149": 0
+  },
+  "legacy_mode_bmp_identical": {
+    "aunt-dialogue.bmp": true,
+    "item-149.bmp": true,
+    "magic-306.bmp": true,
+    "magic-307.bmp": true,
+    "magic-308.bmp": true,
+    "magic-311.bmp": true,
+    "magic-370.bmp": true,
+    "magic-374.bmp": true,
+    "magic-377.bmp": true,
+    "magic-390.bmp": true,
+    "magic-393.bmp": true,
+    "magic-394.bmp": true
+  },
+  "source_png_roundtrips": {
+    "passed": 12,
+    "total": 12
+  },
+  "native_glyph_spot_checks": {
+    "method": "classify 2x2 screenshot pixels; >=2 foreground hits becomes one logical ink pixel",
+    "gray": "r>145,g>145,b>130,max-min<50",
+    "yellow": "r>150,g>150,b<160,g-b>60",
+    "limitations": "four visible samples only; JPEG classification is not exact GDI or all-text proof",
+    "probes": [
+      {
+        "file": "pal98-same-font-aunt.jpg",
+        "character": "李",
+        "source": "JIS",
+        "observed_cell_origin_in_capture": [
+          193,
+          76
+        ],
+        "cell_size": [
+          32,
+          32
+        ],
+        "logical_origin_after_client_offset_1_24": [
+          96,
+          26
+        ],
+        "foreground_classifier": "gray",
+        "different_logical_pixels": 0,
+        "expected_ink_pixels": 75,
+        "observed_ink_pixels": 75
+      },
+      {
+        "file": "pal98-same-font-aunt.jpg",
+        "character": "敢",
+        "source": "JIS",
+        "observed_cell_origin_in_capture": [
+          193,
+          108
+        ],
+        "cell_size": [
+          32,
+          32
+        ],
+        "logical_origin_after_client_offset_1_24": [
+          96,
+          42
+        ],
+        "foreground_classifier": "gray",
+        "different_logical_pixels": 0,
+        "expected_ink_pixels": 93,
+        "observed_ink_pixels": 93
+      },
+      {
+        "file": "pal98-same-font-item149.jpg",
+        "character": "吸",
+        "source": "JIS",
+        "observed_cell_origin_in_capture": [
+          145,
+          326
+        ],
+        "cell_size": [
+          32,
+          32
+        ],
+        "logical_origin_after_client_offset_1_24": [
+          72,
+          151
+        ],
+        "foreground_classifier": "yellow",
+        "different_logical_pixels": 1,
+        "expected_ink_pixels": 90,
+        "observed_ink_pixels": 89
+      },
+      {
+        "file": "pal98-same-font-magic308.jpg",
+        "character": "解",
+        "source": "JIS",
+        "observed_cell_origin_in_capture": [
+          201,
+          28
+        ],
+        "cell_size": [
+          32,
+          32
+        ],
+        "logical_origin_after_client_offset_1_24": [
+          100,
+          2
+        ],
+        "foreground_classifier": "yellow",
+        "different_logical_pixels": 1,
+        "expected_ink_pixels": 101,
+        "observed_ink_pixels": 100
+      }
+    ]
+  },
+  "build": {
+    "configuration": "Test x64, VS2026 v145",
+    "warnings": 3,
+    "errors": 0,
+    "warning_notes": "existing SDL /arch:SSE (2) and SDL_RLEaccel.c source encoding (1)",
+    "log_sha256": "7cc7d29e61eff96e4b3b3d8e05479a39290889c623eb65f4527e6efbfcfe6502"
+  },
+  "gtests": {
+    "passed": 4,
+    "total": 4,
+    "xml_sha256": "6bca0395559cbdacfd4b3e4df2f5d695de972e8ee4c623c0aca8291a41ab7b66"
+  },
+  "images": {
+    "sdlpal-aunt-dialogue.png": {
+      "kind": "engine source rendering, 2x nearest",
+      "sha256": "1844c00dc37d42d1a544446e30040c5fc4023bb24e35ed2b528010482cbfda27"
+    },
+    "sdlpal-item-149.png": {
+      "kind": "engine source rendering, 2x nearest",
+      "sha256": "c84368f7facec8094f688d8ed853edf6e87474577db369bcc560b56b6c39ec16"
+    },
+    "sdlpal-magic-306.png": {
+      "kind": "engine source rendering, 2x nearest",
+      "sha256": "1d3bbc54e80bd49b34747eb8e006a9d2734e086d467ac91b577fb1b4fe2a9ea5"
+    },
+    "sdlpal-magic-307.png": {
+      "kind": "engine source rendering, 2x nearest",
+      "sha256": "bdde6245bbe967f04e8ad527c08eeb95270c75d27e437dd5e83865ddd8638b32"
+    },
+    "sdlpal-magic-308.png": {
+      "kind": "engine source rendering, 2x nearest",
+      "sha256": "92f3789f13e51a77271a140425e3f3189c10a521a2f1ea036e7374c3049360dc"
+    },
+    "sdlpal-magic-311.png": {
+      "kind": "engine source rendering, 2x nearest",
+      "sha256": "69a8f7f93f3fb12c8fc82daf69e949b4465727cb63d033c35909d7f71d760d89"
+    },
+    "sdlpal-magic-370.png": {
+      "kind": "engine source rendering, 2x nearest",
+      "sha256": "fef14c3bff9da882c9a2a76c599033ffb77ca5056874b7044f4ca3626d1ece13"
+    },
+    "sdlpal-magic-374.png": {
+      "kind": "engine source rendering, 2x nearest",
+      "sha256": "975ed790e8aa88f88c5659627f7ea15e492854817a2219d57dcf3366a6f126a0"
+    },
+    "sdlpal-magic-377.png": {
+      "kind": "engine source rendering, 2x nearest",
+      "sha256": "cba31b6b788c76f646d0208d8efa6c11733201bc02a445584b98812b40b3644b"
+    },
+    "sdlpal-magic-390.png": {
+      "kind": "engine source rendering, 2x nearest",
+      "sha256": "91aa7215ba974da085bdbf90f3d535dfca4e4695530b98d2dfd9e32c15bc0f21"
+    },
+    "sdlpal-magic-393.png": {
+      "kind": "engine source rendering, 2x nearest",
+      "sha256": "328813bce65ca2bd1022a93356ca2202028aee435e3f135f04283d1a015ff913"
+    },
+    "sdlpal-magic-394.png": {
+      "kind": "engine source rendering, 2x nearest",
+      "sha256": "b6934997ba30ca0d73f22fd0328c0601bfe4dcc31592e602d7e96ced793dee66"
+    },
+    "pal98-same-font-aunt.jpg": {
+      "kind": "unaltered PAL98 window capture, original JPEG",
+      "sha256": "2ca8812e9675bbc26bc029dc4a1792fe922f3f40c5ca813696aca8e8ed7d5593"
+    },
+    "pal98-same-font-item149.jpg": {
+      "kind": "unaltered PAL98 window capture, original JPEG",
+      "sha256": "29e96ae74b2fc7c3d472cecda657c79407d0f993573d8c5d28a533e8933d263e"
+    },
+    "pal98-same-font-magic306.jpg": {
+      "kind": "unaltered PAL98 window capture, original JPEG",
+      "sha256": "194533e36492e6b54c8f2f10d75206b2a5933dd39c6811d5da6a3050540ef12a"
+    },
+    "pal98-same-font-magic307.jpg": {
+      "kind": "unaltered PAL98 window capture, original JPEG",
+      "sha256": "2689d557b6a1d7ab010fb17bcd81da8cc8243d76b3e1084f541a33199606f369"
+    },
+    "pal98-same-font-magic308.jpg": {
+      "kind": "unaltered PAL98 window capture, original JPEG",
+      "sha256": "baea8f65d9099481a935a75258f1154dcac1d3e5153f2f144bc030599a971016"
+    },
+    "pal98-same-font-magic311.jpg": {
+      "kind": "unaltered PAL98 window capture, original JPEG",
+      "sha256": "56f1b6171cc88f1d6d17f0f0294153503b21cbf230a0c6800e06c8f7e572e7f5"
+    },
+    "pal98-same-font-magic370.jpg": {
+      "kind": "unaltered PAL98 window capture, original JPEG",
+      "sha256": "f64ad75302a83344615d5e5e81a38e0bbf7131d6df31bf18e66c39ab06e18326"
+    },
+    "pal98-same-font-magic374.jpg": {
+      "kind": "unaltered PAL98 window capture, original JPEG",
+      "sha256": "2097442ac15e65b2ecb17106365c085994ad06237957e7c9a67f71b0beae0677"
+    },
+    "pal98-same-font-magic377.jpg": {
+      "kind": "unaltered PAL98 window capture, original JPEG",
+      "sha256": "fcc9a3c86108bbd147b33a14dc65a33e21ec359b20ddb69d237af90cda45cf33"
+    },
+    "pal98-same-font-magic390.jpg": {
+      "kind": "unaltered PAL98 window capture, original JPEG",
+      "sha256": "fa3beea8f98a8092aa880d67855a5de990039c00984e43a4b90b1755669bc2eb"
+    },
+    "pal98-same-font-magic393.jpg": {
+      "kind": "unaltered PAL98 window capture, original JPEG",
+      "sha256": "bffb47b6d6e737ad04b49a6f3521bf550a7ddfa44f337075b5bbe2707dbdc645"
+    },
+    "pal98-same-font-magic394.jpg": {
+      "kind": "unaltered PAL98 window capture, original JPEG",
+      "sha256": "53bc3e69c73f7392dd65b408cdd5bf09a296564cd8b889d08ca77460efddfad4"
+    }
+  },
+  "local_artifact_directory": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\same-font-r2-20261020",
+  "remaining_acceptance": "window scaling, dialogue pagination and complete game-route regression",
+  "deterministic_reexport": {
+    "sha256": "9a7996e3860981ce3b19aa58b3d2ce9edccf1332340b21e90fb3bdf293cb5f76",
+    "passed": true
+  }
+}

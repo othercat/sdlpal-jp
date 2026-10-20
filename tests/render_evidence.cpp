@@ -92,12 +92,13 @@ void DrawAunt(const std::string& directory, bool translated) {
 int RenderEvidence(int argc, char **argv) {
     if (argc != 6) {
         fprintf(stderr, "Usage: --render-evidence RESOURCE_DIR SLF_OR_DASH OUTPUT_DIR "
-                        "cn|jp|jp-legacy|cn-jp-font\n");
+                        "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field\n");
         return 2;
     }
     const std::string mode(argv[5]), directory(argv[4]);
     const bool translated = mode == "jp" || mode == "jp-legacy";
-    if (!translated && mode != "cn" && mode != "cn-jp-font") return 2;
+    const bool fieldMenu = mode == "cn-jp-font-field";
+    if (!translated && mode != "cn" && mode != "cn-jp-font" && !fieldMenu) return 2;
     if (translated && strcmp(argv[3], "-") == 0) return 2;
     try {
         Require(SDL_Init(0) == 0, "SDL_Init failed");
@@ -107,7 +108,7 @@ int RenderEvidence(int argc, char **argv) {
         if (translated) gConfig.pszMsgFile = strdup(argv[3]);
         Require(PAL_InitGlobals() == 0 && gConfig.fIsWIN95, "Expected Win95 resources");
         Require(PAL_InitText() == 0, "Cannot load game text");
-        if (mode == "cn-jp-font") g_TextLib.iFontFlavor = kFontFlavorJapanese;
+        if (mode == "cn-jp-font" || fieldMenu) g_TextLib.iFontFlavor = kFontFlavorJapanese;
         Require(PAL_InitFont(&gConfig) == 0, "Cannot load engine font");
         PAL_InitGameData(0);
         Require(PAL_InitUI() == 0, "Cannot load UI sprites");
@@ -143,7 +144,9 @@ int RenderEvidence(int argc, char **argv) {
         for (WORD object : magics) {
             SDL_FillRect(gpScreen, nullptr, 0);
             PAL_ClearKeyState();
-            PAL_MagicSelectionMenuInit(0, TRUE, object);
+            // Match PAL98's outside-battle menu for the same-font comparison.
+            // The original modes retain their battle-menu fixture.
+            PAL_MagicSelectionMenuInit(0, !fieldMenu, object);
             Require(PAL_MagicSelectionMenuUpdate() == 0xffff, "Unexpected menu action");
             Save(directory, "magic-" + std::to_string(object));
             fprintf(report, "%u,%d\n", object, CountClippedInk(object, false));
