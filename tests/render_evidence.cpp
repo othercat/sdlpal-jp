@@ -14,6 +14,7 @@ extern SDL_Surface *gpScreenReal;
 extern SDL_Window *gpWindow;
 extern SDL_Renderer *gpRenderer;
 extern SDL_Texture *gpTexture;
+extern void (*VIDEO_TestFrameHook)(void);
 }
 
 #if SDL_VERSION_ATLEAST(2, 0, 0)
@@ -137,6 +138,8 @@ void DrawAunt(const std::string& directory, bool translated) {
 }
 
 void SaveScales(const std::string& directory, const std::string& name);
+
+#include "portrait_effect_evidence.h"
 
 // Portrait fixtures exercise the unmodified production RGM/palette path. A
 // separate verifier checks every indexed pixel, palette and background byte.
@@ -783,6 +786,7 @@ int RenderEvidence(int argc, char **argv) {
     }
     const std::string mode(argv[5]), directory(argv[4]);
     const bool pages = mode == "cn-pages" || mode == "jp-pages";
+    const bool effects = mode == "jp-portrait-effects" || mode == "dos-portrait-effects";
     const bool longNames = mode == "jp-long-names" || mode == "jp-cursor-grid";
     const bool tournament = mode == "jp-npc-before" || mode == "jp-npc";
     const bool duplicates = mode == "jp-duplicates-before" || mode == "jp-duplicates";
@@ -795,11 +799,11 @@ int RenderEvidence(int argc, char **argv) {
         mode == "jp-portraits-rgb" || mode == "dos-portraits-rgb";
     const bool dos = mode == "dos" || mode == "dos-before" || mode == "dos-layout-before" ||
         mode == "dos-portraits" || mode == "dos-portraits-rgb" || mode == "dos-rgb" ||
-        mode == "dos-night-rgb";
+        mode == "dos-night-rgb" || mode == "dos-portrait-effects";
     const bool recovery = mode == "jp-recovery-before" || mode == "jp-recovery" ||
         tournament || duplicates || translations || (dos && !portraits);
-    const bool scaled = pages || longNames || recovery || portraits;
-    const bool translated = mode == "jp" || mode == "jp-legacy" || mode == "jp-pages" || longNames || recovery || portraits;
+    const bool scaled = pages || longNames || recovery || portraits || effects;
+    const bool translated = mode == "jp" || mode == "jp-legacy" || mode == "jp-pages" || longNames || recovery || portraits || effects;
     const bool fieldMenu = mode == "cn-jp-font-field";
     if (!translated && mode != "cn" && mode != "cn-jp-font" && !fieldMenu && !pages) return 2;
     if (translated && strcmp(argv[3], "-") == 0) return 2;
@@ -843,7 +847,8 @@ int RenderEvidence(int argc, char **argv) {
             g_bRenderPaused = TRUE;
             gpGlobals->fNightPalette = mode.find("-night-") != std::string::npos;
             PAL_SetPalette(0, gpGlobals->fNightPalette);
-            if (portraits) DrawPortraitEvidence(directory);
+            if (effects) DrawPortraitEffects(directory);
+            else if (portraits) DrawPortraitEvidence(directory);
             else if (longNames) DrawLongNames(directory, mode == "jp-cursor-grid");
             else if (recovery) {
                 if (mode != "dos-layout-before")

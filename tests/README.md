@@ -3,6 +3,15 @@ How to write unit tests
 
 ### Optional Saturn portrait palettes
 
+Issue 9 R3 adds `jp-portrait-effects` / `dos-portrait-effects` modes to the Test
+renderer. They call the production effects, capture uploaded RGB and indexed
+frames, and read representative hidden SDL target textures. The same harness
+must be built against the before and after production sources. The independent
+NumPy/Pillow oracle is `tools/japanese/verify_portrait_effects.py`; see the
+[effect evidence](../docs/japanese-portrait-effects.md) for commands and inputs.
+`PortraitColors` includes mixed coverage, wave wraparound and the 12-round
+dissolve endpoint where the original low-nibble transition is unfinished.
+
 `tests/test_portrait_conversion.py` covers source RLE boundaries, valid large
 portraits, native-extent fitting, archive bounds and input/output preservation.
 The `PortraitPalettes` C++ tests reject malformed/wrong-target packs and check

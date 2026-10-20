@@ -22,6 +22,25 @@
 
 #include "main.h"
 
+// Source RGB555 expansion is not necessarily divisible by four. Clamp each
+// component so a color fade cannot oscillate around its endpoint.
+static BYTE PAL_ApproachColor(BYTE value, BYTE target, int step)
+{
+   if (value < target) return value + min(step, target - value);
+   return value - min(step, value - target);
+}
+
+static VOID PAL_StepPortraitColors(SDL_Color current[256], const SDL_Color target[256], int step)
+{
+   int i;
+   for (i = 0; i < 256; ++i)
+   {
+      current[i].r = PAL_ApproachColor(current[i].r, target[i].r, step);
+      current[i].g = PAL_ApproachColor(current[i].g, target[i].g, step);
+      current[i].b = PAL_ApproachColor(current[i].b, target[i].b, step);
+   }
+}
+
 BOOL
 PAL_ReadPalette(
    INT         iPaletteNum,
@@ -117,11 +136,13 @@ PAL_SetPalette(
 
 --*/
 {
+   SDL_Color portrait[256];
    SDL_Color *p = PAL_GetPalette(iPaletteNum, fNight);
 
    if (p != NULL)
    {
-      VIDEO_SetPalette(p);
+      VIDEO_GetPortraitPalette(portrait, TRUE);
+      VIDEO_SetPaletteWithPortraits(p, portrait);
    }
 }
 
@@ -148,6 +169,7 @@ PAL_FadeOut(
 
 --*/
 {
+   SDL_Color portrait[256], current[256];
    int                      i, j;
    UINT                     time;
    PAL_LARGE SDL_Color      palette[256];
@@ -164,6 +186,7 @@ PAL_FadeOut(
    //
    // Start fading out...
    //
+   VIDEO_GetPortraitPalette(portrait, FALSE);
    time = SDL_GetTicks() + iDelay * 10 * 60;
 
    while (TRUE)
@@ -184,13 +207,20 @@ PAL_FadeOut(
          newpalette[i].b = (palette[i].b * j) >> 6;
       }
 
-      VIDEO_SetPalette(newpalette);
+      for (i = 0; i < 256; ++i)
+      {
+         current[i].r = portrait[i].r * j >> 6;
+         current[i].g = portrait[i].g * j >> 6;
+         current[i].b = portrait[i].b * j >> 6;
+      }
+      VIDEO_SetPaletteWithPortraits(newpalette, current);
 
       UTIL_Delay(10);
    }
 
    memset(newpalette, 0, sizeof(newpalette));
-   VIDEO_SetPalette(newpalette);
+   memset(current, 0, sizeof(current));
+   VIDEO_SetPaletteWithPortraits(newpalette, current);
 }
 
 VOID
@@ -218,6 +248,7 @@ PAL_FadeIn(
 
 --*/
 {
+   SDL_Color portrait[256], current[256];
    int                      i, j;
    UINT                     time;
    SDL_Color               *palette;
@@ -231,6 +262,7 @@ PAL_FadeIn(
    //
    // Start fading in...
    //
+   VIDEO_GetPortraitPalette(portrait, TRUE);
    time = SDL_GetTicks() + iDelay * 10 * 60;
    while (TRUE)
    {
@@ -252,12 +284,18 @@ PAL_FadeIn(
          newpalette[i].b = (palette[i].b * j) >> 6;
       }
 
-      VIDEO_SetPalette(newpalette);
+      for (i = 0; i < 256; ++i)
+      {
+         current[i].r = portrait[i].r * j >> 6;
+         current[i].g = portrait[i].g * j >> 6;
+         current[i].b = portrait[i].b * j >> 6;
+      }
+      VIDEO_SetPaletteWithPortraits(newpalette, current);
 
       UTIL_Delay(10);
    }
 
-   VIDEO_SetPalette(palette);
+   VIDEO_SetPaletteWithPortraits(palette, portrait);
 }
 
 VOID
@@ -285,6 +323,7 @@ PAL_SceneFade(
 
 --*/
 {
+   SDL_Color portrait[256], current[256];
    SDL_Color            *palette, newpalette[256];
    int                   i, j;
    DWORD                 time;
@@ -301,6 +340,7 @@ PAL_SceneFade(
       iStep = 1;
    }
 
+   VIDEO_GetPortraitPalette(portrait, TRUE);
    gpGlobals->fNeedToFadeIn = FALSE;
 
    if (iStep > 0)
@@ -327,8 +367,11 @@ PAL_SceneFade(
             newpalette[j].r = (palette[j].r * i) >> 6;
             newpalette[j].g = (palette[j].g * i) >> 6;
             newpalette[j].b = (palette[j].b * i) >> 6;
+            current[j].r = portrait[j].r * i >> 6;
+            current[j].g = portrait[j].g * i >> 6;
+            current[j].b = portrait[j].b * i >> 6;
          }
-         VIDEO_SetPalette(newpalette);
+         VIDEO_SetPaletteWithPortraits(newpalette, current);
 
          PAL_ProcessEvent();
 
@@ -363,8 +406,11 @@ PAL_SceneFade(
             newpalette[j].r = (palette[j].r * i) >> 6;
             newpalette[j].g = (palette[j].g * i) >> 6;
             newpalette[j].b = (palette[j].b * i) >> 6;
+            current[j].r = portrait[j].r * i >> 6;
+            current[j].g = portrait[j].g * i >> 6;
+            current[j].b = portrait[j].b * i >> 6;
          }
-         VIDEO_SetPalette(newpalette);
+         VIDEO_SetPaletteWithPortraits(newpalette, current);
 
          PAL_ProcessEvent();
 
@@ -402,6 +448,7 @@ PAL_PaletteFade(
 
 --*/
 {
+   SDL_Color portrait[256], before[256], current[256];
    int            i, j;
    UINT           time;
    SDL_Color     *newpalette = PAL_GetPalette(iPaletteNum, fNight);
@@ -413,6 +460,8 @@ PAL_PaletteFade(
       return;
    }
 
+   VIDEO_GetPortraitPalette(portrait, TRUE);
+   VIDEO_GetPortraitPalette(before, FALSE);
    for (i = 0; i < 256; i++)
    {
       palette[i] = VIDEO_GetPalette()[i];
@@ -434,7 +483,13 @@ PAL_PaletteFade(
          t[j].b =
             (BYTE)(((INT)(palette[j].b) * (31 - i) + (INT)(newpalette[j].b) * i) / 31);
       }
-      VIDEO_SetPalette(t);
+      for (j = 0; j < 256; ++j)
+      {
+         current[j].r = (before[j].r * (31-i) + portrait[j].r * i) / 31;
+         current[j].g = (before[j].g * (31-i) + portrait[j].g * i) / 31;
+         current[j].b = (before[j].b * (31-i) + portrait[j].b * i) / 31;
+      }
+      VIDEO_SetPaletteWithPortraits(t, current);
 
       if (fUpdateScene)
       {
@@ -481,12 +536,16 @@ PAL_ColorFade(
 
 --*/
 {
+   SDL_Color portrait[256], current[256], target[256];
    SDL_Color       *palette;
    PAL_LARGE SDL_Color        newpalette[256];
    int              i, j;
 
    palette = PAL_GetPalette(gpGlobals->wNumPalette, gpGlobals->fNightPalette);
 
+   VIDEO_GetPortraitPalette(portrait, TRUE);
+   for (i = 0; i < 256; ++i) target[i] = palette[bColor];
+   memcpy(current, fFrom ? target : portrait, sizeof(current));
    iDelay *= 10;
    if (iDelay == 0)
    {
@@ -532,11 +591,12 @@ PAL_ColorFade(
             }
          }
 
-         VIDEO_SetPalette(newpalette);
+         PAL_StepPortraitColors(current, fFrom ? portrait : target, 4);
+         VIDEO_SetPaletteWithPortraits(newpalette, current);
          UTIL_Delay(iDelay);
       }
 
-      VIDEO_SetPalette(palette);
+      VIDEO_SetPaletteWithPortraits(palette, portrait);
    }
    else
    {
@@ -574,7 +634,8 @@ PAL_ColorFade(
             }
          }
 
-         VIDEO_SetPalette(newpalette);
+         PAL_StepPortraitColors(current, fFrom ? portrait : target, 4);
+         VIDEO_SetPaletteWithPortraits(newpalette, current);
          UTIL_Delay(iDelay);
       }
 
@@ -583,7 +644,7 @@ PAL_ColorFade(
          newpalette[i] = palette[bColor];
       }
 
-      VIDEO_SetPalette(newpalette);
+      VIDEO_SetPaletteWithPortraits(newpalette, target);
    }
 }
 
@@ -606,6 +667,7 @@ PAL_FadeToRed(
 
 --*/
 {
+   SDL_Color portrait[256], current[256], target[256];
    SDL_Color                 *palette;
    PAL_LARGE SDL_Color        newpalette[256];
    int                        i, j;
@@ -613,6 +675,13 @@ PAL_FadeToRed(
 
    palette = PAL_GetPalette(gpGlobals->wNumPalette, gpGlobals->fNightPalette);
    memcpy(newpalette, palette, sizeof(newpalette));
+   VIDEO_GetPortraitPalette(portrait, TRUE);
+   memcpy(current, portrait, sizeof(current));
+   for (i = 0; i < 256; ++i)
+   {
+      target[i].r = (portrait[i].r + portrait[i].g + portrait[i].b) / 4 + 64;
+      target[i].g = target[i].b = 0;
+   }
 
    for (i = 0; i < gpScreen->pitch * gpScreen->h; i++)
    {
@@ -655,7 +724,8 @@ PAL_FadeToRed(
          }
       }
 
-      VIDEO_SetPalette(newpalette);
+      PAL_StepPortraitColors(current, target, 8);
+      VIDEO_SetPaletteWithPortraits(newpalette, current);
       UTIL_Delay(75);
    }
 }

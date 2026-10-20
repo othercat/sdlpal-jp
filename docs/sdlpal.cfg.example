@@ -9,7 +9,8 @@
 
 # Optional Saturn-derived portrait pack made by tools/japanese/convert_portraits.py.
 # Omit to retain PC portraits. SDL2 keeps source RGB in normal day/night output.
-# SDL1 and special indexed effects retain approximate scene-palette colors.
+# SDL2 also carries source colors through fades, waves and screen transitions.
+# SDL1 and unrecognized direct palette changes retain indexed approximation.
 #PortraitFileName=paljpn-win.por
 
 # SavePath: Indicate the path where the game should save. 

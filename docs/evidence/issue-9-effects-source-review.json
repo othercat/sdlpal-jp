@@ -1,0 +1,1273 @@
+{
+  "issue": 9,
+  "round": "R3 special effects",
+  "date": "2026-10-21",
+  "scope": "Independent static Saturn original-disc follow-up. No game/emulator/UI, new build, current SDL implementation review, repository/Git/Issue/configuration mutation, or renewed full portrait slot/identity audit.",
+  "status": "Static investigation complete; dynamic hardware equivalence remains untested.",
+  "input_files": [
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r1-20261021\\source-review\\PROG.BIN",
+      "bytes": 411244,
+      "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r1-20261021\\source-review\\ALLDAT.NEW",
+      "bytes": 32084,
+      "sha256": "86c8b9728c7b80447cc41babf99951d60b134362a11eeee5e0dd854db4e0ca5c"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r1-20261021\\source-review\\RGM.JOE",
+      "bytes": 1013760,
+      "sha256": "185ad075b447fd670316cf39b335f05868f547405f036d5ef88413a9181a5542"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+      "bytes": 308120,
+      "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+      "bytes": 65296,
+      "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r1-20261021\\source-review\\source-review.json",
+      "bytes": 15719,
+      "sha256": "c06b9a73ab5251423fb1309541f8dee324d5817012481b9462986483d47fed65"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r2-night-20261021\\source-review\\source-review.json",
+      "bytes": 31607,
+      "sha256": "a14ee3070d50e0d4958a6645bb4676a3b9702c5fe3bbbd1a435bcaae210e53c7"
+    }
+  ],
+  "address_convention": "PROG.BIN file offset + 0x06020000 = SH-2 runtime address.",
+  "script_convention": "Zero-based BE16 four-WORD JM.SEC concatenated with JM.NOR. PC function names only identify comparison operations; they do not assert Saturn behavior equals PC.",
+  "disassembly_caution": "The helper decodes aligned words individually, including literal-pool data. Code-vs-data/reachability classifications in this report are manually delimited; generated snippets are not blanket claims that every decoded line executes.",
+  "summary_zh": [
+    "红渐变004F、ColorFade 008C和wave 0071在本盘都是完整12字节空函数；这只证明对应脚本入口不实施这些PC效果，不能推出全游戏所有视觉路径都不存在同类效果。",
+    "0050淡出收尾清除0x25E00000起0x40000字节，覆盖头像NBG1；0093和0073在其处理路径先清除NBG1的0x20000字节。头像跨这些生命周期永久保留不符合已证实的原盘清层行为。",
+    "已核对的0050、0051、0093颜色计算调用写sprite0比率，不直接写头像NBG1比率或bank3。显示开关和清层另有作用；这些事实不能推出头像每个中间帧的颜色。",
+    "全部22个指向同一ratio writer的直接literal候选中，1个是字面池假阳性，21个为代码调用。NBG1的3个调用只重置比率0；这是一组有边界的直接调用核对，并未穷尽计算地址/间接调用/其他模块。",
+    "0080有32次更新/等待循环且清除一项fade状态，但处理函数中没有直接调色板/比率/NBG1写入；不能把更新调用误记为空函数，也不能声称已验证日夜硬件交叉渐变。",
+    "PC的逐字节溶解、战斗擦除顺序、wave位移算法与土星动态行为的等价性均未建立；适配中的这些行为应标为PC兼容策略，不标为土星原版逐帧复刻。"
+  ],
+  "reused_portrait_facts": {
+    "evidence": "Pinned R1/R2 reports above; not re-audited all slots in R3.",
+    "plane": "NBG1 bitmap at 0x25E20000, 0x20000-byte allocation",
+    "palette": "Layer bank3, fixed ALLDAT.NEW[0x600:0x800], shared by portraits rather than palette per portrait.",
+    "palette_sha256": "50d47e5f888d08d10de34b1ea55222dfc83a64c69e8d36343a14e7fd8a407867",
+    "format": "BE16 RGB5; RGB8 = channel5 << 3",
+    "hardware_boundary": "NBG1 color calculation defaults to ratio0 (documented 31:1), so preserving decoded source RGB does not claim exact final Saturn hardware pixels."
+  },
+  "script_operations": [
+    {
+      "opcode": "0x004F",
+      "comparison_label": "PC PAL_FadeToRed",
+      "table_file_offset": "0x56f00",
+      "table_bytes_hex": "0602b130",
+      "handler_file_offset": "0xb130",
+      "handler_runtime_address": "0x0602B130",
+      "use_count": 1,
+      "first_12_uses": [
+        {
+          "script_index": 44155,
+          "words": [
+            79,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "first_12_is_complete": true
+    },
+    {
+      "opcode": "0x0050",
+      "comparison_label": "PC PAL_FadeOut",
+      "table_file_offset": "0x56f04",
+      "table_bytes_hex": "0602b13c",
+      "handler_file_offset": "0xb13c",
+      "handler_runtime_address": "0x0602B13C",
+      "use_count": 931,
+      "first_12_uses": [
+        {
+          "script_index": 27,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 31,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 35,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 39,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 47,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 51,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 55,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 59,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 63,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 109,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 171,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 223,
+          "words": [
+            80,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "first_12_is_complete": false
+    },
+    {
+      "opcode": "0x0051",
+      "comparison_label": "PC PAL_FadeIn",
+      "table_file_offset": "0x56f08",
+      "table_bytes_hex": "0602b180",
+      "handler_file_offset": "0xb180",
+      "handler_runtime_address": "0x0602B180",
+      "use_count": 3,
+      "first_12_uses": [
+        {
+          "script_index": 3411,
+          "words": [
+            81,
+            65535,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 5358,
+          "words": [
+            81,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 37357,
+          "words": [
+            81,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "first_12_is_complete": true
+    },
+    {
+      "opcode": "0x0071",
+      "comparison_label": "PC screen wave",
+      "table_file_offset": "0x56f88",
+      "table_bytes_hex": "0602c910",
+      "handler_file_offset": "0xc910",
+      "handler_runtime_address": "0x0602C910",
+      "use_count": 8,
+      "first_12_uses": [
+        {
+          "script_index": 13017,
+          "words": [
+            113,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 13317,
+          "words": [
+            113,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 27190,
+          "words": [
+            113,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 30891,
+          "words": [
+            113,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 32717,
+          "words": [
+            113,
+            255,
+            65532,
+            0
+          ]
+        },
+        {
+          "script_index": 33872,
+          "words": [
+            113,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 35291,
+          "words": [
+            113,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "script_index": 35416,
+          "words": [
+            113,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "first_12_is_complete": true
+    },
+    {
+      "opcode": "0x0073",
+      "comparison_label": "PC VIDEO_FadeScreen / dissolve",
+      "table_file_offset": "0x56f90",
+      "table_bytes_hex": "0602ca34",
+      "handler_file_offset": "0xca34",
+      "handler_runtime_address": "0x0602CA34",
+      "use_count": 50,
+      "first_12_uses": [
+        {
+          "script_index": 786,
+          "words": [
+            115,
+            0,
+            65535,
+            0
+          ]
+        },
+        {
+          "script_index": 2577,
+          "words": [
+            115,
+            2,
+            65535,
+            0
+          ]
+        },
+        {
+          "script_index": 5676,
+          "words": [
+            115,
+            2,
+            65535,
+            0
+          ]
+        },
+        {
+          "script_index": 12624,
+          "words": [
+            115,
+            0,
+            936,
+            0
+          ]
+        },
+        {
+          "script_index": 12657,
+          "words": [
+            115,
+            0,
+            65535,
+            925
+          ]
+        },
+        {
+          "script_index": 12808,
+          "words": [
+            115,
+            0,
+            926,
+            927
+          ]
+        },
+        {
+          "script_index": 13134,
+          "words": [
+            115,
+            0,
+            1178,
+            0
+          ]
+        },
+        {
+          "script_index": 23773,
+          "words": [
+            115,
+            2,
+            2294,
+            2295
+          ]
+        },
+        {
+          "script_index": 23840,
+          "words": [
+            115,
+            2,
+            2295,
+            0
+          ]
+        },
+        {
+          "script_index": 24008,
+          "words": [
+            115,
+            7,
+            2328,
+            2333
+          ]
+        },
+        {
+          "script_index": 24348,
+          "words": [
+            115,
+            3,
+            2339,
+            2340
+          ]
+        },
+        {
+          "script_index": 25507,
+          "words": [
+            115,
+            0,
+            2391,
+            0
+          ]
+        }
+      ],
+      "first_12_is_complete": false
+    },
+    {
+      "opcode": "0x0080",
+      "comparison_label": "PC PAL_PaletteFade",
+      "table_file_offset": "0x56fc4",
+      "table_bytes_hex": "0602d40c",
+      "handler_file_offset": "0xd40c",
+      "handler_runtime_address": "0x0602D40C",
+      "use_count": 4,
+      "first_12_uses": [
+        {
+          "script_index": 5341,
+          "words": [
+            128,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 9613,
+          "words": [
+            128,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 15008,
+          "words": [
+            128,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 30733,
+          "words": [
+            128,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "first_12_is_complete": true
+    },
+    {
+      "opcode": "0x008C",
+      "comparison_label": "PC PAL_ColorFade",
+      "table_file_offset": "0x56ff4",
+      "table_bytes_hex": "0602daa4",
+      "handler_file_offset": "0xdaa4",
+      "handler_runtime_address": "0x0602DAA4",
+      "use_count": 6,
+      "first_12_uses": [
+        {
+          "script_index": 18226,
+          "words": [
+            140,
+            26,
+            2,
+            0
+          ]
+        },
+        {
+          "script_index": 18454,
+          "words": [
+            140,
+            26,
+            4,
+            65535
+          ]
+        },
+        {
+          "script_index": 33835,
+          "words": [
+            140,
+            79,
+            2,
+            0
+          ]
+        },
+        {
+          "script_index": 33838,
+          "words": [
+            140,
+            79,
+            2,
+            65535
+          ]
+        },
+        {
+          "script_index": 34029,
+          "words": [
+            140,
+            127,
+            4,
+            0
+          ]
+        },
+        {
+          "script_index": 34038,
+          "words": [
+            140,
+            127,
+            0,
+            65535
+          ]
+        }
+      ],
+      "first_12_is_complete": true
+    },
+    {
+      "opcode": "0x0093",
+      "comparison_label": "PC PAL_SceneFade",
+      "table_file_offset": "0x57010",
+      "table_bytes_hex": "0602dd40",
+      "handler_file_offset": "0xdd40",
+      "handler_runtime_address": "0x0602DD40",
+      "use_count": 12,
+      "first_12_uses": [
+        {
+          "script_index": 3409,
+          "words": [
+            147,
+            65534,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 5224,
+          "words": [
+            147,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 11667,
+          "words": [
+            147,
+            65532,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 18248,
+          "words": [
+            147,
+            65532,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 27249,
+          "words": [
+            147,
+            65532,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 27311,
+          "words": [
+            147,
+            8,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 27313,
+          "words": [
+            147,
+            65534,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 30490,
+          "words": [
+            147,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 30731,
+          "words": [
+            147,
+            4,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 32718,
+          "words": [
+            147,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 35293,
+          "words": [
+            147,
+            65535,
+            0,
+            0
+          ]
+        },
+        {
+          "script_index": 35684,
+          "words": [
+            147,
+            65535,
+            0,
+            0
+          ]
+        }
+      ],
+      "first_12_is_complete": true
+    },
+    {
+      "opcode": "0x009B",
+      "comparison_label": "PC fade current scene (VIDEO_FadeScreen in this port)",
+      "table_file_offset": "0x57030",
+      "table_bytes_hex": "0602e090",
+      "handler_file_offset": "0xe090",
+      "handler_runtime_address": "0x0602E090",
+      "use_count": 0,
+      "first_12_uses": [],
+      "first_12_is_complete": true
+    }
+  ],
+  "complete_operation_uses": {
+    "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\operation-uses.json",
+    "bytes": 140564,
+    "sha256": "2e0f168c0808f06554853dd9525211c2bb62b07b1e4bda60cc90937b9999b523"
+  },
+  "operation_findings": [
+    {
+      "opcodes": [
+        "0x004F",
+        "0x0071",
+        "0x008C"
+      ],
+      "certainty": "confirmed complete handlers",
+      "behavior": "Frame prologue/epilogue followed by rts/nop only; no calls or state/palette writes.",
+      "anchors": [
+        {
+          "file_offset": "0xb130",
+          "end_exclusive": "0xb13c",
+          "runtime_address": "0x0602B130",
+          "bytes_hex": "2fe66ef36fe36ef6000b0009",
+          "meaning": "004F complete no-op"
+        },
+        {
+          "file_offset": "0xc910",
+          "end_exclusive": "0xc91c",
+          "runtime_address": "0x0602C910",
+          "bytes_hex": "2fe66ef36fe36ef6000b0009",
+          "meaning": "0071 complete no-op"
+        },
+        {
+          "file_offset": "0xdaa4",
+          "end_exclusive": "0xdab0",
+          "runtime_address": "0x0602DAA4",
+          "bytes_hex": "2fe66ef36fe36ef6000b0009",
+          "meaning": "008C complete no-op"
+        }
+      ],
+      "constraint": "No original-script basis for imposing the PC red/color/wave transform on NBG1; retain explicit PC compatibility policy if implemented."
+    },
+    {
+      "opcodes": [
+        "0x0050"
+      ],
+      "certainty": "handler and reviewed callee",
+      "handler": "0xB13C..0xB174 code, calls 0x06023A30 at 0xB162. Operand0 is copied to 0x060A1A72; zero becomes1.",
+      "callee": "0x3A30..0x3CEC (exclusive) code. A pre-existing fade flag at 0x06076BB0 can skip the fade/display-blank segment, but still reaches the clear tail.",
+      "behavior": "Ratio calls at 0x3B82/0x3BCA/0x3C14 use r4=-7 (sprite0). Display blank is called at 0x3CB6..0x3CBA. The tail clears 0x40000 bytes at 0x25E00000, including NBG1.",
+      "anchors": [
+        {
+          "file_offset": "0x3cb6",
+          "end_exclusive": "0x3cca",
+          "runtime_address": "0x06023CB6",
+          "bytes_hex": "d92d490b0009d12cd22d65136423d92c490b0009",
+          "meaning": "display blank then 0x40000-byte plane clear"
+        }
+      ],
+      "boundary": "No runtime capture of intermediate pixels, frame timing, secondary-layer blending or pending display-shadow updates."
+    },
+    {
+      "opcodes": [
+        "0x0051"
+      ],
+      "certainty": "handler and reviewed callee",
+      "handler": "0xB180..0xB1B8 code, calls 0x06023D80; zero operand0 becomes1.",
+      "callee": "0x3D80..0x3F00 reviewed code; gated by 0x06076BB0 and 0x06076C60.",
+      "behavior": "Enables display at 0x3DEA..0x3DEE, clears fade state at 0x3E14..0x3E18, and writes sprite0 ratio via r4=-7 at 0x3E3C/0x3E5A/0x3EAC. No direct NBG1 plane clear in this callee.",
+      "boundary": "A preceding0050 already clears NBG1. Whether portraits are redrawn and visible at each fade-in frame depends on calling state; static analysis does not capture it."
+    },
+    {
+      "opcodes": [
+        "0x0080"
+      ],
+      "certainty": "complete handler; not all transitive callees",
+      "code": "0xD40C..0xD484",
+      "behavior": "32 iterations. Positive operand0 calls wait0x060220F4(operand0); otherwise calls0x06035530(0) and0x060233C0(0). Afterwards writes0 to WORD0x06076BB0. No direct CRAM, ratio, or NBG1 write in this handler.",
+      "boundary": "Update/presentation callees and runtime events are not fully traced. This is not a pure no-op and does not establish PC day/night interpolation on the portrait bank."
+    },
+    {
+      "opcodes": [
+        "0x0093"
+      ],
+      "certainty": "handler and reviewed callee",
+      "handler": "0xDD40..0xDD60 code passes signed operand0 to0x06023F2C.",
+      "callee": "0x3F2C..0x40A4 code; literals follow.",
+      "behavior": "Clears NBG1 before branching on operand sign. Zero becomes1. Positive branch enables display and steps sprite0 ratio down; negative branch steps it up and finally blanks display. State0x06076DC0==12 alters loop lower bound.",
+      "anchors": [
+        {
+          "file_offset": "0x3f42",
+          "end_exclusive": "0x3f50",
+          "runtime_address": "0x06023F42",
+          "bytes_hex": "d159d25965136423d959490b0009",
+          "meaning": "unconditional pre-sign NBG1 bitmap clear"
+        },
+        {
+          "file_offset": "0x407e",
+          "end_exclusive": "0x4084",
+          "runtime_address": "0x0602407E",
+          "bytes_hex": "d913490b0009",
+          "meaning": "negative branch display blank call"
+        }
+      ],
+      "constraint": "Do not carry an un-cleared portrait companion image across this scene-fade lifecycle solely to preserve source RGB."
+    },
+    {
+      "opcodes": [
+        "0x0073"
+      ],
+      "certainty": "complete handler plus already-reviewed called fade-in routine",
+      "code": "0xCA34..0xCA6C code; literals0xCA6C..0xCA80",
+      "behavior": "Normalizes nonpositive operand0 to1, clears NBG1 at0x25E20000/0x20000, then calls0x06023D80 withr4=0.",
+      "anchors": [
+        {
+          "file_offset": "0xca4a",
+          "end_exclusive": "0xca60",
+          "runtime_address": "0x0602CA4A",
+          "bytes_hex": "d109d20965136423d809480b0009e400d808480b0009",
+          "meaning": "NBG1 clear followed by fade-in helper(0)"
+        }
+      ],
+      "boundary": "No PC six-index per-pixel dissolve sequence is present in the handler. Original dynamic transition appearance is untested; do not call the PC dissolve sequence a Saturn replica."
+    },
+    {
+      "opcodes": [
+        "0x009B"
+      ],
+      "certainty": "complete handler, partial transitive call review; zero uses in fixed script corpus",
+      "code": "0xE090..0xE108 code; literals follow",
+      "behavior": "Updates state at0x06076B70/0x06076BD4/0x06076BD6/0x06076BA2. Its zero-operand branch calls0x06027564 with current WORD0x06076B6E and0. No direct palette/ratio/NBG1 write in the handler.",
+      "boundary": "0x06027564 has further calls not completely followed. No statement of actual game use or equivalence to the PC VIDEO_FadeScreen implementation is justified."
+    }
+  ],
+  "ratio_writer_review": {
+    "writer": {
+      "file_offset": "0x3dcf0",
+      "end_exclusive": "0x3dcf6",
+      "runtime_address": "0x0605DCF0",
+      "bytes_hex": "d001000b0454",
+      "meaning": "mov.l literal0x060FFDC8,r0; rts; delay-slot mov.b r5,@(r0,r4)"
+    },
+    "literal": {
+      "file_offset": "0x3dcf8",
+      "end_exclusive": "0x3dcfc",
+      "runtime_address": "0x0605DCF8",
+      "bytes_hex": "060ffdc8",
+      "meaning": "pointer0x060FFDC8, data not instructions"
+    },
+    "register_mapping": "VDP2 shadow base0x060FFCC0 corresponds to hardware0x25F80000. r4=-7→CCRSA sprite0 low byte; -8→sprite1 high byte; 0→CCRNA NBG1 high byte; 1→NBG0 low byte (BE word layout).",
+    "table_file_offset": "0x56ACA",
+    "table_runtime_address": "0x06076ACA",
+    "table_be16_values": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "table_bytes_hex": "0000000100020003000400050006000700080009000a000b000c000d000e000f0010001100120013001400150016001700180019001a001b001c001d001e001f",
+    "search": "All aligned Dxxx literal-load encodings in this pinned PROG.BIN resolving to0x0605DCF0; then inspect candidate code contexts and distinguish literal-pool data.",
+    "candidate_count": 22,
+    "code_call_count": 21,
+    "nbg1_reset_count": 3,
+    "candidates": [
+      {
+        "literal_load_file_offset": "0x3b82",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x3bca",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x3c14",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x3e3c",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x3e5a",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x3eac",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "candidate_file_offset": "0x3f12",
+        "classification": "literal-pool false positive, not a code call"
+      },
+      {
+        "literal_load_file_offset": "0x3fcc",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x4048",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x4126",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x72ba",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x7480",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x9e3a",
+        "classification": "reviewed code call",
+        "r4": 0,
+        "shadow_byte_address": "0x060FFDC8",
+        "ratio_target": "NBG1",
+        "constant_r5": 0,
+        "r5_note": "table[0] = 0"
+      },
+      {
+        "literal_load_file_offset": "0xf026",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0xf04a",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0xf2d0",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x11682",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x170f8",
+        "classification": "reviewed code call",
+        "r4": -8,
+        "shadow_byte_address": "0x060FFDC0",
+        "ratio_target": "sprite1",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x1713a",
+        "classification": "reviewed code call",
+        "r4": -7,
+        "shadow_byte_address": "0x060FFDC1",
+        "ratio_target": "sprite0",
+        "constant_r5": null,
+        "r5_note": "ratio table value; fixed/dynamic context preserved in disassembly"
+      },
+      {
+        "literal_load_file_offset": "0x22a2e",
+        "classification": "reviewed code call",
+        "r4": 1,
+        "shadow_byte_address": "0x060FFDC9",
+        "ratio_target": "NBG0",
+        "constant_r5": 0,
+        "r5_note": "table[0] = 0"
+      },
+      {
+        "literal_load_file_offset": "0x2c5ae",
+        "classification": "reviewed code call",
+        "r4": 0,
+        "shadow_byte_address": "0x060FFDC8",
+        "ratio_target": "NBG1",
+        "constant_r5": 0,
+        "r5_note": "table[0] = 0"
+      },
+      {
+        "literal_load_file_offset": "0x2c6fc",
+        "classification": "reviewed code call",
+        "r4": 0,
+        "shadow_byte_address": "0x060FFDC8",
+        "ratio_target": "NBG1",
+        "constant_r5": 0,
+        "r5_note": "table[0] = 0"
+      }
+    ],
+    "limit": "Does not exhaust indirect/computed calls or writes, interrupt-time shadow consumers, or other executables. The 3 NBG1 calls use table[0]=0; no NBG1 ratio animation is established in this direct-call set."
+  },
+  "display_and_clear_helpers": {
+    "display_enable": {
+      "file_offset": "0x3d7f4",
+      "end_exclusive": "0x3d7fe",
+      "runtime_address": "0x0605D7F4",
+      "bytes_hex": "c5609109201b000bc160",
+      "meaning": "OR TVMD.DISP0x8000 into shadow WORD atGBR+0xC0"
+    },
+    "display_blank": {
+      "file_offset": "0x3d7fe",
+      "end_exclusive": "0x3d80c",
+      "runtime_address": "0x0605D7FE",
+      "bytes_hex": "c56091052019d102c160000b2101",
+      "meaning": "AND0x7FFF in shadow and write WORD to hardware0x25F80000"
+    },
+    "clear_helper": "0x060226C0 accepts a byte count. For these sizes divisible by4 it shifts the count right2 at0x26EA, loops over4-byte units, loads zero at0x270A and stores it with mov.l at0x270C. An exact NBG1 base argument additionally clears BYTE0x06076DD3 at0x26D2..0x26D6. The remaining byte-count path is preserved in clear_bytes_helper.sh2.txt.",
+    "limit": "Display blank affects output beyond the portrait layer. Shadow upload timing is not a captured frame schedule."
+  },
+  "wipe_and_battle_boundary": {
+    "pc_anchor": "battle.c:333 calls VIDEO_SwitchScreen(5).",
+    "saturn_table_caution": "Normal table at0x56DC4 is used only for opcodes>10. Low opcode0007 is handled separately by script dispatch; its zero table word is not evidence of no-op/absence.",
+    "scope": "No complete trace of Saturn low-opcode0007 battle-entry wipe; no proof of PC {0,3,1,5,2,4} stripe order or an equivalent wipe algorithm.",
+    "constraint": "Treat any migrated PC index wipe as explicit compatibility behavior; apply a consistent lifecycle/occlusion policy, but do not label it original Saturn timing."
+  },
+  "implementation_constraints_zh": [
+    "保存源头像RGB与实现全屏渐变/清屏生命周期应分别验收；原盘有明确清层，保持源色不等于头像跨清屏永不消失。",
+    "RedFade/ColorFade/wave没有可直接移植的土星脚本实现。若为PC兼容而增加变色或位移，记录采用的变换和范围，不能写成已由原盘证实的动态等价。",
+    "PaletteFade不能简单归入原盘NBG1夜色插值；当前已固定的bank3来源继续成立，但特效帧是否由其他层影响最终颜色需要动态证据。",
+    "源RGB/alpha、特效前后清除与恢复、遮挡/裁剪和最终索引兼容各自应有明确测试；静态资源证据不能替代实机帧与时序验收。"
+  ],
+  "unverified": [
+    "Saturn actual frame captures and exact fade step durations/rounding.",
+    "All transitive update callbacks, computed writes/calls, interrupts and other executable modules.",
+    "Exact final NBG1 secondary-layer mixing, special-color conditions, and per-pixel original hardware outputs.",
+    "Battle wipe/dissolve order, PC wave equivalence, and whether any non-script original path supplies similar effects.",
+    "Current R3 SDL product implementation, build/test/rendering outcomes: deliberately owned by main agent and not reviewed here."
+  ],
+  "prior_hardware_references": [
+    {
+      "url": "https://www.infochunk.com/saturn/segahtml_en/hard/vdp2/hon/p12_14.htm",
+      "use": "Prior R2 documentation: CCRNA, NBG1 ratio bits12..8 and ratio0=31:1. Not newly browsed or proof of a game dynamic path."
+    },
+    {
+      "url": "https://www.infochunk.com/saturn/segahtml_en/hard/vdp2/hon/p09_21.htm",
+      "use": "Prior R2 documentation: CCRSA sprite0 ratio bits4..0."
+    },
+    {
+      "url": "https://www.infochunk.com/saturn/segahtml_en/hard/vdp2/hon/p15_30.htm",
+      "use": "Prior R2 documentation: TVMD DISP bit15."
+    }
+  ],
+  "reproduction": {
+    "python": "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+    "version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "prefix": "C:\\Users\\other\\CodexTools\\python",
+    "base_prefix": "C:\\Users\\other\\AppData\\Local\\Programs\\Python\\Python311",
+    "commands": [
+      "& (Join-Path $env:USERPROFILE 'CodexTools\\python\\Scripts\\python.exe') -B -X utf8 .\\inspect_effects.py --ops",
+      "& (Join-Path $env:USERPROFILE 'CodexTools\\python\\Scripts\\python.exe') -B -X utf8 .\\inspect_effects.py --refs 0x0605dcf0",
+      "& (Join-Path $env:USERPROFILE 'CodexTools\\python\\Scripts\\python.exe') -B -X utf8 .\\inspect_effects.py 0x3f2c 0x40a4",
+      "& (Join-Path $env:USERPROFILE 'CodexTools\\python\\Scripts\\python.exe') -B -X utf8 .\\build_report.py"
+    ],
+    "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review",
+    "execution": "Hash/structure/disassembly checks only; no original machine code executed."
+  },
+  "supporting_artifacts": [
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\clear_bytes_helper.sh2.txt",
+      "bytes": 2256,
+      "sha256": "95ff151374e86b72e1ee1ce8348cff3926cb9a14babb093bf45b8b2dd1a6c34d"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\dispatch_restricted_table.sh2.txt",
+      "bytes": 1302,
+      "sha256": "63b6a54c61b996f6e6b0ebf821d5de011aea082757bd2200d79bcc88cb0577b7"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\display_blank_helpers.sh2.txt",
+      "bytes": 498,
+      "sha256": "b5aad58aa2f110689eb8d1f282a99fa055f593ecf1342deed32921850fd43d10"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\fade_caller_a.sh2.txt",
+      "bytes": 2031,
+      "sha256": "86ecef6d24e8be14c4afb2a136916e16832fff24e2c1c34f47cd50816f2bcbb4"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\fade_caller_b.sh2.txt",
+      "bytes": 2340,
+      "sha256": "8bd5f88c7f81eed4f729e802c6f0cb9d6b989719c96c03f00eb5f25e43423b1c"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\fade_handlers.sh2.txt",
+      "bytes": 2298,
+      "sha256": "c5a1d95642c3f0d0c0bff5d97c2d3bde2841c6dfe07fd83e818b89ea204558a4"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\fade_in_complete.sh2.txt",
+      "bytes": 6138,
+      "sha256": "05646bc89b5d7347f6a2043ada4fbc928d7a561612684e197166803f0f6d6501"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\fade_out_complete.sh2.txt",
+      "bytes": 12001,
+      "sha256": "16e25581c452b032605c90feab495c846f2d86a0233e309944a079d9646f9bee"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\fade_out_prefix.sh2.txt",
+      "bytes": 6484,
+      "sha256": "577e36960569ccd7421979b7d01aaadfdd090cc2599505d267bc7918f1e15b68"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\no_op_color_fade.sh2.txt",
+      "bytes": 170,
+      "sha256": "789cfcde14ace487e8d41106deca3a4440bd9b2a626f1d76ed4f225603b90323"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\no_op_red_fade.sh2.txt",
+      "bytes": 170,
+      "sha256": "8172d9e5b38e6567d9c0098a67c1144d10f12fd04d8773994cbe19b395522e47"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\no_op_wave.sh2.txt",
+      "bytes": 170,
+      "sha256": "0894a9187e3d525752c5e3a040e7894c0c7a91e6b078133d46afa7e9b890c585"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\other_fade.sh2.txt",
+      "bytes": 2892,
+      "sha256": "43c9f11c2625f056cbf4bbe5d5cacb48195cb0d251b037de34c4c2c0e963b0b3"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\other_ratio_callers.sh2.txt",
+      "bytes": 4828,
+      "sha256": "5879009cd98a22a87e0de80dc3198d7fb991158be5aec7ac87746e8e0ca1b685"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\palette_fade_handler.sh2.txt",
+      "bytes": 1838,
+      "sha256": "41544dcca3b333a0a589e3ab0236aa2684fa89266b02c41e934f7c8dc9038296"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\ratio_writer.sh2.txt",
+      "bytes": 1366,
+      "sha256": "6e7b2bc7914b0d20bc49277e46c929a8a868fde16c7c28791beceab523c4a1d3"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\ratio_writer_all_candidates.sh2.txt",
+      "bytes": 29436,
+      "sha256": "3a42f6f008eb8bf9d61af76b2cb5aef405bc6424f5406bc5af5f86536f9e2e7c"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\scene_change_consumer.sh2.txt",
+      "bytes": 2829,
+      "sha256": "4f2e632b6b94ea663de9a658045161138addc5996dbbbf1f447f9c34f9b0e630"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\scene_fade_complete.sh2.txt",
+      "bytes": 5769,
+      "sha256": "9a085019db4915bb2d9bca562a7070aff899082b106c0e31a2b98a8ab44b766a"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\scene_fade_handler.sh2.txt",
+      "bytes": 512,
+      "sha256": "eee28a11fc1080a952a62ab6dcc14eafa667b1de2aae36b769323cfb86658144"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\scene_loader_prefix.sh2.txt",
+      "bytes": 3512,
+      "sha256": "347cc46ba84913d974814f9ea857c5c58c23979ed69f0383cf7a214285f8dcf2"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\scene_transition_0073.sh2.txt",
+      "bytes": 955,
+      "sha256": "0ef3b55f0518bf0feae20c965593d1a5ff310771027a587cbfbdac217a077ccc"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\scene_transition_009b.sh2.txt",
+      "bytes": 2098,
+      "sha256": "2fcf99c3af383d9291399e51d8323d498b3c9de5dca7a6d5e630ca1e33f77d1e"
+    }
+  ],
+  "helper_files": [
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\inspect_effects.py",
+      "bytes": 3249,
+      "sha256": "8366b35b9cd1afbfe395786acc91edb35192d25307cb11a22f073e2a0da7b965"
+    },
+    {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r3-effects-20261021\\source-review\\build_report.py",
+      "bytes": 17224,
+      "sha256": "937e34442f4a8a59b74c69d6ea99782de531e904e565e5a7d92cab0a303f4a13"
+    }
+  ]
+}

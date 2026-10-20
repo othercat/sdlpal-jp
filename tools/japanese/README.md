@@ -1,5 +1,10 @@
 # 日文转换工具
 
+[#9 R3 特效证据](../../docs/japanese-portrait-effects.md)：
+`verify_portrait_effects.py` 使用固定 Codex Python 3.11 环境内的 NumPy／Pillow，
+独立核对实际特效帧的头像 RGB、背景索引、调色板和 SDL 纹理读回。
+修前与修后使用相同 Test 入口；不是实机验收或土星硬件逐帧复刻。
+
 三个上游入口来自 [PalMusicFan/sdlpal v2026.08 Release](https://github.com/PalMusicFan/sdlpal/releases/tag/v2026.08)。初始导入逐字节保留附件，下载地址、GitHub asset ID、大小和 SHA256 记录于 [upstream.json](upstream.json)。后续差异通过独立提交追溯，原始导入提交记录在 [Issue #2](https://github.com/othercat/sdlpal-jp/issues/2)。
 
 - `makemessage_j.py`：Win PC 根资源与土星提取文本生成 UTF-8 SLF，默认包含 #3 恢复的 119 组映射、#4 的 10 组 NPC 修正，以及 #8 两个复用消息键的中性取得用语。

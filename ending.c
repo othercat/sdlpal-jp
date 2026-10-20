@@ -87,13 +87,14 @@ PAL_ShowFBP(
    if (wFade)
    {
       SDL_Surface *p = VIDEO_CreateCompatibleSurface(gpScreen);
+      PORTRAITTRANSITION *portrait;
 
       wFade++;
       wFade *= 10;
 
       PAL_FBPBlitToSurface(buf, p);
       VIDEO_BackupScreen(gpScreen);
-      VIDEO_ClearPortraits(gpScreenBak); // Indexed dissolve compatibility path.
+      portrait = VIDEO_BeginPortraitTransition(p, gpScreenBak);
 
       for (i = 0; i < 16; i++)
       {
@@ -123,6 +124,7 @@ PAL_ShowFBP(
                ((LPBYTE)(gpScreenBak->pixels))[k] = ((a & 0xF0) | (b & 0x0F));
             }
 
+            VIDEO_StepPortraitTransition(portrait, rgIndex[j], 6, i + 1, 16);
 			VIDEO_RestoreScreen(gpScreen);
 
             if (g_wCurEffectSprite != 0)
@@ -137,6 +139,8 @@ PAL_ShowFBP(
          }
       }
 
+      VIDEO_EndPortraitTransition(portrait);
+      VIDEO_ClearPortraits(gpScreen);
 	  VIDEO_FreeSurface(p);
    }
 

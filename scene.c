@@ -402,7 +402,6 @@ PAL_ApplyWave(
    //
    // Calculate the waving offsets.
    //
-   VIDEO_ClearPortraits(lpSurface); // Keep the indexed wave effect's geometry.
    a = 0;
    b = 60 + 8;
 
@@ -442,6 +441,7 @@ PAL_ApplyWave(
          memmove(p, &p[b], 320 - b);
          //memcpy(p + 320 - b, buf, b);
          memcpy(&p[320 - b], buf, b);
+         VIDEO_ShiftPortraitRow(lpSurface, i, b);
       }
 
       a = (a + 1) % 32;

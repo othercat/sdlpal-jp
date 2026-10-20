@@ -63,8 +63,8 @@ LPWSTR g_rcCredits[12];
 
 TEXTLIB         g_TextLib;
 
-// Keep the indexed fallback for SDL1 and special palette effects. SDL2 also
-// retains source RGB in a companion plane through ordinary drawing/backup.
+// SDL1 keeps the indexed fallback. SDL2 retains source color references
+// through drawing, backup, palette transforms and geometric transitions.
 typedef struct tagPALPORTRAIT
 {
    WORD width, height;
@@ -122,6 +122,7 @@ PAL_ReadPortraitFile(FILE *fp, BOOL fIsWIN95)
          goto invalid;
    }
    if (fgetc(fp) != EOF || ferror(fp)) goto invalid;
+   VIDEO_InitPortraitPalette(g_PortraitPalette);
    return TRUE;
 invalid:
    PAL_FreePortraits();

@@ -96,6 +96,7 @@ struct PortraitCanvas {
             base[i].r = i; base[i].g = i / 2; base[i].b = i / 3;
         }
         colors[3] = 248; colors[4] = 160; colors[5] = 104;
+        VIDEO_InitPortraitPalette(colors);
         // Index 2 is opaque black; source index 0 alone is transparent.
         const BYTE pixels[] = {1, 0, 2, 1};
         SDL_SetPaletteColors(indexed->format->palette, base, 0, 256);
@@ -181,6 +182,93 @@ TEST(PortraitColors, ClippedPortraitPlacementAndFullReset) {
     canvas.Compose();
     EXPECT_EQ(0x070302u, canvas.Pixel(0, 0));
     EXPECT_EQ(0x070302u, canvas.Pixel(1, 1));
+}
+
+TEST(PortraitColors, TransitionPreservesMixedCoverageAndNativeIndices) {
+    PortraitCanvas canvas;
+    SDL_Surface *next = SDL_CreateRGBSurface(0, 4, 4, 8, 0, 0, 0, 0);
+    SDL_SetPaletteColors(next->format->palette, canvas.base, 0, 256);
+    VIDEO_FillRect(next, nullptr, 7);
+    const BYTE pixel[] = {1};
+    VIDEO_SetPortrait(next, pixel, 1, 1, PAL_XY(3, 3), canvas.colors);
+    const auto before = std::vector<BYTE>((BYTE *)canvas.indexed->pixels,
+        (BYTE *)canvas.indexed->pixels + 16);
+    PORTRAITTRANSITION *transition = VIDEO_BeginPortraitTransition(next, canvas.indexed);
+    ASSERT_NE(nullptr, transition);
+    VIDEO_StepPortraitTransition(transition, 0, 1, 1, 2);
+    canvas.Compose();
+    EXPECT_EQ(0x7f5135u, canvas.Pixel(1, 1)); // old portrait to background
+    EXPECT_EQ(0x7f5135u, canvas.Pixel(3, 3)); // background to new portrait
+    EXPECT_EQ(0x070302u, canvas.Pixel(0, 0)); // outside both masks
+    EXPECT_EQ(0, memcmp(before.data(), canvas.indexed->pixels, before.size()));
+    VIDEO_StepPortraitTransition(transition, 0, 1, 2, 2);
+    canvas.Compose();
+    EXPECT_EQ(0x070302u, canvas.Pixel(1, 1));
+    EXPECT_EQ(0xf8a068u, canvas.Pixel(3, 3));
+    VIDEO_EndPortraitTransition(transition);
+    const BYTE rle[] = {1, 0, 1, 0, 1, 7};
+    PAL_RLEBlitToSurface(rle, canvas.indexed, PAL_XY(3, 3));
+    canvas.Compose();
+    EXPECT_EQ(0x070302u, canvas.Pixel(3, 3));
+    VIDEO_FreeSurface(next);
+}
+
+TEST(PortraitColors, WaveWrapsColorAndTransparencyTogether) {
+    PortraitCanvas colors;
+    SDL_Surface *screen = SDL_CreateRGBSurface(0, 320, 2, 8, 0, 0, 0, 0);
+    SDL_Surface *rgb = SDL_CreateRGBSurface(0, 320, 2, 32, 0xff0000, 0xff00, 0xff, 0);
+    SDL_SetPaletteColors(screen->format->palette, colors.base, 0, 256);
+    VIDEO_FillRect(screen, nullptr, 7);
+    const BYTE pixels[] = {1, 0, 2};
+    VIDEO_SetPortrait(screen, pixels, 3, 1, PAL_XY(0, 0), colors.colors);
+    VIDEO_ShiftPortraitRow(screen, 0, 1);
+    ASSERT_EQ(0, VIDEO_ComposeSurface(screen, rgb, colors.base));
+    const auto row = (Uint32 *)rgb->pixels;
+    EXPECT_EQ(0xf8a068u, row[319] & 0xffffff); // wraparound source color
+    EXPECT_EQ(0x070302u, row[0] & 0xffffff); // transparent padding
+    EXPECT_EQ(0u, row[1] & 0xffffff); // opaque black
+    const auto second = (Uint32 *)((BYTE *)rgb->pixels + rgb->pitch);
+    EXPECT_EQ(0x070302u, second[319] & 0xffffff);
+    VIDEO_ShiftPortraitRow(screen, 0, 320);
+    ASSERT_EQ(0, VIDEO_ComposeSurface(screen, rgb, colors.base));
+    EXPECT_EQ(0xf8a068u, row[319] & 0xffffff);
+    VIDEO_FreeSurface(screen); SDL_FreeSurface(rgb);
+}
+
+TEST(PortraitColors, DissolveEndpointDoesNotExposeUnfinishedNativeNibble) {
+    for (int direction : {0, 1}) {
+        PortraitCanvas canvas;
+        SDL_Surface *next = SDL_CreateRGBSurface(0, 4, 4, 8, 0, 0, 0, 0);
+        SDL_SetPaletteColors(next->format->palette, canvas.base, 0, 256);
+        const BYTE target = direction ? 0 : 15, old = direction ? 15 : 0;
+        VIDEO_FillRect(next, nullptr, target);
+        memset(canvas.indexed->pixels, old, 16); // retain old portrait coverage
+        auto transition = VIDEO_BeginPortraitTransition(next, canvas.indexed);
+        // Match the PC dissolve: round zero does not advance the low nibble.
+        for (int i = 0; i < 12; ++i) {
+            memset(canvas.indexed->pixels, direction ? 15-i : i, 16);
+            VIDEO_StepPortraitTransition(transition, 0, 1, i+1, 12);
+        }
+        canvas.Compose();
+        EXPECT_EQ(direction ? 4 : 11, ((BYTE *)canvas.indexed->pixels)[5]);
+        EXPECT_EQ(direction ? 0u : 0x0f0705u, canvas.Pixel(1, 1));
+        VIDEO_EndPortraitTransition(transition);
+        VIDEO_CopyEntireSurface(next, canvas.indexed);
+        canvas.Compose();
+        EXPECT_EQ(direction ? 0u : 0x0f0705u, canvas.Pixel(1, 1));
+        VIDEO_FreeSurface(next);
+    }
+}
+
+TEST(PortraitColors, NativeTransitionDoesNotAllocateCoverage) {
+    SDL_Surface *a = SDL_CreateRGBSurface(0, 4, 4, 8, 0, 0, 0, 0);
+    SDL_Surface *b = SDL_CreateRGBSurface(0, 4, 4, 8, 0, 0, 0, 0);
+    EXPECT_EQ(nullptr, VIDEO_BeginPortraitTransition(a, b));
+    VIDEO_StepPortraitTransition(nullptr, 0, 6, 1, 12);
+    VIDEO_EndPortraitTransition(nullptr);
+    EXPECT_EQ(nullptr, a->userdata);
+    EXPECT_EQ(nullptr, b->userdata);
+    VIDEO_FreeSurface(a); VIDEO_FreeSurface(b);
 }
 #endif
 
