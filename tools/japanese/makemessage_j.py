@@ -10,6 +10,19 @@ import sys
 import binascii
 import re
 
+# Win/Saturn script anchors reviewed in docs/japanese-missing-dialogues.md.
+# Append these omitted spans without shifting the 32 upstream mapping sections.
+# count, Win script, Saturn script, first/last Win ID, first/last Saturn ID
+RECOVERED_SECTIONS = (
+    (13, 7583, 8508, 2686, 2713, 3602, 3635),
+    (93, 24461, 26845, 9110, 9339, 11759, 12050),
+    (1, 27933, 30429, 9902, 9902, 12849, 12849),
+    (1, 28097, 35596, 9976, 9976, 14968, 14968),
+    (4, 30408, 32559, 10888, 10895, 13801, 13809),
+    (2, 32201, 37664, 11164, 11168, 15348, 15353),
+    (5, 35006, 35380, 12053, 12069, 14853, 14871),
+)
+
 if sys.version_info[0] >= 3:
     # Python 3 环境
     def to_str(b, enc='utf-8'): return b.decode(enc, 'replace') if isinstance(b, bytes) else b
@@ -33,6 +46,8 @@ def main():
     # parser.add_argument('-w', '--width', dest = 'wordwidth', default = 16, type = int, help = 'Word width in bytes, default is 16')
     # parser.add_argument("-c", "--comment", action = 'store_false', help = 'Automatically generate comments')
     parser.add_argument("-d", "--debug", action = 'store_true', help = 'Debug mode')
+    parser.add_argument("--upstream-baseline", action='store_true',
+                        help='Reproduce the v2026.08 output without Issue #3 recovery (audit only).')
     options = parser.parse_args()
 
     options.encoding = "shift_jis"
@@ -428,7 +443,8 @@ def main():
 
     print ("Now Processing the MESSAGE Sections. Please wait...")
     
-    for s in range(0,26+5+1):
+    recovered_sections = () if options.upstream_baseline else RECOVERED_SECTIONS
+    for s in range(0, 32 + len(recovered_sections)):
 	  #27 sections.
       if s == 0:
         begin_win_group = 0
@@ -590,6 +606,12 @@ def main():
         end_win_group = 4650
         win_script_num = 43549
         jpn_script_num = 15821
+      else:
+        count, win_script_num, jpn_script_num, first_win, final_win, first_jp, final_jp = recovered_sections[s - 32]
+        begin_win_group, end_win_group = 0, count - 1
+        if (struct.unpack_from('<HH', script_bytes, win_script_num * 8) != (0xffff, first_win) or
+            struct.unpack_from('>HH', jscript_bytes, jpn_script_num * 8) != (0xffff, first_jp)):
+            raise ValueError("Issue #3 script anchors differ; use matching Win/Saturn resources.")
       #print "One Section..."
 
 
@@ -618,6 +640,7 @@ def main():
             while jpn_while_should_run:
                 jop, jw1, jw2, jw3 = struct.unpack('>HHHH', jscript_bytes[jpn_script_num * 8 : (jpn_script_num + 1) * 8])
                 if jop == 0xFFFF:
+                    last_jp_index = jw1
                     if jis_msg_group == 0:
                         jis_msg_group = 1
                         #temp = ""
@@ -671,6 +694,8 @@ def main():
                 output += temp
                 win_while_should_run = False
           win_script_num += 1
+      if s >= 32 and (last_index != final_win or last_jp_index != final_jp):
+        raise ValueError("Issue #3 span end differs; no output was written.")
     try:
         import io
         with io.open(options.outputfile, "w", encoding="utf-8", errors="ignore") as f:

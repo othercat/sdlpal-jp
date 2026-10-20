@@ -4,6 +4,8 @@
 
 代码基线：[`6dafc9c79718058f3a1a4ab8a3d3e30a102ab207`](https://github.com/othercat/sdlpal-jp/commit/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207)。
 
+后续 [Issue #3 恢复记录](japanese-missing-dialogues.md)已逐组核对并补回 119 组 / 290 个 Win ID；包含逐组中日正文、脚本与场景依据、源码渲染前后图。下文的缺失数量仍是修复前基线，统一实机验收待全部实现完成后进行。
+
 | Issue | 文档章节 | 范围 |
 | --- | --- | --- |
 | [#1](https://github.com/othercat/sdlpal-jp/issues/1) | [总管与追溯](#issue-1) | 分支、依赖、合入和验收 |

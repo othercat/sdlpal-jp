@@ -1,0 +1,841 @@
+{
+  "issue": 3,
+  "date": "2026-10-20",
+  "base": "b8a9af77b756af008b125d6b45b425c6faf81c6e",
+  "acceptance": "All issue implementations first; user unified gameplay acceptance pending.",
+  "mapping": {
+    "scope": "Static mapping/content and engine fixture preparation; no gameplay acceptance.",
+    "inputs": {
+      "pc": {
+        "sss.mkf": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+          "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+          "bytes": 575270
+        },
+        "m.msg": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+          "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+          "bytes": 224983
+        },
+        "word.dat": {
+          "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\WORD.DAT",
+          "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+          "bytes": 5650
+        }
+      },
+      "saturn": {
+        "JM.MSG": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+          "sha256": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+          "bytes": 309248
+        },
+        "JM.NOR": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+          "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+          "bytes": 65296
+        },
+        "JM.SEC": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+          "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+          "bytes": 308120
+        },
+        "PROG.BIN": {
+          "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\PROG.BIN",
+          "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c",
+          "bytes": 411244
+        }
+      }
+    },
+    "inputs_unchanged": true,
+    "review_sha256": "217f52567e0c58acfad048dc0e38381eb28faead6aaced860448912bb3883734",
+    "win_decode_replacements_full_source": 12,
+    "recovered_source_decode_replacements": 0,
+    "before": {
+      "bytes": 1230303,
+      "sha256": "f15a22cb2e999680119e08bae021cb61f366d6f45655ef4e33019472e9388c54",
+      "lf_sha256": "55694eb786d2a8458324ecc40062a2cc912ed0538f830a68185085a37e90f7b4",
+      "blocks": 4654,
+      "unique_keys": 4647
+    },
+    "after": {
+      "bytes": 1256537,
+      "sha256": "01e0dbba260e6a13c02963d9542bb63171213a6979b475f6515c7c1cab524331",
+      "lf_sha256": "210f9e5772062c19b6af7e1f589288f2809c8d997dc9ed9d47780afad8c25027",
+      "blocks": 4773,
+      "unique_keys": 4766
+    },
+    "original_output_byte_prefix_unchanged": true,
+    "runtime_groups": 4773,
+    "unique_runtime_keys": 4766,
+    "missing_before": 119,
+    "missing_after": [],
+    "restored_groups": 119,
+    "restored_win_ids": 290,
+    "restored_jp_ids": 362,
+    "restored_clear_markers": 11,
+    "existing_duplicates_unchanged": [
+      {
+        "key": [
+          4931,
+          4931
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          4932,
+          4933
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          4934,
+          4935
+        ],
+        "count": 2,
+        "conflict": false
+      },
+      {
+        "key": [
+          5107,
+          5108
+        ],
+        "count": 3,
+        "conflict": false
+      },
+      {
+        "key": [
+          12352,
+          12352
+        ],
+        "count": 2,
+        "conflict": true
+      },
+      {
+        "key": [
+          12368,
+          12368
+        ],
+        "count": 2,
+        "conflict": true
+      }
+    ],
+    "other_saturn_groups_not_imported": [
+      {
+        "script_start": 30876,
+        "script_end": 30879,
+        "ids": [
+          13014,
+          13015,
+          13016,
+          13017
+        ],
+        "sid": 13014,
+        "eid": 13017
+      },
+      {
+        "script_start": 35605,
+        "script_end": 35605,
+        "ids": [
+          14969
+        ],
+        "sid": 14969,
+        "eid": 14969
+      },
+      {
+        "script_start": 35956,
+        "script_end": 35958,
+        "ids": [
+          15072,
+          15073,
+          15074
+        ],
+        "sid": 15072,
+        "eid": 15074
+      },
+      {
+        "script_start": 35961,
+        "script_end": 35962,
+        "ids": [
+          15075,
+          15076
+        ],
+        "sid": 15075,
+        "eid": 15076
+      },
+      {
+        "script_start": 35967,
+        "script_end": 35971,
+        "ids": [
+          15077,
+          15078,
+          15079,
+          15080,
+          15081
+        ],
+        "sid": 15077,
+        "eid": 15081
+      },
+      {
+        "script_start": 35973,
+        "script_end": 35976,
+        "ids": [
+          15082,
+          15083,
+          15084,
+          15085
+        ],
+        "sid": 15082,
+        "eid": 15085
+      },
+      {
+        "script_start": 35978,
+        "script_end": 35981,
+        "ids": [
+          15086,
+          15087,
+          15088,
+          15089
+        ],
+        "sid": 15086,
+        "eid": 15089
+      },
+      {
+        "script_start": 35983,
+        "script_end": 35986,
+        "ids": [
+          15090,
+          15091,
+          15092,
+          15093
+        ],
+        "sid": 15090,
+        "eid": 15093
+      },
+      {
+        "script_start": 37770,
+        "script_end": 37773,
+        "ids": [
+          15354,
+          15355,
+          15356,
+          15357
+        ],
+        "sid": 15354,
+        "eid": 15357
+      },
+      {
+        "script_start": 37775,
+        "script_end": 37777,
+        "ids": [
+          15358,
+          15359,
+          15360
+        ],
+        "sid": 15358,
+        "eid": 15360
+      },
+      {
+        "script_start": 42705,
+        "script_end": 42705,
+        "ids": [
+          15966
+        ],
+        "sid": 15966,
+        "eid": 15966
+      }
+    ],
+    "engine_fixture_keys": 4766,
+    "rendered_representatives": 8
+  },
+  "rendering": {
+    "scope": "Test-only source renderer, neutral background, raw Win portraits; not gameplay screenshots or palette acceptance.",
+    "build_sha256": "835b77f3448efc99a730d14c3c8fd81be05f5b6c04bab66c88d8ac69d689e955",
+    "source_sha256": "95ea275e6fdf23528d4f2b21fe69610fd54e5f531ffb767778dce8d587f6780e",
+    "runtime": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime",
+    "runtime_matches_original": [
+      {
+        "name": "ABC.mkf",
+        "sha256": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b"
+      },
+      {
+        "name": "BALL.MKF",
+        "sha256": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0"
+      },
+      {
+        "name": "DATA.MKF",
+        "sha256": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b"
+      },
+      {
+        "name": "F.MKF",
+        "sha256": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7"
+      },
+      {
+        "name": "FBP.MKF",
+        "sha256": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84"
+      },
+      {
+        "name": "FIRE.MKF",
+        "sha256": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf"
+      },
+      {
+        "name": "GOP.MKF",
+        "sha256": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b"
+      },
+      {
+        "name": "M.MSG",
+        "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c"
+      },
+      {
+        "name": "MAP.MKF",
+        "sha256": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575"
+      },
+      {
+        "name": "MGO.mkf",
+        "sha256": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0"
+      },
+      {
+        "name": "MUS.MKF",
+        "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+      },
+      {
+        "name": "PAT.MKF",
+        "sha256": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997"
+      },
+      {
+        "name": "RGM.MKF",
+        "sha256": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132"
+      },
+      {
+        "name": "RNG.MKF",
+        "sha256": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd"
+      },
+      {
+        "name": "SOUNDS.MKF",
+        "sha256": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01"
+      },
+      {
+        "name": "SSS.MKF",
+        "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c"
+      },
+      {
+        "name": "WORD.DAT",
+        "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+      }
+    ],
+    "runs": [
+      {
+        "stage": "before",
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\before\\paljpn-win.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\render-r2-before",
+          "jp-recovery-before"
+        ],
+        "exit_code": 0,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4647 mapped, 119 absent; 0 page waits; neutral source renders\n",
+        "rows": 4766,
+        "mapped": 4647,
+        "absent": 119,
+        "drawn": [
+          {
+            "first": "2688",
+            "last": "2690",
+            "entries": "0",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          },
+          {
+            "first": "9110",
+            "last": "9115",
+            "entries": "0",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          },
+          {
+            "first": "9307",
+            "last": "9311",
+            "entries": "0",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          },
+          {
+            "first": "9902",
+            "last": "9902",
+            "entries": "0",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          },
+          {
+            "first": "9976",
+            "last": "9976",
+            "entries": "0",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          },
+          {
+            "first": "10888",
+            "last": "10890",
+            "entries": "0",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          },
+          {
+            "first": "11164",
+            "last": "11167",
+            "entries": "0",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          },
+          {
+            "first": "12053",
+            "last": "12056",
+            "entries": "0",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          }
+        ],
+        "bmp_count": 32,
+        "csv_sha256": "f7c0c2cfa19f8be0c57562bc042f6d593730aa003eb44af820c0ba27fd92e8ab"
+      },
+      {
+        "stage": "after",
+        "command": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\after.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\render-r2-after",
+          "jp-recovery"
+        ],
+        "exit_code": 0,
+        "output": "Renderer: direct3d; flags=14; ScaleQuality=0; UseISOFont=0\nEngine lookup: 4766 mapped, 0 absent; 2 page waits; neutral source renders\n",
+        "rows": 4766,
+        "mapped": 4766,
+        "absent": 0,
+        "drawn": [
+          {
+            "first": "2688",
+            "last": "2690",
+            "entries": "3",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          },
+          {
+            "first": "9110",
+            "last": "9115",
+            "entries": "8",
+            "clear_markers": "1",
+            "drawn": "1",
+            "pages": "2",
+            "page_waits": "1"
+          },
+          {
+            "first": "9307",
+            "last": "9311",
+            "entries": "8",
+            "clear_markers": "1",
+            "drawn": "1",
+            "pages": "2",
+            "page_waits": "1"
+          },
+          {
+            "first": "9902",
+            "last": "9902",
+            "entries": "1",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          },
+          {
+            "first": "9976",
+            "last": "9976",
+            "entries": "1",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          },
+          {
+            "first": "10888",
+            "last": "10890",
+            "entries": "3",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          },
+          {
+            "first": "11164",
+            "last": "11167",
+            "entries": "5",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          },
+          {
+            "first": "12053",
+            "last": "12056",
+            "entries": "4",
+            "clear_markers": "0",
+            "drawn": "1",
+            "pages": "1",
+            "page_waits": "0"
+          }
+        ],
+        "bmp_count": 40,
+        "csv_sha256": "cef730a481df3d59c3fea5b55bdffad012566657d1afc12f88dd79d0612c4c7f"
+      }
+    ],
+    "existing_4647_engine_keys_unchanged": true,
+    "pixel_changes": [
+      {
+        "first": 2688,
+        "page1_changed_bbox": [
+          24,
+          16,
+          498,
+          120
+        ]
+      },
+      {
+        "first": 9110,
+        "page1_changed_bbox": [
+          8,
+          216,
+          390,
+          356
+        ]
+      },
+      {
+        "first": 9307,
+        "page1_changed_bbox": [
+          8,
+          216,
+          432,
+          320
+        ]
+      },
+      {
+        "first": 9902,
+        "page1_changed_bbox": [
+          90,
+          52,
+          490,
+          84
+        ]
+      },
+      {
+        "first": 9976,
+        "page1_changed_bbox": [
+          178,
+          80,
+          430,
+          112
+        ]
+      },
+      {
+        "first": 10888,
+        "page1_changed_bbox": [
+          162,
+          16,
+          594,
+          120
+        ]
+      },
+      {
+        "first": 11164,
+        "page1_changed_bbox": [
+          8,
+          216,
+          388,
+          392
+        ]
+      },
+      {
+        "first": 12053,
+        "page1_changed_bbox": [
+          24,
+          16,
+          416,
+          156
+        ]
+      }
+    ],
+    "published_images": [
+      {
+        "file": "docs\\images\\missing-dialogues\\before-dialogue-10888-page-1-640.png",
+        "bytes": 12580,
+        "sha256": "c3304fbfaac771efbd6809bc7505ff232b32f7982c972e3e3386149e38d757b8"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\before-dialogue-11164-page-1-640.png",
+        "bytes": 10507,
+        "sha256": "9e2def1d6ea4d3c3b9ad1da39ce385a79c9a6bdfb1857c33d2dae7fc313c25e9"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\before-dialogue-12053-page-1-640.png",
+        "bytes": 1073,
+        "sha256": "2938288728e6f6b5cca8addb8de71dfd77440c49a12ec64e4405b0a5eaf354f2"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\before-dialogue-2688-page-1-640.png",
+        "bytes": 1073,
+        "sha256": "2938288728e6f6b5cca8addb8de71dfd77440c49a12ec64e4405b0a5eaf354f2"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\before-dialogue-9110-page-1-640.png",
+        "bytes": 7639,
+        "sha256": "cdc5247d43928b67893ad3ac60709aec3508ddd2200ee5f43d1589a446378ee9"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\before-dialogue-9307-page-1-640.png",
+        "bytes": 7802,
+        "sha256": "64ad48a5967e8c72bfcd95ac9a635add6b0745edc1a4c3847a2487af9a324e9c"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\before-dialogue-9902-page-1-640.png",
+        "bytes": 1073,
+        "sha256": "2938288728e6f6b5cca8addb8de71dfd77440c49a12ec64e4405b0a5eaf354f2"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\before-dialogue-9976-page-1-640.png",
+        "bytes": 1073,
+        "sha256": "2938288728e6f6b5cca8addb8de71dfd77440c49a12ec64e4405b0a5eaf354f2"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\after-dialogue-10888-page-1-640.png",
+        "bytes": 14122,
+        "sha256": "d1c225d11db103babd30e72a7b18b80cd1982019e12311097a720535849b2763"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\after-dialogue-11164-page-1-640.png",
+        "bytes": 12523,
+        "sha256": "e26080e9ef1d3fd70072063bbcfc3ff5291a3bc0e3eb7ae422d0e317cbc75345"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\after-dialogue-12053-page-1-640.png",
+        "bytes": 3167,
+        "sha256": "eb27f8a8e1ce352f52c60b1459ffbacabf7faf29d168cf902b67177a7237ae40"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\after-dialogue-2688-page-1-640.png",
+        "bytes": 2640,
+        "sha256": "57abc7d1470df87f17f9e928424d52d623b67ab152792c82517b68596d3f9b07"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\after-dialogue-9110-page-1-640.png",
+        "bytes": 9807,
+        "sha256": "1be98a4d8344bc0536f855a2cc947e2729e3d2cca4e3f21644b136c1f213bd0d"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\after-dialogue-9110-page-2-640.png",
+        "bytes": 9831,
+        "sha256": "fffe72c6feab3bf271aa0ca6ec1991fad4b438b64539a5fbbcfdbaa4436c210e"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\after-dialogue-9307-page-1-640.png",
+        "bytes": 9506,
+        "sha256": "3f491f18efb79051450d0631beb54ba60e6bab4fd86fe9f81d97e0873d1197ba"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\after-dialogue-9307-page-2-640.png",
+        "bytes": 10976,
+        "sha256": "951dc521c03eb4dccbfca967d2cbbb163765a55da96fd3304773b6b3cb878aaa"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\after-dialogue-9902-page-1-640.png",
+        "bytes": 1597,
+        "sha256": "4539d9183538fdcf7b1b5172140118f7c4a5b15620d29fc244a0778034ccc188"
+      },
+      {
+        "file": "docs\\images\\missing-dialogues\\after-dialogue-9976-page-1-640.png",
+        "bytes": 1495,
+        "sha256": "c06c6cd97f99351057ebe8d2870ced889d4ca1d24e339ab4573f06aed53c758c"
+      }
+    ]
+  },
+  "negative_and_gui": [
+    {
+      "case": "missing-group",
+      "rejected": true,
+      "error": "Recovered output order, text or CLEAR markers differ from reviewed sources",
+      "output_created": false
+    },
+    {
+      "case": "wrong-japanese",
+      "rejected": true,
+      "error": "Recovered output order, text or CLEAR markers differ from reviewed sources",
+      "output_created": false
+    },
+    {
+      "case": "missing-clear",
+      "rejected": true,
+      "error": "Recovered output order, text or CLEAR markers differ from reviewed sources",
+      "output_created": false
+    },
+    {
+      "case": "new-duplicate",
+      "rejected": true,
+      "error": "Recovered output order, text or CLEAR markers differ from reviewed sources",
+      "output_created": false
+    },
+    {
+      "case": "changed-existing",
+      "rejected": true,
+      "error": "Existing output was changed; Issue #3 must only append recovered groups",
+      "output_created": false
+    },
+    {
+      "case": "real-gui-callback",
+      "output_identical_to_cli": true,
+      "input_copies_unchanged": true,
+      "commands": [
+        [
+          "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+          "-X",
+          "utf8",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\GUI 日本語",
+          "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\gui-after.slf",
+          "gbk"
+        ]
+      ],
+      "tk_window": false
+    },
+    {
+      "case": "raw-converter-wrong-anchor",
+      "exit_code": 1,
+      "output_created": false,
+      "command": [
+        "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\makemessage_j.py",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\GUI 日本語",
+        "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\wrong-anchor.slf",
+        "gbk"
+      ]
+    }
+  ],
+  "review_guard_tests": [
+    {
+      "case": "changed-existing",
+      "rejected": true,
+      "error": "Existing output was changed; Issue #3 must only append recovered groups"
+    },
+    {
+      "case": "missing-clear",
+      "rejected": true,
+      "error": "Recovered output order, text or CLEAR markers differ from reviewed sources"
+    },
+    {
+      "case": "missing-group",
+      "rejected": true,
+      "error": "Recovered output order, text or CLEAR markers differ from reviewed sources"
+    },
+    {
+      "case": "new-duplicate",
+      "rejected": true,
+      "error": "Recovered output order, text or CLEAR markers differ from reviewed sources"
+    },
+    {
+      "case": "wrong-japanese",
+      "rejected": true,
+      "error": "Recovered output order, text or CLEAR markers differ from reviewed sources"
+    },
+    {
+      "case": "unintended-descriptions",
+      "rejected": true,
+      "error": "Unexpected content outside recovered MESSAGE blocks"
+    },
+    {
+      "case": "render-truncated",
+      "exit_code": 1,
+      "error": "Render evidence failed: Incomplete recovery fixture coverage ()",
+      "command": [
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\build\\sdlpal.exe",
+        "--render-evidence",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\after.slf",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\guard-render-truncated",
+        "jp-recovery"
+      ]
+    },
+    {
+      "case": "render-duplicate",
+      "exit_code": 1,
+      "error": "Render evidence failed: Duplicate recovery fixture key ()",
+      "command": [
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\build\\sdlpal.exe",
+        "--render-evidence",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\after.slf",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\guard-render-duplicate",
+        "jp-recovery"
+      ]
+    },
+    {
+      "case": "render-no-representatives",
+      "exit_code": 1,
+      "error": "Render evidence failed: Incomplete recovery fixture coverage ()",
+      "command": [
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\build\\sdlpal.exe",
+        "--render-evidence",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime\\",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\after.slf",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020\\guard-render-no-representatives",
+        "jp-recovery"
+      ]
+    }
+  ],
+  "resource_free_tests": {
+    "command": "tests/test_japanese_conversion_tools.py -v",
+    "passed": 9
+  },
+  "red_silkworm_adapter": {
+    "output_sha256": "078e53256fafba52f00c64c981892e44453fa9a11f1ab35bb1303c9e6df2963f",
+    "scope": "Only the existing Issue #5 12920–12921 block adapted; recovered groups preserved."
+  },
+  "local_artifacts": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-3\\missing-dialogue-r1-20261020",
+  "source_sha256": {
+    "tools\\japanese\\makemessage_j.py": "1dcda16b35c5222147cb2151aed16e2519b294219200b3be1b13c264d7850871",
+    "tools\\japanese\\verify_baseline.py": "46ff14659c70baeaed470db369386a59821be29b1575afb437a121b938de85e5",
+    "tools\\japanese\\verify_restored_dialogues.py": "dbf60fc1ffce3605d93afb5cfd807d76c42e3396cf24ccfcf87d77ebb528ef1f",
+    "tests\\render_evidence.cpp": "95ea275e6fdf23528d4f2b21fe69610fd54e5f531ffb767778dce8d587f6780e"
+  },
+  "helper_sha256": {
+    "negative_and_gui.py": "a738d22e1a085f11b9f680028753174799edea58d634396a9410ef147f208529",
+    "prepare_review.py": "3ff39df728c3dcf109fbae5959074e3d8fdce03fc2b09b06db553a0e09cf9528",
+    "render_and_check.py": "36d88e27d460ace5e9e1dd4b1a26ce024077fd79ff05095b525d1634e6900645",
+    "validate_review_guards.py": "0c2c5dc406bb9b849544ac5ad55c65bf37de1d98c292082511c250db4a513693"
+  }
+}

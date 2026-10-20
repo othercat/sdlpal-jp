@@ -2,7 +2,7 @@
 
 三个上游入口来自 [PalMusicFan/sdlpal v2026.08 Release](https://github.com/PalMusicFan/sdlpal/releases/tag/v2026.08)。初始导入逐字节保留附件，下载地址、GitHub asset ID、大小和 SHA256 记录于 [upstream.json](upstream.json)。后续差异通过独立提交追溯，原始导入提交记录在 [Issue #2](https://github.com/othercat/sdlpal-jp/issues/2)。
 
-- `makemessage_j.py`：Win PC 根资源与土星提取文本生成 UTF-8 SLF。
+- `makemessage_j.py`：Win PC 根资源与土星提取文本生成 UTF-8 SLF，默认包含 #3 恢复的 119 组映射。
 - `steam_to_legacy.py`：Steam 的 UTF-16LE `编号:文本` 转为 PC MSG/WORD 格式；它本身不进行土星日文映射。
 - `rungui.py`：Tkinter 图形入口，调用前两个脚本。
 
@@ -10,9 +10,9 @@
 
 Agent 使用官方 CPython 3.11 的 `~/CodexTools/python`；三个脚本只依赖标准库，GUI 另外要求 Python 安装中包含 Tcl/Tk。当前映射表对应 Win 版，不能把生成文件当成 DOS 映射。
 
-## 推荐：复现固定 Win 基线
+## 审计：复现固定 Win 上游输出
 
-[`verify_baseline.py`](verify_baseline.py)先检查 3 个 Win 输入、4 个土星输入及转换器 SHA256，然后调用原始 `makemessage_j.py`。它要求新的输出目录，拒绝改版资源、DOS、错误编码，以及输入目录内的输出；生成日志、SLF 与 JSON 核对记录。这只复现已知基线，原有遗漏、错配和重复键保留给 #3/#4/#6/#7/#8。
+[`verify_baseline.py`](verify_baseline.py)先检查 3 个 Win 输入、4 个土星输入的 SHA256，再调用当前转换器的 `--upstream-baseline` 模式，要求输出全文与上游指纹完全一致。JSON 同时记录当前和原始转换器指纹；不把修订后的脚本称为原始附件。它要求新的输出目录，拒绝改版资源、DOS、错误编码，以及输入目录内的输出。此模式仅用于历史对照，保留原有遗漏、错配和重复键。
 
 ```powershell
 & (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\japanese\verify_baseline.py 'PC资源目录' '土星提取目录' '新的产物目录'
@@ -22,9 +22,9 @@ Win 输入为 `SSS.MKF`、`M.MSG`、`WORD.DAT`，当前固定版本是 GBK 的 `
 
 输出是 UTF-8 SLF 3.1。Windows 输出沿用上游 CRLF，其他平台比较统一为 LF 后的指纹；平台差异不当作正文差异。输出中的旧 CRC 注释直接沿用上游，其中部分字段引用不准确，输入身份以 JSON 的整文件 SHA256 为准。
 
-## 原始 CLI 与 GUI
+## 当前 CLI 与 GUI
 
-下面的直接 CLI 不包含 `verify_baseline.py` 的版本和覆盖保护，输出路径需选择新的文件：
+下面的直接 CLI 默认恢复 119 组遗漏，不包含 `verify_baseline.py` 的完整输入指纹和覆盖保护，输出路径需选择新的文件。恢复段的首尾脚本锚点不匹配时会中止。GUI 同样采用当前默认映射：
 
 ```powershell
 & (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\japanese\makemessage_j.py 'PC资源目录' '土星提取目录' '新的输出.slf' gbk
@@ -49,11 +49,19 @@ GUI 选择 PC 目录、土星目录、输出文件和 GBK/BIG5。工具路径已
 
 ## 加载与验证
 
-为保持原始基线，转换器没有内嵌 #5 的赤血蚕换行修改。使用生成 SLF 时，继续显式执行现有适配步骤：
+当前输出为 4,773 块 / 4,766 唯一键。生成上游对照和当前输出后，先运行独立资源校验：
+
+```powershell
+& (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\japanese\verify_restored_dialogues.py 'PC资源目录' '土星提取目录' '上游对照.slf' '当前输出.slf' '新的核对目录'
+```
+
+它从原始脚本重建运行时区间，核对全部 119 组正文、编号、CLEAR、首尾脚本与逐组审查记录，并要求旧输出逐字节保留、无新增重复键。生成的 `recovery-fixtures.csv` 可供 Test 引擎逐一读取全部 4,766 个键。详情见 [#3 恢复记录与源码图](../../docs/japanese-missing-dialogues.md)。
+
+转换器没有内嵌 #5 的赤血蚕换行修改。上述映射校验完成后，使用生成 SLF 时继续执行已有适配步骤：
 
 ```powershell
 & (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\adapt_red_silkworm_description.py '原始输出.slf' '新的适配输出.slf'
 & (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tests\test_japanese_conversion_tools.py -v
 ```
 
-详细结果、源码加载图与限制见 [#2 基线记录](../../docs/japanese-conversion-baseline.md)。GUI 回调测试不创建 Tk 窗口。按用户最新要求，所有子 Issue 的实现和专项验证完成后再统一实机验收。
+历史工具结果、源码加载图与限制见 [#2 基线记录](../../docs/japanese-conversion-baseline.md)。GUI 回调测试不创建 Tk 窗口。按用户最新要求，所有子 Issue 的实现和专项验证完成后再统一实机验收。
