@@ -115,8 +115,10 @@ void SaveScales(const std::string& directory, const std::string& name) {
     SDL_Texture *previousTarget = SDL_GetRenderTarget(gpRenderer);
     const int widths[] = {640, 960, 800};
     for (int width : widths) {
+        // The game framebuffer is opaque. Target-texture alpha is not coverage
+        // (Direct3D readback can return zero); do not export it as transparency.
         SDL_Surface *output = SDL_CreateRGBSurface(0, width, width * 5 / 8, 32,
-            0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000);
+            0x00ff0000, 0x0000ff00, 0x000000ff, 0);
         Require(output != nullptr, "Cannot allocate scale output");
         SDL_Texture *target = SDL_CreateTexture(gpRenderer, SDL_PIXELFORMAT_ARGB8888,
             SDL_TEXTUREACCESS_TARGET, width, output->h);
@@ -128,7 +130,7 @@ void SaveScales(const std::string& directory, const std::string& name) {
         // A render target provides readback without a screenshot or visible UI.
         VIDEO_Resize(width, output->h);
         VIDEO_UpdateScreen(nullptr);
-        Require(SDL_RenderReadPixels(gpRenderer, nullptr, SDL_PIXELFORMAT_ARGB8888,
+        Require(SDL_RenderReadPixels(gpRenderer, nullptr, SDL_PIXELFORMAT_RGB888,
             output->pixels, output->pitch) == 0, "Cannot read renderer target");
         Require(SDL_SaveBMP(output, (directory + "/" + name + "-" +
             std::to_string(width) + ".bmp").c_str()) == 0, "Cannot save scale output");

@@ -4,6 +4,14 @@
 
 **119 组全部核对并补回，覆盖 290 个 Win 消息 ID，采用土星原文 362 条和 11 个 CLEAR 标记。** 原有 4,654 个块连同注释逐字节保留。全部子 Issue 实现与专项验证完成后，再由用户统一实机验收；本次没有进行游戏流程验收。
 
+## R2：修正预览图完全透明（2026-10-20）
+
+R1 的 18 张 PNG 虽有正确的颜色像素，却全部带有值为 0 的 alpha 通道，因此在聊天和 Markdown 中显示为空白。此前只比对 RGB 和文件指纹，遗漏了透明度检查；问题来自导出程序。R1 的图片指纹保留在历史验证 JSON 中，不代表本页当前图片。
+
+Test 证据入口改用 RGB888 读回不透明的游戏帧，不再导出目标纹理无效的 alpha；新增导出工具要求输入完全不透明、输出 RGB PNG，并重新读取文件核对像素。已重新生成全部 72 张 BMP，其 RGB 像素和两份 4,766 行引擎 CSV 均与 R1 相同。18 张 PNG 的有效 alpha 现在均为 255，叠在白色和深色背景上均与源 RGB 一致；仓库全部 81 张文档 PNG 的透明度检查通过。
+
+Test/x64 构建和 2 项测试（4 个子例）通过；真实 R1 透明 BMP 被新导出工具拒绝，未产生输出目录。映射、SLF、字体及 Release 渲染代码未改。[R2 验证与图片指纹](evidence/issue-3-opaque-previews.json)记录前后格式、全部图片 RGB 对比、资源指纹和执行命令。本轮仅修正证据图片导出，实机验收仍由用户统一进行。
+
 ## 范围与实现
 
 原转换器切换 32 段硬编码脚本起点时遗漏了 7 段。当前在原段之后追加 7 个独立起点和准确组数，采用脚本首尾 ID 保护；不把全剧本按单一偏移移动。GUI 和 CLI 默认使用恢复后的映射。引擎 Release 逻辑未改，C++ 变更仅属于 Test 证据入口。
@@ -26,7 +34,7 @@
 
 ## 验证结果
 
-环境：Windows，官方 CPython 3.11.9 venv；VS 2026 Community / v145 / SDK 10.0 构建 Test 成功。构建日志保留既有编译警告，无错误。转换与原始二进制解析独立核对，报告见 [验证 JSON](evidence/issue-3-mapping-verification.json)。
+环境：Windows，官方 CPython 3.11.9 venv；VS 2026 Community / v145 / SDK 10.0 构建 Test 成功。构建日志保留既有编译警告，无错误。转换与原始二进制解析独立核对，报告见 [R1 映射验证 JSON](evidence/issue-3-mapping-verification.json)；其中旧图片文件指纹由上方 R2 报告补充更正。
 
 | 检查 | 修前 | 修后 |
 | --- | ---: | ---: |
@@ -51,7 +59,7 @@ Win 全部消息缓冲区原本含 12 个 GBK 解码替代字符，核对工具�
 
 ## 源码渲染前后对比
 
-下面均为 **Test 引擎源码渲染，黑色中性背景，非剧情实机截图**。使用同一 PAL98 资源的 17 个文件逐项比对一致的 ASCII 路径副本，内置日文字体 16 px，生产 SDL Direct3D 路径按最近邻输出 320×200、640×400、960×600、800×500。没有注入游戏按键或改写存档。最终一轮前后合计 72 张 BMP 留在产物目录，发布 18 张易读的 640×400 PNG（共 118,484 字节）；早期验证产物另行保留。
+下面均为 **Test 引擎源码渲染，黑色中性背景，非剧情实机截图**。使用同一 PAL98 资源的 17 个文件逐项比对一致的 ASCII 路径副本，内置日文字体 16 px，生产 SDL Direct3D 路径按最近邻输出 320×200、640×400、960×600、800×500。没有注入游戏按键或改写存档。R2 前后合计 72 张 BMP 留在产物目录，发布 18 张易读的不透明 RGB 640×400 PNG（共 107,690 字节）；R1 原始产物及错误透明图另行保留。
 
 8 组代表对白覆盖全部 7 段。有显式对话指令的组使用原 Win 参数；2688 和 12053 是事件续入口无显式命令，使用 `PAL_EndDialog` 的上方/无头像默认值，没有误继承附近其他 NPC 的头像。头像来自当前 Win `RGM.MKF`，调色板采用渲染夹具设置；这不构成 #9 土星头像调色板验收。
 
@@ -71,12 +79,12 @@ Win 全部消息缓冲区原本含 12 个 GBK 解码替代字符，核对工具�
 
 | Win ID / 内容 | 修前 | 修后 |
 | --- | --- | --- |
-| 2688 / 苏州少女 | [图](images/missing-dialogues/before-dialogue-2688-page-1-640.png) | [图](images/missing-dialogues/after-dialogue-2688-page-1-640.png) |
-| 9902 / 不愿相信月如死讯 | [图](images/missing-dialogues/before-dialogue-9902-page-1-640.png) | [图](images/missing-dialogues/after-dialogue-9902-page-1-640.png) |
-| 9976 / 数月后转场 | [图](images/missing-dialogues/before-dialogue-9976-page-1-640.png) | [图](images/missing-dialogues/after-dialogue-9976-page-1-640.png) |
-| 10888 / 阿奴阻止冒犯神像 | [图](images/missing-dialogues/before-dialogue-10888-page-1-640.png) | [图](images/missing-dialogues/after-dialogue-10888-page-1-640.png) |
-| 11164 / 灵儿面对命运 | [图](images/missing-dialogues/before-dialogue-11164-page-1-640.png) | [图](images/missing-dialogues/after-dialogue-11164-page-1-640.png) |
-| 12053 / 十年前来福伯 | [图](images/missing-dialogues/before-dialogue-12053-page-1-640.png) | [图](images/missing-dialogues/after-dialogue-12053-page-1-640.png) |
+| 2688 / 苏州少女 | ![苏州少女修前](images/missing-dialogues/before-dialogue-2688-page-1-640.png) | ![苏州少女修后](images/missing-dialogues/after-dialogue-2688-page-1-640.png) |
+| 9902 / 不愿相信月如死讯 | ![月如死讯修前](images/missing-dialogues/before-dialogue-9902-page-1-640.png) | ![月如死讯修后](images/missing-dialogues/after-dialogue-9902-page-1-640.png) |
+| 9976 / 数月后转场 | ![数月后修前](images/missing-dialogues/before-dialogue-9976-page-1-640.png) | ![数月后修后](images/missing-dialogues/after-dialogue-9976-page-1-640.png) |
+| 10888 / 阿奴阻止冒犯神像 | ![阿奴阻止修前](images/missing-dialogues/before-dialogue-10888-page-1-640.png) | ![阿奴阻止修后](images/missing-dialogues/after-dialogue-10888-page-1-640.png) |
+| 11164 / 灵儿面对命运 | ![灵儿决意修前](images/missing-dialogues/before-dialogue-11164-page-1-640.png) | ![灵儿决意修后](images/missing-dialogues/after-dialogue-11164-page-1-640.png) |
+| 12053 / 十年前来福伯 | ![来福伯修前](images/missing-dialogues/before-dialogue-12053-page-1-640.png) | ![来福伯修后](images/missing-dialogues/after-dialogue-12053-page-1-640.png) |
 
 本轮代表图实际覆盖的是两处显式 CLEAR 分页；不将这两次等待写成自动四行翻页的新增覆盖。自动分页的既有证据见 [#10 分页验证](pal98-dialogue-pagination-scaling.md)。对所有 119 组完成的是文字、映射与引擎加载验证，未声称全部剧情场景已运行。
 
@@ -108,12 +116,16 @@ $jpPython = Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe'
 ```powershell
 & 'BUILD\sdlpal.exe' --render-evidence 'ASCII_PC\' 'OUT\before\paljpn-win.slf' 'OUT\render-before' jp-recovery-before
 & 'BUILD\sdlpal.exe' --render-evidence 'ASCII_PC\' 'OUT\after.slf' 'OUT\render-after' jp-recovery
+& $jpPython -B -X utf8 tools\export_recovery_previews.py 'OUT\render-before' 'OUT\render-after' 'OUT\opaque-pngs'
+& $jpPython -B -X utf8 tests\test_recovery_preview_export.py -v
 & $jpPython -B -X utf8 tools\adapt_red_silkworm_description.py 'OUT\after.slf' 'OUT\after-adapted.slf'
 ```
 
 Python 转换接受本机原始中文路径；旧引擎命令行 GamePath 的非 ASCII 限制沿用 #2 记录，所以源码渲染使用校验过的 ASCII 副本。生成 SLF 需配置加载；仅替换 exe 不会恢复旧 SLF 缺少的文本。
 
 本机完整产物：`D:\Workspace\PALWork\artifacts\sdlpal-jp-issue-3\missing-dialogue-r1-20261020`，包含前后 SLF、输入指纹、构建日志、负例、GUI 子进程日志、引擎逐键 CSV 和全部 BMP。提交、普通合并 SHA 与分支清理记录回填 #3 和 #1。Issue 维持开放，待统一实机验收；届时覆盖上述 7 段剧情及相邻对白、条件分支、转场、分页。
+
+R2 产物：`D:\Workspace\PALWork\artifacts\sdlpal-jp-issue-3\opaque-previews-r2-20261020`，包含旧透明 PNG 备份、新构建、72 张源码 BMP、18 张不透明 PNG、测试日志与验证报告。导出工具需要 Pillow；输入目录必须来自本轮修正后的 Test 构建，目标目录必须尚不存在。
 
 ## 119 组处置索引
 

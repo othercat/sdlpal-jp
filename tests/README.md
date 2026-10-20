@@ -103,3 +103,13 @@ block/duplicate. Its generated `recovery-fixtures.csv` probes all 4,766 runtime
 keys in the Test-only `jp-recovery-before` and `jp-recovery` renderer modes.
 Eight reviewed dialogue commands also produce neutral-background before/after
 images, including real CLEAR waits. See the [commands and evidence](../docs/japanese-missing-dialogues.md).
+
+`tools/export_recovery_previews.py BEFORE AFTER NEW_OUTPUT` requires both complete
+recovery manifests and opaque 640x400 BMPs from the corrected Test renderer.
+It writes 18 RGB PNGs and verifies their pixels after reopening the encoded files.
+The GPU target's unused alpha must not be published as image transparency.
+Pillow is required; the resource-free opacity regression tests run with:
+
+```powershell
+& (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tests\test_recovery_preview_export.py -v
+```
