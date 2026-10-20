@@ -112,6 +112,8 @@ Win 消息 **6744–6745** / 脚本 **18615**；土星消息 **8709–8711** / �
 
 **日文转换工具与可复现基线。** 三个脚本来自 [PalMusicFan/sdlpal v2026.08 Release](https://github.com/PalMusicFan/sdlpal/releases/tag/v2026.08) 附件。普通 Git 历史同步不包含 Release 附件，需在本仓库纳管。
 
+2026-10-20 后续：三个附件已原样纳管，Win SLF 完整复现，GUI 入口问题已修复；详见[转换工具基线与源码加载记录](japanese-conversion-baseline.md)。下表仍记录未修订附件指纹。用户已将实机验收统一安排在全部子 Issue 的实现与专项验证完成之后。
+
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
 | `makemessage_j.py` | 27100 | `c6957be6eb3081c111509353e89d8559e5744e07d828bd0c9afb1ae415cdc149` |

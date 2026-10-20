@@ -81,3 +81,16 @@ Run `tools/verify_long_name_rendering.py` with `--dense-grid` to require zero
 cursor/name/shadow overlap. `--legacy-cursor` verifies archived pre-fix renders
 with the original column spacing and explicitly counted 7/4 covered ink pixels.
 See the [cursor fix and before/after evidence](../docs/japanese-menu-cursor-layout.md).
+
+### Japanese conversion tool entries
+
+Run the resource-free entry and failure-path checks with the fixed interpreter:
+
+```powershell
+& (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tests\test_japanese_conversion_tools.py -v
+```
+
+These use real Steam converter subprocesses and the real GUI callback
+definitions with substituted Tk controls; no GUI window is created.
+See the [resource-backed baseline and source-load evidence](../docs/japanese-conversion-baseline.md)
+for the separate full Win conversion and deferred unified acceptance.

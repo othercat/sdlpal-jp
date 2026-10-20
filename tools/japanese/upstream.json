@@ -1,0 +1,65 @@
+{
+  "release": "https://github.com/PalMusicFan/sdlpal/releases/tag/v2026.08",
+  "tag": "v2026.08",
+  "retrieved": "2026-10-20",
+  "published_at": "2026-08-01T11:11:12Z",
+  "release_updated_at": "2026-08-13T04:00:04Z",
+  "assets": {
+    "makemessage_j.py": {
+      "id": 512453794,
+      "size": 27100,
+      "updated_at": "2026-08-13T03:51:55Z",
+      "browser_download_url": "https://github.com/PalMusicFan/sdlpal/releases/download/v2026.08/makemessage_j.py",
+      "sha256": "c6957be6eb3081c111509353e89d8559e5744e07d828bd0c9afb1ae415cdc149",
+      "crlf_count": 0,
+      "lf_count": 693
+    },
+    "rungui.py": {
+      "id": 510260653,
+      "size": 12233,
+      "updated_at": "2026-08-11T14:51:24Z",
+      "browser_download_url": "https://github.com/PalMusicFan/sdlpal/releases/download/v2026.08/rungui.py",
+      "sha256": "93148d91d24219a66036f4d3fcbf21920318f9f972ce9fdd92ecd6dad35a4e99",
+      "crlf_count": 772,
+      "lf_count": 772
+    },
+    "steam_to_legacy.py": {
+      "id": 510260559,
+      "size": 15456,
+      "updated_at": "2026-08-11T14:51:23Z",
+      "browser_download_url": "https://github.com/PalMusicFan/sdlpal/releases/download/v2026.08/steam_to_legacy.py",
+      "sha256": "6e80a2c965a39fc8ce405ec3459bb9486fdf377fc03591466793f12ed87ab542",
+      "crlf_count": 704,
+      "lf_count": 704
+    }
+  },
+  "license": {
+    "repository": "GPL v3; see ../../LICENSE",
+    "gui": "Preserved upstream LICENSE_TEXT credits SDLPal Community contributors and GNU GPL.",
+    "cli": "No separate per-file license version; original attribution preserved."
+  },
+  "baseline": {
+    "pc_encoding": "gbk",
+    "saturn_encoding": "shift_jis",
+    "pc_resource_sha256": {
+      "sss.mkf": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+      "m.msg": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+      "word.dat": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+    },
+    "saturn_resource_sha256": {
+      "JM.MSG": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+      "JM.NOR": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+      "JM.SEC": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+      "PROG.BIN": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c"
+    },
+    "unsupported_dos_sss_sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c",
+    "slf": {
+      "windows_sha256": "f15a22cb2e999680119e08bae021cb61f366d6f45655ef4e33019472e9388c54",
+      "lf_sha256": "55694eb786d2a8458324ecc40062a2cc912ed0538f830a68185085a37e90f7b4",
+      "windows_bytes": 1230303,
+      "blocks": 4654,
+      "unique_keys": 4647
+    },
+    "scope": "Unmodified Win mapping baseline; known omissions/conflicts/translations remain for Issues 3/4/6/7/8. Apply the separate Issue 5 description adapter for rendering."
+  }
+}

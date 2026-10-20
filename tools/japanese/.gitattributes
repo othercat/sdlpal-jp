@@ -1,0 +1,4 @@
+# Preserve the release asset bytes; Git history is the unmodified baseline.
+makemessage_j.py -text
+rungui.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+steam_to_legacy.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
