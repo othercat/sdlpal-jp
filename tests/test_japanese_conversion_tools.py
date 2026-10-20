@@ -215,6 +215,25 @@ class DuplicateMessageTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Conflicting MESSAGE"):
             self.converter.check_message_body(seen, (1, 2), 200, "first\nsecond\n")
 
+    def test_translation_rejects_source_anchor_and_body_drift(self):
+        key = (1, 4)
+        record = self.converter.TRANSLATION_CORRECTIONS[key]
+        anchors, body = record[:4], "\n".join(record[4]) + "\n"
+        for index in range(4):
+            changed = list(anchors)
+            changed[index] += 1
+            with self.subTest(anchor=index):
+                with self.assertRaisesRegex(ValueError, "Issue #6 source differs"):
+                    self.converter.corrected_translation(key, *changed, body)
+        for changed in (
+            body.replace("[CLEAR MESSAGE]\n", ""),
+            body.replace("~60", "~30"),
+            body.replace("殺してやる", "助けてやる"),
+        ):
+            with self.subTest(body=changed):
+                with self.assertRaisesRegex(ValueError, "Issue #6 source differs"):
+                    self.converter.corrected_translation(key, *anchors, changed)
+
 
 if __name__ == "__main__":
     unittest.main()

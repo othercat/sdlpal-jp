@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from adapt_red_silkworm_description import adapt, adapt_file
+from adapt_red_silkworm_description import CORRECTED, adapt, adapt_file
 
 
 BODY = "血のビタミンを吸う蚕。服用した者\nは完全に体力復帰する。\n"
@@ -13,6 +13,14 @@ BLOCK = ("[BEGIN MESSAGE] 12920\n" + BODY + "[END MESSAGE] 12921\n").encode()
 
 
 class RedSilkwormAdapter(unittest.TestCase):
+    def test_reviewed_translation_is_already_layout_safe(self):
+        for newline in (b"\n", b"\r\n"):
+            translated = BLOCK.replace(BODY.encode(), ("\n".join(CORRECTED) + "\n").encode())
+            translated = translated.replace(b"\n", newline)
+            self.assertEqual(adapt(translated), translated)
+            with self.assertRaises(ValueError):
+                adapt(translated.replace("全回復".encode(), "一部回復".encode()))
+
     def test_only_target_break_moves_in_lf_and_crlf_files(self):
         # Identical prose in an unrelated block must remain byte-for-byte intact.
         neighbor = BLOCK.replace(b"12920", b"9990").replace(b"12921", b"9991")

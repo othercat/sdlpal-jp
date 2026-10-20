@@ -63,6 +63,76 @@ ACQUISITION_MESSAGES = {
     (12368, 12368): u"銀杏の種を獲得\n",
 }
 
+# Reviewed against the Chinese source, Saturn text and engine behavior.
+# key: (Win script, Saturn script, first/last Saturn ID, original lines, new lines)
+# Full rationale and retained localization choices: docs/japanese-translation-review.md.
+TRANSLATION_CORRECTIONS = {
+    (1, 4): (13, 14, 2, 8, (
+        u"李逍遥：", u"$02わああ！", u"とんでもない悪事を働く", u"鬼ばばあだ〜~40",
+        u"[CLEAR MESSAGE]", u"なるほど、", u"お前の手中にあったか。", u"おのれ、殺してやる！~60"), (
+        u"李逍遥：", u"$02わああ！", u"とんでもない悪事を働く", u"鬼ばばあだ〜~40",
+        u"[CLEAR MESSAGE]", u"なるほど、", u"お前の手中にあったか。", u"殺すなり斬るなり、好きにしろ！~60")),
+    (9207, 9208): (25006, 27428, 11888, 11889,
+        (u"剣の聖人：", u"$03奴等を止めよ！~60"),
+        (u"剣の聖人：", u"$03なぜ奴等を止めなかった！？~60")),
+    (9211, 9212): (25016, 27439, 11893, 11894,
+        (u"剣の聖人：", u"$02そうかのう！？~60"),
+        (u"剣の聖人：", u"$02けしからん！~60")),
+    (9324, 9325): (26553, 28771, 12030, 12031,
+        (u"李逍遥：", u"この卵は・・・キミの？("),
+        (u"李逍遥：", u"この卵・・・キミが孵すの？(")),
+    (12053, 12056): (35006, 35380, 14853, 14856,
+        (u"来福おじさん：", u"青年よ、よそ者かい？", u"どっかで見たようだが、", u"李家の親戚かね？"),
+        (u"来福おじさん：", u"青年よ、よそ者かい？", u"見たことがないようだが、", u"李家の親戚かね？")),
+    (12660, 12661): (40028, 42971, 16089, 16090,
+        (u"巫女の遺産で、神聖な力な持つ。", u"霊力＋３０　防御＋６６"),
+        (u"巫女の遺産で、神聖な力を持つ。", u"霊力＋３０　防御＋６６")),
+    (12920, 12921): (40482, 43500, 16424, 16425,
+        (u"血のビタミンを吸う蚕。服用した者", u"は完全に体力復帰する。"),
+        (u"血を吸って生きる毒虫。", u"服用すると体力が全回復する。")),
+    (12945, 12946): (40529, 43550, 16452, 16453,
+        (u"使用後は不死身の護身となる。", u"７回の攻撃中、防御が上がる。"),
+        (u"鉄の鎧を身にまとい、", u"７ターンの間、防御が上がる。")),
+    (13436, 13436): (43299, 46455, 17076, 17076,
+        (u"麻酔、催眠、魔術、呪いを解く。",),
+        (u"麻酔、催眠、混乱、", u"術封じを解く。")),
+    (13438, 13439): (43305, 46461, 17078, 17079,
+        (u"鉄の鎧を身にまとい、", u"７回の攻撃中、防御が上がる。"),
+        (u"鉄の鎧を身にまとい、", u"７ターンの間、防御が上がる。")),
+    (13442, 13443): (43313, 46469, 17082, 17083,
+        (u"鉄の鎧を身にまとい、", u"９回の攻撃中、防御が上がる。"),
+        (u"鉄の鎧を身にまとい、", u"９ターンの間、防御が上がる。")),
+    (13444, 13445): (43317, 46473, 17084, 17085,
+        (u"７回の攻撃中、武器攻撃の威力が", u"倍増する。"),
+        (u"７ターンの間、武器攻撃の", u"威力が上がる。")),
+    (13453, 13454): (43336, 46492, 17093, 17095,
+        (u"パワーが相手の四分の一より", u"少ない時、紫金壷の中の薬を", u"服用する。"),
+        (u"敵の体力が四分の一以下の時、", u"紫金のひょうたんに収め、", u"薬を作ることができる。")),
+    (13455, 13456): (43340, 46497, 17096, 17097,
+        (u"５回の攻撃中、武器攻撃の回数が", u"倍増する。"),
+        (u"５ターンの間、武器で", u"２回続けて攻撃できる。")),
+    (13457, 13457): (43344, 46501, 17098, 17098,
+        (u"速さが９回の攻撃中、倍増する。",),
+        (u"９ターンの間、速さが上がる。",)),
+    (13466, 13467): (43365, 46523, 17108, 17109,
+        (u"赤の毒、屍の毒、瘴の毒、毒糸、", u"麻酔、催眠、魔術、呪いを解く。"),
+        (u"赤の毒、屍の毒、瘴の毒、", u"毒糸、麻酔、催眠、混乱、", u"術封じを解く。")),
+    (13468, 13468): (43369, 46527, 17110, 17112,
+        (u"一人の敵を４回の攻撃中、", u"昏睡させる事ができるかも", u"しれない。"),
+        (u"敵一人を４ターンの間、", u"昏睡させる事ができるかも", u"しれない。")),
+    (13469, 13469): (43372, 46532, 17113, 17115,
+        (u"一人の敵を４回の攻撃中、", u"狂わせる事ができるかも", u"しれない。"),
+        (u"敵一人を４ターンの間、", u"混乱させる事ができるかも", u"しれない。")),
+}
+
+
+def corrected_translation(key, win_script, jp_script, jp_first, jp_last, body):
+    source = TRANSLATION_CORRECTIONS[key]
+    if ((win_script, jp_script, jp_first, jp_last) != source[:4] or
+        body != u"\n".join(source[4]) + u"\n"):
+        raise ValueError("Issue #6 source differs for MESSAGE %d-%d; no output was written." % key)
+    return u"\n".join(source[5]) + u"\n"
+
 
 def check_message_body(seen, key, script, body):
     """Identical reuse is valid; never let output order choose a translation."""
@@ -103,6 +173,8 @@ def main():
                        help='Reproduce post-Issue #3 output before Issue #4 corrections (audit only).')
     audit.add_argument("--before-duplicate-fix", action='store_true',
                        help='Reproduce post-Issue #4 output before Issue #8 corrections (audit only).')
+    audit.add_argument("--before-translation-fix", action='store_true',
+                       help='Reproduce post-Issue #8 output before Issue #6 corrections (audit only).')
     options = parser.parse_args()
 
     options.encoding = "shift_jis"
@@ -503,6 +575,8 @@ def main():
     corrected_tournament = set()
     correct_duplicates = correct_tournament and not options.before_duplicate_fix
     checked_acquisitions, seen_messages = set(), {}
+    correct_translations = correct_duplicates and not options.before_translation_fix
+    corrected_translations = set()
     for s in range(0, 32 + len(recovered_sections)):
 	  #27 sections.
       if s == 0:
@@ -756,6 +830,14 @@ def main():
                     jmessage = u"\n".join(replacement[1]) + u"\n"
                     corrected_tournament.add(key)
 
+                key = (first_index, last_index)
+                if correct_translations and key in TRANSLATION_CORRECTIONS:
+                    if key in corrected_translations:
+                        raise ValueError("Duplicate Issue #6 target; no output was written.")
+                    jmessage = corrected_translation(key, first_script, first_jp_script,
+                                                     first_jp_index, last_jp_index, jmessage)
+                    corrected_translations.add(key)
+
                 if correct_duplicates:
                     key = (first_index, last_index)
                     if key in ACQUISITION_MESSAGES:
@@ -779,6 +861,8 @@ def main():
         raise ValueError("Incomplete Issue #4 correction set; no output was written.")
     if correct_duplicates and checked_acquisitions != set(ACQUISITION_SOURCES):
         raise ValueError("Incomplete Issue #8 acquisition source set; no output was written.")
+    if correct_translations and corrected_translations != set(TRANSLATION_CORRECTIONS):
+        raise ValueError("Incomplete Issue #6 correction set; no output was written.")
     if correct_duplicates:
         print("Issue #8: checked %d unique keys; acquisition text is independent of output order."
               % len(seen_messages))

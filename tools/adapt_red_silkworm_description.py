@@ -12,6 +12,8 @@ from pathlib import Path
 
 ORIGINAL = ("血のビタミンを吸う蚕。服用した者", "は完全に体力復帰する。")
 ADAPTED = ("血のビタミンを吸う蚕。服用した", "者は完全に体力復帰する。")
+# Issue #6 corrects the meaning and already fits the same two-line layout.
+CORRECTED = ("血を吸って生きる毒虫。", "服用すると体力が全回復する。")
 
 
 def adapt(data):
@@ -27,7 +29,10 @@ def adapt(data):
         raise ValueError("Expected message block 12920-12921; input mapping has changed")
     before = newline.join(line.encode("utf-8") for line in ORIGINAL) + newline
     after = newline.join(line.encode("utf-8") for line in ADAPTED) + newline
+    corrected = newline.join(line.encode("utf-8") for line in CORRECTED) + newline
     body = data[body_start:end.start()]
+    if body == corrected:
+        return data
     if body not in (before, after):
         raise ValueError("Unexpected red silkworm text or line endings; inspect the input")
     return data[:body_start] + after + data[end.start():]

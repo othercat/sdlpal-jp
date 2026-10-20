@@ -31,9 +31,11 @@ Win 输入为 `SSS.MKF`、`M.MSG`、`WORD.DAT`，当前固定版本是 GBK 的 `
 & (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\japanese\rungui.py
 ```
 
-`--before-tournament-fix` 仅重现 #3 完成后 / #4 修前输出；`--before-duplicate-fix` 重现 #4 完成后 / #8 修前输出。它们与 `--upstream-baseline` 三者互斥，均用于历史审计，不能代替当前游戏用输出。
+`--before-tournament-fix` 仅重现 #3 完成后 / #4 修前输出；`--before-duplicate-fix` 重现 #4 完成后 / #8 修前输出；`--before-translation-fix` 重现 #8 完成后 / #6 修前输出。它们与 `--upstream-baseline` 四者互斥，均用于历史审计，不能代替当前游戏用输出。
 
 默认模式将两个复用取得键的所有出现统一为已有土星 `獲得` 句，并核对四个 Win/土星来源锚点；六个重复键的块与来源注释全部保留，其中四键原已同文。任一同键异文未经明确处理会报出区间和 Win 脚本并停止写文件，不再靠文件顺序静默决定用语。详见 [#8 来源、覆盖规则与源码图](../../docs/japanese-duplicate-message-keys.md)。
+
+默认 CLI/GUI 也包含 [#6 的 18 组日译修订](../../docs/japanese-translation-review.md)：五组对白、三组物品、十组法术。逐组核对 Win/土星脚本、土星消息首尾和完整原文后替换；不匹配、重复目标或缺少目标均停止写入。源资源、人名、控制码与映射键不改。它是明确抽查条目的修正，不是全剧本审校。
 
 GUI 选择 PC 目录、土星目录、输出文件和 GBK/BIG5。工具路径已相对脚本自身解析，不要求特定工作目录；子进程统一 UTF-8 输出。资源准备失败会停止，不会继续启动生成器。GUI 准备阶段会在所选 PC 目录创建缺失的 `M.MSG`/`WORD.DAT`，应选择工作副本。它没有原子事务：词表失败时，消息文件可能已经生成。
 
@@ -53,22 +55,26 @@ GUI 选择 PC 目录、土星目录、输出文件和 GBK/BIG5。工具路径已
 
 ## 加载与验证
 
-当前输出仍为 4,773 块 / 4,766 唯一键，六个重复键均为同文、异文冲突为零。生成上游对照和当前输出后，另生成两份历史输出，分别核对 #3、#4、#8：
+当前输出仍为 4,773 块 / 4,766 唯一键，六个重复键均为同文、异文冲突为零。生成上游对照和当前输出后，另生成三份历史输出，分别核对 #3、#4、#8、#6：
 
 ```powershell
 $jpPython = Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe'
 & $jpPython -B -X utf8 tools\japanese\makemessage_j.py 'PC资源目录' '土星提取目录' 'NPC修前.slf' gbk --before-tournament-fix
 & $jpPython -B -X utf8 tools\japanese\makemessage_j.py 'PC资源目录' '土星提取目录' '重复键修前.slf' gbk --before-duplicate-fix
+& $jpPython -B -X utf8 tools\japanese\makemessage_j.py 'PC资源目录' '土星提取目录' '译文修前.slf' gbk --before-translation-fix
 & $jpPython -B -X utf8 tools\japanese\verify_restored_dialogues.py 'PC资源目录' '土星提取目录' '上游对照.slf' 'NPC修前.slf' '新的恢复核对目录'
 & $jpPython -B -X utf8 tools\japanese\verify_tournament_dialogues.py 'PC资源目录' '土星提取目录' 'NPC修前.slf' '重复键修前.slf' '新的NPC核对目录'
-& $jpPython -B -X utf8 tools\japanese\verify_duplicate_messages.py 'PC资源目录' '土星提取目录' '重复键修前.slf' '当前输出.slf' '新的重复键核对目录'
+& $jpPython -B -X utf8 tools\japanese\verify_duplicate_messages.py 'PC资源目录' '土星提取目录' '重复键修前.slf' '译文修前.slf' '新的重复键核对目录'
+& $jpPython -B -X utf8 tools\japanese\verify_translations.py 'PC资源目录' '土星提取目录' '译文修前.slf' '当前输出.slf' '新的译文核对目录'
 ```
 
 第一个校验核对 #3 的 119 组恢复、CLEAR 和旧输出不变。第二个校验检查 #4 十组修正，保持历史重复键不变。第三个校验核对 #8 六个复用键的全部 13 个原始消息组、取得事件和守卫脚本，要求仅两条正文改变，其余 4,771 块及文件字节不变，#3/#4 文本全部保留。
 
 三个校验器的 `recovery-fixtures.csv` 均检查全部 4,766 个引擎键；#3 使用 `jp-recovery-before` / `jp-recovery`，#4 使用 `jp-npc-before` / `jp-npc`，#8 使用 `jp-duplicates-before` / `jp-duplicates`。夹具、历史 SLF 与模式须对应。详情见 [#3 恢复记录](../../docs/japanese-missing-dialogues.md)、[#4 NPC 记录](../../docs/japanese-tournament-npc-dialogues.md)及 [#8 重复键记录](../../docs/japanese-duplicate-message-keys.md)。
 
-转换器没有内嵌 #5 的赤血蚕换行修改。上述映射校验完成后，使用生成 SLF 时继续执行已有适配步骤：
+第四个校验器保护 #6 修订以外的全部字节，并核对源码、原资源、控制码及战斗说明证据。它生成全键 `recovery-fixtures.csv` 和 `translation-objects.csv`；两者放入出图目录，使用 `jp-translation-before` / `jp-translation`，输出五组对白、十九个菜单及全部有效正文。
+
+当前 #6 赤血蚕新译已排成完整两行，可直接加载生成 SLF。旧历史输出仍可使用 #5 的换行适配器；适配器对受保护的新译原样通过，拒绝未审阅正文。下面的步骤对两种版本都适用：
 
 ```powershell
 & (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\adapt_red_silkworm_description.py '原始输出.slf' '新的适配输出.slf'

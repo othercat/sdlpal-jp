@@ -1,0 +1,3971 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-20T22:51:23.257496+08:00",
+  "scope": "Independent source/code review for Issue #6: 11 battle/item revisions plus all Issue #5 eleven description objects. No game, UI, build, rendering, Git, GitHub, resource mutation or converter execution.",
+  "repo": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp",
+  "parent_supplied_feature_baseline": "443f11b6e558b068fe40e5ba8ea45006f9f94322",
+  "git_baseline_independently_queried": false,
+  "inputs": {
+    "pc_pinned": {
+      "sss.mkf": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\SSS.MKF",
+        "sha256": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+        "bytes": 575270
+      },
+      "m.msg": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\M.MSG",
+        "sha256": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+        "bytes": 224983
+      },
+      "word.dat": {
+        "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\WORD.DAT",
+        "sha256": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf",
+        "bytes": 5650
+      }
+    },
+    "saturn_pinned": {
+      "JM.MSG": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.MSG",
+        "sha256": "9fe510d44812c245e844692a368f2e5dfbe9c47c06673ac1e18f179e8c85aa90",
+        "bytes": 309248
+      },
+      "JM.NOR": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.NOR",
+        "sha256": "9ba1b1897ad3812a3b5111da41511a09f3a369d23ce17fc12a8074552d1713ac",
+        "bytes": 65296
+      },
+      "JM.SEC": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\JM.SEC",
+        "sha256": "4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95",
+        "bytes": 308120
+      },
+      "PROG.BIN": {
+        "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\saturn-extracted\\PROG.BIN",
+        "sha256": "4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c",
+        "bytes": 411244
+      }
+    },
+    "data_mkf": {
+      "path": "D:\\PAL\\完整包\\PAL98_v1.72_20261014\\DATA.MKF",
+      "sha256": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b"
+    },
+    "baseline_slf": {
+      "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-8\\duplicate-keys-r1-20261020\\after.slf",
+      "sha256": "b8657971f4962b25e8a8f9a15c4b9d26ddf52e1d18408ab259b2f932b59f2f87"
+    }
+  },
+  "inputs_unchanged": true,
+  "engine_file_sha256": {
+    "script.c": "7aa9e238faa4f70cd8d0adc8f3a8d661bad4874e494ebdf5cb5fbd005a9f6b87",
+    "global.c": "2a4e9f43595060e86bba7d40ae5b7b501b7905bffde8312f848e77d5f0998329",
+    "global.h": "cf50ab7f84008a33e081758c30c5fa83c043db8b7a563ae286110225f47fe7a1",
+    "fight.c": "c4834588ef58cead1f81898e817fa172db505cf54e25e3653451cc91327e42d6",
+    "common.h": "9b1b72407bdfca6ec4abef3ac18a8cd5fffc1b7756b50cb7c931ee70c2c6e39c",
+    "win32/sdlpal.vcxproj": "10ae88a59c589f341046d459600853a439115d643220a21816e51b2dc69dc0e0"
+  },
+  "source_decoder": {
+    "helper": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\verify_restored_dialogues.py",
+    "helper_functions": [
+      "read_sources",
+      "groups",
+      "blocks"
+    ],
+    "win_groups_consecutive": true,
+    "saturn_groups_consecutive": false,
+    "saturn_script_stream": "JM.SEC followed by JM.NOR, big-endian four WORD records",
+    "saturn_message_offsets": "PROG.BIN[358868:393212], big-endian u16, unwrap on decrease; indexed into JM.MSG with NUL padding removed",
+    "script_numbers": "Zero-based raw four-WORD indexes. No runtime event pointers inferred."
+  },
+  "common_mechanics": {
+    "default_mode": "common.h defines PAL_CLASSIC unless ENABLE_REVISIED_BATTLE is explicitly supplied; reviewed vcxproj default definitions omit the latter. This review did not inspect the parent current running binary.",
+    "mode_evidence": [
+      {
+        "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\common.h",
+        "line_start": 26,
+        "line_end": 28
+      },
+      {
+        "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\win32\\sdlpal.vcxproj",
+        "line_start": 123,
+        "line_end": 123
+      },
+      {
+        "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\win32\\sdlpal.vcxproj",
+        "line_start": 150,
+        "line_end": 150
+      }
+    ],
+    "duration": "Classic positive statuses decrement once when the action queue finishes its whole round, not per weapon hit. Revised player statuses decrement after that player action; thus Nターン avoids claiming N attacks but does not promise identical wall-clock timing between modes. Mid-round application and death/end of battle can shorten useful opportunities.",
+    "duration_evidence": [
+      {
+        "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+        "line_start": 1329,
+        "line_end": 1334
+      },
+      {
+        "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+        "line_start": 41,
+        "line_end": 55
+      },
+      {
+        "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.c",
+        "line_start": 2182,
+        "line_end": 2193
+      },
+      {
+        "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+        "line_start": 1621,
+        "line_end": 1627
+      },
+      {
+        "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+        "line_start": 1644,
+        "line_end": 1649
+      },
+      {
+        "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+        "line_start": 4371,
+        "line_end": 4378
+      }
+    ],
+    "reapply": "Good statuses require living HP and replace only if new duration is longer; repeated casting does not add durations.",
+    "numeric_multiplier_policy": "Use neutral increased power/speed. Bravery forces a critical branch (3x an intermediate calculation); Haste is 3x capped 999 in classic, integer 6/5 in revised. Neither supports literal inherited 2x final-effect wording.",
+    "font_layout_boundary": "Suggested revisions use <=15 fullwidth codepoints per line (observed maximum 14). This is only text-length preparation; the main agent owns actual font rendering/clipping/line-count checks."
+  },
+  "revision_count": 11,
+  "revision_keys": [
+    [
+      12945,
+      12946
+    ],
+    [
+      13436,
+      13436
+    ],
+    [
+      13438,
+      13439
+    ],
+    [
+      13442,
+      13443
+    ],
+    [
+      13444,
+      13445
+    ],
+    [
+      13453,
+      13454
+    ],
+    [
+      13455,
+      13456
+    ],
+    [
+      13457,
+      13457
+    ],
+    [
+      13466,
+      13467
+    ],
+    [
+      13468,
+      13468
+    ],
+    [
+      13469,
+      13469
+    ]
+  ],
+  "issue5_objects": [
+    149,
+    306,
+    307,
+    308,
+    311,
+    370,
+    374,
+    377,
+    390,
+    393,
+    394
+  ],
+  "issue5_decisions": [
+    {
+      "object_id": 149,
+      "decision": "main_agent_revision_agrees",
+      "win_key": [
+        12920,
+        12921
+      ]
+    },
+    {
+      "object_id": 306,
+      "decision": "retain",
+      "win_key": [
+        13437,
+        13437
+      ]
+    },
+    {
+      "object_id": 307,
+      "decision": "revise",
+      "win_key": [
+        13436,
+        13436
+      ]
+    },
+    {
+      "object_id": 308,
+      "decision": "revise",
+      "win_key": [
+        13466,
+        13467
+      ]
+    },
+    {
+      "object_id": 311,
+      "decision": "revise",
+      "win_key": [
+        13444,
+        13445
+      ]
+    },
+    {
+      "object_id": 370,
+      "decision": "retain",
+      "win_key": [
+        13451,
+        13452
+      ]
+    },
+    {
+      "object_id": 374,
+      "decision": "retain",
+      "win_key": [
+        13094,
+        13095
+      ]
+    },
+    {
+      "object_id": 377,
+      "decision": "retain",
+      "win_key": [
+        13458,
+        13458
+      ]
+    },
+    {
+      "object_id": 390,
+      "decision": "revise",
+      "win_key": [
+        13455,
+        13456
+      ]
+    },
+    {
+      "object_id": 393,
+      "decision": "revise",
+      "win_key": [
+        13457,
+        13457
+      ]
+    },
+    {
+      "object_id": 394,
+      "decision": "retain",
+      "win_key": [
+        13464,
+        13465
+      ]
+    }
+  ],
+  "poison_object_evidence": [
+    {
+      "object_id": 551,
+      "name": "赤毒",
+      "jp_name_from_slf": "赤の毒",
+      "raw_words": [
+        0,
+        16,
+        40862,
+        0,
+        40864,
+        0,
+        0
+      ],
+      "level": 0
+    },
+    {
+      "object_id": 552,
+      "name": "尸毒",
+      "jp_name_from_slf": "屍の毒",
+      "raw_words": [
+        1,
+        64,
+        40866,
+        0,
+        40868,
+        0,
+        0
+      ],
+      "level": 1
+    },
+    {
+      "object_id": 553,
+      "name": "瘴毒",
+      "jp_name_from_slf": "瘴の毒",
+      "raw_words": [
+        1,
+        33,
+        40870,
+        0,
+        40872,
+        0,
+        0
+      ],
+      "level": 1
+    },
+    {
+      "object_id": 554,
+      "name": "毒丝",
+      "jp_name_from_slf": "毒糸",
+      "raw_words": [
+        2,
+        224,
+        40874,
+        0,
+        40876,
+        0,
+        0
+      ],
+      "level": 2
+    },
+    {
+      "object_id": 555,
+      "name": "三尸蛊毒",
+      "jp_name_from_slf": "三屍蠱の毒",
+      "raw_words": [
+        3,
+        128,
+        40878,
+        0,
+        40889,
+        0,
+        0
+      ],
+      "level": 3
+    },
+    {
+      "object_id": 556,
+      "name": "鹤顶红毒",
+      "jp_name_from_slf": "鶴頂紅の毒",
+      "raw_words": [
+        3,
+        160,
+        40897,
+        0,
+        40907,
+        0,
+        0
+      ],
+      "level": 3
+    },
+    {
+      "object_id": 557,
+      "name": "孔雀胆毒",
+      "jp_name_from_slf": "孔雀胆の毒",
+      "raw_words": [
+        3,
+        80,
+        40899,
+        0,
+        40909,
+        0,
+        0
+      ],
+      "level": 3
+    },
+    {
+      "object_id": 558,
+      "name": "血海棠毒",
+      "jp_name_from_slf": "血海棠の毒",
+      "raw_words": [
+        3,
+        96,
+        40901,
+        0,
+        40911,
+        0,
+        0
+      ],
+      "level": 3
+    },
+    {
+      "object_id": 559,
+      "name": "断肠草毒",
+      "jp_name_from_slf": "断腸草の毒",
+      "raw_words": [
+        3,
+        192,
+        40903,
+        0,
+        40913,
+        0,
+        0
+      ],
+      "level": 3
+    },
+    {
+      "object_id": 560,
+      "name": "金蚕蛊毒",
+      "jp_name_from_slf": "金蚕の蠱の毒",
+      "raw_words": [
+        3,
+        176,
+        40905,
+        0,
+        40915,
+        0,
+        0
+      ],
+      "level": 3
+    },
+    {
+      "object_id": 561,
+      "name": "食妖虫附",
+      "jp_name_from_slf": "妖食い虫",
+      "raw_words": [
+        4,
+        0,
+        0,
+        0,
+        40917,
+        0,
+        0
+      ],
+      "level": 4
+    },
+    {
+      "object_id": 562,
+      "name": "碧血蚕附",
+      "jp_name_from_slf": "青血の蚕",
+      "raw_words": [
+        4,
+        0,
+        0,
+        0,
+        40940,
+        0,
+        0
+      ],
+      "level": 4
+    },
+    {
+      "object_id": 563,
+      "name": "HP回补",
+      "jp_name_from_slf": "体力回復",
+      "raw_words": [
+        99,
+        0,
+        40860,
+        0,
+        0,
+        0,
+        0
+      ],
+      "level": 99
+    },
+    {
+      "object_id": 564,
+      "name": "MP回补",
+      "jp_name_from_slf": "神気回復",
+      "raw_words": [
+        99,
+        0,
+        40858,
+        0,
+        0,
+        0,
+        0
+      ],
+      "level": 99
+    }
+  ],
+  "auxiliary_object_270": {
+    "raw_words": [
+      21,
+      0,
+      39713,
+      0,
+      0,
+      40590,
+      17
+    ],
+    "use_script": [
+      {
+        "script": 39713,
+        "words": [
+          52,
+          38780,
+          0,
+          0
+        ],
+        "hex_words": [
+          "0034",
+          "977C",
+          "0000",
+          "0000"
+        ]
+      },
+      {
+        "script": 39714,
+        "words": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hex_words": [
+          "0000",
+          "0000",
+          "0000",
+          "0000"
+        ]
+      }
+    ],
+    "purpose": "Independent follow-on conversion of collected value into items; not part of a new fix."
+  },
+  "entries": [
+    {
+      "object_id": 63,
+      "win_name": "金刚符",
+      "jp_name_from_slf": "金剛符",
+      "win": {
+        "script_start": 40529,
+        "script_end": 40530,
+        "ids": [
+          12945,
+          12946
+        ],
+        "text": [
+          "使用后如有金钟铁罩护身。",
+          "增加防御七回合"
+        ],
+        "sid": 12945,
+        "eid": 12946
+      },
+      "saturn": {
+        "script_start": 43550,
+        "script_end": 43551,
+        "ids": [
+          16452,
+          16453
+        ],
+        "text": [
+          "使用後は不死身の護身となる。",
+          "７回の攻撃中、防御が上がる。"
+        ],
+        "sid": 16452,
+        "eid": 16453
+      },
+      "baseline_slf_text": [
+        "使用後は不死身の護身となる。",
+        "７回の攻撃中、防御が上がる。"
+      ],
+      "decision": "revise",
+      "reason": "N回の攻撃中 mistranslates rounds; 不死身 additionally implies invulnerability not granted by Protect.",
+      "proposed_text": [
+        "鉄の鎧を身にまとい、",
+        "７ターンの間、防御が上がる。"
+      ],
+      "proposed_fullwidth_character_counts": [
+        10,
+        14
+      ],
+      "effect_summary": "Sets Protect status 6 to 7 rounds. Physical damage is divided by 2 (minimum 1); magic damage uses a Protect factor in the defensive denominator. Does not make the player immortal.",
+      "object_raw_words": [
+        216,
+        1300,
+        39556,
+        0,
+        0,
+        40528,
+        41
+      ],
+      "object_raw_hex": [
+        "00D8",
+        "0514",
+        "9A84",
+        "0000",
+        "0000",
+        "9E50",
+        "0029"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 165730,
+      "description_entry_raw_slot_5": 40528,
+      "script_instructions": [
+        {
+          "script": 39556,
+          "words": [
+            45,
+            6,
+            7,
+            0
+          ],
+          "hex_words": [
+            "002D",
+            "0006",
+            "0007",
+            "0000"
+          ]
+        },
+        {
+          "script": 39557,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1329,
+          "line_end": 1334
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+          "line_start": 41,
+          "line_end": 55
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.c",
+          "line_start": 2182,
+          "line_end": 2193
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1621,
+          "line_end": 1627
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1644,
+          "line_end": 1649
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4371,
+          "line_end": 4378
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4946,
+          "line_end": 4962
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4691,
+          "line_end": 4696
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4726,
+          "line_end": 4731
+        }
+      ],
+      "numeric_policy": "Keep 7, change unit to turns; do not add an exact defense-stat or total-damage multiplier.",
+      "boundaries": []
+    },
+    {
+      "object_id": 307,
+      "win_name": "冰心诀",
+      "jp_name_from_slf": "冷心の術",
+      "win": {
+        "script_start": 43299,
+        "script_end": 43299,
+        "ids": [
+          13436
+        ],
+        "text": [
+          "解定身、昏睡、疯魔、咒封"
+        ],
+        "sid": 13436,
+        "eid": 13436
+      },
+      "saturn": {
+        "script_start": 46455,
+        "script_end": 46455,
+        "ids": [
+          17076
+        ],
+        "text": [
+          "麻酔、催眠、魔術、呪いを解く。"
+        ],
+        "sid": 17076,
+        "eid": 17076
+      },
+      "baseline_slf_text": [
+        "麻酔、催眠、魔術、呪いを解く。"
+      ],
+      "decision": "revise",
+      "reason": "魔術/呪い do not identify the actual confusion/silence statuses (疯魔/咒封).",
+      "proposed_text": [
+        "麻酔、催眠、混乱、",
+        "術封じを解く。"
+      ],
+      "proposed_fullwidth_character_counts": [
+        9,
+        7
+      ],
+      "effect_summary": "Clears player statuses 0,1,2,3: Confused, Paralyzed(classic)/Slow(revised), Sleep, Silence.",
+      "object_raw_words": [
+        31,
+        0,
+        39349,
+        0,
+        0,
+        43298,
+        2
+      ],
+      "object_raw_hex": [
+        "001F",
+        "0000",
+        "99B5",
+        "0000",
+        "0000",
+        "A922",
+        "0002"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 169146,
+      "description_entry_raw_slot_5": 43298,
+      "script_instructions": [
+        {
+          "script": 39349,
+          "words": [
+            47,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "002F",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 39350,
+          "words": [
+            47,
+            1,
+            0,
+            0
+          ],
+          "hex_words": [
+            "002F",
+            "0001",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 39351,
+          "words": [
+            47,
+            2,
+            0,
+            0
+          ],
+          "hex_words": [
+            "002F",
+            "0002",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 39352,
+          "words": [
+            47,
+            3,
+            0,
+            0
+          ],
+          "hex_words": [
+            "002F",
+            "0003",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 39353,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1358,
+          "line_end": 1363
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+          "line_start": 41,
+          "line_end": 60
+        }
+      ],
+      "numeric_policy": "No numeric value in source; retain the four-effect scope.",
+      "boundaries": [
+        "Classic enum slot 1 is Paralyzed; revised enum slot 1 is Slow. The minimal proposed text retains existing 麻酔/催眠 rather than claiming an exact shared status-name vocabulary.",
+        "New line breaks are suggestions for 16 px fullwidth glyphs. They were not rendered by this read-only review."
+      ],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 31,
+        "byte_offset_in_data_mkf": 16914,
+        "raw_words": [
+          28,
+          4,
+          65530,
+          65518,
+          99,
+          65535,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          7,
+          141
+        ],
+        "type": 4,
+        "mp_cost": 7,
+        "base_damage_raw_unsigned": 0,
+        "base_damage_signed": 0,
+        "element": 7,
+        "flags": 2,
+        "apply_to_all": false,
+        "to_enemy": false
+      }
+    },
+    {
+      "object_id": 309,
+      "win_name": "金刚咒",
+      "jp_name_from_slf": "金剛の術",
+      "win": {
+        "script_start": 43305,
+        "script_end": 43306,
+        "ids": [
+          13438,
+          13439
+        ],
+        "text": [
+          "使用后如有金钟铁罩护身。",
+          "增加防御七回合。"
+        ],
+        "sid": 13438,
+        "eid": 13439
+      },
+      "saturn": {
+        "script_start": 46461,
+        "script_end": 46462,
+        "ids": [
+          17078,
+          17079
+        ],
+        "text": [
+          "鉄の鎧を身にまとい、",
+          "７回の攻撃中、防御が上がる。"
+        ],
+        "sid": 17078,
+        "eid": 17079
+      },
+      "baseline_slf_text": [
+        "鉄の鎧を身にまとい、",
+        "７回の攻撃中、防御が上がる。"
+      ],
+      "decision": "revise",
+      "reason": "N回の攻撃中 is attacks rather than turns.",
+      "proposed_text": [
+        "鉄の鎧を身にまとい、",
+        "７ターンの間、防御が上がる。"
+      ],
+      "proposed_fullwidth_character_counts": [
+        10,
+        14
+      ],
+      "effect_summary": "Sets Protect status 6 to 7 rounds; same effect script as object 63.",
+      "object_raw_words": [
+        39,
+        0,
+        39556,
+        0,
+        0,
+        43304,
+        2
+      ],
+      "object_raw_hex": [
+        "0027",
+        "0000",
+        "9A84",
+        "0000",
+        "0000",
+        "A928",
+        "0002"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 169174,
+      "description_entry_raw_slot_5": 43304,
+      "script_instructions": [
+        {
+          "script": 39556,
+          "words": [
+            45,
+            6,
+            7,
+            0
+          ],
+          "hex_words": [
+            "002D",
+            "0006",
+            "0007",
+            "0000"
+          ]
+        },
+        {
+          "script": 39557,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1329,
+          "line_end": 1334
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+          "line_start": 41,
+          "line_end": 55
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.c",
+          "line_start": 2182,
+          "line_end": 2193
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1621,
+          "line_end": 1627
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1644,
+          "line_end": 1649
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4371,
+          "line_end": 4378
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4946,
+          "line_end": 4962
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4691,
+          "line_end": 4696
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4726,
+          "line_end": 4731
+        }
+      ],
+      "numeric_policy": "Keep 7, change unit to turns; retain neutral defense wording.",
+      "boundaries": [],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 39,
+        "byte_offset_in_data_mkf": 17170,
+        "raw_words": [
+          28,
+          4,
+          65530,
+          65518,
+          99,
+          65535,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          11,
+          0,
+          7,
+          141
+        ],
+        "type": 4,
+        "mp_cost": 11,
+        "base_damage_raw_unsigned": 0,
+        "base_damage_signed": 0,
+        "element": 7,
+        "flags": 2,
+        "apply_to_all": false,
+        "to_enemy": false
+      }
+    },
+    {
+      "object_id": 310,
+      "win_name": "真元护体",
+      "jp_name_from_slf": "復元護身",
+      "win": {
+        "script_start": 43313,
+        "script_end": 43314,
+        "ids": [
+          13442,
+          13443
+        ],
+        "text": [
+          "使用后如有铁铠金甲护体。",
+          "增加防御九回合。"
+        ],
+        "sid": 13442,
+        "eid": 13443
+      },
+      "saturn": {
+        "script_start": 46469,
+        "script_end": 46470,
+        "ids": [
+          17082,
+          17083
+        ],
+        "text": [
+          "鉄の鎧を身にまとい、",
+          "９回の攻撃中、防御が上がる。"
+        ],
+        "sid": 17082,
+        "eid": 17083
+      },
+      "baseline_slf_text": [
+        "鉄の鎧を身にまとい、",
+        "９回の攻撃中、防御が上がる。"
+      ],
+      "decision": "revise",
+      "reason": "N回の攻撃中 is attacks rather than turns.",
+      "proposed_text": [
+        "鉄の鎧を身にまとい、",
+        "９ターンの間、防御が上がる。"
+      ],
+      "proposed_fullwidth_character_counts": [
+        10,
+        14
+      ],
+      "effect_summary": "Sets Protect status 6 to 9 rounds.",
+      "object_raw_words": [
+        40,
+        0,
+        43032,
+        0,
+        0,
+        43312,
+        2
+      ],
+      "object_raw_hex": [
+        "0028",
+        "0000",
+        "A818",
+        "0000",
+        "0000",
+        "A930",
+        "0002"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 169188,
+      "description_entry_raw_slot_5": 43312,
+      "script_instructions": [
+        {
+          "script": 43032,
+          "words": [
+            45,
+            6,
+            9,
+            0
+          ],
+          "hex_words": [
+            "002D",
+            "0006",
+            "0009",
+            "0000"
+          ]
+        },
+        {
+          "script": 43033,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1329,
+          "line_end": 1334
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+          "line_start": 41,
+          "line_end": 55
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.c",
+          "line_start": 2182,
+          "line_end": 2193
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1621,
+          "line_end": 1627
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1644,
+          "line_end": 1649
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4371,
+          "line_end": 4378
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4946,
+          "line_end": 4962
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4691,
+          "line_end": 4696
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4726,
+          "line_end": 4731
+        }
+      ],
+      "numeric_policy": "Keep 9, change unit to turns; do not claim literal defense-stat doubling.",
+      "boundaries": [],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 40,
+        "byte_offset_in_data_mkf": 17202,
+        "raw_words": [
+          29,
+          4,
+          65528,
+          4,
+          1,
+          65535,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          18,
+          0,
+          7,
+          149
+        ],
+        "type": 4,
+        "mp_cost": 18,
+        "base_damage_raw_unsigned": 0,
+        "base_damage_signed": 0,
+        "element": 7,
+        "flags": 2,
+        "apply_to_all": false,
+        "to_enemy": false
+      }
+    },
+    {
+      "object_id": 311,
+      "win_name": "天罡战气",
+      "jp_name_from_slf": "北斗の戦気",
+      "win": {
+        "script_start": 43317,
+        "script_end": 43318,
+        "ids": [
+          13444,
+          13445
+        ],
+        "text": [
+          "七回合内，使用武器攻击，",
+          "威力加倍。"
+        ],
+        "sid": 13444,
+        "eid": 13445
+      },
+      "saturn": {
+        "script_start": 46473,
+        "script_end": 46474,
+        "ids": [
+          17084,
+          17085
+        ],
+        "text": [
+          "７回の攻撃中、武器攻撃の威力が",
+          "倍増する。"
+        ],
+        "sid": 17084,
+        "eid": 17085
+      },
+      "baseline_slf_text": [
+        "７回の攻撃中、武器攻撃の威力が",
+        "倍増する。"
+      ],
+      "decision": "revise",
+      "reason": "Duration uses attacks instead of turns; original CN 加倍 and inherited JP 倍増 are not a reliable exact description of the engine.",
+      "proposed_text": [
+        "７ターンの間、武器攻撃の",
+        "威力が上がる。"
+      ],
+      "proposed_fullwidth_character_counts": [
+        12,
+        7
+      ],
+      "effect_summary": "Sets Bravery status 5 to 7 rounds. Normal physical attacks force the critical branch multiplying the calculated base damage by 3; random factors and Xiaoyao bonus can also apply. This is not a universal final-damage 2x/3x guarantee.",
+      "object_raw_words": [
+        41,
+        0,
+        43034,
+        0,
+        0,
+        43316,
+        2
+      ],
+      "object_raw_hex": [
+        "0029",
+        "0000",
+        "A81A",
+        "0000",
+        "0000",
+        "A934",
+        "0002"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 169202,
+      "description_entry_raw_slot_5": 43316,
+      "script_instructions": [
+        {
+          "script": 43034,
+          "words": [
+            45,
+            5,
+            7,
+            0
+          ],
+          "hex_words": [
+            "002D",
+            "0005",
+            "0007",
+            "0000"
+          ]
+        },
+        {
+          "script": 43035,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1329,
+          "line_end": 1334
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+          "line_start": 41,
+          "line_end": 55
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.c",
+          "line_start": 2182,
+          "line_end": 2193
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1621,
+          "line_end": 1627
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1644,
+          "line_end": 1649
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4371,
+          "line_end": 4378
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 3532,
+          "line_end": 3562
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 3590,
+          "line_end": 3623
+        }
+      ],
+      "numeric_policy": "Keep 7 turns; remove 倍増 and use neutral stronger weapon attack. Do not replace with a flat 3x claim.",
+      "boundaries": [],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 41,
+        "byte_offset_in_data_mkf": 17234,
+        "raw_words": [
+          29,
+          4,
+          65528,
+          4,
+          1,
+          65535,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13,
+          0,
+          7,
+          149
+        ],
+        "type": 4,
+        "mp_cost": 13,
+        "base_damage_raw_unsigned": 0,
+        "base_damage_signed": 0,
+        "element": 7,
+        "flags": 2,
+        "apply_to_all": false,
+        "to_enemy": false
+      }
+    },
+    {
+      "object_id": 384,
+      "win_name": "灵葫咒",
+      "jp_name_from_slf": "霊ひょうたんの術",
+      "win": {
+        "script_start": 43336,
+        "script_end": 43337,
+        "ids": [
+          13453,
+          13454
+        ],
+        "text": [
+          "当妖物体力低于四分之一时，",
+          "可将其收入紫金葫芦中炼药。"
+        ],
+        "sid": 13453,
+        "eid": 13454
+      },
+      "saturn": {
+        "script_start": 46492,
+        "script_end": 46494,
+        "ids": [
+          17093,
+          17094,
+          17095
+        ],
+        "text": [
+          "パワーが相手の四分の一より",
+          "少ない時、紫金壷の中の薬を",
+          "服用する。"
+        ],
+        "sid": 17093,
+        "eid": 17095
+      },
+      "baseline_slf_text": [
+        "パワーが相手の四分の一より",
+        "少ない時、紫金壷の中の薬を",
+        "服用する。"
+      ],
+      "decision": "revise",
+      "reason": "Saturn text reverses collection/refining into taking medicine and compares an unspecified personal power against the enemy, instead of enemy remaining HP against its own maximum.",
+      "proposed_text": [
+        "敵の体力が四分の一以下の時、",
+        "紫金のひょうたんに収め、",
+        "薬を作ることができる。"
+      ],
+      "proposed_fullwidth_character_counts": [
+        14,
+        12,
+        11
+      ],
+      "effect_summary": "Script 0064 rejects enemy currentHP*100 > originalMaxHP*25. A subsequent random gate and nonzero collect value are also required. 0033 adds collect value then 0060 kills the collected enemy. Object 270 separately runs 0034 to convert accumulated value into items.",
+      "object_raw_words": [
+        84,
+        0,
+        43113,
+        0,
+        0,
+        43335,
+        10
+      ],
+      "object_raw_hex": [
+        "0054",
+        "0000",
+        "A869",
+        "0000",
+        "0000",
+        "A947",
+        "000A"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 170224,
+      "description_entry_raw_slot_5": 43335,
+      "script_instructions": [
+        {
+          "script": 43113,
+          "words": [
+            100,
+            25,
+            43072,
+            0
+          ],
+          "hex_words": [
+            "0064",
+            "0019",
+            "A840",
+            "0000"
+          ]
+        },
+        {
+          "script": 43114,
+          "words": [
+            6,
+            60,
+            43072,
+            0
+          ],
+          "hex_words": [
+            "0006",
+            "003C",
+            "A840",
+            "0000"
+          ]
+        },
+        {
+          "script": 43115,
+          "words": [
+            51,
+            43072,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0033",
+            "A840",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43116,
+          "words": [
+            96,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0060",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43117,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43072,
+          "words": [
+            62,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "003E",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43073,
+          "words": [
+            65535,
+            13364,
+            0,
+            0
+          ],
+          "hex_words": [
+            "FFFF",
+            "3434",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43074,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 39713,
+          "words": [
+            52,
+            38780,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0034",
+            "977C",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 39714,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1942,
+          "line_end": 1951
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 3260,
+          "line_end": 3273
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1396,
+          "line_end": 1426
+        }
+      ],
+      "numeric_policy": "Keep quarter threshold; use 以下 to match actual <=25% rather than CN literal below. No guaranteed-success wording.",
+      "boundaries": [
+        "Collection is not the same as immediate drug consumption. The proposed can wording does not claim automatic success; no new 59% success percentage is added to player text."
+      ],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 84,
+        "byte_offset_in_data_mkf": 18610,
+        "raw_words": [
+          39,
+          0,
+          0,
+          0,
+          99,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          24,
+          64537,
+          0,
+          170
+        ],
+        "type": 0,
+        "mp_cost": 24,
+        "base_damage_raw_unsigned": 64537,
+        "base_damage_signed": -999,
+        "element": 0,
+        "flags": 10,
+        "apply_to_all": false,
+        "to_enemy": true
+      }
+    },
+    {
+      "object_id": 390,
+      "win_name": "醉仙望月步",
+      "jp_name_from_slf": "酔い覚めの歩み",
+      "win": {
+        "script_start": 43340,
+        "script_end": 43341,
+        "ids": [
+          13455,
+          13456
+        ],
+        "text": [
+          "五回合内，使用武器攻击，",
+          "可连续出手两次。"
+        ],
+        "sid": 13455,
+        "eid": 13456
+      },
+      "saturn": {
+        "script_start": 46497,
+        "script_end": 46498,
+        "ids": [
+          17096,
+          17097
+        ],
+        "text": [
+          "５回の攻撃中、武器攻撃の回数が",
+          "倍増する。"
+        ],
+        "sid": 17096,
+        "eid": 17097
+      },
+      "baseline_slf_text": [
+        "５回の攻撃中、武器攻撃の回数が",
+        "倍増する。"
+      ],
+      "decision": "revise",
+      "reason": "Five rounds were described as five attacks, and doubling attack count is less explicit than the supported two hits per normal attack.",
+      "proposed_text": [
+        "５ターンの間、武器で",
+        "２回続けて攻撃できる。"
+      ],
+      "proposed_fullwidth_character_counts": [
+        10,
+        11
+      ],
+      "effect_summary": "Sets DualAttack status 8 to 5 rounds. Both single-enemy and all-enemy normal physical attack branches loop twice instead of once.",
+      "object_raw_words": [
+        95,
+        0,
+        43138,
+        0,
+        0,
+        43339,
+        2
+      ],
+      "object_raw_hex": [
+        "005F",
+        "0000",
+        "A882",
+        "0000",
+        "0000",
+        "A94B",
+        "0002"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 170308,
+      "description_entry_raw_slot_5": 43339,
+      "script_instructions": [
+        {
+          "script": 43138,
+          "words": [
+            45,
+            8,
+            5,
+            0
+          ],
+          "hex_words": [
+            "002D",
+            "0008",
+            "0005",
+            "0000"
+          ]
+        },
+        {
+          "script": 43139,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1329,
+          "line_end": 1334
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+          "line_start": 41,
+          "line_end": 55
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.c",
+          "line_start": 2182,
+          "line_end": 2193
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1621,
+          "line_end": 1627
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1644,
+          "line_end": 1649
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4371,
+          "line_end": 4378
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 3532,
+          "line_end": 3533
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 3585,
+          "line_end": 3591
+        }
+      ],
+      "numeric_policy": "Keep 5 turns and explicit 2 consecutive attacks; do not imply two spells or two actions of any type.",
+      "boundaries": [],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 95,
+        "byte_offset_in_data_mkf": 18962,
+        "raw_words": [
+          28,
+          4,
+          65530,
+          65518,
+          99,
+          65535,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          22,
+          0,
+          7,
+          141
+        ],
+        "type": 4,
+        "mp_cost": 22,
+        "base_damage_raw_unsigned": 0,
+        "base_damage_signed": 0,
+        "element": 7,
+        "flags": 2,
+        "apply_to_all": false,
+        "to_enemy": false
+      }
+    },
+    {
+      "object_id": 393,
+      "win_name": "仙风云体术",
+      "jp_name_from_slf": "仙風雲体の術",
+      "win": {
+        "script_start": 43344,
+        "script_end": 43344,
+        "ids": [
+          13457
+        ],
+        "text": [
+          "身法暂时加倍九回合。"
+        ],
+        "sid": 13457,
+        "eid": 13457
+      },
+      "saturn": {
+        "script_start": 46501,
+        "script_end": 46501,
+        "ids": [
+          17098
+        ],
+        "text": [
+          "速さが９回の攻撃中、倍増する。"
+        ],
+        "sid": 17098,
+        "eid": 17098
+      },
+      "baseline_slf_text": [
+        "速さが９回の攻撃中、倍増する。"
+      ],
+      "decision": "revise",
+      "reason": "Duration uses attacks instead of turns; original CN 加倍 and JP 倍増 do not match either current battle mode.",
+      "proposed_text": [
+        "９ターンの間、速さが上がる。"
+      ],
+      "proposed_fullwidth_character_counts": [
+        14
+      ],
+      "effect_summary": "Sets Haste status 7 to 9 rounds. Actual dexterity is multiplied by 3 and capped at 999 in PAL_CLASSIC; revised battle uses integer 6/5. This influences action ordering/speed and is not an attack-count multiplier.",
+      "object_raw_words": [
+        97,
+        0,
+        43140,
+        0,
+        0,
+        43343,
+        2
+      ],
+      "object_raw_hex": [
+        "0061",
+        "0000",
+        "A884",
+        "0000",
+        "0000",
+        "A94F",
+        "0002"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 170350,
+      "description_entry_raw_slot_5": 43343,
+      "script_instructions": [
+        {
+          "script": 43140,
+          "words": [
+            45,
+            7,
+            9,
+            0
+          ],
+          "hex_words": [
+            "002D",
+            "0007",
+            "0009",
+            "0000"
+          ]
+        },
+        {
+          "script": 43141,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1329,
+          "line_end": 1334
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+          "line_start": 41,
+          "line_end": 55
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.c",
+          "line_start": 2182,
+          "line_end": 2193
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1621,
+          "line_end": 1627
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1644,
+          "line_end": 1649
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4371,
+          "line_end": 4378
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 354,
+          "line_end": 389
+        }
+      ],
+      "numeric_policy": "Keep 9 turns; replace doubling with neutral increased speed, compatible with both multipliers.",
+      "boundaries": [],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 97,
+        "byte_offset_in_data_mkf": 19026,
+        "raw_words": [
+          29,
+          4,
+          65528,
+          4,
+          1,
+          65535,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          7,
+          139
+        ],
+        "type": 4,
+        "mp_cost": 8,
+        "base_damage_raw_unsigned": 0,
+        "base_damage_signed": 0,
+        "element": 7,
+        "flags": 2,
+        "apply_to_all": false,
+        "to_enemy": false
+      }
+    },
+    {
+      "object_id": 308,
+      "win_name": "灵血咒",
+      "jp_name_from_slf": "霊血の術",
+      "win": {
+        "script_start": 43365,
+        "script_end": 43366,
+        "ids": [
+          13466,
+          13467
+        ],
+        "text": [
+          "解赤毒、尸毒、瘴毒、毒丝",
+          "、定身、昏睡、疯魔、咒封"
+        ],
+        "sid": 13466,
+        "eid": 13467
+      },
+      "saturn": {
+        "script_start": 46523,
+        "script_end": 46524,
+        "ids": [
+          17108,
+          17109
+        ],
+        "text": [
+          "赤の毒、屍の毒、瘴の毒、毒糸、",
+          "麻酔、催眠、魔術、呪いを解く。"
+        ],
+        "sid": 17108,
+        "eid": 17109
+      },
+      "baseline_slf_text": [
+        "赤の毒、屍の毒、瘴の毒、毒糸、",
+        "麻酔、催眠、魔術、呪いを解く。"
+      ],
+      "decision": "revise",
+      "reason": "魔術/呪い incorrectly generalize confusion/silence; poison names are already correct.",
+      "proposed_text": [
+        "赤の毒、屍の毒、瘴の毒、",
+        "毒糸、麻酔、催眠、混乱、",
+        "術封じを解く。"
+      ],
+      "proposed_fullwidth_character_counts": [
+        12,
+        12,
+        7
+      ],
+      "effect_summary": "Cures poison levels <=2 (objects 551,552,553,554 in this pinned resource) then jumps to 39349 to clear the same four statuses as object 307.",
+      "object_raw_words": [
+        52,
+        0,
+        43082,
+        0,
+        0,
+        43364,
+        2
+      ],
+      "object_raw_hex": [
+        "0034",
+        "0000",
+        "A84A",
+        "0000",
+        "0000",
+        "A964",
+        "0002"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 169160,
+      "description_entry_raw_slot_5": 43364,
+      "script_instructions": [
+        {
+          "script": 43082,
+          "words": [
+            44,
+            0,
+            2,
+            0
+          ],
+          "hex_words": [
+            "002C",
+            "0000",
+            "0002",
+            "0000"
+          ]
+        },
+        {
+          "script": 43083,
+          "words": [
+            3,
+            39349,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0003",
+            "99B5",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43084,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 39349,
+          "words": [
+            47,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "002F",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 39350,
+          "words": [
+            47,
+            1,
+            0,
+            0
+          ],
+          "hex_words": [
+            "002F",
+            "0001",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 39351,
+          "words": [
+            47,
+            2,
+            0,
+            0
+          ],
+          "hex_words": [
+            "002F",
+            "0002",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 39352,
+          "words": [
+            47,
+            3,
+            0,
+            0
+          ],
+          "hex_words": [
+            "002F",
+            "0003",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 39353,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1311,
+          "line_end": 1327
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.c",
+          "line_start": 1546,
+          "line_end": 1554
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1358,
+          "line_end": 1363
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+          "line_start": 41,
+          "line_end": 60
+        }
+      ],
+      "numeric_policy": "Do not broaden to all poisons. Retain the four specific poison names; no additional numeric promise.",
+      "boundaries": [
+        "Classic enum slot 1 is Paralyzed; revised enum slot 1 is Slow. The minimal proposed text retains existing 麻酔/催眠 rather than claiming an exact shared status-name vocabulary.",
+        "New line breaks are suggestions for 16 px fullwidth glyphs. They were not rendered by this read-only review."
+      ],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 52,
+        "byte_offset_in_data_mkf": 17586,
+        "raw_words": [
+          28,
+          4,
+          65530,
+          65518,
+          99,
+          65535,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          0,
+          7,
+          141
+        ],
+        "type": 4,
+        "mp_cost": 10,
+        "base_damage_raw_unsigned": 0,
+        "base_damage_signed": 0,
+        "element": 7,
+        "flags": 2,
+        "apply_to_all": false,
+        "to_enemy": false
+      }
+    },
+    {
+      "object_id": 303,
+      "win_name": "回梦",
+      "jp_name_from_slf": "夢帰り",
+      "win": {
+        "script_start": 43369,
+        "script_end": 43369,
+        "ids": [
+          13468
+        ],
+        "text": [
+          "敌方单人昏睡四回合。"
+        ],
+        "sid": 13468,
+        "eid": 13468
+      },
+      "saturn": {
+        "script_start": 46527,
+        "script_end": 46529,
+        "ids": [
+          17110,
+          17111,
+          17112
+        ],
+        "text": [
+          "一人の敵を４回の攻撃中、",
+          "昏睡させる事ができるかも",
+          "しれない。"
+        ],
+        "sid": 17110,
+        "eid": 17112
+      },
+      "baseline_slf_text": [
+        "一人の敵を４回の攻撃中、",
+        "昏睡させる事ができるかも",
+        "しれない。"
+      ],
+      "decision": "revise",
+      "reason": "Four rounds are mistranslated as four attacks.",
+      "proposed_text": [
+        "敵一人を４ターンの間、",
+        "昏睡させる事ができるかも",
+        "しれない。"
+      ],
+      "proposed_fullwidth_character_counts": [
+        11,
+        12,
+        5
+      ],
+      "effect_summary": "Player-cast path uses a random failure branch then sets enemy Sleep status 2 to 4 rounds subject to sorcery resistance. Enemy-cast path differs.",
+      "object_raw_words": [
+        66,
+        0,
+        43085,
+        0,
+        0,
+        43368,
+        10
+      ],
+      "object_raw_hex": [
+        "0042",
+        "0000",
+        "A84D",
+        "0000",
+        "0000",
+        "A968",
+        "000A"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 169090,
+      "description_entry_raw_slot_5": 43368,
+      "script_instructions": [
+        {
+          "script": 43085,
+          "words": [
+            104,
+            43089,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0068",
+            "A851",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43086,
+          "words": [
+            6,
+            60,
+            38783,
+            0
+          ],
+          "hex_words": [
+            "0006",
+            "003C",
+            "977F",
+            "0000"
+          ]
+        },
+        {
+          "script": 43087,
+          "words": [
+            46,
+            2,
+            4,
+            38783
+          ],
+          "hex_words": [
+            "002E",
+            "0002",
+            "0004",
+            "977F"
+          ]
+        },
+        {
+          "script": 43088,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43089,
+          "words": [
+            6,
+            70,
+            43072,
+            0
+          ],
+          "hex_words": [
+            "0006",
+            "0046",
+            "A840",
+            "0000"
+          ]
+        },
+        {
+          "script": 43090,
+          "words": [
+            3,
+            39391,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0003",
+            "99DF",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43091,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1336,
+          "line_end": 1355
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 3260,
+          "line_end": 3273
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1984,
+          "line_end": 1992
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1644,
+          "line_end": 1649
+        }
+      ],
+      "numeric_policy": "Keep 4 and the existing uncertainty qualifier; replace attack-count unit only. No invented fixed overall hit chance.",
+      "boundaries": [],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 66,
+        "byte_offset_in_data_mkf": 18034,
+        "raw_words": [
+          40,
+          0,
+          0,
+          4,
+          99,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20,
+          64537,
+          7,
+          169
+        ],
+        "type": 0,
+        "mp_cost": 20,
+        "base_damage_raw_unsigned": 64537,
+        "base_damage_signed": -999,
+        "element": 7,
+        "flags": 10,
+        "apply_to_all": false,
+        "to_enemy": true
+      }
+    },
+    {
+      "object_id": 305,
+      "win_name": "鬼降",
+      "jp_name_from_slf": "鬼降り",
+      "win": {
+        "script_start": 43372,
+        "script_end": 43372,
+        "ids": [
+          13469
+        ],
+        "text": [
+          "敌方单人疯魔四回合。"
+        ],
+        "sid": 13469,
+        "eid": 13469
+      },
+      "saturn": {
+        "script_start": 46532,
+        "script_end": 46534,
+        "ids": [
+          17113,
+          17114,
+          17115
+        ],
+        "text": [
+          "一人の敵を４回の攻撃中、",
+          "狂わせる事ができるかも",
+          "しれない。"
+        ],
+        "sid": 17113,
+        "eid": 17115
+      },
+      "baseline_slf_text": [
+        "一人の敵を４回の攻撃中、",
+        "狂わせる事ができるかも",
+        "しれない。"
+      ],
+      "decision": "revise",
+      "reason": "Four rounds are mistranslated as four attacks. 混乱 names the actual Confused status more clearly than 狂わせる.",
+      "proposed_text": [
+        "敵一人を４ターンの間、",
+        "混乱させる事ができるかも",
+        "しれない。"
+      ],
+      "proposed_fullwidth_character_counts": [
+        11,
+        12,
+        5
+      ],
+      "effect_summary": "Player-cast path uses a random failure branch then sets enemy Confused status 0 to 4 rounds subject to sorcery resistance. This object is 鬼降, not 迷心术.",
+      "object_raw_words": [
+        68,
+        0,
+        43092,
+        0,
+        0,
+        43371,
+        10
+      ],
+      "object_raw_hex": [
+        "0044",
+        "0000",
+        "A854",
+        "0000",
+        "0000",
+        "A96B",
+        "000A"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 169118,
+      "description_entry_raw_slot_5": 43371,
+      "script_instructions": [
+        {
+          "script": 43092,
+          "words": [
+            104,
+            43096,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0068",
+            "A858",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43093,
+          "words": [
+            6,
+            44,
+            38783,
+            0
+          ],
+          "hex_words": [
+            "0006",
+            "002C",
+            "977F",
+            "0000"
+          ]
+        },
+        {
+          "script": 43094,
+          "words": [
+            46,
+            0,
+            4,
+            38783
+          ],
+          "hex_words": [
+            "002E",
+            "0000",
+            "0004",
+            "977F"
+          ]
+        },
+        {
+          "script": 43095,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43096,
+          "words": [
+            6,
+            50,
+            43072,
+            0
+          ],
+          "hex_words": [
+            "0006",
+            "0032",
+            "A840",
+            "0000"
+          ]
+        },
+        {
+          "script": 43097,
+          "words": [
+            3,
+            39398,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0003",
+            "99E6",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43098,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1336,
+          "line_end": 1355
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 3260,
+          "line_end": 3273
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1984,
+          "line_end": 1992
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+          "line_start": 43,
+          "line_end": 43
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 1644,
+          "line_end": 1649
+        }
+      ],
+      "numeric_policy": "Keep 4 and the existing uncertainty qualifier; no guarantee or fixed overall hit chance.",
+      "boundaries": [],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 68,
+        "byte_offset_in_data_mkf": 18098,
+        "raw_words": [
+          41,
+          0,
+          0,
+          0,
+          99,
+          2,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          25,
+          64537,
+          7,
+          271
+        ],
+        "type": 0,
+        "mp_cost": 25,
+        "base_damage_raw_unsigned": 64537,
+        "base_damage_signed": -999,
+        "element": 7,
+        "flags": 10,
+        "apply_to_all": false,
+        "to_enemy": true
+      }
+    },
+    {
+      "object_id": 306,
+      "win_name": "净衣咒",
+      "jp_name_from_slf": "浄衣の術",
+      "win": {
+        "script_start": 43302,
+        "script_end": 43302,
+        "ids": [
+          13437
+        ],
+        "text": [
+          "解赤毒、尸毒、瘴毒。"
+        ],
+        "sid": 13437,
+        "eid": 13437
+      },
+      "saturn": {
+        "script_start": 46458,
+        "script_end": 46458,
+        "ids": [
+          17077
+        ],
+        "text": [
+          "赤の毒、屍の毒、瘴の毒を解く。"
+        ],
+        "sid": 17077,
+        "eid": 17077
+      },
+      "baseline_slf_text": [
+        "赤の毒、屍の毒、瘴の毒を解く。"
+      ],
+      "decision": "retain",
+      "reason": "The three poison names match the exact cured poison IDs.",
+      "proposed_text": null,
+      "proposed_fullwidth_character_counts": null,
+      "effect_summary": "Three 002B commands cure poison object 551 赤毒, 553 瘴毒 and 552 尸毒 from one player.",
+      "object_raw_words": [
+        38,
+        0,
+        39345,
+        0,
+        0,
+        43301,
+        2
+      ],
+      "object_raw_hex": [
+        "0026",
+        "0000",
+        "99B1",
+        "0000",
+        "0000",
+        "A925",
+        "0002"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 169132,
+      "description_entry_raw_slot_5": 43301,
+      "script_instructions": [
+        {
+          "script": 39345,
+          "words": [
+            43,
+            0,
+            551,
+            0
+          ],
+          "hex_words": [
+            "002B",
+            "0000",
+            "0227",
+            "0000"
+          ]
+        },
+        {
+          "script": 39346,
+          "words": [
+            43,
+            0,
+            553,
+            0
+          ],
+          "hex_words": [
+            "002B",
+            "0000",
+            "0229",
+            "0000"
+          ]
+        },
+        {
+          "script": 39347,
+          "words": [
+            43,
+            0,
+            552,
+            0
+          ],
+          "hex_words": [
+            "002B",
+            "0000",
+            "0228",
+            "0000"
+          ]
+        },
+        {
+          "script": 39348,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1293,
+          "line_end": 1309
+        }
+      ],
+      "numeric_policy": "No numeric correction required. Preserve original text; existing #5 line-wrap adapter remains a separate rendering concern.",
+      "boundaries": [],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 38,
+        "byte_offset_in_data_mkf": 17138,
+        "raw_words": [
+          28,
+          4,
+          65530,
+          65518,
+          99,
+          65535,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          7,
+          141
+        ],
+        "type": 4,
+        "mp_cost": 7,
+        "base_damage_raw_unsigned": 0,
+        "base_damage_signed": 0,
+        "element": 7,
+        "flags": 2,
+        "apply_to_all": false,
+        "to_enemy": false
+      }
+    },
+    {
+      "object_id": 370,
+      "win_name": "酒神",
+      "jp_name_from_slf": "酒神",
+      "win": {
+        "script_start": 43332,
+        "script_end": 43333,
+        "ids": [
+          13451,
+          13452
+        ],
+        "text": [
+          "召唤酒神，",
+          "用全身真气爆发攻击敌人。"
+        ],
+        "sid": 13451,
+        "eid": 13452
+      },
+      "saturn": {
+        "script_start": 46488,
+        "script_end": 46489,
+        "ids": [
+          17091,
+          17092
+        ],
+        "text": [
+          "酒神を呼び、全身の気を爆発させ、",
+          "敵全体を攻撃する。"
+        ],
+        "sid": 17091,
+        "eid": 17092
+      },
+      "baseline_slf_text": [
+        "酒神を呼び、全身の気を爆発させ、",
+        "敵全体を攻撃する。"
+      ],
+      "decision": "retain",
+      "reason": "Calling the wine god and exhausting energy to attack all enemies matches the script and target flags.",
+      "proposed_text": null,
+      "proposed_fullwidth_character_counts": null,
+      "effect_summary": "Object flags 0x001A target all enemies; magic type 9 is summon. OnUse requires/consumes one 酒 item 86. After the ordinary MP cost of 1, 0057 sets base damage to remaining MP*8 and zeroes MP. Success entry advances through eight 0001 instructions, then removes spell 370 from Xiaoyao at the ninth success.",
+      "object_raw_words": [
+        75,
+        0,
+        43126,
+        43075,
+        0,
+        43331,
+        26
+      ],
+      "object_raw_hex": [
+        "004B",
+        "0000",
+        "A876",
+        "A843",
+        "0000",
+        "A943",
+        "001A"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 170028,
+      "description_entry_raw_slot_5": 43331,
+      "script_instructions": [
+        {
+          "script": 43075,
+          "words": [
+            32,
+            86,
+            1,
+            43078
+          ],
+          "hex_words": [
+            "0020",
+            "0056",
+            "0001",
+            "A846"
+          ]
+        },
+        {
+          "script": 43076,
+          "words": [
+            87,
+            370,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0057",
+            "0172",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43077,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43078,
+          "words": [
+            59,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "003B",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43079,
+          "words": [
+            65535,
+            13365,
+            0,
+            0
+          ],
+          "hex_words": [
+            "FFFF",
+            "3435",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43080,
+          "words": [
+            65,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0041",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43081,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43126,
+          "words": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0001",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43127,
+          "words": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0001",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43128,
+          "words": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0001",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43129,
+          "words": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0001",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43130,
+          "words": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0001",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43131,
+          "words": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0001",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43132,
+          "words": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0001",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43133,
+          "words": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0001",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43134,
+          "words": [
+            86,
+            370,
+            1,
+            0
+          ],
+          "hex_words": [
+            "0056",
+            "0172",
+            "0001",
+            "0000"
+          ]
+        },
+        {
+          "script": 43135,
+          "words": [
+            59,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "003B",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43136,
+          "words": [
+            65535,
+            13366,
+            0,
+            0
+          ],
+          "hex_words": [
+            "FFFF",
+            "3436",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43137,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+          "line_start": 170,
+          "line_end": 173
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1807,
+          "line_end": 1816
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 1791,
+          "line_end": 1805
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4080,
+          "line_end": 4087
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 4143,
+          "line_end": 4189
+        }
+      ],
+      "numeric_policy": "Retain source wording; do not add a final damage = MP*8 assertion. The 8 coefficient is only the internal base damage; no new nine-use or item-cost information is necessary to correct this source description.",
+      "boundaries": [],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 75,
+        "byte_offset_in_data_mkf": 18322,
+        "raw_words": [
+          61,
+          9,
+          0,
+          18,
+          5,
+          1,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          1,
+          3,
+          0,
+          301
+        ],
+        "type": 9,
+        "mp_cost": 1,
+        "base_damage_raw_unsigned": 3,
+        "base_damage_signed": 3,
+        "element": 0,
+        "flags": 26,
+        "apply_to_all": true,
+        "to_enemy": true
+      }
+    },
+    {
+      "object_id": 374,
+      "win_name": "爆炸蛊",
+      "jp_name_from_slf": "爆発蠱",
+      "win": {
+        "script_start": 40846,
+        "script_end": 40847,
+        "ids": [
+          13094,
+          13095
+        ],
+        "text": [
+          "预先将法力灌输在蛊虫体内，",
+          "投掷敌人产生强烈爆炸。"
+        ],
+        "sid": 13094,
+        "eid": 13095
+      },
+      "saturn": {
+        "script_start": 43908,
+        "script_end": 43910,
+        "ids": [
+          16642,
+          16643,
+          16644
+        ],
+        "text": [
+          "事前に法力を蠱の中に潜め、",
+          "敵に投げつけた後に強烈な爆発",
+          "をする。"
+        ],
+        "sid": 16642,
+        "eid": 16644
+      },
+      "baseline_slf_text": [
+        "事前に法力を蠱の中に潜め、",
+        "敵に投げつけた後に強烈な爆発",
+        "をする。"
+      ],
+      "decision": "retain",
+      "reason": "Charging a gu with magic and causing a strong explosion when thrown at an enemy agrees with the single-enemy attack data.",
+      "proposed_text": null,
+      "proposed_fullwidth_character_counts": null,
+      "effect_summary": "Object has no use/success scripts. DATA.MKF chunk 4 magic index 65: normal single-target type 0, MP 49, base damage 392, elemental 4. The general magic formula adds magic-strength contribution and applies resistances.",
+      "object_raw_words": [
+        65,
+        0,
+        0,
+        0,
+        0,
+        40845,
+        10
+      ],
+      "object_raw_hex": [
+        "0041",
+        "0000",
+        "0000",
+        "0000",
+        "0000",
+        "9F8D",
+        "000A"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 170084,
+      "description_entry_raw_slot_5": 40845,
+      "script_instructions": [],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.c",
+          "line_start": 297,
+          "line_end": 297
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+          "line_start": 341,
+          "line_end": 369
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 215,
+          "line_end": 240
+        }
+      ],
+      "numeric_policy": "Retain qualitative explosion wording. Base 392 is not a guaranteed displayed total damage and should not be added to the translation.",
+      "boundaries": [],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 65,
+        "byte_offset_in_data_mkf": 18002,
+        "raw_words": [
+          37,
+          0,
+          0,
+          65532,
+          99,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          49,
+          392,
+          4,
+          168
+        ],
+        "type": 0,
+        "mp_cost": 49,
+        "base_damage_raw_unsigned": 392,
+        "base_damage_signed": 392,
+        "element": 4,
+        "flags": 10,
+        "apply_to_all": false,
+        "to_enemy": true
+      }
+    },
+    {
+      "object_id": 377,
+      "win_name": "飞龙探云手",
+      "jp_name_from_slf": "飛龍手探りの術",
+      "win": {
+        "script_start": 43347,
+        "script_end": 43347,
+        "ids": [
+          13458
+        ],
+        "text": [
+          "偷取敌人的物品或金钱。"
+        ],
+        "sid": 13458,
+        "eid": 13458
+      },
+      "saturn": {
+        "script_start": 46504,
+        "script_end": 46504,
+        "ids": [
+          17099
+        ],
+        "text": [
+          "相手の物品もしくは金銭を盗む。"
+        ],
+        "sid": 17099,
+        "eid": 17099
+      },
+      "baseline_slf_text": [
+        "相手の物品もしくは金銭を盗む。"
+      ],
+      "decision": "retain",
+      "reason": "Stealing enemy items or money matches both supported outcomes.",
+      "proposed_text": null,
+      "proposed_fullwidth_character_counts": null,
+      "effect_summary": "006A operand 6 calls PAL_BattleStealFromEnemy. If the enemy still has stealable value, RandomLong(0,10)<=6 passes (7/11 possible integer draws). For money: steals remaining steal pool divided by random 2 or 3; for items: takes one and decrements pool.",
+      "object_raw_words": [
+        98,
+        0,
+        43144,
+        0,
+        0,
+        43346,
+        10
+      ],
+      "object_raw_hex": [
+        "0062",
+        "0000",
+        "A888",
+        "0000",
+        "0000",
+        "A952",
+        "000A"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 170126,
+      "description_entry_raw_slot_5": 43346,
+      "script_instructions": [
+        {
+          "script": 43144,
+          "words": [
+            71,
+            174,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0047",
+            "00AE",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43145,
+          "words": [
+            106,
+            6,
+            0,
+            0
+          ],
+          "hex_words": [
+            "006A",
+            "0006",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43146,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 2001,
+          "line_end": 2006
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 5143,
+          "line_end": 5174
+        }
+      ],
+      "numeric_policy": "Retain concise description without an invented guaranteed success or rounded percentage. MP 9 is already UI data, not text.",
+      "boundaries": [],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 98,
+        "byte_offset_in_data_mkf": 19058,
+        "raw_words": [
+          65535,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          64537,
+          0,
+          0
+        ],
+        "type": 0,
+        "mp_cost": 9,
+        "base_damage_raw_unsigned": 64537,
+        "base_damage_signed": -999,
+        "element": 0,
+        "flags": 10,
+        "apply_to_all": false,
+        "to_enemy": true
+      }
+    },
+    {
+      "object_id": 394,
+      "win_name": "乾坤一掷",
+      "jp_name_from_slf": "逆転の投げ",
+      "win": {
+        "script_start": 43361,
+        "script_end": 43362,
+        "ids": [
+          13464,
+          13465
+        ],
+        "text": [
+          "使用金钱镖攻击敌方全体，",
+          "会耗损大量金钱。"
+        ],
+        "sid": 13464,
+        "eid": 13465
+      },
+      "saturn": {
+        "script_start": 46519,
+        "script_end": 46520,
+        "ids": [
+          17106,
+          17107
+        ],
+        "text": [
+          "貨幣を使って敵全体を攻撃する。",
+          "大量の金銭を消耗する。"
+        ],
+        "sid": 17106,
+        "eid": 17107
+      },
+      "baseline_slf_text": [
+        "貨幣を使って敵全体を攻撃する。",
+        "大量の金銭を消耗する。"
+      ],
+      "decision": "retain",
+      "reason": "Using money to attack all enemies and consuming a large amount agrees with flags and script.",
+      "proposed_text": null,
+      "proposed_fullwidth_character_counts": null,
+      "effect_summary": "Flags 0x001A target all enemies; requires at least 1 cash. 0088 consumes min(cash,5000) and sets magic base damage to consumed*2/5. Magic type is attack-all, MP cost 1.",
+      "object_raw_words": [
+        100,
+        0,
+        0,
+        43068,
+        0,
+        43360,
+        26
+      ],
+      "object_raw_hex": [
+        "0064",
+        "0000",
+        "0000",
+        "A83C",
+        "0000",
+        "A960",
+        "001A"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 170364,
+      "description_entry_raw_slot_5": 43360,
+      "script_instructions": [
+        {
+          "script": 43068,
+          "words": [
+            30,
+            65535,
+            43064,
+            0
+          ],
+          "hex_words": [
+            "001E",
+            "FFFF",
+            "A838",
+            "0000"
+          ]
+        },
+        {
+          "script": 43069,
+          "words": [
+            30,
+            1,
+            0,
+            0
+          ],
+          "hex_words": [
+            "001E",
+            "0001",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43070,
+          "words": [
+            136,
+            394,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0088",
+            "018A",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43071,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43064,
+          "words": [
+            62,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "003E",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43065,
+          "words": [
+            65535,
+            13363,
+            0,
+            0
+          ],
+          "hex_words": [
+            "FFFF",
+            "3433",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43066,
+          "words": [
+            65,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0041",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        },
+        {
+          "script": 43067,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.h",
+          "line_start": 170,
+          "line_end": 173
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 2508,
+          "line_end": 2516
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\fight.c",
+          "line_start": 215,
+          "line_end": 240
+        }
+      ],
+      "numeric_policy": "Retain qualitative cost wording. Do not state it always consumes 5000 or always inflicts 2000 total damage.",
+      "boundaries": [],
+      "magic": {
+        "data_mkf_chunk": 4,
+        "index": 100,
+        "byte_offset_in_data_mkf": 19122,
+        "raw_words": [
+          31,
+          1,
+          32,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          347
+        ],
+        "type": 1,
+        "mp_cost": 1,
+        "base_damage_raw_unsigned": 0,
+        "base_damage_signed": 0,
+        "element": 0,
+        "flags": 26,
+        "apply_to_all": true,
+        "to_enemy": true
+      }
+    },
+    {
+      "object_id": 149,
+      "win_name": "赤血蚕",
+      "jp_name_from_slf": "赤血の蚕",
+      "win": {
+        "script_start": 40482,
+        "script_end": 40483,
+        "ids": [
+          12920,
+          12921
+        ],
+        "text": [
+          "吸血维生的毒蛊，使服食者",
+          "体力完全恢复。"
+        ],
+        "sid": 12920,
+        "eid": 12921
+      },
+      "saturn": {
+        "script_start": 43500,
+        "script_end": 43501,
+        "ids": [
+          16424,
+          16425
+        ],
+        "text": [
+          "血のビタミンを吸う蚕。服用した者",
+          "は完全に体力復帰する。"
+        ],
+        "sid": 16424,
+        "eid": 16425
+      },
+      "baseline_slf_text": [
+        "血のビタミンを吸う蚕。服用した者",
+        "は完全に体力復帰する。"
+      ],
+      "decision": "main_agent_revision_agrees",
+      "reason": "血のビタミン mistranslates 吸血维生. Parent proposed blood-feeding poisonous bug and full recovery, which matches source intent.",
+      "proposed_text": [
+        "血を吸って生きる毒虫。",
+        "服用すると体力が全回復する。"
+      ],
+      "proposed_fullwidth_character_counts": [
+        11,
+        14
+      ],
+      "effect_summary": "OnUse 001B adds 1000 HP to a living player, capped at MaxHP. Normal role stat limit is 999, so full recovery is correct for the base game; it does not revive dead players.",
+      "object_raw_words": [
+        126,
+        0,
+        39526,
+        0,
+        0,
+        40481,
+        9
+      ],
+      "object_raw_hex": [
+        "007E",
+        "0000",
+        "9A66",
+        "0000",
+        "0000",
+        "9E21",
+        "0009"
+      ],
+      "object_sss_chunk": 2,
+      "object_byte_offset_in_sss": 166934,
+      "description_entry_raw_slot_5": 40481,
+      "script_instructions": [
+        {
+          "script": 39526,
+          "words": [
+            27,
+            0,
+            1000,
+            0
+          ],
+          "hex_words": [
+            "001B",
+            "0000",
+            "03E8",
+            "0000"
+          ]
+        },
+        {
+          "script": 39527,
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "hex_words": [
+            "0000",
+            "0000",
+            "0000",
+            "0000"
+          ]
+        }
+      ],
+      "engine_evidence": [
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\script.c",
+          "line_start": 838,
+          "line_end": 865
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.c",
+          "line_start": 1226,
+          "line_end": 1245
+        },
+        {
+          "file": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\global.c",
+          "line_start": 2316,
+          "line_end": 2317
+        }
+      ],
+      "numeric_policy": "Keep full recovery rather than insert a literal +1000. This agrees with the original base-resource behavior.",
+      "boundaries": [
+        "This row is one of the parent seven revisions, not an additional twelfth battle revision."
+      ]
+    }
+  ],
+  "not_claimed": [
+    "No gameplay or real-device acceptance.",
+    "No empirical success rates, damage rolls or timing measurements.",
+    "No assertion that every line of the complete game script has been semantically reviewed.",
+    "No rewrite of the legacy status-name vocabulary or all character names.",
+    "No actual sprite/glyph coverage/rendering proof from text length alone."
+  ],
+  "engine_lf_sha256": {
+    "script.c": "d732d0a2467fd69c4a773700c7e436610b3cd2d17157bd4d9555bb135c24761d",
+    "global.c": "25ec874f94ddfdaffa3653623a84aaa418b5b687b1a07e7df3cd6b58d6ead2a7",
+    "global.h": "3cf68504dd2293ce8de792936414525b097f172c5280e932b0c39be2555d5b6d",
+    "fight.c": "ac6448bddb4449c09cc6b31b658c14002dbd7a10c4d3731d2525b29aaac7e267",
+    "common.h": "8607a525c193af9f6542c23ea435679d903eeea70df08aaf44ffa82dba8fce0e",
+    "win32/sdlpal.vcxproj": "305496cd04b180db0d92d480ae5e9878e5b9bd80a01d3aa8ec32c05d0a264442"
+  }
+}
