@@ -139,6 +139,70 @@ void SaveScales(const std::string& directory, const std::string& name) {
     gpTexture = previousTexture;
 }
 
+void DrawLongNames(const std::string& directory) {
+    Require(g_TextLib.iFontFlavor == kFontFlavorJapanese && !g_TextLib.fUseISOFont &&
+        PAL_FontHeight() == 16 && gConfig.dwWordLength == 16,
+        "Expected Japanese 16px font and two-column word layout");
+    Require(gConfig.ScreenLayout.ExtraItemDescLines == 2 &&
+        gConfig.ScreenLayout.ExtraMagicDescLines == 1 &&
+        gConfig.ScreenLayout.MagicMPDescLines == PAL_XY(3, 0) &&
+        gConfig.ScreenLayout.MagicMPSlashPos == PAL_XY(30, 14) &&
+        gConfig.ScreenLayout.MagicMPNeededPos == PAL_XY(5, 14) &&
+        gConfig.ScreenLayout.MagicMPCurrentPos == PAL_XY(31, 14) &&
+        gConfig.ScreenLayout.MagicDescMsgPos == PAL_XY(70, 0),
+        "Expected Japanese layout 81-87");
+    Require(wcscmp(PAL_GetWord(270), L"紫金のひょうたん") == 0 &&
+        wcscmp(PAL_GetWord(384), L"霊ひょうたんの術") == 0,
+        "Expected eight-character resource names");
+    gpGlobals->wMaxPartyMemberIndex = 0;
+    gpGlobals->rgParty[0].wPlayerRole = 0;
+    gpGlobals->g.PlayerRoles.rgwHP[0] = gpGlobals->g.PlayerRoles.rgwMaxHP[0] = 150;
+    gpGlobals->g.PlayerRoles.rgwMP[0] = gpGlobals->g.PlayerRoles.rgwMaxMP[0] = 999;
+    // In-memory menu fixtures only; no save, object record or resource is changed.
+    memset(gpGlobals->g.PlayerRoles.rgwEquipment, 0, sizeof(gpGlobals->g.PlayerRoles.rgwEquipment));
+    PrepareInn();
+    FILE *report = fopen((directory + "/long-names.csv").c_str(), "w");
+    Require(report != nullptr, "Cannot create long-name report");
+    fprintf(report, "object_id,column,selected,description_object,clipped_description_ink\n");
+    for (bool item : {true, false}) {
+        const WORD object = item ? 270 : 384;
+        for (int column = 0; column < 2; ++column) {
+            // Magic menus sort by object ID; pick a neighbour on the needed side.
+            const WORD neighbour = item ? 149 : (column == 0 ? 390 : 306);
+            for (bool selected : {true, false}) {
+                const WORD descriptionObject = selected ? object : neighbour;
+                PAL_MakeScene();
+                PAL_ClearKeyState();
+                if (item) {
+                    memset(gpGlobals->rgInventory, 0, sizeof(gpGlobals->rgInventory));
+                    gpGlobals->rgInventory[column].wItem = object;
+                    gpGlobals->rgInventory[1 - column].wItem = neighbour;
+                    gpGlobals->rgInventory[0].nAmount = gpGlobals->rgInventory[1].nAmount = 99;
+                    gpGlobals->iCurInvMenuItem = selected ? column : 1 - column;
+                    PAL_ItemSelectMenuInit(kItemFlagUsable);
+                    Require(PAL_ItemSelectMenuUpdate() == 0xffff, "Unexpected item menu action");
+                } else {
+                    memset(gpGlobals->g.PlayerRoles.rgwMagic, 0, sizeof(gpGlobals->g.PlayerRoles.rgwMagic));
+                    gpGlobals->g.PlayerRoles.rgwMagic[0][0] = object;
+                    gpGlobals->g.PlayerRoles.rgwMagic[1][0] = neighbour;
+                    PAL_PlayerInfoBox(PAL_XY(45, 165), 0, 100, TIMEMETER_COLOR_DEFAULT, TRUE);
+                    PAL_MagicSelectionMenuInit(0, FALSE, descriptionObject);
+                    Require(PAL_MagicSelectionMenuUpdate() == 0xffff, "Unexpected magic menu action");
+                }
+                const std::string name = std::string(item ? "item-270-" : "magic-384-") +
+                    (column == 0 ? "left-" : "right-") + (selected ? "selected" : "unselected");
+                SaveScales(directory, name);
+                const int clipped = CountClippedInk(descriptionObject, item);
+                Require(clipped == 0, "Description ink extends beyond the right edge");
+                fprintf(report, "%u,%d,%d,%u,%d\n", object, column, selected, descriptionObject, clipped);
+            }
+        }
+    }
+    fclose(report);
+    PAL_FreeResources();
+    printf("Rendered eight long-name menu states and 24 scaled outputs; no right-clipped description ink\n");
+}
+
 void DrawPages(const std::string& directory, bool translated) {
     PrepareInn();
     PAL_StartDialog(kDialogUpper, 0, 55, FALSE);
@@ -252,17 +316,19 @@ void DrawPages(const std::string& directory, bool translated) {
 int RenderEvidence(int argc, char **argv) {
     if (argc != 6) {
         fprintf(stderr, "Usage: --render-evidence RESOURCE_DIR SLF_OR_DASH OUTPUT_DIR "
-                        "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages\n");
+                        "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages|jp-long-names\n");
         return 2;
     }
     const std::string mode(argv[5]), directory(argv[4]);
     const bool pages = mode == "cn-pages" || mode == "jp-pages";
-    const bool translated = mode == "jp" || mode == "jp-legacy" || mode == "jp-pages";
+    const bool longNames = mode == "jp-long-names";
+    const bool scaled = pages || longNames;
+    const bool translated = mode == "jp" || mode == "jp-legacy" || mode == "jp-pages" || longNames;
     const bool fieldMenu = mode == "cn-jp-font-field";
     if (!translated && mode != "cn" && mode != "cn-jp-font" && !fieldMenu && !pages) return 2;
     if (translated && strcmp(argv[3], "-") == 0) return 2;
     try {
-        Require(SDL_Init(pages ? SDL_INIT_VIDEO | SDL_INIT_EVENTS : 0) == 0, "SDL_Init failed");
+        Require(SDL_Init(scaled ? SDL_INIT_VIDEO | SDL_INIT_EVENTS : 0) == 0, "SDL_Init failed");
         PAL_LoadConfig(FALSE);
         free(gConfig.pszGamePath);
         gConfig.pszGamePath = strdup(argv[2]);
@@ -274,7 +340,7 @@ int RenderEvidence(int argc, char **argv) {
         Require(PAL_InitFont(&gConfig) == 0, "Cannot load engine font");
         PAL_InitGameData(0);
         Require(PAL_InitUI() == 0, "Cannot load UI sprites");
-        if (pages) {
+        if (scaled) {
             gConfig.fEnableGLSL = FALSE;
             gConfig.fUseTouchOverlay = FALSE;
             gConfig.fFullScreen = FALSE;
@@ -299,7 +365,8 @@ int RenderEvidence(int argc, char **argv) {
                 rendererInfo.name, rendererInfo.flags);
             g_bRenderPaused = TRUE;
             PAL_SetPalette(0, FALSE);
-            DrawPages(directory, translated);
+            if (longNames) DrawLongNames(directory);
+            else DrawPages(directory, translated);
             PAL_FreeUI(); PAL_FreeText(); PAL_FreeFont();
             VIDEO_Shutdown(); PAL_FreeGlobals(); SDL_Quit();
             return 0;
