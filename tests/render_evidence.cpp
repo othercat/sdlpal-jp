@@ -114,6 +114,100 @@ void DrawAunt(const std::string& directory, bool translated) {
     PAL_FreeResources();
 }
 
+void SaveScales(const std::string& directory, const std::string& name);
+
+// Portrait fixtures exercise the unmodified production RGM/palette path. A
+// separate verifier checks every indexed pixel, palette and background byte.
+// Only selected cases are published as scaled images; all frames are archived.
+void DrawPortraitEvidence(const std::string& directory) {
+    FILE *fixtures = fopen((directory + "/portrait-fixtures.csv").c_str(), "r");
+    FILE *report = fopen((directory + "/portraits.csv").c_str(), "w");
+    FILE *frames = fopen((directory + "/portrait-frames.bin").c_str(), "wb");
+    Require(fixtures && report && frames, "Cannot open portrait fixtures/output");
+    char header[256], name[64];
+    Require(fgets(header, sizeof(header), fixtures) != nullptr,
+        "Missing portrait fixture header");
+    fprintf(report, "name,face,location,palette,night,width,height,x,y,offset,stage,initial_black\n");
+    unsigned face, location, palette, night, publish;
+    int count = 0, fields;
+    long offset = 0;
+    while ((fields = fscanf(fixtures, "%63[^,],%u,%u,%u,%u,%u\n",
+                            name, &face, &location, &palette, &night, &publish)) == 6) {
+        Require(face > 0 && face < 256 && location <= 1 && palette < 9 && night <= 1 && publish <= 2,
+                "Invalid portrait fixture");
+        for (const char *p = name; *p; ++p)
+            Require((*p >= 'a' && *p <= 'z') || (*p >= '0' && *p <= '9') || *p == '-',
+                    "Unsafe portrait fixture name");
+        BYTE rle[16384];
+        Require(PAL_MKFReadChunk(rle, sizeof(rle), face, gpGlobals->f.fpRGM) > 0,
+                "Missing portrait chunk");
+        const int width = PAL_RLEGetWidth(rle), height = PAL_RLEGetHeight(rle);
+        Require(width > 0 && height > 0 && width <= 320 && height <= 200,
+                "Unexpected portrait dimensions");
+        gpGlobals->wNumPalette = palette;
+        gpGlobals->fNightPalette = night;
+        PAL_SetPalette(palette, night);
+        if (publish == 2) {
+            SDL_Color black[256] = {};
+            VIDEO_SetPalette(black);
+        }
+        // Pattern contains every palette index. It exposes accidental global
+        // palette changes and preserves visible pixels through RLE transparency.
+        for (int y = 0; y < 200; ++y)
+            for (int x = 0; x < 320; ++x)
+                ((BYTE *)gpScreen->pixels)[y * gpScreen->pitch + x] = (x / 4 + y / 3) & 255;
+        PAL_ClearDialog(FALSE);
+        PAL_StartDialog(location ? kDialogLower : kDialogUpper, 0, face, FALSE);
+        const int left = location ? 270 - width / 2 : (width > 96 ? 0 : 48 - width / 2);
+        const int top = location ? 144 - height / 2 : (height > 110 ? 0 : 55 - height / 2);
+        SDL_Color colors[256];
+        memcpy(colors, VIDEO_GetPalette(), sizeof(colors));
+        for (int stage = 0; stage < (publish ? 4 : 1); ++stage) {
+            if (stage == 1) {
+                // The same palette rotation used by the real dialogue wait.
+                const SDL_Color first = colors[0xf9];
+                for (int i = 0xf9; i < 0xfe; ++i) colors[i] = colors[i + 1];
+                colors[0xfe] = first;
+                VIDEO_SetPalette(colors);
+            } else if (stage == 2) {
+                PAL_SetPalette(palette, night);
+                memcpy(colors, VIDEO_GetPalette(), sizeof(colors));
+                for (int i = 0; i < 256; ++i) {
+                    colors[i].r /= 2; colors[i].g /= 2; colors[i].b /= 2;
+                }
+                VIDEO_SetPalette(colors);
+            } else if (stage == 3) {
+                memset(colors, 0, sizeof(colors));
+                VIDEO_SetPalette(colors);
+            }
+            fprintf(report, "%s,%u,%u,%u,%u,%d,%d,%d,%d,%ld,%d,%d\n",
+                name, face, location, palette, night, width, height, left, top, offset, stage, publish == 2);
+            for (int y = 0; y < 200; ++y)
+                Require(fwrite((BYTE *)gpScreen->pixels + y * gpScreen->pitch, 1, 320, frames) == 320,
+                        "Cannot save portrait frame");
+            SDL_Color *actual = VIDEO_GetPalette();
+            for (int i = 0; i < 256; ++i) {
+                const BYTE rgb[] = {actual[i].r, actual[i].g, actual[i].b};
+                Require(fwrite(rgb, 1, 3, frames) == 3, "Cannot save portrait palette");
+            }
+            offset += 320 * 200 + 256 * 3;
+            if (publish && stage == 0) SaveScales(directory, name);
+        }
+        // The existing backup/restore path must retain the indexed portrait.
+        std::vector<BYTE> original((BYTE *)gpScreen->pixels,
+            (BYTE *)gpScreen->pixels + gpScreen->pitch * gpScreen->h);
+        VIDEO_BackupScreen(gpScreen);
+        SDL_FillRect(gpScreen, nullptr, 0);
+        VIDEO_RestoreScreen(gpScreen);
+        Require(memcmp(original.data(), gpScreen->pixels, original.size()) == 0,
+                "Portrait backup/restore changed pixels");
+        ++count;
+    }
+    Require(fields == EOF && count > 0, "Invalid or empty portrait fixture list");
+    fclose(fixtures); fclose(report); fclose(frames);
+    printf("Portrait fixtures: %d; frame bytes: %ld; backup/restore passed\n", count, offset);
+}
+
 // Exercise the real four-line wait/restore path. The test supplies an SDL event
 // to the existing input-filter interface; it never writes a page/line counter.
 int pageWaits = 0;
@@ -618,9 +712,9 @@ void DrawDOSDescriptions(const std::string& directory) {
 } // namespace
 
 int RenderEvidence(int argc, char **argv) {
-    if (argc != 6) {
-        fprintf(stderr, "Usage: --render-evidence RESOURCE_DIR SLF_OR_DASH OUTPUT_DIR "
-                        "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages|jp-long-names|jp-cursor-grid|jp-recovery-before|jp-recovery|jp-npc-before|jp-npc|jp-duplicates-before|jp-duplicates|jp-translation-before|jp-translation|dos-before|dos|dos-layout-before\n");
+    if (argc != 6 && argc != 7) {
+        fprintf(stderr, "Usage: --render-evidence RESOURCE_DIR SLF_OR_DASH OUTPUT_DIR MODE [PORTRAIT_FILE]\nModes: "
+                        "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages|jp-long-names|jp-cursor-grid|jp-recovery-before|jp-recovery|jp-npc-before|jp-npc|jp-duplicates-before|jp-duplicates|jp-translation-before|jp-translation|dos-before|dos|dos-layout-before|jp-portraits|dos-portraits\n");
         return 2;
     }
     const std::string mode(argv[5]), directory(argv[4]);
@@ -629,11 +723,12 @@ int RenderEvidence(int argc, char **argv) {
     const bool tournament = mode == "jp-npc-before" || mode == "jp-npc";
     const bool duplicates = mode == "jp-duplicates-before" || mode == "jp-duplicates";
     const bool translations = mode == "jp-translation-before" || mode == "jp-translation";
-    const bool dos = mode == "dos" || mode == "dos-before" || mode == "dos-layout-before";
+    const bool portraits = mode == "jp-portraits" || mode == "dos-portraits";
+    const bool dos = mode == "dos" || mode == "dos-before" || mode == "dos-layout-before" || mode == "dos-portraits";
     const bool recovery = mode == "jp-recovery-before" || mode == "jp-recovery" ||
-        tournament || duplicates || translations || dos;
-    const bool scaled = pages || longNames || recovery;
-    const bool translated = mode == "jp" || mode == "jp-legacy" || mode == "jp-pages" || longNames || recovery;
+        tournament || duplicates || translations || (dos && !portraits);
+    const bool scaled = pages || longNames || recovery || portraits;
+    const bool translated = mode == "jp" || mode == "jp-legacy" || mode == "jp-pages" || longNames || recovery || portraits;
     const bool fieldMenu = mode == "cn-jp-font-field";
     if (!translated && mode != "cn" && mode != "cn-jp-font" && !fieldMenu && !pages) return 2;
     if (translated && strcmp(argv[3], "-") == 0) return 2;
@@ -643,6 +738,7 @@ int RenderEvidence(int argc, char **argv) {
         free(gConfig.pszGamePath);
         gConfig.pszGamePath = strdup(argv[2]);
         if (translated) gConfig.pszMsgFile = strdup(argv[3]);
+        if (argc == 7) gConfig.pszPortraitFile = strdup(argv[6]);
         Require(PAL_InitGlobals() == 0 && !!gConfig.fIsWIN95 == !dos, "Unexpected resource version");
         Require(PAL_InitText() == 0, "Cannot load game text");
         if (mode == "cn-jp-font" || fieldMenu || pages) g_TextLib.iFontFlavor = kFontFlavorJapanese;
@@ -675,7 +771,8 @@ int RenderEvidence(int argc, char **argv) {
                 rendererInfo.name, rendererInfo.flags);
             g_bRenderPaused = TRUE;
             PAL_SetPalette(0, FALSE);
-            if (longNames) DrawLongNames(directory, mode == "jp-cursor-grid");
+            if (portraits) DrawPortraitEvidence(directory);
+            else if (longNames) DrawLongNames(directory, mode == "jp-cursor-grid");
             else if (recovery) {
                 if (mode != "dos-layout-before")
                     DrawRecoveredDialogues(directory, mode == "jp-recovery-before" ||

@@ -79,6 +79,7 @@ static const ConfigItem gConfigItems[PALCFG_ALL_MAX] = {
 	{ PALCFG_MIDICLIENT,        PALCFG_STRING,   "MIDIClient",        10, MAKE_STRING(NULL) },
 	{ PALCFG_SCALEQUALITY,      PALCFG_STRING,   "ScaleQuality",      12, MAKE_STRING("0") },
 	{ PALCFG_SHADER,            PALCFG_STRING,   "Shader",             6, MAKE_STRING(NULL) },
+	{ PALCFG_PORTRAITFILE,      PALCFG_STRING,   "PortraitFileName",  16, MAKE_STRING(NULL) },
 };
 
 static const char *music_types[] = { "MIDI", "RIX", "MP3", "OGG", "OPUS", "RAW" };
@@ -274,6 +275,7 @@ PAL_FreeConfig(
 #endif
 	free(gConfig.pszMsgFile);
 	free(gConfig.pszFontFile);
+	free(gConfig.pszPortraitFile);
 	free(gConfig.pszGamePath);
     free(gConfig.pszSavePath);
     free(gConfig.pszShaderPath);
@@ -413,6 +415,9 @@ PAL_LoadConfig(
 					break;
 				case PALCFG_FONTFILE:
 					gConfig.pszFontFile = ParseStringValue(value.sValue, gConfig.pszFontFile);
+					break;
+				case PALCFG_PORTRAITFILE:
+					gConfig.pszPortraitFile = ParseStringValue(value.sValue, gConfig.pszPortraitFile);
 					break;
 				case PALCFG_GAMEPATH:
 					gConfig.pszGamePath = ParseStringValue(value.sValue, gConfig.pszGamePath);
@@ -642,6 +647,7 @@ PAL_SaveConfig(
         if (gConfig.pszShaderPath && *gConfig.pszShaderPath && gConfig.pszGamePath && strcmp(gConfig.pszShaderPath, gConfig.pszGamePath) != 0) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_SHADERPATH), gConfig.pszShaderPath); fputs(buf, fp); }
 		if (gConfig.pszMsgFile && *gConfig.pszMsgFile) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_MESSAGEFILE), gConfig.pszMsgFile); fputs(buf, fp); }
 		if (gConfig.pszFontFile && *gConfig.pszFontFile) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_FONTFILE), gConfig.pszFontFile); fputs(buf, fp); }
+		if (gConfig.pszPortraitFile && *gConfig.pszPortraitFile) { fprintf(fp, "%s=%s\n", PAL_ConfigName(PALCFG_PORTRAITFILE), gConfig.pszPortraitFile); }
 		if (gConfig.pszLogFile && *gConfig.pszLogFile) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_LOGFILE), gConfig.pszLogFile); fputs(buf, fp); }
 		if (gConfig.pszMIDIClient && *gConfig.pszMIDIClient) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_MIDICLIENT), gConfig.pszMIDIClient); fputs(buf, fp); }
 		if (gConfig.pszScaleQuality && *gConfig.pszScaleQuality) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_SCALEQUALITY), gConfig.pszScaleQuality); fputs(buf, fp); }
@@ -696,6 +702,7 @@ PAL_GetConfigItem(
         case PALCFG_SHADERPATH:        value.sValue = gConfig.pszShaderPath; break;
 		case PALCFG_MESSAGEFILE:       value.sValue = gConfig.pszMsgFile; break;
 		case PALCFG_FONTFILE:          value.sValue = gConfig.pszFontFile; break;
+		case PALCFG_PORTRAITFILE:      value.sValue = gConfig.pszPortraitFile; break;
 		case PALCFG_LOGFILE:           value.sValue = gConfig.pszLogFile; break;
 		case PALCFG_MIDICLIENT:        value.sValue = gConfig.pszMIDIClient; break;
 		case PALCFG_SCALEQUALITY:      value.sValue = gConfig.pszScaleQuality; break;
@@ -764,6 +771,10 @@ PAL_SetConfigItem(
 	case PALCFG_FONTFILE:
 		if (gConfig.pszFontFile) free(gConfig.pszFontFile);
 		gConfig.pszFontFile = value.sValue && value.sValue[0] ? strdup(value.sValue) : NULL;
+		break;
+	case PALCFG_PORTRAITFILE:
+		if (gConfig.pszPortraitFile) free(gConfig.pszPortraitFile);
+		gConfig.pszPortraitFile = value.sValue && value.sValue[0] ? strdup(value.sValue) : NULL;
 		break;
 	case PALCFG_LOGFILE:
 		if (gConfig.pszLogFile) free(gConfig.pszLogFile);

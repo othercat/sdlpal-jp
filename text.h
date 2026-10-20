@@ -44,6 +44,13 @@ typedef enum tagFONTFLAVOR
 
 PAL_C_LINKAGE_BEGIN
 
+// Optional PALJPOR1 resource. The caller owns fp; failure clears loaded portraits.
+BOOL
+PAL_ReadPortraitFile(
+   FILE *fp,
+   BOOL fIsWIN95
+);
+
 typedef struct tagTEXTLIB
 {
     LPWSTR         *lpWordBuf;

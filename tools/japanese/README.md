@@ -97,3 +97,15 @@ R2 使用 `verify_translation_followup.py`，同时比较 Win／DOS 修前修后
 ```
 
 历史工具结果、源码加载图与限制见 [#2 基线记录](../../docs/japanese-conversion-baseline.md)。GUI 回调测试不创建 Tk 窗口。按用户最新要求，所有子 Issue 的实现和专项验证完成后再统一实机验收。
+
+## 可选土星头像包
+
+[`convert_portraits.py`](convert_portraits.py) 独立于 SLF 转换；需要已审 PC 资源及土星 `RGM.JOE`、`ALLDAT.NEW`、`PROG.BIN`，输出目录必须尚不存在：
+
+```powershell
+& (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\japanese\convert_portraits.py 'PC资源目录' '土星提取目录' '新的头像包目录' --target win
+```
+
+DOS 使用 `--target dos` 及其独立资源。转换器固定输入指纹，只替换已审 86 个 ID，按原 PC 头像范围等比缩小／透明填充，保留原文件。加载相应 `paljpn-win.por`／`paljpn-dos.por` 时设置 `PortraitFileName`；默认不设置，保留 PC 头像。
+
+运行时按场景基准调色板重新配色，排除对白色轮；夜景仍有 8 位色域误差，不等于土星独立 RGB 无损合成。来源、江少云回退、配置、可复现源码验证及对比图见 [#9 头像调色板](../../docs/japanese-portrait-palettes.md)。当前 GUI 不自动生成或启用头像包。

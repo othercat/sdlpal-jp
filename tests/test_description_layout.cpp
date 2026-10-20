@@ -1,8 +1,86 @@
 #include <gtest/gtest.h>
 #include <vector>
+#include <cstdio>
+#include <utility>
 
 extern "C" {
 #include "main.h"
+}
+
+namespace {
+std::vector<BYTE> PortraitPack(bool win) {
+    std::vector<BYTE> pack(16 + 768 + 8 + 4, 0);
+    memcpy(pack.data(), "PALJPOR1", 8);
+    pack[8] = 1; pack[10] = win; pack[12] = 1;
+    pack[16 + 3] = 248; // source color 1
+    pack[784] = 1; pack[786] = 2; pack[788] = 2;
+    pack[792] = 1; pack[795] = 1;
+    return pack;
+}
+
+bool ReadPortraitPack(const std::vector<BYTE>& pack, bool win) {
+    FILE *file = tmpfile();
+    if (!file) return false;
+    const bool written = fwrite(pack.data(), 1, pack.size(), file) == pack.size();
+    rewind(file);
+    const bool loaded = written && PAL_ReadPortraitFile(file, win);
+    fclose(file);
+    return loaded;
+}
+}
+
+TEST(PortraitPalettes, RejectsWrongTargetAndTruncatedOrAmbiguousData) {
+    const auto valid = PortraitPack(true);
+    ASSERT_TRUE(ReadPortraitPack(valid, true));
+    EXPECT_FALSE(ReadPortraitPack(valid, false));
+    for (size_t size : {size_t(0), size_t(15), size_t(783), valid.size() - 1}) {
+        const std::vector<BYTE> truncated(valid.begin(), valid.begin() + size);
+        EXPECT_FALSE(ReadPortraitPack(truncated, true));
+    }
+    auto trailing = valid; trailing.push_back(0);
+    EXPECT_FALSE(ReadPortraitPack(trailing, true));
+    auto duplicate = valid;
+    duplicate[12] = 2;
+    duplicate.insert(duplicate.end(), valid.begin() + 784, valid.end());
+    EXPECT_FALSE(ReadPortraitPack(duplicate, true));
+    ASSERT_TRUE(ReadPortraitPack(PortraitPack(false), false));
+    PAL_FreeText();
+}
+
+TEST(PortraitPalettes, BoundsVersionAndReservedFieldsAreChecked) {
+    const auto valid = PortraitPack(true);
+    for (const auto change : {std::make_pair(0, 0), std::make_pair(8, 2),
+            std::make_pair(12, 0), std::make_pair(12, 128), std::make_pair(14, 1),
+            std::make_pair(784, 0), std::make_pair(784, 128), std::make_pair(786, 0),
+            std::make_pair(787, 2), std::make_pair(788, 0), std::make_pair(788, 201),
+            std::make_pair(790, 1)}) {
+        auto bad = valid;
+        bad[change.first] = change.second;
+        EXPECT_FALSE(ReadPortraitPack(bad, true));
+    }
+    EXPECT_FALSE(PAL_ReadPortraitFile(nullptr, TRUE));
+    ASSERT_TRUE(ReadPortraitPack(valid, true));
+    // The reviewed PC portraits include widths/heights greater than 127.
+    auto large = valid;
+    large[786] = 135; large[788] = 131;
+    large.resize(792 + 135 * 131, 1);
+    ASSERT_TRUE(ReadPortraitPack(large, true));
+    PAL_FreeText();
+}
+
+TEST(PortraitPalettes, ConfigurationIsOptInAndCanBeCleared) {
+    PAL_FreeConfig();
+    PAL_LoadConfig(FALSE);
+    EXPECT_EQ(nullptr, gConfig.pszPortraitFile);
+    EXPECT_STREQ("PortraitFileName", PAL_ConfigName(PALCFG_PORTRAITFILE));
+    ConfigValue value = {};
+    value.sValue = "portraits.por";
+    PAL_SetConfigItem(PALCFG_PORTRAITFILE, value);
+    EXPECT_STREQ("portraits.por", PAL_GetConfigItem(PALCFG_PORTRAITFILE, FALSE).sValue);
+    value.sValue = "";
+    PAL_SetConfigItem(PALCFG_PORTRAITFILE, value);
+    EXPECT_EQ(nullptr, gConfig.pszPortraitFile);
+    PAL_FreeConfig();
 }
 
 // Run from the repository root. These fixtures need no proprietary game data.
