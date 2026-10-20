@@ -2,6 +2,8 @@
 
 2026-10-20，关联 [#6](https://github.com/othercat/sdlpal-jp/issues/6)、[总管 #1](https://github.com/othercat/sdlpal-jp/issues/1)。
 
+2026-10-21 后续：[R2 新增四组修订及 Win／DOS 源码对比](japanese-translation-followup.md)已完成，涉及阿青、十赌九输、七步范围和陌生人。本文保留 R1 的十八组历史记录；默认转换已包含两轮，R1 输出用 `--before-translation-followup` 重现。
+
 **修订 18 组 MESSAGE 正文：5 组对白、3 组物品说明、10 组法术说明。** 对照指定 PAL98 中文资源、土星原日文及相关战斗源码，修正语义反转、格助词和误导性机制说明。4,773 块、4,766 唯一键保持不变，其他 4,755 块及所有非目标字节不变。原资源、脚本、映射、WORDS 人名和战斗行为均未修改。实机验收由用户在所有 Issue 实现后统一进行。
 
 本单是有定位的抽查与关联条目复核，**不是全 17,171 条土星文本审校通过**。完整原文、来源、上下文和保留理由见 [逐组核对记录](evidence/issue-6-translation-review.json)，战斗脚本、对象及代码证据见 [战斗说明复核](evidence/issue-6-battle-review.json)，执行结果和图片指纹见 [验证清单](evidence/issue-6-translation-verification.json)。

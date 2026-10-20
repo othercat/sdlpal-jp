@@ -126,8 +126,39 @@ TRANSLATION_CORRECTIONS = {
 }
 
 
+# Four further source-reviewed groups; kept separate to reproduce the R1/#7
+# baseline. See docs/japanese-translation-followup.md for Win/DOS provenance.
+TRANSLATION_FOLLOWUPS = {
+    (12078, 12083): (35237, 38149, 15442, 15449, (
+        u"巫王：", u"本当に・・・お前か？", u"霊児・・・。",
+        u"ま・・・間違いない・・・。", u"若い頃の霊児とそっくりだ！",
+        u"は・・・早く・・・", u"父さんに・・・", u"見せておくれ。"), (
+        u"巫王：", u"本当に・・・お前か？", u"霊児・・・。",
+        u"ま・・・間違いない・・・。", u"若い頃のお青とそっくりだ！",
+        u"は・・・早く・・・", u"父さんに・・・", u"見せておくれ。")),
+    (2396, 2399): (6548, 7391, 3233, 3237, (
+        u"賭博客：", u"小僧！聞けよ。", u"「十回勝って、九回負ける」",
+        u"って言葉があるだろ。", u"バクチにははまるなよ！"), (
+        u"賭博客：", u"小僧！聞けよ。", u"「十回賭けて、九回負ける」",
+        u"って言葉があるだろ。", u"バクチにははまるなよ！")),
+    (3447, 3448): (9812, 10641, 4507, 4509, (
+        u"子供：", u"母上は、あまり村の人と", u"話をするなと言ってたよ。"), (
+        u"子供：", u"母上は、知らない人と", u"話をするなと言ってたよ。")),
+    (7583, 7589): (20604, 22475, 9746, 9755, (
+        u"酒飲み剣士：", u"では、術法を始めるぞ！", u"わしが終わりと言うまでは、",
+        u"二人ともわしから七歩以上", u"下がっておれ。", u"何が起こっても、",
+        u"動揺してはならぬ。", u"[CLEAR MESSAGE]", u"でなければ、",
+        u"良い結果が出なくとも", u"わしは責任を持たぬぞ。"), (
+        u"酒飲み剣士：", u"では、術法を始めるぞ！", u"わしが終わりと言うまでは、",
+        u"二人ともわしから七歩より", u"遠くへ離れてはならぬ。", u"何が起こっても、",
+        u"軽はずみに動くでない。", u"[CLEAR MESSAGE]", u"でなければ、",
+        u"良い結果が出なくとも", u"わしは責任を持たぬぞ。")),
+}
+
+
 def corrected_translation(key, win_script, jp_script, jp_first, jp_last, body):
-    source = TRANSLATION_CORRECTIONS[key]
+    source = (TRANSLATION_CORRECTIONS if key in TRANSLATION_CORRECTIONS
+              else TRANSLATION_FOLLOWUPS)[key]
     if ((win_script, jp_script, jp_first, jp_last) != source[:4] or
         body != u"\n".join(source[4]) + u"\n"):
         raise ValueError("Issue #6 source differs for MESSAGE %d-%d; no output was written." % key)
@@ -175,6 +206,8 @@ def main():
                        help='Reproduce post-Issue #4 output before Issue #8 corrections (audit only).')
     audit.add_argument("--before-translation-fix", action='store_true',
                        help='Reproduce post-Issue #8 output before Issue #6 corrections (audit only).')
+    audit.add_argument("--before-translation-followup", action='store_true',
+                       help='Reproduce post-Issue #7 output before Issue #6 R2 corrections (audit only).')
     options = parser.parse_args()
 
     # The mapping anchors are version-specific. Validate before opening output;
@@ -581,6 +614,9 @@ def main():
     correct_duplicates = correct_tournament and not options.before_duplicate_fix
     checked_acquisitions, seen_messages = set(), {}
     correct_translations = correct_duplicates and not options.before_translation_fix
+    translation_targets = set(TRANSLATION_CORRECTIONS)
+    if not options.before_translation_followup:
+        translation_targets.update(TRANSLATION_FOLLOWUPS)
     corrected_translations = set()
     for s in range(0, 32 + len(recovered_sections)):
 	  #27 sections.
@@ -836,7 +872,7 @@ def main():
                     corrected_tournament.add(key)
 
                 key = (first_index, last_index)
-                if correct_translations and key in TRANSLATION_CORRECTIONS:
+                if correct_translations and key in translation_targets:
                     if key in corrected_translations:
                         raise ValueError("Duplicate Issue #6 target; no output was written.")
                     jmessage = corrected_translation(key, first_script, first_jp_script,
@@ -866,7 +902,7 @@ def main():
         raise ValueError("Incomplete Issue #4 correction set; no output was written.")
     if correct_duplicates and checked_acquisitions != set(ACQUISITION_SOURCES):
         raise ValueError("Incomplete Issue #8 acquisition source set; no output was written.")
-    if correct_translations and corrected_translations != set(TRANSLATION_CORRECTIONS):
+    if correct_translations and corrected_translations != translation_targets:
         raise ValueError("Incomplete Issue #6 correction set; no output was written.")
     if correct_duplicates:
         print("Issue #8: checked %d unique keys; acquisition text is independent of output order."

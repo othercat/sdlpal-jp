@@ -169,3 +169,22 @@ The opening dream's `~40` already resets the line counter; its subsequent CLEAR
 does not require an extra key wait. Old modes retain their own fixture checks.
 The red-silkworm adapter accepts the reviewed, already fitting text unchanged.
 See [source decisions, comparisons and verification](../docs/japanese-translation-review.md).
+
+### Four shared translation followups (Issue #6 R2)
+
+`--before-translation-followup` reproduces the post-#7 Win baseline, including
+the resource-version tag. `verify_translation_followup.py` checks the four
+additional groups against raw Win/DOS/Saturn sources, identical corrected text
+across versions and strict preservation of every other SLF byte. The R1 verifier
+continues to use the historical output rather than the new default output.
+
+`verify_followup_rendering.py` uses the existing `jp-translation-before`,
+`jp-translation` and `dos` modes. Fixtures draw the four target groups plus
+unchanged witnesses to retain the modes' coverage contracts. Both full key
+spaces are dumped; corrected lines are checked for glyph ink, pagination and
+pixel changes within their old/new glyph-and-shadow masks. PNGs must be opaque.
+2x/3x scales are exact; 2.5x is checked only for dimensions.
+
+`test_translation_followup.py` covers source-anchor/body drift and rejects
+unrelated SLF bytes, newline changes, duplicate or missing targets.
+See [R2 provenance, commands and before/after images](../docs/japanese-translation-followup.md).
