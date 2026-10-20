@@ -64,12 +64,10 @@ def reproduce(pc_dir, saturn_dir, output_dir, encoding="gbk"):
     }
     script = TOOL_DIR / "makemessage_j.py"
     script_hash = sha256(script)
-    if script_hash != metadata["assets"][script.name]["sha256"]:
-        raise ValueError("Converter differs from the imported baseline; compare its revision before reproducing.")
     output_dir.mkdir(parents=True)
     output = output_dir / "paljpn-win.slf"
     command = [sys.executable, "-B", "-X", "utf8", str(script),
-               str(pc_dir), str(saturn_dir), str(output), encoding]
+               str(pc_dir), str(saturn_dir), str(output), encoding, "--upstream-baseline"]
     result = subprocess.run(command, cwd=output_dir, capture_output=True, text=True,
                             encoding="utf-8", errors="replace", timeout=120)
     (output_dir / "converter.log").write_text(result.stdout + result.stderr, "utf-8")
@@ -89,11 +87,13 @@ def reproduce(pc_dir, saturn_dir, output_dir, encoding="gbk"):
             if sha256(Path(record["path"])) != record["sha256"]:
                 raise ValueError(f"Input was modified: {record['path']}")
     report = {
-        "scope": "Unmodified Win conversion baseline; interactive acceptance is deferred to the unified pass.",
+        "scope": "Exact upstream Win output via --upstream-baseline; interactive acceptance is deferred.",
         "python": {"executable": sys.executable, "version": sys.version,
                    "prefix": sys.prefix, "base_prefix": sys.base_prefix},
         "command": command, "working_directory": str(output_dir), "exit_code": result.returncode,
-        "converter_sha256": script_hash, "inputs": inputs, "inputs_unchanged": True,
+        "converter_sha256": script_hash,
+        "upstream_converter_sha256": metadata["assets"][script.name]["sha256"],
+        "inputs": inputs, "inputs_unchanged": True,
         "output": actual, "baseline_matches": True,
         "known_mapping_problems": "Preserved for Issues #3/#4/#6/#7/#8; this is not the final translated release.",
     }

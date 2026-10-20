@@ -94,3 +94,12 @@ These use real Steam converter subprocesses and the real GUI callback
 definitions with substituted Tk controls; no GUI window is created.
 See the [resource-backed baseline and source-load evidence](../docs/japanese-conversion-baseline.md)
 for the separate full Win conversion and deferred unified acceptance.
+
+### Restored Japanese dialogue mappings
+
+`tools/japanese/verify_restored_dialogues.py` reads the pinned raw Win/Saturn
+resources, compares all 119 reviewed recoveries and preserves every upstream
+block/duplicate. Its generated `recovery-fixtures.csv` probes all 4,766 runtime
+keys in the Test-only `jp-recovery-before` and `jp-recovery` renderer modes.
+Eight reviewed dialogue commands also produce neutral-background before/after
+images, including real CLEAR waits. See the [commands and evidence](../docs/japanese-missing-dialogues.md).

@@ -1,0 +1,4521 @@
+{
+  "issue": 3,
+  "review_date": "2026-10-20",
+  "reviewer": "Codex source comparison; user gameplay acceptance pending",
+  "method": "All 119 candidate groups read in full; speaker/event/meaning order checked. Static scene/entry context is not route acceptance.",
+  "provenance": {
+    "candidate_sha256": "666c367654a604bb57afc7e5729721918746f4823aae2b91652c571923fa282b",
+    "resource_fingerprints": "../../tools/japanese/upstream.json",
+    "original_audit": "../japanese-localization-audit.md#issue-3"
+  },
+  "pairs": [
+    {
+      "win": {
+        "script_start": 7583,
+        "script_end": 7584,
+        "ids": [
+          2686,
+          2687
+        ],
+        "text": [
+          "客人：",
+          "是啊！比武招亲已经开始啰！"
+        ],
+        "sid": 2686,
+        "eid": 2687
+      },
+      "jp": {
+        "script_start": 8508,
+        "script_end": 8510,
+        "ids": [
+          3602,
+          3603,
+          3604
+        ],
+        "text": [
+          "客：",
+          "そうだよ！",
+          "婿取り武術会が始まったよ。"
+        ],
+        "sid": 3602,
+        "eid": 3604
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26"
+    },
+    {
+      "win": {
+        "script_start": 7586,
+        "script_end": 7588,
+        "ids": [
+          2688,
+          2689,
+          2690
+        ],
+        "text": [
+          "少女：",
+          "大家都说苏州出美女",
+          "你们瞧～我算不算是美女啊"
+        ],
+        "sid": 2688,
+        "eid": 2690
+      },
+      "jp": {
+        "script_start": 8512,
+        "script_end": 8514,
+        "ids": [
+          3605,
+          3606,
+          3607
+        ],
+        "text": [
+          "少女：",
+          "蘇州の美人は有名と皆、",
+          "言うわ。私って美人かしら？"
+        ],
+        "sid": 3605,
+        "eid": 3607
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26",
+      "render_command": {
+        "script": null,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Event 412 enters script 7586 directly; use PAL_EndDialog default upper/no face."
+      }
+    },
+    {
+      "win": {
+        "script_start": 7590,
+        "script_end": 7591,
+        "ids": [
+          2691,
+          2692
+        ],
+        "text": [
+          "少女：",
+          "哼～真没眼光"
+        ],
+        "sid": 2691,
+        "eid": 2692
+      },
+      "jp": {
+        "script_start": 8516,
+        "script_end": 8517,
+        "ids": [
+          3608,
+          3609
+        ],
+        "text": [
+          "少女：",
+          "ふん、見る目がないわね。"
+        ],
+        "sid": 3608,
+        "eid": 3609
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26"
+    },
+    {
+      "win": {
+        "script_start": 7593,
+        "script_end": 7594,
+        "ids": [
+          2693,
+          2694
+        ],
+        "text": [
+          "来、来、来！",
+          "要看精彩的表演赶紧来"
+        ],
+        "sid": 2693,
+        "eid": 2694
+      },
+      "jp": {
+        "script_start": 8519,
+        "script_end": 8521,
+        "ids": [
+          3610,
+          3611,
+          3612
+        ],
+        "text": [
+          "さあ、いらっしゃい、",
+          "いらっしゃい！",
+          "見事な芸の披露が始まるよ！"
+        ],
+        "sid": 3610,
+        "eid": 3612
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26"
+    },
+    {
+      "win": {
+        "script_start": 7596,
+        "script_end": 7598,
+        "ids": [
+          2695,
+          2696,
+          2697
+        ],
+        "text": [
+          "我们兄弟尽走大江南北",
+          "靠的是真功夫、硬本事",
+          "请大家多多捧场"
+        ],
+        "sid": 2695,
+        "eid": 2697
+      },
+      "jp": {
+        "script_start": 8523,
+        "script_end": 8526,
+        "ids": [
+          3613,
+          3614,
+          3615,
+          3616
+        ],
+        "text": [
+          "俺達兄弟は今まで色々な所",
+          "をまわって本当の武術を",
+          "学んできた。",
+          "どうぞよろしく。"
+        ],
+        "sid": 3613,
+        "eid": 3616
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26"
+    },
+    {
+      "win": {
+        "script_start": 7600,
+        "script_end": 7600,
+        "ids": [
+          2698
+        ],
+        "text": [
+          "呵～　啊～！"
+        ],
+        "sid": 2698,
+        "eid": 2698
+      },
+      "jp": {
+        "script_start": 8528,
+        "script_end": 8528,
+        "ids": [
+          3617
+        ],
+        "text": [
+          "はあ！やあ！"
+        ],
+        "sid": 3617,
+        "eid": 3617
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26"
+    },
+    {
+      "win": {
+        "script_start": 7602,
+        "script_end": 7603,
+        "ids": [
+          2699,
+          2700
+        ],
+        "text": [
+          "观众：",
+          "哎呦．．好可怕"
+        ],
+        "sid": 2699,
+        "eid": 2700
+      },
+      "jp": {
+        "script_start": 8530,
+        "script_end": 8531,
+        "ids": [
+          3618,
+          3619
+        ],
+        "text": [
+          "観客：",
+          "ひゃあ・・・こわい・・・。"
+        ],
+        "sid": 3618,
+        "eid": 3619
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26"
+    },
+    {
+      "win": {
+        "script_start": 7605,
+        "script_end": 7606,
+        "ids": [
+          2701,
+          2702
+        ],
+        "text": [
+          "观众：",
+          "把剑吞下去，肚子不痛吗？"
+        ],
+        "sid": 2701,
+        "eid": 2702
+      },
+      "jp": {
+        "script_start": 8533,
+        "script_end": 8535,
+        "ids": [
+          3620,
+          3621,
+          3622
+        ],
+        "text": [
+          "観客：",
+          "剣を飲み込むだって？",
+          "腹が痛くならないのか？"
+        ],
+        "sid": 3620,
+        "eid": 3622
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26"
+    },
+    {
+      "win": {
+        "script_start": 7609,
+        "script_end": 7610,
+        "ids": [
+          2703,
+          2704
+        ],
+        "text": [
+          "小孩：",
+          "他真的把剑吞到肚子里面吗？"
+        ],
+        "sid": 2703,
+        "eid": 2704
+      },
+      "jp": {
+        "script_start": 8538,
+        "script_end": 8540,
+        "ids": [
+          3623,
+          3624,
+          3625
+        ],
+        "text": [
+          "子供：",
+          "あの人、本当に剣を",
+          "飲み込んだのかな？"
+        ],
+        "sid": 3623,
+        "eid": 3625
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26"
+    },
+    {
+      "win": {
+        "script_start": 7612,
+        "script_end": 7613,
+        "ids": [
+          2705,
+          2706
+        ],
+        "text": [
+          "小孩：",
+          "好像是真的呢"
+        ],
+        "sid": 2705,
+        "eid": 2706
+      },
+      "jp": {
+        "script_start": 8542,
+        "script_end": 8543,
+        "ids": [
+          3626,
+          3627
+        ],
+        "text": [
+          "子供：",
+          "本当みたい・・・。"
+        ],
+        "sid": 3626,
+        "eid": 3627
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26"
+    },
+    {
+      "win": {
+        "script_start": 7615,
+        "script_end": 7616,
+        "ids": [
+          2707,
+          2708
+        ],
+        "text": [
+          "观众：",
+          "老把戏～看多啦！"
+        ],
+        "sid": 2707,
+        "eid": 2708
+      },
+      "jp": {
+        "script_start": 8545,
+        "script_end": 8546,
+        "ids": [
+          3628,
+          3629
+        ],
+        "text": [
+          "観客：",
+          "古いのはもう飽きたぞ！"
+        ],
+        "sid": 3628,
+        "eid": 3629
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26"
+    },
+    {
+      "win": {
+        "script_start": 7618,
+        "script_end": 7620,
+        "ids": [
+          2709,
+          2710,
+          2711
+        ],
+        "text": [
+          "观众：",
+          "这两位功夫耍的不错",
+          "就不知一天能赚多少钱"
+        ],
+        "sid": 2709,
+        "eid": 2711
+      },
+      "jp": {
+        "script_start": 8548,
+        "script_end": 8551,
+        "ids": [
+          3630,
+          3631,
+          3632,
+          3633
+        ],
+        "text": [
+          "観客：",
+          "なかなかの腕前だな。",
+          "一日でいくらくらい",
+          "稼ぐんだろう？"
+        ],
+        "sid": 3630,
+        "eid": 3633
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26"
+    },
+    {
+      "win": {
+        "script_start": 7622,
+        "script_end": 7623,
+        "ids": [
+          2712,
+          2713
+        ],
+        "text": [
+          "小孩：",
+          "哗．．好厉害喔！"
+        ],
+        "sid": 2712,
+        "eid": 2713
+      },
+      "jp": {
+        "script_start": 8553,
+        "script_end": 8554,
+        "ids": [
+          3634,
+          3635
+        ],
+        "text": [
+          "子供：",
+          "わあ・・・すごい！！"
+        ],
+        "sid": 3634,
+        "eid": 3635
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene23/map23；提示在scene26/map26"
+    },
+    {
+      "win": {
+        "script_start": 24461,
+        "script_end": 24467,
+        "ids": [
+          9110,
+          9111,
+          9112,
+          9113,
+          9114,
+          9115
+        ],
+        "text": [
+          "书中仙：",
+          "此处的化妖水池之下",
+          "必定有这些剑柱的支撑点",
+          "[CLEAR MESSAGE]",
+          "只要有人潜下去，找到这",
+          "些地点加以破坏，这座塔",
+          "想不垮也难"
+        ],
+        "sid": 9110,
+        "eid": 9115
+      },
+      "jp": {
+        "script_start": 26845,
+        "script_end": 26852,
+        "ids": [
+          11759,
+          11760,
+          11761,
+          11762,
+          11763,
+          11764,
+          11765
+        ],
+        "text": [
+          "書中仙人：",
+          "化身の水はこの下じゃ。",
+          "柱となる剣が支えられて",
+          "いるのもこの場所じゃ。",
+          "[CLEAR MESSAGE]",
+          "誰かが潜って破壊できる",
+          "地点を見つければ、",
+          "この塔を崩せるはずじゃ。"
+        ],
+        "sid": 11759,
+        "eid": 11765
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148",
+      "render_command": {
+        "script": 24460,
+        "instruction": [
+          61,
+          69,
+          0,
+          0
+        ],
+        "basis": "Direct preceding dialogue command."
+      }
+    },
+    {
+      "win": {
+        "script_start": 24470,
+        "script_end": 24474,
+        "ids": [
+          9116,
+          9117,
+          9118,
+          9119,
+          9120
+        ],
+        "text": [
+          "天鬼皇：",
+          "开什么玩笑！让谁去？",
+          "这种化妖水我们稍为沾到一滴",
+          "就受不了。整个人潜下去不就",
+          "全身给化得精光！"
+        ],
+        "sid": 9116,
+        "eid": 9120
+      },
+      "jp": {
+        "script_start": 26855,
+        "script_end": 26860,
+        "ids": [
+          11766,
+          11767,
+          11768,
+          11769,
+          11770,
+          11771
+        ],
+        "text": [
+          "天鬼皇：",
+          "がっはっは、冗談をいえ！",
+          "誰が行くのだ？",
+          "我々妖怪は化身の水に一滴",
+          "たりとも触れられん。",
+          "潜るなど、もっての他だ！"
+        ],
+        "sid": 11766,
+        "eid": 11771
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24477,
+        "script_end": 24484,
+        "ids": [
+          9121,
+          9122,
+          9123,
+          9124,
+          9125,
+          9126,
+          9127,
+          9128
+        ],
+        "text": [
+          "书中仙：",
+          "没错～当初设计此塔者，在塔",
+          "底注入化妖水，就是为了防止",
+          "妖怪从塔底土遁，另一方面也",
+          "是保护这些剑柱不被腐蚀",
+          "嘿嘿～　可是．．当初他们",
+          "绝对没想到，会有人类能走",
+          "到这最底层来"
+        ],
+        "sid": 9121,
+        "eid": 9128
+      },
+      "jp": {
+        "script_start": 26863,
+        "script_end": 26874,
+        "ids": [
+          11772,
+          11773,
+          11774,
+          11775,
+          11776,
+          11777,
+          11778,
+          11779,
+          11780,
+          11781,
+          11782
+        ],
+        "text": [
+          "そう・・・。",
+          "この塔を設計した者は考え",
+          "おった。",
+          "[CLEAR MESSAGE]",
+          "妖怪が塔の底へ潜り、",
+          "柱となる剣に触れるのを",
+          "防ぐために化身の水を",
+          "敷いたんじゃ。",
+          "くっくっく・・・。",
+          "しかし、人間がこんな所",
+          "まで入ってくるとは",
+          "思わなんだろうて！"
+        ],
+        "sid": 11772,
+        "eid": 11782
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24486,
+        "script_end": 24487,
+        "ids": [
+          9129,
+          9130
+        ],
+        "text": [
+          "李逍遥：",
+          "您是说．．由我去？"
+        ],
+        "sid": 9129,
+        "eid": 9130
+      },
+      "jp": {
+        "script_start": 26876,
+        "script_end": 26878,
+        "ids": [
+          11783,
+          11784,
+          11785
+        ],
+        "text": [
+          "李逍遥：",
+          "・・・・・・。",
+          "つまり僕が？"
+        ],
+        "sid": 11783,
+        "eid": 11785
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24490,
+        "script_end": 24492,
+        "ids": [
+          9131,
+          9132,
+          9133
+        ],
+        "text": [
+          "书中仙：",
+          "化妖水对妖怪是致命的",
+          "．．对人类却是无害"
+        ],
+        "sid": 9131,
+        "eid": 9133
+      },
+      "jp": {
+        "script_start": 26881,
+        "script_end": 26884,
+        "ids": [
+          11786,
+          11787,
+          11788,
+          11789
+        ],
+        "text": [
+          "書中仙人：",
+          "化身の水は妖怪達にとって",
+          "命取りとなるが・・・。",
+          "人間には無害じゃよ。"
+        ],
+        "sid": 11786,
+        "eid": 11789
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24499,
+        "script_end": 24500,
+        "ids": [
+          9134,
+          9135
+        ],
+        "text": [
+          "林月如：",
+          "好～　李大哥，我们去！"
+        ],
+        "sid": 9134,
+        "eid": 9135
+      },
+      "jp": {
+        "script_start": 26891,
+        "script_end": 26894,
+        "ids": [
+          11790,
+          11791,
+          11792,
+          11793
+        ],
+        "text": [
+          "林月如：",
+          "わかったわ。",
+          "李さん、",
+          "私達で行きましょう。"
+        ],
+        "sid": 11790,
+        "eid": 11793
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24503,
+        "script_end": 24511,
+        "ids": [
+          9136,
+          9137,
+          9138,
+          9139,
+          9140,
+          9141,
+          9142,
+          9143
+        ],
+        "text": [
+          "书中仙：",
+          "化妖池水表面浮著一层十分",
+          "黏稠的油脂，以二位的体重",
+          "来说，恐怕是很难潜下去",
+          "[CLEAR MESSAGE]",
+          "但是此处池水是缓慢在流动的",
+          "若在出水口附近，流动较剧烈",
+          "之处，油脂层较薄，应该可以",
+          "潜下去的"
+        ],
+        "sid": 9136,
+        "eid": 9143
+      },
+      "jp": {
+        "script_start": 26897,
+        "script_end": 26906,
+        "ids": [
+          11794,
+          11795,
+          11796,
+          11797,
+          11798,
+          11799,
+          11800,
+          11801,
+          11802,
+          11803
+        ],
+        "text": [
+          "書中仙人：",
+          "化身の水の表面には一層の",
+          "濃い油が浮いておる。",
+          "お主等の体重では",
+          "とても潜れん。",
+          "だが、しかし！この池は",
+          "ゆっくりと流動している。",
+          "水の出口付近ならば流動は",
+          "激しいが油は薄い。",
+          "潜れるかも知れんじゃろな。"
+        ],
+        "sid": 11794,
+        "eid": 11803
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24515,
+        "script_end": 24516,
+        "ids": [
+          9144,
+          9145
+        ],
+        "text": [
+          "林月如：",
+          "在何处？在这附近吗？"
+        ],
+        "sid": 9144,
+        "eid": 9145
+      },
+      "jp": {
+        "script_start": 26910,
+        "script_end": 26912,
+        "ids": [
+          11804,
+          11805,
+          11806
+        ],
+        "text": [
+          "林月如：",
+          "それはどこ？",
+          "この近く？"
+        ],
+        "sid": 11804,
+        "eid": 11806
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24519,
+        "script_end": 24526,
+        "ids": [
+          9146,
+          9147,
+          9148,
+          9149,
+          9150,
+          9151,
+          9152
+        ],
+        "text": [
+          "书中仙：",
+          "出水口的位置经常改变",
+          "我也不知道在哪里",
+          "自己去找吧！",
+          "[CLEAR MESSAGE]",
+          "呼．．我的话说完了",
+          "剩下的就交给你们",
+          "我要回书中休息啦！"
+        ],
+        "sid": 9146,
+        "eid": 9152
+      },
+      "jp": {
+        "script_start": 26915,
+        "script_end": 26923,
+        "ids": [
+          11807,
+          11808,
+          11809,
+          11810,
+          11811,
+          11812,
+          11813,
+          11814,
+          11815
+        ],
+        "text": [
+          "書中仙人：",
+          "出口の位置は変化",
+          "するんじゃ。",
+          "わしも分からん。",
+          "自分達で探してくれ！",
+          "ふう・・・",
+          "これで話は終わりじゃ。",
+          "あとは頼んだぞ。",
+          "わしは休憩・・・。"
+        ],
+        "sid": 11807,
+        "eid": 11815
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24534,
+        "script_end": 24535,
+        "ids": [
+          9153,
+          9154
+        ],
+        "text": [
+          "李逍遥：",
+          "就这么办！"
+        ],
+        "sid": 9153,
+        "eid": 9154
+      },
+      "jp": {
+        "script_start": 26931,
+        "script_end": 26932,
+        "ids": [
+          11816,
+          11817
+        ],
+        "text": [
+          "李逍遥：",
+          "さて、二人ともいこうか！"
+        ],
+        "sid": 11816,
+        "eid": 11817
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24542,
+        "script_end": 24546,
+        "ids": [
+          9155,
+          9156,
+          9157,
+          9158,
+          9159
+        ],
+        "text": [
+          "李逍遥：",
+          "天鬼兄，这件事就交给我",
+          "请你通知塔内所有的人",
+          "事成之后大家到这里来会合",
+          "要出去就大家一起出去！"
+        ],
+        "sid": 9155,
+        "eid": 9159
+      },
+      "jp": {
+        "script_start": 26939,
+        "script_end": 26944,
+        "ids": [
+          11818,
+          11819,
+          11820,
+          11821,
+          11822
+        ],
+        "text": [
+          "李逍遥：",
+          "天鬼皇、大丈夫、",
+          "僕に任せてくれ。",
+          "[CLEAR MESSAGE]",
+          "あんたは塔内の人に脱出",
+          "することを知らせてくれよ。"
+        ],
+        "sid": 11818,
+        "eid": 11822
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24548,
+        "script_end": 24549,
+        "ids": [
+          9160,
+          9161
+        ],
+        "text": [
+          "天鬼皇：",
+          "好～咱们分头行事"
+        ],
+        "sid": 9160,
+        "eid": 9161
+      },
+      "jp": {
+        "script_start": 26946,
+        "script_end": 26948,
+        "ids": [
+          11823,
+          11824,
+          11825
+        ],
+        "text": [
+          "天鬼皇：",
+          "ようし、たのんだぞ！",
+          "では手分けして始めよう。"
+        ],
+        "sid": 11823,
+        "eid": 11825
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24553,
+        "script_end": 24557,
+        "ids": [
+          9162,
+          9163,
+          9164,
+          9165,
+          9166
+        ],
+        "text": [
+          "天鬼皇：",
+          "大家听着！回去把你们的",
+          "老婆孩子都集合起来，想带",
+          "走的家当也全都打点好",
+          "听我召唤，就回到这里集合"
+        ],
+        "sid": 9162,
+        "eid": 9166
+      },
+      "jp": {
+        "script_start": 26952,
+        "script_end": 26959,
+        "ids": [
+          11826,
+          11827,
+          11828,
+          11829,
+          11830,
+          11831,
+          11832
+        ],
+        "text": [
+          "天鬼皇：",
+          "よく聞け！",
+          "帰って妻や子供を",
+          "ここへ集合させろ。",
+          "[CLEAR MESSAGE]",
+          "持って逃げたい物はしっか",
+          "りまとめるんだ。",
+          "そして、ここへ集まるのだ！"
+        ],
+        "sid": 11826,
+        "eid": 11832
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24578,
+        "script_end": 24579,
+        "ids": [
+          9167,
+          9168
+        ],
+        "text": [
+          "天鬼皇：",
+          "祝一切顺利～　回头见！"
+        ],
+        "sid": 9167,
+        "eid": 9168
+      },
+      "jp": {
+        "script_start": 26980,
+        "script_end": 26982,
+        "ids": [
+          11833,
+          11834,
+          11835
+        ],
+        "text": [
+          "天鬼皇：",
+          "無事を祈る。",
+          "また後で会おう！"
+        ],
+        "sid": 11833,
+        "eid": 11835
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24586,
+        "script_end": 24587,
+        "ids": [
+          9169,
+          9170
+        ],
+        "text": [
+          "李逍遥：",
+          "我们也出发吧！"
+        ],
+        "sid": 9169,
+        "eid": 9170
+      },
+      "jp": {
+        "script_start": 26989,
+        "script_end": 26990,
+        "ids": [
+          11836,
+          11837
+        ],
+        "text": [
+          "李逍遥：",
+          "よし、僕らも行こう！)"
+        ],
+        "sid": 11836,
+        "eid": 11837
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24591,
+        "script_end": 24592,
+        "ids": [
+          9171,
+          9172
+        ],
+        "text": [
+          "赵灵儿：",
+          "．．．．我也去。"
+        ],
+        "sid": 9171,
+        "eid": 9172
+      },
+      "jp": {
+        "script_start": 26994,
+        "script_end": 26995,
+        "ids": [
+          11838,
+          11839
+        ],
+        "text": [
+          "趙霊児：",
+          "・・・私も行きます。"
+        ],
+        "sid": 11838,
+        "eid": 11839
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24597,
+        "script_end": 24598,
+        "ids": [
+          9173,
+          9174
+        ],
+        "text": [
+          "林月如：",
+          "你．．．"
+        ],
+        "sid": 9173,
+        "eid": 9174
+      },
+      "jp": {
+        "script_start": 27000,
+        "script_end": 27001,
+        "ids": [
+          11840,
+          11841
+        ],
+        "text": [
+          "林月如：",
+          "霊児！あなたは・・・。"
+        ],
+        "sid": 11840,
+        "eid": 11841
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24602,
+        "script_end": 24608,
+        "ids": [
+          9175,
+          9176,
+          9177,
+          9178,
+          9179,
+          9180
+        ],
+        "text": [
+          "赵灵儿：",
+          "我．．也算是半个人类．．",
+          "[CLEAR MESSAGE]",
+          "何况～我的力量和你们不同",
+          "对化妖池水我可以忍受",
+          "因此明王怕我逃脱，才把我",
+          "锁在剑柱上．．"
+        ],
+        "sid": 9175,
+        "eid": 9180
+      },
+      "jp": {
+        "script_start": 27005,
+        "script_end": 27014,
+        "ids": [
+          11842,
+          11843,
+          11844,
+          11845,
+          11846,
+          11847,
+          11848,
+          11849
+        ],
+        "text": [
+          "趙霊児：",
+          "私に流れている妖怪の血は",
+          "半分だけです・・・。",
+          "[CLEAR MESSAGE]",
+          "私の力の根本は彼らの力",
+          "とは違うし、私は化身の",
+          "水も平気なんです。",
+          "[CLEAR MESSAGE]",
+          "だから明王は私が逃げるの",
+          "を恐れたんでしょう・・・。"
+        ],
+        "sid": 11842,
+        "eid": 11849
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24611,
+        "script_end": 24613,
+        "ids": [
+          9181,
+          9182,
+          9183
+        ],
+        "text": [
+          "李逍遥：",
+          "那太好了，我们三个人又",
+          "可以一起行动了)"
+        ],
+        "sid": 9181,
+        "eid": 9183
+      },
+      "jp": {
+        "script_start": 27017,
+        "script_end": 27019,
+        "ids": [
+          11850,
+          11851,
+          11852
+        ],
+        "text": [
+          "李逍遥：",
+          "そいつはよかった。",
+          "三人で行こう！)"
+        ],
+        "sid": 11850,
+        "eid": 11852
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene154/map74，入场24148"
+    },
+    {
+      "win": {
+        "script_start": 24702,
+        "script_end": 24704,
+        "ids": [
+          9184,
+          9185,
+          9186
+        ],
+        "text": [
+          "$07你放心．．我李逍遥可以对天",
+          "发誓，从今以后决不会让你一",
+          "个人孤苦伶仃！~70"
+        ],
+        "sid": 9184,
+        "eid": 9186
+      },
+      "jp": {
+        "script_start": 27108,
+        "script_end": 27110,
+        "ids": [
+          11853,
+          11854,
+          11855
+        ],
+        "text": [
+          "$07安心するんだ。",
+          "もう、僕はお前一人を苦し",
+          "めたりしないよ。~70"
+        ],
+        "sid": 11853,
+        "eid": 11855
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene172/map18、170/map9、171/map119"
+    },
+    {
+      "win": {
+        "script_start": 24716,
+        "script_end": 24717,
+        "ids": [
+          9187,
+          9188
+        ],
+        "text": [
+          "　$07姥姥～人家他是来求药医治",
+          "　亲人的病呢，您就放过他嘛～~70"
+        ],
+        "sid": 9187,
+        "eid": 9188
+      },
+      "jp": {
+        "script_start": 27123,
+        "script_end": 27126,
+        "ids": [
+          11856,
+          11857,
+          11858,
+          11859
+        ],
+        "text": [
+          "$07ばあや・・・",
+          "彼は家族の為に薬をもらい",
+          "に来たのです。",
+          "許してあげて！~70"
+        ],
+        "sid": 11856,
+        "eid": 11859
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene172/map18、170/map9、171/map119"
+    },
+    {
+      "win": {
+        "script_start": 24729,
+        "script_end": 24729,
+        "ids": [
+          9189
+        ],
+        "text": [
+          "天亮了．．我必须走了。~70"
+        ],
+        "sid": 9189,
+        "eid": 9189
+      },
+      "jp": {
+        "script_start": 27139,
+        "script_end": 27140,
+        "ids": [
+          11860,
+          11861
+        ],
+        "text": [
+          "朝だ・・・。",
+          "行かなくちゃ・・・。~70"
+        ],
+        "sid": 11860,
+        "eid": 11861
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene172/map18、170/map9、171/map119"
+    },
+    {
+      "win": {
+        "script_start": 24743,
+        "script_end": 24743,
+        "ids": [
+          9190
+        ],
+        "text": [
+          "$05我的衣服呢？~65"
+        ],
+        "sid": 9190,
+        "eid": 9190
+      },
+      "jp": {
+        "script_start": 27154,
+        "script_end": 27154,
+        "ids": [
+          11862
+        ],
+        "text": [
+          "$05あら、私の服は？~65"
+        ],
+        "sid": 11862,
+        "eid": 11862
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene172/map18、170/map9、171/map119"
+    },
+    {
+      "win": {
+        "script_start": 24781,
+        "script_end": 24781,
+        "ids": [
+          9191
+        ],
+        "text": [
+          "七星磐龙柱"
+        ],
+        "sid": 9191,
+        "eid": 9191
+      },
+      "jp": {
+        "script_start": 27193,
+        "script_end": 27193,
+        "ids": [
+          11863
+        ],
+        "text": [
+          "北斗の龍柱"
+        ],
+        "sid": 11863,
+        "eid": 11863
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene145/map185"
+    },
+    {
+      "win": {
+        "script_start": 24816,
+        "script_end": 24816,
+        "ids": [
+          9192
+        ],
+        "text": [
+          "七根龙柱全部毁去"
+        ],
+        "sid": 9192,
+        "eid": 9192
+      },
+      "jp": {
+        "script_start": 27228,
+        "script_end": 27228,
+        "ids": [
+          11864
+        ],
+        "text": [
+          "七本の龍柱は全て崩れた"
+        ],
+        "sid": 11864,
+        "eid": 11864
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene145/map185"
+    },
+    {
+      "win": {
+        "script_start": 24931,
+        "script_end": 24932,
+        "ids": [
+          9193,
+          9194
+        ],
+        "text": [
+          "天鬼皇：",
+          "$04我们终于重见天日了！~55"
+        ],
+        "sid": 9193,
+        "eid": 9194
+      },
+      "jp": {
+        "script_start": 27344,
+        "script_end": 27347,
+        "ids": [
+          11865,
+          11866,
+          11867,
+          11868
+        ],
+        "text": [
+          "天鬼皇：",
+          "$04おお、光が！",
+          "ついに暗闇から光の世に",
+          "戻ったのだ！~55"
+        ],
+        "sid": 11865,
+        "eid": 11868
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene152/map102，入场24908"
+    },
+    {
+      "win": {
+        "script_start": 24937,
+        "script_end": 24938,
+        "ids": [
+          9195,
+          9196
+        ],
+        "text": [
+          "小妖：",
+          "嘎．．．咕．．哈~55"
+        ],
+        "sid": 9195,
+        "eid": 9196
+      },
+      "jp": {
+        "script_start": 27352,
+        "script_end": 27354,
+        "ids": [
+          11869,
+          11870,
+          11871
+        ],
+        "text": [
+          "小妖怪：",
+          "おおお・・・。",
+          "ぐすん、ぐすん・・・。~55"
+        ],
+        "sid": 11869,
+        "eid": 11871
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene152/map102，入场24908"
+    },
+    {
+      "win": {
+        "script_start": 24941,
+        "script_end": 24943,
+        "ids": [
+          9197,
+          9198,
+          9199
+        ],
+        "text": [
+          "天鬼皇：",
+          "$01哎呀～糟糕．．三位恩公呢？",
+          "有谁看见他们逃出来？~70"
+        ],
+        "sid": 9197,
+        "eid": 9199
+      },
+      "jp": {
+        "script_start": 27357,
+        "script_end": 27361,
+        "ids": [
+          11872,
+          11873,
+          11874,
+          11875,
+          11876
+        ],
+        "text": [
+          "天鬼皇：",
+          "$02おお、しまった！",
+          "我らの恩人は？",
+          "誰か彼らが戻るのを見た",
+          "ものはおらんか？~70"
+        ],
+        "sid": 11872,
+        "eid": 11876
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene152/map102，入场24908"
+    },
+    {
+      "win": {
+        "script_start": 24955,
+        "script_end": 24956,
+        "ids": [
+          9200,
+          9201
+        ],
+        "text": [
+          "天鬼皇：",
+          "你们呢？　也没看见！？~60"
+        ],
+        "sid": 9200,
+        "eid": 9201
+      },
+      "jp": {
+        "script_start": 27373,
+        "script_end": 27375,
+        "ids": [
+          11877,
+          11878,
+          11879
+        ],
+        "text": [
+          "天鬼皇：",
+          "お前等は？",
+          "見ておらんのか！~60"
+        ],
+        "sid": 11877,
+        "eid": 11879
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene152/map102，入场24908"
+    },
+    {
+      "win": {
+        "script_start": 24964,
+        "script_end": 24965,
+        "ids": [
+          9202,
+          9203
+        ],
+        "text": [
+          "小妖：",
+          "$07呜．．．咕．．~50"
+        ],
+        "sid": 9202,
+        "eid": 9203
+      },
+      "jp": {
+        "script_start": 27383,
+        "script_end": 27385,
+        "ids": [
+          11880,
+          11881,
+          11882
+        ],
+        "text": [
+          "小妖怪：",
+          "$07あうう・・・",
+          "そのう、ええと・・・。~50"
+        ],
+        "sid": 11880,
+        "eid": 11882
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene152/map102，入场24908"
+    },
+    {
+      "win": {
+        "script_start": 24969,
+        "script_end": 24971,
+        "ids": [
+          9204,
+          9205,
+          9206
+        ],
+        "text": [
+          "天鬼皇：",
+          "$01真该死～大家只顾自己逃命",
+          "居然忘了三位恩公！~60"
+        ],
+        "sid": 9204,
+        "eid": 9206
+      },
+      "jp": {
+        "script_start": 27389,
+        "script_end": 27393,
+        "ids": [
+          11883,
+          11884,
+          11885,
+          11886,
+          11887
+        ],
+        "text": [
+          "天鬼皇：",
+          "$02なんということだ！",
+          "我々は自分の命が助かる",
+          "ことばかり考えて恩人を",
+          "忘れてしまったのだ！~60"
+        ],
+        "sid": 11883,
+        "eid": 11887
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene152/map102，入场24908"
+    },
+    {
+      "win": {
+        "script_start": 25006,
+        "script_end": 25007,
+        "ids": [
+          9207,
+          9208
+        ],
+        "text": [
+          "剑圣：",
+          "$03你怎么不阻止他们呢！？~60"
+        ],
+        "sid": 9207,
+        "eid": 9208
+      },
+      "jp": {
+        "script_start": 27428,
+        "script_end": 27429,
+        "ids": [
+          11888,
+          11889
+        ],
+        "text": [
+          "剣の聖人：",
+          "$03奴等を止めよ！~60"
+        ],
+        "sid": 11888,
+        "eid": 11889
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene151/map137，入场24998",
+      "translation_followup": "#6: Win 9208 asks why the demons were not stopped; JP 11889 orders them stopped."
+    },
+    {
+      "win": {
+        "script_start": 25012,
+        "script_end": 25013,
+        "ids": [
+          9209,
+          9210
+        ],
+        "text": [
+          "$05师兄．．你不觉得",
+          "这是天意吗？~70"
+        ],
+        "sid": 9209,
+        "eid": 9210
+      },
+      "jp": {
+        "script_start": 27434,
+        "script_end": 27436,
+        "ids": [
+          11890,
+          11891,
+          11892
+        ],
+        "text": [
+          "$05兄者・・・",
+          "わしはこれは天がなさった",
+          "ことだと思うよ・・・。~70"
+        ],
+        "sid": 11890,
+        "eid": 11892
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene151/map137，入场24998"
+    },
+    {
+      "win": {
+        "script_start": 25016,
+        "script_end": 25017,
+        "ids": [
+          9211,
+          9212
+        ],
+        "text": [
+          "剑圣：",
+          "$01岂有此理！~60"
+        ],
+        "sid": 9211,
+        "eid": 9212
+      },
+      "jp": {
+        "script_start": 27439,
+        "script_end": 27440,
+        "ids": [
+          11893,
+          11894
+        ],
+        "text": [
+          "剣の聖人：",
+          "$02そうかのう！？~60"
+        ],
+        "sid": 11893,
+        "eid": 11894
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene151/map137，入场24998",
+      "translation_followup": "#6: Win 9212 expresses indignation; JP 11894 asks whether it is so."
+    },
+    {
+      "win": {
+        "script_start": 25026,
+        "script_end": 25026,
+        "ids": [
+          9213
+        ],
+        "text": [
+          "$05唉．．．．~65$01"
+        ],
+        "sid": 9213,
+        "eid": 9213
+      },
+      "jp": {
+        "script_start": 27449,
+        "script_end": 27449,
+        "ids": [
+          11895
+        ],
+        "text": [
+          "$05ふう、やれやれ・・・。~65$02"
+        ],
+        "sid": 11895,
+        "eid": 11895
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene151/map137，入场24998"
+    },
+    {
+      "win": {
+        "script_start": 25040,
+        "script_end": 25040,
+        "ids": [
+          9214
+        ],
+        "text": [
+          "得到 天香续命露"
+        ],
+        "sid": 9214,
+        "eid": 9214
+      },
+      "jp": {
+        "script_start": 27463,
+        "script_end": 27463,
+        "ids": [
+          11896
+        ],
+        "text": [
+          "天香続命の露を獲得"
+        ],
+        "sid": 11896,
+        "eid": 11896
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene161/map136，events2680–2686"
+    },
+    {
+      "win": {
+        "script_start": 25045,
+        "script_end": 25045,
+        "ids": [
+          9215
+        ],
+        "text": [
+          "得到 紫菁玉蓉膏"
+        ],
+        "sid": 9215,
+        "eid": 9215
+      },
+      "jp": {
+        "script_start": 27468,
+        "script_end": 27469,
+        "ids": [
+          11897,
+          11898
+        ],
+        "text": [
+          "紫芙蓉（ムラサキフヨウ）",
+          "の塗り薬を獲得"
+        ],
+        "sid": 11897,
+        "eid": 11898
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene161/map136，events2680–2686"
+    },
+    {
+      "win": {
+        "script_start": 25050,
+        "script_end": 25050,
+        "ids": [
+          9216
+        ],
+        "text": [
+          "得到雪莲子"
+        ],
+        "sid": 9216,
+        "eid": 9216
+      },
+      "jp": {
+        "script_start": 27474,
+        "script_end": 27474,
+        "ids": [
+          11899
+        ],
+        "text": [
+          "雪蓮の種を獲得"
+        ],
+        "sid": 11899,
+        "eid": 11899
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene161/map136，events2680–2686"
+    },
+    {
+      "win": {
+        "script_start": 25055,
+        "script_end": 25055,
+        "ids": [
+          9217
+        ],
+        "text": [
+          "得到 灵葫仙丹"
+        ],
+        "sid": 9217,
+        "eid": 9217
+      },
+      "jp": {
+        "script_start": 27479,
+        "script_end": 27479,
+        "ids": [
+          11900
+        ],
+        "text": [
+          "霊葫の仙丹を獲得"
+        ],
+        "sid": 11900,
+        "eid": 11900
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene161/map136，events2680–2686"
+    },
+    {
+      "win": {
+        "script_start": 25060,
+        "script_end": 25060,
+        "ids": [
+          9218
+        ],
+        "text": [
+          "得到 九阴散"
+        ],
+        "sid": 9218,
+        "eid": 9218
+      },
+      "jp": {
+        "script_start": 27484,
+        "script_end": 27484,
+        "ids": [
+          11901
+        ],
+        "text": [
+          "九陰散を獲得"
+        ],
+        "sid": 11901,
+        "eid": 11901
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene161/map136，events2680–2686"
+    },
+    {
+      "win": {
+        "script_start": 25065,
+        "script_end": 25065,
+        "ids": [
+          9219
+        ],
+        "text": [
+          "得到 金刚符"
+        ],
+        "sid": 9219,
+        "eid": 9219
+      },
+      "jp": {
+        "script_start": 27489,
+        "script_end": 27489,
+        "ids": [
+          11902
+        ],
+        "text": [
+          "金剛符を獲得"
+        ],
+        "sid": 11902,
+        "eid": 11902
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene161/map136，events2680–2686"
+    },
+    {
+      "win": {
+        "script_start": 25070,
+        "script_end": 25070,
+        "ids": [
+          9220
+        ],
+        "text": [
+          "得到 圣灵符"
+        ],
+        "sid": 9220,
+        "eid": 9220
+      },
+      "jp": {
+        "script_start": 27494,
+        "script_end": 27494,
+        "ids": [
+          11903
+        ],
+        "text": [
+          "聖霊符を獲得"
+        ],
+        "sid": 11903,
+        "eid": 11903
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene161/map136，events2680–2686"
+    },
+    {
+      "win": {
+        "script_start": 25976,
+        "script_end": 25976,
+        "ids": [
+          9221
+        ],
+        "text": [
+          "摘得一颗\"蟠果\""
+        ],
+        "sid": 9221,
+        "eid": 9221
+      },
+      "jp": {
+        "script_start": 28400,
+        "script_end": 28400,
+        "ids": [
+          11904
+        ],
+        "text": [
+          "“仙桃（セントウ）”の実を摘む"
+        ],
+        "sid": 11904,
+        "eid": 11904
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene187、177、178"
+    },
+    {
+      "win": {
+        "script_start": 25983,
+        "script_end": 25983,
+        "ids": [
+          9222
+        ],
+        "text": [
+          "摘得两支\"香蕉\""
+        ],
+        "sid": 9222,
+        "eid": 9222
+      },
+      "jp": {
+        "script_start": 28407,
+        "script_end": 28407,
+        "ids": [
+          11905
+        ],
+        "text": [
+          "“バナナ”を二つ獲得"
+        ],
+        "sid": 11905,
+        "eid": 11905
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene187、177、178"
+    },
+    {
+      "win": {
+        "script_start": 25989,
+        "script_end": 25990,
+        "ids": [
+          9223,
+          9224
+        ],
+        "text": [
+          "李逍遥：",
+          "小猴子，借过一下好不好？"
+        ],
+        "sid": 9223,
+        "eid": 9224
+      },
+      "jp": {
+        "script_start": 28413,
+        "script_end": 28415,
+        "ids": [
+          11906,
+          11907,
+          11908
+        ],
+        "text": [
+          "李逍遥：",
+          "お猿さん、",
+          "悪いがどいてくれ。"
+        ],
+        "sid": 11906,
+        "eid": 11908
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene193/map151，events3301、3302"
+    },
+    {
+      "win": {
+        "script_start": 26005,
+        "script_end": 26006,
+        "ids": [
+          9225,
+          9226
+        ],
+        "text": [
+          "李逍遥：",
+          "不走开我打你喔！"
+        ],
+        "sid": 9225,
+        "eid": 9226
+      },
+      "jp": {
+        "script_start": 28430,
+        "script_end": 28431,
+        "ids": [
+          11909,
+          11910
+        ],
+        "text": [
+          "李逍遥：",
+          "どかないと打つぞ！"
+        ],
+        "sid": 11909,
+        "eid": 11910
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene193/map151，events3301、3302"
+    },
+    {
+      "win": {
+        "script_start": 26011,
+        "script_end": 26012,
+        "ids": [
+          9227,
+          9228
+        ],
+        "text": [
+          "李逍遥：",
+          "这死猴子．．．"
+        ],
+        "sid": 9227,
+        "eid": 9228
+      },
+      "jp": {
+        "script_start": 28436,
+        "script_end": 28437,
+        "ids": [
+          11911,
+          11912
+        ],
+        "text": [
+          "李逍遥：",
+          "この猿・・・。("
+        ],
+        "sid": 11911,
+        "eid": 11912
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene193/map151，events3301、3302"
+    },
+    {
+      "win": {
+        "script_start": 26015,
+        "script_end": 26015,
+        "ids": [
+          9229
+        ],
+        "text": [
+          "\"小猴子不理你．．\""
+        ],
+        "sid": 9229,
+        "eid": 9229
+      },
+      "jp": {
+        "script_start": 28440,
+        "script_end": 28440,
+        "ids": [
+          11913
+        ],
+        "text": [
+          "“小猿は言う事を聞かない”"
+        ],
+        "sid": 11913,
+        "eid": 11913
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene193/map151，events3301、3302"
+    },
+    {
+      "win": {
+        "script_start": 26020,
+        "script_end": 26021,
+        "ids": [
+          9230,
+          9231
+        ],
+        "text": [
+          "李逍遥：",
+          "来～来～给你香蕉！"
+        ],
+        "sid": 9230,
+        "eid": 9231
+      },
+      "jp": {
+        "script_start": 28445,
+        "script_end": 28447,
+        "ids": [
+          11914,
+          11915,
+          11916
+        ],
+        "text": [
+          "李逍遥：",
+          "おいで、おいで、",
+          "バナナをやるぞ！"
+        ],
+        "sid": 11914,
+        "eid": 11916
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene193/map151，events3301、3302"
+    },
+    {
+      "win": {
+        "script_start": 26025,
+        "script_end": 26025,
+        "ids": [
+          9232
+        ],
+        "text": [
+          "　　叽咕～叽咕．．~35"
+        ],
+        "sid": 9232,
+        "eid": 9232
+      },
+      "jp": {
+        "script_start": 28451,
+        "script_end": 28451,
+        "ids": [
+          11917
+        ],
+        "text": [
+          "もぐ、もぐ・・・。~35"
+        ],
+        "sid": 11917,
+        "eid": 11917
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene193/map151，events3301、3302"
+    },
+    {
+      "win": {
+        "script_start": 26059,
+        "script_end": 26059,
+        "ids": [
+          9233
+        ],
+        "text": [
+          "呜．．！"
+        ],
+        "sid": 9233,
+        "eid": 9233
+      },
+      "jp": {
+        "script_start": 28485,
+        "script_end": 28485,
+        "ids": [
+          11918
+        ],
+        "text": [
+          "うう・・・！"
+        ],
+        "sid": 11918,
+        "eid": 11918
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene193/map151，events3301、3302"
+    },
+    {
+      "win": {
+        "script_start": 26067,
+        "script_end": 26068,
+        "ids": [
+          9234,
+          9235
+        ],
+        "text": [
+          "李逍遥：",
+          "你也要香蕉，对吧？"
+        ],
+        "sid": 9234,
+        "eid": 9235
+      },
+      "jp": {
+        "script_start": 28493,
+        "script_end": 28494,
+        "ids": [
+          11919,
+          11920
+        ],
+        "text": [
+          "李逍遥：",
+          "お前もバナナが欲しいのか？"
+        ],
+        "sid": 11919,
+        "eid": 11920
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene193/map151，events3301、3302"
+    },
+    {
+      "win": {
+        "script_start": 26083,
+        "script_end": 26086,
+        "ids": [
+          9236,
+          9237,
+          9238
+        ],
+        "text": [
+          "李逍遥：",
+          "这只猴子居然会不好意思",
+          "[CLEAR MESSAGE]",
+          "来吧！没关系，给你的！"
+        ],
+        "sid": 9236,
+        "eid": 9238
+      },
+      "jp": {
+        "script_start": 28509,
+        "script_end": 28512,
+        "ids": [
+          11921,
+          11922,
+          11923
+        ],
+        "text": [
+          "李逍遥：",
+          "この猿、恥ずかしいのかな？",
+          "[CLEAR MESSAGE]",
+          "おいで。いいよ、あげるよ！"
+        ],
+        "sid": 11921,
+        "eid": 11923
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene193/map151，events3301、3302"
+    },
+    {
+      "win": {
+        "script_start": 26091,
+        "script_end": 26091,
+        "ids": [
+          9239
+        ],
+        "text": [
+          "吱～！"
+        ],
+        "sid": 9239,
+        "eid": 9239
+      },
+      "jp": {
+        "script_start": 28517,
+        "script_end": 28517,
+        "ids": [
+          11924
+        ],
+        "text": [
+          "キキ・・・。"
+        ],
+        "sid": 11924,
+        "eid": 11924
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene193/map151，events3301、3302"
+    },
+    {
+      "win": {
+        "script_start": 26205,
+        "script_end": 26205,
+        "ids": [
+          9240
+        ],
+        "text": [
+          "得到\"风灵珠\""
+        ],
+        "sid": 9240,
+        "eid": 9240
+      },
+      "jp": {
+        "script_start": 28561,
+        "script_end": 28561,
+        "ids": [
+          11925
+        ],
+        "text": [
+          "“風霊珠”を獲得"
+        ],
+        "sid": 11925,
+        "eid": 11925
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene186/map152，event3116"
+    },
+    {
+      "win": {
+        "script_start": 26216,
+        "script_end": 26218,
+        "ids": [
+          9241,
+          9242,
+          9243
+        ],
+        "text": [
+          "李逍遥：",
+          "对不起啦！　凤凰妈妈",
+          "借您生的蛋一用"
+        ],
+        "sid": 9241,
+        "eid": 9243
+      },
+      "jp": {
+        "script_start": 28567,
+        "script_end": 28569,
+        "ids": [
+          11926,
+          11927,
+          11928
+        ],
+        "text": [
+          "李逍遥：",
+          "ごめん、鳳凰さん！",
+          "卵を一つ貸してくれ。"
+        ],
+        "sid": 11926,
+        "eid": 11928
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene186/map152，event3116"
+    },
+    {
+      "win": {
+        "script_start": 26229,
+        "script_end": 26230,
+        "ids": [
+          9244,
+          9245
+        ],
+        "text": [
+          "李逍遥：",
+          "喂！　小偷～把蛋还给我啊！"
+        ],
+        "sid": 9244,
+        "eid": 9245
+      },
+      "jp": {
+        "script_start": 28573,
+        "script_end": 28576,
+        "ids": [
+          11929,
+          11930,
+          11931,
+          11932
+        ],
+        "text": [
+          "李逍遥：",
+          "うわっ！",
+          "なにをするんだ！",
+          "卵を返せ！"
+        ],
+        "sid": 11929,
+        "eid": 11932
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene186/map152，event3116"
+    },
+    {
+      "win": {
+        "script_start": 26234,
+        "script_end": 26238,
+        "ids": [
+          9246,
+          9247,
+          9248,
+          9249
+        ],
+        "text": [
+          "阿奴：",
+          "你才是小偷呢！",
+          "[CLEAR MESSAGE]",
+          "这是我们族人守护圣兽",
+          "的蛋，不许你碰它！"
+        ],
+        "sid": 9246,
+        "eid": 9249
+      },
+      "jp": {
+        "script_start": 28580,
+        "script_end": 28586,
+        "ids": [
+          11933,
+          11934,
+          11935,
+          11936,
+          11937,
+          11938
+        ],
+        "text": [
+          "お鈴：",
+          "この泥棒！",
+          "[CLEAR MESSAGE]",
+          "これは私達の守護聖獣の卵",
+          "なんだぞ！",
+          "アンタみたいな泥棒には",
+          "指一本触らせないからね！"
+        ],
+        "sid": 11933,
+        "eid": 11938
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene186/map152，event3116"
+    },
+    {
+      "win": {
+        "script_start": 26241,
+        "script_end": 26242,
+        "ids": [
+          9250,
+          9251
+        ],
+        "text": [
+          "李逍遥：",
+          "你．．不给我就用抢的啰！"
+        ],
+        "sid": 9250,
+        "eid": 9251
+      },
+      "jp": {
+        "script_start": 28590,
+        "script_end": 28593,
+        "ids": [
+          11939,
+          11940,
+          11941,
+          11942
+        ],
+        "text": [
+          "李逍遥：",
+          "僕には・・・それがどうし",
+          "てもいるんだ。渡さないと",
+          "無理矢理にでも奪い取る！"
+        ],
+        "sid": 11939,
+        "eid": 11942
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene186/map152，event3116"
+    },
+    {
+      "win": {
+        "script_start": 26245,
+        "script_end": 26246,
+        "ids": [
+          9252,
+          9253
+        ],
+        "text": [
+          "阿奴：",
+          "嘻～抢得到就来呀！"
+        ],
+        "sid": 9252,
+        "eid": 9253
+      },
+      "jp": {
+        "script_start": 28596,
+        "script_end": 28597,
+        "ids": [
+          11943,
+          11944
+        ],
+        "text": [
+          "お鈴：",
+          "ふふ、やってみれば？"
+        ],
+        "sid": 11943,
+        "eid": 11944
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene186/map152，event3116"
+    },
+    {
+      "win": {
+        "script_start": 26269,
+        "script_end": 26271,
+        "ids": [
+          9254,
+          9255,
+          9256
+        ],
+        "text": [
+          "李逍遥：",
+          "你己经没有去路了",
+          "乖乖的把凤凰蛋交给我吧！"
+        ],
+        "sid": 9254,
+        "eid": 9256
+      },
+      "jp": {
+        "script_start": 28601,
+        "script_end": 28603,
+        "ids": [
+          11945,
+          11946,
+          11947
+        ],
+        "text": [
+          "李逍遥：",
+          "もうお前に道はないぞ！",
+          "早く鳳凰の卵を僕に渡せ！"
+        ],
+        "sid": 11945,
+        "eid": 11947
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene186/map152，event3116"
+    },
+    {
+      "win": {
+        "script_start": 26274,
+        "script_end": 26275,
+        "ids": [
+          9257,
+          9258
+        ],
+        "text": [
+          "阿奴：",
+          "想得美咧～才不要给你！"
+        ],
+        "sid": 9257,
+        "eid": 9258
+      },
+      "jp": {
+        "script_start": 28607,
+        "script_end": 28609,
+        "ids": [
+          11948,
+          11949,
+          11950
+        ],
+        "text": [
+          "お鈴：",
+          "ふーんだ！",
+          "アンタには渡さないよっ！"
+        ],
+        "sid": 11948,
+        "eid": 11950
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene186/map152，event3116"
+    },
+    {
+      "win": {
+        "script_start": 26279,
+        "script_end": 26280,
+        "ids": [
+          9259,
+          9260
+        ],
+        "text": [
+          "李逍遥：",
+          "你．．你想做什么？"
+        ],
+        "sid": 9259,
+        "eid": 9260
+      },
+      "jp": {
+        "script_start": 28613,
+        "script_end": 28614,
+        "ids": [
+          11951,
+          11952
+        ],
+        "text": [
+          "李逍遥：",
+          "お前・・・どうする気だ？("
+        ],
+        "sid": 11951,
+        "eid": 11952
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene186/map152，event3116"
+    },
+    {
+      "win": {
+        "script_start": 26286,
+        "script_end": 26287,
+        "ids": [
+          9261,
+          9262
+        ],
+        "text": [
+          "李逍遥：",
+          "喂～别做傻事啊！"
+        ],
+        "sid": 9261,
+        "eid": 9262
+      },
+      "jp": {
+        "script_start": 28617,
+        "script_end": 28619,
+        "ids": [
+          11953,
+          11954,
+          11955
+        ],
+        "text": [
+          "李逍遥：",
+          "おい、",
+          "馬鹿なことはやめないか。"
+        ],
+        "sid": 11953,
+        "eid": 11955
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene186/map152，event3116"
+    },
+    {
+      "win": {
+        "script_start": 26297,
+        "script_end": 26297,
+        "ids": [
+          9263
+        ],
+        "text": [
+          "啊．．~25"
+        ],
+        "sid": 9263,
+        "eid": 9263
+      },
+      "jp": {
+        "script_start": 28623,
+        "script_end": 28623,
+        "ids": [
+          11956
+        ],
+        "text": [
+          "あ・・・。~25"
+        ],
+        "sid": 11956,
+        "eid": 11956
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene186/map152，event3116"
+    },
+    {
+      "win": {
+        "script_start": 26308,
+        "script_end": 26309,
+        "ids": [
+          9264,
+          9265
+        ],
+        "text": [
+          "阿奴：",
+          "　　哎呀呀．．("
+        ],
+        "sid": 9264,
+        "eid": 9265
+      },
+      "jp": {
+        "script_start": 28634,
+        "script_end": 28635,
+        "ids": [
+          11957,
+          11958
+        ],
+        "text": [
+          "お鈴：",
+          "あらら・・・。("
+        ],
+        "sid": 11957,
+        "eid": 11958
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene186/map152，event3116"
+    },
+    {
+      "win": {
+        "script_start": 26426,
+        "script_end": 26427,
+        "ids": [
+          9266,
+          9267
+        ],
+        "text": [
+          "李逍遥：",
+          "　　$06唔．．．．~50"
+        ],
+        "sid": 9266,
+        "eid": 9267
+      },
+      "jp": {
+        "script_start": 28645,
+        "script_end": 28646,
+        "ids": [
+          11959,
+          11960
+        ],
+        "text": [
+          "李逍遥：",
+          "$06うん・・・。~50"
+        ],
+        "sid": 11959,
+        "eid": 11960
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26430,
+        "script_end": 26431,
+        "ids": [
+          9268,
+          9269
+        ],
+        "text": [
+          "李逍遥：",
+          "　　$01灵儿！！~40"
+        ],
+        "sid": 9268,
+        "eid": 9269
+      },
+      "jp": {
+        "script_start": 28650,
+        "script_end": 28651,
+        "ids": [
+          11961,
+          11962
+        ],
+        "text": [
+          "李逍遥：",
+          "$02霊児！！~40"
+        ],
+        "sid": 11961,
+        "eid": 11962
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26436,
+        "script_end": 26438,
+        "ids": [
+          9270,
+          9271,
+          9272
+        ],
+        "text": [
+          "李逍遥：",
+          "$06太好了．．灵儿！",
+          "　没事了．．我．．~40"
+        ],
+        "sid": 9270,
+        "eid": 9272
+      },
+      "jp": {
+        "script_start": 28654,
+        "script_end": 28656,
+        "ids": [
+          11963,
+          11964,
+          11965
+        ],
+        "text": [
+          "李逍遥：",
+          "$06よかった・・・霊児！",
+          "大丈夫だ・・・僕は・・・。~40"
+        ],
+        "sid": 11963,
+        "eid": 11965
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26457,
+        "script_end": 26457,
+        "ids": [
+          9273
+        ],
+        "text": [
+          "$00\"呀　～　啊！！\"~40"
+        ],
+        "sid": 9273,
+        "eid": 9273
+      },
+      "jp": {
+        "script_start": 28661,
+        "script_end": 28661,
+        "ids": [
+          11966
+        ],
+        "text": [
+          "$00“やあ〜はあ〜！！　　　”~40"
+        ],
+        "sid": 11966,
+        "eid": 11966
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26463,
+        "script_end": 26464,
+        "ids": [
+          9274,
+          9275
+        ],
+        "text": [
+          "李逍遥：",
+          "　　$01灵儿．．　？~50"
+        ],
+        "sid": 9274,
+        "eid": 9275
+      },
+      "jp": {
+        "script_start": 28665,
+        "script_end": 28666,
+        "ids": [
+          11967,
+          11968
+        ],
+        "text": [
+          "李逍遥：",
+          "$02霊児・・・お前？~50"
+        ],
+        "sid": 11967,
+        "eid": 11968
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26468,
+        "script_end": 26469,
+        "ids": [
+          9276,
+          9277
+        ],
+        "text": [
+          "李逍遥：",
+          "　　啊．．．！？("
+        ],
+        "sid": 9276,
+        "eid": 9277
+      },
+      "jp": {
+        "script_start": 28669,
+        "script_end": 28670,
+        "ids": [
+          11969,
+          11970
+        ],
+        "text": [
+          "李逍遥：",
+          "ああ・・・！？("
+        ],
+        "sid": 11969,
+        "eid": 11970
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26472,
+        "script_end": 26474,
+        "ids": [
+          9278,
+          9279,
+          9280
+        ],
+        "text": [
+          "阿奴：",
+          "人家．．人家．．",
+          "好心救你，你～你却．．"
+        ],
+        "sid": 9278,
+        "eid": 9280
+      },
+      "jp": {
+        "script_start": 28673,
+        "script_end": 28675,
+        "ids": [
+          11971,
+          11972,
+          11973
+        ],
+        "text": [
+          "お鈴：",
+          "ちょ、ちょっと！",
+          "な、なにすんのよ・・・！"
+        ],
+        "sid": 11971,
+        "eid": 11973
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26477,
+        "script_end": 26479,
+        "ids": [
+          9281,
+          9282,
+          9283
+        ],
+        "text": [
+          "李逍遥：",
+          "对不起，我一时迷糊",
+          "将你看错为另一个人"
+        ],
+        "sid": 9281,
+        "eid": 9283
+      },
+      "jp": {
+        "script_start": 28678,
+        "script_end": 28681,
+        "ids": [
+          11974,
+          11975,
+          11976,
+          11977
+        ],
+        "text": [
+          "李逍遥：",
+          "あっ・・・すまない。",
+          "一瞬、人まちがいを",
+          "したみたいだ。"
+        ],
+        "sid": 11974,
+        "eid": 11977
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26487,
+        "script_end": 26490,
+        "ids": [
+          9284,
+          9285,
+          9286,
+          9287
+        ],
+        "text": [
+          "阿奴：",
+          "哼～好心好意救你",
+          "你却轻薄人家！你们汉族",
+          "的男人就是这么下流呐？"
+        ],
+        "sid": 9284,
+        "eid": 9287
+      },
+      "jp": {
+        "script_start": 28691,
+        "script_end": 28697,
+        "ids": [
+          11978,
+          11979,
+          11980,
+          11981,
+          11982,
+          11983
+        ],
+        "text": [
+          "お鈴：",
+          "ふーんだ。",
+          "救けてあげたってのに、",
+          "軽薄な人だね。",
+          "[CLEAR MESSAGE]",
+          "アンタ達漢族の男って、",
+          "そんなに下品なの？"
+        ],
+        "sid": 11978,
+        "eid": 11983
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26493,
+        "script_end": 26496,
+        "ids": [
+          9288,
+          9289,
+          9290,
+          9291
+        ],
+        "text": [
+          "李逍遥：",
+          "是．．在下不该",
+          "不过我真的是认错人了",
+          "请姑娘宽宏大量．．("
+        ],
+        "sid": 9288,
+        "eid": 9291
+      },
+      "jp": {
+        "script_start": 28700,
+        "script_end": 28703,
+        "ids": [
+          11984,
+          11985,
+          11986,
+          11987
+        ],
+        "text": [
+          "李逍遥：",
+          "いや・・・申し訳ない。",
+          "しかし本当に人まちがいだ。",
+          "許して欲しい・・・。("
+        ],
+        "sid": 11984,
+        "eid": 11987
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26500,
+        "script_end": 26502,
+        "ids": [
+          9292,
+          9293,
+          9294
+        ],
+        "text": [
+          "阿奴：",
+          "我长得跟那位叫灵儿的人",
+          "真的那么相像吗？"
+        ],
+        "sid": 9292,
+        "eid": 9294
+      },
+      "jp": {
+        "script_start": 28707,
+        "script_end": 28709,
+        "ids": [
+          11988,
+          11989,
+          11990
+        ],
+        "text": [
+          "お鈴：",
+          "私と、その霊児さんとやら",
+          "はそんなに似てるの？"
+        ],
+        "sid": 11988,
+        "eid": 11990
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26505,
+        "script_end": 26508,
+        "ids": [
+          9295,
+          9296,
+          9297,
+          9298
+        ],
+        "text": [
+          "李逍遥：",
+          "不．．并非是容貌",
+          "而是方才姑娘对在下所施的",
+          "救命法术，造成在下的错觉"
+        ],
+        "sid": 9295,
+        "eid": 9298
+      },
+      "jp": {
+        "script_start": 28712,
+        "script_end": 28716,
+        "ids": [
+          11991,
+          11992,
+          11993,
+          11994,
+          11995
+        ],
+        "text": [
+          "李逍遥：",
+          "いや・・・。",
+          "姿とかじゃなくて、キミの",
+          "救命の術法が似ていたんで、",
+          "その・・・錯覚を・・・。"
+        ],
+        "sid": 11991,
+        "eid": 11995
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26511,
+        "script_end": 26512,
+        "ids": [
+          9299,
+          9300
+        ],
+        "text": [
+          "阿奴：",
+          "哦？　她也会赎魂咒？"
+        ],
+        "sid": 9299,
+        "eid": 9300
+      },
+      "jp": {
+        "script_start": 28719,
+        "script_end": 28721,
+        "ids": [
+          11996,
+          11997,
+          11998
+        ],
+        "text": [
+          "お鈴：",
+          "へーえ・・・。",
+          "その人も魂買いの術を？"
+        ],
+        "sid": 11996,
+        "eid": 11998
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26515,
+        "script_end": 26517,
+        "ids": [
+          9301,
+          9302,
+          9303
+        ],
+        "text": [
+          "李逍遥：",
+          "是．．",
+          "因为感觉很类似，所以．．"
+        ],
+        "sid": 9301,
+        "eid": 9303
+      },
+      "jp": {
+        "script_start": 28724,
+        "script_end": 28726,
+        "ids": [
+          11999,
+          12000,
+          12001
+        ],
+        "text": [
+          "李逍遥：",
+          "ああ・・・感覚が似ていた",
+          "もので、つい・・・。"
+        ],
+        "sid": 11999,
+        "eid": 12001
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26520,
+        "script_end": 26522,
+        "ids": [
+          9304,
+          9305,
+          9306
+        ],
+        "text": [
+          "阿奴：",
+          "对了！　我问你．．",
+          "你要凤凰蛋做什么？"
+        ],
+        "sid": 9304,
+        "eid": 9306
+      },
+      "jp": {
+        "script_start": 28729,
+        "script_end": 28732,
+        "ids": [
+          12002,
+          12003,
+          12004,
+          12005
+        ],
+        "text": [
+          "お鈴：",
+          "あっ！そうだ！",
+          "ちょっと聞くけどさ、鳳凰",
+          "の卵で何するんだったの？"
+        ],
+        "sid": 12002,
+        "eid": 12005
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26525,
+        "script_end": 26529,
+        "ids": [
+          9307,
+          9308,
+          9309,
+          9310,
+          9311
+        ],
+        "text": [
+          "李逍遥：",
+          "因为在下的妻子怀有身孕",
+          "却因故受了重伤，必须找到",
+          "凤凰蛋壳和火麒麟角二种圣药",
+          "才能医治其母子二人"
+        ],
+        "sid": 9307,
+        "eid": 9311
+      },
+      "jp": {
+        "script_start": 28735,
+        "script_end": 28742,
+        "ids": [
+          12006,
+          12007,
+          12008,
+          12009,
+          12010,
+          12011,
+          12012
+        ],
+        "text": [
+          "李逍遥：",
+          "僕の妻が、妊娠している上、",
+          "重傷を負ってしまったんだ。",
+          "[CLEAR MESSAGE]",
+          "それで、鳳凰の卵の殻と",
+          "火麒麟（カキリン）の角の",
+          "二種類の聖薬を見つけない",
+          "と、母子とも救えないんだ。"
+        ],
+        "sid": 12006,
+        "eid": 12012
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368",
+      "render_command": {
+        "script": 26524,
+        "instruction": [
+          61,
+          1,
+          0,
+          0
+        ],
+        "basis": "Direct preceding dialogue command."
+      }
+    },
+    {
+      "win": {
+        "script_start": 26532,
+        "script_end": 26533,
+        "ids": [
+          9312,
+          9313
+        ],
+        "text": [
+          "阿奴：",
+          "你把我认错成你的妻子？"
+        ],
+        "sid": 9312,
+        "eid": 9313
+      },
+      "jp": {
+        "script_start": 28745,
+        "script_end": 28747,
+        "ids": [
+          12013,
+          12014,
+          12015
+        ],
+        "text": [
+          "お鈴：",
+          "アンタ・・・あなた、私を",
+          "その奥さんと間違えたの？"
+        ],
+        "sid": 12013,
+        "eid": 12015
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26535,
+        "script_end": 26536,
+        "ids": [
+          9314,
+          9315
+        ],
+        "text": [
+          "李逍遥：",
+          "是．．．实在很抱歉("
+        ],
+        "sid": 9314,
+        "eid": 9315
+      },
+      "jp": {
+        "script_start": 28749,
+        "script_end": 28750,
+        "ids": [
+          12016,
+          12017
+        ],
+        "text": [
+          "李逍遥：",
+          "は・・・本当にすみません。("
+        ],
+        "sid": 12016,
+        "eid": 12017
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26539,
+        "script_end": 26540,
+        "ids": [
+          9316,
+          9317
+        ],
+        "text": [
+          "阿奴：",
+          "嗯．．你说～你只要蛋壳吧？"
+        ],
+        "sid": 9316,
+        "eid": 9317
+      },
+      "jp": {
+        "script_start": 28753,
+        "script_end": 28756,
+        "ids": [
+          12018,
+          12019,
+          12020,
+          12021
+        ],
+        "text": [
+          "お鈴：",
+          "うん・・・。",
+          "それであなた、本当に",
+          "卵の殻だけが必要なの？"
+        ],
+        "sid": 12018,
+        "eid": 12021
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26543,
+        "script_end": 26544,
+        "ids": [
+          9318,
+          9319
+        ],
+        "text": [
+          "李逍遥：",
+          "是，可否请姑娘通融"
+        ],
+        "sid": 9318,
+        "eid": 9319
+      },
+      "jp": {
+        "script_start": 28759,
+        "script_end": 28761,
+        "ids": [
+          12022,
+          12023,
+          12024
+        ],
+        "text": [
+          "李逍遥：",
+          "そうです。",
+          "何とかなりませんか？"
+        ],
+        "sid": 12022,
+        "eid": 12024
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26547,
+        "script_end": 26550,
+        "ids": [
+          9320,
+          9321,
+          9322,
+          9323
+        ],
+        "text": [
+          "阿奴：",
+          "好～这颗蛋暂时由我保管",
+          "等小凤凰孵出来后，再把",
+          "蛋壳给你"
+        ],
+        "sid": 9320,
+        "eid": 9323
+      },
+      "jp": {
+        "script_start": 28764,
+        "script_end": 28768,
+        "ids": [
+          12025,
+          12026,
+          12027,
+          12028,
+          12029
+        ],
+        "text": [
+          "お鈴：",
+          "・・・いいよ。",
+          "この卵は、私がしばらく",
+          "預かって、子が生まれたら",
+          "殻をあなたにあげる。"
+        ],
+        "sid": 12025,
+        "eid": 12029
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26553,
+        "script_end": 26554,
+        "ids": [
+          9324,
+          9325
+        ],
+        "text": [
+          "李逍遥：",
+          "这颗蛋．．你．．孵？("
+        ],
+        "sid": 9324,
+        "eid": 9325
+      },
+      "jp": {
+        "script_start": 28771,
+        "script_end": 28772,
+        "ids": [
+          12030,
+          12031
+        ],
+        "text": [
+          "李逍遥：",
+          "この卵は・・・キミの？("
+        ],
+        "sid": 12030,
+        "eid": 12031
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368",
+      "translation_followup": "#6: Win 9325 says you should hatch the egg; JP 12031 asks whether it is yours."
+    },
+    {
+      "win": {
+        "script_start": 26557,
+        "script_end": 26561,
+        "ids": [
+          9326,
+          9327,
+          9328,
+          9329
+        ],
+        "text": [
+          "阿奴：",
+          "我自有方法，不用你操心",
+          "[CLEAR MESSAGE]",
+          "而且我也不是白白送你的！",
+          "你也得帮我去拿一件东西"
+        ],
+        "sid": 9326,
+        "eid": 9329
+      },
+      "jp": {
+        "script_start": 28775,
+        "script_end": 28781,
+        "ids": [
+          12032,
+          12033,
+          12034,
+          12035,
+          12036,
+          12037
+        ],
+        "text": [
+          "お鈴：",
+          "私に方法があるの。",
+          "心配しないでいいって。",
+          "[CLEAR MESSAGE]",
+          "それに、べつにタダであげ",
+          "ようって訳じゃないから。",
+          "私の手伝いをしてもらうよ！"
+        ],
+        "sid": 12032,
+        "eid": 12037
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26564,
+        "script_end": 26565,
+        "ids": [
+          9330,
+          9331
+        ],
+        "text": [
+          "李逍遥：",
+          "可以，那是应该的"
+        ],
+        "sid": 9330,
+        "eid": 9331
+      },
+      "jp": {
+        "script_start": 28784,
+        "script_end": 28785,
+        "ids": [
+          12038,
+          12039
+        ],
+        "text": [
+          "李逍遥：",
+          "わかった。何をすればいい？"
+        ],
+        "sid": 12038,
+        "eid": 12039
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26567,
+        "script_end": 26568,
+        "ids": [
+          9332,
+          9333
+        ],
+        "text": [
+          "阿奴：",
+          "嘻嘻～一言为定，跟我走！)"
+        ],
+        "sid": 9332,
+        "eid": 9333
+      },
+      "jp": {
+        "script_start": 28787,
+        "script_end": 28788,
+        "ids": [
+          12040,
+          12041
+        ],
+        "text": [
+          "お鈴：",
+          "ふふ、まず私について来て！)"
+        ],
+        "sid": 12040,
+        "eid": 12041
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26576,
+        "script_end": 26577,
+        "ids": [
+          9334,
+          9335
+        ],
+        "text": [
+          "李逍遥：",
+          "去哪啊？"
+        ],
+        "sid": 9334,
+        "eid": 9335
+      },
+      "jp": {
+        "script_start": 28796,
+        "script_end": 28797,
+        "ids": [
+          12042,
+          12043
+        ],
+        "text": [
+          "李逍遥：",
+          "どこへ？"
+        ],
+        "sid": 12042,
+        "eid": 12043
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 26581,
+        "script_end": 26584,
+        "ids": [
+          9336,
+          9337,
+          9338,
+          9339
+        ],
+        "text": [
+          "阿奴：",
+          "这个林子里有处隐密的树洞",
+          "洞里藏有妖怪所藏的宝物，",
+          "我要你跟我去找一件东西"
+        ],
+        "sid": 9336,
+        "eid": 9339
+      },
+      "jp": {
+        "script_start": 28801,
+        "script_end": 28807,
+        "ids": [
+          12044,
+          12045,
+          12046,
+          12047,
+          12048,
+          12049,
+          12050
+        ],
+        "text": [
+          "お鈴：",
+          "この樹林にはね、",
+          "秘密の洞窟があるんだ。",
+          "で、その洞窟の中に妖怪の",
+          "宝がかくしてあるの。",
+          "あなたには、ある物を探す",
+          "手伝いをして欲しいワケ。"
+        ],
+        "sid": 12044,
+        "eid": 12050
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "scene189/map153，入场26368"
+    },
+    {
+      "win": {
+        "script_start": 27933,
+        "script_end": 27933,
+        "ids": [
+          9902
+        ],
+        "text": [
+          "$08不．．这不会是真的．．~60"
+        ],
+        "sid": 9902,
+        "eid": 9902
+      },
+      "jp": {
+        "script_start": 30429,
+        "script_end": 30429,
+        "ids": [
+          12849
+        ],
+        "text": [
+          "$08そんな・・・そんなの嘘だ！~80"
+        ],
+        "sid": 12849,
+        "eid": 12849
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene175/map202；入场27775 → 27933",
+      "render_command": {
+        "script": 27932,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Direct preceding dialogue command."
+      }
+    },
+    {
+      "win": {
+        "script_start": 28097,
+        "script_end": 28097,
+        "ids": [
+          9976
+        ],
+        "text": [
+          "\"数月后．．．\"~30"
+        ],
+        "sid": 9976,
+        "eid": 9976
+      },
+      "jp": {
+        "script_start": 35596,
+        "script_end": 35596,
+        "ids": [
+          14968
+        ],
+        "text": [
+          "“数ヶ月後・・・”~30"
+        ],
+        "sid": 14968,
+        "eid": 14968
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene175/event2876；动态改写入口28026 → 28097",
+      "render_command": {
+        "script": 28096,
+        "instruction": [
+          59,
+          0,
+          0,
+          0
+        ],
+        "basis": "Center transition caption; neighbouring water-pearl discussion and opcodes match."
+      }
+    },
+    {
+      "win": {
+        "script_start": 30408,
+        "script_end": 30410,
+        "ids": [
+          10888,
+          10889,
+          10890
+        ],
+        "text": [
+          "阿奴：",
+          "喂！　你想做什么？",
+          "不可以对娘娘不敬呀！"
+        ],
+        "sid": 10888,
+        "eid": 10890
+      },
+      "jp": {
+        "script_start": 32559,
+        "script_end": 32561,
+        "ids": [
+          13801,
+          13802,
+          13803
+        ],
+        "text": [
+          "お鈴：",
+          "ちょっと！何してんの？",
+          "奥様に敬意を払いなってば！"
+        ],
+        "sid": 13801,
+        "eid": 13803
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene204/map175、scene206/map170",
+      "render_command": {
+        "script": 30407,
+        "instruction": [
+          60,
+          28,
+          0,
+          0
+        ],
+        "basis": "Direct preceding dialogue command."
+      }
+    },
+    {
+      "win": {
+        "script_start": 30413,
+        "script_end": 30414,
+        "ids": [
+          10891,
+          10892
+        ],
+        "text": [
+          "李逍遥：",
+          "她．．似乎．．在叫我．．"
+        ],
+        "sid": 10891,
+        "eid": 10892
+      },
+      "jp": {
+        "script_start": 32564,
+        "script_end": 32566,
+        "ids": [
+          13804,
+          13805,
+          13806
+        ],
+        "text": [
+          "李逍遥：",
+          "あなたは・・・僕を・・・",
+          "呼んでいるのか？"
+        ],
+        "sid": 13804,
+        "eid": 13806
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene204/map175、scene206/map170"
+    },
+    {
+      "win": {
+        "script_start": 30419,
+        "script_end": 30420,
+        "ids": [
+          10893,
+          10894
+        ],
+        "text": [
+          "阿奴：",
+          "哎呀～！？"
+        ],
+        "sid": 10893,
+        "eid": 10894
+      },
+      "jp": {
+        "script_start": 32571,
+        "script_end": 32572,
+        "ids": [
+          13807,
+          13808
+        ],
+        "text": [
+          "お鈴：",
+          "ええっ！？"
+        ],
+        "sid": 13807,
+        "eid": 13808
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene204/map175、scene206/map170"
+    },
+    {
+      "win": {
+        "script_start": 30432,
+        "script_end": 30432,
+        "ids": [
+          10895
+        ],
+        "text": [
+          "少主，您好！"
+        ],
+        "sid": 10895,
+        "eid": 10895
+      },
+      "jp": {
+        "script_start": 32584,
+        "script_end": 32584,
+        "ids": [
+          13809
+        ],
+        "text": [
+          "お嬢様、こんにちは！"
+        ],
+        "sid": 13809,
+        "eid": 13809
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene204/map175、scene206/map170"
+    },
+    {
+      "win": {
+        "script_start": 32201,
+        "script_end": 32206,
+        "ids": [
+          11164,
+          11165,
+          11166,
+          11167
+        ],
+        "text": [
+          "赵灵儿：",
+          "没什么．．",
+          "[CLEAR MESSAGE]",
+          "该面对的．．总是该去面对",
+          "[CLEAR MESSAGE]",
+          "我们走吧～"
+        ],
+        "sid": 11164,
+        "eid": 11167
+      },
+      "jp": {
+        "script_start": 37664,
+        "script_end": 37668,
+        "ids": [
+          15348,
+          15349,
+          15350,
+          15351,
+          15352
+        ],
+        "text": [
+          "趙霊児：",
+          "何でもないわ・・・。",
+          "立ち向かわなくてはなら",
+          "ないわね・・・。",
+          "行きましょう。"
+        ],
+        "sid": 15348,
+        "eid": 15352
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene232/map176、scene235/map175",
+      "render_command": {
+        "script": 32200,
+        "instruction": [
+          61,
+          88,
+          0,
+          0
+        ],
+        "basis": "Direct preceding dialogue command; facing destiny after Anu's explanation."
+      }
+    },
+    {
+      "win": {
+        "script_start": 32306,
+        "script_end": 32306,
+        "ids": [
+          11168
+        ],
+        "text": [
+          "巫后的石像"
+        ],
+        "sid": 11168,
+        "eid": 11168
+      },
+      "jp": {
+        "script_start": 37768,
+        "script_end": 37768,
+        "ids": [
+          15353
+        ],
+        "text": [
+          "巫后の石像"
+        ],
+        "sid": 15353,
+        "eid": 15353
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene232/map176、scene235/map175"
+    },
+    {
+      "win": {
+        "script_start": 35006,
+        "script_end": 35009,
+        "ids": [
+          12053,
+          12054,
+          12055,
+          12056
+        ],
+        "text": [
+          "来福伯：",
+          "这位公子～你是外地来的吗？",
+          "好像以前都没见过，你是李家",
+          "的亲戚吗？"
+        ],
+        "sid": 12053,
+        "eid": 12056
+      },
+      "jp": {
+        "script_start": 35380,
+        "script_end": 35383,
+        "ids": [
+          14853,
+          14854,
+          14855,
+          14856
+        ],
+        "text": [
+          "来福おじさん：",
+          "青年よ、よそ者かい？",
+          "どっかで見たようだが、",
+          "李家の親戚かね？"
+        ],
+        "sid": 14853,
+        "eid": 14856
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene273/map199、268/map195、274/map196",
+      "translation_followup": "#6: Win 12055 says never seen you before; JP 14855 suggests having seen you somewhere.",
+      "render_command": {
+        "script": null,
+        "instruction": [
+          60,
+          0,
+          0,
+          0
+        ],
+        "basis": "Event 4719 resumes at 35006 after two 0001 returns; default upper/no face."
+      }
+    },
+    {
+      "win": {
+        "script_start": 35011,
+        "script_end": 35013,
+        "ids": [
+          12057,
+          12058,
+          12059
+        ],
+        "text": [
+          "丁大伯：",
+          "嘿咻～嘿咻～",
+          "春夏勤耕种、秋冬收满仓"
+        ],
+        "sid": 12057,
+        "eid": 12059
+      },
+      "jp": {
+        "script_start": 35385,
+        "script_end": 35387,
+        "ids": [
+          14857,
+          14858,
+          14859
+        ],
+        "text": [
+          "丁おじさん：",
+          "えっこら、えっこら・・・。",
+          "春夏耕しゃ、秋冬豊作だ。"
+        ],
+        "sid": 14857,
+        "eid": 14859
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene273/map199、268/map195、274/map196"
+    },
+    {
+      "win": {
+        "script_start": 35015,
+        "script_end": 35017,
+        "ids": [
+          12060,
+          12061,
+          12062
+        ],
+        "text": [
+          "丁大伯：",
+          "嘿咻～嘿咻～",
+          "儿女若不教、老来没人要"
+        ],
+        "sid": 12060,
+        "eid": 12062
+      },
+      "jp": {
+        "script_start": 35389,
+        "script_end": 35392,
+        "ids": [
+          14860,
+          14861,
+          14862,
+          14863
+        ],
+        "text": [
+          "丁おじさん：",
+          "えっこら、えっこら・・・。",
+          "娘息子は教育せにゃ、",
+          "誰も欲しがらん・・・。"
+        ],
+        "sid": 14860,
+        "eid": 14863
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene273/map199、268/map195、274/map196"
+    },
+    {
+      "win": {
+        "script_start": 35020,
+        "script_end": 35022,
+        "ids": [
+          12063,
+          12064,
+          12065
+        ],
+        "text": [
+          "船商：",
+          "公子～我的船运行缺人手",
+          "您愿意来我这工作吗？"
+        ],
+        "sid": 12063,
+        "eid": 12065
+      },
+      "jp": {
+        "script_start": 35395,
+        "script_end": 35398,
+        "ids": [
+          14864,
+          14865,
+          14866,
+          14867
+        ],
+        "text": [
+          "船屋：",
+          "坊ちゃん、",
+          "船のこぎ手がいないんだ。",
+          "どうだ、働かんか？"
+        ],
+        "sid": 14864,
+        "eid": 14867
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene273/map199、268/map195、274/map196"
+    },
+    {
+      "win": {
+        "script_start": 35024,
+        "script_end": 35027,
+        "ids": [
+          12066,
+          12067,
+          12068,
+          12069
+        ],
+        "text": [
+          "船商：",
+          "如果你知道有合适的人",
+          "可以介绍给我，我会付",
+          "介绍费的！"
+        ],
+        "sid": 12066,
+        "eid": 12069
+      },
+      "jp": {
+        "script_start": 35400,
+        "script_end": 35403,
+        "ids": [
+          14868,
+          14869,
+          14870,
+          14871
+        ],
+        "text": [
+          "船屋：",
+          "誰か適当な奴がいたら、",
+          "紹介してくれんか？",
+          "紹介料を出すよ！"
+        ],
+        "sid": 14868,
+        "eid": 14871
+      },
+      "mapping_review": "confirmed",
+      "basis": "逐组读过中日正文，确认说话者、事件及语义次序；保留土星原文及 CLEAR，不重译。",
+      "scene_context": "Win scene273/map199、268/map195、274/map196"
+    }
+  ],
+  "other_unselected_saturn": [
+    {
+      "script_start": 30876,
+      "script_end": 30879,
+      "ids": [
+        13014,
+        13015,
+        13016,
+        13017
+      ],
+      "sid": 13014,
+      "eid": 13017
+    },
+    {
+      "script_start": 35605,
+      "script_end": 35605,
+      "ids": [
+        14969
+      ],
+      "sid": 14969,
+      "eid": 14969
+    },
+    {
+      "script_start": 35956,
+      "script_end": 35958,
+      "ids": [
+        15072,
+        15073,
+        15074
+      ],
+      "sid": 15072,
+      "eid": 15074
+    },
+    {
+      "script_start": 35961,
+      "script_end": 35962,
+      "ids": [
+        15075,
+        15076
+      ],
+      "sid": 15075,
+      "eid": 15076
+    },
+    {
+      "script_start": 35967,
+      "script_end": 35971,
+      "ids": [
+        15077,
+        15078,
+        15079,
+        15080,
+        15081
+      ],
+      "sid": 15077,
+      "eid": 15081
+    },
+    {
+      "script_start": 35973,
+      "script_end": 35976,
+      "ids": [
+        15082,
+        15083,
+        15084,
+        15085
+      ],
+      "sid": 15082,
+      "eid": 15085
+    },
+    {
+      "script_start": 35978,
+      "script_end": 35981,
+      "ids": [
+        15086,
+        15087,
+        15088,
+        15089
+      ],
+      "sid": 15086,
+      "eid": 15089
+    },
+    {
+      "script_start": 35983,
+      "script_end": 35986,
+      "ids": [
+        15090,
+        15091,
+        15092,
+        15093
+      ],
+      "sid": 15090,
+      "eid": 15093
+    },
+    {
+      "script_start": 37770,
+      "script_end": 37773,
+      "ids": [
+        15354,
+        15355,
+        15356,
+        15357
+      ],
+      "sid": 15354,
+      "eid": 15357
+    },
+    {
+      "script_start": 37775,
+      "script_end": 37777,
+      "ids": [
+        15358,
+        15359,
+        15360
+      ],
+      "sid": 15358,
+      "eid": 15360
+    },
+    {
+      "script_start": 42705,
+      "script_end": 42705,
+      "ids": [
+        15966
+      ],
+      "sid": 15966,
+      "eid": 15966
+    }
+  ]
+}
