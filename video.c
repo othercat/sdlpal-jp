@@ -54,15 +54,103 @@ SDL_Surface       *gpScreenReal       = NULL;
 
 volatile BOOL g_bRenderPaused = FALSE;
 
+#ifdef UNIT_TEST
+// Source-evidence capture after composition and texture upload; no gameplay UI.
+VOID (*VIDEO_TestFrameHook)(VOID) = NULL;
+#endif
+
 static BOOL bScaleScreen = PAL_SCALE_SCREEN;
 
 // Shake times and level
 static WORD               g_wShakeTime       = 0;
 static WORD               g_wShakeLevel      = 0;
 
-// Only optional portraits allocate a companion plane. Its alpha byte is coverage,
-// not palette index zero, so opaque black and transparent padding stay distinct.
+// Only optional portraits allocate a companion plane. Zero is transparent,
+// 0x80 tags a source-palette index, and 0xFF tags a transition's literal RGB.
+// These are coverage tags, never SDL alpha blending.
 static SDL_Surface *gpPortraitComposite = NULL;
+static SDL_Color g_PortraitSource[256], g_PortraitCurrent[256], g_PortraitScene[256];
+static BYTE g_PortraitSourceBytes[768];
+static BOOL g_PortraitInitialized = FALSE, g_PortraitPaletteBound = FALSE;
+
+VOID VIDEO_InitPortraitPalette(const BYTE palette[768])
+{
+   int i;
+   memcpy(g_PortraitSourceBytes, palette, 768);
+   for (i = 0; i < 256; ++i)
+   {
+      g_PortraitSource[i].r = palette[i * 3];
+      g_PortraitSource[i].g = palette[i * 3 + 1];
+      g_PortraitSource[i].b = palette[i * 3 + 2];
+   }
+   g_PortraitInitialized = TRUE;
+   g_PortraitPaletteBound = FALSE;
+}
+
+static BOOL VIDEO_PortraitPaletteMatches(SDL_Surface *surface)
+{
+   int i;
+   if (!g_PortraitPaletteBound) return FALSE;
+   for (i = 0; i < 256; ++i)
+   {
+      SDL_Color c = surface->format->palette->colors[i];
+      if (i >= 0xF9 && i <= 0xFE) continue;
+      if (c.r != g_PortraitScene[i].r || c.g != g_PortraitScene[i].g ||
+          c.b != g_PortraitScene[i].b) return FALSE;
+   }
+   return TRUE;
+}
+
+static int VIDEO_PortraitFadeLevel(SDL_Surface *surface, const SDL_Color base[256])
+{
+   int level, i;
+   if (base == NULL) return 65;
+   for (level = 0; level <= 64; ++level)
+   {
+      for (i = 0; i < 256; ++i)
+      {
+         SDL_Color c = surface->format->palette->colors[i];
+         if (i >= 0xF9 && i <= 0xFE) continue;
+         if (c.r != (base[i].r * level >> 6) ||
+             c.g != (base[i].g * level >> 6) ||
+             c.b != (base[i].b * level >> 6)) break;
+      }
+      if (i == 256) break;
+   }
+   return level;
+}
+
+VOID VIDEO_GetPortraitPalette(SDL_Color colors[256], BOOL original)
+{
+   SDL_Color base[256];
+   int i, level = 64;
+   if (!original && gpScreen != NULL)
+   {
+      if (VIDEO_PortraitPaletteMatches(gpScreen))
+      {
+         memcpy(colors, g_PortraitCurrent, sizeof(g_PortraitCurrent));
+         return;
+      }
+      if (gpGlobals != NULL && PAL_ReadPalette(gpGlobals->wNumPalette,
+          gpGlobals->fNightPalette, base))
+         level = VIDEO_PortraitFadeLevel(gpScreen, base);
+      if (level > 64) level = 64;
+   }
+   for (i = 0; i < 256; ++i)
+   {
+      colors[i].r = g_PortraitSource[i].r * level >> 6;
+      colors[i].g = g_PortraitSource[i].g * level >> 6;
+      colors[i].b = g_PortraitSource[i].b * level >> 6;
+   }
+}
+
+VOID VIDEO_SetPaletteWithPortraits(SDL_Color scene[256], const SDL_Color portraits[256])
+{
+   memcpy(g_PortraitCurrent, portraits, sizeof(g_PortraitCurrent));
+   memcpy(g_PortraitScene, scene, sizeof(g_PortraitScene));
+   g_PortraitPaletteBound = TRUE;
+   VIDEO_SetPalette(scene);
+}
 
 static SDL_Surface *
 VIDEO_PortraitLayer(SDL_Surface *surface, BOOL create)
@@ -144,6 +232,8 @@ VOID VIDEO_SetPortrait(SDL_Surface *surface, const BYTE *pixels, int w, int h,
    SDL_Surface *layer = VIDEO_PortraitLayer(surface, TRUE);
    int x, y;
    if (layer == NULL) return; // SDL1 retains the existing indexed adaptation.
+   if (!g_PortraitInitialized || memcmp(g_PortraitSourceBytes, palette, 768) != 0)
+      VIDEO_InitPortraitPalette(palette);
    for (y = 0; y < h; ++y)
       for (x = 0; x < w; ++x)
       {
@@ -151,9 +241,8 @@ VOID VIDEO_SetPortrait(SDL_Surface *surface, const BYTE *pixels, int w, int h,
          BYTE index = pixels[y * w + x];
          if (index != 0 && dx >= 0 && dx < surface->w && dy >= 0 && dy < surface->h)
          {
-            const BYTE *rgb = palette + index * 3;
             ((Uint32 *)((BYTE *)layer->pixels + dy * layer->pitch))[dx] =
-               0xFF000000 | ((Uint32)rgb[0] << 16) | ((Uint32)rgb[1] << 8) | rgb[2];
+               0x80000000 | index;
          }
       }
 }
@@ -162,34 +251,29 @@ INT VIDEO_ComposeSurface(SDL_Surface *source, SDL_Surface *target,
                          const SDL_Color base[256])
 {
    SDL_Surface *layer = VIDEO_PortraitLayer(source, FALSE);
-   int level, i, x, y;
+   int level, x, y;
+   BOOL bound;
    if (source->w != target->w || source->h != target->h ||
        target->format->BytesPerPixel != 4) return -1;
    if (SDL_BlitSurface(source, NULL, target, NULL) != 0) return -1;
-   if (layer == NULL || base == NULL) return 0;
-   // Recognize the engine's exact /64 black fades, ignoring dialogue wait colors.
-   // Scene/day/night palettes at full brightness all retain the source RGB.
-   for (level = 0; level <= 64; ++level)
-   {
-      for (i = 0; i < 256; ++i)
-      {
-         SDL_Color color = source->format->palette->colors[i];
-         if (i >= 0xF9 && i <= 0xFE) continue;
-         if (color.r != (base[i].r * level >> 6) ||
-             color.g != (base[i].g * level >> 6) ||
-             color.b != (base[i].b * level >> 6)) break;
-      }
-      if (i == 256) break;
-   }
-   if (level > 64) return 0; // Color/red fades keep their established 8-bit effect.
+   if (layer == NULL) return 0;
+   bound = VIDEO_PortraitPaletteMatches(source);
+   level = bound ? 64 : VIDEO_PortraitFadeLevel(source, base);
    for (y = 0; y < source->h; ++y)
       for (x = 0; x < source->w; ++x)
       {
          Uint32 color = ((Uint32 *)((BYTE *)layer->pixels + y * layer->pitch))[x];
-         if (color >> 24)
+         if ((color >> 24) == 0xFF) // Already composed transition RGB.
             ((Uint32 *)((BYTE *)target->pixels + y * target->pitch))[x] =
-               SDL_MapRGBA(target->format, ((color >> 16) & 255) * level >> 6,
-                  ((color >> 8) & 255) * level >> 6, (color & 255) * level >> 6, 255);
+               SDL_MapRGBA(target->format, (color >> 16) & 255,
+                  (color >> 8) & 255, color & 255, 255);
+         else if ((color >> 24) == 0x80 && level <= 64)
+         {
+            SDL_Color c = bound ? g_PortraitCurrent[color & 255] : g_PortraitSource[color & 255];
+            ((Uint32 *)((BYTE *)target->pixels + y * target->pitch))[x] =
+               SDL_MapRGBA(target->format, c.r * level >> 6, c.g * level >> 6,
+                  c.b * level >> 6, 255);
+         }
       }
    return 0;
 }
@@ -216,6 +300,114 @@ static SDL_Surface *VIDEO_DisplaySurface(SDL_Surface *source)
    }
 #endif
    return source;
+}
+
+VOID VIDEO_ShiftPortraitRow(SDL_Surface *surface, int row, int shift)
+{
+   SDL_Surface *layer = VIDEO_PortraitLayer(surface, FALSE);
+   Uint32 saved[320], *pixels;
+   if (layer == NULL || surface->w != 320 || row < 0 || row >= surface->h) return;
+   shift %= 320;
+   if (shift <= 0) return;
+   pixels = (Uint32 *)((BYTE *)layer->pixels + row * layer->pitch);
+   memcpy(saved, pixels, shift * sizeof(Uint32));
+   memmove(pixels, pixels + shift, (320 - shift) * sizeof(Uint32));
+   memcpy(pixels + 320 - shift, saved, shift * sizeof(Uint32));
+}
+
+struct tagPORTRAITTRANSITION
+{
+   SDL_Surface *source, *target, *before, *after;
+   BYTE *mask;
+};
+
+PORTRAITTRANSITION *VIDEO_BeginPortraitTransition(SDL_Surface *source, SDL_Surface *target)
+{
+   SDL_Surface *from = VIDEO_PortraitLayer(source, FALSE);
+   SDL_Surface *to = VIDEO_PortraitLayer(target, FALSE);
+   PORTRAITTRANSITION *transition;
+   SDL_Color base[256];
+   int x, y;
+   if (from == NULL && to == NULL) return NULL;
+   if (source->w != target->w || source->h != target->h)
+      TerminateOnError("Portrait transition dimensions differ");
+   transition = (PORTRAITTRANSITION *)UTIL_calloc(1, sizeof(*transition));
+   transition->source = source;
+   transition->target = target;
+   transition->mask = (BYTE *)UTIL_calloc(source->w * source->h, 1);
+   transition->before = SDL_CreateRGBSurface(0, source->w, source->h, 32,
+      0x00FF0000, 0x0000FF00, 0x000000FF, 0);
+   transition->after = SDL_CreateRGBSurface(0, source->w, source->h, 32,
+      0x00FF0000, 0x0000FF00, 0x000000FF, 0);
+   if (transition->before == NULL || transition->after == NULL)
+      TerminateOnError("Cannot allocate portrait transition");
+   if (gpGlobals->f.fpRGM != NULL)
+   {
+      if (!PAL_ReadPalette(gpGlobals->wNumPalette, gpGlobals->fNightPalette, base))
+         TerminateOnError("Cannot read portrait transition palette");
+   }
+   else memcpy(base, source->format->palette->colors, sizeof(base));
+   if (VIDEO_ComposeSurface(target, transition->before, base) != 0 ||
+       VIDEO_ComposeSurface(source, transition->after, base) != 0)
+      TerminateOnError("Cannot compose portrait transition");
+   to = VIDEO_PortraitLayer(target, TRUE);
+   for (y = 0; y < source->h; ++y)
+      for (x = 0; x < source->w; ++x)
+      {
+         Uint32 *pixel = (Uint32 *)((BYTE *)to->pixels + y * to->pitch) + x;
+         if (*pixel || (from != NULL &&
+             ((Uint32 *)((BYTE *)from->pixels + y * from->pitch))[x]))
+         {
+            transition->mask[y * source->w + x] = 1;
+            *pixel = 0xFF000000 |
+               ((Uint32 *)((BYTE *)transition->before->pixels + y * transition->before->pitch))[x];
+         }
+      }
+   return transition;
+}
+
+VOID VIDEO_StepPortraitTransition(PORTRAITTRANSITION *transition, int first, int stride,
+                                  int step, int steps)
+{
+   SDL_Surface *to;
+   int at, x, y;
+   if (transition == NULL) return;
+   to = VIDEO_PortraitLayer(transition->target, FALSE);
+   for (at = first; at < transition->target->pitch * transition->target->h; at += stride)
+   {
+      y = at / transition->target->pitch;
+      x = at % transition->target->pitch;
+      if (x < transition->target->w && transition->mask[y * transition->target->w + x])
+      {
+         Uint32 a, b, *pixel = (Uint32 *)((BYTE *)to->pixels + y * to->pitch) + x;
+         // Keep the exact RGB endpoint until the whole transition finishes.
+         // Twelve PC rounds need not converge a 15-step low-nibble gap.
+         a = ((Uint32 *)((BYTE *)transition->before->pixels + y * transition->before->pitch))[x];
+         b = ((Uint32 *)((BYTE *)transition->after->pixels + y * transition->after->pitch))[x];
+         *pixel = 0xFF000000 |
+            (((((a >> 16) & 255) * (steps-step) + ((b >> 16) & 255) * step) / steps) << 16) |
+            (((((a >> 8) & 255) * (steps-step) + ((b >> 8) & 255) * step) / steps) << 8) |
+            (((a & 255) * (steps-step) + (b & 255) * step) / steps);
+      }
+   }
+}
+
+VOID VIDEO_EndPortraitTransition(PORTRAITTRANSITION *transition)
+{
+   SDL_Surface *from, *to;
+   int x, y;
+   if (transition == NULL) return;
+   from = VIDEO_PortraitLayer(transition->source, FALSE);
+   to = VIDEO_PortraitLayer(transition->target, FALSE);
+   for (y = 0; y < transition->target->h; ++y)
+      for (x = 0; x < transition->target->w; ++x)
+         if (transition->mask[y * transition->target->w + x])
+            ((Uint32 *)((BYTE *)to->pixels + y * to->pitch))[x] = from == NULL ? 0 :
+               ((Uint32 *)((BYTE *)from->pixels + y * from->pitch))[x];
+   SDL_FreeSurface(transition->before);
+   SDL_FreeSurface(transition->after);
+   free(transition->mask);
+   free(transition);
 }
 
 #if PAL_HAS_GLSL
@@ -607,6 +799,9 @@ VIDEO_RenderCopy(
 	{
 		SDL_RenderCopy(gpRenderer, gpTouchOverlay, NULL, &gOverlayRect);
 	}
+#ifdef UNIT_TEST
+	if (VIDEO_TestFrameHook != NULL) VIDEO_TestFrameHook();
+#endif
 	SDL_RenderPresent(gpRenderer);
 }
 #endif
@@ -1173,6 +1368,7 @@ VIDEO_SwitchScreen(
    int               i, j;
    const int         rgIndex[6] = {0, 3, 1, 5, 2, 4};
    SDL_Rect          dstrect;
+   PORTRAITTRANSITION *portrait;
 
    short             offset = 240 - 200;
    short             screenRealHeight = gpScreenReal->h;
@@ -1187,13 +1383,15 @@ VIDEO_SwitchScreen(
    wSpeed++;
    wSpeed *= 10;
 
-   VIDEO_ClearPortraits(gpScreenBak); // Indexed wipe; final frame restores RGB.
+   portrait = VIDEO_BeginPortraitTransition(gpScreen, gpScreenBak);
    for (i = 0; i < 6; i++)
    {
       for (j = rgIndex[i]; j < gpScreen->pitch * gpScreen->h; j += 6)
       {
          ((LPBYTE)(gpScreenBak->pixels))[j] = ((LPBYTE)(gpScreen->pixels))[j];
       }
+
+      VIDEO_StepPortraitTransition(portrait, rgIndex[i], 6, 1, 1);
 
       //
       // Draw the backup buffer to the screen
@@ -1206,10 +1404,10 @@ VIDEO_SwitchScreen(
 	  if (SDL_MUSTLOCK(gpScreenReal))
 	  {
 		  if (SDL_LockSurface(gpScreenReal) < 0)
-			  return;
+			  { VIDEO_EndPortraitTransition(portrait); return; }
 	  }
 
-      SDL_SoftStretch(gpScreenBak, NULL, gpScreenReal, &dstrect);
+      SDL_SoftStretch(VIDEO_DisplaySurface(gpScreenBak), NULL, gpScreenReal, &dstrect);
 #if SDL_VERSION_ATLEAST(2, 0, 0)
       gRenderBackend.RenderCopy();
 #else
@@ -1223,6 +1421,7 @@ VIDEO_SwitchScreen(
 
       UTIL_Delay(wSpeed);
    }
+   VIDEO_EndPortraitTransition(portrait);
    VIDEO_CopyEntireSurface(gpScreen, gpScreenBak);
    VIDEO_UpdateScreen(NULL);
 }
@@ -1252,6 +1451,7 @@ VIDEO_FadeScreen(
    BYTE              a, b;
    const int         rgIndex[6] = {0, 3, 1, 5, 2, 4};
    SDL_Rect          dstrect;
+   PORTRAITTRANSITION *portrait;
    short             offset = 240 - 200;
    short             screenRealHeight = gpScreenReal->h;
    short             screenRealY = 0;
@@ -1273,7 +1473,7 @@ VIDEO_FadeScreen(
 
    time = SDL_GetTicks();
 
-   VIDEO_ClearPortraits(gpScreenBak); // Indexed dissolve compatibility path.
+   portrait = VIDEO_BeginPortraitTransition(gpScreen, gpScreenBak);
    wSpeed++;
    wSpeed *= 10;
 
@@ -1313,6 +1513,8 @@ VIDEO_FadeScreen(
             ((LPBYTE)(gpScreenBak->pixels))[k] = ((a & 0xF0) | (b & 0x0F));
          }
 
+         VIDEO_StepPortraitTransition(portrait, rgIndex[j], 6, i + 1, 12);
+
          //
          // Draw the backup buffer to the screen
          //
@@ -1342,7 +1544,7 @@ VIDEO_FadeScreen(
                dstrect.y = (screenRealY + g_wShakeLevel) * screenRealHeight / gpScreen->h;
             }
 
-            SDL_SoftStretch(gpScreenBak, &srcrect, gpScreenReal, &dstrect);
+            SDL_SoftStretch(VIDEO_DisplaySurface(gpScreenBak), &srcrect, gpScreenReal, &dstrect);
 
             if (g_wShakeTime & 1)
             {
@@ -1370,7 +1572,7 @@ VIDEO_FadeScreen(
             dstrect.w = gpScreenReal->w;
             dstrect.h = screenRealHeight;
 
-            SDL_SoftStretch(gpScreenBak, NULL, gpScreenReal, &dstrect);
+            SDL_SoftStretch(VIDEO_DisplaySurface(gpScreenBak), NULL, gpScreenReal, &dstrect);
 #if SDL_VERSION_ATLEAST(2, 0, 0)
             gRenderBackend.RenderCopy();
 #else
@@ -1384,6 +1586,8 @@ VIDEO_FadeScreen(
    {
       SDL_UnlockSurface(gpScreenReal);
    }
+
+   VIDEO_EndPortraitTransition(portrait);
 
    //
    // Draw the result buffer to the screen as the final step

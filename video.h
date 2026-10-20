@@ -36,7 +36,7 @@ extern SDL_Surface *gpScreenBak;
 extern volatile BOOL g_bRenderPaused;
 
 // SDL2 engine-owned indexed surfaces reserve userdata for an optional portrait
-// RGB plane. Ordinary drawing invalidates coverage even when the index is equal.
+// color plane. Ordinary drawing invalidates coverage even when the index is equal.
 PAL_FORCE_INLINE VOID VIDEO_InvalidatePortraitPixel(SDL_Surface *surface, int x, int y)
 {
 #if SDL_VERSION_ATLEAST(2,0,0)
@@ -55,6 +55,15 @@ VOID VIDEO_FreeSurface(SDL_Surface *surface);
 VOID VIDEO_ClearPortraits(SDL_Surface *surface);
 VOID VIDEO_SetPortrait(SDL_Surface *surface, const BYTE *pixels, int w, int h,
                        PAL_POS pos, const BYTE palette[768]);
+VOID VIDEO_InitPortraitPalette(const BYTE palette[768]);
+VOID VIDEO_GetPortraitPalette(SDL_Color colors[256], BOOL original);
+VOID VIDEO_SetPaletteWithPortraits(SDL_Color scene[256], const SDL_Color portraits[256]);
+VOID VIDEO_ShiftPortraitRow(SDL_Surface *surface, int row, int shift);
+typedef struct tagPORTRAITTRANSITION PORTRAITTRANSITION;
+PORTRAITTRANSITION *VIDEO_BeginPortraitTransition(SDL_Surface *source, SDL_Surface *target);
+VOID VIDEO_StepPortraitTransition(PORTRAITTRANSITION *transition, int first, int stride,
+                                  int step, int steps);
+VOID VIDEO_EndPortraitTransition(PORTRAITTRANSITION *transition);
 // Convert a complete logical frame, including independent portrait colors.
 // Unknown nonuniform palette effects deliberately use the indexed fallback.
 INT VIDEO_ComposeSurface(SDL_Surface *source, SDL_Surface *target,

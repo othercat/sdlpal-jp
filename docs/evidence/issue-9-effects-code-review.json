@@ -1,0 +1,122 @@
+{
+  "issue": 9,
+  "round": "R3 special effects",
+  "review_revision": 2,
+  "timestamp_utc": "2026-10-20T23:18:14.009593+00:00",
+  "scope": "Initial core diff review plus a narrow static follow-up of the dissolve endpoint/lifecycle fix in VIDEO_StepPortraitTransition, VIDEO_EndPortraitTransition, caller ordering, ending.c cleanup, and the added endpoint unit test. No builds, tests, resource renders, game/UI, repository/Git/Issue/configuration mutations, or network writes were performed by this reviewer.",
+  "files": [
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\video.c",
+      "sha256": "8811a3dc2a835dfd4ef371bea49b18bbf16380a9d28aaacdcec78b7ff96b9cc5"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\ending.c",
+      "sha256": "252d520574c448bac5967ecac75610fd9f8164e6cea5b03fda071059b7889a27"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\battle.c",
+      "sha256": "a884ff06065c7f13ff486096c94011699241ff29ef1ee8fa7bd82516fb17b15d"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tests\\test_description_layout.cpp",
+      "sha256": "ac41e9407015ef19698c4fb7795714de0616e24eefc752b515b0cd0c44e8d9a5"
+    }
+  ],
+  "conclusion": "R3-C1 is resolved in the reviewed source snapshot. No remaining blocker identified in this narrow endpoint/lifecycle follow-up; this is static review, not real-game acceptance.",
+  "findings": [
+    {
+      "id": "R3-C1",
+      "priority": "P2",
+      "status": "resolved by reviewed follow-up",
+      "file": "video.c",
+      "title": "The 12th dissolve step exposes an unfinished native index at old-portrait-only pixels",
+      "cause": "VIDEO_StepPortraitTransition restores the source coverage immediately when step>=steps. At old-portrait-only pixels the source has no coverage, so the just-displayed frame falls back to the target native index. The native 12-round dissolve advances its low nibble only11 times because round0 does not advance it, whereas its full possible distance is15.",
+      "concrete_example": "At a pixel covered by the old portrait only, backup index0 and source index15 result in native index11 in round12; the reverse yields4. Earlier portrait-region frames follow RGB interpolation toward the actual source pixel, but the final transition frame unexpectedly switches to palette[11]/palette[4], then the final VIDEO_UpdateScreen/source copy displays the true target.",
+      "affected_callers": [
+        "video.c:1503 VIDEO_FadeScreen (12 rounds)",
+        "battle.c:274 PAL_BattleFadeScene (12 rounds)"
+      ],
+      "not_generalized": "The16-round FBP path has enough low-nibble steps to reach distance15; wipe copies native indices exactly. These do not establish that the12-round case is safe.",
+      "minimal_fix": "Display exact composed after RGB for the final transition step; return the target plane to source tags/coverage only after the final transition frame has been shown (for example in EndPortraitTransition). Preserve all native index writes.",
+      "recommended_check": "Use an old-portrait-only pixel with index0->15 and15->0. At the12th displayed step assert exact after RGB while native index remains11/4, then assert End/final-frame source coverage. The existing same-background-index7 test does not exercise this.",
+      "validation": "Static control/data-flow and explicit nibble arithmetic; no test or game execution.",
+      "original_line_start": 379,
+      "original_line_end": 382,
+      "resolution": {
+        "video.c:369-390": "Step always writes tagged literal RGB. At step==steps each component equals after RGB exactly; it no longer releases the old-only mask to an unfinished native nibble.",
+        "video.c:395-410": "End restores source tags/coverage only in the original transition mask union, then frees the snapshots/mask. Source without a companion layer yields zero coverage.",
+        "video.c:1386-1426": "Switch displays each phase before End, then copies the source to backup and updates the final source screen.",
+        "video.c:1575-1595": "Fade displays the last transition phase before End, then displays the intact source frame. Its native nibble formula is unchanged.",
+        "battle.c:274-294": "Battle copies and displays the last RGB phase before End; the final full source copy removes temporary literal tags from gpScreen.",
+        "ending.c:127-155": "FBP displays all16 phases, then End normalizes backup coverage and VIDEO_ClearPortraits(gpScreen) clears literal tags previously copied into gpScreen. This also runs for the special last FBP branch that skips the ordinary full FBP repaint."
+      },
+      "test_review": {
+        "test": "tests/test_description_layout.cpp:238-260 DissolveEndpointDoesNotExposeUnfinishedNativeNibble",
+        "reviewed_assertions": "Both0->15 and15->0 directions preserve native low nibbles11/4 while asserting the last composed portrait-region RGB is exactly the target color. Then it checks the final copied source frame.",
+        "boundary": "The test was read, not executed by this reviewer. The final copy can itself normalize coverage, so the separate End tag restoration is confirmed here by static code/caller-order inspection, not attributed to a standalone End-state test assertion."
+      }
+    }
+  ],
+  "accepted_static_properties": [
+    "SDL1 retains VIDEO_PortraitLayer=NULL and no companion allocation. When both source/target lack companion planes, Begin returnsNULL; Step/End are no-ops.",
+    "Portrait source index tags remain distinct from transparent0 and opaque black; transition literal RGB uses a separate0xFF tag.",
+    "Wave shifts the companion row by the same positive wraparound offset as the existing320-pixel index row. The320 shift is correctly a no-op for both.",
+    "Normal transitions visit all six native byte phases; RGB interpolation is restricted to the original source/target coverage union.",
+    "Caller-owned PAL_ReadPalette is retained in composition/current-color lookup; the reviewed changes do not reintroduce the earlier shared PAL_GetPalette buffer overwrite.",
+    "Palette effect additions update a separate portrait color table while existing scene palette formulas and native index writes remain intact.",
+    "PAL_MakeScene/PAL_FBPBlitToSurface and normal coverage-invalidating drawing keep their existing layer-clearing/occlusion roles; no new default resource/config change is introduced by this diff."
+  ],
+  "boundaries": [
+    "This reviewer performed source inspection only; no build, unit test, rendering, real game, emulator, OS window, or hardware-equivalence verification was run.",
+    "The no-blocker follow-up conclusion applies to the reviewed endpoint/lifecycle change and listed file hashes, not an unreviewed later diff or the whole engine.",
+    "Original Saturn evidence remains in source-review.json. The implementation is explicitly a PC-compatible effect policy, not a proven frame-for-frame Saturn replica.",
+    "Real-game acceptance remains for the user; the main agent reported source-render verification does not substitute for it."
+  ],
+  "initial_review_files": [
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\video.c",
+      "sha256": "ac1f6557000301319b2eac92c07072f7d7d80a9c4c7672168c56c1d985f5a414"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\video.h",
+      "sha256": "c96924a49e6ed3c82722b52845bc99ca186afbbbe6f95d82b795855b1be7e498"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\palette.c",
+      "sha256": "f20c5c3752f7d6e7e2d645c7dd908ef6ae9205d8f8ad4d348964bb64bff7d3df"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\text.c",
+      "sha256": "7e9d2ea8ff5de4d4143b1b622abb8c3404708243fa631585e8ca4492caeea59c"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\scene.c",
+      "sha256": "80a2afc7674f8db24b57ba5d3812dd07520ad64833972d1ffccad71e6e2b5b95"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\battle.c",
+      "sha256": "a884ff06065c7f13ff486096c94011699241ff29ef1ee8fa7bd82516fb17b15d"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\ending.c",
+      "sha256": "37bc111659540dc5a0aba8de3f50e2d00675d11b06504d77ec6d08ac58a8c520"
+    },
+    {
+      "path": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tests\\test_description_layout.cpp",
+      "sha256": "6b72cf2c0ad6652b555bf1706aee487e6d532b4fb71d771bf7c82073b4b2ee6e"
+    }
+  ],
+  "initial_review_timestamp_utc": "2026-10-20T23:09:28.677606+00:00",
+  "followup_static_acceptance": [
+    "At the last RGB interpolation step, integer arithmetic computes b*steps/steps with a coefficient of zero, eliminating the premature native-index fallback.",
+    "All reviewed normal callers call End only after the final transition display; subsequent normal copies or the explicit FBP gpScreen cleanup prevent transition RGB tags from surviving into the next palette effect.",
+    "FBP cleanup preserves native pixels and any already-drawn ordinary effect sprite; it clears only the companion plane, so the special no-repaint ending branch does not retain stale literal RGB.",
+    "No new repository changes were made by this reviewer."
+  ],
+  "main_agent_reported_validation": {
+    "source": "Parent-agent task message; not independently rerun or inspected in this narrow follow-up.",
+    "claim": "Win682 effect frames including Switch/Fade/Shake/FBP/Battle passed independent RGB oracle, index/PAL checks, and SDL texture readback.",
+    "reviewer_executed": false,
+    "real_game_acceptance": false
+  }
+}

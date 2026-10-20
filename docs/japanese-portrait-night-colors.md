@@ -1,5 +1,7 @@
 # Issue #9 R2：夜景头像保留源调色板颜色
 
+后续：[R3 特殊渐变与索引特效](japanese-portrait-effects.md)已接入已知特效函数的头像颜色和覆盖信息；本文保留 R2 当时的实现与验证范围。
+
 2026-10-21，基于 `feature @ 25834d9f8db93ecffdf812b744e38ca546012190`，跟进 [#9](https://github.com/othercat/sdlpal-jp/issues/9)。[R1](japanese-portrait-palettes.md) 的 86 个头像包、编号白名单、等比尺寸适配和默认 PC 回退全部沿用。本轮只处理场景调色板对头像的量化色差。
 
 SDL2 启用 `PortraitFileName` 后，正常日夜画面在最终 RGB 输出中使用头像源色。场景仍使用自己的 PAT 色表；资源、SLF、字体、对白坐标和存档不变。配置默认仍为空。这里的“源色”指已审 bank 3 的 RGB555 解码结果，不表示逐像素复刻土星最终视频输出。

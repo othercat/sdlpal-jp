@@ -237,8 +237,7 @@ PAL_BattleFadeScene(
    BYTE              a, b;
    const int         rgIndex[6] = {0, 3, 1, 5, 2, 4};
    
-   // This transition blends palette indices, not independent RGB pixels.
-   VIDEO_ClearPortraits(gpScreenBak);
+   PORTRAITTRANSITION *portrait = VIDEO_BeginPortraitTransition(g_Battle.lpSceneBuf, gpScreenBak);
    time = SDL_GetTicks();
 
    for (i = 0; i < 12; i++)
@@ -272,6 +271,8 @@ PAL_BattleFadeScene(
             ((LPBYTE)(gpScreenBak->pixels))[k] = ((a & 0xF0) | (b & 0x0F));
          }
 
+         VIDEO_StepPortraitTransition(portrait, rgIndex[j], 6, i + 1, 12);
+
          //
          // Draw the backup buffer to the screen
          //
@@ -281,6 +282,8 @@ PAL_BattleFadeScene(
          VIDEO_UpdateScreen(NULL);
       }
    }
+
+   VIDEO_EndPortraitTransition(portrait);
 
    //
    // Draw the result buffer to the screen as the final step
