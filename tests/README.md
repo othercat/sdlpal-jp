@@ -66,3 +66,9 @@ The Test-only `--render-evidence` modes `cn-pages` and `jp-pages` exercise real
 dialogue page waits, SLF CLEAR boundaries, colors and escaped controls, then read
 back 2x, 3x and 2.5x output from the production SDL renderer.
 See the [commands, pixel checks and scope](../docs/pal98-dialogue-pagination-scaling.md).
+
+The `jp-long-names` mode renders eight-character item/magic names in both columns,
+selected and unselected, through the production menu and scaling paths.
+The [evidence record](../docs/japanese-long-name-rendering.md) includes commands,
+glyph/shadow/cursor and quantity/MP checks, and the explicit user-owned interactive
+acceptance boundary.

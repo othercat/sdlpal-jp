@@ -1,0 +1,651 @@
+{
+  "date": "2026-10-20",
+  "issue": 5,
+  "scope": "Source-generated game rendering only. User will perform interactive acceptance.",
+  "user_instruction": "我自己验收就行，你只要游戏渲染图即可，不需要实机",
+  "branch": "richardli/fix/5-render-eight-character-names-r6",
+  "base": "8ebd96e3e31e8210992588339823d2a1b1303c2a",
+  "build": "Test x64, VS 2026/v145; baseline plus the recorded Test renderer change; not a Release build",
+  "exe_sha256": "679ef1229557834223555584d3c967eab450f6c2a3f291e07dad8b21bb730463",
+  "build_log_sha256": "003d70a4f8e85a40e80cebe089b4ff69c2937b1f68838167fd456067f4d146fa",
+  "tests_xml_sha256": "e8286ccd2b21e2b312580d8dd372a5c518be7140255e33405b1f6ad5d98064d8",
+  "gtest_passed": 4,
+  "build_warnings": 3,
+  "os": "Windows 11 Pro 10.0.26200",
+  "renderer": "direct3d, flags=14, hidden OS window; target-texture readback",
+  "config": {
+    "FontFlavor": "Japanese",
+    "UseISOFont": 0,
+    "FontHeight": 16,
+    "dwWordLength": 16,
+    "FontFile": null,
+    "ScaleQuality": "0",
+    "TextureSize": [
+      320,
+      200
+    ],
+    "EnableGLSL": false,
+    "UseTouchOverlay": false,
+    "KeepAspectRatio": true,
+    "layout_81_to_87": [
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        30,
+        14
+      ],
+      [
+        5,
+        14
+      ],
+      [
+        31,
+        14
+      ],
+      [
+        70,
+        0
+      ]
+    ]
+  },
+  "fixture": {
+    "scene": 2,
+    "viewport": [
+      1152,
+      176
+    ],
+    "player": 0,
+    "HP": [
+      150,
+      150
+    ],
+    "MP": [
+      999,
+      999
+    ],
+    "inventory_amount": 99,
+    "equipment": "cleared in memory",
+    "target_objects": [
+      270,
+      384
+    ],
+    "item_neighbour": 149,
+    "magic_neighbours_by_column": [
+      390,
+      306
+    ],
+    "object_records": "unchanged root SSS.MKF; magic 384 keeps outside-battle inactive flags",
+    "selected_description_object": "target when selected, neighbour when unselected",
+    "save_written_or_game_route_executed": false
+  },
+  "resources_directory": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\gameplay-r3-20261020\\runtime",
+  "original_resources_directory": "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+  "resources_sha256": {
+    "ABC.mkf": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b",
+    "BALL.MKF": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0",
+    "DATA.MKF": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+    "F.MKF": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7",
+    "FBP.MKF": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84",
+    "FIRE.MKF": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf",
+    "GOP.MKF": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b",
+    "M.MSG": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+    "MAP.MKF": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575",
+    "MGO.mkf": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0",
+    "MUS.MKF": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21",
+    "PAT.MKF": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997",
+    "RGM.MKF": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132",
+    "RNG.MKF": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd",
+    "SOUNDS.MKF": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01",
+    "SSS.MKF": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+    "WORD.DAT": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+  },
+  "slf_sha256": "f4ffb5753a1a168a23a27426aa6163cd35c35a85d3fd5a8d5f69c0ef2e7f595e",
+  "source": {
+    "tests/render_evidence.cpp": {
+      "sha256": "45023880a92a192de7ea765ed1319ba1045fbebcd5435d14ca916308684dc4e8",
+      "git_blob": "f05e727c91dc5a04887903bc543fc7440c2c4376"
+    },
+    "tools/verify_long_name_rendering.py": {
+      "sha256": "f6030113fcff61d697c9a3e2c1cbb5d2606e5859f4d14271b9d355049e0c9b17",
+      "git_blob": "ddb4f5c68ed373ccb69c972ccbba66490be05130"
+    },
+    "itemmenu.c": {
+      "sha256": "de5e0686da0ee6d404cb4af74222f8ac144ff1096007262eed0d7e2adbc34fc1",
+      "git_blob": "db8ac875ea0ed77644590bb3b31b5294098dc339"
+    },
+    "magicmenu.c": {
+      "sha256": "b6c19cd0b8c89d7051cf59312a61795f95c48f1b8c3ea52c7d00af3845221f90",
+      "git_blob": "849f9e23293a7cb2b10ff4a2e4255b23bbe7aab4"
+    },
+    "text.c": {
+      "sha256": "b1c94c455d31b6183c861c0ebb342fc8fdd1d104117f20ac758ad506ff7534b6",
+      "git_blob": "a5e3035b1b3d4a54626d191d508695335d97b3a0"
+    },
+    "font.c": {
+      "sha256": "ae694c6823467fa61b13f3f4b57c0f079442a386547243cfa938a87496235852",
+      "git_blob": "4ff22b738a790745dffbd33b448a3e015fd44516"
+    },
+    "fontglyph_jp.h": {
+      "sha256": "ac0e164c4d835e3ae9db87dc8eda97603b6731db96e1b378afcd0bbcdba0d79e",
+      "git_blob": "3d75f1612dbde4369c81d29234305712e52e5a68"
+    },
+    "ui.c": {
+      "sha256": "0d1c0f7edff411403d3d75d717adbac6d42fe6c692dba08fdfda53d66a3ef410",
+      "git_blob": "c7931286dad7a2a079d2770320b195bc0cb8cb86"
+    },
+    "uibattle.c": {
+      "sha256": "e7d50d8d9d69e926afd0d687062d1ad88cf164f8e3f45a6fae86bedf16096fb8",
+      "git_blob": "f227fd3e7a507ec4f0d9084295980003c817825f"
+    },
+    "video.c": {
+      "sha256": "0d0b0725c1ac706f9bbfbd2154ad828cc1736e7e29e1dbf70c5820ddd3008b6a",
+      "git_blob": "5a1df6f9a740cf55bfe72fc13d5b0d36a640432f"
+    },
+    "palcommon.c": {
+      "sha256": "e0c40d7fb4e5a1cd2fb635a0648ed346ebd5ca59198fa4e4c5353139efadf682",
+      "git_blob": "8b00bc7d890921c869927360a23ce43b3a98bef0"
+    }
+  },
+  "verification": {
+    "directory": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\long-names-r6-20261020\\source",
+    "menus": [
+      {
+        "file": "item-270-left-selected.bmp",
+        "object": 270,
+        "column": 0,
+        "selected": true,
+        "characters": 8,
+        "advance": 128,
+        "glyph_ink": 422,
+        "cursor_overwritten_ink": 7,
+        "checked_name_shadow_cursor_pixels": 848,
+        "rightmost_name_shadow_x": 142,
+        "checked_quantity_or_mp_pixels": 74,
+        "sha256": "a1a0d0afd5d9fd13e8c736d99935b89bed28543caeadf0c54b8d07125bc1a6b1"
+      },
+      {
+        "file": "item-270-left-unselected.bmp",
+        "object": 270,
+        "column": 0,
+        "selected": false,
+        "characters": 8,
+        "advance": 128,
+        "glyph_ink": 422,
+        "cursor_overwritten_ink": 0,
+        "checked_name_shadow_cursor_pixels": 828,
+        "rightmost_name_shadow_x": 142,
+        "checked_quantity_or_mp_pixels": 74,
+        "sha256": "551505ef607e3f3559b48c5531ccf02126ac5910e21c4a33a208f1efe5f2785a"
+      },
+      {
+        "file": "item-270-right-selected.bmp",
+        "object": 270,
+        "column": 1,
+        "selected": true,
+        "characters": 8,
+        "advance": 128,
+        "glyph_ink": 422,
+        "cursor_overwritten_ink": 7,
+        "checked_name_shadow_cursor_pixels": 848,
+        "rightmost_name_shadow_x": 290,
+        "checked_quantity_or_mp_pixels": 74,
+        "sha256": "3dc9674e5487f0cb51810733f418d2a9cf7c53790720edcb8ae5e6083c87d26a"
+      },
+      {
+        "file": "item-270-right-unselected.bmp",
+        "object": 270,
+        "column": 1,
+        "selected": false,
+        "characters": 8,
+        "advance": 128,
+        "glyph_ink": 422,
+        "cursor_overwritten_ink": 0,
+        "checked_name_shadow_cursor_pixels": 828,
+        "rightmost_name_shadow_x": 290,
+        "checked_quantity_or_mp_pixels": 74,
+        "sha256": "745fe4bf0ac35eec1066ebd1752229965732f9e0f94703a4e69f06f00f5b0264"
+      },
+      {
+        "file": "magic-384-left-selected.bmp",
+        "object": 384,
+        "column": 0,
+        "selected": true,
+        "characters": 8,
+        "advance": 128,
+        "glyph_ink": 431,
+        "cursor_overwritten_ink": 4,
+        "checked_name_shadow_cursor_pixels": 879,
+        "rightmost_name_shadow_x": 163,
+        "checked_quantity_or_mp_pixels": 192,
+        "sha256": "2ae1c58e23a7863cb7f6a3188e66db7f768c24ddf6b85d3e972a0f4fa98b8027"
+      },
+      {
+        "file": "magic-384-left-unselected.bmp",
+        "object": 384,
+        "column": 0,
+        "selected": false,
+        "characters": 8,
+        "advance": 128,
+        "glyph_ink": 431,
+        "cursor_overwritten_ink": 0,
+        "checked_name_shadow_cursor_pixels": 856,
+        "rightmost_name_shadow_x": 163,
+        "checked_quantity_or_mp_pixels": 0,
+        "sha256": "65abc5f649e9e246483ae9f0fb05a32c51ddb35358b6235662df7d593f93b181"
+      },
+      {
+        "file": "magic-384-right-selected.bmp",
+        "object": 384,
+        "column": 1,
+        "selected": true,
+        "characters": 8,
+        "advance": 128,
+        "glyph_ink": 431,
+        "cursor_overwritten_ink": 4,
+        "checked_name_shadow_cursor_pixels": 879,
+        "rightmost_name_shadow_x": 298,
+        "checked_quantity_or_mp_pixels": 192,
+        "sha256": "7d2ba2f1f0929373ee41031b5d33537357b1b62cf791fd16bb22e376f3504c1f"
+      },
+      {
+        "file": "magic-384-right-unselected.bmp",
+        "object": 384,
+        "column": 1,
+        "selected": false,
+        "characters": 8,
+        "advance": 128,
+        "glyph_ink": 431,
+        "cursor_overwritten_ink": 0,
+        "checked_name_shadow_cursor_pixels": 856,
+        "rightmost_name_shadow_x": 298,
+        "checked_quantity_or_mp_pixels": 0,
+        "sha256": "d98426bd3d1f4ea10f37bdb04a55261c77d388fd8a2dca38b0022882b5a41b35"
+      }
+    ],
+    "scales": [
+      {
+        "file": "item-270-left-selected-640.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "4357fb41ee87b0c41af6d0e0ee5658877e24f5dcefeb67c504461c179ac1de51"
+      },
+      {
+        "file": "item-270-left-selected-960.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "534294cf1924415a96389a3381314054e72f5a1632e541c01f387e91649846e0"
+      },
+      {
+        "file": "item-270-left-selected-800.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": null,
+        "sha256": "87a39dd204da6ebf355254557f1007f862eb8dfce0d7a2a9305d78719ed12eab"
+      },
+      {
+        "file": "item-270-left-unselected-640.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "5320fef44876c06cb98f953e0a0bec3d6e853da79a874e3e69166597b994e6eb"
+      },
+      {
+        "file": "item-270-left-unselected-960.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "67c40499c1a172db2ea4f646177f3dc6ff85751e6170063b2c7bc5d62dc711d2"
+      },
+      {
+        "file": "item-270-left-unselected-800.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": null,
+        "sha256": "2aa27b2525bc7bcdce56ecfe847adc788c2609592c7e05e1ff4ab00959a42474"
+      },
+      {
+        "file": "item-270-right-selected-640.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "6b4faf2fe62e14eeb5356fa1fa64ea2944385d31544cb013a13a1fb3cbf1bc14"
+      },
+      {
+        "file": "item-270-right-selected-960.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "48efe32cd7404b015f46a7662405bc71cc5407c610608c34202353dfe8f63be2"
+      },
+      {
+        "file": "item-270-right-selected-800.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": null,
+        "sha256": "d62c9d05549a74cab7a956bdda770cafd84a39b7e59f6b6100349acc0575b48d"
+      },
+      {
+        "file": "item-270-right-unselected-640.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "195bb4a4d18f33ac66675d86b36798a5f84e4e629e80e4d1b754cbca932fd48f"
+      },
+      {
+        "file": "item-270-right-unselected-960.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "9e6893b1c840f963fd27ac9e429a43842273ab300bffbd3f8c314d4ebea14bba"
+      },
+      {
+        "file": "item-270-right-unselected-800.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": null,
+        "sha256": "34fdadbc4d92eb10b13066932d1ee886dcb5bd177fd657f8f028f977716ae7d3"
+      },
+      {
+        "file": "magic-384-left-selected-640.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "f13cf4a2084c9ba0e33858769e43ac315249340fae8893b696c75164577ab704"
+      },
+      {
+        "file": "magic-384-left-selected-960.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "c81f6ea085274bf3ca6911bb205b201a9dfa19bf6c1278ac3421b1251a6101b6"
+      },
+      {
+        "file": "magic-384-left-selected-800.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": null,
+        "sha256": "7bc96485ca7f63deba8791964af6a2119a3e1621815ca364d34e04f156f79dbe"
+      },
+      {
+        "file": "magic-384-left-unselected-640.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "9f43a50fc6eb6ae5dbbf5da9dd7caa182c45c214a01809cc82be172b49359bc5"
+      },
+      {
+        "file": "magic-384-left-unselected-960.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "e68f4ef7a946d64936541f7ec2149cb9b6dd9f620429bd4135cf40a3d25bbdde"
+      },
+      {
+        "file": "magic-384-left-unselected-800.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": null,
+        "sha256": "6175444192007dbd9b026cf67a216a8cf7f00d7ec70eadb15d86d813df0301a2"
+      },
+      {
+        "file": "magic-384-right-selected-640.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "f152f857252856c97cbf91ed0b753f7d7b06830d397180855f5020a8167b50e3"
+      },
+      {
+        "file": "magic-384-right-selected-960.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "a7aa8516c466db1f3418071076696511b40514a4dff6ff6a30b5e6e00d768bd9"
+      },
+      {
+        "file": "magic-384-right-selected-800.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": null,
+        "sha256": "583c4c43ca35020440ffdb6eb182d1716c5f8ea05d9a3817435aae545fc4f831"
+      },
+      {
+        "file": "magic-384-right-unselected-640.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "280f16df33a738e81465c3f5e25faa1bce8f9cd3111bc4c34f13e6d6c000a5aa"
+      },
+      {
+        "file": "magic-384-right-unselected-960.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": true,
+        "sha256": "ffb09a9dc03087dd47ad598389a28ec1bdaef383b333bdfc40752e62d698991e"
+      },
+      {
+        "file": "magic-384-right-unselected-800.bmp",
+        "source_pixels_preserved": 64000,
+        "new_colors": 0,
+        "exact_integer_nearest": null,
+        "sha256": "ed45a1e7d00cdf7781d07855c813f0fc07d32b4d0e2c4c7b817ee9e1d928fb99"
+      }
+    ],
+    "missing_clipped_or_wrong_color_expected_pixels": 0,
+    "scope": "Expected name ink/shadows, cursor and quantity/MP sprites; not all background pixels. Selected cursor intentionally covers 7/4 name ink pixels. No interactive acceptance."
+  },
+  "description_right_clipping": "object_id,column,selected,description_object,clipped_description_ink\n270,0,1,270,0\n270,0,0,149,0\n270,1,1,270,0\n270,1,0,149,0\n384,0,1,384,0\n384,0,0,390,0\n384,1,1,384,0\n384,1,0,306,0\n",
+  "regression": {
+    "baseline_directory": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-10\\pagination-scaling-r3-20261020\\source-jp-final",
+    "all_44_bmps_byte_identical": true,
+    "pagination_csv_byte_identical": true,
+    "files_sha256": {
+      "aunt-dialogue-640.bmp": "d791486c9d24d3e8b2fbc71de72cc32d7afff5af765467a5349ec8e1c91abae8",
+      "aunt-dialogue-800.bmp": "d503159c38e496a9eb564b6685edb99040eae61fdb76b878d684783c2d2a75b9",
+      "aunt-dialogue-960.bmp": "955fdce448e13df74dbb7299e0ff93957c8d1f8bd02254ae61335ce18837f908",
+      "aunt-dialogue.bmp": "a1a88405378bc1a9b51f80b20c012e43f4893db1f899321adbc473290af02eb6",
+      "controls-page-1-640.bmp": "6714c4309876b8895da2130d2438ff40a7e51b96f418619519bca1000a42b614",
+      "controls-page-1-800.bmp": "dd7c0963fec0c27c3237eb62e7999375e05133c2063e34b43e1466081346108f",
+      "controls-page-1-960.bmp": "7dea198ded2ab7ad45dd375f37c528d48d3dee304f23e99b23d10b3a63230ed3",
+      "controls-page-1.bmp": "59969e48b8d35008413696a41ab7b003c4655a893c04116d4d835ac4a36e948b",
+      "controls-page-2-640.bmp": "eb0264218b638c5c4db48d72a26984e1a22ad9fec0e6a4615943c2f2ca495730",
+      "controls-page-2-800.bmp": "693872c385f99896525d509ff2bbd1838c1f245a4645de5f5e76432af938c7da",
+      "controls-page-2-960.bmp": "987afea7ca2ff6d484654d8f137869eba2e16a6accfeab3b08c04a6a823a4a27",
+      "controls-page-2.bmp": "3c3a8397a0b8bb9539d90f9ede377cac6630a99be39d3296d96d78d8013a91db",
+      "controls-page-3-640.bmp": "e09ce575d74dd476d19895657bfff41c92302fbe1ecdc6269f795e3db4462517",
+      "controls-page-3-800.bmp": "aa83e759e8c14bfd508aeebc244055dc3408fef06f01c254c20fd4def9691fb6",
+      "controls-page-3-960.bmp": "1509d969f75920f72080052423fbcb354947768c2363ac1c47ee5cb9f0ad45ce",
+      "controls-page-3.bmp": "07972651bcb7d35895134efb4b920341deb58c8cc7645a508bbe564a9e28e7be",
+      "dialogue-1326-page-1-640.bmp": "5ddc7a34b2f073ff87b04437ec945e2f0b99a7bebf5b781f6c66be1b34800f38",
+      "dialogue-1326-page-1-800.bmp": "9973c2e4fe662d0870d478cb052fef3a79e05705b0851b9a08c89c2adfd15411",
+      "dialogue-1326-page-1-960.bmp": "04e689522fc564841c140490f6e673a1f4209db2815a769369992129278eee73",
+      "dialogue-1326-page-1.bmp": "948cca1655701a5ede8eab13c1c5025a517d04ddaeb3a125dde666bf98cd4429",
+      "dialogue-1326-page-2-640.bmp": "7cff93030b89e5cef2e0c74244b3ac7dd29e187ee947fdd2543be7a857d03c5b",
+      "dialogue-1326-page-2-800.bmp": "2020cc084cf089b16255b0b6b8871eb136cc3bc4eed73edaa882bec96523c074",
+      "dialogue-1326-page-2-960.bmp": "b505f418196c92166186bf3f1f0d49e0a890aa8a8dfc0f7d7365c650fd3e8265",
+      "dialogue-1326-page-2.bmp": "5817e2c2ee478237ca97d4652e54544bea4552a26abe1598bcfcc82657bb7514",
+      "dialogue-1333-page-1-640.bmp": "6ab2e29834e3cd0eda2dd5be704f30711aaf6a876994d7bd806e2b19c43fd6b9",
+      "dialogue-1333-page-1-800.bmp": "b5892e279be12f674b4cfc41476e4e4ab3217983987c0a2fd255235b42bf1232",
+      "dialogue-1333-page-1-960.bmp": "f4cd51f096587f5ffbde2dc2807e793409d65efc101819b841e4219261c1f13a",
+      "dialogue-1333-page-1.bmp": "89a1d35f9c537dd6f823efc84da3a18600075dd0b2cec9476e8d102db5e590ed",
+      "dialogue-1333-page-2-640.bmp": "871ad9a6aa76a24e8e147df1a3e0ddc3cd68c8a5db685ea01bfcd1cd6cb5bb5b",
+      "dialogue-1333-page-2-800.bmp": "70f4806020574aca3f04a5b645766cf40857c2dd15a5f7baa506feaaa045b80f",
+      "dialogue-1333-page-2-960.bmp": "1e34d75e9d1ad73f8c3bdef051700ea275832b8a78035c8af7a0de0c35f2df4d",
+      "dialogue-1333-page-2.bmp": "500ad2bd170e6e396f28d4dc9be72674aafa90bbf113e73c586d695e413b3237",
+      "dialogue-1333-page-3-640.bmp": "acc4a19671d32a511d99a168254e7793b1c2475e348ad89f04d1fc113b5eec1c",
+      "dialogue-1333-page-3-800.bmp": "25f07df21131478e555a02828f7bdf8afcd4d3e26cd6b29f1533e29180802873",
+      "dialogue-1333-page-3-960.bmp": "cfc395ae5b86ed152a0da8671df966c44710efd532c4bb71edf857cc24132c50",
+      "dialogue-1333-page-3.bmp": "b68633740a3ac19cacb0d66c79fb36c8e90b5e4c52c874c3a6aa882e89bd260d",
+      "dialogue-1333-page-4-640.bmp": "227982c70b96f6a308e5632b7dfe0608c76cb603e3c791ed69e7b29d113862ca",
+      "dialogue-1333-page-4-800.bmp": "f481fd3001c82976bd5656a58a705acb0e3bce2df7274c539137b2d21bd0c815",
+      "dialogue-1333-page-4-960.bmp": "eec65ba6a9c7d739a3ce81396ab1f123fd1572c23981082d576a7ffcdeff95b6",
+      "dialogue-1333-page-4.bmp": "fbb43cdaaba20dbd36818343fc6ca0ed369856d9584ecb5e7f0d770692fbafeb",
+      "dialogue-1333-page-5-640.bmp": "10005f784e68056af988781fbdad1337cc11906ce1fc38ec77c19fa4e289daf3",
+      "dialogue-1333-page-5-800.bmp": "3a9dcb866b8990e4b08340d288ac0bcb3f47045cf03612b7bfe2a19319b017b9",
+      "dialogue-1333-page-5-960.bmp": "4ab4267b6837cd9f0274470e0cb5c8a7fa3be849bb681c7e5f1fccd4d5571ddb",
+      "dialogue-1333-page-5.bmp": "3a7168653a303629a5329106bdb9a24003fceca63c006ead85830c719da32c36"
+    }
+  },
+  "negative_check": {
+    "input": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\long-names-r6-20261020\\negative-last-glyph\\item-270-right-unselected.bmp",
+    "changed_ink_position": [
+      289,
+      24
+    ],
+    "result": "Missing/wrong-color item-270-right-unselected: (289, 24)",
+    "expected_rejection": true
+  },
+  "published_images": [
+    {
+      "path": "docs/images/long-names/item-270-left-selected-640.png",
+      "source": "item-270-left-selected-640.bmp",
+      "size": [
+        640,
+        400
+      ],
+      "sha256": "52ae36ddf0ed4eb77310ef791bbd8cf377d22363ab18df7af7fcd510cc4145f3",
+      "bytes": 32702,
+      "pixels_equal": true
+    },
+    {
+      "path": "docs/images/long-names/item-270-left-unselected-640.png",
+      "source": "item-270-left-unselected-640.bmp",
+      "size": [
+        640,
+        400
+      ],
+      "sha256": "c484f2c6bcc6f74ad89536a8d2bb58f25dc349690c3f7fa5190c9e91842f9d99",
+      "bytes": 33285,
+      "pixels_equal": true
+    },
+    {
+      "path": "docs/images/long-names/item-270-right-selected-640.png",
+      "source": "item-270-right-selected-640.bmp",
+      "size": [
+        640,
+        400
+      ],
+      "sha256": "52705382814d2a241ef327f16ace82847dd9f1400ce16ef13b80356b38f382e3",
+      "bytes": 32693,
+      "pixels_equal": true
+    },
+    {
+      "path": "docs/images/long-names/item-270-right-selected-800.png",
+      "source": "item-270-right-selected-800.bmp",
+      "size": [
+        800,
+        500
+      ],
+      "sha256": "67702e267925fdbe1804772213c5220709ab8cd9198dd92e2e82b97c70afb5b8",
+      "bytes": 39841,
+      "pixels_equal": true
+    },
+    {
+      "path": "docs/images/long-names/item-270-right-selected-960.png",
+      "source": "item-270-right-selected-960.bmp",
+      "size": [
+        960,
+        600
+      ],
+      "sha256": "81c808eb7f12292f2c9b2128941f524242fb053635d944a4995b773dcbb1be05",
+      "bytes": 41597,
+      "pixels_equal": true
+    },
+    {
+      "path": "docs/images/long-names/item-270-right-unselected-640.png",
+      "source": "item-270-right-unselected-640.bmp",
+      "size": [
+        640,
+        400
+      ],
+      "sha256": "b73856cfea08302fb55217c402d84333f635b99838948980f810eefe84c7ec81",
+      "bytes": 33263,
+      "pixels_equal": true
+    },
+    {
+      "path": "docs/images/long-names/magic-384-left-selected-640.png",
+      "source": "magic-384-left-selected-640.bmp",
+      "size": [
+        640,
+        400
+      ],
+      "sha256": "de518ead2b728954c28bdea603b569b8dd05170a6c2bef0dbe96bbe8218788bf",
+      "bytes": 31979,
+      "pixels_equal": true
+    },
+    {
+      "path": "docs/images/long-names/magic-384-left-unselected-640.png",
+      "source": "magic-384-left-unselected-640.bmp",
+      "size": [
+        640,
+        400
+      ],
+      "sha256": "6c200c18f13aa68e924950ee92f647c060e52842a272a18343b9512ed51cca85",
+      "bytes": 30694,
+      "pixels_equal": true
+    },
+    {
+      "path": "docs/images/long-names/magic-384-right-selected-640.png",
+      "source": "magic-384-right-selected-640.bmp",
+      "size": [
+        640,
+        400
+      ],
+      "sha256": "191360018bcf04f08236e87f71375b52b00feb66ee4eec78c1f0c1b415d83286",
+      "bytes": 31326,
+      "pixels_equal": true
+    },
+    {
+      "path": "docs/images/long-names/magic-384-right-selected-800.png",
+      "source": "magic-384-right-selected-800.bmp",
+      "size": [
+        800,
+        500
+      ],
+      "sha256": "38da3aa589cfa158792f81559e1903a5f894c73528d11b1f40700ed4be5e4044",
+      "bytes": 37613,
+      "pixels_equal": true
+    },
+    {
+      "path": "docs/images/long-names/magic-384-right-selected-960.png",
+      "source": "magic-384-right-selected-960.bmp",
+      "size": [
+        960,
+        600
+      ],
+      "sha256": "f9fee9cc9eace29e5d1f37fe881fbf0976517d60b2bf6e9974c48fc0c7ef3ade",
+      "bytes": 39573,
+      "pixels_equal": true
+    },
+    {
+      "path": "docs/images/long-names/magic-384-right-unselected-640.png",
+      "source": "magic-384-right-unselected-640.bmp",
+      "size": [
+        640,
+        400
+      ],
+      "sha256": "a93e8bfe7fdcbf535d01073e58048f3a3b7a2471d79d057343470a0274c5e88e",
+      "bytes": 29261,
+      "pixels_equal": true
+    }
+  ],
+  "artifact_directory": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\long-names-r6-20261020",
+  "interactive_acceptance": "Pending user confirmation; no interactive game was launched or captured this round.",
+  "limits": [
+    "Not a Saturn framebuffer comparison",
+    "No OS window resize/DPI acceptance",
+    "No battle casting or complete route",
+    "No other font or DOS coverage"
+  ]
+}

@@ -2,6 +2,8 @@
 
 2026-10-20，关联 [#5](https://github.com/othercat/sdlpal-jp/issues/5)、[总管 #1](https://github.com/othercat/sdlpal-jp/issues/1)。这是 Issue 的 R5 记录；本机产物目录名 `gameplay-r3-20261020` 沿用工作目录编号。
 
+后续 R6 已按用户“我自己验收就行，你只要游戏渲染图即可，不需要实机”的要求，补齐[8 全角名称的左右列、选中/未选中及三档源码图](japanese-long-name-rendering.md)。以下保留 R5 当时的实机证据与未测边界，后续实际验收由用户完成。
+
 **赤血蚕在实际 SDLPAL 游戏中完整显示两行；用户逐项确认 10 个受影响法术的说明右端、底部及 MP 框均完整。** Codex 保存并检查了赤血蚕与「飛龍手探りの術」两张代表性实机图。其余九个法术的实际操作结论明确来自用户确认，不冒称逐项都有 Codex 截图。
 
 本轮没有新改绘制或文本代码。被测构建包含既有 [83–87 布局实现](japanese-description-layout-verification.md)，加载[赤血蚕适配后的 SLF](japanese-red-silkworm-layout.md)。日文菜单专项结果推进验收；8 全角长名称的实际菜单样本和完整游戏流程仍未覆盖，#5 保持开放。
