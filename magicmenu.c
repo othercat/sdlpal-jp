@@ -153,7 +153,7 @@ PAL_MagicSelectionMenuUpdate(
          //
          if (d != NULL)
          {
-            k = 3;
+            k = PAL_Y(gConfig.ScreenLayout.MagicDescMsgPos) + 3;
 		    wcscpy(szDesc, d);
             d = szDesc;
 
@@ -165,7 +165,8 @@ PAL_MagicSelectionMenuUpdate(
                   *next++ = '\0';
                }
 
-               PAL_DrawText(d, PAL_XY(102, k), DESCTEXT_COLOR, TRUE, FALSE, FALSE);
+               PAL_DrawText(d, PAL_XY(PAL_X(gConfig.ScreenLayout.MagicDescMsgPos), k),
+                  DESCTEXT_COLOR, TRUE, FALSE, FALSE);
                k += 16;
 
                if (next == NULL)
@@ -180,12 +181,12 @@ PAL_MagicSelectionMenuUpdate(
          //
          // Draw the MP of the selected magic.
          //
-         PAL_CreateSingleLineBox(PAL_XY(0, 0), 5, FALSE);
+         PAL_CreateSingleLineBox(PAL_XY(0, 0), PAL_X(gConfig.ScreenLayout.MagicMPDescLines), FALSE);
          PAL_RLEBlitToSurface(PAL_SpriteGetFrame(gpSpriteUI, SPRITENUM_SLASH),
-            gpScreen, PAL_XY(45, 14));
-         PAL_DrawNumber(rgMagicItem[g_iCurrentItem].wMP, 4, PAL_XY(15, 14),
+            gpScreen, gConfig.ScreenLayout.MagicMPSlashPos);
+         PAL_DrawNumber(rgMagicItem[g_iCurrentItem].wMP, 4, gConfig.ScreenLayout.MagicMPNeededPos,
             kNumColorYellow, kNumAlignRight);
-         PAL_DrawNumber(g_wPlayerMP, 4, PAL_XY(50, 14), kNumColorCyan, kNumAlignRight);
+         PAL_DrawNumber(g_wPlayerMP, 4, gConfig.ScreenLayout.MagicMPCurrentPos, kNumColorCyan, kNumAlignRight);
       }
    }
    else

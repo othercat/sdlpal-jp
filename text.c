@@ -151,6 +151,41 @@ PAL_ReadOneLine(
 		return NULL;
 }
 
+static BOOL
+PAL_CheckMessageResourceVersion(
+   FILE *fp
+)
+{
+   char line[1024], key[80], value[80], extra[2];
+   BOOL setting = FALSE, message = FALSE;
+   int target = -1;
+   // Preflight before any text/layout allocations. Legacy untagged SLFs still
+   // load; newly generated files explicitly bind to the DOS or Win95 ID space.
+   while (fgets(line, sizeof(line), fp))
+   {
+      if (strncmp(line, "[BEGIN MESSAGE]", 15) == 0) message = TRUE;
+      else if (strncmp(line, "[END MESSAGE]", 13) == 0) message = FALSE;
+      else if (!message && strncmp(line, "[BEGIN SETTING]", 15) == 0) setting = TRUE;
+      else if (!message && strncmp(line, "[END SETTING]", 13) == 0) setting = FALSE;
+      else if (!message && setting &&
+         sscanf(line, " %79[^= \t] = %79s %1s", key, value, extra) >= 2 &&
+         strcmp(key, "ResourceVersion") == 0)
+      {
+         int current = strcmp(value, "DOS") == 0 ? 0 : (strcmp(value, "WIN95") == 0 ? 1 : -1);
+         if (current < 0 || (target >= 0 && target != current) || current != !!gConfig.fIsWIN95)
+         {
+            UTIL_LogOutput(LOGLEVEL_ERROR, "SLF ResourceVersion=%s does not match %s resources.\n",
+               value, gConfig.fIsWIN95 ? "WIN95" : "DOS");
+            rewind(fp);
+            return FALSE;
+         }
+         target = current;
+      }
+   }
+   rewind(fp);
+   return TRUE;
+}
+
 static int
 PAL_ReadMessageFile(
 	FILE     *fp
@@ -675,6 +710,12 @@ PAL_InitText(
 	   // Open the message, index and word data files.
 	   //
 	   FILE *fp = UTIL_OpenRequiredFileForMode(gConfig.pszMsgFile, "r");
+
+	   if (!PAL_CheckMessageResourceVersion(fp))
+	   {
+		   fclose(fp);
+		   return -1;
+	   }
 
 	   //
 	   // Read the contents of the message, index and word data files.

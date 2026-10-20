@@ -8,6 +8,7 @@ from pathlib import Path
 
 from verify_baseline import METADATA, check_inputs, sha256, slf_summary
 from verify_restored_dialogues import blocks, duplicates, groups, read_sources, require
+from resource_version import TAG
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -90,7 +91,15 @@ def verify(pc_dir, saturn_dir, before, after, output_dir):
         seen.add(key)
         return match[1] + newline.join(s.encode("utf-8") for s in expected_bodies[key]) + newline + match[4]
 
-    require(pattern.sub(replace, raw) == after.read_bytes() and seen == TARGETS,
+    after_raw = after.read_bytes()
+    # #7 adds an explicit target; historical untagged #6 files remain auditable.
+    if TAG.encode() in after_raw.replace(b"\r\n", b"\n"):
+        prefix = b"[BEGIN SETTING]" + newline
+        marker = prefix + TAG.rstrip("\n").encode() + newline
+        require(after_raw.count(marker) == 1 and after_raw.count(TAG.rstrip("\n").encode()) == 1,
+                "Expected exactly one target tag using the original line endings")
+        after_raw = after_raw.replace(marker, prefix, 1)
+    require(pattern.sub(replace, raw) == after_raw and seen == TARGETS,
             "Output differs outside reviewed MESSAGE bodies")
     require(len(old) == len(new) == 4773 and len(new_map) == 4766 and
             set(new_map) == {(g["sid"], g["eid"]) for g in wg.values()},
@@ -152,7 +161,8 @@ def verify(pc_dir, saturn_dir, before, after, output_dir):
         "inputs": inputs, "inputs_unchanged": True, "review_sha256": sha256(REVIEW),
         "before": slf_summary(before), "after": slf_summary(after),
         "changed_keys": [list(k) for k in sorted(TARGETS)], "unchanged_blocks": len(old) - len(TARGETS),
-        "unchanged_unique_keys": len(new_map) - len(TARGETS), "all_other_bytes_unchanged": True,
+        "unchanged_unique_keys": len(new_map) - len(TARGETS),
+        "all_other_bytes_unchanged_except_optional_issue_7_resource_tag": True,
         "controls_preserved": True, "duplicates": duplicates(new),
         "prior_groups_preserved": preserved, "engine_fixture_keys": len(fixtures),
         "dialogue_render_groups": len(DIALOGUES), "description_render_objects": len(menu_objects),

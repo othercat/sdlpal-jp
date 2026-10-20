@@ -27,6 +27,8 @@ protected:
     }
 
     void TearDown() override {
+        PAL_FreeObjectDesc(gpGlobals->lpObjectDesc);
+        gpGlobals->lpObjectDesc = nullptr;
         PAL_FreeText();
         PAL_FreeFont();
         PAL_FreeConfig();
@@ -86,4 +88,30 @@ TEST_F(DescriptionLayout, LegacyDefaultsAndJapaneseSLFRenderWithoutItemRegressio
     EXPECT_GT(Ink(legacyMagic), 0u);
     EXPECT_EQ(legacyItem, japaneseItem);
     EXPECT_EQ(Ink(japaneseMagic), Ink(japaneseItem));
+}
+
+TEST_F(DescriptionLayout, ResourceTargetRejectsBothCrossVersionDirectionsBeforeLoading) {
+    const char *paths[] = {"tests/fixtures/description-dos-version.slf",
+                          "tests/fixtures/description-japanese-layout.slf"};
+    for (int target = 0; target < 2; ++target) {
+        PAL_FreeObjectDesc(gpGlobals->lpObjectDesc);
+        gpGlobals->lpObjectDesc = nullptr;
+        PAL_FreeText();
+        PAL_FreeConfig();
+        PAL_LoadConfig(FALSE);
+        gConfig.fIsWIN95 = !target;
+        gConfig.pszMsgFile = strdup(paths[target]);
+        EXPECT_EQ(-1, PAL_InitText());
+        EXPECT_EQ(nullptr, g_TextLib.lpMsgBuf);
+        EXPECT_EQ(nullptr, gpGlobals->lpObjectDesc);
+        gConfig.fIsWIN95 = target;
+        ASSERT_EQ(0, PAL_InitText());
+        if (!target) {
+            const int id = PAL_GetMsgNum(0, 0, 0);
+            ASSERT_GT(id, 0);
+            EXPECT_STREQ(L"Locked door", PAL_GetMsg(id));
+            EXPECT_STREQ(L"First*Second", PAL_GetObjectDesc(gpGlobals->lpObjectDesc, 266));
+            EXPECT_EQ(nullptr, PAL_GetObjectDesc(gpGlobals->lpObjectDesc, 106));
+        }
+    }
 }
