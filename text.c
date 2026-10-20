@@ -63,8 +63,8 @@ LPWSTR g_rcCredits[12];
 
 TEXTLIB         g_TextLib;
 
-// Source colors stay separate from the game's palette. Optional portraits are
-// quantized at dialogue start, then use the existing indexed fade/restore path.
+// Keep the indexed fallback for SDL1 and special palette effects. SDL2 also
+// retains source RGB in a companion plane through ordinary drawing/backup.
 typedef struct tagPALPORTRAIT
 {
    WORD width, height;
@@ -175,6 +175,8 @@ PAL_BlitDialogPortrait(LPCBITMAPRLE native, WORD id, PAL_POS pos)
          if (pixel != 0 && dx >= 0 && dx < gpScreen->w && dy >= 0 && dy < gpScreen->h)
             ((BYTE *)gpScreen->pixels)[dy * gpScreen->pitch + dx] = mapping[pixel];
       }
+   VIDEO_SetPortrait(gpScreen, portrait->pixels, portrait->width, portrait->height,
+      pos, g_PortraitPalette);
 }
 
 PAL_FORCE_INLINE int

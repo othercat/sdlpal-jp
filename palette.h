@@ -27,6 +27,9 @@
 
 PAL_C_LINKAGE_BEGIN
 
+// Read into caller-owned storage; rendering must not overwrite a fade's palette.
+BOOL PAL_ReadPalette(INT iPaletteNum, BOOL fNight, SDL_Color palette[256]);
+
 SDL_Color *
 PAL_GetPalette(
    INT         iPaletteNum,

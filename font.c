@@ -23,6 +23,7 @@
 #include "font.h"
 #include "util.h"
 #include "text.h"
+#include "video.h"
 
 #define _FONT_C
 
@@ -489,6 +490,7 @@ PAL_DrawCharOnSurface(
 				if (iso_font_8x8[wChar][i] & (1 << j))
 				{
 					dest[j] = bColor;
+					VIDEO_InvalidatePortraitPixel(lpSurface, x + j, y + i);
 				}
 			}
 		}
@@ -504,6 +506,7 @@ PAL_DrawCharOnSurface(
 					if (unicode_font[wChar][i] & (1 << (7 - j)))
 					{
 						dest[j] = bColor;
+						VIDEO_InvalidatePortraitPixel(lpSurface, x + j, y + i / 2);
 					}
 				}
 				for (j = 0; j < 8 && x + j + 8 < lpSurface->w; j++)
@@ -511,6 +514,7 @@ PAL_DrawCharOnSurface(
 					if (unicode_font[wChar][i + 1] & (1 << (7 - j)))
 					{
 						dest[j + 8] = bColor;
+						VIDEO_InvalidatePortraitPixel(lpSurface, x + j + 8, y + i / 2);
 					}
 				}
 			}
@@ -524,6 +528,7 @@ PAL_DrawCharOnSurface(
 					if (unicode_font[wChar][i] & (1 << (7 - j)))
 					{
 						dest[j] = bColor;
+						VIDEO_InvalidatePortraitPixel(lpSurface, x + j, y + i);
 					}
 				}
 			}

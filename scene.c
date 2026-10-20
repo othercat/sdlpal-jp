@@ -402,6 +402,7 @@ PAL_ApplyWave(
    //
    // Calculate the waving offsets.
    //
+   VIDEO_ClearPortraits(lpSurface); // Keep the indexed wave effect's geometry.
    a = 0;
    b = 60 + 8;
 
@@ -471,6 +472,8 @@ PAL_MakeScene(
 --*/
 {
    static SDL_Rect         rect = {0, 0, 320, 200};
+
+   VIDEO_ClearPortraits(gpScreen);
 
    //
    // Step 1: Draw the complete map, for both of the layers.

@@ -23,6 +23,7 @@
 #include "palcommon.h"
 #include "global.h"
 #include "palcfg.h"
+#include "video.h"
 
 BYTE
 PAL_CalcShadowColor(
@@ -158,6 +159,7 @@ PAL_RLEBlitToSurfaceWithShadow(
             //
             // Put the pixel onto the surface (FIXME: inefficient).
             //
+            VIDEO_InvalidatePortraitPixel(lpDstSurface, x, y);
             if(bShadow)
                ((LPBYTE)lpDstSurface->pixels)[y * lpDstSurface->pitch + x] = PAL_CalcShadowColor(((LPBYTE)lpDstSurface->pixels)[y * lpDstSurface->pitch + x]);
             else
@@ -305,6 +307,7 @@ PAL_RLEBlitWithColorShift(
                b += iColorShift;
             }
 
+            VIDEO_InvalidatePortraitPixel(lpDstSurface, x, y);
             ((LPBYTE)lpDstSurface->pixels)[y * lpDstSurface->pitch + x] =
                (b | (lpBitmapRLE[j] & 0xF0));
          }
@@ -453,6 +456,7 @@ PAL_RLEBlitMonoColor(
             {
                b += iColorShift;
             }
+            VIDEO_InvalidatePortraitPixel(lpDstSurface, x, y);
             ((LPBYTE)lpDstSurface->pixels)[y * lpDstSurface->pitch + x] = (b | bColor);
          }
          lpBitmapRLE += T;
@@ -502,6 +506,7 @@ PAL_FBPBlitToSurface(
    //
    // simply copy everything to the surface
    //
+   VIDEO_ClearPortraits(lpDstSurface);
    for (y = 0; y < 200; y++)
    {
       p = (LPBYTE)(lpDstSurface->pixels) + y * lpDstSurface->pitch;

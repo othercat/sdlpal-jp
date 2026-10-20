@@ -83,6 +83,107 @@ TEST(PortraitPalettes, ConfigurationIsOptInAndCanBeCleared) {
     PAL_FreeConfig();
 }
 
+#if SDL_VERSION_ATLEAST(2,0,0)
+namespace {
+struct PortraitCanvas {
+    SDL_Surface *indexed = SDL_CreateRGBSurface(0, 4, 4, 8, 0, 0, 0, 0);
+    SDL_Surface *rgb = SDL_CreateRGBSurface(0, 4, 4, 32,
+        0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000);
+    SDL_Color base[256] = {};
+    BYTE colors[768] = {};
+    PortraitCanvas() {
+        for (int i = 0; i < 256; ++i) {
+            base[i].r = i; base[i].g = i / 2; base[i].b = i / 3;
+        }
+        colors[3] = 248; colors[4] = 160; colors[5] = 104;
+        // Index 2 is opaque black; source index 0 alone is transparent.
+        const BYTE pixels[] = {1, 0, 2, 1};
+        SDL_SetPaletteColors(indexed->format->palette, base, 0, 256);
+        VIDEO_FillRect(indexed, nullptr, 7);
+        VIDEO_SetPortrait(indexed, pixels, 2, 2, PAL_XY(1, 1), colors);
+    }
+    ~PortraitCanvas() { VIDEO_FreeSurface(indexed); SDL_FreeSurface(rgb); }
+    Uint32 Pixel(int x, int y) {
+        return ((Uint32 *)((BYTE *)rgb->pixels + y * rgb->pitch))[x] & 0xffffff;
+    }
+    void Compose() { ASSERT_EQ(0, VIDEO_ComposeSurface(indexed, rgb, base)); }
+};
+}
+
+TEST(PortraitColors, IndependentRGBTransparencyWaitAndAllBlackFadeLevels) {
+    PortraitCanvas canvas;
+    const auto original = std::vector<BYTE>((BYTE *)canvas.indexed->pixels,
+        (BYTE *)canvas.indexed->pixels + 16);
+    for (int level = 0; level <= 64; ++level) {
+        SDL_Color colors[256] = {};
+        for (int i = 0; i < 256; ++i) {
+            colors[i].r = canvas.base[i].r * level / 64;
+            colors[i].g = canvas.base[i].g * level / 64;
+            colors[i].b = canvas.base[i].b * level / 64;
+        }
+        colors[249].r ^= 255; // A wait color must never recolor the portrait.
+        SDL_SetPaletteColors(canvas.indexed->format->palette, colors, 0, 256);
+        canvas.Compose();
+        EXPECT_EQ(Uint32((248 * level / 64) << 16 | (160 * level / 64) << 8 |
+            104 * level / 64), canvas.Pixel(1, 1));
+        EXPECT_EQ(0u, canvas.Pixel(1, 2)); // opaque black
+        EXPECT_EQ(Uint32((7 * level / 64) << 16 | (3 * level / 64) << 8 |
+            2 * level / 64), canvas.Pixel(2, 1)); // transparent padding
+    }
+    EXPECT_EQ(0, memcmp(original.data(), canvas.indexed->pixels, original.size()));
+    // A nonuniform special effect must preserve the existing indexed result.
+    SDL_SetPaletteColors(canvas.indexed->format->palette, canvas.base, 0, 256);
+    SDL_Color changed = {1, 2, 3, 255};
+    SDL_SetPaletteColors(canvas.indexed->format->palette, &changed, 7, 1);
+    canvas.Compose();
+    EXPECT_EQ(0x010203u, canvas.Pixel(1, 1));
+}
+
+TEST(PortraitColors, CopiesRestoreCoverageAndSameIndexDrawingErasesIt) {
+    PortraitCanvas canvas;
+    SDL_Rect area = {1, 1, 2, 2};
+    SDL_Surface *saved = SDL_CreateRGBSurface(0, 2, 2, 8, 0, 0, 0, 0);
+    SDL_SetPaletteColors(saved->format->palette, canvas.base, 0, 256);
+    ASSERT_EQ(0, VIDEO_CopySurface(canvas.indexed, &area, saved, nullptr));
+    // Identical index writes must still cover the portrait (no equality heuristic).
+    const BYTE rle[] = {1, 0, 1, 0, 1, 7};
+    PAL_RLEBlitToSurface(rle, canvas.indexed, PAL_XY(1, 1));
+    canvas.Compose();
+    EXPECT_EQ(0x070302u, canvas.Pixel(1, 1));
+    ASSERT_EQ(0, VIDEO_CopySurface(saved, nullptr, canvas.indexed, &area));
+    canvas.Compose();
+    EXPECT_EQ(0xf8a068u, canvas.Pixel(1, 1));
+    VIDEO_FillRect(canvas.indexed, &area, 7);
+    canvas.Compose();
+    EXPECT_EQ(0x070302u, canvas.Pixel(1, 2));
+    // Clipped fill must clear only the covered target pixels.
+    VIDEO_CopySurface(saved, nullptr, canvas.indexed, &area);
+    SDL_Rect clip = {1, 1, 1, 1};
+    SDL_SetClipRect(canvas.indexed, &clip);
+    VIDEO_FillRect(canvas.indexed, nullptr, 7);
+    SDL_SetClipRect(canvas.indexed, nullptr);
+    canvas.Compose();
+    EXPECT_EQ(0x070302u, canvas.Pixel(1, 1));
+    EXPECT_EQ(0xf8a068u, canvas.Pixel(2, 2));
+    VIDEO_ClearPortraits(canvas.indexed);
+    canvas.Compose();
+    EXPECT_EQ(0x070302u, canvas.Pixel(2, 2));
+    VIDEO_FreeSurface(saved);
+}
+
+TEST(PortraitColors, ClippedPortraitPlacementAndFullReset) {
+    PortraitCanvas canvas;
+    const BYTE pixels[] = {1, 1, 1, 1};
+    VIDEO_SetPortrait(canvas.indexed, pixels, 2, 2, PAL_XY(-1, -1), canvas.colors);
+    canvas.Compose();
+    EXPECT_EQ(0xf8a068u, canvas.Pixel(0, 0));
+    VIDEO_ClearPortraits(canvas.indexed);
+    canvas.Compose();
+    EXPECT_EQ(0x070302u, canvas.Pixel(0, 0));
+    EXPECT_EQ(0x070302u, canvas.Pixel(1, 1));
+}
+#endif
+
 // Run from the repository root. These fixtures need no proprietary game data.
 class DescriptionLayout : public testing::Test {
 protected:

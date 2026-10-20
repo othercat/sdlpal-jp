@@ -23,19 +23,42 @@
 #ifndef VIDEO_H
 #define VIDEO_H
 
-#include "common.h"
+#include "palcommon.h"
 
-#define VIDEO_CopySurface(s, sr, t, tr) SDL_BlitSurface((s), (sr), (t), (tr))
-#define VIDEO_CopyEntireSurface(s, t)   SDL_BlitSurface((s), NULL, (t), NULL)
-#define VIDEO_BackupScreen(s)           SDL_BlitSurface((s), NULL, gpScreenBak, NULL)
-#define VIDEO_RestoreScreen(t)          SDL_BlitSurface(gpScreenBak, NULL, (t), NULL)
-#define VIDEO_FreeSurface(s)            SDL_FreeSurface(s)
+#define VIDEO_CopyEntireSurface(s, t)   VIDEO_CopySurface((s), NULL, (t), NULL)
+#define VIDEO_BackupScreen(s)           VIDEO_CopyEntireSurface((s), gpScreenBak)
+#define VIDEO_RestoreScreen(t)          VIDEO_CopyEntireSurface(gpScreenBak, (t))
 
 PAL_C_LINKAGE_BEGIN
 
 extern SDL_Surface *gpScreen;
 extern SDL_Surface *gpScreenBak;
 extern volatile BOOL g_bRenderPaused;
+
+// SDL2 engine-owned indexed surfaces reserve userdata for an optional portrait
+// RGB plane. Ordinary drawing invalidates coverage even when the index is equal.
+PAL_FORCE_INLINE VOID VIDEO_InvalidatePortraitPixel(SDL_Surface *surface, int x, int y)
+{
+#if SDL_VERSION_ATLEAST(2,0,0)
+   if (surface->userdata != NULL && x >= 0 && x < surface->w && y >= 0 && y < surface->h)
+   {
+      SDL_Surface *layer = (SDL_Surface *)surface->userdata;
+      ((Uint32 *)((BYTE *)layer->pixels + y * layer->pitch))[x] = 0;
+   }
+#endif
+}
+
+INT VIDEO_CopySurface(SDL_Surface *source, const SDL_Rect *src,
+                      SDL_Surface *target, SDL_Rect *dst);
+INT VIDEO_FillRect(SDL_Surface *surface, const SDL_Rect *rect, Uint32 color);
+VOID VIDEO_FreeSurface(SDL_Surface *surface);
+VOID VIDEO_ClearPortraits(SDL_Surface *surface);
+VOID VIDEO_SetPortrait(SDL_Surface *surface, const BYTE *pixels, int w, int h,
+                       PAL_POS pos, const BYTE palette[768]);
+// Convert a complete logical frame, including independent portrait colors.
+// Unknown nonuniform palette effects deliberately use the indexed fallback.
+INT VIDEO_ComposeSurface(SDL_Surface *source, SDL_Surface *target,
+                         const SDL_Color base[256]);
 
 #if PAL_HAS_GLSL
 void Filter_StepParamSlot(int step);

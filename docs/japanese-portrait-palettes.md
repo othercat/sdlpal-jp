@@ -1,5 +1,7 @@
 # Issue #9：土星头像调色板核实与可选配色适配
 
+> 本文保留 R1 的资源审计与索引配色验证。当前 SDL2 夜景修复、独立 RGB 输出、兼容边界和新图见 [R2 夜景头像颜色](japanese-portrait-night-colors.md)；下文夜景量化误差属于 R1 基线。
+
 2026-10-21，关联 [#9](https://github.com/othercat/sdlpal-jp/issues/9)、[总管 #1](https://github.com/othercat/sdlpal-jp/issues/1)。实施基线为 `feature @ 8d562693d7bbe23f8b7cca06bc44b7ce0d6b978f`。
 
 **原版确实把头像放在独立于场景的调色板层上；本轮提供可选的按场景重新配色适配。** 保留 SDLPAL 现有 8 位屏幕、PC 头像矩形和渐变流程，没有引入独立 RGB 合成层。夜景等调色板可用颜色不足，仍有可见量化误差。默认不启用，继续使用 PC 头像；本轮源码验证完成，实机验收最后由用户统一进行。

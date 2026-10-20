@@ -16,7 +16,7 @@
 | [#6](https://github.com/othercat/sdlpal-jp/issues/6) | [译文校对](#issue-6) | 语义、语法与术语 |
 | [#7](https://github.com/othercat/sdlpal-jp/issues/7) | [DOS 映射](#issue-7) | DOS / Win 编号兼容性 |
 | [#8](https://github.com/othercat/sdlpal-jp/issues/8) | [重复键冲突](#issue-8) | 6 个重复键中的 2 个语义冲突 |
-| [#9](https://github.com/othercat/sdlpal-jp/issues/9) | [头像与调色板](#issue-9) | 已核实独立色表，86 头像可选按场景配色；待统一验收 |
+| [#9](https://github.com/othercat/sdlpal-jp/issues/9) | [头像与调色板](#issue-9) | 86 头像已适配，SDL2 日夜源色合成及回归完成；待统一验收 |
 | [#10](https://github.com/othercat/sdlpal-jp/issues/10) | [字体与跨引擎对照](pal98-font-rendering-comparison.md) | PAL98 实机基线、SDLPAL 源码出图及布局前后证据 |
 
 2026-10-20 后续：[83–87 实现复核](japanese-description-layout-verification.md) 将正文裁切从基线 12 行减少为赤血蚕 1 行；[#10 源码渲染](pal98-font-rendering-comparison.md) 提供实际绘制证据。随后[赤血蚕换行适配](japanese-red-silkworm-layout.md)核对土星原始消息，仅在生成的 Win SLF 移动一个换行；加载适配后 SLF 时，剩余正文与阴影越界均为 0。完整游戏验收待完成。下文保留原审计基线。
@@ -296,7 +296,9 @@ Win 消息 **6744–6745** / 脚本 **18615**；土星消息 **8709–8711** / �
 
 ## Issue 9
 
-2026-10-21 后续：[原版证据、适配方案与源码对比](japanese-portrait-palettes.md)已核实 `RGM.JOE`、`ALLDAT.NEW` 的零基 bank 3 及 NBG1 绑定。Win／DOS 分别建立 86 个已审编号；空槽 38 等保留 PC 原图。新增可选头像包与按场景重新配色，保留默认 PC 行为及现有 8 位绘制；8,356 帧源码检查和文本／菜单回归已完成。夜景仍有量化色差，不是无损独立 RGB 合成。真实土星参考、实际渐变／RNG／场景及游戏流程留待统一验收。下面保留建单时尚未提取资源的调查基线。
+2026-10-21 R1：[原版证据、适配方案与源码对比](japanese-portrait-palettes.md)已核实 `RGM.JOE`、`ALLDAT.NEW` 的零基 bank 3 及 NBG1 绑定。Win／DOS 分别建立 86 个已审编号；空槽 38 等保留 PC 原图。可选头像包与按场景重新配色保留默认 PC 行为及现有 8 位绘制。
+
+2026-10-21 R2：[夜景源色合成、原版复核与前后图](japanese-portrait-night-colors.md)处理 R1 的夜景量化色差。原盘已审路径没有头像夜景色表；SDL2 正常日夜显示采用适配后的源 RGB，保留索引兼容路径。8,356 帧、150 个对白／菜单视图和 16 项单元测试通过。特殊颜色渐变、索引特效与 SDL1 仍使用索引回退；动态土星硬件效果及完整游戏流程留待统一验收。下面保留建单时尚未提取资源的调查基线。
 
 **核实并适配土星人物头像与调色板。** 2026-10-20 用户转述 PalMusicFan：“我记得土星版支持同屏多调色板，人物头像是独立调色板的，得重新配色。”此项作为待核实的资源兼容线索；当前审计没有提取或解码土星头像，不能把回忆性描述写成已验证的资源格式，也不能据此判定现有日文化版本所有头像都错色。
 
