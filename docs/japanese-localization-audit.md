@@ -10,10 +10,11 @@
 | [#2](https://github.com/othercat/sdlpal-jp/issues/2) | [工具与基线](#issue-2) | 三个 Release 附件纳管 |
 | [#3](https://github.com/othercat/sdlpal-jp/issues/3) | [遗漏映射](#issue-3) | 119 组 / 290 个 Win 消息 ID |
 | [#4](https://github.com/othercat/sdlpal-jp/issues/4) | [场景错配](#issue-4) | 比武招亲 10 组 NPC 对白 |
-| [#5](https://github.com/othercat/sdlpal-jp/issues/5) | [说明裁字](#issue-5) | 11 个对象 / 12 行 |
+| [#5](https://github.com/othercat/sdlpal-jp/issues/5) | [说明布局兼容](#issue-5) | SLF 布局参数；当前基线 11 个对象 / 12 行裁字 |
 | [#6](https://github.com/othercat/sdlpal-jp/issues/6) | [译文校对](#issue-6) | 语义、语法与术语 |
 | [#7](https://github.com/othercat/sdlpal-jp/issues/7) | [DOS 映射](#issue-7) | DOS / Win 编号兼容性 |
 | [#8](https://github.com/othercat/sdlpal-jp/issues/8) | [重复键冲突](#issue-8) | 6 个重复键中的 2 个语义冲突 |
+| [#9](https://github.com/othercat/sdlpal-jp/issues/9) | [头像与调色板](#issue-9) | 土星头像资源与独立调色板线索，待调查 |
 
 ## Audit baseline
 
@@ -31,11 +32,13 @@
 | 土星源消息总数 | 17171 |
 | 解析的物品与法术说明对象 | 296 |
 | 说明名义字框越界：行 / 对象 | 20 / 19 |
-| 说明真实字形裁切：行 / 对象 | 12 / 11 |
+| 当前布局下说明真实字形裁切：行 / 对象 | 12 / 11 |
 | 普通对白实字越界行数（本次设置） | 0 |
 | 错误控制码 / 不支持的 Unicode 字符 | 0 / 0 |
 
 原始 `summary.json` 的 `nmsgs=16835` 是索引相关值，不能当作正文行数。130 组未选源文本也不能全算 PC 漏译：119 组有恢复候选，其余 11 组需要另作判断。
+
+说明裁字数量限定于当前代码与生成 SLF 的组合：物品起点 `x=71`、法术起点 `x=102`，并已计入额外说明行。2026-10-20 根据用户转述的 PalMusicFan 布局反馈补查，确认本仓已有两列菜单及更多说明行支持，但未接入转换器输出的法术布局参数 83–87。详见 [Issue 5](#issue-5)；不能将原版日文换行直接判为错误，也不能把上述数量推广到完整适配后的布局。
 
 已完成的原审计包括：实际运行 `makemessage_j.py` 生成 Win SLF；独立核对全部 4654 块的起止编号和正文；静态消息键统计；部分场景与控制流追溯；296 个说明入口的内置字体像素计算。生成的 SLF SHA256 为 `f15a22cb2e999680119e08bae021cb61f366d6f45655ef4e33019472e9388c54`。
 
@@ -56,6 +59,28 @@
 | Saturn | `JM.SEC` | `4956999afe7bb1cf023269675bc6360c61e98e604c4a1414c7f8e038807bce95` |
 | Saturn | `PROG.BIN` | `4ff1d34c0345a1e0ba2959ef5d1d437338f9370f6eaaa68e6d3bbe3e07d6e33c` |
 
+## Selected dialogue screenshots
+
+以下三张图截自原始审计报告 `report.html` 的“完整可检索对照”，用于阅读经典台词、核对消息与脚本编号，**不是游戏运行截图，也不代表实机验收通过**。左侧为 Win 中文，右侧为当前映射生效的土星日文；保留原换行和控制码，没有改写成修订译文。`$01`、`~60` 等是源文本控制码，`[CLEAR MESSAGE]` 是审计报告的清屏分隔标记。
+
+### 开场梦境：“要杀要剐不用多说”
+
+Win 消息 **1–4** / 脚本 **13**；土星消息 **2–8** / 脚本 **14**。原译末句 `おのれ、殺してやる！` 把任凭对方处置变成主动杀对方，是 [#6](#issue-6) 的语义校对例子。
+
+![开场梦境中日对照，Win 1–4 与土星 2–8](images/japanese-audit/opening-dream-comparison.png)
+
+### 灵儿吟诗：“既不回头，何必不忘”
+
+Win 消息 **1759–1763** / 脚本 **4689**；土星消息 **2366–2374** / 脚本 **5297**。作为经典台词与日文行数的对照样例；中文和日文的行数不同，本身不构成漏映射证据。此处收录不等于已经完成该段译文审校。
+
+![灵儿诗句中日对照，Win 1759–1763 与土星 2366–2374](images/japanese-audit/linger-poem-comparison.png)
+
+### 月如：“吃到老！玩到老！”
+
+Win 消息 **6744–6745** / 脚本 **18615**；土星消息 **8709–8711** / 脚本 **20297**。采用不含速度控制码的这一处对白；截图下方折叠行是另一处 Win **10209–10210**，不能把两处消息编号混用。本图用于经典台词展示，不作为新增缺陷认定。
+
+![月如吃到老玩到老的中日对照，Win 6744–6745 与土星 8709–8711](images/japanese-audit/yueru-promise-comparison.png)
+
 ## Issue 1
 
 **总管、分支和永久追溯。** #1 汇总所有子 Issue，采用以下独立分支；实施基线和合入目标为 `feature`。
@@ -70,8 +95,9 @@
 | #6 | `richardli/fix/6-correct-saturn-japanese-translation` |
 | #7 | `richardli/feat/7-add-dos-japanese-message-mapping` |
 | #8 | `richardli/fix/8-resolve-conflicting-message-keys` |
+| #9 | `richardli/feat/9-adapt-saturn-portrait-palettes` |
 
-先完成 #2 工具基线，再推进 #3、#4、#5、#8；#6 与各项修复联合校读；#7 单独验证 DOS 编号体系。分支命名规则为 `richardli/<feat|fix>/<issue-id>-<issue-title>`。
+先完成 #2 工具基线，再推进 #3、#4、#5、#8；#6 与各项修复联合校读；#7 单独验证 DOS 编号体系。#9 是新增的头像资源调查与适配项，不影响已核实的文本问题数量。分支命名规则为 `richardli/<feat|fix>/<issue-id>-<issue-title>`。
 
 实现与合并提交须有主题、说明改动和验证的非空正文，以及 `Refs #<issue-id>`。默认普通 merge，保留原始实现提交和合并节点。允许在具体 PR 完成适当验证并满足检查后启用自动合并；仓库选项本身不等于已配置强制检查或自动记录程序。
 
@@ -149,7 +175,33 @@
 
 ## Issue 5
 
-**物品与法术说明的真实字形裁切。** 内置日文字形逐像素检查确认 11 个对象、12 行丢失右侧笔画。物品起点 `x=71`、可用 249px；法术起点 `x=102`、可用 218px。
+**先核对土星日文布局兼容，再处理剩余说明裁字。** 2026-10-20 用户转述 PalMusicFan：土星日版给文字的空间更多，说明换行沿用日版设计；名称最长 8 个全角字，道具栏为两列，说明需要更多行。这是布局适配线索，不能直接据此认定所有裁字都无解，或要求改写原版日文换行。
+
+本仓代码与现有生成文件的补查结果如下，代码链接固定到上述审计基线：
+
+| 项目 | 已核实的行为 | 依据 |
+| --- | --- | --- |
+| 名称与列数 | 读取 SLF 后按 WORDS 实际字宽重算 `dwWordLength`；当前文件最大为 16 个半角单位，即 8 全角 / 128px，道具和法术均按 `32 / dwWordLength` 得到两列 | [text.c:688](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/text.c#L688)、[itemmenu.c:53](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/itemmenu.c#L53)、[magicmenu.c:58](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/magicmenu.c#L58) |
+| 自定义布局入口 | `[BEGIN LAYOUT]` 在 WORDS 之前出现时启用自定义布局；`FontFlavor=Japanese` 只负责日文字形 | [text.c:245](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/text.c#L245)、[text.c:435](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/text.c#L435) |
+| 更多说明行 | SLF 已写 `81=2,0`、`82=1,0`；物品列表为 5 行、说明起点 `y=119`，法术列表为 4 行、菜单框起点 `y=58`。原静态审计已经采用这些纵向参数 | [itemmenu.c:55](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/itemmenu.c#L55)、[magicmenu.c:122](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/magicmenu.c#L122)、[script.c:3568](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/script.c#L3568) |
+| 布局协议缺口 | 转换器还输出 83–87，当前 `SCREENLAYOUT` 只有 82 项；解析器忽略超出结构大小的索引 | [palcfg.h:126](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/palcfg.h#L126)、[text.c:534](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/text.c#L534) |
+| 法术说明与 MP 框 | 说明起点仍为 `x=102`，MP 框宽度与坐标也仍固定；目前不能只靠现成配置使 `87=70,0` 生效 | [script.c:3567](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/script.c#L3567)、[magicmenu.c:211](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/magicmenu.c#L211) |
+
+已固定指纹的 `makemessage_j.py` 第 375–383 行及其生成 SLF 声明：
+
+```text
+83=3,0    # 法术 MP 栏宽度
+84=30,14  # 斜线坐标
+85=5,14   # 所需 MP 坐标
+86=31,14  # 当前 MP 坐标
+87=70,0   # 法术说明 X 起点
+```
+
+上面的行尾注释为本文说明，实际文件的说明位于独立注释行。优先确认转换器与引擎版本/协议是否匹配，并接入或选择已支持这些参数的对应实现。支持日文字体、两列和更多说明行，并不等于已经支持全部日版布局参数。
+
+### 当前基线的静态裁字清单
+
+内置日文字形逐像素检查确认：在当前生效布局下，11 个对象、12 行丢失右侧笔画。物品起点 `x=71`、可用 249px；法术起点 `x=102`、可用 218px。这是该代码与 SLF 组合下的结果，不是完整日版布局的实测结论。
 
 | 对象 ID | 对象 | Win 消息起点 | Win 脚本 | 被裁字形 |
 | ---: | --- | ---: | ---: | --- |
@@ -165,9 +217,13 @@
 | 393 | 仙风云体术 | 13457 | 43344 | る。 |
 | 394 | 乾坤一掷 | 13464 | 43361 | る。 |
 
-名义字框越界的 20 行/19 对象不是实际裁字数。原审计的 `display-clipping-evidence.png` 是静态字形复现，不是游戏截图。普通剧情对白的正常分页不算遗漏。
+名义字框越界的 20 行/19 对象不是实际裁字数。下图原样引用原审计的 `display-clipping-evidence.png`，采用当前生效的法术 `x=102`、物品 `x=71`，使用真实内置日文字形。红线表示逻辑屏幕 `x=320`，红色为越界笔画；**这是静态字形复现，不是游戏截图，也不是接入 `87=70` 后的效果**。
 
-修正后须逐项核验像素边界，同时检查行数和底部边界，避免改为纵向截断。回归 296 个说明对象及普通对白分页；实际游戏菜单中的截图应记录构建、字体、显示配置。自定义字体或其他引擎未测时须明确保留边界。
+![酒神与赤血蚕在当前生效布局下的静态裁字复现](images/japanese-audit/description-clipping-baseline.png)
+
+从已有像素坐标推断，若 11 条法术说明裁字行整体左移 32px，最大字形右端会从 `x=345` 移到 `x=313`，提示接入 `87=70` 可能消除这些行的横向裁字。此为坐标推断，尚未重新渲染或实机确认；仍须检查 MP 框遮挡、纵向范围及全部说明。赤血蚕属于物品说明，须独立处理。普通剧情对白的正常分页不算遗漏。
+
+验收顺序：先核对 83–87 的解析与实际使用、旧布局默认值和中文兼容；再按生效后的布局重新计算全部 296 个说明对象的像素边界；最后只对剩余问题决定换行、校译或绘制调整，保留语义、数值和控制码。检查行数与底部边界，避免改为纵向截断。实际游戏中回归两列菜单、8 全角名称、MP 框、普通对白分页及受影响说明，并记录构建、字体、显示配置与截图。自定义字体或其他引擎未测时须明确保留边界。本次仅补充调查记录，尚未实施引擎修复或游戏验收。
 
 ## Issue 6
 
@@ -216,6 +272,20 @@
 同键后写入译文会覆盖先前内容。应核实所有调用场景，采用适用的中性措辞或有依据的场景区分方案，并对全部 6 个键说明处置。不能仅删重复行，或依赖写入顺序隐式选择译文。
 
 验收须检查最终有效映射、所有拾取/采集调用点、正常同文重复键及游戏中的相关获取场景。
+
+## Issue 9
+
+**核实并适配土星人物头像与调色板。** 2026-10-20 用户转述 PalMusicFan：“我记得土星版支持同屏多调色板，人物头像是独立调色板的，得重新配色。”此项作为待核实的资源兼容线索；当前审计没有提取或解码土星头像，不能把回忆性描述写成已验证的资源格式，也不能据此判定现有日文化版本所有头像都错色。
+
+当前代码能确认的是“日文文本配 PC 头像”的链路：
+
+- [global.c:182](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/global.c#L182) 打开 PC 的 `RGM.MKF`；[text.c:1268](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/text.c#L1268) 与 [text.c:1313](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/text.c#L1313) 按脚本头像编号读取并绘制到 `gpScreen`，没有日文头像替换或头像独立调色板参数。
+- [palcommon.c:164](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/palcommon.c#L164) 直接写入颜色索引；[video.c:210](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/video.c#L210) 的逻辑屏幕为 320×200、8bpp。[palette.c:52](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/palette.c#L52) 从 `PAT.MKF` 读取场景/日夜调色板，[video.c:605](https://github.com/othercat/sdlpal-jp/blob/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207/video.c#L605) 把同一套颜色应用到屏幕与备份。最终输出存在 32 位表面，不代表当前头像链路已支持独立调色板。
+- 三个发布工具处理文字、SLF 与布局，不转换 `RGM` 或 `PAT`。光盘目录清单列有候选文件 `RGM.JOE`（1,013,760 字节），但尚未提取、解码或确定其调色板来源；不能凭 `RNG.PAL` 等文件名认定用途。
+
+实施前先确认土星头像文件、编号、尺寸、透明规则、调色板位置及绑定关系，记录样本指纹，并与可追溯的土星实际画面对照。建立 PC 编号—土星人物/表情对应后，再决定颜色重映射或独立颜色合成方案，不能直接把头像索引套到场景调色板，或盲目替换全局调色板。
+
+验收应覆盖上/下方对话头像、日夜场景、场景切换、渐变、RNG 背景和对话等待色轮，确认头像、背景、文字及其他角色颜色均正确，保留默认 PC 资源行为。记录被测提交/构建、资源、配置、前后截图与测试日期。本项独立于文本映射和说明布局，当前为待调查，尚无头像移植或实机验收结果。
 
 ## Omitted mapping index
 
@@ -345,7 +415,7 @@
 
 ## Source manifest
 
-本文依据 2026-10-20 的 `saturn-japanese-audit-20261020` 审计产物整理，已将当前 Issue 所需的统计、编号、定位表和边界写入上文。原始 JSON、HTML 与 PNG 保留在审计归档，未随本次 Markdown 一起纳入仓库；下列文件名是溯源标识，不是可点击的仓库文件链接。
+本文依据 2026-10-20 的 `saturn-japanese-audit-20261020` 审计产物整理，已将当前 Issue 所需的统计、编号、定位表和边界写入上文。三张经典台词图截取自下列原始 `report.html`，消息编号与 `comparison-corpus.json` 一致；说明裁字图原样复制到 [`images/japanese-audit/`](images/japanese-audit/)，图片随本文纳入仓库。原始 JSON 和完整 HTML 保留在审计归档；下表文件名是溯源标识，不是可点击的仓库文件链接。截图没有重新运行转换器、修改源文本或运行游戏。
 
 | 原始产物 | 对应信息 | SHA256 |
 | --- | --- | --- |
@@ -362,3 +432,4 @@
 | description-display-issues.json | 对象、说明、脚本与裁字 | 8746ab5c67d123646b5156b2eb80cc21f677aa0bee80d604cff7a31ba90cb437 |
 | translation-review.json | 译文抽查定位 | 04fec76f9e353814c8e242e8423f4a565d0665da002337ae853420d54935a299 |
 | report.html | 原始完整审计报告 | 256b7a9a4e62c97226b6019dc97f7584b96cd056db90ff69172a8bb937f00a16 |
+| display-clipping-evidence.png | 当前布局静态裁字图，原样纳入仓库 | e04ed07a2dead843a4b0e0ffb33681f10675d3be17b995a688166fee849db4fd |
