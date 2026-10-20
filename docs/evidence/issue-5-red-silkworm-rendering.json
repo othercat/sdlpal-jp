@@ -1,0 +1,241 @@
+{
+  "method": "same engine binary, real item/magic/dialogue drawing; only SLF break changes",
+  "base_commit": "9ad6f945687ccb692f47c6693e7ad2c5413c33be",
+  "executable_sha256": "24999f4503462c15733bf4a6bc1c5e445584d493e9e62d81acc520f989775ff6",
+  "input_sha256": {
+    "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\paljpn-win.slf": "f15a22cb2e999680119e08bae021cb61f366d6f45655ef4e33019472e9388c54",
+    "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-5\\red-silkworm-r2-20261020\\paljpn-win-adapted.slf": "f4ffb5753a1a168a23a27426aa6163cd35c35a85d3fd5a8d5f69c0ef2e7f595e",
+    "D:\\Workspace\\KnowledgeRoots\\PAL\\PalMusicFan\\sdlpal\\artifacts\\saturn-japanese-audit-20261020\\description-render-layouts.json": "d074148cebc3e353ab0c33a256fd1c23ba3c257aff0823f8879d9ada4ef70f04"
+  },
+  "resource_sha256": {
+    "ABC-ori.MKF": "f9685ba8d22e851a4be492c6b74fbc671d89112d64394e7af86ec7a23751529c",
+    "ABC.mkf": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b",
+    "BALL.MKF": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0",
+    "DATA.MKF": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+    "F.MKF": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7",
+    "FBP.MKF": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84",
+    "FIRE.MKF": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf",
+    "GOP.MKF": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b",
+    "M.MSG": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+    "MAP.MKF": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575",
+    "MGO.mkf": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0",
+    "MUS.MKF": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21",
+    "PAT.MKF": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997",
+    "RGM.MKF": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132",
+    "RNG.MKF": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd",
+    "SOUNDS.MKF": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01",
+    "SSS.MKF": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+    "WORD.DAT": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+  },
+  "source_sha256": {
+    "tests/render_evidence.cpp": "474eb5b93d552179ad22b4a6f949459b2d9ae6f31fa37ef68247fa6e5d90956c",
+    "fontglyph.h": "03c14caeb15178fef4f87c23d466d8ce26b10332bc0a43295726c6b5ea4c6252",
+    "fontglyph_jp.h": "ac0e164c4d835e3ae9db87dc8eda97603b6731db96e1b378afcd0bbcdba0d79e",
+    "tools/adapt_red_silkworm_description.py": "42af478e0c6cd7b110667d8ce7e079d7305c7c4f57a4e7d23acaf116522a6f69",
+    "tools/verify_description_layout.py": "05280f3fb4ea18407fe636c8ce3e21f967e7bd34e980f53f903b7bb44b227387",
+    "tools/verify_red_silkworm_rendering.py": "6a4e22e6c15a514245e7c6ce63fe1f2034ae961790fd35e88f604030364c3199"
+  },
+  "static": {
+    "before": {
+      "objects": 296,
+      "lines": 793,
+      "clipped_objects": 1,
+      "clipped_lines": 1,
+      "clipped_ink_shadow_union": [
+        31,
+        38,
+        69
+      ],
+      "magic_rightmost_ink_and_shadow": [
+        313,
+        314
+      ],
+      "magic_pixels_at_or_below_menu_y58": 0,
+      "overlap_pairs_ink_and_union_pixels": [
+        360,
+        0,
+        1154
+      ]
+    },
+    "after": {
+      "objects": 296,
+      "lines": 793,
+      "clipped_objects": 0,
+      "clipped_lines": 0,
+      "clipped_ink_shadow_union": [
+        0,
+        0,
+        0
+      ],
+      "magic_rightmost_ink_and_shadow": [
+        313,
+        314
+      ],
+      "magic_pixels_at_or_below_menu_y58": 0,
+      "overlap_pairs_ink_and_union_pixels": [
+        361,
+        0,
+        1156
+      ]
+    }
+  },
+  "engine": {
+    "before": {
+      "log": "Rendered jp: 12 BMPs, 320x200, palette 0, font flavor 4, font height 16, word length 16, magic description X=70",
+      "clipped_ink_by_object": {
+        "306": 0,
+        "307": 0,
+        "308": 0,
+        "311": 0,
+        "370": 0,
+        "374": 0,
+        "377": 0,
+        "390": 0,
+        "393": 0,
+        "394": 0,
+        "149": 31
+      },
+      "images": {
+        "aunt-dialogue.png": {
+          "sha256": "344b72802c91b6a5d9549d8b330b89a7983b0c48028af67e8617cf36d45ffb84",
+          "bytes": 34063
+        },
+        "item-149.png": {
+          "sha256": "157a774239d6f628145c526b707ffafe18f34cc336909002b4b1a9eee18b6a05",
+          "bytes": 20494
+        },
+        "magic-306.png": {
+          "sha256": "9ec058ca18b0dbc6edd02d5786f46e0d7073d7a2d8f3230d39e95a6bec54d3cd",
+          "bytes": 23304
+        },
+        "magic-307.png": {
+          "sha256": "f13eec51e42fe871a703a0831c6aa3a0e7b7dd28a23d46aed4454d67a7ef0c11",
+          "bytes": 23406
+        },
+        "magic-308.png": {
+          "sha256": "5b3a167166a79ea90defc89e900566bc815fcf36080141f4af1b7ecc680cb09c",
+          "bytes": 23941
+        },
+        "magic-311.png": {
+          "sha256": "f57b1ca8e1214dfd96293b1983e5839aff8297d0e74b5dde19273d65f19d8381",
+          "bytes": 23747
+        },
+        "magic-370.png": {
+          "sha256": "ab58496c155ed4fbdacae9404de2ddc83fbe6fca0760e843b55b604b45b9d32c",
+          "bytes": 24102
+        },
+        "magic-374.png": {
+          "sha256": "25593696e7111371731a3a92d2949fa8d30d1d85e61c69cf378a013df25ab20f",
+          "bytes": 24370
+        },
+        "magic-377.png": {
+          "sha256": "ff11f97e36d2ee747ae7017d3d6e311ad44981cc52eb30c6de59caf625a19ed7",
+          "bytes": 23886
+        },
+        "magic-390.png": {
+          "sha256": "8b36641204c87b2e79c26dc7dd2124f203f5eeb7427d5fac2a946ddd6a7f6929",
+          "bytes": 24160
+        },
+        "magic-393.png": {
+          "sha256": "4665f7b684a6c26d39d240f7231ef8238c26a4a942f94e3635f6b4b889811ea3",
+          "bytes": 21896
+        },
+        "magic-394.png": {
+          "sha256": "b28a28c3ef001650da2e0b2f30d76b39d9156f2172530a7f2af34973c2625339",
+          "bytes": 22682
+        }
+      }
+    },
+    "after": {
+      "log": "Rendered jp: 12 BMPs, 320x200, palette 0, font flavor 4, font height 16, word length 16, magic description X=70",
+      "clipped_ink_by_object": {
+        "306": 0,
+        "307": 0,
+        "308": 0,
+        "311": 0,
+        "370": 0,
+        "374": 0,
+        "377": 0,
+        "390": 0,
+        "393": 0,
+        "394": 0,
+        "149": 0
+      },
+      "images": {
+        "aunt-dialogue.png": {
+          "sha256": "344b72802c91b6a5d9549d8b330b89a7983b0c48028af67e8617cf36d45ffb84",
+          "bytes": 34063
+        },
+        "item-149.png": {
+          "sha256": "a7b17db33ecb13090beb8556d0a2782771f1fad72a4b7ca20cd0e8dd2504880b",
+          "bytes": 20516
+        },
+        "magic-306.png": {
+          "sha256": "9ec058ca18b0dbc6edd02d5786f46e0d7073d7a2d8f3230d39e95a6bec54d3cd",
+          "bytes": 23304
+        },
+        "magic-307.png": {
+          "sha256": "f13eec51e42fe871a703a0831c6aa3a0e7b7dd28a23d46aed4454d67a7ef0c11",
+          "bytes": 23406
+        },
+        "magic-308.png": {
+          "sha256": "5b3a167166a79ea90defc89e900566bc815fcf36080141f4af1b7ecc680cb09c",
+          "bytes": 23941
+        },
+        "magic-311.png": {
+          "sha256": "f57b1ca8e1214dfd96293b1983e5839aff8297d0e74b5dde19273d65f19d8381",
+          "bytes": 23747
+        },
+        "magic-370.png": {
+          "sha256": "ab58496c155ed4fbdacae9404de2ddc83fbe6fca0760e843b55b604b45b9d32c",
+          "bytes": 24102
+        },
+        "magic-374.png": {
+          "sha256": "25593696e7111371731a3a92d2949fa8d30d1d85e61c69cf378a013df25ab20f",
+          "bytes": 24370
+        },
+        "magic-377.png": {
+          "sha256": "ff11f97e36d2ee747ae7017d3d6e311ad44981cc52eb30c6de59caf625a19ed7",
+          "bytes": 23886
+        },
+        "magic-390.png": {
+          "sha256": "8b36641204c87b2e79c26dc7dd2124f203f5eeb7427d5fac2a946ddd6a7f6929",
+          "bytes": 24160
+        },
+        "magic-393.png": {
+          "sha256": "4665f7b684a6c26d39d240f7231ef8238c26a4a942f94e3635f6b4b889811ea3",
+          "bytes": 21896
+        },
+        "magic-394.png": {
+          "sha256": "b28a28c3ef001650da2e0b2f30d76b39d9156f2172530a7f2af34973c2625339",
+          "bytes": 22682
+        }
+      }
+    }
+  },
+  "item149_changed_bounds_exclusive": [
+    71,
+    119,
+    320,
+    151
+  ],
+  "checks": {
+    "only_guarded_slf_break_changed": true,
+    "all_24_png_pixel_roundtrips": true,
+    "engine_matches_static_audit": true,
+    "unchanged_engine_images": [
+      "aunt-dialogue.bmp",
+      "magic-306.bmp",
+      "magic-307.bmp",
+      "magic-308.bmp",
+      "magic-311.bmp",
+      "magic-370.bmp",
+      "magic-374.bmp",
+      "magic-377.bmp",
+      "magic-390.bmp",
+      "magic-393.bmp",
+      "magic-394.bmp"
+    ],
+    "all_296_objects_no_clipped_ink_or_shadow": true
+  }
+}

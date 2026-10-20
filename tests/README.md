@@ -48,3 +48,14 @@ When you finished writting test codes, you can use ***`make check`*** to compile
 ### Special notes for ***Visual Studio*** users
 
 You should put all test files into the ***Test Files*** filter, and make sure you've excluded them for compilation in configurations other than **Test**.
+
+### Japanese SLF adapter
+
+The resource-independent input/file-preservation checks run separately:
+
+```powershell
+& (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tests\test_red_silkworm_adapter.py -v
+```
+
+The [red silkworm verification record](../docs/japanese-red-silkworm-layout.md)
+also documents the resource-backed before/after engine rendering checks.

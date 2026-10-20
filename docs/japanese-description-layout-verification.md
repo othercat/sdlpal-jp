@@ -2,6 +2,8 @@
 
 关联 [Issue #5](https://github.com/othercat/sdlpal-jp/issues/5)、[总管 #1](https://github.com/othercat/sdlpal-jp/issues/1)。[原始审计](japanese-localization-audit.md#issue-5) 保留移植前的 12 行基线；本记录是后续实现与验证。跨引擎字体、字号及实机截图由 [#10](https://github.com/othercat/sdlpal-jp/issues/10) 承接。
 
+后续进展：[赤血蚕换行适配](japanese-red-silkworm-layout.md)已确认土星原始消息边界，并在生成的 Win SLF 调整一处换行。加载适配文件时，剩余 31 个正文及 38 个纯阴影越界像素归零。本页下文保留 83–87 合入时的历史结果，完整游戏验收仍待完成。
+
 ## 采用的上游实现
 
 上游已有独立提交 [d82e20f9fc38126602bebdd60f2aca3c4e552b09](https://github.com/PalMusicFan/sdlpal/commit/d82e20f9fc38126602bebdd60f2aca3c4e552b09)，作者 palxex，日期 2022-07-23。其标题写 83–86，但实际包含 **83–87**。本次抓取完整上游引用后确认：提交可从 `let_us_dub` 到达，不能从 `master` / `v2026.08`（`6dafc9c79718058f3a1a4ab8a3d3e30a102ab207`）到达。
