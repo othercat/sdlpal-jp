@@ -208,9 +208,9 @@ def prepare_resources(path, encoding):
                 process = subprocess.Popen(
 
                     [
-                        sys.executable,
+                        sys.executable, "-X", "utf8",
 
-                        "steam_to_legacy.py",
+                        os.path.join(os.path.dirname(os.path.abspath(__file__)), "steam_to_legacy.py"),
 
                         "msg",
 
@@ -225,7 +225,7 @@ def prepare_resources(path, encoding):
 
                     stderr=subprocess.STDOUT,
 
-                    text=True
+                    encoding="utf-8"
 
                 )
 
@@ -237,6 +237,7 @@ def prepare_resources(path, encoding):
                     )
 
 
+                process.stdout.close()
                 process.wait()
 
 
@@ -248,7 +249,7 @@ def prepare_resources(path, encoding):
 
 
                     shutil.copyfile(
-                        m_source,
+                        os.path.join(path, m_source),
                         m_target
                     )
 
@@ -262,9 +263,7 @@ def prepare_resources(path, encoding):
 
                 else:
 
-                    write_output(
-                        "\nSteam_to_legacy msg generator failed.\n"
-                    )
+                    raise RuntimeError("Steam_to_legacy msg failed (exit %s)." % process.returncode)
 
 
 
@@ -275,6 +274,7 @@ def prepare_resources(path, encoding):
                     + str(e)
                     + "\n"
                 )
+                raise
 
 
     else:
@@ -318,9 +318,9 @@ def prepare_resources(path, encoding):
                 process = subprocess.Popen(
 
                     [
-                        sys.executable,
+                        sys.executable, "-X", "utf8",
 
-                        "steam_to_legacy.py",
+                        os.path.join(os.path.dirname(os.path.abspath(__file__)), "steam_to_legacy.py"),
 
                         "word",
 
@@ -335,7 +335,7 @@ def prepare_resources(path, encoding):
 
                     stderr=subprocess.STDOUT,
 
-                    text=True
+                    encoding="utf-8"
 
                 )
 
@@ -347,6 +347,7 @@ def prepare_resources(path, encoding):
                     )
 
 
+                process.stdout.close()
                 process.wait()
 
 
@@ -358,7 +359,7 @@ def prepare_resources(path, encoding):
 
 
                     shutil.copyfile(
-                        word_source,
+                        os.path.join(path, word_source),
                         word_target
                     )
 
@@ -372,9 +373,7 @@ def prepare_resources(path, encoding):
 
                 else:
 
-                    write_output(
-                        "\nSteam_to_legacy word generator failed.\n"
-                    )
+                    raise RuntimeError("Steam_to_legacy word failed (exit %s)." % process.returncode)
 
 
 
@@ -385,6 +384,7 @@ def prepare_resources(path, encoding):
                     + str(e)
                     + "\n"
                 )
+                raise
 
     else:
 
@@ -538,9 +538,9 @@ def generate():
         process = subprocess.Popen(
 
             [
-                sys.executable,
+                sys.executable, "-X", "utf8",
 
-                "makemessage_j.py",
+                os.path.join(os.path.dirname(os.path.abspath(__file__)), "makemessage_j.py"),
 
                 pc_path.get(),
 
@@ -555,7 +555,7 @@ def generate():
 
             stderr=subprocess.STDOUT,
 
-            text=True
+            encoding="utf-8"
 
         )
 
@@ -567,6 +567,7 @@ def generate():
             )
 
 
+        process.stdout.close()
         process.wait()
 
 
