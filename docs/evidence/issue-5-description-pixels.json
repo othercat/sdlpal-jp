@@ -1,0 +1,282 @@
+{
+  "method": "static Japanese glyph ink and (1,0)/(1,1) shadows; not gameplay",
+  "sha256": {
+    "description-render-layouts.json": "d074148cebc3e353ab0c33a256fd1c23ba3c257aff0823f8879d9ada4ef70f04",
+    "paljpn-win.slf": "f15a22cb2e999680119e08bae021cb61f366d6f45655ef4e33019472e9388c54",
+    "fontglyph.h": "03c14caeb15178fef4f87c23d466d8ce26b10332bc0a43295726c6b5ea4c6252",
+    "fontglyph_jp.h": "ac0e164c4d835e3ae9db87dc8eda97603b6731db96e1b378afcd0bbcdba0d79e"
+  },
+  "objects": 296,
+  "lines": 793,
+  "magic_x_after": 70,
+  "stages": {
+    "before": {
+      "clipped_objects": 11,
+      "clipped_lines": 12,
+      "clipped_ink_shadow_union": [
+        437,
+        484,
+        921
+      ],
+      "magic_rightmost_ink_and_shadow": [
+        345,
+        346
+      ],
+      "magic_pixels_at_or_below_menu_y58": 0,
+      "overlap_pairs_ink_and_union_pixels": [
+        360,
+        0,
+        1154
+      ]
+    },
+    "after": {
+      "clipped_objects": 1,
+      "clipped_lines": 1,
+      "clipped_ink_shadow_union": [
+        31,
+        38,
+        69
+      ],
+      "magic_rightmost_ink_and_shadow": [
+        313,
+        314
+      ],
+      "magic_pixels_at_or_below_menu_y58": 0,
+      "overlap_pairs_ink_and_union_pixels": [
+        360,
+        0,
+        1154
+      ]
+    }
+  },
+  "original_clipped_lines": [
+    {
+      "object_id": 149,
+      "object": "赤血蚕",
+      "sid": 12920,
+      "y": 119,
+      "kind": "item",
+      "before": {
+        "clipped_ink": 31,
+        "clipped_shadow": 38,
+        "rightmost_ink": 326,
+        "clipped_characters": "者"
+      },
+      "after": {
+        "clipped_ink": 31,
+        "clipped_shadow": 38,
+        "rightmost_ink": 326,
+        "clipped_characters": "者"
+      }
+    },
+    {
+      "object_id": 306,
+      "object": "净衣咒",
+      "sid": 13437,
+      "y": 3,
+      "kind": "magic",
+      "before": {
+        "clipped_ink": 16,
+        "clipped_shadow": 22,
+        "rightmost_ink": 329,
+        "clipped_characters": "く。"
+      },
+      "after": {
+        "clipped_ink": 0,
+        "clipped_shadow": 0,
+        "rightmost_ink": 297,
+        "clipped_characters": ""
+      }
+    },
+    {
+      "object_id": 307,
+      "object": "冰心诀",
+      "sid": 13436,
+      "y": 3,
+      "kind": "magic",
+      "before": {
+        "clipped_ink": 16,
+        "clipped_shadow": 22,
+        "rightmost_ink": 329,
+        "clipped_characters": "く。"
+      },
+      "after": {
+        "clipped_ink": 0,
+        "clipped_shadow": 0,
+        "rightmost_ink": 297,
+        "clipped_characters": ""
+      }
+    },
+    {
+      "object_id": 308,
+      "object": "灵血咒",
+      "sid": 13466,
+      "y": 3,
+      "kind": "magic",
+      "before": {
+        "clipped_ink": 27,
+        "clipped_shadow": 28,
+        "rightmost_ink": 329,
+        "clipped_characters": "糸、"
+      },
+      "after": {
+        "clipped_ink": 0,
+        "clipped_shadow": 0,
+        "rightmost_ink": 297,
+        "clipped_characters": ""
+      }
+    },
+    {
+      "object_id": 308,
+      "object": "灵血咒",
+      "sid": 13466,
+      "y": 19,
+      "kind": "magic",
+      "before": {
+        "clipped_ink": 16,
+        "clipped_shadow": 22,
+        "rightmost_ink": 329,
+        "clipped_characters": "く。"
+      },
+      "after": {
+        "clipped_ink": 0,
+        "clipped_shadow": 0,
+        "rightmost_ink": 297,
+        "clipped_characters": ""
+      }
+    },
+    {
+      "object_id": 311,
+      "object": "天罡战气",
+      "sid": 13444,
+      "y": 3,
+      "kind": "magic",
+      "before": {
+        "clipped_ink": 72,
+        "clipped_shadow": 73,
+        "rightmost_ink": 341,
+        "clipped_characters": "力が"
+      },
+      "after": {
+        "clipped_ink": 0,
+        "clipped_shadow": 0,
+        "rightmost_ink": 309,
+        "clipped_characters": ""
+      }
+    },
+    {
+      "object_id": 370,
+      "object": "酒神",
+      "sid": 13451,
+      "y": 3,
+      "kind": "magic",
+      "before": {
+        "clipped_ink": 63,
+        "clipped_shadow": 68,
+        "rightmost_ink": 345,
+        "clipped_characters": "させ、"
+      },
+      "after": {
+        "clipped_ink": 0,
+        "clipped_shadow": 0,
+        "rightmost_ink": 313,
+        "clipped_characters": ""
+      }
+    },
+    {
+      "object_id": 374,
+      "object": "爆炸蛊",
+      "sid": 13094,
+      "y": 19,
+      "kind": "magic",
+      "before": {
+        "clipped_ink": 37,
+        "clipped_shadow": 40,
+        "rightmost_ink": 325,
+        "clipped_characters": "発"
+      },
+      "after": {
+        "clipped_ink": 0,
+        "clipped_shadow": 0,
+        "rightmost_ink": 293,
+        "clipped_characters": ""
+      }
+    },
+    {
+      "object_id": 377,
+      "object": "飞龙探云手",
+      "sid": 13458,
+      "y": 3,
+      "kind": "magic",
+      "before": {
+        "clipped_ink": 21,
+        "clipped_shadow": 23,
+        "rightmost_ink": 329,
+        "clipped_characters": "む。"
+      },
+      "after": {
+        "clipped_ink": 0,
+        "clipped_shadow": 0,
+        "rightmost_ink": 297,
+        "clipped_characters": ""
+      }
+    },
+    {
+      "object_id": 390,
+      "object": "醉仙望月步",
+      "sid": 13455,
+      "y": 3,
+      "kind": "magic",
+      "before": {
+        "clipped_ink": 86,
+        "clipped_shadow": 86,
+        "rightmost_ink": 341,
+        "clipped_characters": "数が"
+      },
+      "after": {
+        "clipped_ink": 0,
+        "clipped_shadow": 0,
+        "rightmost_ink": 309,
+        "clipped_characters": ""
+      }
+    },
+    {
+      "object_id": 393,
+      "object": "仙风云体术",
+      "sid": 13457,
+      "y": 3,
+      "kind": "magic",
+      "before": {
+        "clipped_ink": 26,
+        "clipped_shadow": 31,
+        "rightmost_ink": 329,
+        "clipped_characters": "る。"
+      },
+      "after": {
+        "clipped_ink": 0,
+        "clipped_shadow": 0,
+        "rightmost_ink": 297,
+        "clipped_characters": ""
+      }
+    },
+    {
+      "object_id": 394,
+      "object": "乾坤一掷",
+      "sid": 13464,
+      "y": 3,
+      "kind": "magic",
+      "before": {
+        "clipped_ink": 26,
+        "clipped_shadow": 31,
+        "rightmost_ink": 329,
+        "clipped_characters": "る。"
+      },
+      "after": {
+        "clipped_ink": 0,
+        "clipped_shadow": 0,
+        "rightmost_ink": 297,
+        "clipped_characters": ""
+      }
+    }
+  ]
+}

@@ -30,6 +30,7 @@
 #include <mmsystem.h>
 #include <stdlib.h>
 #include <memory>
+#include <chrono>
 #include <future>
 #include <thread>
 #include <condition_variable>
