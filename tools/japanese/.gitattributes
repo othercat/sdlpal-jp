@@ -1,0 +1,4 @@
+# Preserve the release asset bytes; Git history is the unmodified baseline.
+makemessage_j.py -text
+rungui.py -text
+steam_to_legacy.py -text
