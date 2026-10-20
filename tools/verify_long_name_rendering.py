@@ -51,10 +51,72 @@ def check_pixels(picture, expected, label):
             raise ValueError(f"Missing/wrong-color {label}: {position}")
 
 
-def verify(repo, resources, directory):
+def name_pixels(glyphs, text, left, top):
+    ink, expected = set(), {}
+    advance = 0
+    for character in text:
+        width, dots, origin = glyphs[ord(character)]
+        if width != 16 or not dots or origin != "JIS":
+            raise ValueError(f"Expected nonempty JIS 16px glyph: {character}")
+        points = {(left + advance + x, top + y) for x, y in dots}
+        # PAL_DrawText draws two shadows, then ink, per character.
+        for dx, dy in ((1, 1), (1, 0)):
+            expected.update({(x + dx, y + dy): 0 for x, y in points})
+        expected.update({p: None for p in points})
+        ink.update(points)
+        advance += width
+    if len(text) != 8 or advance != 128:
+        raise ValueError("Fixture is not eight full-width characters")
+    return ink, expected
+
+
+def check_grid(resources, directory, glyphs, object_id, legacy_cursor):
+    item = object_id == 270
+    name = f"{'item' if item else 'magic'}-{object_id}-grid"
+    path = directory / f"{name}.bmp"
+    step = (148 if item else 135) if legacy_cursor else (151 if item else 139)
+    x0, y0 = (15, 12) if item else (35, 70)
+    cursor = {(x0 + step + (40 if legacy_cursor else -10) + x, y0 + 36 + 10 + y): c
+              for (x, y), c in ui_frame(resources, 69).items()}
+    all_ink, expected, numbers = set(), {}, {}
+    with Image.open(path) as picture:
+        if picture.mode != "P" or picture.size != (320, 200):
+            raise ValueError(f"Expected indexed 320x200 grid: {path}")
+        for row in range(5 if item else 4):
+            for column in (0, 1):
+                left, top = x0 + column * step, y0 + row * 18
+                ink, cell = name_pixels(glyphs, NAMES[object_id], left, top)
+                selected = row == 2 and column == 1
+                allowed = (range(0xF9, 0xFF) if selected else (0x4F,)) if item else (
+                    (0x1F,) if selected else (0x1C,))
+                color = picture.getpixel(min(ink - cursor.keys()))
+                if color not in allowed:
+                    raise ValueError(f"Unexpected grid menu color: {name}, {row}, {column}")
+                expected.update({p: color if c is None else c for p, c in cell.items()})
+                all_ink.update(ink)
+                if item:
+                    for x in (left + 129, left + 135):
+                        numbers.update({(x + dx, top + 5 + dy): c
+                                        for (dx, dy), c in ui_frame(resources, 65).items()})
+        covered = len(all_ink & cursor.keys())
+        if covered != ((7 if item else 4) if legacy_cursor else 0):
+            raise ValueError("Dense-grid cursor overwrites unexpected name ink")
+        if not legacy_cursor and (cursor.keys() & expected.keys() or cursor.keys() & numbers.keys()):
+            raise ValueError("Dense-grid cursor overlaps a name/shadow or quantity")
+        if expected.keys() & numbers.keys():
+            raise ValueError("Dense-grid name/shadow overlaps a quantity")
+        expected.update(cursor)
+        expected.update(numbers)
+        check_pixels(picture, expected, name)
+    return {"file": path.name, "name_cells": 10 if item else 8, "glyph_ink": len(all_ink),
+            "cursor_overwritten_ink": covered, "expected_pixels_checked": len(expected),
+            "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+
+
+def verify(repo, resources, directory, legacy_cursor=False, dense_grid=False):
     glyphs = load_glyphs(repo, resources, {ord(c) for s in NAMES.values() for c in s})
     cursor = ui_frame(resources, 69)
-    names, checked, scaled_checks = set(), [], []
+    names, checked, scaled_checks, grid_checks = set(), [], [], []
     for object_id, text in NAMES.items():
         item = object_id == 270
         for column in (0, 1):
@@ -67,25 +129,11 @@ def verify(repo, resources, directory):
                 with Image.open(path) as picture:
                     if picture.mode != "P" or picture.size != (320, 200):
                         raise ValueError(f"Expected indexed 320x200 image: {path}")
-                    left, top = ((15 + 148 * column, 12) if item else
-                                 (35 + 135 * column, 70))
-                    ink, expected = set(), {}
-                    advance = 0
-                    for character in text:
-                        width, dots, origin = glyphs[ord(character)]
-                        if width != 16 or not dots or origin != "JIS":
-                            raise ValueError(f"Expected nonempty JIS 16px glyph: {character}")
-                        points = {(left + advance + x, top + y) for x, y in dots}
-                        # PAL_DrawText draws two shadows, then ink, per character.
-                        for dx, dy in ((1, 1), (1, 0)):
-                            expected.update({(x + dx, y + dy): 0 for x, y in points})
-                        expected.update({p: None for p in points})
-                        ink.update(points)
-                        advance += width
-                    if len(text) != 8 or advance != 128:
-                        raise ValueError("Fixture is not eight full-width characters")
+                    step = (148 if item else 135) if legacy_cursor else (151 if item else 139)
+                    left, top = (15 + step * column, 12) if item else (35 + step * column, 70)
+                    ink, expected = name_pixels(glyphs, text, left, top)
                     name_right = max(x for x, _ in expected)
-                    overlays = {(left + 40 + x, top + 10 + y): c
+                    overlays = {(left + (40 if legacy_cursor else -10) + x, top + 10 + y): c
                                 for (x, y), c in cursor.items()} if selected else {}
                     # Item 270 is usable; magic 384 is grey outside battle.
                     allowed = (range(0xF9, 0xFF) if selected else (0x4F,)) if item else (
@@ -96,29 +144,36 @@ def verify(repo, resources, directory):
                         raise ValueError(f"Unexpected menu color: {name}: {color}")
                     expected = {p: color if c is None else c for p, c in expected.items()}
                     covered = len(ink & overlays.keys())
-                    if covered != ((7 if item else 4) if selected else 0):
+                    if covered != ((7 if item else 4) if selected and legacy_cursor else 0):
                         raise ValueError("Cursor/glyph overlap differs from this resource fixture")
+                    if not legacy_cursor and expected.keys() & overlays.keys():
+                        raise ValueError("Cursor overlaps name/shadow")
                     expected.update(overlays)
                     check_pixels(picture, expected, name)
                     numbers = {}
-                    sprites = ([(65, 144 + column * 148, 17),
-                                (65, 150 + column * 148, 17)] if item else
+                    sprites = ([(65, 144 + column * step, 17),
+                                (65, 150 + column * step, 17)] if item else
                                ([(21, 17, 14), (23, 23, 14), (39, 30, 14),
                                  (65, 37, 14), (65, 43, 14), (65, 49, 14)]
                                 if selected else []))
                     for frame, x, y in sprites:
                         numbers.update({(x + dx, y + dy): c
                                         for (dx, dy), c in ui_frame(resources, frame).items()})
-                    if item and (name_right >= 144 + column * 148 or expected.keys() & numbers.keys()):
+                    if item and (name_right >= 144 + column * step or expected.keys() & numbers.keys()):
                         raise ValueError("Name/shadow overlaps item quantity")
                     check_pixels(picture, numbers, f"{name} quantity/MP")
                     checked.append({"file": path.name, "object": object_id, "column": column,
-                                    "selected": selected, "characters": 8, "advance": advance,
+                                    "selected": selected, "characters": 8, "advance": 128,
                                     "glyph_ink": len(ink), "cursor_overwritten_ink": covered,
                                     "checked_name_shadow_cursor_pixels": len(expected),
                                     "rightmost_name_shadow_x": name_right,
                                     "checked_quantity_or_mp_pixels": len(numbers),
                                     "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+    if dense_grid:
+        for object_id in NAMES:
+            record = check_grid(resources, directory, glyphs, object_id, legacy_cursor)
+            grid_checks.append(record)
+            names.add(Path(record["file"]).stem)
     expected_files = {f"{name}{suffix}.bmp" for name in names
                       for suffix in ("", "-640", "-960", "-800")}
     actual_files = {p.name for p in directory.glob("*.bmp")}
@@ -156,10 +211,12 @@ def verify(repo, resources, directory):
             scaled_checks.append({"file": path.name, "source_pixels_preserved": 64000,
                                   "new_colors": 0, "exact_integer_nearest": exact,
                                   "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
-    return {"directory": str(directory), "menus": checked, "scales": scaled_checks,
+    return {"directory": str(directory), "legacy_cursor": legacy_cursor,
+            "menus": checked, "grids": grid_checks, "scales": scaled_checks,
             "missing_clipped_or_wrong_color_expected_pixels": 0,
             "scope": "Expected name ink/shadows, cursor and quantity/MP sprites; not all background pixels. "
-                     "Selected cursor intentionally covers 7/4 name ink pixels. No interactive acceptance."}
+                     "Legacy cursor covers 7/4 name ink pixels; the gutter cursor must cover zero. "
+                     "No interactive acceptance."}
 
 
 if __name__ == "__main__":
@@ -167,7 +224,13 @@ if __name__ == "__main__":
     parser.add_argument("resources", type=Path)
     parser.add_argument("directory", type=Path)
     parser.add_argument("report", type=Path)
+    parser.add_argument("--legacy-cursor", action="store_true",
+                        help="Verify the pre-fix 148/135px columns and overlapping cursor")
+    parser.add_argument("--dense-grid", action="store_true",
+                        help="Also verify the two repeated-object boundary fixtures")
     args = parser.parse_args()
-    result = verify(Path(__file__).resolve().parents[1], args.resources, args.directory)
+    result = verify(Path(__file__).resolve().parents[1], args.resources, args.directory,
+                    args.legacy_cursor, args.dense_grid)
     args.report.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", "utf-8")
-    print(f"PASS: {len(result['menus'])} menu states, {len(result['scales'])} scaled images")
+    print(f"PASS: {len(result['menus'])} menu states, {len(result['grids'])} dense grids, "
+          f"{len(result['scales'])} scaled images")

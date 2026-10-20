@@ -56,10 +56,11 @@ PAL_MagicSelectionMenuUpdate(
    BYTE        bColor;
    WORD        wScript;
    const int   iItemsPerLine = 32 / gConfig.dwWordLength;
-   const int   iItemTextWidth = 8 * gConfig.dwWordLength + 7;
+   // Two columns need a 10px cursor gutter after the previous name's shadow.
+   const int   iItemTextWidth = 8 * gConfig.dwWordLength + 7 + (iItemsPerLine == 2 ? 4 : 0);
    const int   iLinesPerPage = 5 - gConfig.ScreenLayout.ExtraMagicDescLines;
    const int   iBoxYOffset = gConfig.ScreenLayout.ExtraMagicDescLines * 16;
-   const int   iCursorXOffset = gConfig.dwWordLength * 5 / 2;
+   const int   iCursorXOffset = (iItemsPerLine == 2) ? -10 : gConfig.dwWordLength * 5 / 2;
    const int   iPageLineOffset = iLinesPerPage / 2;
 
    //
