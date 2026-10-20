@@ -1,0 +1,147 @@
+{
+  "date": "2026-10-20",
+  "operator": "Codex",
+  "os": "Windows 11 Pro 10.0.26200",
+  "source": "PAL98_v1.72_20261014 root resources",
+  "binaries": {
+    "PAL.dll": "1.7.2.2",
+    "DxWrapper": "1.4.7900.25",
+    "PAL.EXE": "1.00"
+  },
+  "binary_and_config_sha256": [
+    {
+      "File": "PAL.EXE",
+      "Hash": "75D612B9CBD9C1F0884F18C9A6D2EE522B227F2F6B3DA92495BAE8F73161C450"
+    },
+    {
+      "File": "PAL.dll",
+      "Hash": "2CE7C6817456BF1B5AD6DC5114BCBFFB38CC1F9BC16ECD8E70140BE65F371C1A"
+    },
+    {
+      "File": "PALOLD.dll",
+      "Hash": "C6A34E511ED1C7BB2ECDDFAABA00992D53006DB3ED4B5AB3DA61943B417227E8"
+    },
+    {
+      "File": "ddraw.dll",
+      "Hash": "8F942204E0C0ED772BBCB118328B5EBB5EB0E1F1F9D1CBED73F0ECD3D2DB2E7C"
+    },
+    {
+      "File": "dxwrapper.dll",
+      "Hash": "CA76BC2989FE07F1BFE65ECB8FC057766DE5FA99563039171CD3C0CD1E1410F3"
+    },
+    {
+      "File": "fontconfig.ini",
+      "Hash": "E0602C6ED6E7433C4A19740E72828B9BF28471AD2636E2669A6BDAE4D055244F"
+    },
+    {
+      "File": "config.ini",
+      "Hash": "B5D7BFD68B95630DDD5D75C6F2078FFAFFFD558B2A8F22442554896512C629BD"
+    },
+    {
+      "File": "dxwrapper.ini",
+      "Hash": "5F4E46C3E9CB81C2490956B42674B9A9B56D62D5780EF31CB6477708A629CDD9"
+    }
+  ],
+  "resource_sha256_verified": [
+    {
+      "File": "ABC-ori.MKF",
+      "Hash": "F9685BA8D22E851A4BE492C6B74FBC671D89112D64394E7AF86EC7A23751529C"
+    },
+    {
+      "File": "ABC.mkf",
+      "Hash": "C5DADB1303ADDBF103437DE594CB9820150BC9F1F2FEA02837594C49E241ED8B"
+    },
+    {
+      "File": "BALL.MKF",
+      "Hash": "B9925833A9D921AA6BEA9D0D199DBBE170968716D951036A142C1DD303F99BD0"
+    },
+    {
+      "File": "DATA.MKF",
+      "Hash": "C0BC968E5322B06FE669DD6E34483DD1F12DD223AC25B03B6DC74D3742635C1B"
+    },
+    {
+      "File": "F.MKF",
+      "Hash": "EB492E6DCD0EEFB6FBC1751D775BC8667B46D3CD5231974CAA1EEF309F3152D7"
+    },
+    {
+      "File": "FBP.MKF",
+      "Hash": "29BBC71C10C58A555E5B45B853DFEEF3FA0D299CEEB8E7556B6C1D6BC40C4D84"
+    },
+    {
+      "File": "FIRE.MKF",
+      "Hash": "5A23940D3DAAB5BFA95EFD3B92B4D1AE481FC4F7AD38374EC66B16C7E7D5D9CF"
+    },
+    {
+      "File": "GOP.MKF",
+      "Hash": "5745D016A8D9C280B90A8B92D2871210A2DD0A0C04A79D4C8E65F4D0396AA04B"
+    },
+    {
+      "File": "M.MSG",
+      "Hash": "D07344645BF0C65D58D13BDB5916E28222F8CE4D506821085DDFD44BA5533D9C"
+    },
+    {
+      "File": "MAP.MKF",
+      "Hash": "62739644AF65B5E80C0736D31DA00E4FE805A56EE5C5FEDE6558C0C13BACD575"
+    },
+    {
+      "File": "MGO.mkf",
+      "Hash": "62CE20393E378C80538BA8B9AD1A24112E491F5AFC5F350C5EBB00190B2317A0"
+    },
+    {
+      "File": "MUS.MKF",
+      "Hash": "8367C9D34331F67B20B12380E809A38D3313CAE199F260D272D07FCF55E11A21"
+    },
+    {
+      "File": "PAT.MKF",
+      "Hash": "B2D6A3DB53A3E80106A4C041C7F94DFAF9DCB065517FCE79B1FF3D413494D997"
+    },
+    {
+      "File": "RGM.MKF",
+      "Hash": "817B673E9CD72CCD30936475EA26BEAD5351BBD8E7909E9B9A2A65B6B75FC132"
+    },
+    {
+      "File": "RNG.MKF",
+      "Hash": "5D62CAD87B330D2E1EC00D7C1ACC4DE96B8324E547FA8095AAB0F64A9811D7BD"
+    },
+    {
+      "File": "SOUNDS.MKF",
+      "Hash": "039A5CC64BE937168CE458C8288FBD61FB3D2854E9445A775AB67F6AF2276E01"
+    },
+    {
+      "File": "SSS.MKF",
+      "Hash": "A14CA6D9AB20767AE97A211CBA85496879CB5D04F04EF8DB453EF1C72A2CAE3C"
+    },
+    {
+      "File": "WORD.DAT",
+      "Hash": "BE56E77C7ECD61306133913A1987B1DDDF656528AE870C2DE1EE8CCDA7FF3EBF"
+    }
+  ],
+  "overrides": {
+    "DisableSystemKeys": 0,
+    "DefaultPatch": "",
+    "GameTextMode": "Simplified",
+    "DisableQuitOutside": 0,
+    "EnableSnakeWomanPeonyFairyHarmony": 0
+  },
+  "fonts": {
+    "enabled_rules": [],
+    "defined_rules": "0..5",
+    "actual_gdi_face_and_height": "not captured",
+    "same_glyph_as_sdlpal": "not established"
+  },
+  "screenshot": {
+    "win_message_ids": [
+      1317,
+      1318,
+      1319
+    ],
+    "sha256": "5c822f9cd9e27cf854d6b27d005f898af676e376cf27c9a89580c21d014eb5b0",
+    "includes_window_border": true,
+    "resampled": false,
+    "size": [
+      643,
+      426
+    ],
+    "file": "pal98-baseline-aunt.png"
+  }
+}
