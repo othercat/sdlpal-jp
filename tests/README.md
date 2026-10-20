@@ -113,3 +113,16 @@ Pillow is required; the resource-free opacity regression tests run with:
 ```powershell
 & (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tests\test_recovery_preview_export.py -v
 ```
+
+### Tournament NPC dialogue corrections
+
+`tools/japanese/verify_tournament_dialogues.py` verifies the ten Win-based
+translations against raw Win/Saturn inputs, event references and the reviewed
+text record. Complete byte comparison permits only those ten MESSAGE body
+replacements; the other blocks, settings and descriptions must remain unchanged.
+Use `--before-tournament-fix` only to generate the historical pre-#4 SLF.
+
+The generated full-key fixture uses `jp-npc-before` / `jp-npc`, requiring 4,766
+mapped keys and ten drawn NPC groups in both runs. The existing Issue #3 modes
+retain their separate 8-group/119-omission assertions. See the
+[commands, all ten source-rendered comparisons and validation](../docs/japanese-tournament-npc-dialogues.md).
