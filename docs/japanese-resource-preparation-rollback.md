@@ -96,5 +96,5 @@ $jpPython = Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe'
 
 实现、源分支最终 SHA、普通合并 SHA、远端内容核对和清理结果记录到 [#2](https://github.com/othercat/sdlpal-jp/issues/2)
 及 [#1](https://github.com/othercat/sdlpal-jp/issues/1)，合入目标 `feature`，不使用自动关闭关联。
-本轮回滚项已完成；#2 下一项仍是中文绝对 GamePath 的旧失败在最新构建上的复核。
+本轮回滚项已完成；随后 [R4](japanese-gamepath-unicode.md)已用最新构建复现并修复中文绝对 GamePath。
 Tk 操作、游戏加载和完整流程由用户在所有实现完成后统一验收；没有本轮实机通过证据，Issue 继续开放。

@@ -1,6 +1,6 @@
 # Issue #2：日文转换工具与可复现基线
 
-本文保留 R1 历史。2026-10-21 的 [R2 稀疏编号修复](japanese-steam-record-offsets.md)已修正 Steam 跳号和首记录 BOM；[R3](japanese-resource-preparation-rollback.md)补齐 CLI all／GUI 多文件准备失败回滚。两轮均有真实简／繁体整包与源码对比；下文“未改 Steam 算法”等描述仅指 R1。当前剩余项见[总管核对](japanese-issue-status.md)。
+本文保留 R1 历史。2026-10-21 的 [R2 稀疏编号修复](japanese-steam-record-offsets.md)已修正 Steam 跳号和首记录 BOM；[R3](japanese-resource-preparation-rollback.md)补齐 CLI all／GUI 多文件准备失败回滚；[R4](japanese-gamepath-unicode.md)用最新构建复现并修复中文绝对 GamePath。下文“未改 Steam 算法”及中文路径失败是历史结果；当前剩余项见[总管核对](japanese-issue-status.md)。
 
 2026-10-20，关联 [#2](https://github.com/othercat/sdlpal-jp/issues/2)、[总管 #1](https://github.com/othercat/sdlpal-jp/issues/1)。
 

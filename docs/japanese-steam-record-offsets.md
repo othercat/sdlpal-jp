@@ -96,7 +96,8 @@ $jpPython = Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe'
 ## 尚未完成与追溯
 
 本轮只完成 Steam 中文格式转换的编号专项；该 Steam 版本没有因此成为已认证的日文桥接输入。
-CLI／GUI 多文件失败回滚、中文绝对 GamePath 旧失败的最新构建复核继续列为 #2 跟进。
+后续 [R3](japanese-resource-preparation-rollback.md)已完成 CLI／GUI 多文件失败回滚，
+[R4](japanese-gamepath-unicode.md)已用最新构建复现并修复中文绝对 GamePath；原始专项记录继续保留。
 Tk 操作、游戏加载／完整流程由用户最后统一验收，Issue 保持开放。
 
 普通合入 `feature`，实现／合并完整 SHA、分支最终提交、远端核对及清理结果记录在

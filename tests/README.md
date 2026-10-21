@@ -1,6 +1,22 @@
 How to write unit tests
 =======================
 
+### Windows GamePath (Issue #2 R4)
+
+The Windows-only `ResourcePaths.*` tests exercise production file access,
+UTF-8/legacy ACP configuration roundtrips, long UTF-8 byte lengths, hidden native
+GamePath controls and the RIX provider. `SDLPAL_PATH_TEST_ROOT` can select an
+existing artifact directory for owned temporary files. Run the full Test suite
+from the repository root; it requires no proprietary resources.
+
+The Test renderer accepts `RESOURCE_DIR=@config` to load the working directory's
+`sdlpal.cfg` through `PAL_LoadConfig(TRUE)`. `verify_gamepath.py` compares matching
+PAL98 copies and six argv/config cases, retaining original frames. It permits
+only uniform selected-label color animation within the exact label bounds;
+glyph positions, other indexes and the whole palette must match. Eight
+resource-free positive/negative checks are in `test_gamepath_verifier.py`.
+See [commands, evidence, source-rendered images and limits](../docs/japanese-gamepath-unicode.md).
+
 ### Optional Saturn portrait palettes
 
 Issue 9 R3 adds `jp-portrait-effects` / `dos-portrait-effects` modes to the Test
