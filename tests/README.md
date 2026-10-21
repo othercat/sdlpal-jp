@@ -232,3 +232,21 @@ source RGB is the target for normal palettes; black fades are checked separately
 and unknown color effects intentionally retain indexed output. The C++ tests
 also cover same-index overwrite, opaque black, clipped fill and saved coverage.
 See [source evidence, reproduction and remaining acceptance](../docs/japanese-portrait-night-colors.md).
+
+### Steam sparse records (Issue #2 R2)
+
+`steam-records` loads converted legacy Chinese resources (no SLF), uses the
+Japanese 16px font with ISO substitution disabled, and draws four message IDs
+and four word IDs on neutral panels. It accepts either detected resource
+version. The entry is Test-only and uses production text loading, drawing and
+SDL target readback. It is not a natural gameplay screenshot.
+
+`tools/japanese/verify_steam_conversion.py` checks real simplified/traditional
+Steam inputs plus copies with ID 0 removed or the BOM moved directly before
+ID 0. An independent fixed-layout oracle checks whole converted files; the
+renderer reports code points for each displayed record. Complete inputs must
+remain byte/pixel-identical. Surviving IDs after repair must match the complete
+reference, and 2x/3x outputs must equal nearest-neighbor scaling. 2.5x dimensions
+alone are checked. The pre-fix sparse file is padded only at EOF before loading
+to avoid the old engine reader's out-of-range reads; displayed spans must never
+intersect this tail. See [commands, boundaries and images](../docs/japanese-steam-record-offsets.md).

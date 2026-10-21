@@ -321,6 +321,33 @@ void SaveScales(const std::string& directory, const std::string& name) {
     gpTexture = previousTexture;
 }
 
+void DrawSteamRecords(const std::string& directory) {
+    // These are raw Chinese legacy records, before any Japanese SLF mapping.
+    // Use the real loader/font/renderer, with a neutral source-test background.
+    FILE *report = fopen((directory + "/steam-records.csv").c_str(), "w");
+    Require(report != nullptr, "Cannot create Steam record report");
+    fprintf(report, "kind,id,codepoints\n");
+    const int ids[2][4] = {{5, 6, 7, 8}, {36, 37, 149, 150}};
+    for (int kind = 0; kind < 2; ++kind) {
+        VIDEO_FillRect(gpScreen, nullptr, 0);
+        for (int row = 0; row < 4; ++row) {
+            const int id = ids[kind][row];
+            const WCHAR *text = kind ? PAL_GetWord(id) : PAL_GetMsg(id);
+            Require(text != nullptr, "Steam record missing");
+            const std::wstring label = (kind ? L"WORD " : L"MSG ") + std::to_wstring(id);
+            PAL_DrawText(label.c_str(), PAL_XY(8, 4 + row * 48), MENUITEM_COLOR,
+                         TRUE, FALSE, FALSE);
+            PAL_DrawText(text, PAL_XY(8, 24 + row * 48), DESCTEXT_COLOR,
+                         TRUE, FALSE, FALSE);
+            fprintf(report, "%s,%d,", kind ? "word" : "msg", id);
+            for (const WCHAR *p = text; *p; ++p) fprintf(report, "%04x ", (unsigned)*p);
+            fprintf(report, "\n");
+        }
+        SaveScales(directory, kind ? "steam-word" : "steam-msg");
+    }
+    fclose(report);
+}
+
 std::string centerDirectory, centerName;
 int centerWaits = 0;
 int CaptureCenterMessage(const SDL_Event *event, volatile PALINPUTSTATE *state) {
@@ -781,10 +808,11 @@ void DrawDOSDescriptions(const std::string& directory) {
 int RenderEvidence(int argc, char **argv) {
     if (argc != 6 && argc != 7) {
         fprintf(stderr, "Usage: --render-evidence RESOURCE_DIR SLF_OR_DASH OUTPUT_DIR MODE [PORTRAIT_FILE]\nModes: "
-                        "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages|jp-long-names|jp-cursor-grid|jp-recovery-before|jp-recovery|jp-npc-before|jp-npc|jp-duplicates-before|jp-duplicates|jp-translation-before|jp-translation|dos-before|dos|dos-layout-before|jp-portraits|dos-portraits|jp-portraits-rgb|dos-portraits-rgb|jp-translation-rgb|dos-rgb|jp-translation-night-rgb|dos-night-rgb\n");
+                        "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages|jp-long-names|jp-cursor-grid|jp-recovery-before|jp-recovery|jp-npc-before|jp-npc|jp-duplicates-before|jp-duplicates|jp-translation-before|jp-translation|dos-before|dos|dos-layout-before|jp-portraits|dos-portraits|jp-portraits-rgb|dos-portraits-rgb|jp-translation-rgb|dos-rgb|jp-translation-night-rgb|dos-night-rgb|steam-records\n");
         return 2;
     }
     const std::string mode(argv[5]), directory(argv[4]);
+    const bool steamRecords = mode == "steam-records";
     const bool pages = mode == "cn-pages" || mode == "jp-pages";
     const bool effects = mode == "jp-portrait-effects" || mode == "dos-portrait-effects";
     const bool longNames = mode == "jp-long-names" || mode == "jp-cursor-grid";
@@ -802,10 +830,10 @@ int RenderEvidence(int argc, char **argv) {
         mode == "dos-night-rgb" || mode == "dos-portrait-effects";
     const bool recovery = mode == "jp-recovery-before" || mode == "jp-recovery" ||
         tournament || duplicates || translations || (dos && !portraits);
-    const bool scaled = pages || longNames || recovery || portraits || effects;
+    const bool scaled = pages || longNames || recovery || portraits || effects || steamRecords;
     const bool translated = mode == "jp" || mode == "jp-legacy" || mode == "jp-pages" || longNames || recovery || portraits || effects;
     const bool fieldMenu = mode == "cn-jp-font-field";
-    if (!translated && mode != "cn" && mode != "cn-jp-font" && !fieldMenu && !pages) return 2;
+    if (!translated && mode != "cn" && mode != "cn-jp-font" && !fieldMenu && !pages && !steamRecords) return 2;
     if (translated && strcmp(argv[3], "-") == 0) return 2;
     try {
         Require(SDL_Init(scaled ? SDL_INIT_VIDEO | SDL_INIT_EVENTS : 0) == 0, "SDL_Init failed");
@@ -814,10 +842,10 @@ int RenderEvidence(int argc, char **argv) {
         gConfig.pszGamePath = strdup(argv[2]);
         if (translated) gConfig.pszMsgFile = strdup(argv[3]);
         if (argc == 7) gConfig.pszPortraitFile = strdup(argv[6]);
-        Require(PAL_InitGlobals() == 0 && !!gConfig.fIsWIN95 == !dos, "Unexpected resource version");
+        Require(PAL_InitGlobals() == 0 && (steamRecords || !!gConfig.fIsWIN95 == !dos), "Unexpected resource version");
         Require(PAL_InitText() == 0, "Cannot load game text");
-        if (mode == "cn-jp-font" || fieldMenu || pages) g_TextLib.iFontFlavor = kFontFlavorJapanese;
-        if (pages) g_TextLib.fUseISOFont = FALSE;
+        if (mode == "cn-jp-font" || fieldMenu || pages || steamRecords) g_TextLib.iFontFlavor = kFontFlavorJapanese;
+        if (pages || steamRecords) g_TextLib.fUseISOFont = FALSE;
         Require(PAL_InitFont(&gConfig) == 0, "Cannot load engine font");
         PAL_InitGameData(0);
         Require(PAL_InitUI() == 0, "Cannot load UI sprites");
@@ -847,7 +875,8 @@ int RenderEvidence(int argc, char **argv) {
             g_bRenderPaused = TRUE;
             gpGlobals->fNightPalette = mode.find("-night-") != std::string::npos;
             PAL_SetPalette(0, gpGlobals->fNightPalette);
-            if (effects) DrawPortraitEffects(directory);
+            if (steamRecords) DrawSteamRecords(directory);
+            else if (effects) DrawPortraitEffects(directory);
             else if (portraits) DrawPortraitEvidence(directory);
             else if (longNames) DrawLongNames(directory, mode == "jp-cursor-grid");
             else if (recovery) {

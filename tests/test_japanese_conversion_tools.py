@@ -107,6 +107,73 @@ class ConversionTools(unittest.TestCase):
             self.assertEqual(result.returncode, 1)
             self.assertIn(message, result.stdout)
 
+    def test_steam_sparse_ids_keep_offsets_and_word_slots(self):
+        data = self.root / "sparse"
+        steam_fixture(data)
+        # First and interior holes, out-of-order records, and an omitted EOF ID.
+        (data / "SSS.MKF").write_bytes(struct.pack("<6I", 24, 24, 24, 24, 44, 44)
+                                     + struct.pack("<5I", 0, 2, 5, 7, 10))
+        (data / "MSG_chs.txt").write_bytes("3:END\n1:xy\n".encode("utf-16-le"))
+        (data / "WORD_chs.txt").write_bytes("3:甲\n1:A:B\n".encode("utf-16-le"))
+        result = self.run_tool("steam_to_legacy.py", "all", data, self.root, "gbk")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual((self.root / "M.MSG").read_bytes(), b"  xy   END")
+        self.assertEqual((self.root / "WORD.DAT").read_bytes(),
+                         b" " * 10 + b"A:B" + b" " * 17 + "甲".encode("gbk") + b" " * 8)
+        self.assertIn("Missing MSG slots padded: 2", result.stdout)
+        self.assertIn("Missing WORD slots padded: 2", result.stdout)
+
+    def test_steam_bom_empty_records_and_last_duplicate_remain_supported(self):
+        for encoding in ("gbk", "big5"):
+            with self.subTest(encoding=encoding):
+                data = self.root / encoding
+                steam_fixture(data, encoding)
+                suffix = "chs" if encoding == "gbk" else "cht"
+                # BOM directly before ID 0 used to silently discard it. An
+                # overflowing duplicate is replaced before length validation.
+                (data / f"MSG_{suffix}.txt").write_bytes(
+                    "\ufeff0:TOO LONG\n1:\n0:甲\n2:\n".encode("utf-16-le"))
+                (data / f"WORD_{suffix}.txt").write_bytes(
+                    "\ufeff0:TOO LONG FOR WORD\n1:\n0:甲\n".encode("utf-16-le"))
+                result = self.run_tool("steam_to_legacy.py", "all", data, data, encoding)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertEqual((data / "M.MSG").read_bytes(), "甲".encode(encoding) + b" " * 3)
+                self.assertEqual((data / "WORD.DAT").read_bytes(), "甲".encode(encoding) + b" " * 18)
+
+    def test_steam_invalid_records_preserve_existing_output(self):
+        data = self.root / "bad-records"
+        steam_fixture(data)
+        cases = ["; comments only\n", "invalid\n", "x:A\n", "-1:A\n"]
+        for mode in ("msg", "word"):
+            for source in cases + (["3:A\n", "2:A\n"] if mode == "msg" else ["65536:A\n"]):
+                with self.subTest(mode=mode, source=source):
+                    (data / f"{mode.upper()}_chs.txt").write_bytes(source.encode("utf-16-le"))
+                    output = self.root / f"{mode}.bin"
+                    output.write_bytes(b"keep existing output")
+                    result = self.run_tool("steam_to_legacy.py", mode, data, output, "gbk")
+                    self.assertEqual(result.returncode, 1)
+                    self.assertEqual(output.read_bytes(), b"keep existing output")
+
+    def test_steam_rejects_corrupt_index_even_when_bad_slot_is_absent(self):
+        data = self.root / "bad-index"
+        steam_fixture(data)
+        (data / "MSG_chs.txt").write_bytes("0:A\n".encode("utf-16-le"))
+        valid_header = struct.pack("<6I", 24, 24, 24, 24, 36, 36)
+        cases = [b"short", valid_header[:-1],
+                 struct.pack("<6I", 24, 24, 24, 24, 40, 40) + b"\0" * 12,
+                 struct.pack("<6I", 24, 24, 24, 36, 24, 36) + b"\0" * 12,
+                 struct.pack("<6I", 24, 24, 24, 24, 34, 34) + b"\0" * 10,
+                 valid_header + struct.pack("<3I", 1, 2, 5),
+                 valid_header + struct.pack("<3I", 0, 5, 2)]
+        for content in cases:
+            with self.subTest(content=content.hex()):
+                (data / "SSS.MKF").write_bytes(content)
+                output = self.root / "bad.msg"
+                result = self.run_tool("steam_to_legacy.py", "msg", data, output, "gbk")
+                self.assertEqual(result.returncode, 1)
+                self.assertIn("SSS.MKF", result.stderr)
+                self.assertFalse(output.exists())
+
     def test_gui_prepares_resources_from_unrelated_working_directory(self):
         messages, commands = [], []
         ui = gui_callbacks(messages, commands)
