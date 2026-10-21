@@ -284,3 +284,20 @@ original after failure; no EOF padding is needed. GUI failure must not launch
 the SLF generator or retain partial outputs. An independent full-file oracle,
 real publication failures, source code points and scaled pixels are checked.
 See [commands, evidence and limits](../docs/japanese-resource-preparation-rollback.md).
+
+### SDL1 and GLSL portrait output (Issue #9 R4)
+
+The SDL1 Test build accepts `jp-portrait-effects` / `dos-portrait-effects` with
+`SDL_VIDEODRIVER=dummy`. SDL2 adds `-glsl` to those mode names, loads a shader
+from `@config`, and reads its final hidden OpenGL backbuffer before swap.
+Neutral one/two-pass fixtures are in `tests/fixtures/portrait-identity*`.
+These modes share the 19 source-effect sequences, including ordinary shake.
+
+`verify_portrait_backends.py` checks 16 cases against the independent R3 oracle,
+binds backend logs, shader/pass counts, executable/build/library fingerprints,
+and compares indices/palettes with native SDL2. It checks full physical output
+only at the recorded representative frames. `VideoSDL1` additionally calls both
+production shake paths at 400/480 heights with/without letterboxing and checks
+all pixels in 300 updates. `test_portrait_backends.py` rejects mislabeled native
+output and incorrect pass/portrait/resource settings. See
+[reproduction, source images and limits](../docs/japanese-portrait-backends.md).

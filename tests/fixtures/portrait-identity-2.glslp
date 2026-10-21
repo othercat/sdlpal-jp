@@ -1,0 +1,9 @@
+shaders = 2
+shader0 = portrait-identity.glsl
+scale_type0 = source
+scale0 = 1.0
+filter_linear0 = false
+shader1 = portrait-identity.glsl
+scale_type1 = source
+scale1 = 1.0
+filter_linear1 = false

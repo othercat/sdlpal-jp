@@ -46,6 +46,10 @@ extern SDL_Texture       *gpTexture;
 extern SDL_Texture       *gpTouchOverlay;
 extern SDL_Rect           gOverlayRect;
 extern SDL_Rect           gTextureRect;
+#ifdef UNIT_TEST
+extern BOOL VIDEO_TestHiddenWindow;
+extern VOID (*VIDEO_TestFrameHook)(VOID);
+#endif
 
 static int gRendererWidth;
 static int gRendererHeight;
@@ -897,6 +901,9 @@ void VIDEO_GLSL_RenderCopy()
     gPassID = 0;
     SDL_RenderCopy(gpRenderer, gpTexture, NULL, NULL);
     
+#ifdef UNIT_TEST
+    if (VIDEO_TestFrameHook) VIDEO_TestFrameHook();
+#endif
     SDL_GL_SwapWindow(gpWindow);
     
     prevTexture = framePrevTextures[PREV_TEXTURES];
@@ -958,6 +965,9 @@ void VIDEO_GLSL_Init() {
 #endif
     
     Uint32 flags = PAL_VIDEO_INIT_FLAGS | (gConfig.fFullScreen ? SDL_WINDOW_BORDERLESS : 0) | SDL_WINDOW_OPENGL;
+#ifdef UNIT_TEST
+    if (VIDEO_TestHiddenWindow) flags = (flags & ~SDL_WINDOW_SHOWN) | SDL_WINDOW_HIDDEN;
+#endif
     
     UTIL_LogOutput(LOGLEVEL_DEBUG, "requesting to create window with flags: %s %s profile latest available, %s based sRGB gamma correction \n", SDL_GetHint( SDL_HINT_RENDER_DRIVER ),  get_gl_profile(get_SDL_GLAttribute(SDL_GL_CONTEXT_PROFILE_MASK)), manualSRGB ? "shader" : "framebuffer_sRGB" );
     gpWindow = SDL_CreateWindow("Pal", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, gConfig.dwScreenWidth, gConfig.dwScreenHeight, flags);
@@ -1009,6 +1019,10 @@ void VIDEO_GLSL_Setup() {
     UTIL_LogOutput(LOGLEVEL_DEBUG, "GL_VERSION:%s\n",glversion);
     UTIL_LogOutput(LOGLEVEL_DEBUG, "GL_SHADING_LANGUAGE_VERSION:%s\n",glslversion);
     UTIL_LogOutput(LOGLEVEL_DEBUG, "GL_RENDERER:%s\n",glGetString(GL_RENDERER));
+#ifdef UNIT_TEST
+    printf("GLSL evidence: vendor=%s; renderer=%s; GL=%s; GLSL=%s; manualSRGB=%d\n",
+        glGetString(GL_VENDOR), glGetString(GL_RENDERER), glversion, glslversion, manualSRGB);
+#endif
     GLint maxTextureSize, maxDrawBuffers, maxColorAttachments;
     glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxTextureSize);
     glGetIntegerv(GL_MAX_DRAW_BUFFERS, &maxDrawBuffers);
@@ -1116,6 +1130,9 @@ void VIDEO_GLSL_Setup() {
     }
     // for debugging usage
     dump_preset();
+#ifdef UNIT_TEST
+    printf("GLSL evidence: compiled passes=%d; preset=%s\n", gGLSLP.shaders, gConfig.pszShader);
+#endif
     for( int i = 0; i < gGLSLP.textures; i++ ) {
         texture_param *param = &gGLSLP.texture_params[i];
         char *texture_name = param->texture_name;

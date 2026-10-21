@@ -76,7 +76,8 @@ def check_pixels(actual, expected, context):
             f"({x},{y}) actual={actual[y,x].tolist()} expected={expected[y,x].tolist()}")
 
 
-def verify(before, after, pack, version, resource):
+def verify(before, after, pack, version, resource, *,
+           independent_portraits=None, require_color_change=True):
     before_run = json.loads((before / "run.json").read_text("utf-8"))
     after_run = json.loads((after / "run.json").read_text("utf-8"))
     for run in (before_run, after_run):
@@ -95,12 +96,15 @@ def verify(before, after, pack, version, resource):
               "red": 33, "night-to-day": 32, "day-to-night": 32, "red-to-night": 32,
               "wave": 32, "switch": 7, "dissolve": 73, "dissolve-shake": 73,
               "fbp": 97, "battle": 73, "scene-in": 4, "scene-out": 4}
+    if "shake" in groups:
+        counts["shake"] = 2
     require(set(groups) == set(counts) | TIMED, "Incomplete effect set")
     for effect, count in counts.items():
         require(len(groups[effect]) == count, f"Incomplete {effect}")
     palette, entries = read_pack(pack, version)
     colors = np.frombuffer(palette, np.uint8).reshape(256, 3).astype(np.int32)
-    enabled = after.name.endswith("-adapted")
+    enabled = (after.name.endswith("-adapted") if independent_portraits is None
+               else independent_portraits)
     a = placed(entries[55], False) if enabled else np.zeros((200, 320), np.uint8)
     b = placed(entries[70], True) if enabled else a.copy()
     union = (a != 0) | (b != 0)
@@ -160,6 +164,12 @@ def verify(before, after, pack, version, resource):
                 plane = b if effect == "target" else a
                 mask = plane != 0
                 expected[mask] = source_colors[plane[mask]]
+            elif effect == "shake":
+                expected = np.zeros((200, 320, 3), np.uint8)
+                if frame % 2:
+                    expected[:-3] = start_rgb[3:]
+                else:
+                    expected[3:] = start_rgb[:-3]
             elif effect == "wave":
                 wave = []
                 displacement = 0
@@ -222,7 +232,8 @@ def verify(before, after, pack, version, resource):
                             np.repeat(np.repeat(split(data[sequence])[2], 2, 0), 2, 1),
                             f"SDL texture {gpu.name}")
                     gpu_checks += 1
-    require(not enabled or changed > 0, "No before/after color difference")
+    require(not require_color_change or not enabled or changed > 0,
+            "No before/after color difference")
     return {"frames": len(new), "before_frames": len(old), "effects": report,
             "sdl_readbacks": gpu_checks,
             "changed_rgb_pixels": changed, "files": {

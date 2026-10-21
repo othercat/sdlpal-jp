@@ -5,7 +5,68 @@
 
 extern "C" {
 #include "main.h"
+#if !SDL_VERSION_ATLEAST(2,0,0)
+extern SDL_Surface *gpScreenReal;
+extern VOID (*VIDEO_TestFrameHook)(VOID);
+VOID VIDEO_ToggleScaleScreen(VOID);
+#endif
 }
+
+#if !SDL_VERSION_ATLEAST(2,0,0)
+namespace {
+int shakeFrames, shakeSteps, shakeY, shakeHeight, shakeBadPixels;
+void CheckShakeEdges() {
+    const int band = 3 * shakeHeight / 200;
+    for (int y = 0; y < gpScreenReal->h; ++y) {
+        BYTE expected = 77;
+        if (y >= shakeY && y < shakeY + shakeHeight) {
+            expected = 1;
+            if (shakeFrames < shakeSteps && ((shakeFrames % 2 == 0 && y < shakeY + band) ||
+                (shakeFrames % 2 != 0 && y >= shakeY + shakeHeight - band))) expected = 0;
+        }
+        const BYTE *row = (BYTE *)gpScreenReal->pixels + y * gpScreenReal->pitch;
+        for (int x = 0; x < gpScreenReal->w; ++x) shakeBadPixels += row[x] != expected;
+    }
+    ++shakeFrames;
+}
+}
+
+TEST(VideoSDL1, ShakeClearsEdgesAtIntegerAndFractionalScale) {
+    char driver[] = "SDL_VIDEODRIVER=dummy";
+    ASSERT_EQ(0, SDL_putenv(driver));
+    ASSERT_EQ(0, SDL_Init(SDL_INIT_VIDEO));
+    PAL_LoadConfig(FALSE);
+    gConfig.fFullScreen = FALSE;
+    for (int height : {400, 480}) for (bool scaled : {true, false}) {
+        gConfig.dwScreenWidth = 640; gConfig.dwScreenHeight = height;
+        ASSERT_EQ(0, VIDEO_Startup());
+        if (scaled != !!PAL_SCALE_SCREEN) {
+            VIDEO_ToggleScaleScreen();
+            VIDEO_Resize(640, height);
+        }
+        shakeY = scaled ? 0 : 20;
+        shakeHeight = scaled ? height : height - 40;
+        for (bool dissolve : {false, true}) {
+            SCOPED_TRACE(testing::Message() << "height=" << height << " scaled=" << scaled
+                << " dissolve=" << dissolve);
+            SDL_FillRect(gpScreen, nullptr, 1); SDL_FillRect(gpScreenBak, nullptr, 1);
+            SDL_FillRect(gpScreenReal, nullptr, 77);
+            shakeFrames = shakeBadPixels = 0;
+            shakeSteps = dissolve ? 72 : 2;
+            VIDEO_TestFrameHook = CheckShakeEdges;
+            VIDEO_ShakeScreen(shakeSteps, 3);
+            if (dissolve) VIDEO_FadeScreen(0);
+            else { VIDEO_UpdateScreen(nullptr); VIDEO_UpdateScreen(nullptr); }
+            VIDEO_TestFrameHook = nullptr;
+            EXPECT_EQ(shakeSteps + (dissolve ? 1 : 0), shakeFrames);
+            EXPECT_EQ(0, shakeBadPixels);
+        }
+        if (scaled != !!PAL_SCALE_SCREEN) VIDEO_ToggleScaleScreen();
+        VIDEO_Shutdown();
+    }
+    PAL_FreeConfig(); SDL_Quit();
+}
+#endif
 
 namespace {
 std::vector<BYTE> PortraitPack(bool win) {

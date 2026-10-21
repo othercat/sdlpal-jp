@@ -11,19 +11,42 @@
 extern "C" {
 #include "main.h"
 extern SDL_Surface *gpScreenReal;
+#if SDL_VERSION_ATLEAST(2, 0, 0)
 extern SDL_Window *gpWindow;
 extern SDL_Renderer *gpRenderer;
 extern SDL_Texture *gpTexture;
+extern BOOL VIDEO_TestHiddenWindow;
+#endif
 extern void (*VIDEO_TestFrameHook)(void);
+}
+
+namespace {
+void Require(bool ok, const char *what) {
+    if (!ok) throw std::runtime_error(what);
+}
+
+void PrepareInn() {
+    VIDEO_FillRect(gpScreen, nullptr, 0);
+    // Reconstruct scene 2 from its resource scripts, without gameplay/input.
+    gpGlobals->wNumScene = 2;
+    gpGlobals->viewport = PAL_XY(1152, 176);
+    gpGlobals->wPartyDirection = kDirSouth;
+    gpGlobals->rgParty[0].x = 160;
+    gpGlobals->rgParty[0].y = 112;
+    gpGlobals->rgParty[0].wFrame = 0;
+    gpGlobals->g.PlayerRoles.rgwSpriteNum[0] = 193;
+    PAL_InitResources();
+    PAL_SetLoadFlags(kLoadScene | kLoadPlayerSprite);
+    PAL_LoadResources();
+    PAL_MakeScene();
+}
+
+#include "portrait_effect_evidence.h"
 }
 
 #if SDL_VERSION_ATLEAST(2, 0, 0)
 namespace {
 bool portraitRGB = false;
-
-void Require(bool ok, const char *what) {
-    if (!ok) throw std::runtime_error(what);
-}
 
 std::vector<BYTE> ComposedRGB() {
     SDL_Color base[256];
@@ -104,23 +127,6 @@ int CountClippedInk(WORD object, bool item) {
     return count;
 }
 
-void PrepareInn() {
-    VIDEO_FillRect(gpScreen, nullptr, 0);
-    // Reconstruct this scene from startup scripts 5-7 and scene-2 entry 3547.
-    // No route, animation, input loop, sound, or save file is replayed.
-    gpGlobals->wNumScene = 2;
-    gpGlobals->viewport = PAL_XY(1152, 176);
-    gpGlobals->wPartyDirection = kDirSouth;
-    gpGlobals->rgParty[0].x = 160;
-    gpGlobals->rgParty[0].y = 112;
-    gpGlobals->rgParty[0].wFrame = 0;
-    gpGlobals->g.PlayerRoles.rgwSpriteNum[0] = 193;
-    PAL_InitResources();
-    PAL_SetLoadFlags(kLoadScene | kLoadPlayerSprite);
-    PAL_LoadResources();
-    PAL_MakeScene();
-}
-
 void DrawAunt(const std::string& directory, bool translated) {
     PrepareInn();
     PAL_StartDialog(kDialogUpper, 0, 55, FALSE);
@@ -138,8 +144,6 @@ void DrawAunt(const std::string& directory, bool translated) {
 }
 
 void SaveScales(const std::string& directory, const std::string& name);
-
-#include "portrait_effect_evidence.h"
 
 // Portrait fixtures exercise the unmodified production RGM/palette path. A
 // separate verifier checks every indexed pixel, palette and background byte.
@@ -811,7 +815,10 @@ int RenderEvidence(int argc, char **argv) {
                         "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages|jp-long-names|jp-cursor-grid|jp-recovery-before|jp-recovery|jp-npc-before|jp-npc|jp-duplicates-before|jp-duplicates|jp-translation-before|jp-translation|dos-before|dos|dos-layout-before|jp-portraits|dos-portraits|jp-portraits-rgb|dos-portraits-rgb|jp-translation-rgb|dos-rgb|jp-translation-night-rgb|dos-night-rgb|steam-records\n");
         return 2;
     }
-    const std::string mode(argv[5]), directory(argv[4]);
+    std::string mode(argv[5]);
+    const std::string directory(argv[4]);
+    const bool glsl = mode == "jp-portrait-effects-glsl" || mode == "dos-portrait-effects-glsl";
+    if (glsl) mode.erase(mode.size() - 5);
     const bool steamRecords = mode == "steam-records";
     const bool pages = mode == "cn-pages" || mode == "jp-pages";
     const bool effects = mode == "jp-portrait-effects" || mode == "dos-portrait-effects";
@@ -853,14 +860,18 @@ int RenderEvidence(int argc, char **argv) {
         PAL_InitGameData(0);
         Require(PAL_InitUI() == 0, "Cannot load UI sprites");
         if (scaled) {
-            gConfig.fEnableGLSL = FALSE;
+            gConfig.fEnableGLSL = glsl;
             gConfig.fUseTouchOverlay = FALSE;
             gConfig.fFullScreen = FALSE;
             gConfig.fKeepAspectRatio = TRUE;
             gConfig.dwTextureWidth = 320; gConfig.dwTextureHeight = 200;
+            gConfig.dwScreenWidth = 640; gConfig.dwScreenHeight = 400;
             free(gConfig.pszScaleQuality); gConfig.pszScaleQuality = strdup("0");
-            gpWindow = SDL_CreateWindow("SDLPAL source evidence", 0, 0, 640, 400, SDL_WINDOW_HIDDEN);
-            Require(gpWindow && VIDEO_Startup() == 0, "Cannot initialize hidden source renderer");
+            VIDEO_TestHiddenWindow = TRUE;
+            if (!glsl)
+                gpWindow = SDL_CreateWindow("SDLPAL source evidence", 0, 0, 640, 400, SDL_WINDOW_HIDDEN);
+            Require(!glsl || (gConfig.pszShader && *gConfig.pszShader), "GLSL evidence requires a configured shader");
+            Require(VIDEO_Startup() == 0 && gpWindow, "Cannot initialize hidden source renderer");
             // This bundled SDL suppresses even target-texture drawing for a
             // hidden window. Notify its event watcher without showing an OS
             // window; all evidence below is read from the explicit target.
@@ -980,8 +991,42 @@ int RenderEvidence(int argc, char **argv) {
     }
 }
 #else
-int RenderEvidence(int, char **) {
-    fprintf(stderr, "Render evidence requires an SDL2 Test build.\n");
-    return 2;
+int RenderEvidence(int argc, char **argv) {
+    if ((argc != 6 && argc != 7) ||
+        (strcmp(argv[5], "jp-portrait-effects") && strcmp(argv[5], "dos-portrait-effects"))) {
+        fprintf(stderr, "SDL1 evidence supports jp-portrait-effects|dos-portrait-effects only.\n");
+        return 2;
+    }
+    try {
+        // SDL1 dummy exercises its indexed video surface without opening a window.
+        char driver[64] = {};
+        Require(SDL_Init(SDL_INIT_VIDEO) == 0, "SDL1 video initialization failed");
+        Require(SDL_VideoDriverName(driver, sizeof(driver)) && !strcmp(driver, "dummy"),
+            "SDL1 source evidence requires SDL_VIDEODRIVER=dummy");
+        PAL_LoadConfig(!strcmp(argv[2], "@config"));
+        if (strcmp(argv[2], "@config")) {
+            free(gConfig.pszGamePath); gConfig.pszGamePath = strdup(argv[2]);
+        }
+        free(gConfig.pszMsgFile); gConfig.pszMsgFile = strdup(argv[3]);
+        if (argc == 7) { free(gConfig.pszPortraitFile); gConfig.pszPortraitFile = strdup(argv[6]); }
+        Require(PAL_InitGlobals() == 0 && !!gConfig.fIsWIN95 == !strcmp(argv[5], "jp-portrait-effects"),
+            "Unexpected SDL1 resource version");
+        Require(PAL_InitText() == 0 && PAL_InitFont(&gConfig) == 0, "Cannot load text/font");
+        PAL_InitGameData(0);
+        Require(PAL_InitUI() == 0, "Cannot load UI");
+        gConfig.fFullScreen = FALSE; gConfig.fKeepAspectRatio = TRUE;
+        gConfig.dwScreenWidth = 640; gConfig.dwScreenHeight = 400;
+        Require(VIDEO_Startup() == 0, "Cannot initialize SDL1 indexed video");
+        g_bRenderPaused = TRUE;
+        PAL_SetPalette(0, FALSE);
+        printf("Renderer: SDL1 %s; indexed palette fallback; 640x400\n", driver);
+        DrawPortraitEffects(argv[4]);
+        PAL_FreeUI(); PAL_FreeText(); PAL_FreeFont();
+        VIDEO_Shutdown(); PAL_FreeGlobals(); SDL_Quit();
+        return 0;
+    } catch (const std::exception& e) {
+        fprintf(stderr, "SDL1 evidence failed: %s (%s)\n", e.what(), SDL_GetError());
+        return 1;
+    }
 }
 #endif
