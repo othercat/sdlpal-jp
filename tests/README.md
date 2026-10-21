@@ -19,6 +19,18 @@ See [commands, evidence, source-rendered images and limits](../docs/japanese-gam
 
 ### Optional Saturn portrait palettes
 
+Issue 9 R5 adds Test-only `--config-roundtrip-evidence keep|clear-portrait`.
+It requires an existing `sdlpal.cfg` in the working directory and writes that
+file through the production config API: use only a backed-up, isolated copy.
+`--render-evidence '@config' '@config' OUTPUT MODE` loads resource, message and
+portrait paths exclusively from that config, rejecting a portrait override.
+`tools/japanese/verify_portrait_config.py` creates new resource/config copies,
+checks SDL1/SDL2 save/reload, and compares independent SDL2 processes before
+save, after restart and after opt-out against a native control. Indexed/RGB
+frames, published BMPs and integer-scale readbacks are bound to an independent
+resource oracle. Six negative/positive checks are in `test_portrait_config.py`.
+See [config persistence evidence and remaining acceptance](../docs/japanese-portrait-config.md).
+
 Issue 9 R3 adds `jp-portrait-effects` / `dos-portrait-effects` modes to the Test
 renderer. They call the production effects, capture uploaded RGB and indexed
 frames, and read representative hidden SDL target textures. The same harness

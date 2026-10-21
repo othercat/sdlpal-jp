@@ -42,6 +42,78 @@ void PrepareInn() {
 }
 
 #include "portrait_effect_evidence.h"
+
+void LoadEvidenceConfig(int argc, char **argv, bool translated) {
+    const bool fromConfig = strcmp(argv[2], "@config") == 0;
+    const bool configMessage = strcmp(argv[3], "@config") == 0;
+    Require(!configMessage || (fromConfig && argc == 6),
+        "Config-only rendering requires @config for resources and no portrait override");
+    PAL_LoadConfig(fromConfig);
+    if (!fromConfig) {
+        free(gConfig.pszGamePath); gConfig.pszGamePath = strdup(argv[2]);
+    }
+    if (translated && !configMessage) {
+        free(gConfig.pszMsgFile); gConfig.pszMsgFile = strdup(argv[3]);
+    }
+    if (configMessage)
+        Require(gConfig.pszMsgFile && *gConfig.pszMsgFile, "Config has no MessageFileName");
+    if (argc == 7) {
+        free(gConfig.pszPortraitFile); gConfig.pszPortraitFile = strdup(argv[6]);
+    }
+    if (configMessage)
+        printf("Config-only inputs: GamePath=%s; MessageFileName=%s; PortraitFileName=%s\n",
+            gConfig.pszGamePath, gConfig.pszMsgFile,
+            gConfig.pszPortraitFile ? gConfig.pszPortraitFile : "(none)");
+}
+
+std::vector<std::string> ConfigRenderInputs() {
+    std::vector<std::string> result;
+    const PALCFG_ITEM keys[] = {PALCFG_GAMEPATH, PALCFG_SAVEPATH, PALCFG_SHADERPATH,
+        PALCFG_MESSAGEFILE, PALCFG_FONTFILE, PALCFG_PORTRAITFILE, PALCFG_SCALEQUALITY, PALCFG_SHADER};
+    for (auto key : keys) {
+        const char *value = PAL_GetConfigItem(key, FALSE).sValue;
+        result.push_back(std::string(PAL_ConfigName(key)) + "=" + (value ? value : "(null)"));
+    }
+    result.push_back("EnableGLSL=" + std::to_string(gConfig.fEnableGLSL));
+    result.push_back("EnableHDR=" + std::to_string(gConfig.fEnableHDR));
+    result.push_back("TextureWidth=" + std::to_string(gConfig.dwTextureWidth));
+    result.push_back("TextureHeight=" + std::to_string(gConfig.dwTextureHeight));
+    result.push_back("WindowWidth=" + std::to_string(gConfig.dwScreenWidth));
+    result.push_back("WindowHeight=" + std::to_string(gConfig.dwScreenHeight));
+    return result;
+}
+}
+
+int ConfigRoundtripEvidence(int argc, char **argv) {
+    if (argc != 3 || (strcmp(argv[2], "keep") && strcmp(argv[2], "clear-portrait"))) return 2;
+    try {
+        printf("Config backend: SDL %d.%d.%d\n", SDL_MAJOR_VERSION, SDL_MINOR_VERSION, SDL_PATCHLEVEL);
+        // Explicit Test-only action. The caller must use a backed-up config in
+        // its own working directory, never the user's active game directory.
+        FILE *existing = UTIL_OpenFileAtPathForMode(PAL_CONFIG_PREFIX, "sdlpal.cfg", "r");
+        Require(existing != nullptr, "Refusing to create a missing config");
+        fclose(existing);
+        PAL_LoadConfig(TRUE);
+        if (!strcmp(argv[2], "clear-portrait")) {
+            ConfigValue value = {};
+            value.sValue = "";
+            PAL_SetConfigItem(PALCFG_PORTRAITFILE, value);
+            Require(gConfig.pszPortraitFile == nullptr, "Portrait opt-out did not clear the value");
+        }
+        const auto before = ConfigRenderInputs();
+        Require(PAL_SaveConfig(), "Cannot save config");
+        PAL_FreeConfig();
+        PAL_LoadConfig(TRUE);
+        Require(before == ConfigRenderInputs(), "Rendering inputs changed after config reload");
+        for (const auto& value : before) printf("%s\n", value.c_str());
+        printf("Config save/reload passed: %s\n", argv[2]);
+        PAL_FreeConfig();
+        return 0;
+    } catch (const std::exception& e) {
+        fprintf(stderr, "Config roundtrip failed: %s\n", e.what());
+        PAL_FreeConfig();
+        return 1;
+    }
 }
 
 #if SDL_VERSION_ATLEAST(2, 0, 0)
@@ -811,7 +883,7 @@ void DrawDOSDescriptions(const std::string& directory) {
 
 int RenderEvidence(int argc, char **argv) {
     if (argc != 6 && argc != 7) {
-        fprintf(stderr, "Usage: --render-evidence RESOURCE_DIR_OR_@config SLF_OR_DASH OUTPUT_DIR MODE [PORTRAIT_FILE]\nModes: "
+        fprintf(stderr, "Usage: --render-evidence RESOURCE_DIR_OR_@config SLF_OR_DASH_OR_@config OUTPUT_DIR MODE [PORTRAIT_FILE]\nModes: "
                         "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages|jp-long-names|jp-cursor-grid|jp-recovery-before|jp-recovery|jp-npc-before|jp-npc|jp-duplicates-before|jp-duplicates|jp-translation-before|jp-translation|dos-before|dos|dos-layout-before|jp-portraits|dos-portraits|jp-portraits-rgb|dos-portraits-rgb|jp-translation-rgb|dos-rgb|jp-translation-night-rgb|dos-night-rgb|steam-records\n");
         return 2;
     }
@@ -844,14 +916,7 @@ int RenderEvidence(int argc, char **argv) {
     if (translated && strcmp(argv[3], "-") == 0) return 2;
     try {
         Require(SDL_Init(scaled ? SDL_INIT_VIDEO | SDL_INIT_EVENTS : 0) == 0, "SDL_Init failed");
-        const bool fromConfig = strcmp(argv[2], "@config") == 0;
-        PAL_LoadConfig(fromConfig);
-        if (!fromConfig) {
-            free(gConfig.pszGamePath);
-            gConfig.pszGamePath = strdup(argv[2]);
-        }
-        if (translated) { free(gConfig.pszMsgFile); gConfig.pszMsgFile = strdup(argv[3]); }
-        if (argc == 7) { free(gConfig.pszPortraitFile); gConfig.pszPortraitFile = strdup(argv[6]); }
+        LoadEvidenceConfig(argc, argv, translated);
         Require(PAL_InitGlobals() == 0 && (steamRecords || !!gConfig.fIsWIN95 == !dos), "Unexpected resource version");
         Require(PAL_InitText() == 0, "Cannot load game text");
         if (mode == "cn-jp-font" || fieldMenu || pages || steamRecords) g_TextLib.iFontFlavor = kFontFlavorJapanese;
@@ -1003,12 +1068,7 @@ int RenderEvidence(int argc, char **argv) {
         Require(SDL_Init(SDL_INIT_VIDEO) == 0, "SDL1 video initialization failed");
         Require(SDL_VideoDriverName(driver, sizeof(driver)) && !strcmp(driver, "dummy"),
             "SDL1 source evidence requires SDL_VIDEODRIVER=dummy");
-        PAL_LoadConfig(!strcmp(argv[2], "@config"));
-        if (strcmp(argv[2], "@config")) {
-            free(gConfig.pszGamePath); gConfig.pszGamePath = strdup(argv[2]);
-        }
-        free(gConfig.pszMsgFile); gConfig.pszMsgFile = strdup(argv[3]);
-        if (argc == 7) { free(gConfig.pszPortraitFile); gConfig.pszPortraitFile = strdup(argv[6]); }
+        LoadEvidenceConfig(argc, argv, true);
         Require(PAL_InitGlobals() == 0 && !!gConfig.fIsWIN95 == !strcmp(argv[5], "jp-portrait-effects"),
             "Unexpected SDL1 resource version");
         Require(PAL_InitText() == 0 && PAL_InitFont(&gConfig) == 0, "Cannot load text/font");
