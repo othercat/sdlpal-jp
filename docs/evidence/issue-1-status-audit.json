@@ -114,8 +114,8 @@
     }
   ],
   "removed_shared_chat_link_absent": true,
-  "completed_this_round": "Issue 2 R3 multi-file preparation failure rollback and existing-file protection",
-  "next_technical_followup": "Issue 2 latest-build non-ASCII absolute GamePath reproduction",
+  "completed_this_round": "Issue 2 R4 Chinese absolute GamePath, native settings roundtrip and source-rendered comparison",
+  "next_technical_followup": "Issue 9 SDL1 build and GLSL output compatibility verification (no confirmed failure yet)",
   "other_open_verification": [
     "Issue 9 SDL1 build and GLSL output"
   ],
@@ -146,6 +146,25 @@
         "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\issue-2-before.json",
         "bytes": 16683,
         "sha256": "5ad1c91a045b6b8208fa3161921ce0e5728b4e1692b1814a9aafa64023c35aa6"
+      }
+    },
+    "prior_full_audit_preserved": true,
+    "issues_rechecked_this_round": [
+      1,
+      2
+    ]
+  },
+  "r4_followup": {
+    "base": "581fe0cdf7873b4ec5be7aac15d846299cffc0c2",
+    "evidence": "issue-2-gamepath-verification.json",
+    "issue_snapshots_before": {
+      "1": {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\issue-1-before.json",
+        "sha256": "2237c80c34b0eedf7acaab09f9d0e565873b14afa1a6d8f216f11453426ca978"
+      },
+      "2": {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\issue-2-before.json",
+        "sha256": "88ac4371e10e1f6f79ce34860babd6b5d645c7c1001f0f446a1ec4b2d1912624"
       }
     },
     "prior_full_audit_preserved": true,

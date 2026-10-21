@@ -1,0 +1,1438 @@
+{
+  "base": "581fe0cdf7873b4ec5be7aac15d846299cffc0c2",
+  "system_acp": 936,
+  "resource_source": "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+  "resources_sha256": {
+    "ABC.mkf": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b",
+    "BALL.MKF": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0",
+    "DATA.MKF": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+    "F.MKF": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7",
+    "FBP.MKF": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84",
+    "FIRE.MKF": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf",
+    "GOP.MKF": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b",
+    "M.MSG": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+    "MAP.MKF": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575",
+    "MGO.mkf": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0",
+    "MUS.MKF": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21",
+    "PAT.MKF": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997",
+    "RGM.MKF": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132",
+    "RNG.MKF": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd",
+    "SOUNDS.MKF": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01",
+    "SSS.MKF": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+    "WORD.DAT": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+  },
+  "slf_sha256": "6a282849492f6e3db06f384da59ad518eb2ca45df95683fa1fb179deee5f5ff0",
+  "executable_sha256": "e697feb6044617a6ea473938d96cc38d996b8429928c0294ad58c8eee477db30",
+  "verifier_sha256": "24a98c6ca1538b23d04729033176b01d0840a0ad37e8e6d09f9f9fb3816a54d5",
+  "reproduction_sha256": "d02948587bebf4bce1b4e1bc6c7181e0a726e7dcff4053959a69bbb33df8e25d",
+  "baseline": {
+    "base": "581fe0cdf7873b4ec5be7aac15d846299cffc0c2",
+    "system_acp": 936,
+    "resource_source": "D:\\PAL\\完整包\\PAL98_v1.72_20261014",
+    "resources_sha256": {
+      "ABC.mkf": "c5dadb1303addbf103437de594cb9820150bc9f1f2fea02837594c49e241ed8b",
+      "BALL.MKF": "b9925833a9d921aa6bea9d0d199dbbe170968716d951036a142c1dd303f99bd0",
+      "DATA.MKF": "c0bc968e5322b06fe669dd6e34483dd1f12dd223ac25b03b6dc74d3742635c1b",
+      "F.MKF": "eb492e6dcd0eefb6fbc1751d775bc8667b46d3cd5231974caa1eef309f3152d7",
+      "FBP.MKF": "29bbc71c10c58a555e5b45b853dfeef3fa0d299ceeb8e7556b6c1d6bc40c4d84",
+      "FIRE.MKF": "5a23940d3daab5bfa95efd3b92b4d1ae481fc4f7ad38374ec66b16c7e7d5d9cf",
+      "GOP.MKF": "5745d016a8d9c280b90a8b92d2871210a2dd0a0c04a79d4c8e65f4d0396aa04b",
+      "M.MSG": "d07344645bf0c65d58d13bdb5916e28222f8ce4d506821085ddfd44ba5533d9c",
+      "MAP.MKF": "62739644af65b5e80c0736d31da00e4fe805a56ee5c5fede6558c0c13bacd575",
+      "MGO.mkf": "62ce20393e378c80538ba8b9ad1a24112e491f5afc5f350c5ebb00190b2317a0",
+      "MUS.MKF": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21",
+      "PAT.MKF": "b2d6a3db53a3e80106a4c041c7f94dfaf9dcb065517fce79b1ff3d413494d997",
+      "RGM.MKF": "817b673e9cd72ccd30936475ea26bead5351bbd8e7909e9b9a2a65b6b75fc132",
+      "RNG.MKF": "5d62cad87b330d2e1ec00d7c1acc4de96b8324e547fa8095aab0f64a9811d7bd",
+      "SOUNDS.MKF": "039a5cc64be937168ce458c8288fbd61fb3d2854e9445a775ab67f6af2276e01",
+      "SSS.MKF": "a14ca6d9ab20767ae97a211cba85496879cb5d04f04ef8db453ef1c72a2cae3c",
+      "WORD.DAT": "be56e77c7ecd61306133913a1987b1dddf656528ae870c2de1ee8ccda7ff3ebf"
+    },
+    "slf_sha256": "6a282849492f6e3db06f384da59ad518eb2ca45df95683fa1fb179deee5f5ff0",
+    "exe_sha256": "8122b10f5e6d8ea336e57928f36690af675c05378c15cbb605c4d9a5f0d4d31a",
+    "runs": {
+      "ascii": {
+        "argv": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\before\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\runtime-ascii/",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\paljpn-win.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\before-ascii",
+          "jp"
+        ],
+        "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\before-ascii",
+        "exit_code": 0,
+        "stopped": null,
+        "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\before-ascii\\render.log",
+        "log_sha256": "bedfe0a1547435198ea20932ad573c7a82f924967700b9f7d7811bacb50da684",
+        "log_text": "Rendered jp: 12 BMPs, 320x200, palette 0, font flavor 4, font height 16, word length 16, magic description X=70\n",
+        "images": {
+          "aunt-dialogue.bmp": "a1a88405378bc1a9b51f80b20c012e43f4893db1f899321adbc473290af02eb6",
+          "item-149.bmp": "0f68831ffd7bd696b63446946361e3775ab1dece1007a732d8473e2198a04402",
+          "magic-306.bmp": "f930d5d432a9dfea374b260cdda0423bdcae3561a3ad6db9b9816bbf9c2a956c",
+          "magic-307.bmp": "a3ac1c627e2aa0a111e36d4c8571160e7abc9a6c695618b2b9b0785a7869ad56",
+          "magic-308.bmp": "052d781b438982b175ac3daf9c3403f1076cfb5ffd15764293d5dc225488450e",
+          "magic-311.bmp": "ee776f6e85d3c16ea6b6f7a7a17450aee26e4cc3b3f2efa2c238e068443806f8",
+          "magic-370.bmp": "0a767fea959b4ed7d5844a05a42ded7d638ab8e299a2f7cd0d02d3382f7cba13",
+          "magic-374.bmp": "b6094b11437d59babcf77374fa9477af70f9840a3837d811fcd11c684e86247f",
+          "magic-377.bmp": "23f80ab6e8b41d66e86737a50aed0cf14954debf5f5a37d717657f3a2193b076",
+          "magic-390.bmp": "5566773844fb79bd525982580e2ad07bc4e1916aad72b503be93f7f43016ff70",
+          "magic-393.bmp": "02754e25bdcec36b8836de1a444e9b788846254f9a7c8faf7bfa32719177339b",
+          "magic-394.bmp": "8aecc4a0513e09e37090c033337595463fba6e9a7fe2b6a0b5a14298d5d6b89d"
+        }
+      },
+      "chinese": {
+        "argv": [
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\before\\build\\sdlpal.exe",
+          "--render-evidence",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\中文资源-仙剑98/",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\paljpn-win.slf",
+          "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\before-chinese",
+          "jp"
+        ],
+        "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\before-chinese",
+        "exit_code": 1,
+        "stopped": "Captured fatal resource-open error; terminated only this Test child before waiting on its error dialog.",
+        "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\before-chinese\\render.log",
+        "log_sha256": "3fe55c166a44d66d3a149ab04621b6fa3669fdaf111faf4cdbb4abce0b2bd8c3",
+        "log_text": "\nFATAL ERROR: File open error(2): fbp.mkf!\n\n",
+        "images": {}
+      }
+    },
+    "original_resources_unchanged": true
+  },
+  "runs": {
+    "argv-ascii": {
+      "argv": [
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\after-r4\\build\\sdlpal.exe",
+        "--render-evidence",
+        "D:/Workspace/PALWork/artifacts/sdlpal-jp-issue-2/gamepath-r4-20261021/runtime-ascii/",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\paljpn-win.slf",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\verification-r2\\argv-ascii",
+        "jp"
+      ],
+      "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\verification-r2\\argv-ascii",
+      "exit_code": 0,
+      "stopped": null,
+      "log_sha256": "bedfe0a1547435198ea20932ad573c7a82f924967700b9f7d7811bacb50da684",
+      "log_text": "Rendered jp: 12 BMPs, 320x200, palette 0, font flavor 4, font height 16, word length 16, magic description X=70\n",
+      "images_sha256": {
+        "aunt-dialogue.bmp": "a1a88405378bc1a9b51f80b20c012e43f4893db1f899321adbc473290af02eb6",
+        "item-149.bmp": "0f68831ffd7bd696b63446946361e3775ab1dece1007a732d8473e2198a04402",
+        "magic-306.bmp": "f930d5d432a9dfea374b260cdda0423bdcae3561a3ad6db9b9816bbf9c2a956c",
+        "magic-307.bmp": "a3ac1c627e2aa0a111e36d4c8571160e7abc9a6c695618b2b9b0785a7869ad56",
+        "magic-308.bmp": "052d781b438982b175ac3daf9c3403f1076cfb5ffd15764293d5dc225488450e",
+        "magic-311.bmp": "ee776f6e85d3c16ea6b6f7a7a17450aee26e4cc3b3f2efa2c238e068443806f8",
+        "magic-370.bmp": "0a767fea959b4ed7d5844a05a42ded7d638ab8e299a2f7cd0d02d3382f7cba13",
+        "magic-374.bmp": "b6094b11437d59babcf77374fa9477af70f9840a3837d811fcd11c684e86247f",
+        "magic-377.bmp": "23f80ab6e8b41d66e86737a50aed0cf14954debf5f5a37d717657f3a2193b076",
+        "magic-390.bmp": "28e30619edc59b84f873077c0ce8850fcece23ab227d3a716fb375d2c68c5257",
+        "magic-393.bmp": "02754e25bdcec36b8836de1a444e9b788846254f9a7c8faf7bfa32719177339b",
+        "magic-394.bmp": "8aecc4a0513e09e37090c033337595463fba6e9a7fe2b6a0b5a14298d5d6b89d"
+      },
+      "rgb_comparison": {
+        "aunt-dialogue.bmp": {
+          "rgb_sha256": "7bf497e6f42945bce5cb6e757f507b33c6055cc07728999b9d93523e635cff08",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [],
+          "unexplained_pixels": 0
+        },
+        "item-149.bmp": {
+          "rgb_sha256": "045479ac3359a19563d2cb2b0faff2b57503125e9847ef9135765c04fcd95a61",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [],
+          "unexplained_pixels": 0
+        },
+        "magic-306.bmp": {
+          "rgb_sha256": "c6b6527a9459b01aa4a0dcf977155b542fb8f49f53187cd2cb84dc8b2ea495c9",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-307.bmp": {
+          "rgb_sha256": "6bf3936bf26a8ca2d5626571838b14be38ce516527ec74a589297290b76696e1",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-308.bmp": {
+          "rgb_sha256": "459b832fd235ee11a06bea190c9a8d5c9d86b3ffb1f75c320ed600646af36a17",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-311.bmp": {
+          "rgb_sha256": "49d759526e17d8f15a0c2564e5e38fa4903c5c94d4961501219a63058b71e108",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-370.bmp": {
+          "rgb_sha256": "e137eed998fa16a9c4424ca87eaa364a04fdc8533f18081d309bb1553237ee04",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-374.bmp": {
+          "rgb_sha256": "c8cc4cda4715ee8db917ce4aa15250ab43f861b117f3cffdb14eeb01a29a4e23",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-377.bmp": {
+          "rgb_sha256": "ff12cecb91eb38ffe10cdcd7dde986d9a69fb1bfdfb3f821ff466ed056400d63",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-390.bmp": {
+          "rgb_sha256": "215415da6f304c356fd906d44845fc6baa8a04d7b46b7d22f29bd4a0a03893ce",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-393.bmp": {
+          "rgb_sha256": "799244172aa5845a05961448d217f1a8d5c886cc9a7ca0917895db6959c4feec",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              250,
+              250
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-394.bmp": {
+          "rgb_sha256": "4440588c256cc47a0a04119c5a53fbc9fdc21877eb63db9e9c96bf65b14efd9a",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              250,
+              250
+            ]
+          ],
+          "unexplained_pixels": 0
+        }
+      }
+    },
+    "argv-chinese": {
+      "argv": [
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\after-r4\\build\\sdlpal.exe",
+        "--render-evidence",
+        "D:/Workspace/PALWork/artifacts/sdlpal-jp-issue-2/gamepath-r4-20261021/中文资源-仙剑98/",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\paljpn-win.slf",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\verification-r2\\argv-chinese",
+        "jp"
+      ],
+      "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\verification-r2\\argv-chinese",
+      "exit_code": 0,
+      "stopped": null,
+      "log_sha256": "bedfe0a1547435198ea20932ad573c7a82f924967700b9f7d7811bacb50da684",
+      "log_text": "Rendered jp: 12 BMPs, 320x200, palette 0, font flavor 4, font height 16, word length 16, magic description X=70\n",
+      "images_sha256": {
+        "aunt-dialogue.bmp": "a1a88405378bc1a9b51f80b20c012e43f4893db1f899321adbc473290af02eb6",
+        "item-149.bmp": "0f68831ffd7bd696b63446946361e3775ab1dece1007a732d8473e2198a04402",
+        "magic-306.bmp": "f930d5d432a9dfea374b260cdda0423bdcae3561a3ad6db9b9816bbf9c2a956c",
+        "magic-307.bmp": "a3ac1c627e2aa0a111e36d4c8571160e7abc9a6c695618b2b9b0785a7869ad56",
+        "magic-308.bmp": "052d781b438982b175ac3daf9c3403f1076cfb5ffd15764293d5dc225488450e",
+        "magic-311.bmp": "ee776f6e85d3c16ea6b6f7a7a17450aee26e4cc3b3f2efa2c238e068443806f8",
+        "magic-370.bmp": "0a767fea959b4ed7d5844a05a42ded7d638ab8e299a2f7cd0d02d3382f7cba13",
+        "magic-374.bmp": "b6094b11437d59babcf77374fa9477af70f9840a3837d811fcd11c684e86247f",
+        "magic-377.bmp": "23f80ab6e8b41d66e86737a50aed0cf14954debf5f5a37d717657f3a2193b076",
+        "magic-390.bmp": "28e30619edc59b84f873077c0ce8850fcece23ab227d3a716fb375d2c68c5257",
+        "magic-393.bmp": "a7fa453d2669e75b9a6a0d28004bbdd12423d814f0af7b3fadc267b297343265",
+        "magic-394.bmp": "8aecc4a0513e09e37090c033337595463fba6e9a7fe2b6a0b5a14298d5d6b89d"
+      },
+      "rgb_comparison": {
+        "aunt-dialogue.bmp": {
+          "rgb_sha256": "7bf497e6f42945bce5cb6e757f507b33c6055cc07728999b9d93523e635cff08",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [],
+          "unexplained_pixels": 0
+        },
+        "item-149.bmp": {
+          "rgb_sha256": "045479ac3359a19563d2cb2b0faff2b57503125e9847ef9135765c04fcd95a61",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [],
+          "unexplained_pixels": 0
+        },
+        "magic-306.bmp": {
+          "rgb_sha256": "c6b6527a9459b01aa4a0dcf977155b542fb8f49f53187cd2cb84dc8b2ea495c9",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-307.bmp": {
+          "rgb_sha256": "6bf3936bf26a8ca2d5626571838b14be38ce516527ec74a589297290b76696e1",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-308.bmp": {
+          "rgb_sha256": "459b832fd235ee11a06bea190c9a8d5c9d86b3ffb1f75c320ed600646af36a17",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-311.bmp": {
+          "rgb_sha256": "49d759526e17d8f15a0c2564e5e38fa4903c5c94d4961501219a63058b71e108",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-370.bmp": {
+          "rgb_sha256": "e137eed998fa16a9c4424ca87eaa364a04fdc8533f18081d309bb1553237ee04",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-374.bmp": {
+          "rgb_sha256": "c8cc4cda4715ee8db917ce4aa15250ab43f861b117f3cffdb14eeb01a29a4e23",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-377.bmp": {
+          "rgb_sha256": "ff12cecb91eb38ffe10cdcd7dde986d9a69fb1bfdfb3f821ff466ed056400d63",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-390.bmp": {
+          "rgb_sha256": "215415da6f304c356fd906d44845fc6baa8a04d7b46b7d22f29bd4a0a03893ce",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-393.bmp": {
+          "rgb_sha256": "d2e7daadd06807b9aa32b5dc9bbea4a46a5eae41e5e3ebcd7797326fd9b50604",
+          "different_pixels": 460,
+          "selected_animation_index_pixels": 460,
+          "selected_color_pairs": [
+            [
+              250,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-394.bmp": {
+          "rgb_sha256": "4440588c256cc47a0a04119c5a53fbc9fdc21877eb63db9e9c96bf65b14efd9a",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              250,
+              250
+            ]
+          ],
+          "unexplained_pixels": 0
+        }
+      }
+    },
+    "config-ascii-utf8": {
+      "argv": [
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\after-r4\\build\\sdlpal.exe",
+        "--render-evidence",
+        "@config",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\paljpn-win.slf",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\verification-r2\\config-ascii-utf8",
+        "jp"
+      ],
+      "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\verification-r2\\config-ascii-utf8",
+      "exit_code": 0,
+      "stopped": null,
+      "log_sha256": "bedfe0a1547435198ea20932ad573c7a82f924967700b9f7d7811bacb50da684",
+      "log_text": "Rendered jp: 12 BMPs, 320x200, palette 0, font flavor 4, font height 16, word length 16, magic description X=70\n",
+      "images_sha256": {
+        "aunt-dialogue.bmp": "a1a88405378bc1a9b51f80b20c012e43f4893db1f899321adbc473290af02eb6",
+        "item-149.bmp": "0f68831ffd7bd696b63446946361e3775ab1dece1007a732d8473e2198a04402",
+        "magic-306.bmp": "f930d5d432a9dfea374b260cdda0423bdcae3561a3ad6db9b9816bbf9c2a956c",
+        "magic-307.bmp": "a3ac1c627e2aa0a111e36d4c8571160e7abc9a6c695618b2b9b0785a7869ad56",
+        "magic-308.bmp": "052d781b438982b175ac3daf9c3403f1076cfb5ffd15764293d5dc225488450e",
+        "magic-311.bmp": "ee776f6e85d3c16ea6b6f7a7a17450aee26e4cc3b3f2efa2c238e068443806f8",
+        "magic-370.bmp": "0a767fea959b4ed7d5844a05a42ded7d638ab8e299a2f7cd0d02d3382f7cba13",
+        "magic-374.bmp": "b6094b11437d59babcf77374fa9477af70f9840a3837d811fcd11c684e86247f",
+        "magic-377.bmp": "23f80ab6e8b41d66e86737a50aed0cf14954debf5f5a37d717657f3a2193b076",
+        "magic-390.bmp": "28e30619edc59b84f873077c0ce8850fcece23ab227d3a716fb375d2c68c5257",
+        "magic-393.bmp": "02754e25bdcec36b8836de1a444e9b788846254f9a7c8faf7bfa32719177339b",
+        "magic-394.bmp": "8aecc4a0513e09e37090c033337595463fba6e9a7fe2b6a0b5a14298d5d6b89d"
+      },
+      "config_hex": "47616d65506174683d443a5c576f726b73706163655c50414c576f726b5c6172746966616374735c73646c70616c2d6a702d69737375652d325c67616d65706174682d72342d32303236313032315c72756e74696d652d61736369690a",
+      "config_sha256": "9469764f51f6760cc976d01c1ae4a934f829bcccfd95f8e9eb0abccf042b2a78",
+      "rgb_comparison": {
+        "aunt-dialogue.bmp": {
+          "rgb_sha256": "7bf497e6f42945bce5cb6e757f507b33c6055cc07728999b9d93523e635cff08",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [],
+          "unexplained_pixels": 0
+        },
+        "item-149.bmp": {
+          "rgb_sha256": "045479ac3359a19563d2cb2b0faff2b57503125e9847ef9135765c04fcd95a61",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [],
+          "unexplained_pixels": 0
+        },
+        "magic-306.bmp": {
+          "rgb_sha256": "c6b6527a9459b01aa4a0dcf977155b542fb8f49f53187cd2cb84dc8b2ea495c9",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-307.bmp": {
+          "rgb_sha256": "6bf3936bf26a8ca2d5626571838b14be38ce516527ec74a589297290b76696e1",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-308.bmp": {
+          "rgb_sha256": "459b832fd235ee11a06bea190c9a8d5c9d86b3ffb1f75c320ed600646af36a17",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-311.bmp": {
+          "rgb_sha256": "49d759526e17d8f15a0c2564e5e38fa4903c5c94d4961501219a63058b71e108",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-370.bmp": {
+          "rgb_sha256": "e137eed998fa16a9c4424ca87eaa364a04fdc8533f18081d309bb1553237ee04",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-374.bmp": {
+          "rgb_sha256": "c8cc4cda4715ee8db917ce4aa15250ab43f861b117f3cffdb14eeb01a29a4e23",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-377.bmp": {
+          "rgb_sha256": "ff12cecb91eb38ffe10cdcd7dde986d9a69fb1bfdfb3f821ff466ed056400d63",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-390.bmp": {
+          "rgb_sha256": "215415da6f304c356fd906d44845fc6baa8a04d7b46b7d22f29bd4a0a03893ce",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-393.bmp": {
+          "rgb_sha256": "799244172aa5845a05961448d217f1a8d5c886cc9a7ca0917895db6959c4feec",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              250,
+              250
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-394.bmp": {
+          "rgb_sha256": "4440588c256cc47a0a04119c5a53fbc9fdc21877eb63db9e9c96bf65b14efd9a",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              250,
+              250
+            ]
+          ],
+          "unexplained_pixels": 0
+        }
+      }
+    },
+    "config-chinese-utf8": {
+      "argv": [
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\after-r4\\build\\sdlpal.exe",
+        "--render-evidence",
+        "@config",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\paljpn-win.slf",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\verification-r2\\config-chinese-utf8",
+        "jp"
+      ],
+      "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\verification-r2\\config-chinese-utf8",
+      "exit_code": 0,
+      "stopped": null,
+      "log_sha256": "bedfe0a1547435198ea20932ad573c7a82f924967700b9f7d7811bacb50da684",
+      "log_text": "Rendered jp: 12 BMPs, 320x200, palette 0, font flavor 4, font height 16, word length 16, magic description X=70\n",
+      "images_sha256": {
+        "aunt-dialogue.bmp": "a1a88405378bc1a9b51f80b20c012e43f4893db1f899321adbc473290af02eb6",
+        "item-149.bmp": "0f68831ffd7bd696b63446946361e3775ab1dece1007a732d8473e2198a04402",
+        "magic-306.bmp": "f930d5d432a9dfea374b260cdda0423bdcae3561a3ad6db9b9816bbf9c2a956c",
+        "magic-307.bmp": "a3ac1c627e2aa0a111e36d4c8571160e7abc9a6c695618b2b9b0785a7869ad56",
+        "magic-308.bmp": "052d781b438982b175ac3daf9c3403f1076cfb5ffd15764293d5dc225488450e",
+        "magic-311.bmp": "ee776f6e85d3c16ea6b6f7a7a17450aee26e4cc3b3f2efa2c238e068443806f8",
+        "magic-370.bmp": "0a767fea959b4ed7d5844a05a42ded7d638ab8e299a2f7cd0d02d3382f7cba13",
+        "magic-374.bmp": "b6094b11437d59babcf77374fa9477af70f9840a3837d811fcd11c684e86247f",
+        "magic-377.bmp": "23f80ab6e8b41d66e86737a50aed0cf14954debf5f5a37d717657f3a2193b076",
+        "magic-390.bmp": "28e30619edc59b84f873077c0ce8850fcece23ab227d3a716fb375d2c68c5257",
+        "magic-393.bmp": "a7fa453d2669e75b9a6a0d28004bbdd12423d814f0af7b3fadc267b297343265",
+        "magic-394.bmp": "8aecc4a0513e09e37090c033337595463fba6e9a7fe2b6a0b5a14298d5d6b89d"
+      },
+      "config_hex": "47616d65506174683d443a5c576f726b73706163655c50414c576f726b5c6172746966616374735c73646c70616c2d6a702d69737375652d325c67616d65706174682d72342d32303236313032315ce4b8ade69687e8b584e6ba902de4bb99e5899139380a",
+      "config_sha256": "e1e784632d24352bde278f642af9e8eba6667541df9d072c1112c612fe87eb66",
+      "rgb_comparison": {
+        "aunt-dialogue.bmp": {
+          "rgb_sha256": "7bf497e6f42945bce5cb6e757f507b33c6055cc07728999b9d93523e635cff08",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [],
+          "unexplained_pixels": 0
+        },
+        "item-149.bmp": {
+          "rgb_sha256": "045479ac3359a19563d2cb2b0faff2b57503125e9847ef9135765c04fcd95a61",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [],
+          "unexplained_pixels": 0
+        },
+        "magic-306.bmp": {
+          "rgb_sha256": "c6b6527a9459b01aa4a0dcf977155b542fb8f49f53187cd2cb84dc8b2ea495c9",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-307.bmp": {
+          "rgb_sha256": "6bf3936bf26a8ca2d5626571838b14be38ce516527ec74a589297290b76696e1",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-308.bmp": {
+          "rgb_sha256": "459b832fd235ee11a06bea190c9a8d5c9d86b3ffb1f75c320ed600646af36a17",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-311.bmp": {
+          "rgb_sha256": "49d759526e17d8f15a0c2564e5e38fa4903c5c94d4961501219a63058b71e108",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-370.bmp": {
+          "rgb_sha256": "e137eed998fa16a9c4424ca87eaa364a04fdc8533f18081d309bb1553237ee04",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-374.bmp": {
+          "rgb_sha256": "c8cc4cda4715ee8db917ce4aa15250ab43f861b117f3cffdb14eeb01a29a4e23",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-377.bmp": {
+          "rgb_sha256": "ff12cecb91eb38ffe10cdcd7dde986d9a69fb1bfdfb3f821ff466ed056400d63",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-390.bmp": {
+          "rgb_sha256": "215415da6f304c356fd906d44845fc6baa8a04d7b46b7d22f29bd4a0a03893ce",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-393.bmp": {
+          "rgb_sha256": "d2e7daadd06807b9aa32b5dc9bbea4a46a5eae41e5e3ebcd7797326fd9b50604",
+          "different_pixels": 460,
+          "selected_animation_index_pixels": 460,
+          "selected_color_pairs": [
+            [
+              250,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-394.bmp": {
+          "rgb_sha256": "4440588c256cc47a0a04119c5a53fbc9fdc21877eb63db9e9c96bf65b14efd9a",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              250,
+              250
+            ]
+          ],
+          "unexplained_pixels": 0
+        }
+      }
+    },
+    "config-chinese-acp": {
+      "argv": [
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\after-r4\\build\\sdlpal.exe",
+        "--render-evidence",
+        "@config",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\paljpn-win.slf",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\verification-r2\\config-chinese-acp",
+        "jp"
+      ],
+      "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\verification-r2\\config-chinese-acp",
+      "exit_code": 0,
+      "stopped": null,
+      "log_sha256": "bedfe0a1547435198ea20932ad573c7a82f924967700b9f7d7811bacb50da684",
+      "log_text": "Rendered jp: 12 BMPs, 320x200, palette 0, font flavor 4, font height 16, word length 16, magic description X=70\n",
+      "images_sha256": {
+        "aunt-dialogue.bmp": "a1a88405378bc1a9b51f80b20c012e43f4893db1f899321adbc473290af02eb6",
+        "item-149.bmp": "0f68831ffd7bd696b63446946361e3775ab1dece1007a732d8473e2198a04402",
+        "magic-306.bmp": "f930d5d432a9dfea374b260cdda0423bdcae3561a3ad6db9b9816bbf9c2a956c",
+        "magic-307.bmp": "a3ac1c627e2aa0a111e36d4c8571160e7abc9a6c695618b2b9b0785a7869ad56",
+        "magic-308.bmp": "052d781b438982b175ac3daf9c3403f1076cfb5ffd15764293d5dc225488450e",
+        "magic-311.bmp": "ee776f6e85d3c16ea6b6f7a7a17450aee26e4cc3b3f2efa2c238e068443806f8",
+        "magic-370.bmp": "0a767fea959b4ed7d5844a05a42ded7d638ab8e299a2f7cd0d02d3382f7cba13",
+        "magic-374.bmp": "b6094b11437d59babcf77374fa9477af70f9840a3837d811fcd11c684e86247f",
+        "magic-377.bmp": "23f80ab6e8b41d66e86737a50aed0cf14954debf5f5a37d717657f3a2193b076",
+        "magic-390.bmp": "28e30619edc59b84f873077c0ce8850fcece23ab227d3a716fb375d2c68c5257",
+        "magic-393.bmp": "a7fa453d2669e75b9a6a0d28004bbdd12423d814f0af7b3fadc267b297343265",
+        "magic-394.bmp": "8aecc4a0513e09e37090c033337595463fba6e9a7fe2b6a0b5a14298d5d6b89d"
+      },
+      "config_hex": "47616d65506174683d443a5c576f726b73706163655c50414c576f726b5c6172746966616374735c73646c70616c2d6a702d69737375652d325c67616d65706174682d72342d32303236313032315cd6d0cec4d7cad4b42dcfc9bda339380a",
+      "config_sha256": "1d092e32ce894e35993c19cacfed1b0c1861ed737c5d67855ea264bcc6991be0",
+      "rgb_comparison": {
+        "aunt-dialogue.bmp": {
+          "rgb_sha256": "7bf497e6f42945bce5cb6e757f507b33c6055cc07728999b9d93523e635cff08",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [],
+          "unexplained_pixels": 0
+        },
+        "item-149.bmp": {
+          "rgb_sha256": "045479ac3359a19563d2cb2b0faff2b57503125e9847ef9135765c04fcd95a61",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [],
+          "unexplained_pixels": 0
+        },
+        "magic-306.bmp": {
+          "rgb_sha256": "c6b6527a9459b01aa4a0dcf977155b542fb8f49f53187cd2cb84dc8b2ea495c9",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-307.bmp": {
+          "rgb_sha256": "6bf3936bf26a8ca2d5626571838b14be38ce516527ec74a589297290b76696e1",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-308.bmp": {
+          "rgb_sha256": "459b832fd235ee11a06bea190c9a8d5c9d86b3ffb1f75c320ed600646af36a17",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-311.bmp": {
+          "rgb_sha256": "49d759526e17d8f15a0c2564e5e38fa4903c5c94d4961501219a63058b71e108",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-370.bmp": {
+          "rgb_sha256": "e137eed998fa16a9c4424ca87eaa364a04fdc8533f18081d309bb1553237ee04",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-374.bmp": {
+          "rgb_sha256": "c8cc4cda4715ee8db917ce4aa15250ab43f861b117f3cffdb14eeb01a29a4e23",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-377.bmp": {
+          "rgb_sha256": "ff12cecb91eb38ffe10cdcd7dde986d9a69fb1bfdfb3f821ff466ed056400d63",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-390.bmp": {
+          "rgb_sha256": "215415da6f304c356fd906d44845fc6baa8a04d7b46b7d22f29bd4a0a03893ce",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-393.bmp": {
+          "rgb_sha256": "d2e7daadd06807b9aa32b5dc9bbea4a46a5eae41e5e3ebcd7797326fd9b50604",
+          "different_pixels": 460,
+          "selected_animation_index_pixels": 460,
+          "selected_color_pairs": [
+            [
+              250,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-394.bmp": {
+          "rgb_sha256": "4440588c256cc47a0a04119c5a53fbc9fdc21877eb63db9e9c96bf65b14efd9a",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              250,
+              250
+            ]
+          ],
+          "unexplained_pixels": 0
+        }
+      }
+    },
+    "config-original-utf8": {
+      "argv": [
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\after-r4\\build\\sdlpal.exe",
+        "--render-evidence",
+        "@config",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\paljpn-win.slf",
+        "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\verification-r2\\config-original-utf8",
+        "jp"
+      ],
+      "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\verification-r2\\config-original-utf8",
+      "exit_code": 0,
+      "stopped": null,
+      "log_sha256": "bedfe0a1547435198ea20932ad573c7a82f924967700b9f7d7811bacb50da684",
+      "log_text": "Rendered jp: 12 BMPs, 320x200, palette 0, font flavor 4, font height 16, word length 16, magic description X=70\n",
+      "images_sha256": {
+        "aunt-dialogue.bmp": "a1a88405378bc1a9b51f80b20c012e43f4893db1f899321adbc473290af02eb6",
+        "item-149.bmp": "0f68831ffd7bd696b63446946361e3775ab1dece1007a732d8473e2198a04402",
+        "magic-306.bmp": "f930d5d432a9dfea374b260cdda0423bdcae3561a3ad6db9b9816bbf9c2a956c",
+        "magic-307.bmp": "a3ac1c627e2aa0a111e36d4c8571160e7abc9a6c695618b2b9b0785a7869ad56",
+        "magic-308.bmp": "052d781b438982b175ac3daf9c3403f1076cfb5ffd15764293d5dc225488450e",
+        "magic-311.bmp": "ee776f6e85d3c16ea6b6f7a7a17450aee26e4cc3b3f2efa2c238e068443806f8",
+        "magic-370.bmp": "0a767fea959b4ed7d5844a05a42ded7d638ab8e299a2f7cd0d02d3382f7cba13",
+        "magic-374.bmp": "b6094b11437d59babcf77374fa9477af70f9840a3837d811fcd11c684e86247f",
+        "magic-377.bmp": "23f80ab6e8b41d66e86737a50aed0cf14954debf5f5a37d717657f3a2193b076",
+        "magic-390.bmp": "28e30619edc59b84f873077c0ce8850fcece23ab227d3a716fb375d2c68c5257",
+        "magic-393.bmp": "a7fa453d2669e75b9a6a0d28004bbdd12423d814f0af7b3fadc267b297343265",
+        "magic-394.bmp": "8aecc4a0513e09e37090c033337595463fba6e9a7fe2b6a0b5a14298d5d6b89d"
+      },
+      "config_hex": "47616d65506174683d443a5c50414c5ce5ae8ce695b4e58c855c50414c39385f76312e37325f32303236313031340a",
+      "config_sha256": "a24ddd58eb65d161497df1fd44ad1aa4b807f6c93881c6a058b34d4c8aa4cf5f",
+      "rgb_comparison": {
+        "aunt-dialogue.bmp": {
+          "rgb_sha256": "7bf497e6f42945bce5cb6e757f507b33c6055cc07728999b9d93523e635cff08",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [],
+          "unexplained_pixels": 0
+        },
+        "item-149.bmp": {
+          "rgb_sha256": "045479ac3359a19563d2cb2b0faff2b57503125e9847ef9135765c04fcd95a61",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [],
+          "unexplained_pixels": 0
+        },
+        "magic-306.bmp": {
+          "rgb_sha256": "c6b6527a9459b01aa4a0dcf977155b542fb8f49f53187cd2cb84dc8b2ea495c9",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-307.bmp": {
+          "rgb_sha256": "6bf3936bf26a8ca2d5626571838b14be38ce516527ec74a589297290b76696e1",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-308.bmp": {
+          "rgb_sha256": "459b832fd235ee11a06bea190c9a8d5c9d86b3ffb1f75c320ed600646af36a17",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-311.bmp": {
+          "rgb_sha256": "49d759526e17d8f15a0c2564e5e38fa4903c5c94d4961501219a63058b71e108",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-370.bmp": {
+          "rgb_sha256": "e137eed998fa16a9c4424ca87eaa364a04fdc8533f18081d309bb1553237ee04",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-374.bmp": {
+          "rgb_sha256": "c8cc4cda4715ee8db917ce4aa15250ab43f861b117f3cffdb14eeb01a29a4e23",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-377.bmp": {
+          "rgb_sha256": "ff12cecb91eb38ffe10cdcd7dde986d9a69fb1bfdfb3f821ff466ed056400d63",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-390.bmp": {
+          "rgb_sha256": "215415da6f304c356fd906d44845fc6baa8a04d7b46b7d22f29bd4a0a03893ce",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              249,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-393.bmp": {
+          "rgb_sha256": "d2e7daadd06807b9aa32b5dc9bbea4a46a5eae41e5e3ebcd7797326fd9b50604",
+          "different_pixels": 460,
+          "selected_animation_index_pixels": 460,
+          "selected_color_pairs": [
+            [
+              250,
+              249
+            ]
+          ],
+          "unexplained_pixels": 0
+        },
+        "magic-394.bmp": {
+          "rgb_sha256": "4440588c256cc47a0a04119c5a53fbc9fdc21877eb63db9e9c96bf65b14efd9a",
+          "different_pixels": 0,
+          "selected_animation_index_pixels": 0,
+          "selected_color_pairs": [
+            [
+              250,
+              250
+            ]
+          ],
+          "unexplained_pixels": 0
+        }
+      }
+    }
+  },
+  "previews": {
+    "dialogue.png": "2532ec8e42e191422a8597170056f22e48b36030d872de85cf27f036aaf96d72",
+    "red-silkworm.png": "44f72a431d8bc9a0ec627ecc3f1644521f92c968bc2b5fbbfb5574d5c7c3dd60",
+    "magic.png": "a05a38625a7c455ad5f4cdd529856a418e4093b52a1538fb6d0e877b2434ca6d"
+  },
+  "live_acceptance": "deferred",
+  "baseline_ascii_comparison": {
+    "aunt-dialogue.bmp": {
+      "rgb_sha256": "7bf497e6f42945bce5cb6e757f507b33c6055cc07728999b9d93523e635cff08",
+      "different_pixels": 0,
+      "selected_animation_index_pixels": 0,
+      "selected_color_pairs": [],
+      "unexplained_pixels": 0
+    },
+    "item-149.bmp": {
+      "rgb_sha256": "045479ac3359a19563d2cb2b0faff2b57503125e9847ef9135765c04fcd95a61",
+      "different_pixels": 0,
+      "selected_animation_index_pixels": 0,
+      "selected_color_pairs": [],
+      "unexplained_pixels": 0
+    },
+    "magic-306.bmp": {
+      "rgb_sha256": "c6b6527a9459b01aa4a0dcf977155b542fb8f49f53187cd2cb84dc8b2ea495c9",
+      "different_pixels": 0,
+      "selected_animation_index_pixels": 0,
+      "selected_color_pairs": [
+        [
+          249,
+          249
+        ]
+      ],
+      "unexplained_pixels": 0
+    },
+    "magic-307.bmp": {
+      "rgb_sha256": "6bf3936bf26a8ca2d5626571838b14be38ce516527ec74a589297290b76696e1",
+      "different_pixels": 0,
+      "selected_animation_index_pixels": 0,
+      "selected_color_pairs": [
+        [
+          249,
+          249
+        ]
+      ],
+      "unexplained_pixels": 0
+    },
+    "magic-308.bmp": {
+      "rgb_sha256": "459b832fd235ee11a06bea190c9a8d5c9d86b3ffb1f75c320ed600646af36a17",
+      "different_pixels": 0,
+      "selected_animation_index_pixels": 0,
+      "selected_color_pairs": [
+        [
+          249,
+          249
+        ]
+      ],
+      "unexplained_pixels": 0
+    },
+    "magic-311.bmp": {
+      "rgb_sha256": "49d759526e17d8f15a0c2564e5e38fa4903c5c94d4961501219a63058b71e108",
+      "different_pixels": 0,
+      "selected_animation_index_pixels": 0,
+      "selected_color_pairs": [
+        [
+          249,
+          249
+        ]
+      ],
+      "unexplained_pixels": 0
+    },
+    "magic-370.bmp": {
+      "rgb_sha256": "e137eed998fa16a9c4424ca87eaa364a04fdc8533f18081d309bb1553237ee04",
+      "different_pixels": 0,
+      "selected_animation_index_pixels": 0,
+      "selected_color_pairs": [
+        [
+          249,
+          249
+        ]
+      ],
+      "unexplained_pixels": 0
+    },
+    "magic-374.bmp": {
+      "rgb_sha256": "c8cc4cda4715ee8db917ce4aa15250ab43f861b117f3cffdb14eeb01a29a4e23",
+      "different_pixels": 0,
+      "selected_animation_index_pixels": 0,
+      "selected_color_pairs": [
+        [
+          249,
+          249
+        ]
+      ],
+      "unexplained_pixels": 0
+    },
+    "magic-377.bmp": {
+      "rgb_sha256": "ff12cecb91eb38ffe10cdcd7dde986d9a69fb1bfdfb3f821ff466ed056400d63",
+      "different_pixels": 0,
+      "selected_animation_index_pixels": 0,
+      "selected_color_pairs": [
+        [
+          249,
+          249
+        ]
+      ],
+      "unexplained_pixels": 0
+    },
+    "magic-390.bmp": {
+      "rgb_sha256": "215415da6f304c356fd906d44845fc6baa8a04d7b46b7d22f29bd4a0a03893ce",
+      "different_pixels": 469,
+      "selected_animation_index_pixels": 469,
+      "selected_color_pairs": [
+        [
+          250,
+          249
+        ]
+      ],
+      "unexplained_pixels": 0
+    },
+    "magic-393.bmp": {
+      "rgb_sha256": "799244172aa5845a05961448d217f1a8d5c886cc9a7ca0917895db6959c4feec",
+      "different_pixels": 0,
+      "selected_animation_index_pixels": 0,
+      "selected_color_pairs": [
+        [
+          250,
+          250
+        ]
+      ],
+      "unexplained_pixels": 0
+    },
+    "magic-394.bmp": {
+      "rgb_sha256": "4440588c256cc47a0a04119c5a53fbc9fdc21877eb63db9e9c96bf65b14efd9a",
+      "different_pixels": 0,
+      "selected_animation_index_pixels": 0,
+      "selected_color_pairs": [
+        [
+          250,
+          250
+        ]
+      ],
+      "unexplained_pixels": 0
+    }
+  },
+  "original_resources_unchanged": true,
+  "comparison_recheck": {
+    "date": "2026-10-21",
+    "all_saved_frame_and_config_hashes_verified": true,
+    "reason": "Include unchanged selected-label ink in the uniform old/new color-pair check.",
+    "new_engine_run_required": false,
+    "raw_pixels_rewritten": false
+  },
+  "date": "2026-10-21",
+  "builds": {
+    "before": {
+      "command": [
+        "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe",
+        "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\win32\\sdlpal.sln",
+        "/m",
+        "/nologo",
+        "/v:minimal",
+        "/p:Configuration=Test",
+        "/p:Platform=x64",
+        "/p:PlatformToolset=v145",
+        "/p:WindowsTargetPlatformVersion=10.0",
+        "/p:OutDir=D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\before\\build\\"
+      ],
+      "exit_code": 0,
+      "added_CL": "/utf-8 /DGTEST_HAS_TR1_TUPLE=0",
+      "head": "581fe0cdf7873b4ec5be7aac15d846299cffc0c2",
+      "generated_header_restored": true,
+      "generated_during_build_sha256": "f804b28552f5bf68258ffc25f4cf563810eaf9e4c11bd98968a6c664e7b54c37",
+      "sources": {
+        "util.c": "046241849b4e9a40d34ba2a7201162d0b448d4d358945043aeac99654e0d52d5",
+        "win32/win32.cpp": "0d054e2ffcaba6e572ace888cc0985270cafe080fe7988bfafb22b0bfa4d8879",
+        "palcfg.c": "b7f65a6589815a38d055469267e94d062fa8af332bef6846793b6b7281025875",
+        "tests/render_evidence.cpp": "2cc327f8dc19cfe1afc333bad709ff1bdc8c8863c2e25a4cc7caf49dc64e6cdd",
+        "tests/test_main.cpp": "1ca76ae30ee685a241e17473489e46998671aa201332022fde80008031186b46",
+        "win32/sdlpal.vcxproj": "10ae88a59c589f341046d459600853a439115d643220a21816e51b2dc69dc0e0",
+        "win32/pal_config.h": "1fc15d86199e4a8ad562cfc00a3fdf80cf3b8c784aed0a76dfbf00f18e4081c5"
+      },
+      "executable_sha256": "8122b10f5e6d8ea336e57928f36690af675c05378c15cbb605c4d9a5f0d4d31a"
+    },
+    "after": {
+      "command": [
+        "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe",
+        "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\win32\\sdlpal.sln",
+        "/m",
+        "/nologo",
+        "/v:minimal",
+        "/p:Configuration=Test",
+        "/p:Platform=x64",
+        "/p:PlatformToolset=v145",
+        "/p:WindowsTargetPlatformVersion=10.0",
+        "/p:OutDir=D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\after-r4\\build\\"
+      ],
+      "exit_code": 0,
+      "added_CL": "/utf-8 /DGTEST_HAS_TR1_TUPLE=0",
+      "head": "581fe0cdf7873b4ec5be7aac15d846299cffc0c2",
+      "generated_header_restored": true,
+      "generated_during_build_sha256": "224d77cdf563ab9a946a1697f0c21dbf6c6b61eede3f023436fc64f62a01ac59",
+      "sources": {
+        "util.c": "047c048145dc94fb8f901ef176f15725c75108142965253ef837e9f1e4894b6b",
+        "util.h": "a3e985f32621b2c265dfd423ed138a4949296a389dee02472614f82f4cbaa41a",
+        "adplug/binfile.cpp": "61994cbb07c05ce47adce27883ec3d61e1f6b77ac27bd570ddab72943247c516",
+        "win32/win32.cpp": "03a87cc3fe1bba60910531dcd966430bc6fba2417f6a27ec9cc8fcb3c269cc86",
+        "palcfg.c": "659dedbf92d8fb80369a66aed754f1fb7871ed355530005b25987f0008129b42",
+        "tests/test_resource_paths.cpp": "255dff3d52f700dc4302cd3413035081c5d81004036e3efb22f79e1dad29d956",
+        "tests/render_evidence.cpp": "4e95053f236c9c1783322d73dd1230263eb384e50beae32d9697b97863a27898",
+        "tests/test_main.cpp": "1ca76ae30ee685a241e17473489e46998671aa201332022fde80008031186b46",
+        "win32/sdlpal.vcxproj": "cb781b5b1b32e5fb088bebe906aba2ccc2c48aa387a94c7d18ff9b6ebc4976af",
+        "win32/pal_config.h": "1fc15d86199e4a8ad562cfc00a3fdf80cf3b8c784aed0a76dfbf00f18e4081c5"
+      },
+      "executable_sha256": "e697feb6044617a6ea473938d96cc38d996b8429928c0294ad58c8eee477db30"
+    }
+  },
+  "cpp_tests": {
+    "command": [
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\after-r4\\build\\sdlpal.exe",
+      "--gtest_output=xml:D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\after-r4\\tests.xml"
+    ],
+    "cwd": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp",
+    "exit_code": 0,
+    "environment": {
+      "SDLPAL_PATH_TEST_ROOT": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\test-data"
+    },
+    "log_sha256": "bab1b76085d18ac9603280bc52947629971180dd3f49b72a2cb5dd061ca05ed5",
+    "xml_sha256": "1a56599a0395010a0266409c4e530053372dce234f1756b538c7ae109244fdbb",
+    "summary": {
+      "tests": "21",
+      "failures": "0",
+      "disabled": "0",
+      "errors": "0",
+      "timestamp": "2026-10-21T12:11:41",
+      "time": "0.067",
+      "name": "AllTests"
+    },
+    "suites": {
+      "PortraitPalettes": {
+        "name": "PortraitPalettes",
+        "tests": "3",
+        "failures": "0",
+        "disabled": "0",
+        "errors": "0",
+        "time": "0.007"
+      },
+      "PortraitColors": {
+        "name": "PortraitColors",
+        "tests": "7",
+        "failures": "0",
+        "disabled": "0",
+        "errors": "0",
+        "time": "0"
+      },
+      "DescriptionLayout": {
+        "name": "DescriptionLayout",
+        "tests": "2",
+        "failures": "0",
+        "disabled": "0",
+        "errors": "0",
+        "time": "0.003"
+      },
+      "ResourcePaths": {
+        "name": "ResourcePaths",
+        "tests": "6",
+        "failures": "0",
+        "disabled": "0",
+        "errors": "0",
+        "time": "0.057"
+      },
+      "sdlpal": {
+        "name": "sdlpal",
+        "tests": "3",
+        "failures": "0",
+        "disabled": "0",
+        "errors": "0",
+        "time": "0"
+      }
+    },
+    "owned_test_files_cleaned": true
+  },
+  "pixel_oracle_tests": {
+    "command": [
+      "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "tests/test_gamepath_verifier.py",
+      "-v"
+    ],
+    "cwd": "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp",
+    "exit_code": 0,
+    "passed": 8,
+    "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\gamepath-r4-20261021\\pixel-oracle-tests-r3.log",
+    "log_sha256": "1fa937e73a9c0cd461cc47aa4b1887f3370d135cfa1c54e1af118b0e49f972ae",
+    "log_text": "test_description_ink_is_rejected (__main__.GamePathPixelComparison.test_description_ink_is_rejected) ... ok\ntest_identical_pixels (__main__.GamePathPixelComparison.test_identical_pixels) ... ok\ntest_moved_glyph_is_rejected (__main__.GamePathPixelComparison.test_moved_glyph_is_rejected) ... ok\ntest_nonuniform_phase_is_rejected (__main__.GamePathPixelComparison.test_nonuniform_phase_is_rejected) ... ok\ntest_only_uniform_selected_label_phase_can_change (__main__.GamePathPixelComparison.test_only_uniform_selected_label_phase_can_change) ... ok\ntest_palette_change_is_rejected (__main__.GamePathPixelComparison.test_palette_change_is_rejected) ... ok\ntest_partial_phase_change_is_rejected (__main__.GamePathPixelComparison.test_partial_phase_change_is_rejected) ... ok\ntest_same_color_range_outside_selected_label_is_rejected (__main__.GamePathPixelComparison.test_same_color_range_outside_selected_label_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.181s\n\nOK\n"
+  },
+  "sources_sha256": {
+    "util.c": "047c048145dc94fb8f901ef176f15725c75108142965253ef837e9f1e4894b6b",
+    "util.h": "a3e985f32621b2c265dfd423ed138a4949296a389dee02472614f82f4cbaa41a",
+    "adplug/binfile.cpp": "61994cbb07c05ce47adce27883ec3d61e1f6b77ac27bd570ddab72943247c516",
+    "win32/win32.cpp": "03a87cc3fe1bba60910531dcd966430bc6fba2417f6a27ec9cc8fcb3c269cc86",
+    "palcfg.c": "659dedbf92d8fb80369a66aed754f1fb7871ed355530005b25987f0008129b42",
+    "tests/test_resource_paths.cpp": "255dff3d52f700dc4302cd3413035081c5d81004036e3efb22f79e1dad29d956",
+    "tests/render_evidence.cpp": "4e95053f236c9c1783322d73dd1230263eb384e50beae32d9697b97863a27898",
+    "tests/test_main.cpp": "1ca76ae30ee685a241e17473489e46998671aa201332022fde80008031186b46",
+    "win32/sdlpal.vcxproj": "cb781b5b1b32e5fb088bebe906aba2ccc2c48aa387a94c7d18ff9b6ebc4976af",
+    "win32/pal_config.h": "1fc15d86199e4a8ad562cfc00a3fdf80cf3b8c784aed0a76dfbf00f18e4081c5",
+    "tools/japanese/verify_gamepath.py": "24a98c6ca1538b23d04729033176b01d0840a0ad37e8e6d09f9f9fb3816a54d5",
+    "tests/test_gamepath_verifier.py": "a545bb6516ee03a18136181e5b2b328b0df66334429ef6989588113b5e4b1e09",
+    "ui.h": "0af0f696f3ce36f7ec88e7ccaeda813db23bad7d65649a5f87f2fbfe0121a7b3",
+    "magicmenu.c": "ac4d477b3c0441cc3041d16a6b777964a15d3ce838474f85a4acac53242b1cf1",
+    "itemmenu.c": "8a7753e80e547a805208f450ff18dce47d7e7b96f9128d5a34fa3d3d3724889a",
+    "3rd/SDL/src/main/windows/SDL_windows_main.c": "e8a97e56ee3a9a6b95e5b42dcb1d030d169b93c9cd4b2c86f496f243196baa03",
+    "adplug/fprovide.cpp": "148754620feea9681c9ffd5ace8eac0f19d7ab551cc26b5037b383da077264fb",
+    "rixplay.cpp": "20fa6f312810d4dd7ac036464e8f711e1f2f0a5138469838f844512b7dabe250",
+    "main.c": "f49febe271044fb00ff981d1e161e71c372428459f3969baeeca0a5b4ae77fd7"
+  },
+  "review": {
+    "agent": "/root/audit_evidence",
+    "scope": "read-only code-path and final production/oracle review",
+    "addressed": [
+      "ShaderPath inherits long GamePath and must save without fixed buffer",
+      "ACP test skip decision must be independent of implementation",
+      "Uniform selected-label phase must include unchanged ink"
+    ],
+    "production_result": "No further production blockers found",
+    "oracle_followup": "Updated uniform-color check; all archived frames rechecked and eight negative/positive tests passed"
+  },
+  "limitations": [
+    "No live game acceptance or music playback",
+    "Other settings edit boxes remain A APIs",
+    "Valid UTF-8 takes priority; ACP fallback only for invalid UTF-8",
+    "UNC and extended-length Windows paths not implemented or tested",
+    "Windows x64 SDL2 Test build; other platforms not built in this round"
+  ]
+}

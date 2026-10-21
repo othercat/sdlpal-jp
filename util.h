@@ -110,6 +110,18 @@ UTIL_calloc(
 );
 
 FILE *
+UTIL_OpenFileStream(
+   LPCSTR               path,
+   LPCSTR               mode
+);
+
+#ifdef _WIN32
+// UTF-8 paths, with legacy ACP fallback for non-UTF-8 configuration bytes.
+// The caller owns the returned buffer and must free it.
+wchar_t *UTIL_PathToWide(LPCSTR path);
+#endif
+
+FILE *
 UTIL_OpenRequiredFile(
    LPCSTR               lpszFileName
 );

@@ -144,8 +144,16 @@ void SaveSettings(HWND hwndDlg, BOOL fWriteFile)
 
 	if ((textLen = GetWindowTextLength(GetDlgItem(hwndDlg, IDC_GAMEPATH))) > 0)
 	{
-		gConfig.pszGamePath = (char*)realloc(gConfig.pszGamePath, textLen + 1);
-		GetDlgItemTextA(hwndDlg, IDC_GAMEPATH, gConfig.pszGamePath, textLen + 1);
+		std::wstring path(textLen + 1, L'\0');
+		GetDlgItemTextW(hwndDlg, IDC_GAMEPATH, &path[0], textLen + 1);
+		int bytes = WideCharToMultiByte(CP_UTF8, 0, path.c_str(), -1, nullptr, 0, nullptr, nullptr);
+		char *utf8 = bytes ? (char *)malloc(bytes) : nullptr;
+		if (utf8 && WideCharToMultiByte(CP_UTF8, 0, path.c_str(), -1, utf8, bytes, nullptr, nullptr))
+		{
+			free(gConfig.pszGamePath);
+			gConfig.pszGamePath = utf8;
+		}
+		else free(utf8);
 	}
 	else
 	{
@@ -239,7 +247,12 @@ void ResetControls(HWND hwndDlg)
 	SetDlgItemText(hwndDlg, IDC_TEXTUREWIDTH, _itot(gConfig.dwTextureWidth, buffer, 10));
 	SetDlgItemText(hwndDlg, IDC_TEXTUREHEIGHT, _itot(gConfig.dwTextureHeight, buffer, 10));
 
-	if (gConfig.pszGamePath) SetDlgItemTextA(hwndDlg, IDC_GAMEPATH, gConfig.pszGamePath);
+	if (gConfig.pszGamePath)
+	{
+		wchar_t *path = UTIL_PathToWide(gConfig.pszGamePath);
+		if (path) SetDlgItemTextW(hwndDlg, IDC_GAMEPATH, path);
+		free(path);
+	}
 	if (gConfig.pszMsgFile) SetDlgItemTextA(hwndDlg, IDC_MSGFILE, gConfig.pszMsgFile);
 	if (gConfig.pszFontFile) SetDlgItemTextA(hwndDlg, IDC_FONTFILE, gConfig.pszFontFile);
 	if (gConfig.pszLogFile) SetDlgItemTextA(hwndDlg, IDC_LOGFILE, gConfig.pszLogFile);
@@ -475,14 +488,10 @@ UTIL_GetScreenSize(
 extern "C"
 BOOL UTIL_IsAbsolutePath(LPCSTR  lpszFileName)
 {
-	char szDrive[_MAX_DRIVE], szDir[_MAX_DIR], szFname[_MAX_FNAME], szExt[_MAX_EXT];
-#if !defined(__MINGW32__) // MinGW Distro's win32 api lacks this...Anyway, winxp lacks this too
-	if (_splitpath_s(lpszFileName, szDrive, szDir, szFname, szExt) == 0)
-#else
-	_splitpath(lpszFileName, szDrive, szDir, szFname, szExt);
-	if ( errno !=EINVAL )
-#endif
-		return (strlen(szDrive) > 0 && (szDir[0] == '\\' || szDir[0] == '/'));
-	else
-		return FALSE;
+	// A UTF-8 directory can exceed _MAX_DIR bytes while still fitting Windows'
+	// character limit. Only the drive/root prefix determines this predicate.
+	return lpszFileName &&
+		((lpszFileName[0] >= 'A' && lpszFileName[0] <= 'Z') ||
+		 (lpszFileName[0] >= 'a' && lpszFileName[0] <= 'z')) &&
+		lpszFileName[1] == ':' && PAL_IS_PATH_SEPARATOR(lpszFileName[2]);
 }

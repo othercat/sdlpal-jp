@@ -76,6 +76,11 @@ CLI `all` 与 GUI 共享 [`resource_transaction.py`](resource_transaction.py)。
 
 ## 加载与验证
 
+Windows 中文绝对 GamePath 已由 [#2 R4](../../docs/japanese-gamepath-unicode.md)复现并修复：
+设置窗口的 GamePath 使用 UTF-8，核心文件检查／打开及 RIX 入口使用宽字符路径，旧无效 UTF-8 字节回退到系统 ACP。
+`verify_gamepath.py` 覆盖同源 ASCII／中文副本、UTF-8／旧 CP936 配置及原始 PAL98 目录，保留完整源码帧与差异记录。
+这是源码专项验证；Tk、音乐和实际游戏流程仍在最后统一验收。
+
 当前输出仍为 4,773 块 / 4,766 唯一键，六个重复键均为同文、异文冲突为零。生成上游对照和当前输出后，另生成三份历史输出，分别核对 #3、#4、#8、#6：
 
 ```powershell

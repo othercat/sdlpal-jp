@@ -807,7 +807,7 @@ void DrawDOSDescriptions(const std::string& directory) {
 
 int RenderEvidence(int argc, char **argv) {
     if (argc != 6 && argc != 7) {
-        fprintf(stderr, "Usage: --render-evidence RESOURCE_DIR SLF_OR_DASH OUTPUT_DIR MODE [PORTRAIT_FILE]\nModes: "
+        fprintf(stderr, "Usage: --render-evidence RESOURCE_DIR_OR_@config SLF_OR_DASH OUTPUT_DIR MODE [PORTRAIT_FILE]\nModes: "
                         "cn|jp|jp-legacy|cn-jp-font|cn-jp-font-field|cn-pages|jp-pages|jp-long-names|jp-cursor-grid|jp-recovery-before|jp-recovery|jp-npc-before|jp-npc|jp-duplicates-before|jp-duplicates|jp-translation-before|jp-translation|dos-before|dos|dos-layout-before|jp-portraits|dos-portraits|jp-portraits-rgb|dos-portraits-rgb|jp-translation-rgb|dos-rgb|jp-translation-night-rgb|dos-night-rgb|steam-records\n");
         return 2;
     }
@@ -837,11 +837,14 @@ int RenderEvidence(int argc, char **argv) {
     if (translated && strcmp(argv[3], "-") == 0) return 2;
     try {
         Require(SDL_Init(scaled ? SDL_INIT_VIDEO | SDL_INIT_EVENTS : 0) == 0, "SDL_Init failed");
-        PAL_LoadConfig(FALSE);
-        free(gConfig.pszGamePath);
-        gConfig.pszGamePath = strdup(argv[2]);
-        if (translated) gConfig.pszMsgFile = strdup(argv[3]);
-        if (argc == 7) gConfig.pszPortraitFile = strdup(argv[6]);
+        const bool fromConfig = strcmp(argv[2], "@config") == 0;
+        PAL_LoadConfig(fromConfig);
+        if (!fromConfig) {
+            free(gConfig.pszGamePath);
+            gConfig.pszGamePath = strdup(argv[2]);
+        }
+        if (translated) { free(gConfig.pszMsgFile); gConfig.pszMsgFile = strdup(argv[3]); }
+        if (argc == 7) { free(gConfig.pszPortraitFile); gConfig.pszPortraitFile = strdup(argv[6]); }
         Require(PAL_InitGlobals() == 0 && (steamRecords || !!gConfig.fIsWIN95 == !dos), "Unexpected resource version");
         Require(PAL_InitText() == 0, "Cannot load game text");
         if (mode == "cn-jp-font" || fieldMenu || pages || steamRecords) g_TextLib.iFontFlavor = kFontFlavorJapanese;

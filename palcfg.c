@@ -90,7 +90,7 @@ static const char *opl_chips[] = { "OPL2", "OPL3" };
 static char * ParseStringValue(const char *sValue, char *original)
 {
 	int n = strlen(sValue);
-	while (n > 0 && isspace(sValue[n - 1])) n--;
+	while (n > 0 && isspace((unsigned char)sValue[n - 1])) n--;
 	if (n > 0)
 	{
 		char *newval = (char *)realloc(original, n + 1);
@@ -112,7 +112,7 @@ PAL_ParseConfigLine(
 	//
 	// Skip leading spaces
 	//
-	while (*line && isspace(*line)) line++;
+	while (*line && isspace((unsigned char)*line)) line++;
 
 	//
 	// Skip comments
@@ -127,7 +127,7 @@ PAL_ParseConfigLine(
 			//
 			// Skip tailing spaces
 			//
-			while (end > line && isspace(end[-1])) end--;
+			while (end > line && isspace((unsigned char)end[-1])) end--;
 
 			int len = end - line;
 
@@ -163,7 +163,7 @@ PAL_ParseConfigLine(
 							//
 							// Skip leading spaces
 							//
-							while (*ptr && isspace(*ptr)) ptr++;
+							while (*ptr && isspace((unsigned char)*ptr)) ptr++;
 							pValue->sValue = ptr;
 							//
 							// Get line length
@@ -386,12 +386,12 @@ PAL_LoadConfig(
 
 	if (fFromFile && (fp = UTIL_OpenFileAtPathForMode(PAL_CONFIG_PREFIX, "sdlpal.cfg", "r")))
 	{
-		PAL_LARGE char buf[512];
+		PAL_LARGE char buf[PAL_GLOBAL_BUFFER_SIZE];
 
 		//
 		// Load the configuration data
 		//
-		while (fgets(buf, 512, fp) != NULL)
+		while (fgets(buf, sizeof(buf), fp) != NULL)
 		{
 			ConfigValue value;
 			const ConfigItem * item;
@@ -642,16 +642,16 @@ PAL_SaveConfig(
 		sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_OPL_CORE), opl_cores[gConfig.eOPLCore]); fputs(buf, fp);
 		sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_OPL_CHIP), opl_chips[gConfig.eOPLChip]); fputs(buf, fp);
 
-		if (gConfig.pszGamePath && *gConfig.pszGamePath && strcmp(gConfig.pszGamePath, PAL_PREFIX) != 0) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_GAMEPATH), gConfig.pszGamePath); fputs(buf, fp); }
-		if (gConfig.pszSavePath && *gConfig.pszSavePath && strcmp(gConfig.pszSavePath, PAL_SAVE_PREFIX) != 0) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_SAVEPATH), gConfig.pszSavePath); fputs(buf, fp); }
-        if (gConfig.pszShaderPath && *gConfig.pszShaderPath && gConfig.pszGamePath && strcmp(gConfig.pszShaderPath, gConfig.pszGamePath) != 0) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_SHADERPATH), gConfig.pszShaderPath); fputs(buf, fp); }
-		if (gConfig.pszMsgFile && *gConfig.pszMsgFile) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_MESSAGEFILE), gConfig.pszMsgFile); fputs(buf, fp); }
-		if (gConfig.pszFontFile && *gConfig.pszFontFile) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_FONTFILE), gConfig.pszFontFile); fputs(buf, fp); }
+		if (gConfig.pszGamePath && *gConfig.pszGamePath && strcmp(gConfig.pszGamePath, PAL_PREFIX) != 0) { fprintf(fp, "%s=%s\n", PAL_ConfigName(PALCFG_GAMEPATH), gConfig.pszGamePath); }
+		if (gConfig.pszSavePath && *gConfig.pszSavePath && strcmp(gConfig.pszSavePath, PAL_SAVE_PREFIX) != 0) { fprintf(fp, "%s=%s\n", PAL_ConfigName(PALCFG_SAVEPATH), gConfig.pszSavePath); }
+        if (gConfig.pszShaderPath && *gConfig.pszShaderPath && gConfig.pszGamePath && strcmp(gConfig.pszShaderPath, gConfig.pszGamePath) != 0) { fprintf(fp, "%s=%s\n", PAL_ConfigName(PALCFG_SHADERPATH), gConfig.pszShaderPath); }
+		if (gConfig.pszMsgFile && *gConfig.pszMsgFile) { fprintf(fp, "%s=%s\n", PAL_ConfigName(PALCFG_MESSAGEFILE), gConfig.pszMsgFile); }
+		if (gConfig.pszFontFile && *gConfig.pszFontFile) { fprintf(fp, "%s=%s\n", PAL_ConfigName(PALCFG_FONTFILE), gConfig.pszFontFile); }
 		if (gConfig.pszPortraitFile && *gConfig.pszPortraitFile) { fprintf(fp, "%s=%s\n", PAL_ConfigName(PALCFG_PORTRAITFILE), gConfig.pszPortraitFile); }
-		if (gConfig.pszLogFile && *gConfig.pszLogFile) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_LOGFILE), gConfig.pszLogFile); fputs(buf, fp); }
-		if (gConfig.pszMIDIClient && *gConfig.pszMIDIClient) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_MIDICLIENT), gConfig.pszMIDIClient); fputs(buf, fp); }
-		if (gConfig.pszScaleQuality && *gConfig.pszScaleQuality) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_SCALEQUALITY), gConfig.pszScaleQuality); fputs(buf, fp); }
-		if (gConfig.pszShader && *gConfig.pszShader) { sprintf(buf, "%s=%s\n", PAL_ConfigName(PALCFG_SHADER), gConfig.pszShader); fputs(buf, fp); }
+		if (gConfig.pszLogFile && *gConfig.pszLogFile) { fprintf(fp, "%s=%s\n", PAL_ConfigName(PALCFG_LOGFILE), gConfig.pszLogFile); }
+		if (gConfig.pszMIDIClient && *gConfig.pszMIDIClient) { fprintf(fp, "%s=%s\n", PAL_ConfigName(PALCFG_MIDICLIENT), gConfig.pszMIDIClient); }
+		if (gConfig.pszScaleQuality && *gConfig.pszScaleQuality) { fprintf(fp, "%s=%s\n", PAL_ConfigName(PALCFG_SCALEQUALITY), gConfig.pszScaleQuality); }
+		if (gConfig.pszShader && *gConfig.pszShader) { fprintf(fp, "%s=%s\n", PAL_ConfigName(PALCFG_SHADER), gConfig.pszShader); }
 
 		fclose(fp);
 

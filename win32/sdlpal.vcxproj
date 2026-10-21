@@ -497,6 +497,9 @@
     <ClCompile Include="..\tests\test_description_layout.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)'!='Test'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\tests\test_resource_paths.cpp">
+        <ExcludedFromBuild Condition="'$(Configuration)'!='Test'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\tests\render_evidence.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)'!='Test'">true</ExcludedFromBuild>
     </ClCompile>

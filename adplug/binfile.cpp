@@ -21,6 +21,7 @@
 #include <errno.h>
 
 #include "binfile.h"
+#include "../util.h"
 
 /***** binfbase *****/
 
@@ -100,7 +101,7 @@ binifstream::~binifstream() {
 }
 
 void binifstream::open(const char *filename, const Mode mode) {
-   f = fopen(filename, "rb");
+   f = UTIL_OpenFileStream(filename, "rb");
 
    if (f == NULL)
       switch (errno) {
@@ -159,7 +160,7 @@ void binofstream::open(const char *filename, const Mode mode) {
    // Check if append mode is desired
    if (mode & Append) modestr[0] = 'a';
 
-   f = fopen(filename, modestr);
+   f = UTIL_OpenFileStream(filename, modestr);
 
    if (f == NULL)
       switch (errno) {

@@ -394,6 +394,65 @@ UTIL_calloc(
    return buffer; // nothing went wrong, so return buffer pointer
 }
 
+#ifdef _WIN32
+wchar_t *
+UTIL_PathToWide(LPCSTR path)
+{
+   if (!path) { errno = EINVAL; return NULL; }
+   UINT codepage = CP_UTF8;
+   int length = MultiByteToWideChar(codepage, MB_ERR_INVALID_CHARS, path, -1, NULL, 0);
+   // Older Windows settings were saved using GetDlgItemTextA. Do not rewrite
+   // those files or change the process-wide CRT/Windows code page.
+   if (!length)
+   {
+      codepage = CP_ACP;
+      length = MultiByteToWideChar(codepage, MB_ERR_INVALID_CHARS, path, -1, NULL, 0);
+   }
+   if (!length) { errno = EINVAL; return NULL; }
+   wchar_t *wide = (wchar_t *)malloc(length * sizeof(wchar_t));
+   if (!wide) { errno = ENOMEM; return NULL; }
+   if (!MultiByteToWideChar(codepage, MB_ERR_INVALID_CHARS, path, -1, wide, length))
+   {
+      free(wide);
+      errno = EINVAL;
+      return NULL;
+   }
+   return wide;
+}
+#endif
+
+FILE *
+UTIL_OpenFileStream(LPCSTR path, LPCSTR mode)
+{
+#ifdef _WIN32
+   if (!path || !*path || !mode || !*mode) { errno = EINVAL; return NULL; }
+   wchar_t *widepath = UTIL_PathToWide(path), *widemode = UTIL_PathToWide(mode);
+   FILE *file = widepath && widemode ? _wfopen(widepath, widemode) : NULL;
+   int error = errno;
+   free(widepath);
+   free(widemode);
+   errno = error;
+   return file;
+#else
+   return fopen(path, mode);
+#endif
+}
+
+static int
+UTIL_PathExists(LPCSTR path)
+{
+#ifdef _WIN32
+   wchar_t *wide = UTIL_PathToWide(path);
+   if (!wide) return -1;
+   int result = _waccess(wide, 0), error = errno;
+   free(wide);
+   errno = error;
+   return result;
+#else
+   return access(path, 0);
+#endif
+}
+
 FILE *
 UTIL_OpenRequiredFile(
    LPCSTR            lpszFileName
@@ -441,7 +500,7 @@ UTIL_OpenRequiredFileForMode(
 
    if (fp == NULL)
    {
-       fp = fopen(lpszFileName, szMode);
+       fp = UTIL_OpenFileStream(lpszFileName, szMode);
    }
 
    if (fp == NULL)
@@ -543,11 +602,11 @@ UTIL_OpenFileAtPathForMode(
 	//
 	if (path)
 	{
-		return fopen(path, szMode);
+		return UTIL_OpenFileStream(path, szMode);
 	}
 	else if (szMode[0] != 'r')
 	{
-		return fopen(UTIL_CombinePath(INTERNAL_BUFFER_SIZE_ARGS, 2, lpszPath, lpszFileName), szMode);
+		return UTIL_OpenFileStream(UTIL_CombinePath(INTERNAL_BUFFER_SIZE_ARGS, 2, lpszPath, lpszFileName), szMode);
 	}
 	else
 	{
@@ -597,7 +656,7 @@ UTIL_GetFullPathName(
 	char *_base = strdup(basepath), *_sub = strdup(subpath);
 	const char *result = NULL;
 
-	if (access(UTIL_CombinePath(INTERNAL_BUFFER_SIZE_ARGS, 2, _base, _sub), 0) == 0)
+	if (UTIL_PathExists(UTIL_CombinePath(INTERNAL_BUFFER_SIZE_ARGS, 2, _base, _sub)) == 0)
 	{
 		result = internal_buffer[PAL_MAX_GLOBAL_BUFFERS];
 	}
@@ -625,7 +684,7 @@ UTIL_GetFullPathName(
 					result = UTIL_CombinePath(INTERNAL_BUFFER_SIZE_ARGS, 2, _base, list[n]->d_name);
 					if (end)
 						result = UTIL_GetFullPathName(INTERNAL_BUFFER_SIZE_ARGS, result, end + 1);
-					else if (access(result, 0) != 0)
+					else if (UTIL_PathExists(result) != 0)
 						result = NULL;
 				}
 				free(list[n]);
