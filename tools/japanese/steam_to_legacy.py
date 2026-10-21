@@ -77,6 +77,10 @@ def read_text_resource(filename):
 
         for line_number, line in enumerate(f, 1):
 
+            # Both the shipped Steam files and editors may include a LE BOM.
+            if line_number == 1:
+                line = line.removeprefix(u'\ufeff')
+
             # Remove only line endings.
             # Spaces are part of the actual resource text.
             line = line.rstrip(u'\r\n')
@@ -92,11 +96,7 @@ def read_text_resource(filename):
             pos = line.find(u':')
 
             if pos < 0:
-                print(
-                    'Warning: line %d has no ":"; skipped.'
-                    % line_number
-                )
-                continue
+                raise ValueError('Line %d has no ":".' % line_number)
 
             id_text = line[:pos]
             text = line[pos + 1:]
@@ -104,15 +104,17 @@ def read_text_resource(filename):
             try:
                 record_id = int(id_text)
             except ValueError:
-                print(
-                    'Warning: invalid ID at line %d; skipped.'
-                    % line_number
-                )
-                continue
+                raise ValueError('Invalid ID at line %d.' % line_number)
+
+            if record_id < 0:
+                raise ValueError('Negative ID at line %d.' % line_number)
 
             # The official format says that a later duplicate ID
             # overwrites the previous entry.
             records[record_id] = text
+
+    if not records:
+        raise ValueError('No records in %s.' % filename)
 
     return records
 
@@ -122,18 +124,29 @@ def read_sss_index(gamepath):
 
     with open(filename, 'rb') as f:
 
-        f.seek(12, os.SEEK_SET)
-
-        offset_begin, script_begin, file_end = struct.unpack(
-            '<III',
-            f.read(12)
-        )
+        header = f.read(24)
+        if len(header) != 24:
+            raise ValueError('Truncated SSS.MKF header.')
+        offsets = struct.unpack('<6I', header)
+        file_size = os.fstat(f.fileno()).st_size
+        if (offsets[0] < 24 or offsets[0] % 4 or
+                any(a > b for a, b in zip(offsets, offsets[1:])) or
+                offsets[-1] > file_size):
+            raise ValueError('Invalid SSS.MKF chunk offsets.')
+        offset_begin, script_begin = offsets[3:5]
 
         f.seek(offset_begin, os.SEEK_SET)
 
         index_bytes = f.read(
             script_begin - offset_begin
         )
+
+    if len(index_bytes) < 8 or len(index_bytes) % 4:
+        raise ValueError('Invalid SSS.MKF message index size.')
+    message_offsets = struct.unpack('<%dI' % (len(index_bytes) // 4), index_bytes)
+    if (message_offsets[0] != 0 or
+            any(a > b for a, b in zip(message_offsets, message_offsets[1:]))):
+        raise ValueError('Invalid SSS.MKF message offsets.')
 
     return index_bytes
 
@@ -214,7 +227,9 @@ def convert_msg(gamepath, output_path, encoding):
 
     print('')
 
-    output = bytearray()
+    # Sparse IDs are legal in Steam text. Legacy readers use SSS offsets,
+    # not the order of records in the text file; preserve every absent slot.
+    output = bytearray(b' ' * struct.unpack_from('<I', index_bytes, len(index_bytes) - 4)[0])
 
     errors = 0
     padded = 0
@@ -293,7 +308,7 @@ def convert_msg(gamepath, output_path, encoding):
                 )
             )
 
-        output.extend(data)
+        output[msg_begin:msg_end] = data
 
     if errors:
 
@@ -312,6 +327,8 @@ def convert_msg(gamepath, output_path, encoding):
         f.write(bytes(output))
 
     print('')
+    print('Missing MSG slots padded: %d' % sum(
+        message_id not in messages for message_id in range(index_count - 1)))
     print(
         'Messages padded: %d'
         % padded
@@ -358,7 +375,11 @@ def convert_word(gamepath, output_path, encoding):
 
     print('')
 
-    output = bytearray()
+    # WORD.DAT has no separate index: record N must start at N * 10.
+    # Script/object word IDs are 16-bit, even though Steam text can name more.
+    if max(words) > 0xffff:
+        raise ValueError('WORD ID exceeds the legacy 16-bit range.')
+    output = bytearray(b' ' * ((max(words) + 1) * WORD_LENGTH))
 
     errors = 0
     padded = 0
@@ -427,7 +448,7 @@ def convert_word(gamepath, output_path, encoding):
                 )
             )
 
-        output.extend(data)
+        output[word_id * WORD_LENGTH:(word_id + 1) * WORD_LENGTH] = data
 
     if errors:
 
@@ -446,6 +467,7 @@ def convert_word(gamepath, output_path, encoding):
         f.write(bytes(output))
 
     print('')
+    print('Missing WORD slots padded: %d' % (max(words) + 1 - len(words)))
     print(
         'WORD entries padded: %d'
         % padded
@@ -470,7 +492,7 @@ def main():
         print('Usage:')
         print('')
         print(
-            '  python steam_msg_to_legacy.py '
+            '  python steam_to_legacy.py '
             'MODE GAME_PATH OUTPUT [gbk|big5]'
         )
         print('')

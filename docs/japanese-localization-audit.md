@@ -1,5 +1,7 @@
 # 日文化静态审计与 Issue 依据
 
+当前实施与未完成项请先看 [2026-10-21 总管／全部子 Issue 核对](japanese-issue-status.md)；本页保留修复前的审计数量和依据。
+
 审计日期：2026-10-20。本文是本仓库日文化 Issue 的版本化依据，收录输入指纹、消息与脚本编号、静态结论及验证边界。Issue 的实施进度、提交和实机结果在各 Issue 中按轮次维护；本文记录的是修复前基线。
 
 代码基线：[`6dafc9c79718058f3a1a4ab8a3d3e30a102ab207`](https://github.com/othercat/sdlpal-jp/commit/6dafc9c79718058f3a1a4ab8a3d3e30a102ab207)。

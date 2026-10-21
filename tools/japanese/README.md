@@ -58,7 +58,7 @@ DOS 按固定 CP950 资源生成，另需已审 Win 和土星资源复现共享�
 
 ## Steam 文本入口
 
-输入是**无 BOM 的 UTF-16LE** `编号:文本`，首个冒号分隔，`;` 开头为注释。GBK 对应 `MSG_chs.txt` / `WORD_chs.txt`，BIG5 对应 `MSG_cht.txt` / `WORD_cht.txt`。消息长度取自同版本 `SSS.MKF`，词条固定 10 字节，短内容补空格。`all` 的输出参数是已存在的独立目录：
+输入是 UTF-16LE `编号:文本`，支持有／无 BOM，首个冒号分隔，`;` 开头为注释。GBK 对应 `MSG_chs.txt` / `WORD_chs.txt`，BIG5 对应 `MSG_cht.txt` / `WORD_cht.txt`。消息长度取自同版本 `SSS.MKF`，词条固定 10 字节，短内容补空格。`all` 的输出参数是已存在的独立目录：
 
 ```powershell
 & (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\japanese\steam_to_legacy.py msg 'Steam文本目录' '新的M.MSG' gbk
@@ -66,9 +66,11 @@ DOS 按固定 CP950 资源生成，另需已审 Win 和土星资源复现共享�
 & (Join-Path $env:USERPROFILE 'CodexTools\python\Scripts\python.exe') -B -X utf8 tools\japanese\steam_to_legacy.py all 'Steam文本目录' '已存在的独立输出目录' big5
 ```
 
-本轮保留 Steam 转换算法及以下上游输入限制：BOM、空消息、缺失/稀疏/负编号没有完整拒绝机制，重复编号按最后一条覆盖，退出 0 不足以证明资源完整；失败也不会删除此前已有的输出。只使用编号完整、版本匹配的输入，并核对长度和输出指纹。CLI 无参数/参数不足退出 1 并显示用法，提示中的 `steam_msg_to_legacy.py` 是上游遗留旧名称，以本页命令为准。
+沿用 Steam 原文件约定：允许跳号、显式空文本和重复编号，重复时最后一条生效。缺失消息按 SSS 的原偏移留空格，缺失词条按 `ID × 10` 留空格，后续编号不再前移；WORD ID 限于旧版脚本／对象可引用的 16 位范围。SSS 最后一项是 EOF 偏移，不占消息字节，可省略或提供空记录。WORD 没有独立总数索引，以最大有效 ID 决定长度，不能推断被省略的末尾词条。
 
-已用合成小夹具验证 GBK/BIG5 和真实子进程，未对真实 Steam 文本整包作完整转换验收。
+损坏的 MKF／消息索引、负数／越界编号、坏记录行、无记录输入及超长内容报错，单文件验证失败不覆盖已有目标。仍须匹配同版本 SSS：结构检查不能证明两个版本语义一致。`all` 和 GUI 多文件准备尚非事务，后一步失败可能留下前一步结果；应使用工作副本。
+
+[#2 R2 复核与源码前后图](../../docs/japanese-steam-record-offsets.md)已覆盖真实 Steam 简、繁体整包、删除编号 0 的副本和 BOM 紧邻首编号的副本。完整输入的输出逐字节保持不变；稀疏输入及 BOM 首记录的编号修复通过独立字节布局核对和引擎源码加载。此入口只生成中文旧格式资源，不把该 Steam 版当成已认证的 Win／DOS 日文映射输入；Tk 交互和实际游戏流程仍待最后统一验收。
 
 ## 加载与验证
 
@@ -113,4 +115,4 @@ R2 使用 `verify_translation_followup.py`，同时比较 Win／DOS 修前修后
 
 DOS 使用 `--target dos` 及其独立资源。转换器固定输入指纹，只替换已审 86 个 ID，按原 PC 头像范围等比缩小／透明填充，保留原文件。加载相应 `paljpn-win.por`／`paljpn-dos.por` 时设置 `PortraitFileName`；默认不设置，保留 PC 头像。
 
-SDL2 正常日夜输出独立合成源 RGB，并同步黑场亮度和覆盖信息；特殊索引色效果与 SDL1 保留原来的近似映射。来源、江少云回退和包配置见 [R1 头像审计](../../docs/japanese-portrait-palettes.md)，当前实现、兼容边界、源码验证与前后图见 [R2 夜景头像颜色](../../docs/japanese-portrait-night-colors.md)。当前 GUI 不自动生成或启用头像包。
+SDL2 普通日夜及已知颜色／索引特效独立处理头像源 RGB；SDL1 和未识别的直接调色板改写保留近似映射。来源、江少云回退和包配置见 [R1 头像审计](../../docs/japanese-portrait-palettes.md)，日夜验证见 [R2 夜景头像颜色](../../docs/japanese-portrait-night-colors.md)，当前特效实现及兼容边界见 [R3 特效证据](../../docs/japanese-portrait-effects.md)。当前 GUI 不自动生成或启用头像包。

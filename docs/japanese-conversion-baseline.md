@@ -1,5 +1,7 @@
 # Issue #2：日文转换工具与可复现基线
 
+本文保留 R1 历史。2026-10-21 的 [R2 稀疏编号修复](japanese-steam-record-offsets.md)已修正 Steam 跳号和首记录 BOM，完成真实简／繁体整包与源码对比；下文“未改 Steam 算法”等描述仅指 R1。当前剩余项见[总管核对](japanese-issue-status.md)。
+
 2026-10-20，关联 [#2](https://github.com/othercat/sdlpal-jp/issues/2)、[总管 #1](https://github.com/othercat/sdlpal-jp/issues/1)。
 
 **三个 Release 脚本已原样纳管，Win SLF 已完整复现；GUI 的工作目录、复制路径、子进程编码和失败中止问题已修正。** 没有改变日文映射、文本内容或 Steam 转换算法。
