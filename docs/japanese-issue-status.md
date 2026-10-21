@@ -1,6 +1,11 @@
 # 总管 #1 与子 Issue 剩余项核对
 
 2026-10-21，关联 [#1](https://github.com/othercat/sdlpal-jp/issues/1)。
+
+最新交付：[统一验收包](japanese-unified-acceptance.md)冻结 `feature @ f5320f326d2110a43c32e3af6c9c12c765d2273e`，
+附 Win／DOS 配置、[分项步骤](japanese-acceptance-checklist.md)、[完整提交对应](japanese-acceptance-commits.md)及离线源码图。
+本轮整理不新增游戏修复；实机由用户执行，#1–#10 继续开放。
+
 核对起点为 `feature @ 68c56490a9c55c223b93ff0d2b6ae6f455885337`；
 检查了 #1–#10 的完整正文、折叠历史、全部评论（均为 0 条）及对应当前源码／项目文档。
 R2 完成 [Steam 稀疏编号](japanese-steam-record-offsets.md)，R3 完成 [多文件准备失败回滚](japanese-resource-preparation-rollback.md)；
