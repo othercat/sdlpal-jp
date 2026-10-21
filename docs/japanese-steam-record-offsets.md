@@ -1,5 +1,7 @@
 # Issue #2 R2：Steam 跳号与首记录 BOM
 
+本文保留 R2 历史；下文当时未完成的多文件准备回滚已由 [R3](japanese-resource-preparation-rollback.md)处理。当前剩余项见[总管核对](japanese-issue-status.md)。
+
 2026-10-21，关联 [#2](https://github.com/othercat/sdlpal-jp/issues/2)、
 [总管 #1](https://github.com/othercat/sdlpal-jp/issues/1)。
 本轮基于 `feature @ 68c56490a9c55c223b93ff0d2b6ae6f455885337`，

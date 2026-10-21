@@ -250,3 +250,21 @@ reference, and 2x/3x outputs must equal nearest-neighbor scaling. 2.5x dimension
 alone are checked. The pre-fix sparse file is padded only at EOF before loading
 to avoid the old engine reader's out-of-range reads; displayed spans must never
 intersect this tail. See [commands, boundaries and images](../docs/japanese-steam-record-offsets.md).
+
+### Multi-file resource preparation (Issue #2 R3)
+
+`test_resource_transaction.py` exercises CLI all and the actual GUI callbacks
+with failed preparation, backup, copying, publication and rollback. It checks
+original bytes/mtime, removal of new files, recovery-backup retention, live-child
+cleanup, GUI reentry and immutable input snapshots. A post-replace interruption
+test injects KeyboardInterrupt after the OS replacement has already succeeded.
+The tests do not require Tk windows or game resources.
+
+`tools/japanese/verify_resource_preparation.py` uses real simplified/traditional
+Steam working copies, the pre-R3 tools and the unchanged R2 Test renderer.
+Successful conversion must remain byte/pixel-identical. A controlled message
+edit plus a word overflow demonstrates the old leaked message and the restored
+original after failure; no EOF padding is needed. GUI failure must not launch
+the SLF generator or retain partial outputs. An independent full-file oracle,
+real publication failures, source code points and scaled pixels are checked.
+See [commands, evidence and limits](../docs/japanese-resource-preparation-rollback.md).

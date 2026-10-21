@@ -1,0 +1,2236 @@
+{
+  "date": "2026-10-21",
+  "base": "e1a41d68215f3684f149ea94dbdeb25623e31c98",
+  "inputs": {
+    "ABC.MKF": {
+      "bytes": 1022564,
+      "sha256": "ef2920716b87b5bd0ecb184cbbcf8585512184bc0cbe4dfff07f8a4617f2af0b"
+    },
+    "BALL.MKF": {
+      "bytes": 134704,
+      "sha256": "be8e7218ee21baf64eaa90ec9f27967544a1b0136ce490604ac5f6dedb22830b"
+    },
+    "DATA.MKF": {
+      "bytes": 66418,
+      "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a"
+    },
+    "desc_chs.dat": {
+      "bytes": 16027,
+      "sha256": "070cc56c8792edeab642b4e7232a70a49c3ee8934a2596ac50d4396f0cb9948f"
+    },
+    "desc_cht.dat": {
+      "bytes": 16027,
+      "sha256": "0d6487d6832488130bc94b1ec5ee71766717b929c249693327089e461460ae40"
+    },
+    "F.MKF": {
+      "bytes": 186966,
+      "sha256": "6fc9a9978dd06bee8e381c80e68683b6f3033c2aa40f61eb0e1a2194fc570f65"
+    },
+    "FBP.MKF": {
+      "bytes": 1128064,
+      "sha256": "f38d0243a4f635886f27324c2a44016e7ff46db2146c853ab8edda12b8d5652c"
+    },
+    "FIRE.MKF": {
+      "bytes": 834728,
+      "sha256": "eab713c53b4236f4aeefd30239675d62e887f10bb576ce1950a5be5b0d7458dd"
+    },
+    "GOP.MKF": {
+      "bytes": 11530322,
+      "sha256": "dbb17aeb8fcef6e24232b05abb58d5e9acf06a868b73bc0dc6c9a9e955fffb9c"
+    },
+    "MAP.MKF": {
+      "bytes": 1532520,
+      "sha256": "a40f22319d70a97a8871dfc85494c2d28e793c1e10d752734ab8f61704355066"
+    },
+    "MGO.MKF": {
+      "bytes": 1577442,
+      "sha256": "a9f9fc0ceeccb354906a96eaf6003f9c7ece8db6789856144201d926f5ff76b1"
+    },
+    "MIDI.MKF": {
+      "bytes": 762442,
+      "sha256": "70587d762bdcea0a6e07f0f13808993045a6f382c713f0ad81793a7f6991f913"
+    },
+    "MSG_chs.txt": {
+      "bytes": 397756,
+      "sha256": "3013e121af12ba1c31109bfaf7d57e0bde55c5619c8d2c533e4b705f10c60683"
+    },
+    "MSG_cht.txt": {
+      "bytes": 397756,
+      "sha256": "eca6a72997669002a225f29b10e86b6f71c8ca065fab188ec54f3e584ba7dcab"
+    },
+    "MUS.MKF": {
+      "bytes": 331284,
+      "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+    },
+    "PAT.MKF": {
+      "bytes": 8488,
+      "sha256": "78b08ef4c4630b703c714da25ab6482d4524a577c56c9554a369bbf30cc67eab"
+    },
+    "RGM.MKF": {
+      "bytes": 453202,
+      "sha256": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac"
+    },
+    "RNG.MKF": {
+      "bytes": 4546074,
+      "sha256": "226a7932b94548071ecfb6274ac069f890ea347aef99c79c72b69655457310a3"
+    },
+    "SSS.MKF": {
+      "bytes": 569640,
+      "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+    },
+    "Steam_appid.txt": {
+      "bytes": 7,
+      "sha256": "ad709d894447fa610182fd345d35698703bbcb6f75de33cfcd298aec0a2a7772"
+    },
+    "VOC.MKF": {
+      "bytes": 1997044,
+      "sha256": "c6e14eaaff50979df269b7d6d5f7401cb354be38e3ad737e4ca3ec473c1c5ab3"
+    },
+    "WORD_chs.txt": {
+      "bytes": 10180,
+      "sha256": "b80e740a2bfb7729c9f5f87e9a75e7366e24943ce5ee8bf07f8d71afbe9a1cc9"
+    },
+    "WORD_cht.txt": {
+      "bytes": 10186,
+      "sha256": "8e5435b2d06390d5b7622530bcf9c62a46874a29f19abb197b93e09f363344c9"
+    }
+  },
+  "renderer": {
+    "bytes": 10464768,
+    "sha256": "3307d7ef0082055b4b28269b710b9773c9f936510311d01200a5722ed5008c66"
+  },
+  "before_tools": {
+    "rungui.py": {
+      "bytes": 12618,
+      "sha256": "449131f6410ec0c5df1d38ed5d39d80bc1cdb055bcde62e2034146ead1160484"
+    },
+    "steam_to_legacy.py": {
+      "bytes": 17115,
+      "sha256": "ccceb74abec5664df5fd84003160585b63901d88b8f42c57937068fadb18ca33"
+    }
+  },
+  "sources": {
+    "tools\\japanese\\resource_transaction.py": {
+      "bytes": 4461,
+      "sha256": "ea2526e66ed9502b09f3a19dceb9bc46aaf47f27ff856a42de211f5b4062d91d"
+    },
+    "tools\\japanese\\steam_to_legacy.py": {
+      "bytes": 17118,
+      "sha256": "85163ecaa66fec6c41b38fc85c58be37052847aa0d4299c43bd1420d70124951"
+    },
+    "tools\\japanese\\rungui.py": {
+      "bytes": 13926,
+      "sha256": "dbfe7d7cb888570a45993d04da4174f75f3a56af39a6b6e16274333e9b1de084"
+    },
+    "tools\\japanese\\verify_resource_preparation.py": {
+      "bytes": 14714,
+      "sha256": "a65bbe53d33dd4e27470f79dd63f765f523e2befd7b936b288ae78d80d516ca2"
+    },
+    "tools\\japanese\\verify_steam_conversion.py": {
+      "bytes": 11954,
+      "sha256": "cc478d9b3698151c767079c6ecc22791d3039c668ea535ba2b1b717146d4fd11"
+    },
+    "tests\\test_resource_transaction.py": {
+      "bytes": 15922,
+      "sha256": "35e7468a04a3fa5e3d201194f9deb2904f97c88ce37be0bae3f8c0469e67bd71"
+    },
+    "tests\\test_japanese_conversion_tools.py": {
+      "bytes": 16426,
+      "sha256": "4d7478f55888ede331887fb0605df100cc196191f6e0c1c238ca153f51b755be"
+    }
+  },
+  "cases": {
+    "gbk-complete": {
+      "runs": {
+        "before": {
+          "argv": [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-B",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\before-tools\\steam_to_legacy.py",
+            "all",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\input",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\before",
+            "gbk"
+          ],
+          "exit_code": 0,
+          "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\before.log",
+          "log_fingerprint": {
+            "bytes": 21227,
+            "sha256": "e853bd9741731445705fc4cf3d4344bd5c275fa559240b2fed26ae05ba072929"
+          },
+          "outputs": {
+            "M.MSG": {
+              "bytes": 212668,
+              "sha256": "37d89f2990c984d26f77ebb747dd470bb04a8d83798da081c1186675a343d826"
+            },
+            "WORD.DAT": {
+              "bytes": 5660,
+              "sha256": "1823ba3bd48b487dd267f1e8a78c829f8204fb5c257efbf8d64fade32335229f"
+            }
+          },
+          "render": {
+            "argv": [
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\steam-r2-20261021\\build\\sdlpal.exe",
+              "--render-evidence",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\before-render\\runtime/",
+              "-",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\before-render",
+              "steam-records"
+            ],
+            "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\before-render",
+            "exit_code": 0,
+            "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\before-render\\render.log",
+            "log_fingerprint": {
+              "bytes": 60,
+              "sha256": "bca06670aee9ab54d49764b3701de71376aba305e1d696a676105776876e6851"
+            },
+            "resources": {
+              "ABC.MKF": {
+                "bytes": 1022564,
+                "sha256": "ef2920716b87b5bd0ecb184cbbcf8585512184bc0cbe4dfff07f8a4617f2af0b"
+              },
+              "BALL.MKF": {
+                "bytes": 134704,
+                "sha256": "be8e7218ee21baf64eaa90ec9f27967544a1b0136ce490604ac5f6dedb22830b"
+              },
+              "DATA.MKF": {
+                "bytes": 66418,
+                "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a"
+              },
+              "F.MKF": {
+                "bytes": 186966,
+                "sha256": "6fc9a9978dd06bee8e381c80e68683b6f3033c2aa40f61eb0e1a2194fc570f65"
+              },
+              "FBP.MKF": {
+                "bytes": 1128064,
+                "sha256": "f38d0243a4f635886f27324c2a44016e7ff46db2146c853ab8edda12b8d5652c"
+              },
+              "FIRE.MKF": {
+                "bytes": 834728,
+                "sha256": "eab713c53b4236f4aeefd30239675d62e887f10bb576ce1950a5be5b0d7458dd"
+              },
+              "GOP.MKF": {
+                "bytes": 11530322,
+                "sha256": "dbb17aeb8fcef6e24232b05abb58d5e9acf06a868b73bc0dc6c9a9e955fffb9c"
+              },
+              "MAP.MKF": {
+                "bytes": 1532520,
+                "sha256": "a40f22319d70a97a8871dfc85494c2d28e793c1e10d752734ab8f61704355066"
+              },
+              "MGO.MKF": {
+                "bytes": 1577442,
+                "sha256": "a9f9fc0ceeccb354906a96eaf6003f9c7ece8db6789856144201d926f5ff76b1"
+              },
+              "MIDI.MKF": {
+                "bytes": 762442,
+                "sha256": "70587d762bdcea0a6e07f0f13808993045a6f382c713f0ad81793a7f6991f913"
+              },
+              "MUS.MKF": {
+                "bytes": 331284,
+                "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+              },
+              "PAT.MKF": {
+                "bytes": 8488,
+                "sha256": "78b08ef4c4630b703c714da25ab6482d4524a577c56c9554a369bbf30cc67eab"
+              },
+              "RGM.MKF": {
+                "bytes": 453202,
+                "sha256": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac"
+              },
+              "RNG.MKF": {
+                "bytes": 4546074,
+                "sha256": "226a7932b94548071ecfb6274ac069f890ea347aef99c79c72b69655457310a3"
+              },
+              "SSS.MKF": {
+                "bytes": 569640,
+                "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+              },
+              "VOC.MKF": {
+                "bytes": 1997044,
+                "sha256": "c6e14eaaff50979df269b7d6d5f7401cb354be38e3ad737e4ca3ec473c1c5ab3"
+              }
+            },
+            "rendered_rows": [
+              {
+                "kind": "msg",
+                "id": "5",
+                "codepoints": "4e00 4e2a 7a7a 7bb1 5b50 ff0e ff0e "
+              },
+              {
+                "kind": "msg",
+                "id": "6",
+                "codepoints": "83b7 5f97 ff11 ff10 ff10 6587 94b1 "
+              },
+              {
+                "kind": "msg",
+                "id": "7",
+                "codepoints": "83b7 5f97 ff12 ff10 ff10 6587 94b1 "
+              },
+              {
+                "kind": "msg",
+                "id": "8",
+                "codepoints": "83b7 5f97 ff13 ff10 ff10 6587 94b1 "
+              },
+              {
+                "kind": "word",
+                "id": "36",
+                "codepoints": "674e 900d 9065 "
+              },
+              {
+                "kind": "word",
+                "id": "37",
+                "codepoints": "8d75 7075 513f "
+              },
+              {
+                "kind": "word",
+                "id": "149",
+                "codepoints": "8d64 8840 8695 "
+              },
+              {
+                "kind": "word",
+                "id": "150",
+                "codepoints": "91d1 8695 738b "
+              }
+            ],
+            "eof_padding_for_safe_before_render": {
+              "M.MSG": 0,
+              "WORD.DAT": 0
+            },
+            "images": {
+              "steam-msg-640.bmp": {
+                "bytes": 768054,
+                "sha256": "0b334d9fc5f9a4e0652298f03b5ea476fd9d34238d0b582ef10b4d27c6960331"
+              },
+              "steam-msg-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "284c7a1ecb84c5fbce06b49f74509ff694a8bc06c79729577d0a93c9cce3f518"
+              },
+              "steam-msg-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "f1ca246c3d9a2cdead2347b9ab1c9d7e9c31b41d4fe5bc4073be41f26ebb5861"
+              },
+              "steam-word-640.bmp": {
+                "bytes": 768054,
+                "sha256": "7717aef98a1b3bd8ddc03c0fbed61e08a56e1250814ffe704d5ce3f53266c605"
+              },
+              "steam-word-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "1831a5378eaca0d097a5ce4a167569561b1b810510ad21c9130d5c6e6fb10089"
+              },
+              "steam-word-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "c5f1b5ba1e2c0bff73d1db3dff92fec73343c4e266c3a16556d067f06051c8dd"
+              }
+            }
+          }
+        },
+        "after": {
+          "argv": [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-B",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\steam_to_legacy.py",
+            "all",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\input",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\after",
+            "gbk"
+          ],
+          "exit_code": 0,
+          "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\after.log",
+          "log_fingerprint": {
+            "bytes": 21272,
+            "sha256": "67edd07547c6c358a0274cf0268bde0aea862bb9cc273ca30dd2a51efeee9e8b"
+          },
+          "outputs": {
+            "M.MSG": {
+              "bytes": 212668,
+              "sha256": "37d89f2990c984d26f77ebb747dd470bb04a8d83798da081c1186675a343d826"
+            },
+            "WORD.DAT": {
+              "bytes": 5660,
+              "sha256": "1823ba3bd48b487dd267f1e8a78c829f8204fb5c257efbf8d64fade32335229f"
+            }
+          },
+          "render": {
+            "argv": [
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\steam-r2-20261021\\build\\sdlpal.exe",
+              "--render-evidence",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\after-render\\runtime/",
+              "-",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\after-render",
+              "steam-records"
+            ],
+            "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\after-render",
+            "exit_code": 0,
+            "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\after-render\\render.log",
+            "log_fingerprint": {
+              "bytes": 60,
+              "sha256": "bca06670aee9ab54d49764b3701de71376aba305e1d696a676105776876e6851"
+            },
+            "resources": {
+              "ABC.MKF": {
+                "bytes": 1022564,
+                "sha256": "ef2920716b87b5bd0ecb184cbbcf8585512184bc0cbe4dfff07f8a4617f2af0b"
+              },
+              "BALL.MKF": {
+                "bytes": 134704,
+                "sha256": "be8e7218ee21baf64eaa90ec9f27967544a1b0136ce490604ac5f6dedb22830b"
+              },
+              "DATA.MKF": {
+                "bytes": 66418,
+                "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a"
+              },
+              "F.MKF": {
+                "bytes": 186966,
+                "sha256": "6fc9a9978dd06bee8e381c80e68683b6f3033c2aa40f61eb0e1a2194fc570f65"
+              },
+              "FBP.MKF": {
+                "bytes": 1128064,
+                "sha256": "f38d0243a4f635886f27324c2a44016e7ff46db2146c853ab8edda12b8d5652c"
+              },
+              "FIRE.MKF": {
+                "bytes": 834728,
+                "sha256": "eab713c53b4236f4aeefd30239675d62e887f10bb576ce1950a5be5b0d7458dd"
+              },
+              "GOP.MKF": {
+                "bytes": 11530322,
+                "sha256": "dbb17aeb8fcef6e24232b05abb58d5e9acf06a868b73bc0dc6c9a9e955fffb9c"
+              },
+              "MAP.MKF": {
+                "bytes": 1532520,
+                "sha256": "a40f22319d70a97a8871dfc85494c2d28e793c1e10d752734ab8f61704355066"
+              },
+              "MGO.MKF": {
+                "bytes": 1577442,
+                "sha256": "a9f9fc0ceeccb354906a96eaf6003f9c7ece8db6789856144201d926f5ff76b1"
+              },
+              "MIDI.MKF": {
+                "bytes": 762442,
+                "sha256": "70587d762bdcea0a6e07f0f13808993045a6f382c713f0ad81793a7f6991f913"
+              },
+              "MUS.MKF": {
+                "bytes": 331284,
+                "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+              },
+              "PAT.MKF": {
+                "bytes": 8488,
+                "sha256": "78b08ef4c4630b703c714da25ab6482d4524a577c56c9554a369bbf30cc67eab"
+              },
+              "RGM.MKF": {
+                "bytes": 453202,
+                "sha256": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac"
+              },
+              "RNG.MKF": {
+                "bytes": 4546074,
+                "sha256": "226a7932b94548071ecfb6274ac069f890ea347aef99c79c72b69655457310a3"
+              },
+              "SSS.MKF": {
+                "bytes": 569640,
+                "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+              },
+              "VOC.MKF": {
+                "bytes": 1997044,
+                "sha256": "c6e14eaaff50979df269b7d6d5f7401cb354be38e3ad737e4ca3ec473c1c5ab3"
+              }
+            },
+            "rendered_rows": [
+              {
+                "kind": "msg",
+                "id": "5",
+                "codepoints": "4e00 4e2a 7a7a 7bb1 5b50 ff0e ff0e "
+              },
+              {
+                "kind": "msg",
+                "id": "6",
+                "codepoints": "83b7 5f97 ff11 ff10 ff10 6587 94b1 "
+              },
+              {
+                "kind": "msg",
+                "id": "7",
+                "codepoints": "83b7 5f97 ff12 ff10 ff10 6587 94b1 "
+              },
+              {
+                "kind": "msg",
+                "id": "8",
+                "codepoints": "83b7 5f97 ff13 ff10 ff10 6587 94b1 "
+              },
+              {
+                "kind": "word",
+                "id": "36",
+                "codepoints": "674e 900d 9065 "
+              },
+              {
+                "kind": "word",
+                "id": "37",
+                "codepoints": "8d75 7075 513f "
+              },
+              {
+                "kind": "word",
+                "id": "149",
+                "codepoints": "8d64 8840 8695 "
+              },
+              {
+                "kind": "word",
+                "id": "150",
+                "codepoints": "91d1 8695 738b "
+              }
+            ],
+            "eof_padding_for_safe_before_render": {
+              "M.MSG": 0,
+              "WORD.DAT": 0
+            },
+            "images": {
+              "steam-msg-640.bmp": {
+                "bytes": 768054,
+                "sha256": "0b334d9fc5f9a4e0652298f03b5ea476fd9d34238d0b582ef10b4d27c6960331"
+              },
+              "steam-msg-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "284c7a1ecb84c5fbce06b49f74509ff694a8bc06c79729577d0a93c9cce3f518"
+              },
+              "steam-msg-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "f1ca246c3d9a2cdead2347b9ab1c9d7e9c31b41d4fe5bc4073be41f26ebb5861"
+              },
+              "steam-word-640.bmp": {
+                "bytes": 768054,
+                "sha256": "7717aef98a1b3bd8ddc03c0fbed61e08a56e1250814ffe704d5ce3f53266c605"
+              },
+              "steam-word-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "1831a5378eaca0d097a5ce4a167569561b1b810510ad21c9130d5c6e6fb10089"
+              },
+              "steam-word-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "c5f1b5ba1e2c0bff73d1db3dff92fec73343c4e266c3a16556d067f06051c8dd"
+              }
+            }
+          }
+        }
+      },
+      "gui": {
+        "commands": [
+          [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\steam_to_legacy.py",
+            "msg",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\gui",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\gui\\.sdlpal-prepare-19r4v200\\new-0",
+            "gbk"
+          ],
+          [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\steam_to_legacy.py",
+            "word",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\gui",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\gui\\.sdlpal-prepare-19r4v200\\new-2",
+            "gbk"
+          ]
+        ],
+        "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-complete\\gui.log",
+        "log_fingerprint": {
+          "bytes": 20783,
+          "sha256": "32ee38a97c56b7c8c8e7e640c6bfb4f6c91164c2aff8f52b8645ef1f77de3702"
+        },
+        "files_after": {
+          "M.MSG": {
+            "bytes": 212668,
+            "sha256": "37d89f2990c984d26f77ebb747dd470bb04a8d83798da081c1186675a343d826"
+          },
+          "M_chs.msg": {
+            "bytes": 212668,
+            "sha256": "37d89f2990c984d26f77ebb747dd470bb04a8d83798da081c1186675a343d826"
+          },
+          "MSG_chs.txt": {
+            "bytes": 397756,
+            "sha256": "3013e121af12ba1c31109bfaf7d57e0bde55c5619c8d2c533e4b705f10c60683"
+          },
+          "SSS.MKF": {
+            "bytes": 569640,
+            "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+          },
+          "WORD.DAT": {
+            "bytes": 5660,
+            "sha256": "1823ba3bd48b487dd267f1e8a78c829f8204fb5c257efbf8d64fade32335229f"
+          },
+          "Word_chs.dat": {
+            "bytes": 5660,
+            "sha256": "1823ba3bd48b487dd267f1e8a78c829f8204fb5c257efbf8d64fade32335229f"
+          },
+          "WORD_chs.txt": {
+            "bytes": 10180,
+            "sha256": "b80e740a2bfb7729c9f5f87e9a75e7366e24943ce5ee8bf07f8d71afbe9a1cc9"
+          }
+        },
+        "tk_widgets": "headless test doubles"
+      },
+      "independent_full_file_match": true,
+      "success_changed_pixels": 0
+    },
+    "gbk-word-failure": {
+      "injected_input_changes": [
+        "MSG ID 6: fullwidth 100 -> 900",
+        "WORD ID 0: 11-byte overflow"
+      ],
+      "input_copy": {
+        "MSG_chs.txt": {
+          "bytes": 371788,
+          "sha256": "eb4fd85a56c59e25eeefc4d45e57aaf4b614202539b32a328f043c5b7bb91418"
+        },
+        "SSS.MKF": {
+          "bytes": 569640,
+          "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+        },
+        "WORD_chs.txt": {
+          "bytes": 10210,
+          "sha256": "f6e6c874c046ab33ac321be33c459afc69b0f8f5792dbfc630ee878b6e7e05e5"
+        }
+      },
+      "runs": {
+        "before": {
+          "argv": [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-B",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\before-tools\\steam_to_legacy.py",
+            "all",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\input",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\before",
+            "gbk"
+          ],
+          "exit_code": 1,
+          "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\before.log",
+          "log_fingerprint": {
+            "bytes": 21251,
+            "sha256": "034254624533be0ba20be85ef67893d17947087a31b493a300db2f114d1759de"
+          },
+          "outputs": {
+            "M.MSG": {
+              "bytes": 212668,
+              "sha256": "2a025d8a0482134596bc463eb2ef78e8cd2f181f189fe6edc2ae3e39d56485f5"
+            },
+            "WORD.DAT": {
+              "bytes": 5660,
+              "sha256": "1823ba3bd48b487dd267f1e8a78c829f8204fb5c257efbf8d64fade32335229f"
+            }
+          },
+          "existing_pair_preserved": false,
+          "render": {
+            "argv": [
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\steam-r2-20261021\\build\\sdlpal.exe",
+              "--render-evidence",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\before-render\\runtime/",
+              "-",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\before-render",
+              "steam-records"
+            ],
+            "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\before-render",
+            "exit_code": 0,
+            "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\before-render\\render.log",
+            "log_fingerprint": {
+              "bytes": 60,
+              "sha256": "bca06670aee9ab54d49764b3701de71376aba305e1d696a676105776876e6851"
+            },
+            "resources": {
+              "ABC.MKF": {
+                "bytes": 1022564,
+                "sha256": "ef2920716b87b5bd0ecb184cbbcf8585512184bc0cbe4dfff07f8a4617f2af0b"
+              },
+              "BALL.MKF": {
+                "bytes": 134704,
+                "sha256": "be8e7218ee21baf64eaa90ec9f27967544a1b0136ce490604ac5f6dedb22830b"
+              },
+              "DATA.MKF": {
+                "bytes": 66418,
+                "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a"
+              },
+              "F.MKF": {
+                "bytes": 186966,
+                "sha256": "6fc9a9978dd06bee8e381c80e68683b6f3033c2aa40f61eb0e1a2194fc570f65"
+              },
+              "FBP.MKF": {
+                "bytes": 1128064,
+                "sha256": "f38d0243a4f635886f27324c2a44016e7ff46db2146c853ab8edda12b8d5652c"
+              },
+              "FIRE.MKF": {
+                "bytes": 834728,
+                "sha256": "eab713c53b4236f4aeefd30239675d62e887f10bb576ce1950a5be5b0d7458dd"
+              },
+              "GOP.MKF": {
+                "bytes": 11530322,
+                "sha256": "dbb17aeb8fcef6e24232b05abb58d5e9acf06a868b73bc0dc6c9a9e955fffb9c"
+              },
+              "MAP.MKF": {
+                "bytes": 1532520,
+                "sha256": "a40f22319d70a97a8871dfc85494c2d28e793c1e10d752734ab8f61704355066"
+              },
+              "MGO.MKF": {
+                "bytes": 1577442,
+                "sha256": "a9f9fc0ceeccb354906a96eaf6003f9c7ece8db6789856144201d926f5ff76b1"
+              },
+              "MIDI.MKF": {
+                "bytes": 762442,
+                "sha256": "70587d762bdcea0a6e07f0f13808993045a6f382c713f0ad81793a7f6991f913"
+              },
+              "MUS.MKF": {
+                "bytes": 331284,
+                "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+              },
+              "PAT.MKF": {
+                "bytes": 8488,
+                "sha256": "78b08ef4c4630b703c714da25ab6482d4524a577c56c9554a369bbf30cc67eab"
+              },
+              "RGM.MKF": {
+                "bytes": 453202,
+                "sha256": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac"
+              },
+              "RNG.MKF": {
+                "bytes": 4546074,
+                "sha256": "226a7932b94548071ecfb6274ac069f890ea347aef99c79c72b69655457310a3"
+              },
+              "SSS.MKF": {
+                "bytes": 569640,
+                "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+              },
+              "VOC.MKF": {
+                "bytes": 1997044,
+                "sha256": "c6e14eaaff50979df269b7d6d5f7401cb354be38e3ad737e4ca3ec473c1c5ab3"
+              }
+            },
+            "rendered_rows": [
+              {
+                "kind": "msg",
+                "id": "5",
+                "codepoints": "4e00 4e2a 7a7a 7bb1 5b50 ff0e ff0e "
+              },
+              {
+                "kind": "msg",
+                "id": "6",
+                "codepoints": "83b7 5f97 ff19 ff10 ff10 6587 94b1 "
+              },
+              {
+                "kind": "msg",
+                "id": "7",
+                "codepoints": "83b7 5f97 ff12 ff10 ff10 6587 94b1 "
+              },
+              {
+                "kind": "msg",
+                "id": "8",
+                "codepoints": "83b7 5f97 ff13 ff10 ff10 6587 94b1 "
+              },
+              {
+                "kind": "word",
+                "id": "36",
+                "codepoints": "674e 900d 9065 "
+              },
+              {
+                "kind": "word",
+                "id": "37",
+                "codepoints": "8d75 7075 513f "
+              },
+              {
+                "kind": "word",
+                "id": "149",
+                "codepoints": "8d64 8840 8695 "
+              },
+              {
+                "kind": "word",
+                "id": "150",
+                "codepoints": "91d1 8695 738b "
+              }
+            ],
+            "eof_padding_for_safe_before_render": {
+              "M.MSG": 0,
+              "WORD.DAT": 0
+            },
+            "images": {
+              "steam-msg-640.bmp": {
+                "bytes": 768054,
+                "sha256": "48ce0a9d6db1c8f9d5928dd3ec65f6d2f469e438545df10d1364ccc508680825"
+              },
+              "steam-msg-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "63fb02828fd352424534a62c1242f59fb0f2812e23e3958e356893ae30e32f6b"
+              },
+              "steam-msg-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "7b21f8848c6f71fdebc95df50475b4c973adf444bbbc7c35faccdb15a1443da0"
+              },
+              "steam-word-640.bmp": {
+                "bytes": 768054,
+                "sha256": "7717aef98a1b3bd8ddc03c0fbed61e08a56e1250814ffe704d5ce3f53266c605"
+              },
+              "steam-word-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "1831a5378eaca0d097a5ce4a167569561b1b810510ad21c9130d5c6e6fb10089"
+              },
+              "steam-word-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "c5f1b5ba1e2c0bff73d1db3dff92fec73343c4e266c3a16556d067f06051c8dd"
+              }
+            }
+          },
+          "gui": {
+            "commands": [
+              [
+                "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+                "-X",
+                "utf8",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\before-tools\\steam_to_legacy.py",
+                "msg",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\before-gui",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\before-gui\\M_chs.msg",
+                "gbk"
+              ],
+              [
+                "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+                "-X",
+                "utf8",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\before-tools\\steam_to_legacy.py",
+                "word",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\before-gui",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\before-gui\\Word_chs.dat",
+                "gbk"
+              ]
+            ],
+            "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\before-gui.log",
+            "log_fingerprint": {
+              "bytes": 20815,
+              "sha256": "0a33581c05a1861ac63f9f52cf4e48d63f5b0e823791b41415dc93b7bb8c2209"
+            },
+            "files_after": {
+              "existing.slf": {
+                "bytes": 22,
+                "sha256": "e39e2d606ce244cd729a61cd18034f93c0f4d0bff0121228962f3752be6eea12"
+              },
+              "M.MSG": {
+                "bytes": 212668,
+                "sha256": "2a025d8a0482134596bc463eb2ef78e8cd2f181f189fe6edc2ae3e39d56485f5"
+              },
+              "M_chs.msg": {
+                "bytes": 212668,
+                "sha256": "2a025d8a0482134596bc463eb2ef78e8cd2f181f189fe6edc2ae3e39d56485f5"
+              },
+              "M_cht.msg": {
+                "bytes": 20,
+                "sha256": "8780efd35a2460c2da98c0abb16114e9ec6cc032f043f415a3a50f4f5ded3b04"
+              },
+              "MSG_chs.txt": {
+                "bytes": 371788,
+                "sha256": "eb4fd85a56c59e25eeefc4d45e57aaf4b614202539b32a328f043c5b7bb91418"
+              },
+              "SSS.MKF": {
+                "bytes": 569640,
+                "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+              },
+              "WORD_chs.txt": {
+                "bytes": 10210,
+                "sha256": "f6e6c874c046ab33ac321be33c459afc69b0f8f5792dbfc630ee878b6e7e05e5"
+              }
+            },
+            "tk_widgets": "headless test doubles",
+            "partial_outputs": [
+              "M.MSG",
+              "M_chs.msg"
+            ]
+          }
+        },
+        "after": {
+          "argv": [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-B",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\steam_to_legacy.py",
+            "all",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\input",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\after",
+            "gbk"
+          ],
+          "exit_code": 1,
+          "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\after.log",
+          "log_fingerprint": {
+            "bytes": 21296,
+            "sha256": "29881adf99e8edf4223a6d7988c97c57b56009324197e1c4ee92762f16180324"
+          },
+          "outputs": {
+            "M.MSG": {
+              "bytes": 212668,
+              "sha256": "37d89f2990c984d26f77ebb747dd470bb04a8d83798da081c1186675a343d826"
+            },
+            "WORD.DAT": {
+              "bytes": 5660,
+              "sha256": "1823ba3bd48b487dd267f1e8a78c829f8204fb5c257efbf8d64fade32335229f"
+            }
+          },
+          "existing_pair_preserved": true,
+          "render": {
+            "argv": [
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\steam-r2-20261021\\build\\sdlpal.exe",
+              "--render-evidence",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\after-render\\runtime/",
+              "-",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\after-render",
+              "steam-records"
+            ],
+            "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\after-render",
+            "exit_code": 0,
+            "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\after-render\\render.log",
+            "log_fingerprint": {
+              "bytes": 60,
+              "sha256": "bca06670aee9ab54d49764b3701de71376aba305e1d696a676105776876e6851"
+            },
+            "resources": {
+              "ABC.MKF": {
+                "bytes": 1022564,
+                "sha256": "ef2920716b87b5bd0ecb184cbbcf8585512184bc0cbe4dfff07f8a4617f2af0b"
+              },
+              "BALL.MKF": {
+                "bytes": 134704,
+                "sha256": "be8e7218ee21baf64eaa90ec9f27967544a1b0136ce490604ac5f6dedb22830b"
+              },
+              "DATA.MKF": {
+                "bytes": 66418,
+                "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a"
+              },
+              "F.MKF": {
+                "bytes": 186966,
+                "sha256": "6fc9a9978dd06bee8e381c80e68683b6f3033c2aa40f61eb0e1a2194fc570f65"
+              },
+              "FBP.MKF": {
+                "bytes": 1128064,
+                "sha256": "f38d0243a4f635886f27324c2a44016e7ff46db2146c853ab8edda12b8d5652c"
+              },
+              "FIRE.MKF": {
+                "bytes": 834728,
+                "sha256": "eab713c53b4236f4aeefd30239675d62e887f10bb576ce1950a5be5b0d7458dd"
+              },
+              "GOP.MKF": {
+                "bytes": 11530322,
+                "sha256": "dbb17aeb8fcef6e24232b05abb58d5e9acf06a868b73bc0dc6c9a9e955fffb9c"
+              },
+              "MAP.MKF": {
+                "bytes": 1532520,
+                "sha256": "a40f22319d70a97a8871dfc85494c2d28e793c1e10d752734ab8f61704355066"
+              },
+              "MGO.MKF": {
+                "bytes": 1577442,
+                "sha256": "a9f9fc0ceeccb354906a96eaf6003f9c7ece8db6789856144201d926f5ff76b1"
+              },
+              "MIDI.MKF": {
+                "bytes": 762442,
+                "sha256": "70587d762bdcea0a6e07f0f13808993045a6f382c713f0ad81793a7f6991f913"
+              },
+              "MUS.MKF": {
+                "bytes": 331284,
+                "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+              },
+              "PAT.MKF": {
+                "bytes": 8488,
+                "sha256": "78b08ef4c4630b703c714da25ab6482d4524a577c56c9554a369bbf30cc67eab"
+              },
+              "RGM.MKF": {
+                "bytes": 453202,
+                "sha256": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac"
+              },
+              "RNG.MKF": {
+                "bytes": 4546074,
+                "sha256": "226a7932b94548071ecfb6274ac069f890ea347aef99c79c72b69655457310a3"
+              },
+              "SSS.MKF": {
+                "bytes": 569640,
+                "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+              },
+              "VOC.MKF": {
+                "bytes": 1997044,
+                "sha256": "c6e14eaaff50979df269b7d6d5f7401cb354be38e3ad737e4ca3ec473c1c5ab3"
+              }
+            },
+            "rendered_rows": [
+              {
+                "kind": "msg",
+                "id": "5",
+                "codepoints": "4e00 4e2a 7a7a 7bb1 5b50 ff0e ff0e "
+              },
+              {
+                "kind": "msg",
+                "id": "6",
+                "codepoints": "83b7 5f97 ff11 ff10 ff10 6587 94b1 "
+              },
+              {
+                "kind": "msg",
+                "id": "7",
+                "codepoints": "83b7 5f97 ff12 ff10 ff10 6587 94b1 "
+              },
+              {
+                "kind": "msg",
+                "id": "8",
+                "codepoints": "83b7 5f97 ff13 ff10 ff10 6587 94b1 "
+              },
+              {
+                "kind": "word",
+                "id": "36",
+                "codepoints": "674e 900d 9065 "
+              },
+              {
+                "kind": "word",
+                "id": "37",
+                "codepoints": "8d75 7075 513f "
+              },
+              {
+                "kind": "word",
+                "id": "149",
+                "codepoints": "8d64 8840 8695 "
+              },
+              {
+                "kind": "word",
+                "id": "150",
+                "codepoints": "91d1 8695 738b "
+              }
+            ],
+            "eof_padding_for_safe_before_render": {
+              "M.MSG": 0,
+              "WORD.DAT": 0
+            },
+            "images": {
+              "steam-msg-640.bmp": {
+                "bytes": 768054,
+                "sha256": "0b334d9fc5f9a4e0652298f03b5ea476fd9d34238d0b582ef10b4d27c6960331"
+              },
+              "steam-msg-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "284c7a1ecb84c5fbce06b49f74509ff694a8bc06c79729577d0a93c9cce3f518"
+              },
+              "steam-msg-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "f1ca246c3d9a2cdead2347b9ab1c9d7e9c31b41d4fe5bc4073be41f26ebb5861"
+              },
+              "steam-word-640.bmp": {
+                "bytes": 768054,
+                "sha256": "7717aef98a1b3bd8ddc03c0fbed61e08a56e1250814ffe704d5ce3f53266c605"
+              },
+              "steam-word-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "1831a5378eaca0d097a5ce4a167569561b1b810510ad21c9130d5c6e6fb10089"
+              },
+              "steam-word-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "c5f1b5ba1e2c0bff73d1db3dff92fec73343c4e266c3a16556d067f06051c8dd"
+              }
+            }
+          },
+          "gui": {
+            "commands": [
+              [
+                "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+                "-X",
+                "utf8",
+                "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\steam_to_legacy.py",
+                "msg",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\after-gui",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\after-gui\\.sdlpal-prepare-xt_v97ln\\new-0",
+                "gbk"
+              ],
+              [
+                "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+                "-X",
+                "utf8",
+                "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\steam_to_legacy.py",
+                "word",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\after-gui",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\after-gui\\.sdlpal-prepare-xt_v97ln\\new-2",
+                "gbk"
+              ]
+            ],
+            "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-word-failure\\after-gui.log",
+            "log_fingerprint": {
+              "bytes": 20852,
+              "sha256": "9c72ade09d49868e4ac78670e665b9e1091b672751cce9e08e63e1db6a4d578a"
+            },
+            "files_after": {
+              "existing.slf": {
+                "bytes": 22,
+                "sha256": "e39e2d606ce244cd729a61cd18034f93c0f4d0bff0121228962f3752be6eea12"
+              },
+              "M_cht.msg": {
+                "bytes": 20,
+                "sha256": "8780efd35a2460c2da98c0abb16114e9ec6cc032f043f415a3a50f4f5ded3b04"
+              },
+              "MSG_chs.txt": {
+                "bytes": 371788,
+                "sha256": "eb4fd85a56c59e25eeefc4d45e57aaf4b614202539b32a328f043c5b7bb91418"
+              },
+              "SSS.MKF": {
+                "bytes": 569640,
+                "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+              },
+              "WORD_chs.txt": {
+                "bytes": 10210,
+                "sha256": "f6e6c874c046ab33ac321be33c459afc69b0f8f5792dbfc630ee878b6e7e05e5"
+              }
+            },
+            "tk_widgets": "headless test doubles",
+            "partial_outputs": []
+          }
+        }
+      },
+      "msg_changed_pixels": 53,
+      "word_changed_pixels": 0
+    },
+    "gbk-cli-publish-failure": {
+      "fail_at_publish": 2,
+      "original_state_restored": true,
+      "files_before_and_after": {
+        "M.MSG": {
+          "bytes": 9,
+          "sha256": "c837861dd9dd9af9af7dccd9e8772a14026a6e6d5717401dd20733b854c0f78f"
+        },
+        "MSG_chs.txt": {
+          "bytes": 397756,
+          "sha256": "3013e121af12ba1c31109bfaf7d57e0bde55c5619c8d2c533e4b705f10c60683"
+        },
+        "SSS.MKF": {
+          "bytes": 569640,
+          "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+        },
+        "WORD.DAT": {
+          "bytes": 12,
+          "sha256": "23610927e67905231cb9380c8f381a7844dd5e4c6c4acabf18f6bdeacd24ce93"
+        },
+        "WORD_chs.txt": {
+          "bytes": 10180,
+          "sha256": "b80e740a2bfb7729c9f5f87e9a75e7366e24943ce5ee8bf07f8d71afbe9a1cc9"
+        }
+      },
+      "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-cli-publish-failure.log",
+      "log_fingerprint": {
+        "bytes": 20610,
+        "sha256": "4c7a12b0f6add28285483a7bf320f05b42bbbca83cf825181ef6f57b052e9bd9"
+      }
+    },
+    "gbk-gui-publish-failure": {
+      "fail_at_publish": 4,
+      "original_state_restored": true,
+      "files_before_and_after": {
+        "MSG_chs.txt": {
+          "bytes": 397756,
+          "sha256": "3013e121af12ba1c31109bfaf7d57e0bde55c5619c8d2c533e4b705f10c60683"
+        },
+        "SSS.MKF": {
+          "bytes": 569640,
+          "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+        },
+        "WORD_chs.txt": {
+          "bytes": 10180,
+          "sha256": "b80e740a2bfb7729c9f5f87e9a75e7366e24943ce5ee8bf07f8d71afbe9a1cc9"
+        }
+      },
+      "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\gbk-gui-publish-failure.log",
+      "log_fingerprint": {
+        "bytes": 20699,
+        "sha256": "5a65563ca7919703cabddda1fe0280624c4998e87e1b68aa05d8b969ec26cad6"
+      }
+    },
+    "big5-complete": {
+      "runs": {
+        "before": {
+          "argv": [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-B",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\before-tools\\steam_to_legacy.py",
+            "all",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\input",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\before",
+            "big5"
+          ],
+          "exit_code": 0,
+          "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\before.log",
+          "log_fingerprint": {
+            "bytes": 21231,
+            "sha256": "d3f9f9461dda034343d14c478f73850634c216248cd3a34fb31c67b39069c490"
+          },
+          "outputs": {
+            "M.MSG": {
+              "bytes": 212668,
+              "sha256": "931cfc2a7a54a1579fadbce371212693a503625819a81e578f1461d0ad9cb7fc"
+            },
+            "WORD.DAT": {
+              "bytes": 5660,
+              "sha256": "bf7f9b013e290df9417b686be60218d296ee3c6160f72ceda22f55284c37f63b"
+            }
+          },
+          "render": {
+            "argv": [
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\steam-r2-20261021\\build\\sdlpal.exe",
+              "--render-evidence",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\before-render\\runtime/",
+              "-",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\before-render",
+              "steam-records"
+            ],
+            "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\before-render",
+            "exit_code": 0,
+            "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\before-render\\render.log",
+            "log_fingerprint": {
+              "bytes": 60,
+              "sha256": "bca06670aee9ab54d49764b3701de71376aba305e1d696a676105776876e6851"
+            },
+            "resources": {
+              "ABC.MKF": {
+                "bytes": 1022564,
+                "sha256": "ef2920716b87b5bd0ecb184cbbcf8585512184bc0cbe4dfff07f8a4617f2af0b"
+              },
+              "BALL.MKF": {
+                "bytes": 134704,
+                "sha256": "be8e7218ee21baf64eaa90ec9f27967544a1b0136ce490604ac5f6dedb22830b"
+              },
+              "DATA.MKF": {
+                "bytes": 66418,
+                "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a"
+              },
+              "F.MKF": {
+                "bytes": 186966,
+                "sha256": "6fc9a9978dd06bee8e381c80e68683b6f3033c2aa40f61eb0e1a2194fc570f65"
+              },
+              "FBP.MKF": {
+                "bytes": 1128064,
+                "sha256": "f38d0243a4f635886f27324c2a44016e7ff46db2146c853ab8edda12b8d5652c"
+              },
+              "FIRE.MKF": {
+                "bytes": 834728,
+                "sha256": "eab713c53b4236f4aeefd30239675d62e887f10bb576ce1950a5be5b0d7458dd"
+              },
+              "GOP.MKF": {
+                "bytes": 11530322,
+                "sha256": "dbb17aeb8fcef6e24232b05abb58d5e9acf06a868b73bc0dc6c9a9e955fffb9c"
+              },
+              "MAP.MKF": {
+                "bytes": 1532520,
+                "sha256": "a40f22319d70a97a8871dfc85494c2d28e793c1e10d752734ab8f61704355066"
+              },
+              "MGO.MKF": {
+                "bytes": 1577442,
+                "sha256": "a9f9fc0ceeccb354906a96eaf6003f9c7ece8db6789856144201d926f5ff76b1"
+              },
+              "MIDI.MKF": {
+                "bytes": 762442,
+                "sha256": "70587d762bdcea0a6e07f0f13808993045a6f382c713f0ad81793a7f6991f913"
+              },
+              "MUS.MKF": {
+                "bytes": 331284,
+                "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+              },
+              "PAT.MKF": {
+                "bytes": 8488,
+                "sha256": "78b08ef4c4630b703c714da25ab6482d4524a577c56c9554a369bbf30cc67eab"
+              },
+              "RGM.MKF": {
+                "bytes": 453202,
+                "sha256": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac"
+              },
+              "RNG.MKF": {
+                "bytes": 4546074,
+                "sha256": "226a7932b94548071ecfb6274ac069f890ea347aef99c79c72b69655457310a3"
+              },
+              "SSS.MKF": {
+                "bytes": 569640,
+                "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+              },
+              "VOC.MKF": {
+                "bytes": 1997044,
+                "sha256": "c6e14eaaff50979df269b7d6d5f7401cb354be38e3ad737e4ca3ec473c1c5ab3"
+              }
+            },
+            "rendered_rows": [
+              {
+                "kind": "msg",
+                "id": "5",
+                "codepoints": "4e00 500b 7a7a 7bb1 5b50 ff0e ff0e "
+              },
+              {
+                "kind": "msg",
+                "id": "6",
+                "codepoints": "7372 5f97 ff11 ff10 ff10 6587 9322 "
+              },
+              {
+                "kind": "msg",
+                "id": "7",
+                "codepoints": "7372 5f97 ff12 ff10 ff10 6587 9322 "
+              },
+              {
+                "kind": "msg",
+                "id": "8",
+                "codepoints": "7372 5f97 ff13 ff10 ff10 6587 9322 "
+              },
+              {
+                "kind": "word",
+                "id": "36",
+                "codepoints": "674e 900d 9059 "
+              },
+              {
+                "kind": "word",
+                "id": "37",
+                "codepoints": "8d99 9748 5152 "
+              },
+              {
+                "kind": "word",
+                "id": "149",
+                "codepoints": "8d64 8840 8836 "
+              },
+              {
+                "kind": "word",
+                "id": "150",
+                "codepoints": "91d1 8836 738b "
+              }
+            ],
+            "eof_padding_for_safe_before_render": {
+              "M.MSG": 0,
+              "WORD.DAT": 0
+            },
+            "images": {
+              "steam-msg-640.bmp": {
+                "bytes": 768054,
+                "sha256": "f5fab92acb75a85570e564615ca6b4bb77123e69ba7df05e4851989967c08d61"
+              },
+              "steam-msg-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "c1a1e8077dbcf229b9772c7eeef5f2e431deb80310a63b75090376f7c3fb04c5"
+              },
+              "steam-msg-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "aa83714cff0926a7bdd00bba8ba8b7dd7a082c8a13c7575391d7b769cfc4591d"
+              },
+              "steam-word-640.bmp": {
+                "bytes": 768054,
+                "sha256": "a8b875ff72668bfb96cfc1081bbd5679f44cf1c271f7cbdec801f9d567294eb2"
+              },
+              "steam-word-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "1b4abc8205d08a886c4025cdbbc4ccf67db899787166e51434448c8fb1f2fcd9"
+              },
+              "steam-word-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "1b32b75d1515acbe8837f16acbee85e3b107740cae272a01984b545b8fcea4ec"
+              }
+            }
+          }
+        },
+        "after": {
+          "argv": [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-B",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\steam_to_legacy.py",
+            "all",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\input",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\after",
+            "big5"
+          ],
+          "exit_code": 0,
+          "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\after.log",
+          "log_fingerprint": {
+            "bytes": 21276,
+            "sha256": "fa5d50c55016b65db1d847e0cd16736ff37b685a7be20290eba622aa32a11d32"
+          },
+          "outputs": {
+            "M.MSG": {
+              "bytes": 212668,
+              "sha256": "931cfc2a7a54a1579fadbce371212693a503625819a81e578f1461d0ad9cb7fc"
+            },
+            "WORD.DAT": {
+              "bytes": 5660,
+              "sha256": "bf7f9b013e290df9417b686be60218d296ee3c6160f72ceda22f55284c37f63b"
+            }
+          },
+          "render": {
+            "argv": [
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\steam-r2-20261021\\build\\sdlpal.exe",
+              "--render-evidence",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\after-render\\runtime/",
+              "-",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\after-render",
+              "steam-records"
+            ],
+            "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\after-render",
+            "exit_code": 0,
+            "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\after-render\\render.log",
+            "log_fingerprint": {
+              "bytes": 60,
+              "sha256": "bca06670aee9ab54d49764b3701de71376aba305e1d696a676105776876e6851"
+            },
+            "resources": {
+              "ABC.MKF": {
+                "bytes": 1022564,
+                "sha256": "ef2920716b87b5bd0ecb184cbbcf8585512184bc0cbe4dfff07f8a4617f2af0b"
+              },
+              "BALL.MKF": {
+                "bytes": 134704,
+                "sha256": "be8e7218ee21baf64eaa90ec9f27967544a1b0136ce490604ac5f6dedb22830b"
+              },
+              "DATA.MKF": {
+                "bytes": 66418,
+                "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a"
+              },
+              "F.MKF": {
+                "bytes": 186966,
+                "sha256": "6fc9a9978dd06bee8e381c80e68683b6f3033c2aa40f61eb0e1a2194fc570f65"
+              },
+              "FBP.MKF": {
+                "bytes": 1128064,
+                "sha256": "f38d0243a4f635886f27324c2a44016e7ff46db2146c853ab8edda12b8d5652c"
+              },
+              "FIRE.MKF": {
+                "bytes": 834728,
+                "sha256": "eab713c53b4236f4aeefd30239675d62e887f10bb576ce1950a5be5b0d7458dd"
+              },
+              "GOP.MKF": {
+                "bytes": 11530322,
+                "sha256": "dbb17aeb8fcef6e24232b05abb58d5e9acf06a868b73bc0dc6c9a9e955fffb9c"
+              },
+              "MAP.MKF": {
+                "bytes": 1532520,
+                "sha256": "a40f22319d70a97a8871dfc85494c2d28e793c1e10d752734ab8f61704355066"
+              },
+              "MGO.MKF": {
+                "bytes": 1577442,
+                "sha256": "a9f9fc0ceeccb354906a96eaf6003f9c7ece8db6789856144201d926f5ff76b1"
+              },
+              "MIDI.MKF": {
+                "bytes": 762442,
+                "sha256": "70587d762bdcea0a6e07f0f13808993045a6f382c713f0ad81793a7f6991f913"
+              },
+              "MUS.MKF": {
+                "bytes": 331284,
+                "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+              },
+              "PAT.MKF": {
+                "bytes": 8488,
+                "sha256": "78b08ef4c4630b703c714da25ab6482d4524a577c56c9554a369bbf30cc67eab"
+              },
+              "RGM.MKF": {
+                "bytes": 453202,
+                "sha256": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac"
+              },
+              "RNG.MKF": {
+                "bytes": 4546074,
+                "sha256": "226a7932b94548071ecfb6274ac069f890ea347aef99c79c72b69655457310a3"
+              },
+              "SSS.MKF": {
+                "bytes": 569640,
+                "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+              },
+              "VOC.MKF": {
+                "bytes": 1997044,
+                "sha256": "c6e14eaaff50979df269b7d6d5f7401cb354be38e3ad737e4ca3ec473c1c5ab3"
+              }
+            },
+            "rendered_rows": [
+              {
+                "kind": "msg",
+                "id": "5",
+                "codepoints": "4e00 500b 7a7a 7bb1 5b50 ff0e ff0e "
+              },
+              {
+                "kind": "msg",
+                "id": "6",
+                "codepoints": "7372 5f97 ff11 ff10 ff10 6587 9322 "
+              },
+              {
+                "kind": "msg",
+                "id": "7",
+                "codepoints": "7372 5f97 ff12 ff10 ff10 6587 9322 "
+              },
+              {
+                "kind": "msg",
+                "id": "8",
+                "codepoints": "7372 5f97 ff13 ff10 ff10 6587 9322 "
+              },
+              {
+                "kind": "word",
+                "id": "36",
+                "codepoints": "674e 900d 9059 "
+              },
+              {
+                "kind": "word",
+                "id": "37",
+                "codepoints": "8d99 9748 5152 "
+              },
+              {
+                "kind": "word",
+                "id": "149",
+                "codepoints": "8d64 8840 8836 "
+              },
+              {
+                "kind": "word",
+                "id": "150",
+                "codepoints": "91d1 8836 738b "
+              }
+            ],
+            "eof_padding_for_safe_before_render": {
+              "M.MSG": 0,
+              "WORD.DAT": 0
+            },
+            "images": {
+              "steam-msg-640.bmp": {
+                "bytes": 768054,
+                "sha256": "f5fab92acb75a85570e564615ca6b4bb77123e69ba7df05e4851989967c08d61"
+              },
+              "steam-msg-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "c1a1e8077dbcf229b9772c7eeef5f2e431deb80310a63b75090376f7c3fb04c5"
+              },
+              "steam-msg-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "aa83714cff0926a7bdd00bba8ba8b7dd7a082c8a13c7575391d7b769cfc4591d"
+              },
+              "steam-word-640.bmp": {
+                "bytes": 768054,
+                "sha256": "a8b875ff72668bfb96cfc1081bbd5679f44cf1c271f7cbdec801f9d567294eb2"
+              },
+              "steam-word-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "1b4abc8205d08a886c4025cdbbc4ccf67db899787166e51434448c8fb1f2fcd9"
+              },
+              "steam-word-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "1b32b75d1515acbe8837f16acbee85e3b107740cae272a01984b545b8fcea4ec"
+              }
+            }
+          }
+        }
+      },
+      "gui": {
+        "commands": [
+          [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\steam_to_legacy.py",
+            "msg",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\gui",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\gui\\.sdlpal-prepare-eq9u1xgz\\new-0",
+            "big5"
+          ],
+          [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\steam_to_legacy.py",
+            "word",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\gui",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\gui\\.sdlpal-prepare-eq9u1xgz\\new-2",
+            "big5"
+          ]
+        ],
+        "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-complete\\gui.log",
+        "log_fingerprint": {
+          "bytes": 20788,
+          "sha256": "8f77f21c01dbcafc843852abb59c561d2e99e7d3289ff3dabc8ff2062162cd50"
+        },
+        "files_after": {
+          "M.MSG": {
+            "bytes": 212668,
+            "sha256": "931cfc2a7a54a1579fadbce371212693a503625819a81e578f1461d0ad9cb7fc"
+          },
+          "M_cht.msg": {
+            "bytes": 212668,
+            "sha256": "931cfc2a7a54a1579fadbce371212693a503625819a81e578f1461d0ad9cb7fc"
+          },
+          "MSG_cht.txt": {
+            "bytes": 397756,
+            "sha256": "eca6a72997669002a225f29b10e86b6f71c8ca065fab188ec54f3e584ba7dcab"
+          },
+          "SSS.MKF": {
+            "bytes": 569640,
+            "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+          },
+          "WORD.DAT": {
+            "bytes": 5660,
+            "sha256": "bf7f9b013e290df9417b686be60218d296ee3c6160f72ceda22f55284c37f63b"
+          },
+          "Word_cht.dat": {
+            "bytes": 5660,
+            "sha256": "bf7f9b013e290df9417b686be60218d296ee3c6160f72ceda22f55284c37f63b"
+          },
+          "WORD_cht.txt": {
+            "bytes": 10186,
+            "sha256": "8e5435b2d06390d5b7622530bcf9c62a46874a29f19abb197b93e09f363344c9"
+          }
+        },
+        "tk_widgets": "headless test doubles"
+      },
+      "independent_full_file_match": true,
+      "success_changed_pixels": 0
+    },
+    "big5-word-failure": {
+      "injected_input_changes": [
+        "MSG ID 6: fullwidth 100 -> 900",
+        "WORD ID 0: 11-byte overflow"
+      ],
+      "input_copy": {
+        "MSG_cht.txt": {
+          "bytes": 371788,
+          "sha256": "1903e1feb2ad0992d9de8b63eca88bbd3a3ef8e8abbda1aab354c501711545da"
+        },
+        "SSS.MKF": {
+          "bytes": 569640,
+          "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+        },
+        "WORD_cht.txt": {
+          "bytes": 10216,
+          "sha256": "1ec5321b66a9a71ad7eeeb4043046012c98b01a0fee8291560486d1f29909c7b"
+        }
+      },
+      "runs": {
+        "before": {
+          "argv": [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-B",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\before-tools\\steam_to_legacy.py",
+            "all",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\input",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\before",
+            "big5"
+          ],
+          "exit_code": 1,
+          "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\before.log",
+          "log_fingerprint": {
+            "bytes": 21255,
+            "sha256": "4f967619781cf8e1d74f8996608f8ca3b06b58fd66dd09b76934093b2259109b"
+          },
+          "outputs": {
+            "M.MSG": {
+              "bytes": 212668,
+              "sha256": "da6c8fdbe886e1f18c31ccda4dd078219a28792154e886e4b3bbfd72409b660f"
+            },
+            "WORD.DAT": {
+              "bytes": 5660,
+              "sha256": "bf7f9b013e290df9417b686be60218d296ee3c6160f72ceda22f55284c37f63b"
+            }
+          },
+          "existing_pair_preserved": false,
+          "render": {
+            "argv": [
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\steam-r2-20261021\\build\\sdlpal.exe",
+              "--render-evidence",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\before-render\\runtime/",
+              "-",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\before-render",
+              "steam-records"
+            ],
+            "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\before-render",
+            "exit_code": 0,
+            "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\before-render\\render.log",
+            "log_fingerprint": {
+              "bytes": 60,
+              "sha256": "bca06670aee9ab54d49764b3701de71376aba305e1d696a676105776876e6851"
+            },
+            "resources": {
+              "ABC.MKF": {
+                "bytes": 1022564,
+                "sha256": "ef2920716b87b5bd0ecb184cbbcf8585512184bc0cbe4dfff07f8a4617f2af0b"
+              },
+              "BALL.MKF": {
+                "bytes": 134704,
+                "sha256": "be8e7218ee21baf64eaa90ec9f27967544a1b0136ce490604ac5f6dedb22830b"
+              },
+              "DATA.MKF": {
+                "bytes": 66418,
+                "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a"
+              },
+              "F.MKF": {
+                "bytes": 186966,
+                "sha256": "6fc9a9978dd06bee8e381c80e68683b6f3033c2aa40f61eb0e1a2194fc570f65"
+              },
+              "FBP.MKF": {
+                "bytes": 1128064,
+                "sha256": "f38d0243a4f635886f27324c2a44016e7ff46db2146c853ab8edda12b8d5652c"
+              },
+              "FIRE.MKF": {
+                "bytes": 834728,
+                "sha256": "eab713c53b4236f4aeefd30239675d62e887f10bb576ce1950a5be5b0d7458dd"
+              },
+              "GOP.MKF": {
+                "bytes": 11530322,
+                "sha256": "dbb17aeb8fcef6e24232b05abb58d5e9acf06a868b73bc0dc6c9a9e955fffb9c"
+              },
+              "MAP.MKF": {
+                "bytes": 1532520,
+                "sha256": "a40f22319d70a97a8871dfc85494c2d28e793c1e10d752734ab8f61704355066"
+              },
+              "MGO.MKF": {
+                "bytes": 1577442,
+                "sha256": "a9f9fc0ceeccb354906a96eaf6003f9c7ece8db6789856144201d926f5ff76b1"
+              },
+              "MIDI.MKF": {
+                "bytes": 762442,
+                "sha256": "70587d762bdcea0a6e07f0f13808993045a6f382c713f0ad81793a7f6991f913"
+              },
+              "MUS.MKF": {
+                "bytes": 331284,
+                "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+              },
+              "PAT.MKF": {
+                "bytes": 8488,
+                "sha256": "78b08ef4c4630b703c714da25ab6482d4524a577c56c9554a369bbf30cc67eab"
+              },
+              "RGM.MKF": {
+                "bytes": 453202,
+                "sha256": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac"
+              },
+              "RNG.MKF": {
+                "bytes": 4546074,
+                "sha256": "226a7932b94548071ecfb6274ac069f890ea347aef99c79c72b69655457310a3"
+              },
+              "SSS.MKF": {
+                "bytes": 569640,
+                "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+              },
+              "VOC.MKF": {
+                "bytes": 1997044,
+                "sha256": "c6e14eaaff50979df269b7d6d5f7401cb354be38e3ad737e4ca3ec473c1c5ab3"
+              }
+            },
+            "rendered_rows": [
+              {
+                "kind": "msg",
+                "id": "5",
+                "codepoints": "4e00 500b 7a7a 7bb1 5b50 ff0e ff0e "
+              },
+              {
+                "kind": "msg",
+                "id": "6",
+                "codepoints": "7372 5f97 ff19 ff10 ff10 6587 9322 "
+              },
+              {
+                "kind": "msg",
+                "id": "7",
+                "codepoints": "7372 5f97 ff12 ff10 ff10 6587 9322 "
+              },
+              {
+                "kind": "msg",
+                "id": "8",
+                "codepoints": "7372 5f97 ff13 ff10 ff10 6587 9322 "
+              },
+              {
+                "kind": "word",
+                "id": "36",
+                "codepoints": "674e 900d 9059 "
+              },
+              {
+                "kind": "word",
+                "id": "37",
+                "codepoints": "8d99 9748 5152 "
+              },
+              {
+                "kind": "word",
+                "id": "149",
+                "codepoints": "8d64 8840 8836 "
+              },
+              {
+                "kind": "word",
+                "id": "150",
+                "codepoints": "91d1 8836 738b "
+              }
+            ],
+            "eof_padding_for_safe_before_render": {
+              "M.MSG": 0,
+              "WORD.DAT": 0
+            },
+            "images": {
+              "steam-msg-640.bmp": {
+                "bytes": 768054,
+                "sha256": "3cff9521baeb0700284ae1255f5513036b597c888ee7912b14d81fe656f27461"
+              },
+              "steam-msg-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "4f799adf12ae9c4bc4fc7053f6c43ac0de35cfec006c982110daa5918ff10d72"
+              },
+              "steam-msg-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "93e3f3501ae15e7851584d01937fe9d7f5134037d6b964cec89ce6e93aa49024"
+              },
+              "steam-word-640.bmp": {
+                "bytes": 768054,
+                "sha256": "a8b875ff72668bfb96cfc1081bbd5679f44cf1c271f7cbdec801f9d567294eb2"
+              },
+              "steam-word-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "1b4abc8205d08a886c4025cdbbc4ccf67db899787166e51434448c8fb1f2fcd9"
+              },
+              "steam-word-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "1b32b75d1515acbe8837f16acbee85e3b107740cae272a01984b545b8fcea4ec"
+              }
+            }
+          },
+          "gui": {
+            "commands": [
+              [
+                "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+                "-X",
+                "utf8",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\before-tools\\steam_to_legacy.py",
+                "msg",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\before-gui",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\before-gui\\M_cht.msg",
+                "big5"
+              ],
+              [
+                "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+                "-X",
+                "utf8",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\before-tools\\steam_to_legacy.py",
+                "word",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\before-gui",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\before-gui\\Word_cht.dat",
+                "big5"
+              ]
+            ],
+            "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\before-gui.log",
+            "log_fingerprint": {
+              "bytes": 20819,
+              "sha256": "3fca281ef5eeba4c9651a9fb8dfa6cefb3638d70d0f50d83f5d14b8d9eb6cf0d"
+            },
+            "files_after": {
+              "existing.slf": {
+                "bytes": 22,
+                "sha256": "e39e2d606ce244cd729a61cd18034f93c0f4d0bff0121228962f3752be6eea12"
+              },
+              "M.MSG": {
+                "bytes": 212668,
+                "sha256": "da6c8fdbe886e1f18c31ccda4dd078219a28792154e886e4b3bbfd72409b660f"
+              },
+              "M_chs.msg": {
+                "bytes": 20,
+                "sha256": "8780efd35a2460c2da98c0abb16114e9ec6cc032f043f415a3a50f4f5ded3b04"
+              },
+              "M_cht.msg": {
+                "bytes": 212668,
+                "sha256": "da6c8fdbe886e1f18c31ccda4dd078219a28792154e886e4b3bbfd72409b660f"
+              },
+              "MSG_cht.txt": {
+                "bytes": 371788,
+                "sha256": "1903e1feb2ad0992d9de8b63eca88bbd3a3ef8e8abbda1aab354c501711545da"
+              },
+              "SSS.MKF": {
+                "bytes": 569640,
+                "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+              },
+              "WORD_cht.txt": {
+                "bytes": 10216,
+                "sha256": "1ec5321b66a9a71ad7eeeb4043046012c98b01a0fee8291560486d1f29909c7b"
+              }
+            },
+            "tk_widgets": "headless test doubles",
+            "partial_outputs": [
+              "M.MSG",
+              "M_cht.msg"
+            ]
+          }
+        },
+        "after": {
+          "argv": [
+            "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+            "-B",
+            "-X",
+            "utf8",
+            "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\steam_to_legacy.py",
+            "all",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\input",
+            "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\after",
+            "big5"
+          ],
+          "exit_code": 1,
+          "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\after.log",
+          "log_fingerprint": {
+            "bytes": 21300,
+            "sha256": "fa16e08ce71734b18e62a97fa09582fd1851d2cae012c19bc177c288f5c3b6a7"
+          },
+          "outputs": {
+            "M.MSG": {
+              "bytes": 212668,
+              "sha256": "931cfc2a7a54a1579fadbce371212693a503625819a81e578f1461d0ad9cb7fc"
+            },
+            "WORD.DAT": {
+              "bytes": 5660,
+              "sha256": "bf7f9b013e290df9417b686be60218d296ee3c6160f72ceda22f55284c37f63b"
+            }
+          },
+          "existing_pair_preserved": true,
+          "render": {
+            "argv": [
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\steam-r2-20261021\\build\\sdlpal.exe",
+              "--render-evidence",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\after-render\\runtime/",
+              "-",
+              "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\after-render",
+              "steam-records"
+            ],
+            "cwd": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\after-render",
+            "exit_code": 0,
+            "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\after-render\\render.log",
+            "log_fingerprint": {
+              "bytes": 60,
+              "sha256": "bca06670aee9ab54d49764b3701de71376aba305e1d696a676105776876e6851"
+            },
+            "resources": {
+              "ABC.MKF": {
+                "bytes": 1022564,
+                "sha256": "ef2920716b87b5bd0ecb184cbbcf8585512184bc0cbe4dfff07f8a4617f2af0b"
+              },
+              "BALL.MKF": {
+                "bytes": 134704,
+                "sha256": "be8e7218ee21baf64eaa90ec9f27967544a1b0136ce490604ac5f6dedb22830b"
+              },
+              "DATA.MKF": {
+                "bytes": 66418,
+                "sha256": "d9e82696a42d93f9623c63714a68a12645c7d650776eaa8510ec27b7c35e819a"
+              },
+              "F.MKF": {
+                "bytes": 186966,
+                "sha256": "6fc9a9978dd06bee8e381c80e68683b6f3033c2aa40f61eb0e1a2194fc570f65"
+              },
+              "FBP.MKF": {
+                "bytes": 1128064,
+                "sha256": "f38d0243a4f635886f27324c2a44016e7ff46db2146c853ab8edda12b8d5652c"
+              },
+              "FIRE.MKF": {
+                "bytes": 834728,
+                "sha256": "eab713c53b4236f4aeefd30239675d62e887f10bb576ce1950a5be5b0d7458dd"
+              },
+              "GOP.MKF": {
+                "bytes": 11530322,
+                "sha256": "dbb17aeb8fcef6e24232b05abb58d5e9acf06a868b73bc0dc6c9a9e955fffb9c"
+              },
+              "MAP.MKF": {
+                "bytes": 1532520,
+                "sha256": "a40f22319d70a97a8871dfc85494c2d28e793c1e10d752734ab8f61704355066"
+              },
+              "MGO.MKF": {
+                "bytes": 1577442,
+                "sha256": "a9f9fc0ceeccb354906a96eaf6003f9c7ece8db6789856144201d926f5ff76b1"
+              },
+              "MIDI.MKF": {
+                "bytes": 762442,
+                "sha256": "70587d762bdcea0a6e07f0f13808993045a6f382c713f0ad81793a7f6991f913"
+              },
+              "MUS.MKF": {
+                "bytes": 331284,
+                "sha256": "8367c9d34331f67b20b12380e809a38d3313cae199f260d272d07fcf55e11a21"
+              },
+              "PAT.MKF": {
+                "bytes": 8488,
+                "sha256": "78b08ef4c4630b703c714da25ab6482d4524a577c56c9554a369bbf30cc67eab"
+              },
+              "RGM.MKF": {
+                "bytes": 453202,
+                "sha256": "fbeb7cbafd374af8c07088ab18996edcadd6ec52b8bb0a0af644c2cee4e26bac"
+              },
+              "RNG.MKF": {
+                "bytes": 4546074,
+                "sha256": "226a7932b94548071ecfb6274ac069f890ea347aef99c79c72b69655457310a3"
+              },
+              "SSS.MKF": {
+                "bytes": 569640,
+                "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+              },
+              "VOC.MKF": {
+                "bytes": 1997044,
+                "sha256": "c6e14eaaff50979df269b7d6d5f7401cb354be38e3ad737e4ca3ec473c1c5ab3"
+              }
+            },
+            "rendered_rows": [
+              {
+                "kind": "msg",
+                "id": "5",
+                "codepoints": "4e00 500b 7a7a 7bb1 5b50 ff0e ff0e "
+              },
+              {
+                "kind": "msg",
+                "id": "6",
+                "codepoints": "7372 5f97 ff11 ff10 ff10 6587 9322 "
+              },
+              {
+                "kind": "msg",
+                "id": "7",
+                "codepoints": "7372 5f97 ff12 ff10 ff10 6587 9322 "
+              },
+              {
+                "kind": "msg",
+                "id": "8",
+                "codepoints": "7372 5f97 ff13 ff10 ff10 6587 9322 "
+              },
+              {
+                "kind": "word",
+                "id": "36",
+                "codepoints": "674e 900d 9059 "
+              },
+              {
+                "kind": "word",
+                "id": "37",
+                "codepoints": "8d99 9748 5152 "
+              },
+              {
+                "kind": "word",
+                "id": "149",
+                "codepoints": "8d64 8840 8836 "
+              },
+              {
+                "kind": "word",
+                "id": "150",
+                "codepoints": "91d1 8836 738b "
+              }
+            ],
+            "eof_padding_for_safe_before_render": {
+              "M.MSG": 0,
+              "WORD.DAT": 0
+            },
+            "images": {
+              "steam-msg-640.bmp": {
+                "bytes": 768054,
+                "sha256": "f5fab92acb75a85570e564615ca6b4bb77123e69ba7df05e4851989967c08d61"
+              },
+              "steam-msg-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "c1a1e8077dbcf229b9772c7eeef5f2e431deb80310a63b75090376f7c3fb04c5"
+              },
+              "steam-msg-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "aa83714cff0926a7bdd00bba8ba8b7dd7a082c8a13c7575391d7b769cfc4591d"
+              },
+              "steam-word-640.bmp": {
+                "bytes": 768054,
+                "sha256": "a8b875ff72668bfb96cfc1081bbd5679f44cf1c271f7cbdec801f9d567294eb2"
+              },
+              "steam-word-960.bmp": {
+                "bytes": 1728054,
+                "sha256": "1b4abc8205d08a886c4025cdbbc4ccf67db899787166e51434448c8fb1f2fcd9"
+              },
+              "steam-word-800.bmp": {
+                "bytes": 1200054,
+                "sha256": "1b32b75d1515acbe8837f16acbee85e3b107740cae272a01984b545b8fcea4ec"
+              }
+            }
+          },
+          "gui": {
+            "commands": [
+              [
+                "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+                "-X",
+                "utf8",
+                "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\steam_to_legacy.py",
+                "msg",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\after-gui",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\after-gui\\.sdlpal-prepare-f4dokb_r\\new-0",
+                "big5"
+              ],
+              [
+                "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+                "-X",
+                "utf8",
+                "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\tools\\japanese\\steam_to_legacy.py",
+                "word",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\after-gui",
+                "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\after-gui\\.sdlpal-prepare-f4dokb_r\\new-2",
+                "big5"
+              ]
+            ],
+            "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-word-failure\\after-gui.log",
+            "log_fingerprint": {
+              "bytes": 20856,
+              "sha256": "bd4a5a49d4f69ce70219896fb251fba03e093e27ead8d7a5dde97f49e8826c38"
+            },
+            "files_after": {
+              "existing.slf": {
+                "bytes": 22,
+                "sha256": "e39e2d606ce244cd729a61cd18034f93c0f4d0bff0121228962f3752be6eea12"
+              },
+              "M_chs.msg": {
+                "bytes": 20,
+                "sha256": "8780efd35a2460c2da98c0abb16114e9ec6cc032f043f415a3a50f4f5ded3b04"
+              },
+              "MSG_cht.txt": {
+                "bytes": 371788,
+                "sha256": "1903e1feb2ad0992d9de8b63eca88bbd3a3ef8e8abbda1aab354c501711545da"
+              },
+              "SSS.MKF": {
+                "bytes": 569640,
+                "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+              },
+              "WORD_cht.txt": {
+                "bytes": 10216,
+                "sha256": "1ec5321b66a9a71ad7eeeb4043046012c98b01a0fee8291560486d1f29909c7b"
+              }
+            },
+            "tk_widgets": "headless test doubles",
+            "partial_outputs": []
+          }
+        }
+      },
+      "msg_changed_pixels": 53,
+      "word_changed_pixels": 0
+    },
+    "big5-cli-publish-failure": {
+      "fail_at_publish": 2,
+      "original_state_restored": true,
+      "files_before_and_after": {
+        "M.MSG": {
+          "bytes": 9,
+          "sha256": "c837861dd9dd9af9af7dccd9e8772a14026a6e6d5717401dd20733b854c0f78f"
+        },
+        "MSG_cht.txt": {
+          "bytes": 397756,
+          "sha256": "eca6a72997669002a225f29b10e86b6f71c8ca065fab188ec54f3e584ba7dcab"
+        },
+        "SSS.MKF": {
+          "bytes": 569640,
+          "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+        },
+        "WORD.DAT": {
+          "bytes": 12,
+          "sha256": "23610927e67905231cb9380c8f381a7844dd5e4c6c4acabf18f6bdeacd24ce93"
+        },
+        "WORD_cht.txt": {
+          "bytes": 10186,
+          "sha256": "8e5435b2d06390d5b7622530bcf9c62a46874a29f19abb197b93e09f363344c9"
+        }
+      },
+      "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-cli-publish-failure.log",
+      "log_fingerprint": {
+        "bytes": 20614,
+        "sha256": "c02af6a20fad8f6917fb10d7211e9109add51de438acc7652eca33116bd8e276"
+      }
+    },
+    "big5-gui-publish-failure": {
+      "fail_at_publish": 4,
+      "original_state_restored": true,
+      "files_before_and_after": {
+        "MSG_cht.txt": {
+          "bytes": 397756,
+          "sha256": "eca6a72997669002a225f29b10e86b6f71c8ca065fab188ec54f3e584ba7dcab"
+        },
+        "SSS.MKF": {
+          "bytes": 569640,
+          "sha256": "8ebbbcfa5bdae5fe6b73752e3a6e6d3fd28d6fa857ffefcb6c8c0242eaf0252c"
+        },
+        "WORD_cht.txt": {
+          "bytes": 10186,
+          "sha256": "8e5435b2d06390d5b7622530bcf9c62a46874a29f19abb197b93e09f363344c9"
+        }
+      },
+      "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verification-r2\\big5-gui-publish-failure.log",
+      "log_fingerprint": {
+        "bytes": 20703,
+        "sha256": "78e70330523d03efee5cefa19c121ef059eb3884fdfb548ae0b1ba99bd5527fb"
+      }
+    }
+  },
+  "original_inputs_unchanged": true,
+  "previews": {
+    "prepare-complete-msg.png": {
+      "bytes": 9925,
+      "sha256": "0676375d08f108f7a4d47ba370cd21f8655aa63ceee01b9c73a2a1b66b5965f4"
+    },
+    "prepare-complete-word.png": {
+      "bytes": 8830,
+      "sha256": "d863ce9033330e5f1c29857ad7a28fcc202b3868cd657a3c3d0a066abc739f54"
+    },
+    "prepare-word-failure-msg.png": {
+      "bytes": 11004,
+      "sha256": "a87361efff18b7352ce00b249c33b3bd23b92c21936265462085ca4bcbd2f209"
+    }
+  },
+  "summary": {
+    "cases": 8,
+    "cli_subprocesses": 8,
+    "gui_preparations": 8,
+    "source_renders": 8,
+    "rendered_records": 64,
+    "base_panels": 16,
+    "scaled_panels": 48
+  },
+  "limitations": [
+    "Controlled source record panels, not natural gameplay or Tk acceptance",
+    "Failure fixture modifies working-copy MSG 6 and WORD 0 only; no translation change",
+    "All rendered files retain full length; no EOF padding is used in this R3 verification",
+    "2x/3x pixels exact; 2.5x dimensions only; GUI success files match CLI byte for byte",
+    "Handled failures only: no crash/power-loss or concurrent-process transaction guarantee",
+    "SLF generation is a separate later phase; no Steam-to-Japanese input certification",
+    "All live acceptance deferred until the end"
+  ],
+  "renderer_reuse": {
+    "origin_implementation": "aa2b0e9b3b517d65f71c4b6ef815f5b99adac2e0",
+    "origin_merge": "e1a41d68215f3684f149ea94dbdeb25623e31c98",
+    "build_record": {
+      "command": [
+        "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe",
+        "D:\\Workspace\\KnowledgeRoots\\PAL\\othercat\\sdlpal-jp\\win32\\sdlpal.sln",
+        "/m",
+        "/nologo",
+        "/v:minimal",
+        "/p:Configuration=Test",
+        "/p:Platform=x64",
+        "/p:PlatformToolset=v145",
+        "/p:WindowsTargetPlatformVersion=10.0",
+        "/p:OutDir=D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\steam-r2-20261021\\build\\"
+      ],
+      "exit_code": 0,
+      "added_CL": "/utf-8 /DGTEST_HAS_TR1_TUPLE=0",
+      "generated_header_restored": true,
+      "generated_header_during_build_sha256": "024e0af08245f66df58817309d0a4660adfb454dc97390edcdde162746050071",
+      "source_sha256": "2cc327f8dc19cfe1afc333bad709ff1bdc8c8863c2e25a4cc7caf49dc64e6cdd",
+      "executable_sha256": "3307d7ef0082055b4b28269b710b9773c9f936510311d01200a5722ed5008c66"
+    },
+    "build_record_fingerprint": {
+      "bytes": 884,
+      "sha256": "5031a5243ed928b0140ace21078ddf7b9d24a9f026bfb9f1020c62ca9c0e4c48"
+    },
+    "engine_and_build_source_git_diff_empty": true,
+    "render_evidence_source_matches_archived_build_after_line_ending_normalization": true,
+    "r3_cpp_rebuild_or_tests": "Not repeated: only Python preparation code changed."
+  },
+  "python_tests": {
+    "command": [
+      "C:\\Users\\other\\CodexTools\\python\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\archive_evidence.py"
+    ],
+    "patterns": [
+      "test_japanese_conversion_tools.py",
+      "test_resource_transaction.py"
+    ],
+    "tests": 33,
+    "failures": 0,
+    "errors": 0,
+    "log": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\tests-after.log",
+    "fingerprint": {
+      "bytes": 5801,
+      "sha256": "6d58ed0b6039d4314bbf8f26acc3b2769afdc15315248627f0cae2a8079cee51"
+    }
+  },
+  "review": {
+    "reviewer": "/root/audit_evidence",
+    "read_only": true,
+    "finding": "Post-replace KeyboardInterrupt could lose an unregistered published target.",
+    "resolution": "Record intent before replace; identify completed moves by absent staged file; commit flag inside try.",
+    "verification": "Four injected post-replace interruption cases passed; follow-up static review found no blocker."
+  },
+  "verified_source_archive": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\verified-source",
+  "previews_match_visually_inspected_r1": true
+}

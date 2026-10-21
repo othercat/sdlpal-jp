@@ -6,6 +6,7 @@ import subprocess
 import sys
 import os
 import shutil
+from resource_transaction import ResourceTransaction
 
 
 # ==========================
@@ -155,6 +156,14 @@ def find_file(path, filename):
 
 def prepare_resources(path, encoding):
 
+    with ResourceTransaction(path, overwrite=False) as transaction:
+        logs = _prepare_resources(path, encoding, transaction)
+        transaction.commit()
+    return logs
+
+
+def _prepare_resources(path, encoding, transaction):
+
     logs = []
 
     logs.append(
@@ -193,7 +202,7 @@ def prepare_resources(path, encoding):
 
             shutil.copyfile(
                 source,
-                m_target
+                transaction.stage("M.MSG")
             )
 
             logs.append(
@@ -203,6 +212,7 @@ def prepare_resources(path, encoding):
             )
         else:
 
+            process = None
             try:
 
                 process = subprocess.Popen(
@@ -216,7 +226,7 @@ def prepare_resources(path, encoding):
 
                         path,
 
-                        os.path.join(path, m_source),
+                        transaction.stage(m_source),
 
                         encoding
                     ],
@@ -249,8 +259,8 @@ def prepare_resources(path, encoding):
 
 
                     shutil.copyfile(
-                        os.path.join(path, m_source),
-                        m_target
+                        transaction.stage(m_source),
+                        transaction.stage("M.MSG")
                     )
 
                     logs.append(
@@ -267,7 +277,13 @@ def prepare_resources(path, encoding):
 
 
 
-            except Exception as e:
+            except BaseException as e:
+
+                if process is not None:
+                    if process.poll() is None:
+                        process.kill()
+                    process.wait()
+                    process.stdout.close()
 
                 write_output(
                     "\nError:\n"
@@ -302,7 +318,7 @@ def prepare_resources(path, encoding):
 
             shutil.copyfile(
                 source,
-                word_target
+                transaction.stage("WORD.DAT")
             )
 
             logs.append(
@@ -313,6 +329,7 @@ def prepare_resources(path, encoding):
 
         else:
 
+            process = None
             try:
 
                 process = subprocess.Popen(
@@ -326,7 +343,7 @@ def prepare_resources(path, encoding):
 
                         path,
 
-                        os.path.join(path, word_source),
+                        transaction.stage(word_source),
 
                         encoding
                     ],
@@ -359,8 +376,8 @@ def prepare_resources(path, encoding):
 
 
                     shutil.copyfile(
-                        os.path.join(path, word_source),
-                        word_target
+                        transaction.stage(word_source),
+                        transaction.stage("WORD.DAT")
                     )
 
                     logs.append(
@@ -377,7 +394,13 @@ def prepare_resources(path, encoding):
 
 
 
-            except Exception as e:
+            except BaseException as e:
+
+                if process is not None:
+                    if process.poll() is None:
+                        process.kill()
+                    process.wait()
+                    process.stdout.close()
 
                 write_output(
                     "\nError:\n"
@@ -454,9 +477,24 @@ def choose_output():
 # Run generator
 # ==========================
 
+_generating = False
+
+
 def generate():
 
-    if not pc_path.get():
+    global _generating
+    if _generating:
+        return
+    _generating = True
+    try:
+        _generate(pc_path.get(), saturn_path.get(), output_path.get(), pc_encoding.get())
+    finally:
+        _generating = False
+
+
+def _generate(pc, saturn, output, encoding):
+
+    if not pc:
 
         messagebox.showerror(
             "Error",
@@ -466,7 +504,7 @@ def generate():
         return
 
 
-    if not saturn_path.get():
+    if not saturn:
 
         messagebox.showerror(
             "Error",
@@ -476,7 +514,7 @@ def generate():
         return
 
 
-    if not output_path.get():
+    if not output:
 
         messagebox.showerror(
             "Error",
@@ -504,16 +542,9 @@ def generate():
     try:
 
         logs = prepare_resources(
-            pc_path.get(),
-            pc_encoding.get()
+            pc,
+            encoding
         )
-
-
-        for line in logs:
-
-            write_output(
-                line
-            )
 
 
     except Exception as e:
@@ -528,12 +559,12 @@ def generate():
 
 
 
-    write_output(
-        "\nStarting generator...\n\n"
-    )
-
-
+    process = None
     try:
+
+        for line in logs:
+            write_output(line)
+        write_output("\nStarting generator...\n\n")
 
         process = subprocess.Popen(
 
@@ -542,13 +573,13 @@ def generate():
 
                 os.path.join(os.path.dirname(os.path.abspath(__file__)), "makemessage_j.py"),
 
-                pc_path.get(),
+                pc,
 
-                saturn_path.get(),
+                saturn,
 
-                output_path.get(),
+                output,
 
-                pc_encoding.get()
+                encoding
             ],
 
             stdout=subprocess.PIPE,
@@ -584,10 +615,18 @@ def generate():
             )
 
 
-    except Exception as e:
+    except BaseException as e:
+
+        if process is not None:
+            if process.poll() is None:
+                process.kill()
+            process.wait()
+            process.stdout.close()
+        if not isinstance(e, Exception):
+            raise
 
         write_output(
-            "\nError:\n"
+            "\nGenerator phase error (resources already prepared):\n"
             + str(e)
             + "\n"
         )

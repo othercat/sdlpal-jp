@@ -14,6 +14,9 @@ from types import SimpleNamespace
 
 ROOT = Path(__file__).resolve().parents[1]
 TOOLS = ROOT / "tools/japanese"
+sys.path.insert(0, str(TOOLS))
+from resource_transaction import ResourceTransaction
+
 spec = importlib.util.spec_from_file_location("japanese_baseline", TOOLS / "verify_baseline.py")
 baseline = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(baseline)
@@ -30,14 +33,14 @@ def steam_fixture(path, encoding="gbk"):
     return b"A xy ", "甲".encode(encoding) + b" " * 8 + b"A:B" + b" " * 7
 
 
-def gui_callbacks(messages, commands, **values):
+def gui_callbacks(messages, commands, source=None, **values):
     # Execute the actual handler definitions, excluding the upstream top-level
     # Tk creation/widgets/mainloop. UI values/output are test doubles.
-    source = TOOLS / "rungui.py"
+    source = source or TOOLS / "rungui.py"
     tree = ast.parse(source.read_text("utf-8"))
-    names = {"find_file", "prepare_resources", "generate"}
+    names = {"find_file", "prepare_resources", "_prepare_resources", "generate", "_generate"}
     functions = [node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name in names]
-    if len(functions) != 3:
+    if len(functions) not in (3, 5):
         raise AssertionError("GUI handlers changed; review the headless fixture")
 
     def popen(command, **kwargs):
@@ -47,6 +50,7 @@ def gui_callbacks(messages, commands, **values):
     import shutil
     namespace = {
         "__file__": str(source), "os": os, "sys": sys, "shutil": shutil,
+        "ResourceTransaction": ResourceTransaction, "_generating": False,
         "subprocess": SimpleNamespace(Popen=popen, PIPE=subprocess.PIPE, STDOUT=subprocess.STDOUT),
         "write_output": messages.append, "show_license": lambda: None,
         "output_text": SimpleNamespace(delete=lambda *args: None),
@@ -222,8 +226,11 @@ class ConversionTools(unittest.TestCase):
         self.assertEqual(len(commands), 2)
         self.assertTrue(all("steam_to_legacy.py" in " ".join(command) for command in commands))
         self.assertIn("Resource preparation failed", "".join(messages))
-        self.assertTrue((data / "M.MSG").exists())  # Upstream preparation is staged, not transactional.
+        self.assertFalse((data / "M.MSG").exists())
+        self.assertFalse((data / "M_chs.msg").exists())
+        self.assertFalse((data / "Word_chs.dat").exists())
         self.assertFalse((data / "WORD.DAT").exists())
+        self.assertEqual(list(data.glob(".sdlpal-prepare-*")), [])
         self.assertFalse((self.root / "no.slf").exists())
 
     def test_baseline_rejects_wrong_encoding_or_existing_output_without_writes(self):
