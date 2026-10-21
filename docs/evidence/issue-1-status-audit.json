@@ -114,10 +114,9 @@
     }
   ],
   "removed_shared_chat_link_absent": true,
-  "completed_this_round": "Issue 2 sparse Steam record offsets and leading BOM",
-  "next_technical_followup": "Issue 2 multi-file preparation rollback",
+  "completed_this_round": "Issue 2 R3 multi-file preparation failure rollback and existing-file protection",
+  "next_technical_followup": "Issue 2 latest-build non-ASCII absolute GamePath reproduction",
   "other_open_verification": [
-    "Issue 2 latest-build non-ASCII absolute GamePath reproduction",
     "Issue 9 SDL1 build and GLSL output"
   ],
   "unified_live_acceptance": "All issues remain open; deferred to the user after implementation.",
@@ -133,5 +132,26 @@
       10
     ],
     "result": "No remaining confirmed implementation defects in the reviewed issue scopes; historical items superseded."
+  },
+  "r3_followup": {
+    "base": "e1a41d68215f3684f149ea94dbdeb25623e31c98",
+    "evidence": "issue-2-resource-preparation-verification.json",
+    "issue_snapshots_before": {
+      "1": {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\issue-1-before.json",
+        "bytes": 85467,
+        "sha256": "5fe6434cd4a0dc50803a1a4908f9e0220410d2cd8c8c5336e76a44d6c9a59525"
+      },
+      "2": {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-2\\transaction-r3-20261021\\issue-2-before.json",
+        "bytes": 16683,
+        "sha256": "5ad1c91a045b6b8208fa3161921ce0e5728b4e1692b1814a9aafa64023c35aa6"
+      }
+    },
+    "prior_full_audit_preserved": true,
+    "issues_rechecked_this_round": [
+      1,
+      2
+    ]
   }
 }

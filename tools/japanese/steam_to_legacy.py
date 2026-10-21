@@ -9,6 +9,8 @@ import struct
 import io
 import traceback
 
+from resource_transaction import ResourceTransaction
+
 
 # Steam private-use characters which represent characters from
 # the original legacy resources.
@@ -485,6 +487,16 @@ def convert_word(gamepath, output_path, encoding):
     return True
 
 
+def convert_all(gamepath, output_path, encoding):
+    with ResourceTransaction(output_path) as transaction:
+        if not convert_msg(gamepath, transaction.stage('M.MSG'), encoding):
+            return False
+        if not convert_word(gamepath, transaction.stage('WORD.DAT'), encoding):
+            return False
+        transaction.commit()
+    return True
+
+
 def main():
 
     if len(sys.argv) < 4 or len(sys.argv) > 5:
@@ -683,28 +695,9 @@ def main():
 
                 sys.exit(1)
 
-            msg_output = os.path.join(
-                output_path,
-                'M.MSG'
-            )
-
-            word_output = os.path.join(
-                output_path,
-                'WORD.DAT'
-            )
-
-            success = convert_msg(
+            success = convert_all(
                 gamepath,
-                msg_output,
-                encoding
-            )
-
-            if not success:
-                sys.exit(1)
-
-            success = convert_word(
-                gamepath,
-                word_output,
+                output_path,
                 encoding
             )
 
