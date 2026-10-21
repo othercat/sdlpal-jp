@@ -5,6 +5,9 @@
 沿用 [R1 头像包](japanese-portrait-palettes.md)和 [R2 源色合成](japanese-portrait-night-colors.md)；
 本轮将已知特效接入头像颜色和覆盖信息。实机验收仍在所有 Issue 解决后由用户统一进行。
 
+后续 [R4：SDL1／GLSL 兼容验证](japanese-portrait-backends.md)已补齐本页当时未执行的后端检查，
+并修复 SDL1 缩放震屏边缘残留；本页 R3 的原始记录和验证边界保留。
+
 ## 原盘和现有实现的核对
 
 [原盘静态报告](evidence/issue-9-effects-source-review.json)绑定输入 SHA256、SH-2 字节、

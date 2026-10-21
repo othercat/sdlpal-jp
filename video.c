@@ -57,6 +57,7 @@ volatile BOOL g_bRenderPaused = FALSE;
 #ifdef UNIT_TEST
 // Source-evidence capture after composition and texture upload; no gameplay UI.
 VOID (*VIDEO_TestFrameHook)(VOID) = NULL;
+BOOL VIDEO_TestHiddenWindow = FALSE;
 #endif
 
 static BOOL bScaleScreen = PAL_SCALE_SCREEN;
@@ -863,6 +864,7 @@ VIDEO_UpdateScreen(
    }
    else if (g_wShakeTime != 0)
    {
+      const int shakeHeight = g_wShakeLevel * screenRealHeight / gpScreen->h;
       //
       // Shake the screen
       //
@@ -874,7 +876,7 @@ VIDEO_UpdateScreen(
       dstrect.x = 0;
       dstrect.y = screenRealY;
       dstrect.w = 320 * gpScreenReal->w / gpScreen->w;
-      dstrect.h = (200 - g_wShakeLevel) * screenRealHeight / gpScreen->h;
+      dstrect.h = screenRealHeight - shakeHeight;
 
       if (g_wShakeTime & 1)
       {
@@ -882,21 +884,21 @@ VIDEO_UpdateScreen(
       }
       else
       {
-         dstrect.y = (screenRealY + g_wShakeLevel) * screenRealHeight / gpScreen->h;
+         dstrect.y = screenRealY + shakeHeight;
       }
 
       SDL_SoftStretch(VIDEO_DisplaySurface(gpScreen), &srcrect, gpScreenReal, &dstrect);
 
       if (g_wShakeTime & 1)
       {
-         dstrect.y = (screenRealY + screenRealHeight - g_wShakeLevel) * screenRealHeight / gpScreen->h;
+         dstrect.y = screenRealY + screenRealHeight - shakeHeight;
       }
       else
       {
          dstrect.y = screenRealY;
       }
 
-      dstrect.h = g_wShakeLevel * screenRealHeight / gpScreen->h;
+      dstrect.h = shakeHeight;
 
       SDL_FillRect(gpScreenReal, &dstrect, 0);
 
@@ -927,6 +929,9 @@ VIDEO_UpdateScreen(
    gRenderBackend.RenderCopy();
 #else
    SDL_UpdateRect(gpScreenReal, dstrect.x, dstrect.y, dstrect.w, dstrect.h);
+#ifdef UNIT_TEST
+   if (VIDEO_TestFrameHook) VIDEO_TestFrameHook();
+#endif
 #endif
 
    if (SDL_MUSTLOCK(gpScreenReal))
@@ -981,6 +986,9 @@ VIDEO_SetPalette(
    SDL_SetPalette(gpScreen, SDL_LOGPAL | SDL_PHYSPAL, rgPalette, 0, 256);
    SDL_SetPalette(gpScreenBak, SDL_LOGPAL | SDL_PHYSPAL, rgPalette, 0, 256);
    SDL_SetPalette(gpScreenReal, SDL_LOGPAL | SDL_PHYSPAL, rgPalette, 0, 256);
+#ifdef UNIT_TEST
+   if (!g_bRenderPaused && VIDEO_TestFrameHook) VIDEO_TestFrameHook();
+#endif
 # if defined(PAL_FORCE_UPDATE_ON_PALETTE_SET)
    {
       static UINT32 time = 0;
@@ -1412,6 +1420,9 @@ VIDEO_SwitchScreen(
       gRenderBackend.RenderCopy();
 #else
       SDL_UpdateRect(gpScreenReal, 0, 0, gpScreenReal->w, gpScreenReal->h);
+#ifdef UNIT_TEST
+      if (VIDEO_TestFrameHook) VIDEO_TestFrameHook();
+#endif
 #endif
 
 	  if (SDL_MUSTLOCK(gpScreenReal))
@@ -1520,6 +1531,7 @@ VIDEO_FadeScreen(
          //
          if (g_wShakeTime != 0)
          {
+            const int shakeHeight = g_wShakeLevel * screenRealHeight / gpScreen->h;
             //
             // Shake the screen
             //
@@ -1533,7 +1545,7 @@ VIDEO_FadeScreen(
             dstrect.x = 0;
             dstrect.y = screenRealY;
             dstrect.w = 320 * gpScreenReal->w / gpScreen->w;
-            dstrect.h = (200 - g_wShakeLevel) * screenRealHeight / gpScreen->h;
+            dstrect.h = screenRealHeight - shakeHeight;
 
             if (g_wShakeTime & 1)
             {
@@ -1541,27 +1553,30 @@ VIDEO_FadeScreen(
             }
             else
             {
-               dstrect.y = (screenRealY + g_wShakeLevel) * screenRealHeight / gpScreen->h;
+               dstrect.y = screenRealY + shakeHeight;
             }
 
             SDL_SoftStretch(VIDEO_DisplaySurface(gpScreenBak), &srcrect, gpScreenReal, &dstrect);
 
             if (g_wShakeTime & 1)
             {
-               dstrect.y = (screenRealY + screenRealHeight - g_wShakeLevel) * screenRealHeight / gpScreen->h;
+               dstrect.y = screenRealY + screenRealHeight - shakeHeight;
             }
             else
             {
                dstrect.y = screenRealY;
             }
 
-            dstrect.h = g_wShakeLevel * screenRealHeight / gpScreen->h;
+            dstrect.h = shakeHeight;
 
             SDL_FillRect(gpScreenReal, &dstrect, 0);
 #if SDL_VERSION_ATLEAST(2, 0, 0)
             gRenderBackend.RenderCopy();
 #else
 			SDL_UpdateRect(gpScreenReal, 0, 0, gpScreenReal->w, gpScreenReal->h);
+#ifdef UNIT_TEST
+            if (VIDEO_TestFrameHook) VIDEO_TestFrameHook();
+#endif
 #endif
             g_wShakeTime--;
          }
@@ -1577,6 +1592,9 @@ VIDEO_FadeScreen(
             gRenderBackend.RenderCopy();
 #else
             SDL_UpdateRect(gpScreenReal, 0, 0, gpScreenReal->w, gpScreenReal->h);
+#ifdef UNIT_TEST
+            if (VIDEO_TestFrameHook) VIDEO_TestFrameHook();
+#endif
 #endif
          }
       }

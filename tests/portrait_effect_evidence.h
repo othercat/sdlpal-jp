@@ -8,8 +8,13 @@ SDL_Surface *baseScene = nullptr, *initial = nullptr;
 
 void Capture() {
     if (current.empty()) return;
+#if SDL_VERSION_ATLEAST(2,0,0)
     Require(gpScreenReal->w == 320 && gpScreenReal->h == 200 &&
         gpScreenReal->format->BytesPerPixel == 4, "Unexpected effect framebuffer");
+#else
+    Require(gpScreenReal->w == 640 && gpScreenReal->h == 400 &&
+        gpScreenReal->format->BytesPerPixel == 1, "Unexpected SDL1 framebuffer");
+#endif
     SDL_Surface *indexed = frame < backupFrames ? gpScreenBak : gpScreen;
     fprintf(metadata, "%s,%d,%d\n", current.c_str(), frame, sequence);
     for (int y = 0; y < 200; ++y)
@@ -23,19 +28,29 @@ void Capture() {
     std::vector<BYTE> rgb(320 * 200 * 3);
     for (int y = 0; y < 200; ++y)
         for (int x = 0; x < 320; ++x) {
+#if SDL_VERSION_ATLEAST(2,0,0)
             Uint32 c = ((Uint32 *)((BYTE *)gpScreenReal->pixels + y * gpScreenReal->pitch))[x];
+#else
+            Uint32 c = ((BYTE *)gpScreenReal->pixels)[y * 2 * gpScreenReal->pitch + x * 2];
+#endif
             SDL_GetRGB(c, gpScreenReal->format, &rgb[(y*320+x)*3],
                 &rgb[(y*320+x)*3+1], &rgb[(y*320+x)*3+2]);
         }
     Require(fwrite(rgb.data(), 1, rgb.size(), frames) == rgb.size(), "Cannot write effect RGB");
     // Read the real SDL texture at representative intermediate frames as well.
     if (frame == 0 || frame == 15 || frame == 31 || frame == 71 || frame == 95) {
+#if SDL_VERSION_ATLEAST(2,0,0)
         SDL_Surface *gpu = SDL_CreateRGBSurface(0, 640, 400, 32, 0xff0000, 0xff00, 0xff, 0);
         Require(gpu && SDL_RenderReadPixels(gpRenderer, nullptr, SDL_PIXELFORMAT_RGB888,
             gpu->pixels, gpu->pitch) == 0, "Cannot read effect target");
+#else
+        SDL_Surface *gpu = gpScreenReal;
+#endif
         Require(SDL_SaveBMP(gpu, (directory + "/" + current + "-" +
             std::to_string(frame) + "-640.bmp").c_str()) == 0, "Cannot save effect target");
+#if SDL_VERSION_ATLEAST(2,0,0)
         SDL_FreeSurface(gpu);
+#endif
     }
     ++frame; ++sequence;
 }
@@ -51,6 +66,12 @@ void Reset(bool night = true, WORD face = 55, bool lower = false) {
     gpGlobals->wNumPalette = 0; gpGlobals->fNightPalette = night;
     gpGlobals->wScreenWave = 0; gpGlobals->sWaveProgression = 0;
     PAL_SetPalette(0, night);
+#if !SDL_VERSION_ATLEAST(2,0,0)
+    // SDL1 copies palette values; unlike SDL2 these fixture surfaces do not
+    // share gpPalette. Keep their indices unchanged when restoring the scene.
+    VIDEO_UpdateSurfacePalette(baseScene);
+    VIDEO_UpdateSurfacePalette(initial);
+#endif
     VIDEO_CopyEntireSurface(baseScene, gpScreen);
     PAL_ClearDialog(FALSE);
     if (face) PAL_StartDialog(lower ? kDialogLower : kDialogUpper, 0, face, FALSE);
@@ -80,11 +101,17 @@ void Run(const std::string& output) {
     for (int y = 192; y < 200; ++y)
         for (int x = 0; x < 320; ++x)
             ((BYTE *)baseScene->pixels)[y * baseScene->pitch + x] = x & 255;
+#if SDL_VERSION_ATLEAST(2,0,0)
     SDL_Texture *oldTexture = gpTexture, *oldTarget = SDL_GetRenderTarget(gpRenderer);
-    SDL_Texture *target = SDL_CreateTexture(gpRenderer, SDL_PIXELFORMAT_ARGB8888,
-        SDL_TEXTUREACCESS_TARGET, 640, 400);
-    Require(target && SDL_SetRenderTarget(gpRenderer, target) == 0, "Cannot create effect target");
-    gpTexture = nullptr; VIDEO_Resize(640, 400);
+    SDL_Texture *target = nullptr;
+    // GLSL owns its multipass targets. Observe its actual window backbuffer.
+    if (!gConfig.fEnableGLSL) {
+        target = SDL_CreateTexture(gpRenderer, SDL_PIXELFORMAT_ARGB8888,
+            SDL_TEXTUREACCESS_TARGET, 640, 400);
+        Require(target && SDL_SetRenderTarget(gpRenderer, target) == 0, "Cannot create effect target");
+        gpTexture = nullptr; VIDEO_Resize(640, 400);
+    }
+#endif
     VIDEO_TestFrameHook = Capture;
 
     Reset(); Start("initial"); VIDEO_UpdateScreen(nullptr); Stop();
@@ -107,6 +134,11 @@ void Run(const std::string& output) {
         PAL_ApplyWave(gpScreen); VIDEO_UpdateScreen(nullptr);
     }
     Stop(); gpGlobals->wScreenWave = 0;
+
+    Reset(); Start("shake");
+    VIDEO_ShakeScreen(2, 3);
+    VIDEO_UpdateScreen(nullptr); VIDEO_UpdateScreen(nullptr);
+    Stop();
 
     for (int effect = 0; effect < 3; ++effect) {
         Reset(); VIDEO_BackupScreen(gpScreen);
@@ -139,8 +171,12 @@ void Run(const std::string& output) {
     Start("scene-in"); PAL_SceneFade(0, TRUE, 32); Stop();
     VIDEO_TestFrameHook = nullptr;
     Require(fclose(frames) == 0 && fclose(metadata) == 0, "Cannot close effect evidence");
-    SDL_DestroyTexture(gpTexture); gpTexture = oldTexture;
-    SDL_SetRenderTarget(gpRenderer, oldTarget); SDL_DestroyTexture(target);
+#if SDL_VERSION_ATLEAST(2,0,0)
+    if (!gConfig.fEnableGLSL) {
+        SDL_DestroyTexture(gpTexture); gpTexture = oldTexture;
+        SDL_SetRenderTarget(gpRenderer, oldTarget); SDL_DestroyTexture(target);
+    }
+#endif
     VIDEO_FreeSurface(initial); VIDEO_FreeSurface(baseScene); PAL_FreeResources();
     printf("Effect frames: %d; hidden source renderer, no gameplay/input\n", sequence);
 }

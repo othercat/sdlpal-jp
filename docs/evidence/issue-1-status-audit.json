@@ -114,11 +114,9 @@
     }
   ],
   "removed_shared_chat_link_absent": true,
-  "completed_this_round": "Issue 2 R4 Chinese absolute GamePath, native settings roundtrip and source-rendered comparison",
-  "next_technical_followup": "Issue 9 SDL1 build and GLSL output compatibility verification (no confirmed failure yet)",
-  "other_open_verification": [
-    "Issue 9 SDL1 build and GLSL output"
-  ],
+  "completed_this_round": "Issue 9 R4 SDL1 build / GLSL output verification and scaled shake boundary repair",
+  "next_technical_followup": "No remaining confirmed technical defect in the current audited list; prepare unified acceptance when requested.",
+  "other_open_verification": [],
   "unified_live_acceptance": "All issues remain open; deferred to the user after implementation.",
   "read_only_delegated_audit": {
     "reviewer": "/root/audit_evidence",
@@ -172,5 +170,30 @@
       1,
       2
     ]
+  },
+  "issue9_r4_followup": {
+    "base": "81691383862747f3441c4eda3f3a5ed216231239",
+    "evidence": "issue-9-backend-verification.json",
+    "issues_rechecked_this_round": [
+      1,
+      9
+    ],
+    "prior_full_audit_preserved": true,
+    "snapshots_before": {
+      "1": {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r4-backends-20261021\\issue-1-before.json",
+        "bytes": 100789,
+        "sha256": "827130cf11be3eb8195b55accd5550cb03c9b0990636a2a8d46c557d7b234f4f"
+      },
+      "9": {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-9\\portrait-r4-backends-20261021\\issue-9-before.json",
+        "bytes": 31706,
+        "sha256": "6cf2b0a6a2dc8c778823a12a99507cf4acef6cbf12f355355a0a2d9838d9374d"
+      }
+    },
+    "frames": 11362,
+    "physical_readbacks": 795,
+    "cross_backend_pairs": 10016,
+    "all_issues_remain_open": true
   }
 }
