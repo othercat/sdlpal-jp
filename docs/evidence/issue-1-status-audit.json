@@ -114,8 +114,8 @@
     }
   ],
   "removed_shared_chat_link_absent": true,
-  "completed_this_round": "Issue 9 R4 SDL1 build / GLSL output verification and scaled shake boundary repair",
-  "next_technical_followup": "No remaining confirmed technical defect in the current audited list; prepare unified acceptance when requested.",
+  "completed_this_round": "Full Issue 1-10 backlog recheck and Issue 9 R5 config save/restart/opt-out verification",
+  "next_technical_followup": "No remaining confirmed technical defect in the audited scopes; prepare unified acceptance material.",
   "other_open_verification": [],
   "unified_live_acceptance": "All issues remain open; deferred to the user after implementation.",
   "read_only_delegated_audit": {
@@ -194,6 +194,228 @@
     "frames": 11362,
     "physical_readbacks": 795,
     "cross_backend_pairs": 10016,
+    "all_issues_remain_open": true
+  },
+  "latest_full_audit": {
+    "base": "244fcdb04f386fab13602f0c893a3bd48cdcdd77",
+    "artifacts": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021",
+    "original_subissues": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "comment_count": 0,
+    "issues": [
+      {
+        "number": 1,
+        "title": "[总管] SDLPAL 日文化修正、分支管理与验收追溯",
+        "state": "open",
+        "updated_at": "2026-10-21T05:12:40Z",
+        "body_sha256": "fd2ded8d1f2522d00f2c1c2f5005aa08dd14bd0f5f2d04342cb2df58986abd59"
+      },
+      {
+        "number": 2,
+        "title": "[feat] 日文转换工具与中文 GamePath 已合入，待统一验收",
+        "state": "open",
+        "updated_at": "2026-10-21T04:24:15Z",
+        "body_sha256": "b94a499b93517b3436966338c7b1a9253379e738b642cec86a765d989b9eec56"
+      },
+      {
+        "number": 3,
+        "title": "[fix] 已补齐 119 组 Win 日文对白遗漏映射，待统一验收",
+        "state": "open",
+        "updated_at": "2026-10-20T10:51:32Z",
+        "body_sha256": "9a14323087f952e5eb124a39a564358a6665ee2efcdaa7ac3817af3203c39baa"
+      },
+      {
+        "number": 4,
+        "title": "[fix] 修正比武招亲场景的 10 组 NPC 日文对白错配",
+        "state": "open",
+        "updated_at": "2026-10-20T13:58:54Z",
+        "body_sha256": "fad968ecdc7e9166113750723f405fa2f0a61529ce4456c7ef292cb5a293b997"
+      },
+      {
+        "number": 5,
+        "title": "[fix] 日文双列游标遮字已修复，待统一验收",
+        "state": "open",
+        "updated_at": "2026-10-20T09:28:11Z",
+        "body_sha256": "dc990d84866bad04eaefbf032fdc14b46138fa590ccd4bed1dcdcf46a8216d00"
+      },
+      {
+        "number": 6,
+        "title": "[fix] 校对土星日译的语义反转、语法与战斗术语",
+        "state": "open",
+        "updated_at": "2026-10-20T17:03:08Z",
+        "body_sha256": "0ca5f31097aaa6cf54241e904e22021a069607c70d089fbfcecc3767e55fe56e"
+      },
+      {
+        "number": 7,
+        "title": "[feat] 为 PAL_DOS 建立独立的日文对白映射与资源识别",
+        "state": "open",
+        "updated_at": "2026-10-20T17:01:58Z",
+        "body_sha256": "8b24ab90d111b742122d098c1fa013fd972cb589907a366497348a57289a3527"
+      },
+      {
+        "number": 8,
+        "title": "[fix] 消除重复消息键的译文覆盖冲突并记录来源",
+        "state": "open",
+        "updated_at": "2026-10-20T14:32:25Z",
+        "body_sha256": "90783f43682b9711eb88f8110e394cb1cb9bd1e088c4ba53c62d97d8611a0843"
+      },
+      {
+        "number": 9,
+        "title": "[feat] 核实并适配土星人物头像与调色板",
+        "state": "open",
+        "updated_at": "2026-10-21T05:12:35Z",
+        "body_sha256": "989cbb49e42ffe209467afe88a96cb5d516fde5102996a330e6b837dfbdc105c"
+      },
+      {
+        "number": 10,
+        "title": "[feat] 同源字体与游戏渲染对比已交付，待统一验收",
+        "state": "open",
+        "updated_at": "2026-10-20T09:28:27Z",
+        "body_sha256": "ba132c0d7550ad992f6d7dbf1a9bffbefbf32d135f0a600dd35022e1835eecb5"
+      }
+    ],
+    "snapshots": [
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-1-before.json",
+        "bytes": 104549,
+        "sha256": "1ca2ed8d3d158e6a8927e6847cd606f0085bcaaa8a4be396df59cfa95796bd03"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-1-comments.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-10-before.json",
+        "bytes": 26634,
+        "sha256": "6e2bbd6f8cd65ae027a97461aed3e76545c30467d90ee472a9abf94cf943e705"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-10-comments.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-2-before.json",
+        "bytes": 35943,
+        "sha256": "94b46fbc70d414afbf4106b66cdc260b9a0e1c6fd06a700ddc086857334199a9"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-2-comments.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-3-before.json",
+        "bytes": 18522,
+        "sha256": "87989a8f48fbbc463a75f456fad586cf51d84a2bccfe6dce24306ce80eeef4ae"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-3-comments.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-4-before.json",
+        "bytes": 17124,
+        "sha256": "bd5187a27e1a793a2a112c47d056945ba6457f3160e992b19634f141eecb6e9a"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-4-comments.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-5-before.json",
+        "bytes": 37635,
+        "sha256": "b285ce84422f35cfd2cfd2a6ee87cf3fde90ec85bf0a10cdfeb72d56d9856e9e"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-5-comments.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-6-before.json",
+        "bytes": 29389,
+        "sha256": "00c9a8b65eaea4588ff7df8763254302ff11fdb341a65d70b33d6fb83241f1d4"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-6-comments.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-7-before.json",
+        "bytes": 21356,
+        "sha256": "1ec2cd942be12137590f86290d4da4bf8beaee0d489010658662085d206c4702"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-7-comments.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-8-before.json",
+        "bytes": 17583,
+        "sha256": "daa754a55c4d72f9d2be8a729d5536c67d70649b626c1faf95fe6753d800610a"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-8-comments.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-9-before.json",
+        "bytes": 38717,
+        "sha256": "6b0e7efc01cdc229c6601662da3efe4e087f3432fcb076eb85c00b2d92f412f6"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issue-9-comments.json",
+        "bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\issues-pages.json",
+        "bytes": 337550,
+        "sha256": "ea6d52345fb2e17777c605a622a7644056ba2996e4298cd86710e57ca706fd91"
+      },
+      {
+        "path": "D:\\Workspace\\PALWork\\artifacts\\sdlpal-jp-issue-1\\backlog-r2-20261021\\sub-issues-before.json",
+        "bytes": 281907,
+        "sha256": "5eb63999f37f6ed93434eddaba5a285a1384634868e9922fb25c5f9a648e2be6"
+      }
+    ],
+    "removed_shared_chat_link_absent": true,
+    "next_completed": "Issue 9 file configuration verification; actual settings interaction remains live acceptance",
+    "historical_items_superseded": [
+      "Issue 5 red-silkworm/long-name/cursor",
+      "Issue 6 four followup translations",
+      "Issue 10 same-source fonts/pagination/source scaling",
+      "Issue 9 night/effects/SDL1/GLSL",
+      "Issue 2 sparse Steam records/preparation rollback/Chinese GamePath"
+    ],
+    "no_other_historical_test_reruns": true
+  },
+  "issue9_r5_followup": {
+    "base": "244fcdb04f386fab13602f0c893a3bd48cdcdd77",
+    "evidence": "issue-9-config-verification.json",
+    "config_roundtrips": 16,
+    "source_processes": 16,
+    "logical_frames": 256,
+    "integer_scale_readbacks": 128,
+    "fractional_scale_size_checks": 64,
+    "live_acceptance": "pending",
+    "production_changes": false,
     "all_issues_remain_open": true
   }
 }
